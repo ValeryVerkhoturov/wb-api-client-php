@@ -1,7 +1,7 @@
 {
   "name": "valeryverkhoturov/wb-api-client",
   "description": "Auto-generated PHP client for the Wildberries Seller API",
-  "version": "1.20260920.0",
+  "version": "1.20260921.0",
   "license": "Apache-2.0",
   "type": "library",
   "keywords": ["wildberries", "wb", "api", "client", "sdk"],
