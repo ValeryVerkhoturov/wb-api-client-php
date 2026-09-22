@@ -78,6 +78,9 @@ class DefaultApi
         'getV0BidsRecommendations' => [
             'application/json',
         ],
+        'getV0DailyLimits' => [
+            'application/json',
+        ],
         'getV0Delete' => [
             'application/json',
         ],
@@ -190,6 +193,9 @@ class DefaultApi
             'application/json',
         ],
         'putV0AuctionPlacements' => [
+            'application/json',
+        ],
+        'putV0DailyLimits' => [
             'application/json',
         ],
     ];
@@ -1072,6 +1078,514 @@ class DefaultApi
             [
                 "url" => "https://advert-api.wildberries.ru",
                 "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV0DailyLimits
+     *
+     * Получить настройки дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  string $advert_ids ID кампаний, максимум 100. Укажите значения через запятую (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse|\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response
+     */
+    public function getV0DailyLimits($advert_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV0DailyLimits'][0])
+    {
+        list($response) = $this->getV0DailyLimitsWithHttpInfo($advert_ids, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV0DailyLimitsWithHttpInfo
+     *
+     * Получить настройки дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  string $advert_ids ID кампаний, максимум 100. Укажите значения через запятую (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse|\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV0DailyLimitsWithHttpInfo($advert_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV0DailyLimits'][0])
+    {
+        $request = $this->getV0DailyLimitsRequest($advert_ids, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV0DailyLimitsAsync
+     *
+     * Получить настройки дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  string $advert_ids ID кампаний, максимум 100. Укажите значения через запятую (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV0DailyLimitsAsync($advert_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV0DailyLimits'][0])
+    {
+        return $this->getV0DailyLimitsAsyncWithHttpInfo($advert_ids, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV0DailyLimitsAsyncWithHttpInfo
+     *
+     * Получить настройки дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  string $advert_ids ID кампаний, максимум 100. Укажите значения через запятую (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV0DailyLimitsAsyncWithHttpInfo($advert_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV0DailyLimits'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetDailyLimitsResponse';
+        $request = $this->getV0DailyLimitsRequest($advert_ids, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV0DailyLimits'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  string $advert_ids ID кампаний, максимум 100. Укажите значения через запятую (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV0DailyLimitsRequest($advert_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV0DailyLimits'][0])
+    {
+
+        // verify the required parameter 'advert_ids' is set
+        if ($advert_ids === null || (is_array($advert_ids) && count($advert_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $advert_ids when calling getV0DailyLimits'
+            );
+        }
+
+
+        $resourcePath = '/api/advert/v0/daily-limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $advert_ids,
+            'advertIds', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV0DailyLimits();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV0DailyLimits
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV0DailyLimits(): array
+    {
+        return [
+            [
+                "url" => "https://advert-api.wildberries.ru",
+                "description" => "**Prod**",
             ]
         ];
     }
@@ -19175,6 +19689,512 @@ class DefaultApi
             [
                 "url" => "https://advert-api.wildberries.ru",
                 "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation putV0DailyLimits
+     *
+     * Настройка дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsRequest $v0_put_daily_limits_request v0_put_daily_limits_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse|\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response
+     */
+    public function putV0DailyLimits($v0_put_daily_limits_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['putV0DailyLimits'][0])
+    {
+        list($response) = $this->putV0DailyLimitsWithHttpInfo($v0_put_daily_limits_request, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation putV0DailyLimitsWithHttpInfo
+     *
+     * Настройка дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsRequest $v0_put_daily_limits_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse|\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response|\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function putV0DailyLimitsWithHttpInfo($v0_put_daily_limits_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['putV0DailyLimits'][0])
+    {
+        $request = $this->putV0DailyLimitsRequest($v0_put_daily_limits_request, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\Response400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount403Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1PromotionCount401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation putV0DailyLimitsAsync
+     *
+     * Настройка дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsRequest $v0_put_daily_limits_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putV0DailyLimitsAsync($v0_put_daily_limits_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['putV0DailyLimits'][0])
+    {
+        return $this->putV0DailyLimitsAsyncWithHttpInfo($v0_put_daily_limits_request, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation putV0DailyLimitsAsyncWithHttpInfo
+     *
+     * Настройка дневных лимитов кампаний
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsRequest $v0_put_daily_limits_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putV0DailyLimitsAsyncWithHttpInfo($v0_put_daily_limits_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['putV0DailyLimits'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsResponse';
+        $request = $this->putV0DailyLimitsRequest($v0_put_daily_limits_request, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'putV0DailyLimits'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://advert-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsRequest $v0_put_daily_limits_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putV0DailyLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function putV0DailyLimitsRequest($v0_put_daily_limits_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['putV0DailyLimits'][0])
+    {
+
+        // verify the required parameter 'v0_put_daily_limits_request' is set
+        if ($v0_put_daily_limits_request === null || (is_array($v0_put_daily_limits_request) && count($v0_put_daily_limits_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $v0_put_daily_limits_request when calling putV0DailyLimits'
+            );
+        }
+
+
+        $resourcePath = '/api/advert/v0/daily-limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($v0_put_daily_limits_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($v0_put_daily_limits_request));
+            } else {
+                $httpBody = $v0_put_daily_limits_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForputV0DailyLimits();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation putV0DailyLimits
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForputV0DailyLimits(): array
+    {
+        return [
+            [
+                "url" => "https://advert-api.wildberries.ru",
+                "description" => "**Prod**",
             ]
         ];
     }
