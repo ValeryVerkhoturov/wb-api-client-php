@@ -62,7 +62,8 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'currency_code' => 'int',
         'cpm_step' => 'int',
         'cpc_step' => 'int',
-        'min_top_up' => 'int'
+        'min_top_up' => 'int',
+        'min_daily_limit' => 'int'
     ];
 
     /**
@@ -77,7 +78,8 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'currency_code' => null,
         'cpm_step' => 'int64',
         'cpc_step' => 'int64',
-        'min_top_up' => 'int64'
+        'min_top_up' => 'int64',
+        'min_daily_limit' => 'int64'
     ];
 
     /**
@@ -90,7 +92,8 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'currency_code' => false,
         'cpm_step' => false,
         'cpc_step' => false,
-        'min_top_up' => false
+        'min_top_up' => false,
+        'min_daily_limit' => false
     ];
 
     /**
@@ -183,7 +186,8 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'currency_code' => 'currencyCode',
         'cpm_step' => 'cpmStep',
         'cpc_step' => 'cpcStep',
-        'min_top_up' => 'minTopUp'
+        'min_top_up' => 'minTopUp',
+        'min_daily_limit' => 'minDailyLimit'
     ];
 
     /**
@@ -196,7 +200,8 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'currency_code' => 'setCurrencyCode',
         'cpm_step' => 'setCpmStep',
         'cpc_step' => 'setCpcStep',
-        'min_top_up' => 'setMinTopUp'
+        'min_top_up' => 'setMinTopUp',
+        'min_daily_limit' => 'setMinDailyLimit'
     ];
 
     /**
@@ -209,7 +214,8 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'currency_code' => 'getCurrencyCode',
         'cpm_step' => 'getCpmStep',
         'cpc_step' => 'getCpcStep',
-        'min_top_up' => 'getMinTopUp'
+        'min_top_up' => 'getMinTopUp',
+        'min_daily_limit' => 'getMinDailyLimit'
     ];
 
     /**
@@ -274,6 +280,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('cpm_step', $data ?? [], null);
         $this->setIfExists('cpc_step', $data ?? [], null);
         $this->setIfExists('min_top_up', $data ?? [], null);
+        $this->setIfExists('min_daily_limit', $data ?? [], null);
     }
 
     /**
@@ -317,6 +324,9 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['min_top_up'] === null) {
             $invalidProperties[] = "'min_top_up' can't be null";
+        }
+        if ($this->container['min_daily_limit'] === null) {
+            $invalidProperties[] = "'min_daily_limit' can't be null";
         }
         return $invalidProperties;
     }
@@ -464,6 +474,33 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable min_top_up cannot be null');
         }
         $this->container['min_top_up'] = $min_top_up;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_daily_limit
+     *
+     * @return int
+     */
+    public function getMinDailyLimit()
+    {
+        return $this->container['min_daily_limit'];
+    }
+
+    /**
+     * Sets min_daily_limit
+     *
+     * @param int $min_daily_limit Минимально допустимый размер дневного лимита, вне зависимости от ставок кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     *
+     * @return self
+     */
+    public function setMinDailyLimit($min_daily_limit)
+    {
+        if (is_null($min_daily_limit)) {
+            throw new \InvalidArgumentException('non-nullable min_daily_limit cannot be null');
+        }
+        $this->container['min_daily_limit'] = $min_daily_limit;
 
         return $this;
     }

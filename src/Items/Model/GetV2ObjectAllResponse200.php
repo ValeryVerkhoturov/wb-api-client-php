@@ -378,7 +378,7 @@ class GetV2ObjectAllResponse200 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets error_text
      *
-     * @param string|null $error_text Текст ошибки
+     * @param string|null $error_text Описание ошибки
      *
      * @return self
      */

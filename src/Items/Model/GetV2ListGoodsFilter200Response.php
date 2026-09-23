@@ -380,7 +380,7 @@ class GetV2ListGoodsFilter200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets error_text
      *
-     * @param string $error_text Текст ошибки
+     * @param string $error_text Описание ошибки
      *
      * @return self
      */

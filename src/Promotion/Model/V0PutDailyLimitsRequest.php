@@ -403,7 +403,7 @@ class V0PutDailyLimitsRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets daily_limit
      *
-     * @param int|null $daily_limit Сумма дневного лимита. Параметр обязателен при `\"enabled\": true`. Минимально допустимая сумма указана в поле `minDailyLimit` метода [GET /api/advert/v1/config]().
+     * @param int|null $daily_limit Сумма дневного лимита. Параметр обязателен при `\"enabled\": true`. Минимально допустимая сумма указана в поле `minDailyLimit` метода [GET /api/advert/v1/config]()
      *
      * @return self
      */
