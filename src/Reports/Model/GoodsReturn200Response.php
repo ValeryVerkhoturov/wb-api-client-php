@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Http4XxResponse
+ * GoodsReturn200Response
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Reports\ObjectSerializer;
 
 /**
- * Http4XxResponse Class Doc Comment
+ * GoodsReturn200Response Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Reports
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Reports\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Http4XxResponse';
+    protected static $openAPIModelName = 'GoodsReturn200Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'detail' => 'string',
-        'origin' => 'string',
-        'request_id' => 'string',
-        'title' => 'string'
+        'count' => 'int',
+        'report' => '\ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[]'
     ];
 
     /**
@@ -72,10 +70,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'detail' => null,
-        'origin' => null,
-        'request_id' => null,
-        'title' => null
+        'count' => null,
+        'report' => null
     ];
 
     /**
@@ -84,10 +80,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'detail' => false,
-        'origin' => false,
-        'request_id' => false,
-        'title' => false
+        'count' => false,
+        'report' => false
     ];
 
     /**
@@ -176,10 +170,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'detail' => 'detail',
-        'origin' => 'origin',
-        'request_id' => 'requestId',
-        'title' => 'title'
+        'count' => 'count',
+        'report' => 'report'
     ];
 
     /**
@@ -188,10 +180,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'detail' => 'setDetail',
-        'origin' => 'setOrigin',
-        'request_id' => 'setRequestId',
-        'title' => 'setTitle'
+        'count' => 'setCount',
+        'report' => 'setReport'
     ];
 
     /**
@@ -200,10 +190,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'detail' => 'getDetail',
-        'origin' => 'getOrigin',
-        'request_id' => 'getRequestId',
-        'title' => 'getTitle'
+        'count' => 'getCount',
+        'report' => 'getReport'
     ];
 
     /**
@@ -263,10 +251,8 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('detail', $data ?? [], null);
-        $this->setIfExists('origin', $data ?? [], null);
-        $this->setIfExists('request_id', $data ?? [], null);
-        $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('count', $data ?? [], null);
+        $this->setIfExists('report', $data ?? [], null);
     }
 
     /**
@@ -296,6 +282,12 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['count'] === null) {
+            $invalidProperties[] = "'count' can't be null";
+        }
+        if ($this->container['report'] === null) {
+            $invalidProperties[] = "'report' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -312,109 +304,55 @@ class Http4XxResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets detail
+     * Gets count
      *
-     * @return string|null
+     * @return int
      */
-    public function getDetail()
+    public function getCount()
     {
-        return $this->container['detail'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets detail
+     * Sets count
      *
-     * @param string|null $detail Детали ошибки
+     * @param int $count Общее количество возвратов за запрашиваемый период
      *
      * @return self
      */
-    public function setDetail($detail)
+    public function setCount($count)
     {
-        if (is_null($detail)) {
-            throw new \InvalidArgumentException('non-nullable detail cannot be null');
+        if (is_null($count)) {
+            throw new \InvalidArgumentException('non-nullable count cannot be null');
         }
-        $this->container['detail'] = $detail;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets origin
+     * Gets report
      *
-     * @return string|null
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[]
      */
-    public function getOrigin()
+    public function getReport()
     {
-        return $this->container['origin'];
+        return $this->container['report'];
     }
 
     /**
-     * Sets origin
+     * Sets report
      *
-     * @param string|null $origin ID внутреннего сервиса WB
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[] $report Отчёт
      *
      * @return self
      */
-    public function setOrigin($origin)
+    public function setReport($report)
     {
-        if (is_null($origin)) {
-            throw new \InvalidArgumentException('non-nullable origin cannot be null');
+        if (is_null($report)) {
+            throw new \InvalidArgumentException('non-nullable report cannot be null');
         }
-        $this->container['origin'] = $origin;
-
-        return $this;
-    }
-
-    /**
-     * Gets request_id
-     *
-     * @return string|null
-     */
-    public function getRequestId()
-    {
-        return $this->container['request_id'];
-    }
-
-    /**
-     * Sets request_id
-     *
-     * @param string|null $request_id Уникальный ID запроса
-     *
-     * @return self
-     */
-    public function setRequestId($request_id)
-    {
-        if (is_null($request_id)) {
-            throw new \InvalidArgumentException('non-nullable request_id cannot be null');
-        }
-        $this->container['request_id'] = $request_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title Заголовок ошибки
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        if (is_null($title)) {
-            throw new \InvalidArgumentException('non-nullable title cannot be null');
-        }
-        $this->container['title'] = $title;
+        $this->container['report'] = $report;
 
         return $this;
     }

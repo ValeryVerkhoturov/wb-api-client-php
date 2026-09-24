@@ -141,7 +141,7 @@ class CApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\ExciseReportResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XxResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\ExciseReportResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
      */
     public function postV1AnalyticsExciseReport($date_from, $date_to, $excise_report_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AnalyticsExciseReport'][0])
     {
@@ -167,7 +167,7 @@ class CApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\ExciseReportResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XxResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\ExciseReportResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1AnalyticsExciseReportWithHttpInfo($date_from, $date_to, $excise_report_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AnalyticsExciseReport'][0])
     {
@@ -225,11 +225,11 @@ class CApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XxResponse' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XxResponse' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -247,7 +247,7 @@ class CApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XxResponse', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -415,7 +415,7 @@ class CApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XxResponse',
+                        '\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
