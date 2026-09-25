@@ -1,7 +1,7 @@
 <?php
 
 /**
- * UpdatedSupplies
+ * UpdatedSuppliesShippingMethodError
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * UpdatedSupplies Class Doc Comment
+ * UpdatedSuppliesShippingMethodError Class Doc Comment
  *
  * @category Class
- * @description Результат обработки запроса для одной поставки
+ * @description Ошибка обработки запроса для поставки. Возможные варианты ошибок:   - &#x60;400 IncorrectRequestBody&#x60;:     - некорректный ID поставки     - место отгрузки не найдено     - склад назначения находится не в РФ     - неизвестный &#x60;shippingType&#x60;     - дата не соответствует формату &#x60;YYYY-MM-DD&#x60;   - &#x60;400 FulfillmentRequired&#x60; — в месте отгрузки недоступна услуга **Фулфилмент в СЦ**   - &#x60;404 NotFound&#x60; — поставка не найдена   - &#x60;409 SupplyAlreadyScanned&#x60; — поставка или её короба уже отсканированы в пункте отгрузки   - &#x60;409 InvalidShippingDt&#x60; — некорректная дата отгрузки поставки
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdatedSuppliesShippingMethodError implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UpdatedSupplies';
+    protected static $openAPIModelName = 'UpdatedSuppliesShippingMethod_error';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'error' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ReplyBatchError',
-        'success' => 'bool',
-        'supply_id' => 'string'
+        'code' => 'int',
+        'detail' => 'string'
     ];
 
     /**
@@ -72,9 +71,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'error' => null,
-        'success' => null,
-        'supply_id' => null
+        'code' => null,
+        'detail' => null
     ];
 
     /**
@@ -83,9 +81,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'error' => false,
-        'success' => false,
-        'supply_id' => false
+        'code' => false,
+        'detail' => false
     ];
 
     /**
@@ -174,9 +171,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'error' => 'error',
-        'success' => 'success',
-        'supply_id' => 'supplyId'
+        'code' => 'code',
+        'detail' => 'detail'
     ];
 
     /**
@@ -185,9 +181,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'error' => 'setError',
-        'success' => 'setSuccess',
-        'supply_id' => 'setSupplyId'
+        'code' => 'setCode',
+        'detail' => 'setDetail'
     ];
 
     /**
@@ -196,9 +191,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'error' => 'getError',
-        'success' => 'getSuccess',
-        'supply_id' => 'getSupplyId'
+        'code' => 'getCode',
+        'detail' => 'getDetail'
     ];
 
     /**
@@ -258,9 +252,8 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('error', $data ?? [], null);
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('supply_id', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('detail', $data ?? [], null);
     }
 
     /**
@@ -290,8 +283,11 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['supply_id'] === null) {
-            $invalidProperties[] = "'supply_id' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+        if ($this->container['detail'] === null) {
+            $invalidProperties[] = "'detail' can't be null";
         }
         return $invalidProperties;
     }
@@ -309,82 +305,55 @@ class UpdatedSupplies implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets error
+     * Gets code
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ReplyBatchError|null
+     * @return int
      */
-    public function getError()
+    public function getCode()
     {
-        return $this->container['error'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets error
+     * Sets code
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ReplyBatchError|null $error error
+     * @param int $code Код ошибки
      *
      * @return self
      */
-    public function setError($error)
+    public function setCode($code)
     {
-        if (is_null($error)) {
-            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['error'] = $error;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success Успешна ли обработка запроса для данной поставки. Может быть только `true`
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
-        }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets supply_id
+     * Gets detail
      *
      * @return string
      */
-    public function getSupplyId()
+    public function getDetail()
     {
-        return $this->container['supply_id'];
+        return $this->container['detail'];
     }
 
     /**
-     * Sets supply_id
+     * Sets detail
      *
-     * @param string $supply_id ID поставки
+     * @param string $detail Дополнительная информация об ошибке
      *
      * @return self
      */
-    public function setSupplyId($supply_id)
+    public function setDetail($detail)
     {
-        if (is_null($supply_id)) {
-            throw new \InvalidArgumentException('non-nullable supply_id cannot be null');
+        if (is_null($detail)) {
+            throw new \InvalidArgumentException('non-nullable detail cannot be null');
         }
-        $this->container['supply_id'] = $supply_id;
+        $this->container['detail'] = $detail;
 
         return $this;
     }

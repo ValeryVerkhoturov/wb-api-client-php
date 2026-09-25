@@ -9376,7 +9376,7 @@ class FBSApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function patchV3FbsSuppliesShippingMethod($patch_v3_fbs_supplies_shipping_method_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesShippingMethod'][0])
     {
@@ -9400,7 +9400,7 @@ class FBSApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchV3FbsSuppliesShippingMethodWithHttpInfo($patch_v3_fbs_supplies_shipping_method_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesShippingMethod'][0])
     {
@@ -9431,11 +9431,11 @@ class FBSApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -9453,7 +9453,7 @@ class FBSApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9607,7 +9607,7 @@ class FBSApi
                 );
             }
 
-            $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse';
+            $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9640,7 +9640,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9736,7 +9736,7 @@ class FBSApi
      */
     public function patchV3FbsSuppliesShippingMethodAsyncWithHttpInfo($patch_v3_fbs_supplies_shipping_method_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesShippingMethod'][0])
     {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse';
+        $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse';
         $request = $this->patchV3FbsSuppliesShippingMethodRequest($patch_v3_fbs_supplies_shipping_method_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -9917,7 +9917,7 @@ class FBSApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function patchV3FbsSuppliesWaybill($patch_v3_fbs_supplies_waybill_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesWaybill'][0])
     {
@@ -9941,7 +9941,7 @@ class FBSApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchV3FbsSuppliesWaybillWithHttpInfo($patch_v3_fbs_supplies_waybill_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesWaybill'][0])
     {
@@ -9972,11 +9972,11 @@ class FBSApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -9994,7 +9994,7 @@ class FBSApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10121,7 +10121,7 @@ class FBSApi
                 );
             }
 
-            $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse';
+            $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10154,7 +10154,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10242,7 +10242,7 @@ class FBSApi
      */
     public function patchV3FbsSuppliesWaybillAsyncWithHttpInfo($patch_v3_fbs_supplies_waybill_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesWaybill'][0])
     {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesResponse';
+        $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesWaybillResponse';
         $request = $this->patchV3FbsSuppliesWaybillRequest($patch_v3_fbs_supplies_waybill_request, $hostIndex, $variables, $contentType);
 
         return $this->client

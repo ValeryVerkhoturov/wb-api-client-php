@@ -1,7 +1,7 @@
 <?php
 
 /**
- * UpdateSuppliesResponse
+ * UpdatedSuppliesShippingMethod
  *
  * PHP version 7.4
  *
@@ -33,15 +33,16 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * UpdateSuppliesResponse Class Doc Comment
+ * UpdatedSuppliesShippingMethod Class Doc Comment
  *
  * @category Class
+ * @description Результат обработки запроса для одной поставки
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UpdateSuppliesResponse';
+    protected static $openAPIModelName = 'UpdatedSuppliesShippingMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +59,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'results' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSupplies[]'
+        'error' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethodError',
+        'success' => 'bool',
+        'supply_id' => 'string'
     ];
 
     /**
@@ -69,7 +72,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'results' => null
+        'error' => null,
+        'success' => null,
+        'supply_id' => null
     ];
 
     /**
@@ -78,7 +83,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'results' => false
+        'error' => false,
+        'success' => false,
+        'supply_id' => false
     ];
 
     /**
@@ -167,7 +174,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'error' => 'error',
+        'success' => 'success',
+        'supply_id' => 'supplyId'
     ];
 
     /**
@@ -176,7 +185,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'error' => 'setError',
+        'success' => 'setSuccess',
+        'supply_id' => 'setSupplyId'
     ];
 
     /**
@@ -185,7 +196,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'error' => 'getError',
+        'success' => 'getSuccess',
+        'supply_id' => 'getSupplyId'
     ];
 
     /**
@@ -245,7 +258,9 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('results', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
+        $this->setIfExists('supply_id', $data ?? [], null);
     }
 
     /**
@@ -275,8 +290,8 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
+        if ($this->container['supply_id'] === null) {
+            $invalidProperties[] = "'supply_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -294,28 +309,82 @@ class UpdateSuppliesResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets results
+     * Gets error
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSupplies[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethodError|null
      */
-    public function getResults()
+    public function getError()
     {
-        return $this->container['results'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets results
+     * Sets error
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSupplies[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethodError|null $error error
      *
      * @return self
      */
-    public function setResults($results)
+    public function setError($error)
     {
-        if (is_null($results)) {
-            throw new \InvalidArgumentException('non-nullable results cannot be null');
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
-        $this->container['results'] = $results;
+        $this->container['error'] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Gets success
+     *
+     * @return bool|null
+     */
+    public function getSuccess()
+    {
+        return $this->container['success'];
+    }
+
+    /**
+     * Sets success
+     *
+     * @param bool|null $success Успешна ли обработка запроса для данной поставки. Может быть только `true`
+     *
+     * @return self
+     */
+    public function setSuccess($success)
+    {
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
+        }
+        $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets supply_id
+     *
+     * @return string
+     */
+    public function getSupplyId()
+    {
+        return $this->container['supply_id'];
+    }
+
+    /**
+     * Sets supply_id
+     *
+     * @param string $supply_id ID поставки
+     *
+     * @return self
+     */
+    public function setSupplyId($supply_id)
+    {
+        if (is_null($supply_id)) {
+            throw new \InvalidArgumentException('non-nullable supply_id cannot be null');
+        }
+        $this->container['supply_id'] = $supply_id;
 
         return $this;
     }

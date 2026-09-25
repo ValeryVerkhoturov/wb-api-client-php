@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ReplyBatchError
+ * UpdateSuppliesShippingMethodResponse
  *
  * PHP version 7.4
  *
@@ -33,16 +33,15 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * ReplyBatchError Class Doc Comment
+ * UpdateSuppliesShippingMethodResponse Class Doc Comment
  *
  * @category Class
- * @description Детали ошибки
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ReplyBatchError';
+    protected static $openAPIModelName = 'UpdateSuppliesShippingMethodResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +58,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
-        'detail' => 'string'
+        'results' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]'
     ];
 
     /**
@@ -71,8 +69,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'detail' => null
+        'results' => null
     ];
 
     /**
@@ -81,8 +78,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'detail' => false
+        'results' => false
     ];
 
     /**
@@ -171,8 +167,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'detail' => 'detail'
+        'results' => 'results'
     ];
 
     /**
@@ -181,8 +176,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'detail' => 'setDetail'
+        'results' => 'setResults'
     ];
 
     /**
@@ -191,8 +185,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'detail' => 'getDetail'
+        'results' => 'getResults'
     ];
 
     /**
@@ -252,8 +245,7 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('detail', $data ?? [], null);
+        $this->setIfExists('results', $data ?? [], null);
     }
 
     /**
@@ -283,11 +275,8 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
+        if ($this->container['results'] === null) {
+            $invalidProperties[] = "'results' can't be null";
         }
         return $invalidProperties;
     }
@@ -305,55 +294,28 @@ class ReplyBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets results
      *
-     * @return int
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]
      */
-    public function getCode()
+    public function getResults()
     {
-        return $this->container['code'];
+        return $this->container['results'];
     }
 
     /**
-     * Sets code
+     * Sets results
      *
-     * @param int $code Код ошибки
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[] $results results
      *
      * @return self
      */
-    public function setCode($code)
+    public function setResults($results)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($results)) {
+            throw new \InvalidArgumentException('non-nullable results cannot be null');
         }
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets detail
-     *
-     * @return string
-     */
-    public function getDetail()
-    {
-        return $this->container['detail'];
-    }
-
-    /**
-     * Sets detail
-     *
-     * @param string $detail Дополнительная информация об ошибке
-     *
-     * @return self
-     */
-    public function setDetail($detail)
-    {
-        if (is_null($detail)) {
-            throw new \InvalidArgumentException('non-nullable detail cannot be null');
-        }
-        $this->container['detail'] = $detail;
+        $this->container['results'] = $results;
 
         return $this;
     }
