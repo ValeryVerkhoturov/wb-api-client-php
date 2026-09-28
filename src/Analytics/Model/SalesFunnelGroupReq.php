@@ -360,7 +360,7 @@ class SalesFunnelGroupReq implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets report_type
      *
-     * @param string $report_type Тип отчёта `GROUPED_HISTORY_REPORT` — Воронка продаж. По предметам, брендам и ярлыкам
+     * @param string $report_type Тип отчёта `GROUPED\\_HISTORY\\_REPORT` — Воронка продаж. По предметам, брендам и ярлыкам.  Данные отчёта обновляются 1 раз в 2 часа.
      *
      * @return self
      */
