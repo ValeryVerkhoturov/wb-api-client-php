@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GetV2DirectoryTnvedResponse200DataInner
+ * GetV2DirectoryOkpdAllResponse200
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Items\ObjectSerializer;
 
 /**
- * GetV2DirectoryTnvedResponse200DataInner Class Doc Comment
+ * GetV2DirectoryOkpdAllResponse200 Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Items
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Items\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetV2DirectoryOkpdAllResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetV2DirectoryTnvedResponse200_data_inner';
+    protected static $openAPIModelName = 'GetV2DirectoryOkpdAllResponse200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tnved' => 'string',
-        'is_kiz' => 'bool'
+        'data' => '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[]',
+        'error' => 'bool',
+        'error_text' => 'string',
+        'additional_errors' => 'string'
     ];
 
     /**
@@ -70,8 +72,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tnved' => null,
-        'is_kiz' => null
+        'data' => null,
+        'error' => null,
+        'error_text' => null,
+        'additional_errors' => null
     ];
 
     /**
@@ -80,8 +84,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'tnved' => false,
-        'is_kiz' => false
+        'data' => false,
+        'error' => false,
+        'error_text' => false,
+        'additional_errors' => true
     ];
 
     /**
@@ -170,8 +176,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'tnved' => 'tnved',
-        'is_kiz' => 'isKiz'
+        'data' => 'data',
+        'error' => 'error',
+        'error_text' => 'errorText',
+        'additional_errors' => 'additionalErrors'
     ];
 
     /**
@@ -180,8 +188,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'tnved' => 'setTnved',
-        'is_kiz' => 'setIsKiz'
+        'data' => 'setData',
+        'error' => 'setError',
+        'error_text' => 'setErrorText',
+        'additional_errors' => 'setAdditionalErrors'
     ];
 
     /**
@@ -190,8 +200,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'tnved' => 'getTnved',
-        'is_kiz' => 'getIsKiz'
+        'data' => 'getData',
+        'error' => 'getError',
+        'error_text' => 'getErrorText',
+        'additional_errors' => 'getAdditionalErrors'
     ];
 
     /**
@@ -251,8 +263,10 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('tnved', $data ?? [], null);
-        $this->setIfExists('is_kiz', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('error_text', $data ?? [], null);
+        $this->setIfExists('additional_errors', $data ?? [], null);
     }
 
     /**
@@ -282,6 +296,18 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
+        if ($this->container['error'] === null) {
+            $invalidProperties[] = "'error' can't be null";
+        }
+        if ($this->container['error_text'] === null) {
+            $invalidProperties[] = "'error_text' can't be null";
+        }
+        if ($this->container['additional_errors'] === null) {
+            $invalidProperties[] = "'additional_errors' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -298,55 +324,116 @@ class GetV2DirectoryTnvedResponse200DataInner implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets tnved
+     * Gets data
      *
-     * @return string|null
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[]
      */
-    public function getTnved()
+    public function getData()
     {
-        return $this->container['tnved'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets tnved
+     * Sets data
      *
-     * @param string|null $tnved Код ТН ВЭД
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[] $data Данные
      *
      * @return self
      */
-    public function setTnved($tnved)
+    public function setData($data)
     {
-        if (is_null($tnved)) {
-            throw new \InvalidArgumentException('non-nullable tnved cannot be null');
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-        $this->container['tnved'] = $tnved;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets is_kiz
+     * Gets error
      *
-     * @return bool|null
+     * @return bool
      */
-    public function getIsKiz()
+    public function getError()
     {
-        return $this->container['is_kiz'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets is_kiz
+     * Sets error
      *
-     * @param bool|null $is_kiz - `true` — код маркировки [Честного знака](https://честныйзнак.рф/) требуется - `false` — код маркировки [Честного знака](https://честныйзнак.рф/) не требуется
+     * @param bool $error Флаг наличия ошибки
      *
      * @return self
      */
-    public function setIsKiz($is_kiz)
+    public function setError($error)
     {
-        if (is_null($is_kiz)) {
-            throw new \InvalidArgumentException('non-nullable is_kiz cannot be null');
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
-        $this->container['is_kiz'] = $is_kiz;
+        $this->container['error'] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_text
+     *
+     * @return string
+     */
+    public function getErrorText()
+    {
+        return $this->container['error_text'];
+    }
+
+    /**
+     * Sets error_text
+     *
+     * @param string $error_text Текст ошибки
+     *
+     * @return self
+     */
+    public function setErrorText($error_text)
+    {
+        if (is_null($error_text)) {
+            throw new \InvalidArgumentException('non-nullable error_text cannot be null');
+        }
+        $this->container['error_text'] = $error_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_errors
+     *
+     * @return string
+     */
+    public function getAdditionalErrors()
+    {
+        return $this->container['additional_errors'];
+    }
+
+    /**
+     * Sets additional_errors
+     *
+     * @param string $additional_errors Дополнительные ошибки
+     *
+     * @return self
+     */
+    public function setAdditionalErrors($additional_errors)
+    {
+        if (is_null($additional_errors)) {
+            array_push($this->openAPINullablesSetToNull, 'additional_errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_errors', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['additional_errors'] = $additional_errors;
 
         return $this;
     }

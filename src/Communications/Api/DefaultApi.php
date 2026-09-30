@@ -72,16 +72,7 @@ class DefaultApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'deleteFeedbacksV1Pins' => [
-            'application/json',
-        ],
-        'getFeedbacksV1Pins' => [
-            'application/json',
-        ],
-        'getFeedbacksV1PinsCount' => [
-            'application/json',
-        ],
-        'getFeedbacksV1PinsLimits' => [
+        'deleteV1Pins' => [
             'application/json',
         ],
         'getV1Claims' => [
@@ -103,6 +94,15 @@ class DefaultApi
             'application/json',
         ],
         'getV1NewFeedbacksQuestions' => [
+            'application/json',
+        ],
+        'getV1Pins' => [
+            'application/json',
+        ],
+        'getV1PinsCount' => [
+            'application/json',
+        ],
+        'getV1PinsLimits' => [
             'application/json',
         ],
         'getV1Question' => [
@@ -135,13 +135,13 @@ class DefaultApi
         'patchV1Questions' => [
             'application/json',
         ],
-        'postFeedbacksV1Pins' => [
-            'application/json',
-        ],
         'postV1FeedbacksAnswer' => [
             'application/json',
         ],
         'postV1FeedbacksOrderReturn' => [
+            'application/json',
+        ],
+        'postV1Pins' => [
             'application/json',
         ],
         'postV1SellerMessage' => [
@@ -196,7 +196,7 @@ class DefaultApi
     }
 
     /**
-     * Operation deleteFeedbacksV1Pins
+     * Operation deleteV1Pins
      *
      * Открепить отзывы
      *
@@ -207,20 +207,20 @@ class DefaultApi
      * @param  int[] $request_body Список &#x60;pinId&#x60; — ID операций закрепления отзывов (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeedbacksV1Pins'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteV1Pins'] to see the possible values for this operation
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
      */
-    public function deleteFeedbacksV1Pins($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteFeedbacksV1Pins'][0])
+    public function deleteV1Pins($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1Pins'][0])
     {
-        list($response) = $this->deleteFeedbacksV1PinsWithHttpInfo($request_body, $hostIndex, $variables, $contentType);
+        list($response) = $this->deleteV1PinsWithHttpInfo($request_body, $hostIndex, $variables, $contentType);
         return $response;
     }
 
     /**
-     * Operation deleteFeedbacksV1PinsWithHttpInfo
+     * Operation deleteV1PinsWithHttpInfo
      *
      * Открепить отзывы
      *
@@ -231,15 +231,15 @@ class DefaultApi
      * @param  int[] $request_body Список &#x60;pinId&#x60; — ID операций закрепления отзывов (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeedbacksV1Pins'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteV1Pins'] to see the possible values for this operation
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFeedbacksV1PinsWithHttpInfo($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteFeedbacksV1Pins'][0])
+    public function deleteV1PinsWithHttpInfo($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1Pins'][0])
     {
-        $request = $this->deleteFeedbacksV1PinsRequest($request_body, $hostIndex, $variables, $contentType);
+        $request = $this->deleteV1PinsRequest($request_body, $hostIndex, $variables, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -266,11 +266,11 @@ class DefaultApi
 
             switch ($statusCode) {
                 case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -288,7 +288,7 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -442,7 +442,7 @@ class DefaultApi
                 );
             }
 
-            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200';
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -475,7 +475,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200',
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -526,7 +526,7 @@ class DefaultApi
     }
 
     /**
-     * Operation deleteFeedbacksV1PinsAsync
+     * Operation deleteV1PinsAsync
      *
      * Открепить отзывы
      *
@@ -537,14 +537,14 @@ class DefaultApi
      * @param  int[] $request_body Список &#x60;pinId&#x60; — ID операций закрепления отзывов (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeedbacksV1Pins'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteV1Pins'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFeedbacksV1PinsAsync($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteFeedbacksV1Pins'][0])
+    public function deleteV1PinsAsync($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1Pins'][0])
     {
-        return $this->deleteFeedbacksV1PinsAsyncWithHttpInfo($request_body, $hostIndex, $variables, $contentType)
+        return $this->deleteV1PinsAsyncWithHttpInfo($request_body, $hostIndex, $variables, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -553,7 +553,7 @@ class DefaultApi
     }
 
     /**
-     * Operation deleteFeedbacksV1PinsAsyncWithHttpInfo
+     * Operation deleteV1PinsAsyncWithHttpInfo
      *
      * Открепить отзывы
      *
@@ -564,15 +564,15 @@ class DefaultApi
      * @param  int[] $request_body Список &#x60;pinId&#x60; — ID операций закрепления отзывов (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeedbacksV1Pins'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteV1Pins'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFeedbacksV1PinsAsyncWithHttpInfo($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteFeedbacksV1Pins'][0])
+    public function deleteV1PinsAsyncWithHttpInfo($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1Pins'][0])
     {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteFeedbacksV1PinsResponse200';
-        $request = $this->deleteFeedbacksV1PinsRequest($request_body, $hostIndex, $variables, $contentType);
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\DeleteV1PinsResponse200';
+        $request = $this->deleteV1PinsRequest($request_body, $hostIndex, $variables, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -611,7 +611,7 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'deleteFeedbacksV1Pins'
+     * Create request for operation 'deleteV1Pins'
      *
     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
     * if needed, use the 'variables' parameter to pass variables to the host.
@@ -620,22 +620,22 @@ class DefaultApi
      * @param  int[] $request_body Список &#x60;pinId&#x60; — ID операций закрепления отзывов (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeedbacksV1Pins'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteV1Pins'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteFeedbacksV1PinsRequest($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteFeedbacksV1Pins'][0])
+    public function deleteV1PinsRequest($request_body, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1Pins'][0])
     {
 
         // verify the required parameter 'request_body' is set
         if ($request_body === null || (is_array($request_body) && count($request_body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $request_body when calling deleteFeedbacksV1Pins'
+                'Missing the required parameter $request_body when calling deleteV1Pins'
             );
         }
         if (count($request_body) > 500) {
-            throw new \InvalidArgumentException('invalid value for "$request_body" when calling DefaultApi.deleteFeedbacksV1Pins, number of items must be less than or equal to 500.');
+            throw new \InvalidArgumentException('invalid value for "$request_body" when calling DefaultApi.deleteV1Pins, number of items must be less than or equal to 500.');
         }
 
 
@@ -709,7 +709,7 @@ class DefaultApi
             $hostIndex = $this->hostIndex;
         }
 
-        $hostSettings = $this->getHostSettingsFordeleteFeedbacksV1Pins();
+        $hostSettings = $this->getHostSettingsFordeleteV1Pins();
 
         if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
             throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
@@ -725,1785 +725,11 @@ class DefaultApi
     }
 
     /**
-     * Returns an array of host settings for Operation deleteFeedbacksV1Pins
+     * Returns an array of host settings for Operation deleteV1Pins
      *
      * @return array an array of host settings
      */
-    protected function getHostSettingsFordeleteFeedbacksV1Pins(): array
-    {
-        return [
-            [
-                "url" => "https://feedbacks-api.wildberries.ru",
-                "description" => "No description provided",
-            ]
-        ];
-    }
-
-    /**
-     * Operation getFeedbacksV1Pins
-     *
-     * Список закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
-     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
-     */
-    public function getFeedbacksV1Pins($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1Pins'][0])
-    {
-        list($response) = $this->getFeedbacksV1PinsWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsWithHttpInfo
-     *
-     * Список закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
-     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getFeedbacksV1PinsWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1Pins'][0])
-    {
-        $request = $this->getFeedbacksV1PinsRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch ($statusCode) {
-                case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 402:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 402:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsAsync
-     *
-     * Список закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
-     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getFeedbacksV1PinsAsync($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1Pins'][0])
-    {
-        return $this->getFeedbacksV1PinsAsyncWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsAsyncWithHttpInfo
-     *
-     * Список закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
-     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getFeedbacksV1PinsAsyncWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1Pins'][0])
-    {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsResponse200';
-        $request = $this->getFeedbacksV1PinsRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getFeedbacksV1Pins'
-     *
-    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-    * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
-     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getFeedbacksV1PinsRequest($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1Pins'][0])
-    {
-
-
-
-
-
-
-
-
-
-        if ($limit !== null && $limit > 500) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getFeedbacksV1Pins, must be smaller than or equal to 500.');
-        }
-
-
-        $resourcePath = '/api/feedbacks/v1/pins';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $state,
-            'state', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $pin_on,
-            'pinOn', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $imt_id,
-            'imtId', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $nm_id,
-            'nmId', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $feedback_id,
-            'feedbackId', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $date_from,
-            'dateFrom', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $date_to,
-            'dateTo', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $next,
-            'next', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/problem+json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        # Preserve the original behavior of server indexing.
-        if ($hostIndex === null) {
-            $hostIndex = $this->hostIndex;
-        }
-
-        $hostSettings = $this->getHostSettingsForgetFeedbacksV1Pins();
-
-        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
-            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
-        }
-        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Returns an array of host settings for Operation getFeedbacksV1Pins
-     *
-     * @return array an array of host settings
-     */
-    protected function getHostSettingsForgetFeedbacksV1Pins(): array
-    {
-        return [
-            [
-                "url" => "https://feedbacks-api.wildberries.ru",
-                "description" => "No description provided",
-            ]
-        ];
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsCount
-     *
-     * Количество закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsCount'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
-     */
-    public function getFeedbacksV1PinsCount($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsCount'][0])
-    {
-        list($response) = $this->getFeedbacksV1PinsCountWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsCountWithHttpInfo
-     *
-     * Количество закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsCount'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getFeedbacksV1PinsCountWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsCount'][0])
-    {
-        $request = $this->getFeedbacksV1PinsCountRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch ($statusCode) {
-                case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 402:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 402:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsCountAsync
-     *
-     * Количество закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsCount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getFeedbacksV1PinsCountAsync($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsCount'][0])
-    {
-        return $this->getFeedbacksV1PinsCountAsyncWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsCountAsyncWithHttpInfo
-     *
-     * Количество закреплённых и откреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsCount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getFeedbacksV1PinsCountAsyncWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsCount'][0])
-    {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsCountResponse200';
-        $request = $this->getFeedbacksV1PinsCountRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getFeedbacksV1PinsCount'
-     *
-    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-    * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
-     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
-     * @param  int $nm_id Артикул WB (optional)
-     * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsCount'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getFeedbacksV1PinsCountRequest($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsCount'][0])
-    {
-
-
-
-
-
-
-
-
-
-        $resourcePath = '/api/feedbacks/v1/pins/count';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $state,
-            'state', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $pin_on,
-            'pinOn', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $imt_id,
-            'imtId', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $nm_id,
-            'nmId', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $feedback_id,
-            'feedbackId', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $date_from,
-            'dateFrom', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $date_to,
-            'dateTo', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/problem+json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        # Preserve the original behavior of server indexing.
-        if ($hostIndex === null) {
-            $hostIndex = $this->hostIndex;
-        }
-
-        $hostSettings = $this->getHostSettingsForgetFeedbacksV1PinsCount();
-
-        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
-            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
-        }
-        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Returns an array of host settings for Operation getFeedbacksV1PinsCount
-     *
-     * @return array an array of host settings
-     */
-    protected function getHostSettingsForgetFeedbacksV1PinsCount(): array
-    {
-        return [
-            [
-                "url" => "https://feedbacks-api.wildberries.ru",
-                "description" => "No description provided",
-            ]
-        ];
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsLimits
-     *
-     * Лимиты закреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsLimits'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
-     */
-    public function getFeedbacksV1PinsLimits(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsLimits'][0])
-    {
-        list($response) = $this->getFeedbacksV1PinsLimitsWithHttpInfo($hostIndex, $variables, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsLimitsWithHttpInfo
-     *
-     * Лимиты закреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsLimits'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getFeedbacksV1PinsLimitsWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsLimits'][0])
-    {
-        $request = $this->getFeedbacksV1PinsLimitsRequest($hostIndex, $variables, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch ($statusCode) {
-                case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 402:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 402:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsLimitsAsync
-     *
-     * Лимиты закреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getFeedbacksV1PinsLimitsAsync(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsLimits'][0])
-    {
-        return $this->getFeedbacksV1PinsLimitsAsyncWithHttpInfo($hostIndex, $variables, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getFeedbacksV1PinsLimitsAsyncWithHttpInfo
-     *
-     * Лимиты закреплённых отзывов
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getFeedbacksV1PinsLimitsAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsLimits'][0])
-    {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetFeedbacksV1PinsLimitsResponse200';
-        $request = $this->getFeedbacksV1PinsLimitsRequest($hostIndex, $variables, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getFeedbacksV1PinsLimits'
-     *
-    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-    * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeedbacksV1PinsLimits'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getFeedbacksV1PinsLimitsRequest(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getFeedbacksV1PinsLimits'][0])
-    {
-
-
-        $resourcePath = '/api/feedbacks/v1/pins/limits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/problem+json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        # Preserve the original behavior of server indexing.
-        if ($hostIndex === null) {
-            $hostIndex = $this->hostIndex;
-        }
-
-        $hostSettings = $this->getHostSettingsForgetFeedbacksV1PinsLimits();
-
-        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
-            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
-        }
-        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Returns an array of host settings for Operation getFeedbacksV1PinsLimits
-     *
-     * @return array an array of host settings
-     */
-    protected function getHostSettingsForgetFeedbacksV1PinsLimits(): array
+    protected function getHostSettingsFordeleteV1Pins(): array
     {
         return [
             [
@@ -6539,6 +4765,1780 @@ class DefaultApi
             [
                 "url" => "https://feedbacks-api-sandbox.wildberries.ru",
                 "description" => "**Sandbox**",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV1Pins
+     *
+     * Список закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
+     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Pins'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
+     */
+    public function getV1Pins($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Pins'][0])
+    {
+        list($response) = $this->getV1PinsWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV1PinsWithHttpInfo
+     *
+     * Список закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
+     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Pins'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV1PinsWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Pins'][0])
+    {
+        $request = $this->getV1PinsRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV1PinsAsync
+     *
+     * Список закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
+     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Pins'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV1PinsAsync($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Pins'][0])
+    {
+        return $this->getV1PinsAsyncWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV1PinsAsyncWithHttpInfo
+     *
+     * Список закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
+     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Pins'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV1PinsAsyncWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Pins'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsResponse200';
+        $request = $this->getV1PinsRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $next, $limit, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV1Pins'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  int $next ID последней операции закрепления (пагинатор) (optional)
+     * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Pins'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV1PinsRequest($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, $next = null, $limit = 500, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Pins'][0])
+    {
+
+
+
+
+
+
+
+
+
+        if ($limit !== null && $limit > 500) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV1Pins, must be smaller than or equal to 500.');
+        }
+
+
+        $resourcePath = '/api/feedbacks/v1/pins';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $state,
+            'state', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $pin_on,
+            'pinOn', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $imt_id,
+            'imtId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $nm_id,
+            'nmId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $feedback_id,
+            'feedbackId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_from,
+            'dateFrom', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_to,
+            'dateTo', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $next,
+            'next', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV1Pins();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV1Pins
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV1Pins(): array
+    {
+        return [
+            [
+                "url" => "https://feedbacks-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV1PinsCount
+     *
+     * Количество закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
+     */
+    public function getV1PinsCount($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsCount'][0])
+    {
+        list($response) = $this->getV1PinsCountWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV1PinsCountWithHttpInfo
+     *
+     * Количество закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV1PinsCountWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsCount'][0])
+    {
+        $request = $this->getV1PinsCountRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV1PinsCountAsync
+     *
+     * Количество закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV1PinsCountAsync($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsCount'][0])
+    {
+        return $this->getV1PinsCountAsyncWithHttpInfo($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV1PinsCountAsyncWithHttpInfo
+     *
+     * Количество закреплённых и откреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV1PinsCountAsyncWithHttpInfo($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsCount'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsCountResponse200';
+        $request = $this->getV1PinsCountRequest($state, $pin_on, $imt_id, $nm_id, $feedback_id, $date_from, $date_to, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV1PinsCount'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  string $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
+     * @param  string $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  int $nm_id Артикул WB (optional)
+     * @param  int $feedback_id ID отзыва (optional)
+     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV1PinsCountRequest($state = null, $pin_on = null, $imt_id = null, $nm_id = null, $feedback_id = null, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsCount'][0])
+    {
+
+
+
+
+
+
+
+
+
+        $resourcePath = '/api/feedbacks/v1/pins/count';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $state,
+            'state', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $pin_on,
+            'pinOn', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $imt_id,
+            'imtId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $nm_id,
+            'nmId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $feedback_id,
+            'feedbackId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_from,
+            'dateFrom', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_to,
+            'dateTo', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV1PinsCount();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV1PinsCount
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV1PinsCount(): array
+    {
+        return [
+            [
+                "url" => "https://feedbacks-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV1PinsLimits
+     *
+     * Лимиты закреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsLimits'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
+     */
+    public function getV1PinsLimits(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsLimits'][0])
+    {
+        list($response) = $this->getV1PinsLimitsWithHttpInfo($hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV1PinsLimitsWithHttpInfo
+     *
+     * Лимиты закреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsLimits'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV1PinsLimitsWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsLimits'][0])
+    {
+        $request = $this->getV1PinsLimitsRequest($hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1FeedbacksAnswer403Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV1PinsLimitsAsync
+     *
+     * Лимиты закреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV1PinsLimitsAsync(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsLimits'][0])
+    {
+        return $this->getV1PinsLimitsAsyncWithHttpInfo($hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV1PinsLimitsAsyncWithHttpInfo
+     *
+     * Лимиты закреплённых отзывов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV1PinsLimitsAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsLimits'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1PinsLimitsResponse200';
+        $request = $this->getV1PinsLimitsRequest($hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV1PinsLimits'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsLimits'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV1PinsLimitsRequest(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1PinsLimits'][0])
+    {
+
+
+        $resourcePath = '/api/feedbacks/v1/pins/limits';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV1PinsLimits();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV1PinsLimits
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV1PinsLimits(): array
+    {
+        return [
+            [
+                "url" => "https://feedbacks-api.wildberries.ru",
+                "description" => "No description provided",
             ]
         ];
     }
@@ -11697,550 +11697,6 @@ class DefaultApi
     }
 
     /**
-     * Operation postFeedbacksV1Pins
-     *
-     * Закрепить отзывы
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item openapi_pin_review_item (required)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
-     */
-    public function postFeedbacksV1Pins($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postFeedbacksV1Pins'][0])
-    {
-        list($response) = $this->postFeedbacksV1PinsWithHttpInfo($openapi_pin_review_item, $hostIndex, $variables, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation postFeedbacksV1PinsWithHttpInfo
-     *
-     * Закрепить отзывы
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function postFeedbacksV1PinsWithHttpInfo($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postFeedbacksV1Pins'][0])
-    {
-        $request = $this->postFeedbacksV1PinsRequest($openapi_pin_review_item, $hostIndex, $variables, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch ($statusCode) {
-                case 200:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 402:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 402:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation postFeedbacksV1PinsAsync
-     *
-     * Закрепить отзывы
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function postFeedbacksV1PinsAsync($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postFeedbacksV1Pins'][0])
-    {
-        return $this->postFeedbacksV1PinsAsyncWithHttpInfo($openapi_pin_review_item, $hostIndex, $variables, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation postFeedbacksV1PinsAsyncWithHttpInfo
-     *
-     * Закрепить отзывы
-     *
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function postFeedbacksV1PinsAsyncWithHttpInfo($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postFeedbacksV1Pins'][0])
-    {
-        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostFeedbacksV1PinsResponse200';
-        $request = $this->postFeedbacksV1PinsRequest($openapi_pin_review_item, $hostIndex, $variables, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'postFeedbacksV1Pins'
-     *
-    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-    * if needed, use the 'variables' parameter to pass variables to the host.
-     * URL: https://feedbacks-api.wildberries.ru
-     *
-     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFeedbacksV1Pins'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function postFeedbacksV1PinsRequest($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postFeedbacksV1Pins'][0])
-    {
-
-        // verify the required parameter 'openapi_pin_review_item' is set
-        if ($openapi_pin_review_item === null || (is_array($openapi_pin_review_item) && count($openapi_pin_review_item) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $openapi_pin_review_item when calling postFeedbacksV1Pins'
-            );
-        }
-        if (count($openapi_pin_review_item) > 500) {
-            throw new \InvalidArgumentException('invalid value for "$openapi_pin_review_item" when calling DefaultApi.postFeedbacksV1Pins, number of items must be less than or equal to 500.');
-        }
-
-
-        $resourcePath = '/api/feedbacks/v1/pins';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/problem+json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($openapi_pin_review_item)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($openapi_pin_review_item));
-            } else {
-                $httpBody = $openapi_pin_review_item;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        # Preserve the original behavior of server indexing.
-        if ($hostIndex === null) {
-            $hostIndex = $this->hostIndex;
-        }
-
-        $hostSettings = $this->getHostSettingsForpostFeedbacksV1Pins();
-
-        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
-            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
-        }
-        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Returns an array of host settings for Operation postFeedbacksV1Pins
-     *
-     * @return array an array of host settings
-     */
-    protected function getHostSettingsForpostFeedbacksV1Pins(): array
-    {
-        return [
-            [
-                "url" => "https://feedbacks-api.wildberries.ru",
-                "description" => "No description provided",
-            ]
-        ];
-    }
-
-    /**
      * Operation postV1FeedbacksAnswer
      *
      * Ответить на отзыв
@@ -13139,6 +12595,550 @@ class DefaultApi
             [
                 "url" => "https://feedbacks-api-sandbox.wildberries.ru",
                 "description" => "**Sandbox**",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1Pins
+     *
+     * Закрепить отзывы
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item openapi_pin_review_item (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1Pins'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response
+     */
+    public function postV1Pins($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Pins'][0])
+    {
+        list($response) = $this->postV1PinsWithHttpInfo($openapi_pin_review_item, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1PinsWithHttpInfo
+     *
+     * Закрепить отзывы
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1Pins'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Communications\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response|\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr|\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1PinsWithHttpInfo($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Pins'][0])
+    {
+        $request = $this->postV1PinsRequest($openapi_pin_review_item, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\RespondResultErr',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1NewFeedbacksQuestions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1PinsAsync
+     *
+     * Закрепить отзывы
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1Pins'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1PinsAsync($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Pins'][0])
+    {
+        return $this->postV1PinsAsyncWithHttpInfo($openapi_pin_review_item, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1PinsAsyncWithHttpInfo
+     *
+     * Закрепить отзывы
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1Pins'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1PinsAsyncWithHttpInfo($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Pins'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Communications\Model\PostV1PinsResponse200';
+        $request = $this->postV1PinsRequest($openapi_pin_review_item, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1Pins'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://feedbacks-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItem[] $openapi_pin_review_item (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1Pins'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1PinsRequest($openapi_pin_review_item, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Pins'][0])
+    {
+
+        // verify the required parameter 'openapi_pin_review_item' is set
+        if ($openapi_pin_review_item === null || (is_array($openapi_pin_review_item) && count($openapi_pin_review_item) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $openapi_pin_review_item when calling postV1Pins'
+            );
+        }
+        if (count($openapi_pin_review_item) > 500) {
+            throw new \InvalidArgumentException('invalid value for "$openapi_pin_review_item" when calling DefaultApi.postV1Pins, number of items must be less than or equal to 500.');
+        }
+
+
+        $resourcePath = '/api/feedbacks/v1/pins';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($openapi_pin_review_item)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($openapi_pin_review_item));
+            } else {
+                $httpBody = $openapi_pin_review_item;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1Pins();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1Pins
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1Pins(): array
+    {
+        return [
+            [
+                "url" => "https://feedbacks-api.wildberries.ru",
+                "description" => "No description provided",
             ]
         ];
     }

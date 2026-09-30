@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner
+ * PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner Class Doc Comment
+ * PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200_results_inner';
+    protected static $openAPIModelName = 'PostV3FbsSettingsAutoreturnsItemsResponse200_results_inner_error_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
       * @var string[]
       */
     protected static $openAPITypes = [
-        'success' => 'bool',
-        'chrt_id' => 'int',
-        'type' => 'string',
-        'changeable' => 'bool',
-        'error' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner[]'
+        'code' => 'int',
+        'detail' => 'string'
     ];
 
     /**
@@ -73,11 +70,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'success' => null,
-        'chrt_id' => 'uint64',
-        'type' => null,
-        'changeable' => null,
-        'error' => null
+        'code' => null,
+        'detail' => null
     ];
 
     /**
@@ -86,11 +80,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'success' => false,
-        'chrt_id' => false,
-        'type' => false,
-        'changeable' => false,
-        'error' => false
+        'code' => false,
+        'detail' => false
     ];
 
     /**
@@ -179,11 +170,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'chrt_id' => 'chrtId',
-        'type' => 'type',
-        'changeable' => 'changeable',
-        'error' => 'error'
+        'code' => 'code',
+        'detail' => 'detail'
     ];
 
     /**
@@ -192,11 +180,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'chrt_id' => 'setChrtId',
-        'type' => 'setType',
-        'changeable' => 'setChangeable',
-        'error' => 'setError'
+        'code' => 'setCode',
+        'detail' => 'setDetail'
     ];
 
     /**
@@ -205,11 +190,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'chrt_id' => 'getChrtId',
-        'type' => 'getType',
-        'changeable' => 'getChangeable',
-        'error' => 'getError'
+        'code' => 'getCode',
+        'detail' => 'getDetail'
     ];
 
     /**
@@ -253,25 +235,6 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
         return self::$openAPIModelName;
     }
 
-    public const TYPE_AUTO = 'auto';
-    public const TYPE_BY_WAREHOUSE = 'byWarehouse';
-    public const TYPE_BY_PICKUP_POINT = 'byPickupPoint';
-    public const TYPE_BY_COURIER = 'byCourier';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_AUTO,
-            self::TYPE_BY_WAREHOUSE,
-            self::TYPE_BY_PICKUP_POINT,
-            self::TYPE_BY_COURIER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -288,11 +251,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('chrt_id', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('changeable', $data ?? [], null);
-        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('detail', $data ?? [], null);
     }
 
     /**
@@ -322,18 +282,12 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
     {
         $invalidProperties = [];
 
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['detail'] === null) {
+            $invalidProperties[] = "'detail' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -350,146 +304,55 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implem
 
 
     /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success - `true` — настройки автовозврата товара успешно получены
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
-        }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets chrt_id
+     * Gets code
      *
      * @return int
      */
-    public function getChrtId()
+    public function getCode()
     {
-        return $this->container['chrt_id'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets chrt_id
+     * Sets code
      *
-     * @param int $chrt_id ID размера товара в системе WB
+     * @param int $code Код ошибки
      *
      * @return self
      */
-    public function setChrtId($chrt_id)
+    public function setCode($code)
     {
-        if (is_null($chrt_id)) {
-            throw new \InvalidArgumentException('non-nullable chrt_id cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['chrt_id'] = $chrt_id;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets detail
      *
-     * @return string|null
+     * @return string
      */
-    public function getType()
+    public function getDetail()
     {
-        return $this->container['type'];
+        return $this->container['detail'];
     }
 
     /**
-     * Sets type
+     * Sets detail
      *
-     * @param string|null $type Куда будет возвращён товар:   - `auto` — место возврата определяется автоматически   - `byWarehouse` — на склад WB   - `byPickupPoint` — на пункт выдачи заказов   - `byCourier` — продавцу курьером. Всегда для товаров тех [предметов](https://dev.wildberries.ru/openapi/orders-fbs#tag/autoreturnSettings/operation/getMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestricted), которые автоматически возвращаются в ПВЗ
+     * @param string $detail Дополнительная информация об ошибке
      *
      * @return self
      */
-    public function setType($type)
+    public function setDetail($detail)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($detail)) {
+            throw new \InvalidArgumentException('non-nullable detail cannot be null');
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets changeable
-     *
-     * @return bool|null
-     */
-    public function getChangeable()
-    {
-        return $this->container['changeable'];
-    }
-
-    /**
-     * Sets changeable
-     *
-     * @param bool|null $changeable - `true` — настройки автовозврата товара можно изменить
-     *
-     * @return self
-     */
-    public function setChangeable($changeable)
-    {
-        if (is_null($changeable)) {
-            throw new \InvalidArgumentException('non-nullable changeable cannot be null');
-        }
-        $this->container['changeable'] = $changeable;
-
-        return $this;
-    }
-
-    /**
-     * Gets error
-     *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner[]|null
-     */
-    public function getError()
-    {
-        return $this->container['error'];
-    }
-
-    /**
-     * Sets error
-     *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner[]|null $error Детали ошибки
-     *
-     * @return self
-     */
-    public function setError($error)
-    {
-        if (is_null($error)) {
-            throw new \InvalidArgumentException('non-nullable error cannot be null');
-        }
-        $this->container['error'] = $error;
+        $this->container['detail'] = $detail;
 
         return $this;
     }

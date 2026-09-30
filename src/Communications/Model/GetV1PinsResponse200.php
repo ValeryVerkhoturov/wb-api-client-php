@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DeleteFeedbacksV1PinsResponse200
+ * GetV1PinsResponse200
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Communications\ObjectSerializer;
 
 /**
- * DeleteFeedbacksV1PinsResponse200 Class Doc Comment
+ * GetV1PinsResponse200 Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Communications
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Communications\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DeleteFeedbacksV1PinsResponse200';
+    protected static $openAPIModelName = 'GetV1PinsResponse200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => 'int[]'
+        'data' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]',
+        'next' => 'int'
     ];
 
     /**
@@ -69,7 +70,8 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'data' => null,
+        'next' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'data' => false
+        'data' => false,
+        'next' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'data' => 'data',
+        'next' => 'next'
     ];
 
     /**
@@ -176,7 +180,8 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'data' => 'setData',
+        'next' => 'setNext'
     ];
 
     /**
@@ -185,7 +190,8 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'data' => 'getData',
+        'next' => 'getNext'
     ];
 
     /**
@@ -246,6 +252,7 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
     public function __construct(array $data = null)
     {
         $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('next', $data ?? [], null);
     }
 
     /**
@@ -296,7 +303,7 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
     /**
      * Gets data
      *
-     * @return int[]
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]
      */
     public function getData()
     {
@@ -306,7 +313,7 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
     /**
      * Sets data
      *
-     * @param int[] $data Список `pinId` — ID операций закрепления отзывов, которые были успешно откреплены
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[] $data data
      *
      * @return self
      */
@@ -316,6 +323,33 @@ class DeleteFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \
             throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
         $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets next
+     *
+     * @return int|null
+     */
+    public function getNext()
+    {
+        return $this->container['next'];
+    }
+
+    /**
+     * Sets next
+     *
+     * @param int|null $next Параметр пагинации. Укажите это значение в запросе, чтобы получить следующий пакет данных. Если поле отсутствует, вы получили все данные
+     *
+     * @return self
+     */
+    public function setNext($next)
+    {
+        if (is_null($next)) {
+            throw new \InvalidArgumentException('non-nullable next cannot be null');
+        }
+        $this->container['next'] = $next;
 
         return $this;
     }

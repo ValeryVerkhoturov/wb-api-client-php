@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200
+ * PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 Class Doc Comment
+ * PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200';
+    protected static $openAPIModelName = 'PatchV3FbsSettingsAutoreturnsItemsResponse200_results_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
       * @var string[]
       */
     protected static $openAPITypes = [
-        'next' => 'int',
-        'data' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]'
+        'chrt_id' => 'int',
+        'error' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner[]',
+        'success' => 'bool'
     ];
 
     /**
@@ -70,8 +71,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'next' => 'int64',
-        'data' => null
+        'chrt_id' => 'uint64',
+        'error' => null,
+        'success' => null
     ];
 
     /**
@@ -80,8 +82,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'next' => true,
-        'data' => false
+        'chrt_id' => false,
+        'error' => false,
+        'success' => false
     ];
 
     /**
@@ -170,8 +173,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
      * @var string[]
      */
     protected static $attributeMap = [
-        'next' => 'next',
-        'data' => 'data'
+        'chrt_id' => 'chrtId',
+        'error' => 'error',
+        'success' => 'success'
     ];
 
     /**
@@ -180,8 +184,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
      * @var string[]
      */
     protected static $setters = [
-        'next' => 'setNext',
-        'data' => 'setData'
+        'chrt_id' => 'setChrtId',
+        'error' => 'setError',
+        'success' => 'setSuccess'
     ];
 
     /**
@@ -190,8 +195,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
      * @var string[]
      */
     protected static $getters = [
-        'next' => 'getNext',
-        'data' => 'getData'
+        'chrt_id' => 'getChrtId',
+        'error' => 'getError',
+        'success' => 'getSuccess'
     ];
 
     /**
@@ -251,8 +257,9 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('next', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('chrt_id', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
     }
 
     /**
@@ -282,11 +289,8 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
     {
         $invalidProperties = [];
 
-        if ($this->container['next'] === null) {
-            $invalidProperties[] = "'next' can't be null";
-        }
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
+        if ($this->container['chrt_id'] === null) {
+            $invalidProperties[] = "'chrt_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,62 +308,82 @@ class GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 i
 
 
     /**
-     * Gets next
+     * Gets chrt_id
      *
      * @return int
      */
-    public function getNext()
+    public function getChrtId()
     {
-        return $this->container['next'];
+        return $this->container['chrt_id'];
     }
 
     /**
-     * Sets next
+     * Sets chrt_id
      *
-     * @param int $next Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
+     * @param int $chrt_id ID размера товара в системе WB
      *
      * @return self
      */
-    public function setNext($next)
+    public function setChrtId($chrt_id)
     {
-        if (is_null($next)) {
-            array_push($this->openAPINullablesSetToNull, 'next');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($chrt_id)) {
+            throw new \InvalidArgumentException('non-nullable chrt_id cannot be null');
         }
-        $this->container['next'] = $next;
+        $this->container['chrt_id'] = $chrt_id;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets error
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner[]|null
      */
-    public function getData()
+    public function getError()
     {
-        return $this->container['data'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets data
+     * Sets error
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[] $data Список ID предметов, товары которых не хранятся на складах WB
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner[]|null $error Детали ошибки
      *
      * @return self
      */
-    public function setData($data)
+    public function setError($error)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
-        $this->container['data'] = $data;
+        $this->container['error'] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Gets success
+     *
+     * @return bool|null
+     */
+    public function getSuccess()
+    {
+        return $this->container['success'];
+    }
+
+    /**
+     * Sets success
+     *
+     * @param bool|null $success - `true` — настройки автовозврата товара обновлены
+     *
+     * @return self
+     */
+    public function setSuccess($success)
+    {
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
+        }
+        $this->container['success'] = $success;
 
         return $this;
     }

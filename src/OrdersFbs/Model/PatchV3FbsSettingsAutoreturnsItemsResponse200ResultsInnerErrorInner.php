@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest
+ * PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest Class Doc Comment
+ * PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postMarketplaceV3FbsSettingsAutoreturnsItems_request';
+    protected static $openAPIModelName = 'PatchV3FbsSettingsAutoreturnsItemsResponse200_results_inner_error_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'chrt_ids' => 'int[]'
+        'code' => 'int',
+        'detail' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_ids' => 'uint64'
+        'code' => null,
+        'detail' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'chrt_ids' => false
+        'code' => false,
+        'detail' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'chrt_ids' => 'chrtIds'
+        'code' => 'code',
+        'detail' => 'detail'
     ];
 
     /**
@@ -176,7 +180,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'chrt_ids' => 'setChrtIds'
+        'code' => 'setCode',
+        'detail' => 'setDetail'
     ];
 
     /**
@@ -185,7 +190,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'chrt_ids' => 'getChrtIds'
+        'code' => 'getCode',
+        'detail' => 'getDetail'
     ];
 
     /**
@@ -245,7 +251,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('chrt_ids', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('detail', $data ?? [], null);
     }
 
     /**
@@ -275,17 +282,12 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
     {
         $invalidProperties = [];
 
-        if ($this->container['chrt_ids'] === null) {
-            $invalidProperties[] = "'chrt_ids' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
         }
-        if ((count($this->container['chrt_ids']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'chrt_ids', number of items must be less than or equal to 1000.";
+        if ($this->container['detail'] === null) {
+            $invalidProperties[] = "'detail' can't be null";
         }
-
-        if ((count($this->container['chrt_ids']) < 1)) {
-            $invalidProperties[] = "invalid value for 'chrt_ids', number of items must be greater than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -302,35 +304,55 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest implements ModelInterf
 
 
     /**
-     * Gets chrt_ids
+     * Gets code
      *
-     * @return int[]
+     * @return int
      */
-    public function getChrtIds()
+    public function getCode()
     {
-        return $this->container['chrt_ids'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets chrt_ids
+     * Sets code
      *
-     * @param int[] $chrt_ids Список ID размеров товаров в системе WB
+     * @param int $code Код ошибки
      *
      * @return self
      */
-    public function setChrtIds($chrt_ids)
+    public function setCode($code)
     {
-        if (is_null($chrt_ids)) {
-            throw new \InvalidArgumentException('non-nullable chrt_ids cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
+        $this->container['code'] = $code;
 
-        if ((count($chrt_ids) > 1000)) {
-            throw new \InvalidArgumentException('invalid value for $chrt_ids when calling PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest., number of items must be less than or equal to 1000.');
+        return $this;
+    }
+
+    /**
+     * Gets detail
+     *
+     * @return string
+     */
+    public function getDetail()
+    {
+        return $this->container['detail'];
+    }
+
+    /**
+     * Sets detail
+     *
+     * @param string $detail Дополнительная информация об ошибке:   - `Not Found` — ID размера товара не найден или указан ID размера немалогабаритного товара
+     *
+     * @return self
+     */
+    public function setDetail($detail)
+    {
+        if (is_null($detail)) {
+            throw new \InvalidArgumentException('non-nullable detail cannot be null');
         }
-        if ((count($chrt_ids) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $chrt_ids when calling PostMarketplaceV3FbsSettingsAutoreturnsItemsRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['chrt_ids'] = $chrt_ids;
+        $this->container['detail'] = $detail;
 
         return $this;
     }

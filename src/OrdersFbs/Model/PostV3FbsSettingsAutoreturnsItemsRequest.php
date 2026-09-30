@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PatchMarketplaceV3FbsSettingsAutoreturnsRequest
+ * PostV3FbsSettingsAutoreturnsItemsRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * PatchMarketplaceV3FbsSettingsAutoreturnsRequest Class Doc Comment
+ * PostV3FbsSettingsAutoreturnsItemsRequest Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostV3FbsSettingsAutoreturnsItemsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'patchMarketplaceV3FbsSettingsAutoreturns_request';
+    protected static $openAPIModelName = 'postV3FbsSettingsAutoreturnsItems_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string'
+        'chrt_ids' => 'int[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null
+        'chrt_ids' => 'uint64'
     ];
 
     /**
@@ -78,7 +78,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false
+        'chrt_ids' => false
     ];
 
     /**
@@ -167,7 +167,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type'
+        'chrt_ids' => 'chrtIds'
     ];
 
     /**
@@ -176,7 +176,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType'
+        'chrt_ids' => 'setChrtIds'
     ];
 
     /**
@@ -185,7 +185,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType'
+        'chrt_ids' => 'getChrtIds'
     ];
 
     /**
@@ -229,23 +229,6 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
         return self::$openAPIModelName;
     }
 
-    public const TYPE_ALL_TO_WAREHOUSE = 'allToWarehouse';
-    public const TYPE_ALL_TO_PICKUP_POINT = 'allToPickupPoint';
-    public const TYPE_MANUAL = 'manual';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_ALL_TO_WAREHOUSE,
-            self::TYPE_ALL_TO_PICKUP_POINT,
-            self::TYPE_MANUAL,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -262,7 +245,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('chrt_ids', $data ?? [], null);
     }
 
     /**
@@ -292,16 +275,15 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['chrt_ids'] === null) {
+            $invalidProperties[] = "'chrt_ids' can't be null";
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
+        if ((count($this->container['chrt_ids']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'chrt_ids', number of items must be less than or equal to 1000.";
+        }
+
+        if ((count($this->container['chrt_ids']) < 1)) {
+            $invalidProperties[] = "invalid value for 'chrt_ids', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -320,38 +302,35 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsRequest implements ModelInterface,
 
 
     /**
-     * Gets type
+     * Gets chrt_ids
      *
-     * @return string
+     * @return int[]
      */
-    public function getType()
+    public function getChrtIds()
     {
-        return $this->container['type'];
+        return $this->container['chrt_ids'];
     }
 
     /**
-     * Sets type
+     * Sets chrt_ids
      *
-     * @param string $type Тип автовозврата малогабаритных товаров:   - `allToWarehouse` — отправлять все товары на склад WB, кроме товаров тех [предметов](https://dev.wildberries.ru/openapi/orders-fbs#tag/autoreturnSettings/operation/getMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestricted), которые автоматически возвращаются в ПВЗ   - `allToPickupPoint` — отправлять все товары на пункт выдачи заказов   - `manual` — использовать ручные настройки
+     * @param int[] $chrt_ids Список ID размеров товаров в системе WB
      *
      * @return self
      */
-    public function setType($type)
+    public function setChrtIds($chrt_ids)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($chrt_ids)) {
+            throw new \InvalidArgumentException('non-nullable chrt_ids cannot be null');
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
+
+        if ((count($chrt_ids) > 1000)) {
+            throw new \InvalidArgumentException('invalid value for $chrt_ids when calling PostV3FbsSettingsAutoreturnsItemsRequest., number of items must be less than or equal to 1000.');
         }
-        $this->container['type'] = $type;
+        if ((count($chrt_ids) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $chrt_ids when calling PostV3FbsSettingsAutoreturnsItemsRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['chrt_ids'] = $chrt_ids;
 
         return $this;
     }

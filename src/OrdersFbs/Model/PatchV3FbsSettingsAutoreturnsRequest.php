@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GetMarketplaceV3FbsSettingsAutoreturnsResponse200
+ * PatchV3FbsSettingsAutoreturnsRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * GetMarketplaceV3FbsSettingsAutoreturnsResponse200 Class Doc Comment
+ * PatchV3FbsSettingsAutoreturnsRequest Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetMarketplaceV3FbsSettingsAutoreturnsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class PatchV3FbsSettingsAutoreturnsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GetMarketplaceV3FbsSettingsAutoreturnsResponse200 implements ModelInterfac
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetMarketplaceV3FbsSettingsAutoreturnsResponse200';
+    protected static $openAPIModelName = 'patchV3FbsSettingsAutoreturns_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -332,7 +332,7 @@ class GetMarketplaceV3FbsSettingsAutoreturnsResponse200 implements ModelInterfac
     /**
      * Sets type
      *
-     * @param string $type Тип автовозврата:   - `allToWarehouse` — все товары отправляются на склад WB, кроме товаров тех [предметов](https://dev.wildberries.ru/openapi/orders-fbs#tag/autoreturnSettings/operation/getMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestricted), которые автоматически возвращаются в ПВЗ   - `allToPickupPoint` — все товары отправляются на пункт выдачи заказов   - `manual` — используются ручные настройки
+     * @param string $type Тип автовозврата малогабаритных товаров:   - `allToWarehouse` — отправлять все товары на склад WB, кроме товаров тех [предметов](https://dev.wildberries.ru/openapi/orders-fbs#tag/autoreturnSettings/operation/getV3FbsSettingsAutoreturnsSubcategoriesRestricted), которые автоматически возвращаются в ПВЗ   - `allToPickupPoint` — отправлять все товары на пункт выдачи заказов   - `manual` — использовать ручные настройки
      *
      * @return self
      */

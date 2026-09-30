@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GetFeedbacksV1PinsResponse200
+ * PostV1PinsResponse200
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Communications\ObjectSerializer;
 
 /**
- * GetFeedbacksV1PinsResponse200 Class Doc Comment
+ * PostV1PinsResponse200 Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Communications
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Communications\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetFeedbacksV1PinsResponse200';
+    protected static $openAPIModelName = 'PostV1PinsResponse200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]',
-        'next' => 'int'
+        'data' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]'
     ];
 
     /**
@@ -70,8 +69,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'next' => null
+        'data' => null
     ];
 
     /**
@@ -80,8 +78,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'data' => false,
-        'next' => false
+        'data' => false
     ];
 
     /**
@@ -170,8 +167,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'next' => 'next'
+        'data' => 'data'
     ];
 
     /**
@@ -180,8 +176,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'next' => 'setNext'
+        'data' => 'setData'
     ];
 
     /**
@@ -190,8 +185,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'next' => 'getNext'
+        'data' => 'getData'
     ];
 
     /**
@@ -252,7 +246,6 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('next', $data ?? [], null);
     }
 
     /**
@@ -303,7 +296,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]
      */
     public function getData()
     {
@@ -313,7 +306,7 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[] $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[] $data data
      *
      * @return self
      */
@@ -323,33 +316,6 @@ class GetFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Jso
             throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets next
-     *
-     * @return int|null
-     */
-    public function getNext()
-    {
-        return $this->container['next'];
-    }
-
-    /**
-     * Sets next
-     *
-     * @param int|null $next Параметр пагинации. Укажите это значение в запросе, чтобы получить следующий пакет данных. Если поле отсутствует, вы получили все данные
-     *
-     * @return self
-     */
-    public function setNext($next)
-    {
-        if (is_null($next)) {
-            throw new \InvalidArgumentException('non-nullable next cannot be null');
-        }
-        $this->container['next'] = $next;
 
         return $this;
     }

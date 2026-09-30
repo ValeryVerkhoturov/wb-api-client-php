@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PostFeedbacksV1PinsResponse200
+ * GetV1PinsLimitsResponse200
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Communications\ObjectSerializer;
 
 /**
- * PostFeedbacksV1PinsResponse200 Class Doc Comment
+ * GetV1PinsLimitsResponse200 Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Communications
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Communications\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetV1PinsLimitsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PostFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PostFeedbacksV1PinsResponse200';
+    protected static $openAPIModelName = 'GetV1PinsLimitsResponse200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class PostFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]'
+        'data' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData'
     ];
 
     /**
@@ -296,7 +296,7 @@ class PostFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData
      */
     public function getData()
     {
@@ -306,7 +306,7 @@ class PostFeedbacksV1PinsResponse200 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[] $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData $data data
      *
      * @return self
      */

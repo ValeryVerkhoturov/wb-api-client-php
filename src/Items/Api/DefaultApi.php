@@ -102,10 +102,19 @@ class DefaultApi
         'getV2DirectoryKinds' => [
             'application/json',
         ],
+        'getV2DirectoryOkpd' => [
+            'application/json',
+        ],
+        'getV2DirectoryOkpdAll' => [
+            'application/json',
+        ],
         'getV2DirectorySeasons' => [
             'application/json',
         ],
         'getV2DirectoryTnved' => [
+            'application/json',
+        ],
+        'getV2DirectoryTnvedAll' => [
             'application/json',
         ],
         'getV2DirectoryVat' => [
@@ -5141,6 +5150,1061 @@ class DefaultApi
     }
 
     /**
+     * Operation getV2DirectoryOkpd
+     *
+     * Код ОКПД2 предмета
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $subject_id ID предмета (required)
+     * @param  string $search Поиск по фрагменту кода ОКПД2. Работает только в паре с &#x60;subjectId&#x60;. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpd'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     */
+    public function getV2DirectoryOkpd($subject_id, $search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpd'][0])
+    {
+        list($response) = $this->getV2DirectoryOkpdWithHttpInfo($subject_id, $search, $locale, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdWithHttpInfo
+     *
+     * Код ОКПД2 предмета
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $subject_id ID предмета (required)
+     * @param  string $search Поиск по фрагменту кода ОКПД2. Работает только в паре с &#x60;subjectId&#x60;. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpd'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV2DirectoryOkpdWithHttpInfo($subject_id, $search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpd'][0])
+    {
+        $request = $this->getV2DirectoryOkpdRequest($subject_id, $search, $locale, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdAsync
+     *
+     * Код ОКПД2 предмета
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $subject_id ID предмета (required)
+     * @param  string $search Поиск по фрагменту кода ОКПД2. Работает только в паре с &#x60;subjectId&#x60;. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpd'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2DirectoryOkpdAsync($subject_id, $search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpd'][0])
+    {
+        return $this->getV2DirectoryOkpdAsyncWithHttpInfo($subject_id, $search, $locale, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdAsyncWithHttpInfo
+     *
+     * Код ОКПД2 предмета
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $subject_id ID предмета (required)
+     * @param  string $search Поиск по фрагменту кода ОКПД2. Работает только в паре с &#x60;subjectId&#x60;. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpd'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2DirectoryOkpdAsyncWithHttpInfo($subject_id, $search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpd'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200';
+        $request = $this->getV2DirectoryOkpdRequest($subject_id, $search, $locale, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV2DirectoryOkpd'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $subject_id ID предмета (required)
+     * @param  string $search Поиск по фрагменту кода ОКПД2. Работает только в паре с &#x60;subjectId&#x60;. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpd'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV2DirectoryOkpdRequest($subject_id, $search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpd'][0])
+    {
+
+        // verify the required parameter 'subject_id' is set
+        if ($subject_id === null || (is_array($subject_id) && count($subject_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $subject_id when calling getV2DirectoryOkpd'
+            );
+        }
+
+
+
+
+        $resourcePath = '/api/content/v2/directory/okpd';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $subject_id,
+            'subjectId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $locale,
+            'locale', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV2DirectoryOkpd();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV2DirectoryOkpd
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV2DirectoryOkpd(): array
+    {
+        return [
+            [
+                "url" => "https://content-api.wildberries.ru",
+                "description" => "**Prod**",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdAll
+     *
+     * Список кодов ОКПД2
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  float $search Поиск по фрагменту кода ОКПД2. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpdAll'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     */
+    public function getV2DirectoryOkpdAll($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpdAll'][0])
+    {
+        list($response) = $this->getV2DirectoryOkpdAllWithHttpInfo($search, $locale, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdAllWithHttpInfo
+     *
+     * Список кодов ОКПД2
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  float $search Поиск по фрагменту кода ОКПД2. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpdAll'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV2DirectoryOkpdAllWithHttpInfo($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpdAll'][0])
+    {
+        $request = $this->getV2DirectoryOkpdAllRequest($search, $locale, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdAllAsync
+     *
+     * Список кодов ОКПД2
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  float $search Поиск по фрагменту кода ОКПД2. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpdAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2DirectoryOkpdAllAsync($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpdAll'][0])
+    {
+        return $this->getV2DirectoryOkpdAllAsyncWithHttpInfo($search, $locale, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV2DirectoryOkpdAllAsyncWithHttpInfo
+     *
+     * Список кодов ОКПД2
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  float $search Поиск по фрагменту кода ОКПД2. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpdAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2DirectoryOkpdAllAsyncWithHttpInfo($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpdAll'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdAllResponse200';
+        $request = $this->getV2DirectoryOkpdAllRequest($search, $locale, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV2DirectoryOkpdAll'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  float $search Поиск по фрагменту кода ОКПД2. Укажите первые цифры кода через точку, чтобы найти код по этому фрагменту (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryOkpdAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV2DirectoryOkpdAllRequest($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryOkpdAll'][0])
+    {
+
+
+
+
+        $resourcePath = '/api/content/v2/directory/okpd/all';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $locale,
+            'locale', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV2DirectoryOkpdAll();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV2DirectoryOkpdAll
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV2DirectoryOkpdAll(): array
+    {
+        return [
+            [
+                "url" => "https://content-api.wildberries.ru",
+                "description" => "**Prod**",
+            ]
+        ];
+    }
+
+    /**
      * Operation getV2DirectorySeasons
      *
      * Сезон
@@ -5654,7 +6718,7 @@ class DefaultApi
     /**
      * Operation getV2DirectoryTnved
      *
-     * ТНВЭД-код
+     * Код ТН ВЭД предмета
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5662,7 +6726,7 @@ class DefaultApi
      * URL: https://content-api-sandbox.wildberries.ru
      *
      * @param  int $subject_id ID предмета (required)
-     * @param  int $search Поиск по ТНВЭД-коду. Работает только в паре с &#x60;subjectID&#x60; (optional)
+     * @param  int $search Поиск по коду ТН ВЭД. Работает только в паре с &#x60;subjectID&#x60; (optional)
      * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице. Данные песочницы возвращаются только на русском языке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -5681,7 +6745,7 @@ class DefaultApi
     /**
      * Operation getV2DirectoryTnvedWithHttpInfo
      *
-     * ТНВЭД-код
+     * Код ТН ВЭД предмета
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5689,7 +6753,7 @@ class DefaultApi
      * URL: https://content-api-sandbox.wildberries.ru
      *
      * @param  int $subject_id ID предмета (required)
-     * @param  int $search Поиск по ТНВЭД-коду. Работает только в паре с &#x60;subjectID&#x60; (optional)
+     * @param  int $search Поиск по коду ТН ВЭД. Работает только в паре с &#x60;subjectID&#x60; (optional)
      * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице. Данные песочницы возвращаются только на русском языке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -5955,7 +7019,7 @@ class DefaultApi
     /**
      * Operation getV2DirectoryTnvedAsync
      *
-     * ТНВЭД-код
+     * Код ТН ВЭД предмета
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5963,7 +7027,7 @@ class DefaultApi
      * URL: https://content-api-sandbox.wildberries.ru
      *
      * @param  int $subject_id ID предмета (required)
-     * @param  int $search Поиск по ТНВЭД-коду. Работает только в паре с &#x60;subjectID&#x60; (optional)
+     * @param  int $search Поиск по коду ТН ВЭД. Работает только в паре с &#x60;subjectID&#x60; (optional)
      * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице. Данные песочницы возвращаются только на русском языке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -5985,7 +7049,7 @@ class DefaultApi
     /**
      * Operation getV2DirectoryTnvedAsyncWithHttpInfo
      *
-     * ТНВЭД-код
+     * Код ТН ВЭД предмета
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5993,7 +7057,7 @@ class DefaultApi
      * URL: https://content-api-sandbox.wildberries.ru
      *
      * @param  int $subject_id ID предмета (required)
-     * @param  int $search Поиск по ТНВЭД-коду. Работает только в паре с &#x60;subjectID&#x60; (optional)
+     * @param  int $search Поиск по коду ТН ВЭД. Работает только в паре с &#x60;subjectID&#x60; (optional)
      * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице. Данные песочницы возвращаются только на русском языке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -6052,7 +7116,7 @@ class DefaultApi
      * URL: https://content-api-sandbox.wildberries.ru
      *
      * @param  int $subject_id ID предмета (required)
-     * @param  int $search Поиск по ТНВЭД-коду. Работает только в паре с &#x60;subjectID&#x60; (optional)
+     * @param  int $search Поиск по коду ТН ВЭД. Работает только в паре с &#x60;subjectID&#x60; (optional)
      * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице. Данные песочницы возвращаются только на русском языке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -6194,6 +7258,523 @@ class DefaultApi
             [
                 "url" => "https://content-api-sandbox.wildberries.ru",
                 "description" => "**Sandbox**",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV2DirectoryTnvedAll
+     *
+     * Список кодов ТН ВЭД
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $search Поиск по первым цифрам кода ТН ВЭД. Укажите не более 10 символов (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryTnvedAll'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     */
+    public function getV2DirectoryTnvedAll($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryTnvedAll'][0])
+    {
+        list($response) = $this->getV2DirectoryTnvedAllWithHttpInfo($search, $locale, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV2DirectoryTnvedAllWithHttpInfo
+     *
+     * Список кодов ТН ВЭД
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $search Поиск по первым цифрам кода ТН ВЭД. Укажите не более 10 символов (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryTnvedAll'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV2DirectoryTnvedAllWithHttpInfo($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryTnvedAll'][0])
+    {
+        $request = $this->getV2DirectoryTnvedAllRequest($search, $locale, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV2DirectoryTnvedAllAsync
+     *
+     * Список кодов ТН ВЭД
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $search Поиск по первым цифрам кода ТН ВЭД. Укажите не более 10 символов (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryTnvedAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2DirectoryTnvedAllAsync($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryTnvedAll'][0])
+    {
+        return $this->getV2DirectoryTnvedAllAsyncWithHttpInfo($search, $locale, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV2DirectoryTnvedAllAsyncWithHttpInfo
+     *
+     * Список кодов ТН ВЭД
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $search Поиск по первым цифрам кода ТН ВЭД. Укажите не более 10 символов (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryTnvedAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2DirectoryTnvedAllAsyncWithHttpInfo($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryTnvedAll'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryTnvedAllResponse200';
+        $request = $this->getV2DirectoryTnvedAllRequest($search, $locale, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV2DirectoryTnvedAll'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://content-api.wildberries.ru
+     *
+     * @param  int $search Поиск по первым цифрам кода ТН ВЭД. Укажите не более 10 символов (optional)
+     * @param  string $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский (optional, default to 'ru')
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2DirectoryTnvedAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV2DirectoryTnvedAllRequest($search = null, $locale = 'ru', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2DirectoryTnvedAll'][0])
+    {
+
+
+
+
+        $resourcePath = '/api/content/v2/directory/tnved/all';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $locale,
+            'locale', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV2DirectoryTnvedAll();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV2DirectoryTnvedAll
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV2DirectoryTnvedAll(): array
+    {
+        return [
+            [
+                "url" => "https://content-api.wildberries.ru",
+                "description" => "**Prod**",
             ]
         ];
     }

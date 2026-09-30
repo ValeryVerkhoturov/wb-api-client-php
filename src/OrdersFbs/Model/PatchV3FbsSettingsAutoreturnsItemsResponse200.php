@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200
+ * PatchV3FbsSettingsAutoreturnsItemsResponse200
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200 Class Doc Comment
+ * PatchV3FbsSettingsAutoreturnsItemsResponse200 Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
+class PatchV3FbsSettingsAutoreturnsItemsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200 implements ModelI
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200';
+    protected static $openAPIModelName = 'PatchV3FbsSettingsAutoreturnsItemsResponse200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200 implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'results' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]'
+        'results' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200 implements ModelI
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]
      */
     public function getResults()
     {
@@ -306,7 +306,7 @@ class PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200 implements ModelI
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[] $results results
      *
      * @return self
      */

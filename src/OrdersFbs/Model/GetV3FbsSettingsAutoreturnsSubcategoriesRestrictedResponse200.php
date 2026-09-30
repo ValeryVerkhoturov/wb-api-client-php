@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner
+ * GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner Class Doc Comment
+ * GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200_results_inner_error_inner';
+    protected static $openAPIModelName = 'GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
-        'detail' => 'string'
+        'next' => 'int',
+        'data' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'detail' => null
+        'next' => 'int64',
+        'data' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'detail' => false
+        'next' => true,
+        'data' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'detail' => 'detail'
+        'next' => 'next',
+        'data' => 'data'
     ];
 
     /**
@@ -180,8 +180,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'detail' => 'setDetail'
+        'next' => 'setNext',
+        'data' => 'setData'
     ];
 
     /**
@@ -190,8 +190,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'detail' => 'getDetail'
+        'next' => 'getNext',
+        'data' => 'getData'
     ];
 
     /**
@@ -251,8 +251,8 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('detail', $data ?? [], null);
+        $this->setIfExists('next', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -282,11 +282,11 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['next'] === null) {
+            $invalidProperties[] = "'next' can't be null";
         }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,55 +304,62 @@ class PostMarketplaceV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorIn
 
 
     /**
-     * Gets code
+     * Gets next
      *
      * @return int
      */
-    public function getCode()
+    public function getNext()
     {
-        return $this->container['code'];
+        return $this->container['next'];
     }
 
     /**
-     * Sets code
+     * Sets next
      *
-     * @param int $code Код ошибки
+     * @param int $next Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
      *
      * @return self
      */
-    public function setCode($code)
+    public function setNext($next)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($next)) {
+            array_push($this->openAPINullablesSetToNull, 'next');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('next', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['code'] = $code;
+        $this->container['next'] = $next;
 
         return $this;
     }
 
     /**
-     * Gets detail
+     * Gets data
      *
-     * @return string
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]
      */
-    public function getDetail()
+    public function getData()
     {
-        return $this->container['detail'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets detail
+     * Sets data
      *
-     * @param string $detail Дополнительная информация об ошибке
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[] $data Список ID предметов, товары которых не хранятся на складах WB
      *
      * @return self
      */
-    public function setDetail($detail)
+    public function setData($data)
     {
-        if (is_null($detail)) {
-            throw new \InvalidArgumentException('non-nullable detail cannot be null');
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-        $this->container['detail'] = $detail;
+        $this->container['data'] = $data;
 
         return $this;
     }
