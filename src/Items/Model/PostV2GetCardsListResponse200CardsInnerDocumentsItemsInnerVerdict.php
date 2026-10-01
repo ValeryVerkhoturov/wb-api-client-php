@@ -36,7 +36,7 @@ use ValeryVerkhoturov\WbApiClient\Items\ObjectSerializer;
  * PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict Class Doc Comment
  *
  * @category Class
- * @description Результат проверки документа. Возвращается, когда проверка завершена
+ * @description Результат проверки документа. Возвращается, когда проверка документа завершена
  * @package  ValeryVerkhoturov\WbApiClient\Items
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

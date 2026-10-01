@@ -67,7 +67,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'dimensions' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerDimensions',
         'sizes' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerSizesInner[]',
         'characteristics' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUpdateRequestInnerCharacteristicsInner[]',
-        'documents' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadRequestInnerVariantsInnerDocuments'
+        'documents' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerDocuments'
     ];
 
     /**
@@ -435,7 +435,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
     /**
      * Sets kiz_marked
      *
-     * @param bool|null $kiz_marked Подтверждение, что на товар нанесён обязательный код маркировки [Честного знака](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.   - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.  Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./item-management#tag/listings/operation/postV2GetCardsList), поле ответа `needKiz`
+     * @param bool|null $kiz_marked Подтверждение, что на товар нанесён обязательный код маркировки [Честного знака](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки   - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт проверку, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар  Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./item-management#tag/listings/operation/postV2GetCardsList), поле ответа `needKiz`
      *
      * @return self
      */
@@ -618,7 +618,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
     /**
      * Gets documents
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadRequestInnerVariantsInnerDocuments|null
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerDocuments|null
      */
     public function getDocuments()
     {
@@ -628,7 +628,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
     /**
      * Sets documents
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadRequestInnerVariantsInnerDocuments|null $documents documents
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerDocuments|null $documents documents
      *
      * @return self
      */

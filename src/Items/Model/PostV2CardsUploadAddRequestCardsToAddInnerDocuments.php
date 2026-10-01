@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PostV2CardsUpdateRequestInnerDocumentsItemsInner
+ * PostV2CardsUploadAddRequestCardsToAddInnerDocuments
  *
  * PHP version 7.4
  *
@@ -33,15 +33,16 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Items\ObjectSerializer;
 
 /**
- * PostV2CardsUpdateRequestInnerDocumentsItemsInner Class Doc Comment
+ * PostV2CardsUploadAddRequestCardsToAddInnerDocuments Class Doc Comment
  *
  * @category Class
+ * @description Документы
  * @package  ValeryVerkhoturov\WbApiClient\Items
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostV2CardsUploadAddRequestCardsToAddInnerDocuments implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postV2CardsUpdate_request_inner_documents_items_inner';
+    protected static $openAPIModelName = 'postV2CardsUploadAdd_request_cardsToAdd_inner_documents';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,15 +59,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'int',
-        'number' => 'string',
-        'product_number' => 'string',
-        'trade_name' => 'string',
-        'applicant' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'is_endless' => 'bool',
-        'id' => 'string'
+        'items' => '\ValeryVerkhoturov\WbApiClient\Items\Model\DocumentsRequest[]',
+        'exclude_documents' => 'bool'
     ];
 
     /**
@@ -77,15 +71,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'number' => null,
-        'product_number' => null,
-        'trade_name' => null,
-        'applicant' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'is_endless' => null,
-        'id' => null
+        'items' => null,
+        'exclude_documents' => null
     ];
 
     /**
@@ -94,15 +81,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
-        'number' => false,
-        'product_number' => false,
-        'trade_name' => false,
-        'applicant' => false,
-        'start_date' => false,
-        'end_date' => false,
-        'is_endless' => false,
-        'id' => false
+        'items' => false,
+        'exclude_documents' => false
     ];
 
     /**
@@ -191,15 +171,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'number' => 'number',
-        'product_number' => 'productNumber',
-        'trade_name' => 'tradeName',
-        'applicant' => 'applicant',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'is_endless' => 'isEndless',
-        'id' => 'id'
+        'items' => 'items',
+        'exclude_documents' => 'excludeDocuments'
     ];
 
     /**
@@ -208,15 +181,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'number' => 'setNumber',
-        'product_number' => 'setProductNumber',
-        'trade_name' => 'setTradeName',
-        'applicant' => 'setApplicant',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'is_endless' => 'setIsEndless',
-        'id' => 'setId'
+        'items' => 'setItems',
+        'exclude_documents' => 'setExcludeDocuments'
     ];
 
     /**
@@ -225,15 +191,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'number' => 'getNumber',
-        'product_number' => 'getProductNumber',
-        'trade_name' => 'getTradeName',
-        'applicant' => 'getApplicant',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'is_endless' => 'getIsEndless',
-        'id' => 'getId'
+        'items' => 'getItems',
+        'exclude_documents' => 'getExcludeDocuments'
     ];
 
     /**
@@ -293,15 +252,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('number', $data ?? [], null);
-        $this->setIfExists('product_number', $data ?? [], null);
-        $this->setIfExists('trade_name', $data ?? [], null);
-        $this->setIfExists('applicant', $data ?? [], null);
-        $this->setIfExists('start_date', $data ?? [], null);
-        $this->setIfExists('end_date', $data ?? [], null);
-        $this->setIfExists('is_endless', $data ?? [], null);
-        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('exclude_documents', $data ?? [], false);
     }
 
     /**
@@ -347,244 +299,55 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
 
 
     /**
-     * Gets type
+     * Gets items
      *
-     * @return int|null
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\DocumentsRequest[]|null
      */
-    public function getType()
+    public function getItems()
     {
-        return $this->container['type'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets type
+     * Sets items
      *
-     * @param int|null $type Тип документа. Типы документов, которые вы можете добавить для товара, указаны в [характеристиках предмета](./item-management#tag/categoriesSubcategoriesAndCharacteristics/operation/getV2ObjectCharcsSubjectId) — поле `charcID`. Возможные типы документов: - `1` — Сертификат соответствия. Можно указать для `charcID`: 15001136, 15001137, 15001138 - `2` — Декларация о соответствии. Можно указать для `charcID`: 15001135, 15001137, 15001138 - `3` — Свидетельство о государственной регистрации (СГР). Можно указать для `charcID`: 62945173, 15000785, 15004302 - `4` — Регистрационное удостоверение (РУ) на медицинские изделия. Можно указать для `charcID`: 15001574, 15002355, 15002356, 15002357 - `5` — Регистрационное удостоверение Республики Беларусь. Можно указать для `charcID`: 15003071, 15003939 - `7` — Данные о регистрации пестицида. Можно указать для `charcID`: 15003924, 15003925 - `8` — Данные о регистрации агрохимиката. Можно указать для `charcID`: 15003920, 15003921 - `9` — Регистрационное удостоверение (РУ) на лекарственные препараты. Можно указать для `charcID`: 1897013, 15004284
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\DocumentsRequest[]|null $items Список разрешительных документов и их данные. Тип документа `type` обязателен для каждого документа
      *
      * @return self
      */
-    public function setType($type)
+    public function setItems($items)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
-        $this->container['type'] = $type;
+        $this->container['items'] = $items;
 
         return $this;
     }
 
     /**
-     * Gets number
-     *
-     * @return string|null
-     */
-    public function getNumber()
-    {
-        return $this->container['number'];
-    }
-
-    /**
-     * Sets number
-     *
-     * @param string|null $number Номер документа
-     *
-     * @return self
-     */
-    public function setNumber($number)
-    {
-        if (is_null($number)) {
-            throw new \InvalidArgumentException('non-nullable number cannot be null');
-        }
-        $this->container['number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_number
-     *
-     * @return string|null
-     */
-    public function getProductNumber()
-    {
-        return $this->container['product_number'];
-    }
-
-    /**
-     * Sets product_number
-     *
-     * @param string|null $product_number Дополнительный номер документа
-     *
-     * @return self
-     */
-    public function setProductNumber($product_number)
-    {
-        if (is_null($product_number)) {
-            throw new \InvalidArgumentException('non-nullable product_number cannot be null');
-        }
-        $this->container['product_number'] = $product_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets trade_name
-     *
-     * @return string|null
-     */
-    public function getTradeName()
-    {
-        return $this->container['trade_name'];
-    }
-
-    /**
-     * Sets trade_name
-     *
-     * @param string|null $trade_name Торговое наименование
-     *
-     * @return self
-     */
-    public function setTradeName($trade_name)
-    {
-        if (is_null($trade_name)) {
-            throw new \InvalidArgumentException('non-nullable trade_name cannot be null');
-        }
-        $this->container['trade_name'] = $trade_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets applicant
-     *
-     * @return string|null
-     */
-    public function getApplicant()
-    {
-        return $this->container['applicant'];
-    }
-
-    /**
-     * Sets applicant
-     *
-     * @param string|null $applicant Представитель изготовителя медицинского изделия
-     *
-     * @return self
-     */
-    public function setApplicant($applicant)
-    {
-        if (is_null($applicant)) {
-            throw new \InvalidArgumentException('non-nullable applicant cannot be null');
-        }
-        $this->container['applicant'] = $applicant;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date Дата и время начала срока действия документа
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        if (is_null($start_date)) {
-            throw new \InvalidArgumentException('non-nullable start_date cannot be null');
-        }
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime|null
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime|null $end_date Дата и время окончания срока действия документа
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        if (is_null($end_date)) {
-            throw new \InvalidArgumentException('non-nullable end_date cannot be null');
-        }
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_endless
+     * Gets exclude_documents
      *
      * @return bool|null
      */
-    public function getIsEndless()
+    public function getExcludeDocuments()
     {
-        return $this->container['is_endless'];
+        return $this->container['exclude_documents'];
     }
 
     /**
-     * Sets is_endless
+     * Sets exclude_documents
      *
-     * @param bool|null $is_endless Бессрочный ли документ:   - `true` — да, документ бессрочный   - `false` — нет, у документа есть срок действия
+     * @param bool|null $exclude_documents Подтверждение продавца, что для товара не требуются разрешительные документы:   - `true` —  продавец подтверждает, что документы не требуются. Все значения, переданные в `documents`, будут заменены на пустые значения   - `false` —  продавец не подтверждает, что документы не требуются  Обязательность документов проверяется при создании и изменении карточки товара. Если для товара требуются документы и указано значение `true`, карточка не пройдёт проверку
      *
      * @return self
      */
-    public function setIsEndless($is_endless)
+    public function setExcludeDocuments($exclude_documents)
     {
-        if (is_null($is_endless)) {
-            throw new \InvalidArgumentException('non-nullable is_endless cannot be null');
+        if (is_null($exclude_documents)) {
+            throw new \InvalidArgumentException('non-nullable exclude_documents cannot be null');
         }
-        $this->container['is_endless'] = $is_endless;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id ID документа, прикреплённого к карточке. Укажите `id`, чтобы внести изменения в прикреплённый ранее документ. ID документа указан в [списке карточек товаров](https://dev.wildberries.ru/item-management#tag/listings/operation/postV2GetCardsList). Чтобы добавить новый документ, указывать `id` не нужно.
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
+        $this->container['exclude_documents'] = $exclude_documents;
 
         return $this;
     }

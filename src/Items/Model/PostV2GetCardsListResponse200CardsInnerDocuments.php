@@ -36,7 +36,7 @@ use ValeryVerkhoturov\WbApiClient\Items\ObjectSerializer;
  * PostV2GetCardsListResponse200CardsInnerDocuments Class Doc Comment
  *
  * @category Class
- * @description Документы
+ * @description Документы, прикреплённые к карточке товара. Результаты проверки каждого документа указаны в &#x60;items&#x60;. Результат проверки всей карточки товара указан в &#x60;overallVerdict&#x60;
  * @package  ValeryVerkhoturov\WbApiClient\Items
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -318,7 +318,7 @@ class PostV2GetCardsListResponse200CardsInnerDocuments implements ModelInterface
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner[]|null $items Список документов
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner[]|null $items Список документов и результаты проверки каждого документа
      *
      * @return self
      */
@@ -372,7 +372,7 @@ class PostV2GetCardsListResponse200CardsInnerDocuments implements ModelInterface
     /**
      * Sets exclude_documents
      *
-     * @param bool|null $exclude_documents Исключены ли документы из проверки карточки товара:   - `true` — да, документы не проверяются при проверке карточки   - `false` — нет, документы проверяются при проверке карточки
+     * @param bool|null $exclude_documents Подтверждение продавца, что для товара не требуются разрешительные документы:   - `true` —  продавец подтверждает, что документы не требуются. Все значения, переданные в `documents`, будут заменены на пустые значения   - `false` —  продавец не подтверждает, что документы не требуются  Обязательность документов проверяется при создании и изменении карточки товара. Если для товара требуются документы и указано значение `true`, карточка не пройдёт проверку
      *
      * @return self
      */
