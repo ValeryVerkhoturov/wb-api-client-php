@@ -66,6 +66,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         'vendor_code' => 'string',
         'brand' => 'string',
         'title' => 'string',
+        'gtin' => 'string',
         'description' => 'string',
         'need_kiz' => 'bool',
         'kiz_marked' => 'bool',
@@ -97,6 +98,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         'vendor_code' => null,
         'brand' => null,
         'title' => null,
+        'gtin' => null,
         'description' => null,
         'need_kiz' => null,
         'kiz_marked' => null,
@@ -126,6 +128,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         'vendor_code' => false,
         'brand' => false,
         'title' => false,
+        'gtin' => false,
         'description' => false,
         'need_kiz' => false,
         'kiz_marked' => false,
@@ -235,6 +238,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         'vendor_code' => 'vendorCode',
         'brand' => 'brand',
         'title' => 'title',
+        'gtin' => 'gtin',
         'description' => 'description',
         'need_kiz' => 'needKiz',
         'kiz_marked' => 'kizMarked',
@@ -264,6 +268,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         'vendor_code' => 'setVendorCode',
         'brand' => 'setBrand',
         'title' => 'setTitle',
+        'gtin' => 'setGtin',
         'description' => 'setDescription',
         'need_kiz' => 'setNeedKiz',
         'kiz_marked' => 'setKizMarked',
@@ -293,6 +298,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         'vendor_code' => 'getVendorCode',
         'brand' => 'getBrand',
         'title' => 'getTitle',
+        'gtin' => 'getGtin',
         'description' => 'getDescription',
         'need_kiz' => 'getNeedKiz',
         'kiz_marked' => 'getKizMarked',
@@ -373,6 +379,7 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
         $this->setIfExists('vendor_code', $data ?? [], null);
         $this->setIfExists('brand', $data ?? [], null);
         $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('gtin', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('need_kiz', $data ?? [], null);
         $this->setIfExists('kiz_marked', $data ?? [], false);
@@ -642,6 +649,33 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
             throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets gtin
+     *
+     * @return string|null
+     */
+    public function getGtin()
+    {
+        return $this->container['gtin'];
+    }
+
+    /**
+     * Sets gtin
+     *
+     * @param string|null $gtin Дополнительный GTIN. Поле вернётся только при заполненном дополнительном GTIN.   Только для продавцов из РФ
+     *
+     * @return self
+     */
+    public function setGtin($gtin)
+    {
+        if (is_null($gtin)) {
+            throw new \InvalidArgumentException('non-nullable gtin cannot be null');
+        }
+        $this->container['gtin'] = $gtin;
 
         return $this;
     }

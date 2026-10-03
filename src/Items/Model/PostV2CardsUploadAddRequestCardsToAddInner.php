@@ -63,6 +63,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'kiz_marked' => 'bool',
         'wholesale' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadRequestInnerVariantsInnerWholesale',
         'title' => 'string',
+        'gtin' => 'string',
         'description' => 'string',
         'dimensions' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerDimensions',
         'sizes' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2CardsUploadAddRequestCardsToAddInnerSizesInner[]',
@@ -83,6 +84,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'kiz_marked' => null,
         'wholesale' => null,
         'title' => null,
+        'gtin' => null,
         'description' => null,
         'dimensions' => null,
         'sizes' => null,
@@ -101,6 +103,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'kiz_marked' => false,
         'wholesale' => false,
         'title' => false,
+        'gtin' => false,
         'description' => false,
         'dimensions' => false,
         'sizes' => false,
@@ -199,6 +202,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'kiz_marked' => 'kizMarked',
         'wholesale' => 'wholesale',
         'title' => 'title',
+        'gtin' => 'gtin',
         'description' => 'description',
         'dimensions' => 'dimensions',
         'sizes' => 'sizes',
@@ -217,6 +221,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'kiz_marked' => 'setKizMarked',
         'wholesale' => 'setWholesale',
         'title' => 'setTitle',
+        'gtin' => 'setGtin',
         'description' => 'setDescription',
         'dimensions' => 'setDimensions',
         'sizes' => 'setSizes',
@@ -235,6 +240,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         'kiz_marked' => 'getKizMarked',
         'wholesale' => 'getWholesale',
         'title' => 'getTitle',
+        'gtin' => 'getGtin',
         'description' => 'getDescription',
         'dimensions' => 'getDimensions',
         'sizes' => 'getSizes',
@@ -304,6 +310,7 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         $this->setIfExists('kiz_marked', $data ?? [], false);
         $this->setIfExists('wholesale', $data ?? [], null);
         $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('gtin', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('dimensions', $data ?? [], null);
         $this->setIfExists('sizes', $data ?? [], null);
@@ -503,6 +510,33 @@ class PostV2CardsUploadAddRequestCardsToAddInner implements ModelInterface, Arra
         }
 
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets gtin
+     *
+     * @return string|null
+     */
+    public function getGtin()
+    {
+        return $this->container['gtin'];
+    }
+
+    /**
+     * Sets gtin
+     *
+     * @param string|null $gtin Дополнительный GTIN. Укажите этот параметр, если тот же GTIN вы ранее указывали в одной из карточек товара в параметре `skus`. Нельзя указывать один и тот же GTIN в `skus` для разных карточек или размеров товаров.   Только для продавцов из РФ
+     *
+     * @return self
+     */
+    public function setGtin($gtin)
+    {
+        if (is_null($gtin)) {
+            throw new \InvalidArgumentException('non-nullable gtin cannot be null');
+        }
+        $this->container['gtin'] = $gtin;
 
         return $this;
     }
