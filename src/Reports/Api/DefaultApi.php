@@ -5817,6 +5817,7 @@ class DefaultApi
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsRegionSale200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
+     * @deprecated
      */
     public function getV1AnalyticsRegionSale($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
     {
@@ -5842,6 +5843,7 @@ class DefaultApi
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsRegionSale200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getV1AnalyticsRegionSaleWithHttpInfo($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
     {
@@ -6148,6 +6150,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getV1AnalyticsRegionSaleAsync($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
     {
@@ -6176,6 +6179,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getV1AnalyticsRegionSaleAsyncWithHttpInfo($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
     {
@@ -6233,6 +6237,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getV1AnalyticsRegionSaleRequest($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
     {
