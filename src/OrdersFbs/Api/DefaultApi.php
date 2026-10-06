@@ -150,7 +150,7 @@ class DefaultApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsSettingsAutoreturns(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSettingsAutoreturns'][0])
     {
@@ -173,7 +173,7 @@ class DefaultApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsSettingsAutoreturnsWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSettingsAutoreturns'][0])
     {
@@ -284,6 +284,33 @@ class DefaultApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 406:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 429:
                     if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -376,6 +403,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

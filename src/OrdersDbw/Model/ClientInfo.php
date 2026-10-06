@@ -63,6 +63,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => 'string',
         'full_name' => 'string',
         'additional_phones' => 'string[]',
+        'replacement_additional_phones' => 'string[]',
         'additional_phone_codes' => 'int[]',
         'order_id' => 'int',
         'phone_code' => 'int'
@@ -81,6 +82,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => null,
         'full_name' => null,
         'additional_phones' => null,
+        'replacement_additional_phones' => null,
         'additional_phone_codes' => null,
         'order_id' => null,
         'phone_code' => null
@@ -97,6 +99,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => false,
         'full_name' => false,
         'additional_phones' => false,
+        'replacement_additional_phones' => false,
         'additional_phone_codes' => false,
         'order_id' => false,
         'phone_code' => false
@@ -193,6 +196,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => 'firstName',
         'full_name' => 'fullName',
         'additional_phones' => 'additionalPhones',
+        'replacement_additional_phones' => 'replacementAdditionalPhones',
         'additional_phone_codes' => 'additionalPhoneCodes',
         'order_id' => 'orderId',
         'phone_code' => 'phoneCode'
@@ -209,6 +213,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => 'setFirstName',
         'full_name' => 'setFullName',
         'additional_phones' => 'setAdditionalPhones',
+        'replacement_additional_phones' => 'setReplacementAdditionalPhones',
         'additional_phone_codes' => 'setAdditionalPhoneCodes',
         'order_id' => 'setOrderId',
         'phone_code' => 'setPhoneCode'
@@ -225,6 +230,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => 'getFirstName',
         'full_name' => 'getFullName',
         'additional_phones' => 'getAdditionalPhones',
+        'replacement_additional_phones' => 'getReplacementAdditionalPhones',
         'additional_phone_codes' => 'getAdditionalPhoneCodes',
         'order_id' => 'getOrderId',
         'phone_code' => 'getPhoneCode'
@@ -292,6 +298,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('first_name', $data ?? [], null);
         $this->setIfExists('full_name', $data ?? [], null);
         $this->setIfExists('additional_phones', $data ?? [], null);
+        $this->setIfExists('replacement_additional_phones', $data ?? [], null);
         $this->setIfExists('additional_phone_codes', $data ?? [], null);
         $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('phone_code', $data ?? [], null);
@@ -460,7 +467,7 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets additional_phones
      *
-     * @param string[]|null $additional_phones Дополнительные номера телефонов для связи с покупателем. Используйте, чтобы позвонить покупателю, если недоступен основной номер из `phone`. Пустое значение означает, что номер не указан
+     * @param string[]|null $additional_phones Дополнительные прямые номера телефонов для связи с покупателем. Используйте, чтобы позвонить покупателю, если недоступен основной номер из `phone`. Пустое значение означает, что номер не указан
      *
      * @return self
      */
@@ -470,6 +477,33 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable additional_phones cannot be null');
         }
         $this->container['additional_phones'] = $additional_phones;
+
+        return $this;
+    }
+
+    /**
+     * Gets replacement_additional_phones
+     *
+     * @return string[]|null
+     */
+    public function getReplacementAdditionalPhones()
+    {
+        return $this->container['replacement_additional_phones'];
+    }
+
+    /**
+     * Sets replacement_additional_phones
+     *
+     * @param string[]|null $replacement_additional_phones Дополнительные подменные номера телефонов для связи с покупателем. Пустое значение означает, что номер не указан
+     *
+     * @return self
+     */
+    public function setReplacementAdditionalPhones($replacement_additional_phones)
+    {
+        if (is_null($replacement_additional_phones)) {
+            throw new \InvalidArgumentException('non-nullable replacement_additional_phones cannot be null');
+        }
+        $this->container['replacement_additional_phones'] = $replacement_additional_phones;
 
         return $this;
     }

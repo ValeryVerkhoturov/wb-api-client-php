@@ -58,8 +58,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'detail' => 'string',
-        'title' => 'string'
+        'title' => 'string',
+        'detail' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'detail' => null,
-        'title' => null
+        'title' => null,
+        'detail' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'detail' => false,
-        'title' => false
+        'title' => false,
+        'detail' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'detail' => 'detail',
-        'title' => 'title'
+        'title' => 'title',
+        'detail' => 'detail'
     ];
 
     /**
@@ -180,8 +180,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'detail' => 'setDetail',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'detail' => 'setDetail'
     ];
 
     /**
@@ -190,8 +190,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'detail' => 'getDetail',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'detail' => 'getDetail'
     ];
 
     /**
@@ -251,8 +251,8 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('detail', $data ?? [], null);
         $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('detail', $data ?? [], null);
     }
 
     /**
@@ -282,11 +282,11 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         if ($this->container['title'] === null) {
             $invalidProperties[] = "'title' can't be null";
+        }
+        if ($this->container['detail'] === null) {
+            $invalidProperties[] = "'detail' can't be null";
         }
         return $invalidProperties;
     }
@@ -302,33 +302,6 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets detail
-     *
-     * @return string
-     */
-    public function getDetail()
-    {
-        return $this->container['detail'];
-    }
-
-    /**
-     * Sets detail
-     *
-     * @param string $detail Детали ошибки
-     *
-     * @return self
-     */
-    public function setDetail($detail)
-    {
-        if (is_null($detail)) {
-            throw new \InvalidArgumentException('non-nullable detail cannot be null');
-        }
-        $this->container['detail'] = $detail;
-
-        return $this;
-    }
 
     /**
      * Gets title
@@ -353,6 +326,33 @@ class ApiErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets detail
+     *
+     * @return string
+     */
+    public function getDetail()
+    {
+        return $this->container['detail'];
+    }
+
+    /**
+     * Sets detail
+     *
+     * @param string $detail Детали ошибки
+     *
+     * @return self
+     */
+    public function setDetail($detail)
+    {
+        if (is_null($detail)) {
+            throw new \InvalidArgumentException('non-nullable detail cannot be null');
+        }
+        $this->container['detail'] = $detail;
 
         return $this;
     }

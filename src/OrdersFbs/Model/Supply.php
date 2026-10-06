@@ -325,7 +325,6 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const CARGO_TYPE_NUMBER_0 = 0;
     public const CARGO_TYPE_NUMBER_1 = 1;
     public const CARGO_TYPE_NUMBER_2 = 2;
     public const CARGO_TYPE_NUMBER_3 = 3;
@@ -342,7 +341,6 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getCargoTypeAllowableValues()
     {
         return [
-            self::CARGO_TYPE_NUMBER_0,
             self::CARGO_TYPE_NUMBER_1,
             self::CARGO_TYPE_NUMBER_2,
             self::CARGO_TYPE_NUMBER_3,
@@ -670,7 +668,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scan_dt
      *
-     * @param \DateTime|null $scan_dt Дата сканирования поставки или первого заказа (RFC3339)
+     * @param \DateTime|null $scan_dt Дата сканирования поставки (RFC3339). Если `\"scanDt\":null`, поставка не сканировалась
      *
      * @return self
      */
