@@ -467,7 +467,7 @@ class DbsOnlyClientInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets additional_phones
      *
-     * @param string[]|null $additional_phones Дополнительные прямые номера телефонов для связи с покупателем. Используйте, чтобы позвонить покупателю, если недоступен основной номер из `phone`. Пустое значение означает, что номер не указан
+     * @param string[]|null $additional_phones Дополнительные номера телефонов для связи с покупателем. Используйте, чтобы позвонить покупателю, если недоступен основной номер из `phone`. Пустое значение означает, что номер не указан
      *
      * @return self
      */

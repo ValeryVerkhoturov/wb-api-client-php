@@ -360,7 +360,7 @@ class InventoryMetricsReportReq implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets report_type
      *
-     * @param string $report_type Тип отчёта `STOCK\\_HISTORY\\_REPORT\\_CSV` — Отчёт по статистике остатков.  Данные отчёта обновляются 1 раз в 2 часа
+     * @param string $report_type Тип отчёта `STOCK_HISTORY_REPORT_CSV` — Отчёт по статистике остатков
      *
      * @return self
      */

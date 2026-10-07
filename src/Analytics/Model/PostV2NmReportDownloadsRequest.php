@@ -363,7 +363,7 @@ class PostV2NmReportDownloadsRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets report_type
      *
-     * @param string $report_type Тип отчёта `STOCK\\_HISTORY\\_DAILY\\_CSV` — Отчёт по истории остатков.  Данные отчёта обновляются 1 раз в 2 часа
+     * @param string $report_type Тип отчёта `STOCK_HISTORY_DAILY_CSV` — Отчёт по истории остатков
      *
      * @return self
      */
