@@ -60,7 +60,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
       */
     protected static $openAPITypes = [
         'next' => 'bool',
-        'updated_at' => '\DateTime',
+        'updated_at' => 'string',
         'batch_uuid' => 'string'
     ];
 
@@ -73,7 +73,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
       */
     protected static $openAPIFormats = [
         'next' => null,
-        'updated_at' => 'date-time',
+        'updated_at' => null,
         'batch_uuid' => 'UUID'
     ];
 
@@ -344,7 +344,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Gets updated_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getUpdatedAt()
     {
@@ -354,7 +354,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Sets updated_at
      *
-     * @param \DateTime $updated_at Дата и время формирования последнего пакета в ответе
+     * @param string $updated_at Дата и время формирования последнего пакета в ответе
      *
      * @return self
      */

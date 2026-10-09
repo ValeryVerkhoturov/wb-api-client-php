@@ -63,8 +63,8 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
         'status' => 'string',
         'name' => 'string',
         'size' => 'int',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'start_date' => 'string',
+        'end_date' => 'string'
     ];
 
     /**
@@ -80,8 +80,8 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
         'status' => null,
         'name' => null,
         'size' => null,
-        'start_date' => 'date',
-        'end_date' => 'date'
+        'start_date' => null,
+        'end_date' => null
     ];
 
     /**
@@ -491,7 +491,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets start_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStartDate()
     {
@@ -501,7 +501,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date Начало периода
+     * @param string $start_date Начало периода
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets end_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEndDate()
     {
@@ -528,7 +528,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date Конец периода
+     * @param string $end_date Конец периода
      *
      * @return self
      */

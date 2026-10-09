@@ -62,8 +62,8 @@ class SalesFunnelGroupReqParams implements ModelInterface, ArrayAccess, \JsonSer
         'subject_ids' => 'int[]',
         'brand_names' => 'string[]',
         'tag_ids' => 'int[]',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => 'string',
+        'end_date' => 'string',
         'timezone' => 'string',
         'aggregation_level' => 'string',
         'skip_deleted_nm' => 'bool'
@@ -80,8 +80,8 @@ class SalesFunnelGroupReqParams implements ModelInterface, ArrayAccess, \JsonSer
         'subject_ids' => 'int32',
         'brand_names' => null,
         'tag_ids' => 'int64',
-        'start_date' => 'date',
-        'end_date' => 'date',
+        'start_date' => null,
+        'end_date' => null,
         'timezone' => null,
         'aggregation_level' => null,
         'skip_deleted_nm' => null
@@ -430,7 +430,7 @@ class SalesFunnelGroupReqParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets start_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStartDate()
     {
@@ -440,7 +440,7 @@ class SalesFunnelGroupReqParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date Начало периода
+     * @param string $start_date Начало периода
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class SalesFunnelGroupReqParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets end_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEndDate()
     {
@@ -467,7 +467,7 @@ class SalesFunnelGroupReqParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date Конец периода
+     * @param string $end_date Конец периода
      *
      * @return self
      */

@@ -59,10 +59,10 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'started' => '\DateTime',
-        'deleted' => '\DateTime'
+        'created' => 'string',
+        'updated' => 'string',
+        'started' => 'string',
+        'deleted' => 'string'
     ];
 
     /**
@@ -73,10 +73,10 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'created' => 'date-time',
-        'updated' => 'date-time',
-        'started' => 'date-time',
-        'deleted' => 'date-time'
+        'created' => null,
+        'updated' => null,
+        'started' => null,
+        'deleted' => null
     ];
 
     /**
@@ -327,7 +327,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreated()
     {
@@ -337,7 +337,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created
      *
-     * @param \DateTime $created Время создания кампании
+     * @param string $created Время создания кампании
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated
      *
-     * @return \DateTime
+     * @return string
      */
     public function getUpdated()
     {
@@ -364,7 +364,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated
      *
-     * @param \DateTime $updated Время последнего изменения кампании
+     * @param string $updated Время последнего изменения кампании
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets started
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStarted()
     {
@@ -391,7 +391,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets started
      *
-     * @param \DateTime $started Время последнего запуска кампании
+     * @param string $started Время последнего запуска кампании
      *
      * @return self
      */
@@ -415,7 +415,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets deleted
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDeleted()
     {
@@ -425,7 +425,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deleted
      *
-     * @param \DateTime $deleted Время удаления кампании. Если кампания не удалена, время указывается в будущем
+     * @param string $deleted Время удаления кампании. Если кампания не удалена, время указывается в будущем
      *
      * @return self
      */

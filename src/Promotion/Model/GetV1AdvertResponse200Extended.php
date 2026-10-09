@@ -60,9 +60,9 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'reason' => 'string',
         'expenses' => 'int',
-        'from' => '\DateTime',
-        'to' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'from' => 'string',
+        'to' => 'string',
+        'updated_at' => 'string',
         'price' => 'int',
         'budget' => 'int',
         'operation' => 'int',
@@ -79,9 +79,9 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'reason' => null,
         'expenses' => null,
-        'from' => 'date-time',
-        'to' => 'date-time',
-        'updated_at' => 'date-time',
+        'from' => null,
+        'to' => null,
+        'updated_at' => null,
         'price' => null,
         'budget' => null,
         'operation' => null,
@@ -410,7 +410,7 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets from
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getFrom()
     {
@@ -420,7 +420,7 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets from
      *
-     * @param \DateTime|null $from Дата и время начала показа медиакампании
+     * @param string|null $from Дата и время начала показа медиакампании
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets to
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getTo()
     {
@@ -447,7 +447,7 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets to
      *
-     * @param \DateTime|null $to Дата и время окончания показа медиакампании
+     * @param string|null $to Дата и время окончания показа медиакампании
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets updated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -474,7 +474,7 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets updated_at
      *
-     * @param \DateTime|null $updated_at Дата и время изменения кампании
+     * @param string|null $updated_at Дата и время изменения кампании
      *
      * @return self
      */

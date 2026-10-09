@@ -59,7 +59,7 @@ class RequestWithDate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'dates' => '\DateTime[]'
+        'dates' => 'string[]'
     ];
 
     /**
@@ -71,7 +71,7 @@ class RequestWithDate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'dates' => 'date'
+        'dates' => null
     ];
 
     /**
@@ -333,7 +333,7 @@ class RequestWithDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dates
      *
-     * @return \DateTime[]
+     * @return string[]
      */
     public function getDates()
     {
@@ -343,7 +343,7 @@ class RequestWithDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dates
      *
-     * @param \DateTime[] $dates Даты, за которые нужно получить информацию
+     * @param string[] $dates Даты, за которые нужно получить информацию
      *
      * @return self
      */

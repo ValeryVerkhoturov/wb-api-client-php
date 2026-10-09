@@ -71,13 +71,13 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
         'length_sup' => 'int',
         'height_sup' => 'int',
         'photo_urls' => 'string[]',
-        'dt_bonus' => '\DateTime',
+        'dt_bonus' => 'string',
         'is_valid' => 'bool',
-        'is_valid_dt' => '\DateTime',
+        'is_valid_dt' => 'string',
         'reversal_amount' => 'float',
         'penalty_amount' => 'float',
-        'date_start' => '\DateTime',
-        'date_end' => '\DateTime'
+        'date_start' => 'string',
+        'date_end' => 'string'
     ];
 
     /**
@@ -101,13 +101,13 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
         'length_sup' => null,
         'height_sup' => null,
         'photo_urls' => null,
-        'dt_bonus' => 'date-time',
+        'dt_bonus' => null,
         'is_valid' => null,
-        'is_valid_dt' => 'date-time',
+        'is_valid_dt' => null,
         'reversal_amount' => null,
         'penalty_amount' => null,
-        'date_start' => 'date-time',
-        'date_end' => 'date-time'
+        'date_start' => null,
+        'date_end' => null
     ];
 
     /**
@@ -816,7 +816,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets dt_bonus
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDtBonus()
     {
@@ -826,7 +826,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets dt_bonus
      *
-     * @param \DateTime|null $dt_bonus Дата штрафа
+     * @param string|null $dt_bonus Дата штрафа
      *
      * @return self
      */
@@ -870,7 +870,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets is_valid_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getIsValidDt()
     {
@@ -880,7 +880,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets is_valid_dt
      *
-     * @param \DateTime|null $is_valid_dt Дата и время подтверждения или отмены обмера
+     * @param string|null $is_valid_dt Дата и время подтверждения или отмены обмера
      *
      * @return self
      */
@@ -951,7 +951,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets date_start
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDateStart()
     {
@@ -961,7 +961,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets date_start
      *
-     * @param \DateTime|null $date_start Дата и время начала действия коэффициента
+     * @param string|null $date_start Дата и время начала действия коэффициента
      *
      * @return self
      */
@@ -978,7 +978,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets date_end
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDateEnd()
     {
@@ -988,7 +988,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets date_end
      *
-     * @param \DateTime|null $date_end Дата и время окончания действия коэффициента
+     * @param string|null $date_end Дата и время окончания действия коэффициента
      *
      * @return self
      */

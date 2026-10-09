@@ -60,7 +60,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'transit_warehouse_name' => 'string',
         'destination_warehouse_name' => 'string',
-        'active_from' => '\DateTime',
+        'active_from' => 'string',
         'box_tariff' => '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsVolumeTariff[]',
         'pallet_tariff' => 'int'
     ];
@@ -75,7 +75,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'transit_warehouse_name' => null,
         'destination_warehouse_name' => null,
-        'active_from' => 'date-time',
+        'active_from' => null,
         'box_tariff' => null,
         'pallet_tariff' => null
     ];
@@ -375,7 +375,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets active_from
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getActiveFrom()
     {
@@ -385,7 +385,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets active_from
      *
-     * @param \DateTime|null $active_from С какого числа доступно транзитное направление
+     * @param string|null $active_from С какого числа доступно транзитное направление
      *
      * @return self
      */

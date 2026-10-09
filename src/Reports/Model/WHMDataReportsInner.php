@@ -66,7 +66,7 @@ class WHMDataReportsInner implements ModelInterface, ArrayAccess, \JsonSerializa
         'length' => 'int',
         'height' => 'int',
         'photo_urls' => 'string[]',
-        'dt' => '\DateTime'
+        'dt' => 'string'
     ];
 
     /**
@@ -85,7 +85,7 @@ class WHMDataReportsInner implements ModelInterface, ArrayAccess, \JsonSerializa
         'length' => null,
         'height' => null,
         'photo_urls' => null,
-        'dt' => 'date-time'
+        'dt' => null
     ];
 
     /**
@@ -565,7 +565,7 @@ class WHMDataReportsInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDt()
     {
@@ -575,7 +575,7 @@ class WHMDataReportsInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets dt
      *
-     * @param \DateTime|null $dt Дата и время
+     * @param string|null $dt Дата и время
      *
      * @return self
      */

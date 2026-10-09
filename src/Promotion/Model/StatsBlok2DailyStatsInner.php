@@ -58,7 +58,7 @@ class StatsBlok2DailyStatsInner implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'date' => '\DateTime',
+        'date' => 'string',
         'app_type_stats' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\StatsBlok2DailyStatsInnerAppTypeStatsInner[]'
     ];
 
@@ -70,7 +70,7 @@ class StatsBlok2DailyStatsInner implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'date' => 'date-time',
+        'date' => null,
         'app_type_stats' => null
     ];
 
@@ -300,7 +300,7 @@ class StatsBlok2DailyStatsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDate()
     {
@@ -310,7 +310,7 @@ class StatsBlok2DailyStatsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets date
      *
-     * @param \DateTime|null $date Дата
+     * @param string|null $date Дата
      *
      * @return self
      */

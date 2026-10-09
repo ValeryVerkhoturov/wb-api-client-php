@@ -4783,8 +4783,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  int $next ID последней операции закрепления (пагинатор) (optional)
      * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -4815,8 +4815,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  int $next ID последней операции закрепления (пагинатор) (optional)
      * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -5129,8 +5129,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  int $next ID последней операции закрепления (пагинатор) (optional)
      * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -5164,8 +5164,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  int $next ID последней операции закрепления (пагинатор) (optional)
      * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -5228,8 +5228,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  int $next ID последней операции закрепления (пагинатор) (optional)
      * @param  int $limit Количество отзывов на одной странице (пагинация) (optional, default to 500)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -5443,8 +5443,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
@@ -5473,8 +5473,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
@@ -5785,8 +5785,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
@@ -5818,8 +5818,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation
@@ -5880,8 +5880,8 @@ class DefaultApi
      * @param  int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров. Един для всех артикулов WB группы объединённых карточек. У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
      * @param  int $nm_id Артикул WB (optional)
      * @param  int $feedback_id ID отзыва (optional)
-     * @param  \DateTime $date_from Дата закрепления первого отзыва в списке (optional)
-     * @param  \DateTime $date_to Дата закрепления последнего отзыва в списке (optional)
+     * @param  string $date_from Дата закрепления первого отзыва в списке (optional)
+     * @param  string $date_to Дата закрепления последнего отзыва в списке (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1PinsCount'] to see the possible values for this operation

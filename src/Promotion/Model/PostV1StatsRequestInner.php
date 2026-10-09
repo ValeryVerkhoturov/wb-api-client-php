@@ -59,7 +59,7 @@ class PostV1StatsRequestInner implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'dates' => '\DateTime[]',
+        'dates' => 'string[]',
         'interval' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\RequestWithIntervalInterval'
     ];
 
@@ -72,7 +72,7 @@ class PostV1StatsRequestInner implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'dates' => 'date',
+        'dates' => null,
         'interval' => null
     ];
 
@@ -343,7 +343,7 @@ class PostV1StatsRequestInner implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets dates
      *
-     * @return \DateTime[]
+     * @return string[]
      */
     public function getDates()
     {
@@ -353,7 +353,7 @@ class PostV1StatsRequestInner implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dates
      *
-     * @param \DateTime[] $dates Даты, за которые нужно получить информацию
+     * @param string[] $dates Даты, за которые нужно получить информацию
      *
      * @return self
      */

@@ -61,9 +61,9 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'report_id' => 'int',
         'seller_finance_name' => 'string',
-        'date_from' => '\DateTime',
-        'date_to' => '\DateTime',
-        'create_date' => '\DateTime',
+        'date_from' => 'string',
+        'date_to' => 'string',
+        'create_date' => 'string',
         'currency' => 'string',
         'acquiring_fee_sum' => 'string',
         'acquiring_fee_vat_sum' => 'string'
@@ -79,9 +79,9 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'report_id' => 'int64',
         'seller_finance_name' => null,
-        'date_from' => 'date',
-        'date_to' => 'date',
-        'create_date' => 'date',
+        'date_from' => null,
+        'date_to' => null,
+        'create_date' => null,
         'currency' => null,
         'acquiring_fee_sum' => null,
         'acquiring_fee_vat_sum' => null
@@ -421,7 +421,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets date_from
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateFrom()
     {
@@ -431,7 +431,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets date_from
      *
-     * @param \DateTime $date_from Дата начала отчётного периода
+     * @param string $date_from Дата начала отчётного периода
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets date_to
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateTo()
     {
@@ -458,7 +458,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets date_to
      *
-     * @param \DateTime $date_to Дата конца отчётного периода
+     * @param string $date_to Дата конца отчётного периода
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets create_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreateDate()
     {
@@ -485,7 +485,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets create_date
      *
-     * @param \DateTime $create_date Дата формирования отчёта
+     * @param string $create_date Дата формирования отчёта
      *
      * @return self
      */

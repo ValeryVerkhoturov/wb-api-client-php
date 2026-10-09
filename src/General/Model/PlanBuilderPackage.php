@@ -62,8 +62,8 @@ class PlanBuilderPackage implements ModelInterface, ArrayAccess, \JsonSerializab
         'slug' => 'string',
         'name' => 'string',
         'status' => 'string',
-        'activated_at' => '\DateTime',
-        'expires_at' => '\DateTime',
+        'activated_at' => 'string',
+        'expires_at' => 'string',
         'commission_rate' => 'float',
         'period_duration' => 'float',
         'options' => '\ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderOptionShort[]'
@@ -81,8 +81,8 @@ class PlanBuilderPackage implements ModelInterface, ArrayAccess, \JsonSerializab
         'slug' => null,
         'name' => null,
         'status' => null,
-        'activated_at' => 'date-time',
-        'expires_at' => 'date-time',
+        'activated_at' => null,
+        'expires_at' => null,
         'commission_rate' => 'float',
         'period_duration' => 'int',
         'options' => null
@@ -493,7 +493,7 @@ class PlanBuilderPackage implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets activated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getActivatedAt()
     {
@@ -503,7 +503,7 @@ class PlanBuilderPackage implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets activated_at
      *
-     * @param \DateTime|null $activated_at Дата активации пакета
+     * @param string|null $activated_at Дата активации пакета
      *
      * @return self
      */
@@ -520,7 +520,7 @@ class PlanBuilderPackage implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets expires_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpiresAt()
     {
@@ -530,7 +530,7 @@ class PlanBuilderPackage implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expires_at
      *
-     * @param \DateTime|null $expires_at Дата окончания минимального срока действия пакета. До этого дня пакет опций нельзя отключить
+     * @param string|null $expires_at Дата окончания минимального срока действия пакета. До этого дня пакет опций нельзя отключить
      *
      * @return self
      */

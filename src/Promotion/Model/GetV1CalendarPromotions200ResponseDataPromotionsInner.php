@@ -60,8 +60,8 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'start_date_time' => '\DateTime',
-        'end_date_time' => '\DateTime',
+        'start_date_time' => 'string',
+        'end_date_time' => 'string',
         'type' => 'string'
     ];
 
@@ -75,8 +75,8 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'start_date_time' => 'date-time',
-        'end_date_time' => 'date-time',
+        'start_date_time' => null,
+        'end_date_time' => null,
         'type' => null
     ];
 
@@ -399,7 +399,7 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
     /**
      * Gets start_date_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDateTime()
     {
@@ -409,7 +409,7 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
     /**
      * Sets start_date_time
      *
-     * @param \DateTime|null $start_date_time Начало акции
+     * @param string|null $start_date_time Начало акции
      *
      * @return self
      */
@@ -426,7 +426,7 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
     /**
      * Gets end_date_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndDateTime()
     {
@@ -436,7 +436,7 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
     /**
      * Sets end_date_time
      *
-     * @param \DateTime|null $end_date_time Конец акции
+     * @param string|null $end_date_time Конец акции
      *
      * @return self
      */

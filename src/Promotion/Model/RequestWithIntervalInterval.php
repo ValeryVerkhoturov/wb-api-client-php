@@ -59,8 +59,8 @@ class RequestWithIntervalInterval implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'begin' => '\DateTime',
-        'end' => '\DateTime'
+        'begin' => 'string',
+        'end' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class RequestWithIntervalInterval implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'begin' => 'date',
-        'end' => 'date'
+        'begin' => null,
+        'end' => null
     ];
 
     /**
@@ -301,7 +301,7 @@ class RequestWithIntervalInterval implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets begin
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getBegin()
     {
@@ -311,7 +311,7 @@ class RequestWithIntervalInterval implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets begin
      *
-     * @param \DateTime|null $begin Начало запрашиваемого периода
+     * @param string|null $begin Начало запрашиваемого периода
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class RequestWithIntervalInterval implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets end
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEnd()
     {
@@ -338,7 +338,7 @@ class RequestWithIntervalInterval implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets end
      *
-     * @param \DateTime|null $end Конец запрашиваемого периода
+     * @param string|null $end Конец запрашиваемого периода
      *
      * @return self
      */

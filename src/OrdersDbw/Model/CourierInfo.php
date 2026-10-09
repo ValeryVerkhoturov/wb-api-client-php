@@ -60,7 +60,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'contacts' => '\ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\CourierContactsResponse',
         'must_be_assigned' => 'bool',
-        'updated_at' => '\DateTime'
+        'updated_at' => 'string'
     ];
 
     /**
@@ -73,7 +73,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'contacts' => null,
         'must_be_assigned' => null,
-        'updated_at' => 'date-time'
+        'updated_at' => null
     ];
 
     /**
@@ -368,7 +368,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -378,7 +378,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated_at
      *
-     * @param \DateTime|null $updated_at Дата и время обновления информации о курьере.  Если `null`, информация не обновлялась
+     * @param string|null $updated_at Дата и время обновления информации о курьере.  Если `null`, информация не обновлялась
      *
      * @return self
      */

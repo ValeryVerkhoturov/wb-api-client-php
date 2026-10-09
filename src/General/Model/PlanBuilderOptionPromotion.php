@@ -59,7 +59,7 @@ class PlanBuilderOptionPromotion implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'commission_rate' => 'float',
-        'expires_at' => '\DateTime'
+        'expires_at' => 'string'
     ];
 
     /**
@@ -71,7 +71,7 @@ class PlanBuilderOptionPromotion implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'commission_rate' => 'float',
-        'expires_at' => 'date-time'
+        'expires_at' => null
     ];
 
     /**
@@ -327,7 +327,7 @@ class PlanBuilderOptionPromotion implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets expires_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpiresAt()
     {
@@ -337,7 +337,7 @@ class PlanBuilderOptionPromotion implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets expires_at
      *
-     * @param \DateTime|null $expires_at Дата окончания действия цены по акции
+     * @param string|null $expires_at Дата окончания действия цены по акции
      *
      * @return self
      */

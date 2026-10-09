@@ -62,8 +62,8 @@ class PlanBuilderOption implements ModelInterface, ArrayAccess, \JsonSerializabl
         'slug' => 'string',
         'name' => 'string',
         'status' => 'string',
-        'activated_at' => '\DateTime',
-        'expires_at' => '\DateTime',
+        'activated_at' => 'string',
+        'expires_at' => 'string',
         'commission_rate' => 'float',
         'period_duration' => 'float',
         'promotion' => '\ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderOptionPromotion'
@@ -81,8 +81,8 @@ class PlanBuilderOption implements ModelInterface, ArrayAccess, \JsonSerializabl
         'slug' => null,
         'name' => null,
         'status' => null,
-        'activated_at' => 'date-time',
-        'expires_at' => 'date-time',
+        'activated_at' => null,
+        'expires_at' => null,
         'commission_rate' => 'float',
         'period_duration' => 'int',
         'promotion' => null
@@ -493,7 +493,7 @@ class PlanBuilderOption implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets activated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getActivatedAt()
     {
@@ -503,7 +503,7 @@ class PlanBuilderOption implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets activated_at
      *
-     * @param \DateTime|null $activated_at Дата активации опции
+     * @param string|null $activated_at Дата активации опции
      *
      * @return self
      */
@@ -520,7 +520,7 @@ class PlanBuilderOption implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets expires_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpiresAt()
     {
@@ -530,7 +530,7 @@ class PlanBuilderOption implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets expires_at
      *
-     * @param \DateTime|null $expires_at Дата окончания минимального срока действия опции. До этого дня опцию нельзя отключить
+     * @param string|null $expires_at Дата окончания минимального срока действия опции. До этого дня опцию нельзя отключить
      *
      * @return self
      */

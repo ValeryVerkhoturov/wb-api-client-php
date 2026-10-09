@@ -58,7 +58,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'date' => '\DateTime',
+        'date' => 'string',
         'open_count' => 'int',
         'cart_count' => 'int',
         'order_count' => 'int',
@@ -79,7 +79,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'date' => 'date',
+        'date' => null,
         'open_count' => 'uint32',
         'cart_count' => 'uint32',
         'order_count' => 'uint32',
@@ -396,7 +396,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -406,7 +406,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime $date Дата сбора статистики
+     * @param string $date Дата сбора статистики
      *
      * @return self
      */

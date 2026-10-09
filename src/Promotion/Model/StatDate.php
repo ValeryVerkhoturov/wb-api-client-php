@@ -58,7 +58,7 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dates' => '\DateTime[]',
+        'dates' => 'string[]',
         'stats' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\StatsBlok2[]'
     ];
 
@@ -70,7 +70,7 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'dates' => 'date',
+        'dates' => null,
         'stats' => null
     ];
 
@@ -303,7 +303,7 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dates
      *
-     * @return \DateTime[]
+     * @return string[]
      */
     public function getDates()
     {
@@ -313,7 +313,7 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dates
      *
-     * @param \DateTime[] $dates Даты, за которые нужно получить информацию
+     * @param string[] $dates Даты, за которые нужно получить информацию
      *
      * @return self
      */

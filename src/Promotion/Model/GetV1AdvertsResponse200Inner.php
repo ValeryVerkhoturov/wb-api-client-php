@@ -63,8 +63,8 @@ class GetV1AdvertsResponse200Inner implements ModelInterface, ArrayAccess, \Json
         'brand' => 'string',
         'type' => 'int',
         'status' => 'int',
-        'create_time' => '\DateTime',
-        'end_time' => '\DateTime'
+        'create_time' => 'string',
+        'end_time' => 'string'
     ];
 
     /**
@@ -80,8 +80,8 @@ class GetV1AdvertsResponse200Inner implements ModelInterface, ArrayAccess, \Json
         'brand' => null,
         'type' => null,
         'status' => null,
-        'create_time' => 'date-time',
-        'end_time' => 'date-time'
+        'create_time' => null,
+        'end_time' => null
     ];
 
     /**
@@ -470,7 +470,7 @@ class GetV1AdvertsResponse200Inner implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets create_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreateTime()
     {
@@ -480,7 +480,7 @@ class GetV1AdvertsResponse200Inner implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets create_time
      *
-     * @param \DateTime|null $create_time Время создания медиакампании
+     * @param string|null $create_time Время создания медиакампании
      *
      * @return self
      */
@@ -497,7 +497,7 @@ class GetV1AdvertsResponse200Inner implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets end_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndTime()
     {
@@ -507,7 +507,7 @@ class GetV1AdvertsResponse200Inner implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets end_time
      *
-     * @param \DateTime|null $end_time Время завершения медиакампании
+     * @param string|null $end_time Время завершения медиакампании
      *
      * @return self
      */

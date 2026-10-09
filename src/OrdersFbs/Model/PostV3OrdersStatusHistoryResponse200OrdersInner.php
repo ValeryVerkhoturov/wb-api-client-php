@@ -58,7 +58,7 @@ class PostV3OrdersStatusHistoryResponse200OrdersInner implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'delivery_date' => '\DateTime',
+        'delivery_date' => 'string',
         'statuses' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3OrdersStatusHistoryResponse200OrdersInnerStatusesInner[]',
         'order_id' => 'int'
     ];
@@ -71,7 +71,7 @@ class PostV3OrdersStatusHistoryResponse200OrdersInner implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'delivery_date' => 'date-time',
+        'delivery_date' => null,
         'statuses' => null,
         'order_id' => null
     ];
@@ -307,7 +307,7 @@ class PostV3OrdersStatusHistoryResponse200OrdersInner implements ModelInterface,
     /**
      * Gets delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDeliveryDate()
     {
@@ -317,7 +317,7 @@ class PostV3OrdersStatusHistoryResponse200OrdersInner implements ModelInterface,
     /**
      * Sets delivery_date
      *
-     * @param \DateTime|null $delivery_date Планируемая дата доставки, [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)
+     * @param string|null $delivery_date Планируемая дата доставки, [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)
      *
      * @return self
      */

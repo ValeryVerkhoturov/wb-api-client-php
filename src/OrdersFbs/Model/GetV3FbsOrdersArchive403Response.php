@@ -66,7 +66,7 @@ class GetV3FbsOrdersArchive403Response implements ModelInterface, ArrayAccess, \
         'status' => 'float',
         'title' => 'string',
         'status_text' => 'string',
-        'timestamp' => '\DateTime'
+        'timestamp' => 'string'
     ];
 
     /**
@@ -85,7 +85,7 @@ class GetV3FbsOrdersArchive403Response implements ModelInterface, ArrayAccess, \
         'status' => null,
         'title' => null,
         'status_text' => null,
-        'timestamp' => 'date-time'
+        'timestamp' => null
     ];
 
     /**
@@ -571,7 +571,7 @@ class GetV3FbsOrdersArchive403Response implements ModelInterface, ArrayAccess, \
     /**
      * Gets timestamp
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getTimestamp()
     {
@@ -581,7 +581,7 @@ class GetV3FbsOrdersArchive403Response implements ModelInterface, ArrayAccess, \
     /**
      * Sets timestamp
      *
-     * @param \DateTime|null $timestamp Дата и время запроса
+     * @param string|null $timestamp Дата и время запроса
      *
      * @return self
      */

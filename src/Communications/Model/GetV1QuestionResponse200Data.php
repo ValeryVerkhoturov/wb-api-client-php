@@ -60,7 +60,7 @@ class GetV1QuestionResponse200Data implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'id' => 'string',
         'text' => 'string',
-        'created_date' => '\DateTime',
+        'created_date' => 'string',
         'state' => 'string',
         'answer' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1QuestionResponse200DataAnswer',
         'product_details' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1QuestionResponse200DataProductDetails',
@@ -78,7 +78,7 @@ class GetV1QuestionResponse200Data implements ModelInterface, ArrayAccess, \Json
     protected static $openAPIFormats = [
         'id' => null,
         'text' => null,
-        'created_date' => 'date-time',
+        'created_date' => null,
         'state' => null,
         'answer' => null,
         'product_details' => null,
@@ -396,7 +396,7 @@ class GetV1QuestionResponse200Data implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets created_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedDate()
     {
@@ -406,7 +406,7 @@ class GetV1QuestionResponse200Data implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets created_date
      *
-     * @param \DateTime|null $created_date Дата и время создания вопроса
+     * @param string|null $created_date Дата и время создания вопроса
      *
      * @return self
      */

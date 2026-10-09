@@ -60,7 +60,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'scan_id' => 'int',
         'declared_sku' => 'string',
-        'scan_time' => '\DateTime',
+        'scan_time' => 'string',
         'discrepancy_label' => 'string',
         'actual_sku' => 'string'
     ];
@@ -75,7 +75,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'scan_id' => null,
         'declared_sku' => null,
-        'scan_time' => 'date-time',
+        'scan_time' => null,
         'discrepancy_label' => null,
         'actual_sku' => null
     ];
@@ -416,7 +416,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scan_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getScanTime()
     {
@@ -426,7 +426,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scan_time
      *
-     * @param \DateTime $scan_time Дата и время сканирования
+     * @param string $scan_time Дата и время сканирования
      *
      * @return self
      */

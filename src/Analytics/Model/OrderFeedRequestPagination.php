@@ -59,7 +59,7 @@ class OrderFeedRequestPagination implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'snapshot_time' => '\DateTime',
+        'snapshot_time' => 'string',
         'offset' => 'int',
         'limit' => 'int'
     ];
@@ -72,7 +72,7 @@ class OrderFeedRequestPagination implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'snapshot_time' => 'date-time',
+        'snapshot_time' => null,
         'offset' => 'int32',
         'limit' => 'int32'
     ];
@@ -312,7 +312,7 @@ class OrderFeedRequestPagination implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets snapshot_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getSnapshotTime()
     {
@@ -322,7 +322,7 @@ class OrderFeedRequestPagination implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets snapshot_time
      *
-     * @param \DateTime|null $snapshot_time Метка снимка данных, в рамках которого выполняется пагинация. Данные отчёта обновляются асинхронно. Чтобы не пропускать и не дублировать заказы, запросы одной выборки должны быть с одним и тем же `snapshotTime`. В первом запросе выборки (`\"offset\":0`) параметр не указывается, в каждом последующем запросе (`offset`>`0`) указывайте значение поля `snapshotTime` из ответа на **первый** запрос. При изменении значений периода и фильтров начинайте выборку заново с `\"offset\":0` и без `snapshotTime`
+     * @param string|null $snapshot_time Метка снимка данных, в рамках которого выполняется пагинация. Данные отчёта обновляются асинхронно. Чтобы не пропускать и не дублировать заказы, запросы одной выборки должны быть с одним и тем же `snapshotTime`. В первом запросе выборки (`\"offset\":0`) параметр не указывается, в каждом последующем запросе (`offset`>`0`) указывайте значение поля `snapshotTime` из ответа на **первый** запрос. При изменении значений периода и фильтров начинайте выборку заново с `\"offset\":0` и без `snapshotTime`
      *
      * @return self
      */

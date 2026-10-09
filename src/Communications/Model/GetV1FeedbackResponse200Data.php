@@ -64,7 +64,7 @@ class GetV1FeedbackResponse200Data implements ModelInterface, ArrayAccess, \Json
         'cons' => 'string',
         'matching_size' => 'string',
         'product_valuation' => 'int',
-        'created_date' => '\DateTime',
+        'created_date' => 'string',
         'answer' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1FeedbackResponse200DataAnswer',
         'state' => 'string',
         'product_details' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\GetV1FeedbackResponse200DataProductDetails',
@@ -103,7 +103,7 @@ class GetV1FeedbackResponse200Data implements ModelInterface, ArrayAccess, \Json
         'cons' => null,
         'matching_size' => null,
         'product_valuation' => null,
-        'created_date' => 'date-time',
+        'created_date' => null,
         'answer' => null,
         'state' => null,
         'product_details' => null,
@@ -651,7 +651,7 @@ class GetV1FeedbackResponse200Data implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets created_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedDate()
     {
@@ -661,7 +661,7 @@ class GetV1FeedbackResponse200Data implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets created_date
      *
-     * @param \DateTime|null $created_date Дата и время создания отзыва
+     * @param string|null $created_date Дата и время создания отзыва
      *
      * @return self
      */

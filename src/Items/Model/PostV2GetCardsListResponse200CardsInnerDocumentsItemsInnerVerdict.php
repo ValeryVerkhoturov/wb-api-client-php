@@ -63,7 +63,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict implemen
         'status' => 'int',
         'reason' => 'string',
         'additional_data' => 'object',
-        'created_at' => '\DateTime'
+        'created_at' => 'string'
     ];
 
     /**
@@ -78,7 +78,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict implemen
         'status' => null,
         'reason' => null,
         'additional_data' => null,
-        'created_at' => 'date-time'
+        'created_at' => null
     ];
 
     /**
@@ -444,7 +444,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict implemen
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -454,7 +454,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict implemen
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата проверки документа
+     * @param string|null $created_at Дата проверки документа
      *
      * @return self
      */

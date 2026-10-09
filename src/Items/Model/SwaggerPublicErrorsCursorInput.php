@@ -60,7 +60,7 @@ class SwaggerPublicErrorsCursorInput implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'limit' => 'float',
-        'updated_at' => '\DateTime',
+        'updated_at' => 'string',
         'batch_uuid' => 'string'
     ];
 
@@ -73,7 +73,7 @@ class SwaggerPublicErrorsCursorInput implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'limit' => 'int',
-        'updated_at' => 'date-time',
+        'updated_at' => null,
         'batch_uuid' => 'UUID'
     ];
 
@@ -344,7 +344,7 @@ class SwaggerPublicErrorsCursorInput implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets updated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -354,7 +354,7 @@ class SwaggerPublicErrorsCursorInput implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets updated_at
      *
-     * @param \DateTime|null $updated_at Дата и время формирования последнего пакета в ответе на предыдущий запрос
+     * @param string|null $updated_at Дата и время формирования последнего пакета в ответе на предыдущий запрос
      *
      * @return self
      */

@@ -59,8 +59,8 @@ class Period implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start' => '\DateTime',
-        'end' => '\DateTime'
+        'start' => 'string',
+        'end' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class Period implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start' => 'date',
-        'end' => 'date'
+        'start' => null,
+        'end' => null
     ];
 
     /**
@@ -307,7 +307,7 @@ class Period implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStart()
     {
@@ -317,7 +317,7 @@ class Period implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start
      *
-     * @param \DateTime $start Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня
+     * @param string $start Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class Period implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEnd()
     {
@@ -344,7 +344,7 @@ class Period implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end
      *
-     * @param \DateTime $end Дата окончания периода. Не ранее 365 суток от сегодня
+     * @param string $end Дата окончания периода. Не ранее 365 суток от сегодня
      *
      * @return self
      */

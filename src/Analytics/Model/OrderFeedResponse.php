@@ -59,7 +59,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'snapshot_time' => '\DateTime',
+        'snapshot_time' => 'string',
         'currency' => 'string',
         'orders' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\Order[]'
     ];
@@ -72,7 +72,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'snapshot_time' => 'date-time',
+        'snapshot_time' => null,
         'currency' => null,
         'orders' => null
     ];
@@ -317,7 +317,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets snapshot_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getSnapshotTime()
     {
@@ -327,7 +327,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets snapshot_time
      *
-     * @param \DateTime $snapshot_time Метка снимка данных, в рамках которого выполняется пагинация
+     * @param string $snapshot_time Метка снимка данных, в рамках которого выполняется пагинация
      *
      * @return self
      */

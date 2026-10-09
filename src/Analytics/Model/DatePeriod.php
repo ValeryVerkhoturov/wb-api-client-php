@@ -58,8 +58,8 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start' => '\DateTime',
-        'end' => '\DateTime'
+        'start' => 'string',
+        'end' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start' => 'date',
-        'end' => 'date'
+        'start' => null,
+        'end' => null
     ];
 
     /**
@@ -306,7 +306,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStart()
     {
@@ -316,7 +316,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start
      *
-     * @param \DateTime $start Начало периода
+     * @param string $start Начало периода
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEnd()
     {
@@ -343,7 +343,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end
      *
-     * @param \DateTime $end Конец периода
+     * @param string $end Конец периода
      *
      * @return self
      */

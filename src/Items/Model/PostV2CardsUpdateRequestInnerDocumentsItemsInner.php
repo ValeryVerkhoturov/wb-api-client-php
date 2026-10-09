@@ -63,8 +63,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
         'product_number' => 'string',
         'trade_name' => 'string',
         'applicant' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => 'string',
+        'end_date' => 'string',
         'is_endless' => 'bool',
         'id' => 'string'
     ];
@@ -82,8 +82,8 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
         'product_number' => null,
         'trade_name' => null,
         'applicant' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
+        'start_date' => null,
+        'end_date' => null,
         'is_endless' => null,
         'id' => null
     ];
@@ -484,7 +484,7 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -494,7 +494,7 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date Дата и время начала срока действия документа
+     * @param string|null $start_date Дата и время начала срока действия документа
      *
      * @return self
      */
@@ -511,7 +511,7 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -521,7 +521,7 @@ class PostV2CardsUpdateRequestInnerDocumentsItemsInner implements ModelInterface
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date Дата и время окончания срока действия документа
+     * @param string|null $end_date Дата и время окончания срока действия документа
      *
      * @return self
      */

@@ -59,7 +59,7 @@ class GetV1PromotionCountResponse200AdvertsInnerAdvertListInner implements Model
       */
     protected static $openAPITypes = [
         'advert_id' => 'int',
-        'change_time' => '\DateTime'
+        'change_time' => 'string'
     ];
 
     /**
@@ -71,7 +71,7 @@ class GetV1PromotionCountResponse200AdvertsInnerAdvertListInner implements Model
       */
     protected static $openAPIFormats = [
         'advert_id' => null,
-        'change_time' => 'date-time'
+        'change_time' => null
     ];
 
     /**
@@ -327,7 +327,7 @@ class GetV1PromotionCountResponse200AdvertsInnerAdvertListInner implements Model
     /**
      * Gets change_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getChangeTime()
     {
@@ -337,7 +337,7 @@ class GetV1PromotionCountResponse200AdvertsInnerAdvertListInner implements Model
     /**
      * Sets change_time
      *
-     * @param \DateTime|null $change_time Дата и время последнего изменения кампании
+     * @param string|null $change_time Дата и время последнего изменения кампании
      *
      * @return self
      */

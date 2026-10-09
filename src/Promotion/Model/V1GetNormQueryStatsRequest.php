@@ -58,8 +58,8 @@ class V1GetNormQueryStatsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'from' => '\DateTime',
-        'to' => '\DateTime',
+        'from' => 'string',
+        'to' => 'string',
         'items' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V1GetNormQueryStatsRequestItemsInner[]'
     ];
 
@@ -71,8 +71,8 @@ class V1GetNormQueryStatsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'from' => 'date',
-        'to' => 'date',
+        'from' => null,
+        'to' => null,
         'items' => null
     ];
 
@@ -320,7 +320,7 @@ class V1GetNormQueryStatsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets from
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFrom()
     {
@@ -330,7 +330,7 @@ class V1GetNormQueryStatsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets from
      *
-     * @param \DateTime $from Дата начала периода
+     * @param string $from Дата начала периода
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class V1GetNormQueryStatsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets to
      *
-     * @return \DateTime
+     * @return string
      */
     public function getTo()
     {
@@ -357,7 +357,7 @@ class V1GetNormQueryStatsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets to
      *
-     * @param \DateTime $to Дата окончания периода периода
+     * @param string $to Дата окончания периода периода
      *
      * @return self
      */

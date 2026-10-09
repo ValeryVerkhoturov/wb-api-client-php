@@ -60,16 +60,16 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'report_id' => 'int',
-        'date_from' => '\DateTime',
-        'date_to' => '\DateTime',
-        'create_date' => '\DateTime',
+        'date_from' => 'string',
+        'date_to' => 'string',
+        'create_date' => 'string',
         'currency' => 'string',
         'report_type' => 'int',
         'rrd_id' => 'int',
         'gi_id' => 'int',
         'dlv_prc' => 'float',
-        'fix_tariff_date_from' => '\DateTime',
-        'fix_tariff_date_to' => '\DateTime',
+        'fix_tariff_date_from' => 'string',
+        'fix_tariff_date_to' => 'string',
         'subject_name' => 'string',
         'nm_id' => 'int',
         'brand_name' => 'string',
@@ -85,9 +85,9 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
         'commission_percent' => 'float',
         'office_name' => 'string',
         'seller_oper_name' => 'string',
-        'order_dt' => '\DateTime',
-        'sale_dt' => '\DateTime',
-        'rr_date' => '\DateTime',
+        'order_dt' => 'string',
+        'sale_dt' => 'string',
+        'rr_date' => 'string',
         'shk_id' => 'int',
         'retail_price_with_disc' => 'string',
         'delivery_amount' => 'int',
@@ -152,7 +152,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
         'warehouse_logistics_coeff' => 'float',
         'buyer_tax_registration_reason_code' => 'string',
         'utd_ucd_number' => 'string',
-        'utd_ucd_date' => '\DateTime',
+        'utd_ucd_date' => 'string',
         'order_uid' => 'string',
         'srid' => 'string'
     ];
@@ -166,16 +166,16 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'report_id' => 'int64',
-        'date_from' => 'date',
-        'date_to' => 'date',
-        'create_date' => 'date',
+        'date_from' => null,
+        'date_to' => null,
+        'create_date' => null,
         'currency' => null,
         'report_type' => null,
         'rrd_id' => null,
         'gi_id' => null,
         'dlv_prc' => null,
-        'fix_tariff_date_from' => 'date',
-        'fix_tariff_date_to' => 'date',
+        'fix_tariff_date_from' => null,
+        'fix_tariff_date_to' => null,
         'subject_name' => null,
         'nm_id' => null,
         'brand_name' => null,
@@ -191,9 +191,9 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
         'commission_percent' => null,
         'office_name' => null,
         'seller_oper_name' => null,
-        'order_dt' => 'date-time',
-        'sale_dt' => 'date-time',
-        'rr_date' => 'date',
+        'order_dt' => null,
+        'sale_dt' => null,
+        'rr_date' => null,
         'shk_id' => null,
         'retail_price_with_disc' => null,
         'delivery_amount' => null,
@@ -258,7 +258,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
         'warehouse_logistics_coeff' => null,
         'buyer_tax_registration_reason_code' => null,
         'utd_ucd_number' => null,
-        'utd_ucd_date' => 'date',
+        'utd_ucd_date' => null,
         'order_uid' => null,
         'srid' => null
     ];
@@ -1286,7 +1286,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets date_from
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateFrom()
     {
@@ -1296,7 +1296,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets date_from
      *
-     * @param \DateTime $date_from Дата начала отчётного периода
+     * @param string $date_from Дата начала отчётного периода
      *
      * @return self
      */
@@ -1313,7 +1313,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets date_to
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateTo()
     {
@@ -1323,7 +1323,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets date_to
      *
-     * @param \DateTime $date_to Дата конца отчётного периода
+     * @param string $date_to Дата конца отчётного периода
      *
      * @return self
      */
@@ -1340,7 +1340,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets create_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreateDate()
     {
@@ -1350,7 +1350,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets create_date
      *
-     * @param \DateTime $create_date Дата формирования отчёта
+     * @param string $create_date Дата формирования отчёта
      *
      * @return self
      */
@@ -1512,7 +1512,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets fix_tariff_date_from
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFixTariffDateFrom()
     {
@@ -1522,7 +1522,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fix_tariff_date_from
      *
-     * @param \DateTime $fix_tariff_date_from Дата начала действия фиксации
+     * @param string $fix_tariff_date_from Дата начала действия фиксации
      *
      * @return self
      */
@@ -1539,7 +1539,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets fix_tariff_date_to
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFixTariffDateTo()
     {
@@ -1549,7 +1549,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fix_tariff_date_to
      *
-     * @param \DateTime $fix_tariff_date_to Дата конца действия фиксации
+     * @param string $fix_tariff_date_to Дата конца действия фиксации
      *
      * @return self
      */
@@ -1971,7 +1971,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets order_dt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getOrderDt()
     {
@@ -1981,7 +1981,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets order_dt
      *
-     * @param \DateTime $order_dt Дата и время заказа
+     * @param string $order_dt Дата и время заказа
      *
      * @return self
      */
@@ -1998,7 +1998,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sale_dt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getSaleDt()
     {
@@ -2008,7 +2008,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sale_dt
      *
-     * @param \DateTime $sale_dt Дата и время продажи
+     * @param string $sale_dt Дата и время продажи
      *
      * @return self
      */
@@ -2025,7 +2025,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets rr_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getRrDate()
     {
@@ -2035,7 +2035,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets rr_date
      *
-     * @param \DateTime $rr_date Дата операции
+     * @param string $rr_date Дата операции
      *
      * @return self
      */
@@ -3780,7 +3780,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets utd_ucd_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getUtdUcdDate()
     {
@@ -3790,7 +3790,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets utd_ucd_date
      *
-     * @param \DateTime $utd_ucd_date Дата УПД или УКД
+     * @param string $utd_ucd_date Дата УПД или УКД
      *
      * @return self
      */

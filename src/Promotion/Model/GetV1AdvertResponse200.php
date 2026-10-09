@@ -63,7 +63,7 @@ class GetV1AdvertResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
         'brand' => 'string',
         'type' => 'int',
         'status' => 'int',
-        'create_time' => '\DateTime',
+        'create_time' => 'string',
         'extended' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1AdvertResponse200Extended',
         'items' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetV1AdvertResponse200ItemsInner[]'
     ];
@@ -81,7 +81,7 @@ class GetV1AdvertResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
         'brand' => null,
         'type' => null,
         'status' => null,
-        'create_time' => 'date-time',
+        'create_time' => null,
         'extended' => null,
         'items' => null
     ];
@@ -477,7 +477,7 @@ class GetV1AdvertResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets create_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreateTime()
     {
@@ -487,7 +487,7 @@ class GetV1AdvertResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets create_time
      *
-     * @param \DateTime|null $create_time Время создания медиакампании
+     * @param string|null $create_time Время создания медиакампании
      *
      * @return self
      */

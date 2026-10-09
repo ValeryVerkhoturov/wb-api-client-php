@@ -59,7 +59,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
       */
     protected static $openAPITypes = [
         'amount' => 'float',
-        'date' => '\DateTime',
+        'date' => 'string',
         'income_id' => 'int',
         'nm_id' => 'int',
         'photo_urls' => 'string[]',
@@ -76,7 +76,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
       */
     protected static $openAPIFormats = [
         'amount' => null,
-        'date' => 'date-time',
+        'date' => null,
         'income_id' => null,
         'nm_id' => null,
         'photo_urls' => null,
@@ -362,7 +362,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDate()
     {
@@ -372,7 +372,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets date
      *
-     * @param \DateTime|null $date Дата
+     * @param string|null $date Дата
      *
      * @return self
      */

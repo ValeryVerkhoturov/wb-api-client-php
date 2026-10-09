@@ -4963,8 +4963,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \DateTime $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
-     * @param  \DateTime $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
      * @param  bool $all_promo Показать акции:   - &#x60;false&#x60; — доступные для участия   - &#x60;true&#x60; — все акции (required)
      * @param  int $limit Количество запрашиваемых акций (optional)
      * @param  int $offset После какого элемента выдавать данные (optional)
@@ -4991,8 +4991,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \DateTime $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
-     * @param  \DateTime $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
      * @param  bool $all_promo Показать акции:   - &#x60;false&#x60; — доступные для участия   - &#x60;true&#x60; — все акции (required)
      * @param  int $limit Количество запрашиваемых акций (optional)
      * @param  int $offset После какого элемента выдавать данные (optional)
@@ -5301,8 +5301,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \DateTime $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
-     * @param  \DateTime $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
      * @param  bool $all_promo Показать акции:   - &#x60;false&#x60; — доступные для участия   - &#x60;true&#x60; — все акции (required)
      * @param  int $limit Количество запрашиваемых акций (optional)
      * @param  int $offset После какого элемента выдавать данные (optional)
@@ -5332,8 +5332,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \DateTime $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
-     * @param  \DateTime $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
      * @param  bool $all_promo Показать акции:   - &#x60;false&#x60; — доступные для участия   - &#x60;true&#x60; — все акции (required)
      * @param  int $limit Количество запрашиваемых акций (optional)
      * @param  int $offset После какого элемента выдавать данные (optional)
@@ -5392,8 +5392,8 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \DateTime $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
-     * @param  \DateTime $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $start_date_time Начало периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
+     * @param  string $end_date_time Конец периода, формат &#x60;YYYY-MM-DDTHH:MM:SSZ&#x60; (required)
      * @param  bool $all_promo Показать акции:   - &#x60;false&#x60; — доступные для участия   - &#x60;true&#x60; — все акции (required)
      * @param  int $limit Количество запрашиваемых акций (optional)
      * @param  int $offset После какого элемента выдавать данные (optional)
@@ -7679,8 +7679,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (optional)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
+     * @param  string $from Начало интервала (optional)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Payments'] to see the possible values for this operation
@@ -7705,8 +7705,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (optional)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
+     * @param  string $from Начало интервала (optional)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Payments'] to see the possible values for this operation
@@ -7978,8 +7978,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (optional)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
+     * @param  string $from Начало интервала (optional)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Payments'] to see the possible values for this operation
@@ -8007,8 +8007,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (optional)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
+     * @param  string $from Начало интервала (optional)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Payments'] to see the possible values for this operation
@@ -8065,8 +8065,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (optional)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
+     * @param  string $from Начало интервала (optional)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Payments'] to see the possible values for this operation
@@ -9142,8 +9142,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (required)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
+     * @param  string $from Начало интервала (required)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Upd'] to see the possible values for this operation
@@ -9168,8 +9168,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (required)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
+     * @param  string $from Начало интервала (required)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Upd'] to see the possible values for this operation
@@ -9441,8 +9441,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (required)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
+     * @param  string $from Начало интервала (required)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Upd'] to see the possible values for this operation
@@ -9470,8 +9470,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (required)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
+     * @param  string $from Начало интервала (required)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Upd'] to see the possible values for this operation
@@ -9528,8 +9528,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      * URL: https://advert-api-sandbox.wildberries.ru
      *
-     * @param  \DateTime $from Начало интервала (required)
-     * @param  \DateTime $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
+     * @param  string $from Начало интервала (required)
+     * @param  string $to Конец интервала. (Минимальный интервал 1 день, максимальный 31) (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV1Upd'] to see the possible values for this operation
@@ -10212,8 +10212,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  string $ids ID кампаний, максимум 50 значений (required)
-     * @param  \DateTime $begin_date Дата начала интервала (required)
-     * @param  \DateTime $end_date Дата окончания интервала (required)
+     * @param  string $begin_date Дата начала интервала (required)
+     * @param  string $end_date Дата окончания интервала (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3Fullstats'] to see the possible values for this operation
@@ -10238,8 +10238,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  string $ids ID кампаний, максимум 50 значений (required)
-     * @param  \DateTime $begin_date Дата начала интервала (required)
-     * @param  \DateTime $end_date Дата окончания интервала (required)
+     * @param  string $begin_date Дата начала интервала (required)
+     * @param  string $end_date Дата окончания интервала (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3Fullstats'] to see the possible values for this operation
@@ -10511,8 +10511,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  string $ids ID кампаний, максимум 50 значений (required)
-     * @param  \DateTime $begin_date Дата начала интервала (required)
-     * @param  \DateTime $end_date Дата окончания интервала (required)
+     * @param  string $begin_date Дата начала интервала (required)
+     * @param  string $end_date Дата окончания интервала (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3Fullstats'] to see the possible values for this operation
@@ -10540,8 +10540,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  string $ids ID кампаний, максимум 50 значений (required)
-     * @param  \DateTime $begin_date Дата начала интервала (required)
-     * @param  \DateTime $end_date Дата окончания интервала (required)
+     * @param  string $begin_date Дата начала интервала (required)
+     * @param  string $end_date Дата окончания интервала (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3Fullstats'] to see the possible values for this operation
@@ -10598,8 +10598,8 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  string $ids ID кампаний, максимум 50 значений (required)
-     * @param  \DateTime $begin_date Дата начала интервала (required)
-     * @param  \DateTime $end_date Дата окончания интервала (required)
+     * @param  string $begin_date Дата начала интервала (required)
+     * @param  string $end_date Дата окончания интервала (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3Fullstats'] to see the possible values for this operation

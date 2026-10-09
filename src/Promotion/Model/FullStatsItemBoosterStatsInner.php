@@ -59,7 +59,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'avg_position' => 'int',
-        'date' => '\DateTime',
+        'date' => 'string',
         'nm' => 'int'
     ];
 
@@ -72,7 +72,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'avg_position' => null,
-        'date' => 'date',
+        'date' => null,
         'nm' => null
     ];
 
@@ -343,7 +343,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -353,7 +353,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets date
      *
-     * @param \DateTime $date Дата, за которую предоставлены данные
+     * @param string $date Дата, за которую предоставлены данные
      *
      * @return self
      */

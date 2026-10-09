@@ -71,7 +71,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'article' => 'string',
         'color_code' => 'string',
         'rid' => 'string',
-        'created_at' => '\DateTime',
+        'created_at' => 'string',
         'offices' => 'string[]',
         'skus' => 'string[]',
         'id' => 'int',
@@ -113,7 +113,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'article' => null,
         'color_code' => null,
         'rid' => null,
-        'created_at' => 'date-time',
+        'created_at' => null,
         'offices' => null,
         'skus' => null,
         'id' => 'int64',
@@ -993,7 +993,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -1003,7 +1003,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата создания сборочного задания (RFC3339)
+     * @param string|null $created_at Дата создания сборочного задания (RFC3339)
      *
      * @return self
      */

@@ -62,9 +62,9 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_b2b' => 'bool',
         'is_pickup_point_shipment_allowed' => 'bool',
         'done' => 'bool',
-        'created_at' => '\DateTime',
-        'closed_at' => '\DateTime',
-        'scan_dt' => '\DateTime',
+        'created_at' => 'string',
+        'closed_at' => 'string',
+        'scan_dt' => 'string',
         'name' => 'string',
         'cargo_type' => 'int',
         'cross_border_type' => 'int',
@@ -89,9 +89,9 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_b2b' => null,
         'is_pickup_point_shipment_allowed' => null,
         'done' => null,
-        'created_at' => 'date-time',
-        'closed_at' => 'date-time',
-        'scan_dt' => 'date-time',
+        'created_at' => null,
+        'closed_at' => null,
+        'scan_dt' => null,
         'name' => null,
         'cargo_type' => null,
         'cross_border_type' => 'int32',
@@ -597,7 +597,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -607,7 +607,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата создания поставки (RFC3339)
+     * @param string|null $created_at Дата создания поставки (RFC3339)
      *
      * @return self
      */
@@ -624,7 +624,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets closed_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getClosedAt()
     {
@@ -634,7 +634,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets closed_at
      *
-     * @param \DateTime|null $closed_at Дата закрытия поставки (RFC3339)
+     * @param string|null $closed_at Дата закрытия поставки (RFC3339)
      *
      * @return self
      */
@@ -658,7 +658,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scan_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getScanDt()
     {
@@ -668,7 +668,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scan_dt
      *
-     * @param \DateTime|null $scan_dt Дата сканирования поставки (RFC3339). Если `\"scanDt\":null`, поставка не сканировалась
+     * @param string|null $scan_dt Дата сканирования поставки (RFC3339). Если `\"scanDt\":null`, поставка не сканировалась
      *
      * @return self
      */

@@ -62,8 +62,8 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
         'state' => 'string',
         'activation_source' => 'string',
         'level' => 'string',
-        'since' => '\DateTime',
-        'till' => '\DateTime'
+        'since' => 'string',
+        'till' => 'string'
     ];
 
     /**
@@ -77,8 +77,8 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
         'state' => null,
         'activation_source' => null,
         'level' => null,
-        'since' => 'date-time',
-        'till' => 'date-time'
+        'since' => null,
+        'till' => null
     ];
 
     /**
@@ -522,7 +522,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets since
      *
-     * @return \DateTime
+     * @return string
      */
     public function getSince()
     {
@@ -532,7 +532,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets since
      *
-     * @param \DateTime $since Дата и время первой активации подписки. Не меняется при продлении или повторной активации
+     * @param string $since Дата и время первой активации подписки. Не меняется при продлении или повторной активации
      *
      * @return self
      */
@@ -549,7 +549,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets till
      *
-     * @return \DateTime
+     * @return string
      */
     public function getTill()
     {
@@ -559,7 +559,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets till
      *
-     * @param \DateTime $till Дата и время окончания подписки
+     * @param string $till Дата и время окончания подписки
      *
      * @return self
      */

@@ -61,7 +61,7 @@ class ApiOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'article' => 'string',
         'cargo_type' => 'int',
         'chrt_id' => 'int',
-        'created_at' => '\DateTime',
+        'created_at' => 'string',
         'price' => 'int',
         'final_price' => 'int',
         'converted_price' => 'int',
@@ -92,7 +92,7 @@ class ApiOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'article' => null,
         'cargo_type' => null,
         'chrt_id' => 'uint64',
-        'created_at' => 'date-time',
+        'created_at' => null,
         'price' => null,
         'final_price' => null,
         'converted_price' => null,
@@ -550,7 +550,7 @@ class ApiOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -560,7 +560,7 @@ class ApiOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата и время создания сборочного задания
+     * @param string|null $created_at Дата и время создания сборочного задания
      *
      * @return self
      */

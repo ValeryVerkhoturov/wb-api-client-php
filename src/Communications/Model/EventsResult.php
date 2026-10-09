@@ -59,8 +59,8 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'next' => 'int',
-        'newest_event_time' => '\DateTime',
-        'oldest_event_time' => '\DateTime',
+        'newest_event_time' => 'string',
+        'oldest_event_time' => 'string',
         'total_events' => 'int',
         'events' => '\ValeryVerkhoturov\WbApiClient\Communications\Model\Event[]'
     ];
@@ -74,8 +74,8 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'next' => 'Unix timestamp',
-        'newest_event_time' => 'date-time',
-        'oldest_event_time' => 'date-time',
+        'newest_event_time' => null,
+        'oldest_event_time' => null,
         'total_events' => null,
         'events' => null
     ];
@@ -348,7 +348,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets newest_event_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getNewestEventTime()
     {
@@ -358,7 +358,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets newest_event_time
      *
-     * @param \DateTime|null $newest_event_time Время новейшего события в ответе
+     * @param string|null $newest_event_time Время новейшего события в ответе
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets oldest_event_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getOldestEventTime()
     {
@@ -385,7 +385,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets oldest_event_time
      *
-     * @param \DateTime|null $oldest_event_time Время старейшего события в ответе
+     * @param string|null $oldest_event_time Время старейшего события в ответе
      *
      * @return self
      */

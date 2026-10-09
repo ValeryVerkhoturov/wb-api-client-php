@@ -59,10 +59,10 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
       */
     protected static $openAPITypes = [
         'count' => 'int',
-        'gi_create_date' => '\DateTime',
+        'gi_create_date' => 'string',
         'income_id' => 'int',
         'nm_id' => 'int',
-        'shk_create_date' => '\DateTime',
+        'shk_create_date' => 'string',
         'subject_name' => 'string',
         'total' => 'float'
     ];
@@ -76,10 +76,10 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
       */
     protected static $openAPIFormats = [
         'count' => null,
-        'gi_create_date' => 'date',
+        'gi_create_date' => null,
         'income_id' => null,
         'nm_id' => null,
-        'shk_create_date' => 'date',
+        'shk_create_date' => null,
         'subject_name' => null,
         'total' => null
     ];
@@ -362,7 +362,7 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
     /**
      * Gets gi_create_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getGiCreateDate()
     {
@@ -372,7 +372,7 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
     /**
      * Sets gi_create_date
      *
-     * @param \DateTime|null $gi_create_date Дата создания поставки
+     * @param string|null $gi_create_date Дата создания поставки
      *
      * @return self
      */
@@ -443,7 +443,7 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
     /**
      * Gets shk_create_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShkCreateDate()
     {
@@ -453,7 +453,7 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
     /**
      * Sets shk_create_date
      *
-     * @param \DateTime|null $shk_create_date Дата приёмки
+     * @param string|null $shk_create_date Дата приёмки
      *
      * @return self
      */

@@ -59,8 +59,8 @@ class PastPeriodItemRating implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start' => '\DateTime',
-        'end' => '\DateTime'
+        'start' => 'string',
+        'end' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class PastPeriodItemRating implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start' => 'date',
-        'end' => 'date'
+        'start' => null,
+        'end' => null
     ];
 
     /**
@@ -307,7 +307,7 @@ class PastPeriodItemRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets start
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStart()
     {
@@ -317,7 +317,7 @@ class PastPeriodItemRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets start
      *
-     * @param \DateTime $start Дата начала периода. Не ранее 364 суток от вчерашнего дня и не позднее `end`
+     * @param string $start Дата начала периода. Не ранее 364 суток от вчерашнего дня и не позднее `end`
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class PastPeriodItemRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets end
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEnd()
     {
@@ -344,7 +344,7 @@ class PastPeriodItemRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets end
      *
-     * @param \DateTime $end Дата окончания периода. Не ранее 364 суток от вчерашнего дня и не позднее даты перед началом `currentPeriod`.
+     * @param string $end Дата окончания периода. Не ранее 364 суток от вчерашнего дня и не позднее даты перед началом `currentPeriod`.
      *
      * @return self
      */

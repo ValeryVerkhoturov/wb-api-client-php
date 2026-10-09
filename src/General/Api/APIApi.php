@@ -132,7 +132,7 @@ class APIApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
      *
-     * @param  \DateTime $from Дата, от которой необходимо выдать новости (optional)
+     * @param  string $from Дата, от которой необходимо выдать новости (optional)
      * @param  int $from_id ID новости, начиная с которой — включая её — нужно получить список новостей (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -157,7 +157,7 @@ class APIApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
      *
-     * @param  \DateTime $from Дата, от которой необходимо выдать новости (optional)
+     * @param  string $from Дата, от которой необходимо выдать новости (optional)
      * @param  int $from_id ID новости, начиная с которой — включая её — нужно получить список новостей (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -359,7 +359,7 @@ class APIApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
      *
-     * @param  \DateTime $from Дата, от которой необходимо выдать новости (optional)
+     * @param  string $from Дата, от которой необходимо выдать новости (optional)
      * @param  int $from_id ID новости, начиная с которой — включая её — нужно получить список новостей (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -387,7 +387,7 @@ class APIApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
      *
-     * @param  \DateTime $from Дата, от которой необходимо выдать новости (optional)
+     * @param  string $from Дата, от которой необходимо выдать новости (optional)
      * @param  int $from_id ID новости, начиная с которой — включая её — нужно получить список новостей (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -444,7 +444,7 @@ class APIApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
      *
-     * @param  \DateTime $from Дата, от которой необходимо выдать новости (optional)
+     * @param  string $from Дата, от которой необходимо выдать новости (optional)
      * @param  int $from_id ID новости, начиная с которой — включая её — нужно получить список новостей (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.

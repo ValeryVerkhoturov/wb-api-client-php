@@ -60,7 +60,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'invite_id' => 'string',
-        'expired_at' => '\DateTime',
+        'expired_at' => 'string',
         'is_success' => 'bool',
         'invite_url' => 'string'
     ];
@@ -74,7 +74,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'invite_id' => 'uuid',
-        'expired_at' => 'date-time',
+        'expired_at' => null,
         'is_success' => null,
         'invite_url' => null
     ];
@@ -354,7 +354,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets expired_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getExpiredAt()
     {
@@ -364,7 +364,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets expired_at
      *
-     * @param \DateTime $expired_at Дата и время окончания срока действия приглашения
+     * @param string $expired_at Дата и время окончания срока действия приглашения
      *
      * @return self
      */

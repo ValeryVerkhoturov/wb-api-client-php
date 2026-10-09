@@ -67,8 +67,8 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'clicks' => 'int',
         'cr' => 'float',
         'ctr' => 'float',
-        'date_from' => '\DateTime',
-        'date_to' => '\DateTime',
+        'date_from' => 'string',
+        'date_to' => 'string',
         'subject_name' => 'string',
         'atbs' => 'int',
         'orders' => 'int',
@@ -98,8 +98,8 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'clicks' => null,
         'cr' => null,
         'ctr' => null,
-        'date_from' => 'date-time',
-        'date_to' => 'date-time',
+        'date_from' => null,
+        'date_to' => null,
         'subject_name' => null,
         'atbs' => null,
         'orders' => null,
@@ -676,7 +676,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date_from
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDateFrom()
     {
@@ -686,7 +686,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date_from
      *
-     * @param \DateTime|null $date_from Время начала размещения
+     * @param string|null $date_from Время начала размещения
      *
      * @return self
      */
@@ -703,7 +703,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date_to
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDateTo()
     {
@@ -713,7 +713,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date_to
      *
-     * @param \DateTime|null $date_to Время завершения размещения
+     * @param string|null $date_to Время завершения размещения
      *
      * @return self
      */

@@ -61,8 +61,8 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'upload_id' => 'int',
         'status' => 'int',
-        'upload_date' => '\DateTime',
-        'activation_date' => '\DateTime',
+        'upload_date' => 'string',
+        'activation_date' => 'string',
         'over_all_goods_number' => 'int',
         'success_goods_number' => 'int'
     ];
@@ -77,8 +77,8 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPIFormats = [
         'upload_id' => null,
         'status' => null,
-        'upload_date' => 'date-time',
-        'activation_date' => 'date-time',
+        'upload_date' => null,
+        'activation_date' => null,
         'over_all_goods_number' => null,
         'success_goods_number' => null
     ];
@@ -383,7 +383,7 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets upload_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUploadDate()
     {
@@ -393,7 +393,7 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets upload_date
      *
-     * @param \DateTime|null $upload_date Дата и время, когда загрузка создана
+     * @param string|null $upload_date Дата и время, когда загрузка создана
      *
      * @return self
      */
@@ -410,7 +410,7 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets activation_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getActivationDate()
     {
@@ -420,7 +420,7 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets activation_date
      *
-     * @param \DateTime|null $activation_date Дата и время, когда загрузка отправляется в обработку
+     * @param string|null $activation_date Дата и время, когда загрузка отправляется в обработку
      *
      * @return self
      */

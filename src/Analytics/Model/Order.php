@@ -62,8 +62,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'nm_id' => 'int',
         'chrt_id' => 'int',
         'srid' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'created_at' => 'string',
+        'updated_at' => 'string',
         'status' => 'string',
         'cancel_type' => 'string',
         'warehouse_name' => 'string',
@@ -86,8 +86,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'nm_id' => 'int64',
         'chrt_id' => 'uint64',
         'srid' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'created_at' => null,
+        'updated_at' => null,
         'status' => null,
         'cancel_type' => null,
         'warehouse_name' => null,
@@ -563,7 +563,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedAt()
     {
@@ -573,7 +573,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime $created_at Дата и время оформления заказа
+     * @param string $created_at Дата и время оформления заказа
      *
      * @return self
      */
@@ -590,7 +590,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getUpdatedAt()
     {
@@ -600,7 +600,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated_at
      *
-     * @param \DateTime $updated_at Дата и время текущего статуса. При `\"status\":\"created\"` возвращается значение поля `createdAt`
+     * @param string $updated_at Дата и время текущего статуса. При `\"status\":\"created\"` возвращается значение поля `createdAt`
      *
      * @return self
      */

@@ -61,8 +61,8 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'car_number' => 'string',
         'full_name' => 'string',
         'phone' => 'string',
-        'p_time_from' => '\DateTime',
-        'p_time_to' => '\DateTime'
+        'p_time_from' => 'string',
+        'p_time_to' => 'string'
     ];
 
     /**
@@ -76,8 +76,8 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'car_number' => null,
         'full_name' => null,
         'phone' => null,
-        'p_time_from' => 'date-time',
-        'p_time_to' => 'date-time'
+        'p_time_from' => null,
+        'p_time_to' => null
     ];
 
     /**
@@ -402,7 +402,7 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets p_time_from
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPTimeFrom()
     {
@@ -412,7 +412,7 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets p_time_from
      *
-     * @param \DateTime|null $p_time_from Дата и время, с которого прибудет курьер
+     * @param string|null $p_time_from Дата и время, с которого прибудет курьер
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets p_time_to
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPTimeTo()
     {
@@ -446,7 +446,7 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets p_time_to
      *
-     * @param \DateTime|null $p_time_to Дата и время, до которого прибудет курьер
+     * @param string|null $p_time_to Дата и время, до которого прибудет курьер
      *
      * @return self
      */

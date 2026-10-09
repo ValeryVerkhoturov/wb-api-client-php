@@ -66,7 +66,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
         'dst_office_id' => 'int',
         'expired_dt' => 'string',
         'nm_id' => 'int',
-        'order_dt' => '\DateTime',
+        'order_dt' => 'string',
         'order_id' => 'int',
         'ready_to_return_dt' => 'string',
         'return_reason' => 'string',
@@ -95,7 +95,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
         'dst_office_id' => null,
         'expired_dt' => null,
         'nm_id' => null,
-        'order_dt' => 'date',
+        'order_dt' => null,
         'order_id' => null,
         'ready_to_return_dt' => null,
         'return_reason' => null,
@@ -710,7 +710,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets order_dt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getOrderDt()
     {
@@ -720,7 +720,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets order_dt
      *
-     * @param \DateTime $order_dt Дата заказа на возврат
+     * @param string $order_dt Дата заказа на возврат
      *
      * @return self
      */

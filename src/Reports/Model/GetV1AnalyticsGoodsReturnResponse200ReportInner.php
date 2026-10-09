@@ -66,7 +66,7 @@ class GetV1AnalyticsGoodsReturnResponse200ReportInner implements ModelInterface,
         'expired_dt' => 'string',
         'is_status_active' => 'int',
         'nm_id' => 'int',
-        'order_dt' => '\DateTime',
+        'order_dt' => 'string',
         'order_id' => 'int',
         'ready_to_return_dt' => 'string',
         'reason' => 'string',
@@ -95,7 +95,7 @@ class GetV1AnalyticsGoodsReturnResponse200ReportInner implements ModelInterface,
         'expired_dt' => null,
         'is_status_active' => null,
         'nm_id' => null,
-        'order_dt' => 'date',
+        'order_dt' => null,
         'order_id' => null,
         'ready_to_return_dt' => null,
         'reason' => null,
@@ -683,7 +683,7 @@ class GetV1AnalyticsGoodsReturnResponse200ReportInner implements ModelInterface,
     /**
      * Gets order_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getOrderDt()
     {
@@ -693,7 +693,7 @@ class GetV1AnalyticsGoodsReturnResponse200ReportInner implements ModelInterface,
     /**
      * Sets order_dt
      *
-     * @param \DateTime|null $order_dt Дата заказа на возврат
+     * @param string|null $order_dt Дата заказа на возврат
      *
      * @return self
      */

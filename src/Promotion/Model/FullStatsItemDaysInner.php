@@ -61,7 +61,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
         'apps' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\FullStatsItemDaysInnerAppsInner[]',
         'atbs' => 'int',
         'canceled' => 'int',
-        'date' => '\DateTime',
+        'date' => 'string',
         'clicks' => 'int',
         'cpc' => 'float',
         'cr' => 'float',
@@ -84,7 +84,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
         'apps' => null,
         'atbs' => null,
         'canceled' => null,
-        'date' => 'date-time',
+        'date' => null,
         'clicks' => null,
         'cpc' => null,
         'cr' => null,
@@ -497,7 +497,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -507,7 +507,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets date
      *
-     * @param \DateTime $date Дата, за которую представлены данные
+     * @param string $date Дата, за которую представлены данные
      *
      * @return self
      */

@@ -60,7 +60,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'package_code' => 'string',
         'video_url' => 'string',
-        'video_starts_at' => '\DateTime',
+        'video_starts_at' => 'string',
         'video_unavailable' => 'bool',
         'items' => '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDiscrepancyResponseItem[]'
     ];
@@ -75,7 +75,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'package_code' => null,
         'video_url' => null,
-        'video_starts_at' => 'date-time',
+        'video_starts_at' => null,
         'video_unavailable' => null,
         'items' => null
     ];
@@ -390,7 +390,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets video_starts_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getVideoStartsAt()
     {
@@ -400,7 +400,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets video_starts_at
      *
-     * @param \DateTime $video_starts_at Дата и время видеофиксации расхождений в процессе приемки
+     * @param string $video_starts_at Дата и время видеофиксации расхождений в процессе приемки
      *
      * @return self
      */

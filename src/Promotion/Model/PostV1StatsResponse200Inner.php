@@ -60,7 +60,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'interval' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval',
         'stats' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\StatsBlok1[]',
-        'dates' => '\DateTime[]',
+        'dates' => 'string[]',
         'advert_id' => 'int',
         'error' => 'string'
     ];
@@ -75,7 +75,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'interval' => null,
         'stats' => null,
-        'dates' => 'date',
+        'dates' => null,
         'advert_id' => 'int64',
         'error' => null
     ];
@@ -381,7 +381,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets dates
      *
-     * @return \DateTime[]
+     * @return string[]
      */
     public function getDates()
     {
@@ -391,7 +391,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets dates
      *
-     * @param \DateTime[] $dates Даты, за которые нужно получить информацию
+     * @param string[] $dates Даты, за которые нужно получить информацию
      *
      * @return self
      */

@@ -65,7 +65,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'article' => 'string',
         'color_code' => 'string',
         'rid' => 'string',
-        'created_at' => '\DateTime',
+        'created_at' => 'string',
         'skus' => 'string[]',
         'id' => 'int',
         'warehouse_id' => 'int',
@@ -95,7 +95,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'article' => null,
         'color_code' => null,
         'rid' => null,
-        'created_at' => 'date-time',
+        'created_at' => null,
         'skus' => null,
         'id' => 'int64',
         'warehouse_id' => null,
@@ -652,7 +652,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -662,7 +662,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата создания сборочного задания
+     * @param string|null $created_at Дата создания сборочного задания
      *
      * @return self
      */

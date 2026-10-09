@@ -63,8 +63,8 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_number' => 'string',
         'trade_name' => 'string',
         'applicant' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => 'string',
+        'end_date' => 'string',
         'is_endless' => 'bool'
     ];
 
@@ -81,8 +81,8 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_number' => null,
         'trade_name' => null,
         'applicant' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
+        'start_date' => null,
+        'end_date' => null,
         'is_endless' => null
     ];
 
@@ -477,7 +477,7 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -487,7 +487,7 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date Дата и время начала срока действия документа
+     * @param string|null $start_date Дата и время начала срока действия документа
      *
      * @return self
      */
@@ -504,7 +504,7 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -514,7 +514,7 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date Дата и время окончания срока действия документа
+     * @param string|null $end_date Дата и время окончания срока действия документа
      *
      * @return self
      */

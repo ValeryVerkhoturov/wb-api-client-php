@@ -63,7 +63,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'brands' => 'array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorBrand>',
         'vendor_codes' => 'string[]',
         'errors' => 'array<string,string[]>',
-        'updated_at' => '\DateTime'
+        'updated_at' => 'string'
     ];
 
     /**
@@ -79,7 +79,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'brands' => null,
         'vendor_codes' => null,
         'errors' => null,
-        'updated_at' => 'date-time'
+        'updated_at' => null
     ];
 
     /**
@@ -481,7 +481,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets updated_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getUpdatedAt()
     {
@@ -491,7 +491,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets updated_at
      *
-     * @param \DateTime $updated_at Дата и время создания или редактирования пакета
+     * @param string $updated_at Дата и время создания или редактирования пакета
      *
      * @return self
      */

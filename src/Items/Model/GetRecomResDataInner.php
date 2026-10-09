@@ -62,7 +62,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
         'imt_id' => 'int',
         'vendor_code' => 'string',
         'brand_name' => 'string',
-        'updated_at' => '\DateTime',
+        'updated_at' => 'string',
         'pics_count' => 'int',
         'title' => 'string',
         'subject_name' => 'string',
@@ -84,7 +84,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
         'imt_id' => 'int64',
         'vendor_code' => null,
         'brand_name' => null,
-        'updated_at' => 'date-time',
+        'updated_at' => null,
         'pics_count' => null,
         'title' => null,
         'subject_name' => null,
@@ -511,7 +511,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets updated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -521,7 +521,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets updated_at
      *
-     * @param \DateTime|null $updated_at Дата и время последнего обновления рекомендаций
+     * @param string|null $updated_at Дата и время последнего обновления рекомендаций
      *
      * @return self
      */

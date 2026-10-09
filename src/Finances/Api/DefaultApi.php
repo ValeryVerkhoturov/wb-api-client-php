@@ -1716,8 +1716,8 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
-     * @param  \DateTime $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  string $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
      * @param  string $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
      * @param  string $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
      * @param  string $category ID [категории документов](./documents-and-accounting#tag/documents/operation/getV1DocumentsCategories) из поля &#x60;name&#x60; (optional)
@@ -1748,8 +1748,8 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
-     * @param  \DateTime $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  string $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
      * @param  string $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
      * @param  string $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
      * @param  string $category ID [категории документов](./documents-and-accounting#tag/documents/operation/getV1DocumentsCategories) из поля &#x60;name&#x60; (optional)
@@ -2062,8 +2062,8 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
-     * @param  \DateTime $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  string $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
      * @param  string $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
      * @param  string $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
      * @param  string $category ID [категории документов](./documents-and-accounting#tag/documents/operation/getV1DocumentsCategories) из поля &#x60;name&#x60; (optional)
@@ -2097,8 +2097,8 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
-     * @param  \DateTime $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  string $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
      * @param  string $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
      * @param  string $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
      * @param  string $category ID [категории документов](./documents-and-accounting#tag/documents/operation/getV1DocumentsCategories) из поля &#x60;name&#x60; (optional)
@@ -2161,8 +2161,8 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
-     * @param  \DateTime $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  string $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
      * @param  string $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
      * @param  string $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
      * @param  string $category ID [категории документов](./documents-and-accounting#tag/documents/operation/getV1DocumentsCategories) из поля &#x60;name&#x60; (optional)

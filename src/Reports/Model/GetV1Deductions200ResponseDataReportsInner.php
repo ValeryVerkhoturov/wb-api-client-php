@@ -58,7 +58,7 @@ class GetV1Deductions200ResponseDataReportsInner implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dt_bonus' => '\DateTime',
+        'dt_bonus' => 'string',
         'nm_id' => 'int',
         'old_shk_id' => 'int',
         'old_color' => 'string',
@@ -83,7 +83,7 @@ class GetV1Deductions200ResponseDataReportsInner implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'dt_bonus' => 'date-time',
+        'dt_bonus' => null,
         'nm_id' => null,
         'old_shk_id' => null,
         'old_color' => null,
@@ -391,7 +391,7 @@ class GetV1Deductions200ResponseDataReportsInner implements ModelInterface, Arra
     /**
      * Gets dt_bonus
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDtBonus()
     {
@@ -401,7 +401,7 @@ class GetV1Deductions200ResponseDataReportsInner implements ModelInterface, Arra
     /**
      * Sets dt_bonus
      *
-     * @param \DateTime|null $dt_bonus Дата и время удержания
+     * @param string|null $dt_bonus Дата и время удержания
      *
      * @return self
      */

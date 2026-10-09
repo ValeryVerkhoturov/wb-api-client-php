@@ -58,7 +58,7 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'date' => '\DateTime',
+        'date' => 'string',
         'stat' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V1GetNormQueryStatsResponseItemStat'
     ];
 
@@ -70,7 +70,7 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'date' => 'date',
+        'date' => null,
         'stat' => null
     ];
 
@@ -303,7 +303,7 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -313,7 +313,7 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
     /**
      * Sets date
      *
-     * @param \DateTime $date Дата
+     * @param string $date Дата
      *
      * @return self
      */

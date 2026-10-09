@@ -65,7 +65,7 @@ class GetV3FbsShippingPoints403Response implements ModelInterface, ArrayAccess, 
         'origin' => 'string',
         'status' => 'float',
         'status_text' => 'string',
-        'timestamp' => '\DateTime'
+        'timestamp' => 'string'
     ];
 
     /**
@@ -83,7 +83,7 @@ class GetV3FbsShippingPoints403Response implements ModelInterface, ArrayAccess, 
         'origin' => null,
         'status' => null,
         'status_text' => null,
-        'timestamp' => 'date-time'
+        'timestamp' => null
     ];
 
     /**
@@ -531,7 +531,7 @@ class GetV3FbsShippingPoints403Response implements ModelInterface, ArrayAccess, 
     /**
      * Gets timestamp
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getTimestamp()
     {
@@ -541,7 +541,7 @@ class GetV3FbsShippingPoints403Response implements ModelInterface, ArrayAccess, 
     /**
      * Sets timestamp
      *
-     * @param \DateTime|null $timestamp Дата и время запроса
+     * @param string|null $timestamp Дата и время запроса
      *
      * @return self
      */

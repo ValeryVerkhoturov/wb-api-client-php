@@ -58,7 +58,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dt' => '\DateTime',
+        'dt' => 'string',
         'visibility' => 'int',
         'open' => 'int'
     ];
@@ -71,7 +71,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'dt' => 'date',
+        'dt' => null,
         'visibility' => 'uint64',
         'open' => 'uint64'
     ];
@@ -316,7 +316,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets dt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDt()
     {
@@ -326,7 +326,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets dt
      *
-     * @param \DateTime $dt Дата
+     * @param string $dt Дата
      *
      * @return self
      */

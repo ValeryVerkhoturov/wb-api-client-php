@@ -63,7 +63,7 @@ class ApiNewOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'required_meta' => 'string[]',
         'article' => 'string',
         'rid' => 'string',
-        'created_at' => '\DateTime',
+        'created_at' => 'string',
         'warehouse_address' => 'string',
         'order_code' => 'string',
         'pay_mode' => 'string',
@@ -97,7 +97,7 @@ class ApiNewOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'required_meta' => null,
         'article' => null,
         'rid' => null,
-        'created_at' => 'date-time',
+        'created_at' => null,
         'warehouse_address' => null,
         'order_code' => null,
         'pay_mode' => null,
@@ -629,7 +629,7 @@ class ApiNewOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -639,7 +639,7 @@ class ApiNewOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата и время создания сборочного задания
+     * @param string|null $created_at Дата и время создания сборочного задания
      *
      * @return self
      */

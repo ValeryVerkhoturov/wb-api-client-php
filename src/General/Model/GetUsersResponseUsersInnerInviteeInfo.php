@@ -62,7 +62,7 @@ class GetUsersResponseUsersInnerInviteeInfo implements ModelInterface, ArrayAcce
         'phone_number' => 'string',
         'position' => 'string',
         'invite_uuid' => 'string',
-        'expired_at' => '\DateTime',
+        'expired_at' => 'string',
         'is_active' => 'bool'
     ];
 
@@ -77,7 +77,7 @@ class GetUsersResponseUsersInnerInviteeInfo implements ModelInterface, ArrayAcce
         'phone_number' => null,
         'position' => null,
         'invite_uuid' => 'UUID',
-        'expired_at' => 'date-time',
+        'expired_at' => null,
         'is_active' => null
     ];
 
@@ -403,7 +403,7 @@ class GetUsersResponseUsersInnerInviteeInfo implements ModelInterface, ArrayAcce
     /**
      * Gets expired_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpiredAt()
     {
@@ -413,7 +413,7 @@ class GetUsersResponseUsersInnerInviteeInfo implements ModelInterface, ArrayAcce
     /**
      * Sets expired_at
      *
-     * @param \DateTime|null $expired_at Дата и время окончания срока действия приглашения
+     * @param string|null $expired_at Дата и время окончания срока действия приглашения
      *
      * @return self
      */

@@ -61,7 +61,7 @@ class GetV1QuestionsResponse200DataQuestionsInnerAnswer implements ModelInterfac
     protected static $openAPITypes = [
         'text' => 'string',
         'editable' => 'bool',
-        'create_date' => '\DateTime'
+        'create_date' => 'string'
     ];
 
     /**
@@ -74,7 +74,7 @@ class GetV1QuestionsResponse200DataQuestionsInnerAnswer implements ModelInterfac
     protected static $openAPIFormats = [
         'text' => null,
         'editable' => null,
-        'create_date' => 'date-time'
+        'create_date' => null
     ];
 
     /**
@@ -362,7 +362,7 @@ class GetV1QuestionsResponse200DataQuestionsInnerAnswer implements ModelInterfac
     /**
      * Gets create_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreateDate()
     {
@@ -372,7 +372,7 @@ class GetV1QuestionsResponse200DataQuestionsInnerAnswer implements ModelInterfac
     /**
      * Sets create_date
      *
-     * @param \DateTime|null $create_date Дата и время создания ответа
+     * @param string|null $create_date Дата и время создания ответа
      *
      * @return self
      */

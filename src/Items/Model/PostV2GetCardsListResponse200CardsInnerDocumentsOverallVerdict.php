@@ -62,7 +62,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsOverallVerdict implements 
         'is_fully_checked' => 'bool',
         'status' => 'int',
         'reason' => 'string',
-        'created_at' => '\DateTime'
+        'created_at' => 'string'
     ];
 
     /**
@@ -76,7 +76,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsOverallVerdict implements 
         'is_fully_checked' => null,
         'status' => null,
         'reason' => null,
-        'created_at' => 'date-time'
+        'created_at' => null
     ];
 
     /**
@@ -403,7 +403,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsOverallVerdict implements 
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -413,7 +413,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsOverallVerdict implements 
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата и время проверки карточки товара
+     * @param string|null $created_at Дата и время проверки карточки товара
      *
      * @return self
      */

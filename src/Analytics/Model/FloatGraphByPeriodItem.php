@@ -59,8 +59,8 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start' => '\DateTime',
-        'end' => '\DateTime',
+        'start' => 'string',
+        'end' => 'string',
         'value' => 'float'
     ];
 
@@ -72,8 +72,8 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start' => 'date',
-        'end' => 'date',
+        'start' => null,
+        'end' => null,
         'value' => 'float64'
     ];
 
@@ -317,7 +317,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets start
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStart()
     {
@@ -327,7 +327,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets start
      *
-     * @param \DateTime $start Начало месяца
+     * @param string $start Начало месяца
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets end
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEnd()
     {
@@ -354,7 +354,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets end
      *
-     * @param \DateTime $end Конец месяца
+     * @param string $end Конец месяца
      *
      * @return self
      */

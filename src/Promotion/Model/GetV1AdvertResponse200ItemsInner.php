@@ -68,10 +68,10 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
         'cpm' => 'int',
         'url' => 'string',
         'advert_type' => 'int',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'date_from' => '\DateTime',
-        'date_to' => '\DateTime',
+        'created_at' => 'string',
+        'updated_at' => 'string',
+        'date_from' => 'string',
+        'date_to' => 'string',
         'nms' => 'int[]',
         'bottom_text1' => 'string',
         'bottom_text2' => 'string',
@@ -103,10 +103,10 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
         'cpm' => null,
         'url' => null,
         'advert_type' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
-        'date_from' => 'date-time',
-        'date_to' => 'date-time',
+        'created_at' => null,
+        'updated_at' => null,
+        'date_from' => null,
+        'date_to' => null,
         'nms' => null,
         'bottom_text1' => null,
         'bottom_text2' => null,
@@ -731,7 +731,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -741,7 +741,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата создания баннера
+     * @param string|null $created_at Дата создания баннера
      *
      * @return self
      */
@@ -758,7 +758,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Gets updated_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -768,7 +768,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets updated_at
      *
-     * @param \DateTime|null $updated_at Дата и время обновления баннера
+     * @param string|null $updated_at Дата и время обновления баннера
      *
      * @return self
      */
@@ -785,7 +785,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Gets date_from
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDateFrom()
     {
@@ -795,7 +795,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets date_from
      *
-     * @param \DateTime|null $date_from Дата начала работы баннера
+     * @param string|null $date_from Дата начала работы баннера
      *
      * @return self
      */
@@ -812,7 +812,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Gets date_to
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDateTo()
     {
@@ -822,7 +822,7 @@ class GetV1AdvertResponse200ItemsInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets date_to
      *
-     * @param \DateTime|null $date_to Дата завершения работы баннера
+     * @param string|null $date_to Дата завершения работы баннера
      *
      * @return self
      */

@@ -58,7 +58,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dt' => '\DateTime',
+        'dt' => 'string',
         'avg_position' => 'int',
         'orders' => 'int'
     ];
@@ -71,7 +71,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'dt' => 'date',
+        'dt' => null,
         'avg_position' => 'uint64',
         'orders' => 'uint64'
     ];
@@ -316,7 +316,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets dt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDt()
     {
@@ -326,7 +326,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets dt
      *
-     * @param \DateTime $dt Дата сбора статистики
+     * @param string $dt Дата сбора статистики
      *
      * @return self
      */

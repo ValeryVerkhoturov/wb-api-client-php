@@ -59,8 +59,8 @@ class OrderFeedRequestSelectedPeriod implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start' => '\DateTime',
-        'end' => '\DateTime'
+        'start' => 'string',
+        'end' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class OrderFeedRequestSelectedPeriod implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start' => 'date-time',
-        'end' => 'date-time'
+        'start' => null,
+        'end' => null
     ];
 
     /**
@@ -304,7 +304,7 @@ class OrderFeedRequestSelectedPeriod implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets start
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStart()
     {
@@ -314,7 +314,7 @@ class OrderFeedRequestSelectedPeriod implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets start
      *
-     * @param \DateTime $start Дата и время начала периода. Не ранее 31 суток от текущей даты и не позднее `end`
+     * @param string $start Дата и время начала периода. Не ранее 31 суток от текущей даты и не позднее `end`
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class OrderFeedRequestSelectedPeriod implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets end
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEnd()
     {
@@ -341,7 +341,7 @@ class OrderFeedRequestSelectedPeriod implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets end
      *
-     * @param \DateTime|null $end Дата и время конца периода. Не ранее 31 суток от текущей даты
+     * @param string|null $end Дата и время конца периода. Не ранее 31 суток от текущей даты
      *
      * @return self
      */

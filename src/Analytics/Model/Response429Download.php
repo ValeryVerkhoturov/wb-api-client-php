@@ -66,7 +66,7 @@ class Response429Download implements ModelInterface, ArrayAccess, \JsonSerializa
         'origin' => 'string',
         'status' => 'float',
         'status_text' => 'string',
-        'timestamp' => '\DateTime'
+        'timestamp' => 'string'
     ];
 
     /**
@@ -84,7 +84,7 @@ class Response429Download implements ModelInterface, ArrayAccess, \JsonSerializa
         'origin' => null,
         'status' => null,
         'status_text' => null,
-        'timestamp' => 'date-time'
+        'timestamp' => null
     ];
 
     /**
@@ -532,7 +532,7 @@ class Response429Download implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets timestamp
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getTimestamp()
     {
@@ -542,7 +542,7 @@ class Response429Download implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets timestamp
      *
-     * @param \DateTime|null $timestamp Дата и время запроса
+     * @param string|null $timestamp Дата и время запроса
      *
      * @return self
      */

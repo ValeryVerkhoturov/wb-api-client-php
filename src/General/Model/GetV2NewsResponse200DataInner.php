@@ -59,7 +59,7 @@ class GetV2NewsResponse200DataInner implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'content' => 'string',
-        'date' => '\DateTime',
+        'date' => 'string',
         'header' => 'string',
         'id' => 'int',
         'types' => '\ValeryVerkhoturov\WbApiClient\General\Model\GetV2NewsResponse200DataInnerTypesInner[]'
@@ -74,7 +74,7 @@ class GetV2NewsResponse200DataInner implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'content' => 'plaintext',
-        'date' => 'date-time',
+        'date' => null,
         'header' => null,
         'id' => null,
         'types' => null
@@ -348,7 +348,7 @@ class GetV2NewsResponse200DataInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDate()
     {
@@ -358,7 +358,7 @@ class GetV2NewsResponse200DataInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets date
      *
-     * @param \DateTime|null $date Дата и время публикации новости
+     * @param string|null $date Дата и время публикации новости
      *
      * @return self
      */

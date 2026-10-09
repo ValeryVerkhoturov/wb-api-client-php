@@ -58,7 +58,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'change_state_at' => '\DateTime',
+        'change_state_at' => 'string',
         'imt_id' => 'int',
         'nm_id' => 'int',
         'pin_id' => 'int',
@@ -77,7 +77,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'change_state_at' => 'date-time',
+        'change_state_at' => null,
         'imt_id' => null,
         'nm_id' => null,
         'pin_id' => null,
@@ -401,7 +401,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets change_state_at
      *
-     * @return \DateTime
+     * @return string
      */
     public function getChangeStateAt()
     {
@@ -411,7 +411,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets change_state_at
      *
-     * @param \DateTime $change_state_at Дата и время закрепления или открепления
+     * @param string $change_state_at Дата и время закрепления или открепления
      *
      * @return self
      */

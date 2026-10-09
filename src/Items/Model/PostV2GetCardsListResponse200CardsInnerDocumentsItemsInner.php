@@ -64,11 +64,11 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
         'product_number' => 'string',
         'trade_name' => 'string',
         'applicant' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => 'string',
+        'end_date' => 'string',
         'is_endless' => 'bool',
         'verdict' => '\ValeryVerkhoturov\WbApiClient\Items\Model\PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict',
-        'created_at' => '\DateTime'
+        'created_at' => 'string'
     ];
 
     /**
@@ -85,11 +85,11 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
         'product_number' => null,
         'trade_name' => null,
         'applicant' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
+        'start_date' => null,
+        'end_date' => null,
         'is_endless' => null,
         'verdict' => null,
-        'created_at' => 'date-time'
+        'created_at' => null
     ];
 
     /**
@@ -525,7 +525,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -535,7 +535,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date Дата и время начала срока действия документа
+     * @param string|null $start_date Дата и время начала срока действия документа
      *
      * @return self
      */
@@ -552,7 +552,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -562,7 +562,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date Дата и время окончания срока действия документа
+     * @param string|null $end_date Дата и время окончания срока действия документа
      *
      * @return self
      */
@@ -633,7 +633,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
     /**
      * Gets created_at
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -643,7 +643,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата добавления документа
+     * @param string|null $created_at Дата добавления документа
      *
      * @return self
      */
