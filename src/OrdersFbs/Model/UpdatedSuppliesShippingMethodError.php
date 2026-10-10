@@ -283,12 +283,6 @@ class UpdatedSuppliesShippingMethodError implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class UpdatedSuppliesShippingMethodError implements ModelInterface, ArrayAccess,
     /**
      * Gets code
      *
-     * @return int
+     * @return int|null
      */
     public function getCode()
     {
@@ -317,7 +311,7 @@ class UpdatedSuppliesShippingMethodError implements ModelInterface, ArrayAccess,
     /**
      * Sets code
      *
-     * @param int $code Код ошибки
+     * @param int|null $code Код ошибки
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class UpdatedSuppliesShippingMethodError implements ModelInterface, ArrayAccess,
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -344,7 +338,7 @@ class UpdatedSuppliesShippingMethodError implements ModelInterface, ArrayAccess,
     /**
      * Sets detail
      *
-     * @param string $detail Дополнительная информация об ошибке
+     * @param string|null $detail Дополнительная информация об ошибке
      *
      * @return self
      */

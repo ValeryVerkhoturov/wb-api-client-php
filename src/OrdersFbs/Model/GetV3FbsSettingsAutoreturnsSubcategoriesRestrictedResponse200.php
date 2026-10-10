@@ -282,12 +282,6 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements M
     {
         $invalidProperties = [];
 
-        if ($this->container['next'] === null) {
-            $invalidProperties[] = "'next' can't be null";
-        }
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements M
     /**
      * Gets next
      *
-     * @return int
+     * @return int|null
      */
     public function getNext()
     {
@@ -316,7 +310,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements M
     /**
      * Sets next
      *
-     * @param int $next Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
+     * @param int|null $next Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
      *
      * @return self
      */
@@ -340,7 +334,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements M
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]|null
      */
     public function getData()
     {
@@ -350,7 +344,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200 implements M
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[] $data Список ID предметов, товары которых не хранятся на складах WB
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner[]|null $data Список ID предметов, товары которых не хранятся на складах WB
      *
      * @return self
      */

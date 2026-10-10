@@ -296,9 +296,6 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -344,7 +341,7 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -354,7 +351,7 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */

@@ -318,12 +318,6 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -477,7 +471,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetrics|null
      */
     public function getMetrics()
     {
@@ -487,7 +481,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetrics $metrics metrics
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetrics|null $metrics metrics
      *
      * @return self
      */
@@ -504,7 +498,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItem[]|null
      */
     public function getItems()
     {
@@ -514,7 +508,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItem[] $items Массив товаров группы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItem[]|null $items Массив товаров группы
      *
      * @return self
      */

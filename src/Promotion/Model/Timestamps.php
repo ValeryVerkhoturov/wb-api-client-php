@@ -297,18 +297,6 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['created'] === null) {
-            $invalidProperties[] = "'created' can't be null";
-        }
-        if ($this->container['updated'] === null) {
-            $invalidProperties[] = "'updated' can't be null";
-        }
-        if ($this->container['started'] === null) {
-            $invalidProperties[] = "'started' can't be null";
-        }
-        if ($this->container['deleted'] === null) {
-            $invalidProperties[] = "'deleted' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +315,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created
      *
-     * @return string
+     * @return string|null
      */
     public function getCreated()
     {
@@ -337,7 +325,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created
      *
-     * @param string $created Время создания кампании
+     * @param string|null $created Время создания кампании
      *
      * @return self
      */
@@ -354,7 +342,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdated()
     {
@@ -364,7 +352,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated
      *
-     * @param string $updated Время последнего изменения кампании
+     * @param string|null $updated Время последнего изменения кампании
      *
      * @return self
      */
@@ -381,7 +369,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets started
      *
-     * @return string
+     * @return string|null
      */
     public function getStarted()
     {
@@ -391,7 +379,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets started
      *
-     * @param string $started Время последнего запуска кампании
+     * @param string|null $started Время последнего запуска кампании
      *
      * @return self
      */
@@ -415,7 +403,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets deleted
      *
-     * @return string
+     * @return string|null
      */
     public function getDeleted()
     {
@@ -425,7 +413,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deleted
      *
-     * @param string $deleted Время удаления кампании. Если кампания не удалена, время указывается в будущем
+     * @param string|null $deleted Время удаления кампании. Если кампания не удалена, время указывается в будущем
      *
      * @return self
      */

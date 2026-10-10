@@ -289,15 +289,6 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
-        if ($this->container['count_in_response'] === null) {
-            $invalidProperties[] = "'count_in_response' can't be null";
-        }
-        if ($this->container['users'] === null) {
-            $invalidProperties[] = "'users' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -326,7 +317,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total
      *
-     * @param int $total Общее количество активных или приглашённых пользователей
+     * @param int|null $total Общее количество активных или приглашённых пользователей
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets count_in_response
      *
-     * @return int
+     * @return int|null
      */
     public function getCountInResponse()
     {
@@ -353,7 +344,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets count_in_response
      *
-     * @param int $count_in_response Количество активных или приглашённых пользователей на текущей странице
+     * @param int|null $count_in_response Количество активных или приглашённых пользователей на текущей странице
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets users
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInner[]|null
      */
     public function getUsers()
     {
@@ -380,7 +371,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets users
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInner[] $users Информация о пользователях
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInner[]|null $users Информация о пользователях
      *
      * @return self
      */

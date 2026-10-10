@@ -303,21 +303,6 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['per_unit_limit'] === null) {
-            $invalidProperties[] = "'per_unit_limit' can't be null";
-        }
-        if ($this->container['remaining'] === null) {
-            $invalidProperties[] = "'remaining' can't be null";
-        }
-        if ($this->container['total_limit'] === null) {
-            $invalidProperties[] = "'total_limit' can't be null";
-        }
-        if ($this->container['unlimited'] === null) {
-            $invalidProperties[] = "'unlimited' can't be null";
-        }
-        if ($this->container['used'] === null) {
-            $invalidProperties[] = "'used' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +321,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Gets per_unit_limit
      *
-     * @return int
+     * @return int|null
      */
     public function getPerUnitLimit()
     {
@@ -346,7 +331,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Sets per_unit_limit
      *
-     * @param int $per_unit_limit Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек
+     * @param int|null $per_unit_limit Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек
      *
      * @return self
      */
@@ -363,7 +348,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Gets remaining
      *
-     * @return int
+     * @return int|null
      */
     public function getRemaining()
     {
@@ -373,7 +358,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Sets remaining
      *
-     * @param int $remaining Сколько ещё отзывов можно закрепить
+     * @param int|null $remaining Сколько ещё отзывов можно закрепить
      *
      * @return self
      */
@@ -390,7 +375,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Gets total_limit
      *
-     * @return int
+     * @return int|null
      */
     public function getTotalLimit()
     {
@@ -400,7 +385,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Sets total_limit
      *
-     * @param int $total_limit Общий лимит закреплений
+     * @param int|null $total_limit Общий лимит закреплений
      *
      * @return self
      */
@@ -417,7 +402,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Gets unlimited
      *
-     * @return bool
+     * @return bool|null
      */
     public function getUnlimited()
     {
@@ -427,7 +412,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Sets unlimited
      *
-     * @param bool $unlimited Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет
+     * @param bool|null $unlimited Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет
      *
      * @return self
      */
@@ -444,7 +429,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Gets used
      *
-     * @return int
+     * @return int|null
      */
     public function getUsed()
     {
@@ -454,7 +439,7 @@ class OpenapiSellerLimitsResponseDataTariff implements ModelInterface, ArrayAcce
     /**
      * Sets used
      *
-     * @param int $used Текущее количество закреплённых отзывов
+     * @param int|null $used Текущее количество закреплённых отзывов
      *
      * @return self
      */

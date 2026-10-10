@@ -282,12 +282,6 @@ class ApiBatchErrorFinalPriceResponse implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiBatchErrorFinalPriceResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets code
      *
-     * @return int
+     * @return int|null
      */
     public function getCode()
     {
@@ -316,7 +310,7 @@ class ApiBatchErrorFinalPriceResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets code
      *
-     * @param int $code Код ошибки:   - `404` — `NotFound`   - `400` — `StatusMismatch`   - `422` — `PriceNotCalculated`
+     * @param int|null $code Код ошибки:   - `404` — `NotFound`   - `400` — `StatusMismatch`   - `422` — `PriceNotCalculated`
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ApiBatchErrorFinalPriceResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -343,7 +337,7 @@ class ApiBatchErrorFinalPriceResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets detail
      *
-     * @param string $detail - `NotFound` — сборочное задание не найдено (`404`) - `StatusMismatch` — операция невозможна для этого статуса сборочного задания (`400`) - `PriceNotCalculated` — операция невозможна для сборочных заданий, созданных ранее 23.07.2026 (`422`)
+     * @param string|null $detail - `NotFound` — сборочное задание не найдено (`404`) - `StatusMismatch` — операция невозможна для этого статуса сборочного задания (`400`) - `PriceNotCalculated` — операция невозможна для сборочных заданий, созданных ранее 23.07.2026 (`422`)
      *
      * @return self
      */

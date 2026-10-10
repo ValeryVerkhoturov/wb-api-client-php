@@ -304,21 +304,6 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['stock_count'] === null) {
-            $invalidProperties[] = "'stock_count' can't be null";
-        }
-        if ($this->container['stock_sum'] === null) {
-            $invalidProperties[] = "'stock_sum' can't be null";
-        }
-        if ($this->container['sale_rate'] === null) {
-            $invalidProperties[] = "'sale_rate' can't be null";
-        }
-        if ($this->container['to_client_count'] === null) {
-            $invalidProperties[] = "'to_client_count' can't be null";
-        }
-        if ($this->container['from_client_count'] === null) {
-            $invalidProperties[] = "'from_client_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -337,7 +322,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets stock_count
      *
-     * @return int
+     * @return int|null
      */
     public function getStockCount()
     {
@@ -347,7 +332,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets stock_count
      *
-     * @param int $stock_count Остатки на текущий день, шт.
+     * @param int|null $stock_count Остатки на текущий день, шт.
      *
      * @return self
      */
@@ -364,7 +349,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets stock_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getStockSum()
     {
@@ -374,7 +359,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets stock_sum
      *
-     * @param int $stock_sum Остатки на текущий день, сумма
+     * @param int|null $stock_sum Остатки на текущий день, сумма
      *
      * @return self
      */
@@ -391,7 +376,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets sale_rate
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate|null
      */
     public function getSaleRate()
     {
@@ -401,7 +386,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets sale_rate
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate $sale_rate sale_rate
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate|null $sale_rate sale_rate
      *
      * @return self
      */
@@ -418,7 +403,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets to_client_count
      *
-     * @return int
+     * @return int|null
      */
     public function getToClientCount()
     {
@@ -428,7 +413,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets to_client_count
      *
-     * @param int $to_client_count В пути к клиенту, шт.
+     * @param int|null $to_client_count В пути к клиенту, шт.
      *
      * @return self
      */
@@ -445,7 +430,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets from_client_count
      *
-     * @return int
+     * @return int|null
      */
     public function getFromClientCount()
     {
@@ -455,7 +440,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets from_client_count
      *
-     * @param int $from_client_count В пути от клиента, шт.
+     * @param int|null $from_client_count В пути от клиента, шт.
      *
      * @return self
      */

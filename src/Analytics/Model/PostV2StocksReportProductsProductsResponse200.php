@@ -275,9 +275,6 @@ class PostV2StocksReportProductsProductsResponse200 implements ModelInterface, A
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV2StocksReportProductsProductsResponse200 implements ModelInterface, A
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemResponse
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemResponse|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV2StocksReportProductsProductsResponse200 implements ModelInterface, A
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemResponse $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemResponse|null $data data
      *
      * @return self
      */

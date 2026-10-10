@@ -290,15 +290,6 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['main_nm'] === null) {
-            $invalidProperties[] = "'main_nm' can't be null";
-        }
-        if ($this->container['recom_nm'] === null) {
-            $invalidProperties[] = "'recom_nm' can't be null";
-        }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets main_nm
      *
-     * @return string
+     * @return string|null
      */
     public function getMainNm()
     {
@@ -327,7 +318,7 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets main_nm
      *
-     * @param string $main_nm Значение параметра `nmId`
+     * @param string|null $main_nm Значение параметра `nmId`
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets recom_nm
      *
-     * @return string
+     * @return string|null
      */
     public function getRecomNm()
     {
@@ -354,7 +345,7 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets recom_nm
      *
-     * @param string $recom_nm Значение параметра `recomNm`
+     * @param string|null $recom_nm Значение параметра `recomNm`
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets message
      *
-     * @return string
+     * @return string|null
      */
     public function getMessage()
     {
@@ -381,7 +372,7 @@ class SetRecomResErrorsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets message
      *
-     * @param string $message Сообщение об ошибке
+     * @param string|null $message Сообщение об ошибке
      *
      * @return self
      */

@@ -282,9 +282,6 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -330,7 +327,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiStatusSetResponse[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiStatusSetResponse[]|null
      */
     public function getResults()
     {
@@ -340,7 +337,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiStatusSetResponse[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiStatusSetResponse[]|null $results results
      *
      * @return self
      */

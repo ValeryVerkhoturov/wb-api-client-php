@@ -303,21 +303,6 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     {
         $invalidProperties = [];
 
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
-        if ($this->container['part_a'] === null) {
-            $invalidProperties[] = "'part_a' can't be null";
-        }
-        if ($this->container['part_b'] === null) {
-            $invalidProperties[] = "'part_b' can't be null";
-        }
-        if ($this->container['barcode'] === null) {
-            $invalidProperties[] = "'barcode' can't be null";
-        }
-        if ($this->container['file'] === null) {
-            $invalidProperties[] = "'file' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +321,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -346,7 +331,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */
@@ -363,7 +348,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Gets part_a
      *
-     * @return string
+     * @return string|null
      */
     public function getPartA()
     {
@@ -373,7 +358,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Sets part_a
      *
-     * @param string $part_a Первая часть ID стикера
+     * @param string|null $part_a Первая часть ID стикера
      *
      * @return self
      */
@@ -390,7 +375,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Gets part_b
      *
-     * @return string
+     * @return string|null
      */
     public function getPartB()
     {
@@ -400,7 +385,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Sets part_b
      *
-     * @param string $part_b Вторая часть ID стикера
+     * @param string|null $part_b Вторая часть ID стикера
      *
      * @return self
      */
@@ -417,7 +402,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Gets barcode
      *
-     * @return string
+     * @return string|null
      */
     public function getBarcode()
     {
@@ -427,7 +412,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Sets barcode
      *
-     * @param string $barcode Закодированное значение стикера
+     * @param string|null $barcode Закодированное значение стикера
      *
      * @return self
      */
@@ -444,7 +429,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Gets file
      *
-     * @return string
+     * @return string|null
      */
     public function getFile()
     {
@@ -454,7 +439,7 @@ class PostV3DbsOrdersStickersResponse200StickersInner implements ModelInterface,
     /**
      * Sets file
      *
-     * @param string $file Полное представление стикера, кодировка base64
+     * @param string|null $file Полное представление стикера, кодировка base64
      *
      * @return self
      */

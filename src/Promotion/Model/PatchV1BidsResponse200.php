@@ -282,12 +282,6 @@ class PatchV1BidsResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['bids'] === null) {
-            $invalidProperties[] = "'bids' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class PatchV1BidsResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets bids
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInner[]|null
      */
     public function getBids()
     {
@@ -316,7 +310,7 @@ class PatchV1BidsResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bids
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInner[] $bids Результат отработки запроса
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInner[]|null $bids Результат отработки запроса
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class PatchV1BidsResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -343,7 +337,7 @@ class PatchV1BidsResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets currency
      *
-     * @param string $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

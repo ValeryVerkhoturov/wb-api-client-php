@@ -387,57 +387,6 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['period'] === null) {
-            $invalidProperties[] = "'period' can't be null";
-        }
-        if ($this->container['open_count'] === null) {
-            $invalidProperties[] = "'open_count' can't be null";
-        }
-        if ($this->container['cart_count'] === null) {
-            $invalidProperties[] = "'cart_count' can't be null";
-        }
-        if ($this->container['order_count'] === null) {
-            $invalidProperties[] = "'order_count' can't be null";
-        }
-        if ($this->container['order_sum'] === null) {
-            $invalidProperties[] = "'order_sum' can't be null";
-        }
-        if ($this->container['buyout_count'] === null) {
-            $invalidProperties[] = "'buyout_count' can't be null";
-        }
-        if ($this->container['buyout_sum'] === null) {
-            $invalidProperties[] = "'buyout_sum' can't be null";
-        }
-        if ($this->container['cancel_count'] === null) {
-            $invalidProperties[] = "'cancel_count' can't be null";
-        }
-        if ($this->container['cancel_sum'] === null) {
-            $invalidProperties[] = "'cancel_sum' can't be null";
-        }
-        if ($this->container['avg_price'] === null) {
-            $invalidProperties[] = "'avg_price' can't be null";
-        }
-        if ($this->container['avg_orders_count_per_day'] === null) {
-            $invalidProperties[] = "'avg_orders_count_per_day' can't be null";
-        }
-        if ($this->container['share_order_percent'] === null) {
-            $invalidProperties[] = "'share_order_percent' can't be null";
-        }
-        if ($this->container['add_to_wishlist'] === null) {
-            $invalidProperties[] = "'add_to_wishlist' can't be null";
-        }
-        if ($this->container['time_to_ready'] === null) {
-            $invalidProperties[] = "'time_to_ready' can't be null";
-        }
-        if ($this->container['localization_percent'] === null) {
-            $invalidProperties[] = "'localization_percent' can't be null";
-        }
-        if ($this->container['wb_club'] === null) {
-            $invalidProperties[] = "'wb_club' can't be null";
-        }
-        if ($this->container['conversions'] === null) {
-            $invalidProperties[] = "'conversions' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -456,7 +405,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets period
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticPeriod
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticPeriod|null
      */
     public function getPeriod()
     {
@@ -466,7 +415,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets period
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticPeriod $period period
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticPeriod|null $period period
      *
      * @return self
      */
@@ -483,7 +432,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets open_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOpenCount()
     {
@@ -493,7 +442,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets open_count
      *
-     * @param int $open_count Количество переходов в карточку товара
+     * @param int|null $open_count Количество переходов в карточку товара
      *
      * @return self
      */
@@ -510,7 +459,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets cart_count
      *
-     * @return int
+     * @return int|null
      */
     public function getCartCount()
     {
@@ -520,7 +469,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cart_count
      *
-     * @param int $cart_count Положили в корзину, шт.
+     * @param int|null $cart_count Положили в корзину, шт.
      *
      * @return self
      */
@@ -537,7 +486,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets order_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderCount()
     {
@@ -547,7 +496,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets order_count
      *
-     * @param int $order_count Заказали товаров, шт.
+     * @param int|null $order_count Заказали товаров, шт.
      *
      * @return self
      */
@@ -564,7 +513,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets order_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderSum()
     {
@@ -574,7 +523,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets order_sum
      *
-     * @param int $order_sum Заказали на сумму
+     * @param int|null $order_sum Заказали на сумму
      *
      * @return self
      */
@@ -591,7 +540,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets buyout_count
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutCount()
     {
@@ -601,7 +550,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets buyout_count
      *
-     * @param int $buyout_count Выкупили товаров, шт.
+     * @param int|null $buyout_count Выкупили товаров, шт.
      *
      * @return self
      */
@@ -618,7 +567,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets buyout_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutSum()
     {
@@ -628,7 +577,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets buyout_sum
      *
-     * @param int $buyout_sum Выкупили на сумму
+     * @param int|null $buyout_sum Выкупили на сумму
      *
      * @return self
      */
@@ -645,7 +594,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets cancel_count
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelCount()
     {
@@ -655,7 +604,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cancel_count
      *
-     * @param int $cancel_count Отменили и вернули товаров, шт.
+     * @param int|null $cancel_count Отменили и вернули товаров, шт.
      *
      * @return self
      */
@@ -672,7 +621,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets cancel_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelSum()
     {
@@ -682,7 +631,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cancel_sum
      *
-     * @param int $cancel_sum Отменили и вернули на сумму
+     * @param int|null $cancel_sum Отменили и вернули на сумму
      *
      * @return self
      */
@@ -699,7 +648,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets avg_price
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgPrice()
     {
@@ -709,7 +658,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets avg_price
      *
-     * @param int $avg_price Средняя цена
+     * @param int|null $avg_price Средняя цена
      *
      * @return self
      */
@@ -726,7 +675,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets avg_orders_count_per_day
      *
-     * @return float
+     * @return float|null
      */
     public function getAvgOrdersCountPerDay()
     {
@@ -736,7 +685,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets avg_orders_count_per_day
      *
-     * @param float $avg_orders_count_per_day Среднее количество заказов в день, шт.
+     * @param float|null $avg_orders_count_per_day Среднее количество заказов в день, шт.
      *
      * @return self
      */
@@ -753,7 +702,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets share_order_percent
      *
-     * @return float
+     * @return float|null
      */
     public function getShareOrderPercent()
     {
@@ -763,7 +712,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets share_order_percent
      *
-     * @param float $share_order_percent Доля в выручке
+     * @param float|null $share_order_percent Доля в выручке
      *
      * @return self
      */
@@ -780,7 +729,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets add_to_wishlist
      *
-     * @return int
+     * @return int|null
      */
     public function getAddToWishlist()
     {
@@ -790,7 +739,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets add_to_wishlist
      *
-     * @param int $add_to_wishlist Добавили в **Отложенные**
+     * @param int|null $add_to_wishlist Добавили в **Отложенные**
      *
      * @return self
      */
@@ -807,7 +756,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets time_to_ready
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticTimeToReady
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticTimeToReady|null
      */
     public function getTimeToReady()
     {
@@ -817,7 +766,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets time_to_ready
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticTimeToReady $time_to_ready time_to_ready
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticTimeToReady|null $time_to_ready time_to_ready
      *
      * @return self
      */
@@ -834,7 +783,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets localization_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getLocalizationPercent()
     {
@@ -844,7 +793,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets localization_percent
      *
-     * @param int $localization_percent Локальные заказы в рамках одного региона. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `100`
+     * @param int|null $localization_percent Локальные заказы в рамках одного региона. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `100`
      *
      * @return self
      */
@@ -861,7 +810,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets wb_club
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticWbClub
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticWbClub|null
      */
     public function getWbClub()
     {
@@ -871,7 +820,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets wb_club
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticWbClub $wb_club wb_club
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticWbClub|null $wb_club wb_club
      *
      * @return self
      */
@@ -888,7 +837,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets conversions
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions|null
      */
     public function getConversions()
     {
@@ -898,7 +847,7 @@ class StatisticsSelected implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets conversions
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions $conversions conversions
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions|null $conversions conversions
      *
      * @return self
      */

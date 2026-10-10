@@ -297,18 +297,6 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['average'] === null) {
-            $invalidProperties[] = "'average' can't be null";
-        }
-        if ($this->container['median'] === null) {
-            $invalidProperties[] = "'median' can't be null";
-        }
-        if ($this->container['chart_items'] === null) {
-            $invalidProperties[] = "'chart_items' can't be null";
-        }
-        if ($this->container['clusters'] === null) {
-            $invalidProperties[] = "'clusters' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +315,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets average
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoAverage
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoAverage|null
      */
     public function getAverage()
     {
@@ -337,7 +325,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets average
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoAverage $average average
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoAverage|null $average average
      *
      * @return self
      */
@@ -354,7 +342,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets median
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoMedian
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoMedian|null
      */
     public function getMedian()
     {
@@ -364,7 +352,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets median
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoMedian $median median
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfoMedian|null $median median
      *
      * @return self
      */
@@ -381,7 +369,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets chart_items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionChartItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionChartItem[]|null
      */
     public function getChartItems()
     {
@@ -391,7 +379,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chart_items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionChartItem[] $chart_items Данные для чарта по средней и медианной позиции товара в результатах поиска
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionChartItem[]|null $chart_items Данные для чарта по средней и медианной позиции товара в результатах поиска
      *
      * @return self
      */
@@ -408,7 +396,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets clusters
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClusters
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClusters|null
      */
     public function getClusters()
     {
@@ -418,7 +406,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets clusters
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClusters $clusters clusters
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClusters|null $clusters clusters
      *
      * @return self
      */

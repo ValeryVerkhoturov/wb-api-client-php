@@ -289,9 +289,6 @@ class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements Model
     {
         $invalidProperties = [];
 
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -310,7 +307,7 @@ class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements Model
     /**
      * Gets chrt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getChrtId()
     {
@@ -320,7 +317,7 @@ class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements Model
     /**
      * Sets chrt_id
      *
-     * @param int $chrt_id ID размера товара в системе WB
+     * @param int|null $chrt_id ID размера товара в системе WB
      *
      * @return self
      */

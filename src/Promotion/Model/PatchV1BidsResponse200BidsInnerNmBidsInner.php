@@ -289,15 +289,6 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['bid_kopecks'] === null) {
-            $invalidProperties[] = "'bid_kopecks' can't be null";
-        }
-        if ($this->container['placement'] === null) {
-            $invalidProperties[] = "'placement' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -326,7 +317,7 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     /**
      * Gets bid_kopecks
      *
-     * @return int
+     * @return int|null
      */
     public function getBidKopecks()
     {
@@ -353,7 +344,7 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     /**
      * Sets bid_kopecks
      *
-     * @param int $bid_kopecks Ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $bid_kopecks Ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     /**
      * Gets placement
      *
-     * @return string
+     * @return string|null
      */
     public function getPlacement()
     {
@@ -380,7 +371,7 @@ class PatchV1BidsResponse200BidsInnerNmBidsInner implements ModelInterface, Arra
     /**
      * Sets placement
      *
-     * @param string $placement Место размещения:   - `search` — в поиске   - `recommendations`— в рекомендациях
+     * @param string|null $placement Место размещения:   - `search` — в поиске   - `recommendations`— в рекомендациях
      *
      * @return self
      */

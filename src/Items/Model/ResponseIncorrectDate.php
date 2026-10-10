@@ -275,9 +275,6 @@ class ResponseIncorrectDate implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['error'] === null) {
-            $invalidProperties[] = "'error' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class ResponseIncorrectDate implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets error
      *
-     * @return string
+     * @return string|null
      */
     public function getError()
     {
@@ -306,7 +303,7 @@ class ResponseIncorrectDate implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets error
      *
-     * @param string $error error
+     * @param string|null $error error
      *
      * @return self
      */

@@ -282,12 +282,6 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['groups'] === null) {
-            $invalidProperties[] = "'groups' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets groups
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemSt[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemSt[]|null
      */
     public function getGroups()
     {
@@ -316,7 +310,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets groups
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemSt[] $groups Множество данных по группам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemSt[]|null $groups Множество данных по группам
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -343,7 +337,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

@@ -292,9 +292,6 @@ class GetV3FbsSettingsAutoreturnsResponse200 implements ModelInterface, ArrayAcc
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
         $allowedValues = $this->getTypeAllowableValues();
         if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -322,7 +319,7 @@ class GetV3FbsSettingsAutoreturnsResponse200 implements ModelInterface, ArrayAcc
     /**
      * Gets type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -332,7 +329,7 @@ class GetV3FbsSettingsAutoreturnsResponse200 implements ModelInterface, ArrayAcc
     /**
      * Sets type
      *
-     * @param string $type Тип автовозврата:   - `allToWarehouse` — все товары отправляются на склад WB, кроме товаров тех [предметов](https://dev.wildberries.ru/openapi/orders-fbs#tag/autoreturnSettings/operation/getV3FbsSettingsAutoreturnsSubcategoriesRestricted), которые автоматически возвращаются в ПВЗ   - `allToPickupPoint` — все товары отправляются на пункт выдачи заказов   - `manual` — используются ручные настройки
+     * @param string|null $type Тип автовозврата:   - `allToWarehouse` — все товары отправляются на склад WB, кроме товаров тех [предметов](https://dev.wildberries.ru/openapi/orders-fbs#tag/autoreturnSettings/operation/getV3FbsSettingsAutoreturnsSubcategoriesRestricted), которые автоматически возвращаются в ПВЗ   - `allToPickupPoint` — все товары отправляются на пункт выдачи заказов   - `manual` — используются ручные настройки
      *
      * @return self
      */

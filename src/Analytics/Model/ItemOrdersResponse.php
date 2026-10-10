@@ -282,12 +282,6 @@ class ItemOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ItemOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets total
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[]|null
      */
     public function getTotal()
     {
@@ -316,7 +310,7 @@ class ItemOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets total
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[] $total Итог по товарам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[]|null $total Итог по товарам
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ItemOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersTextItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersTextItem[]|null
      */
     public function getItems()
     {
@@ -343,7 +337,7 @@ class ItemOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersTextItem[] $items Элементы таблицы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersTextItem[]|null $items Элементы таблицы
      *
      * @return self
      */

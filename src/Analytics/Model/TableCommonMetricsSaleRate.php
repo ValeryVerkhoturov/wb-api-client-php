@@ -283,12 +283,6 @@ class TableCommonMetricsSaleRate implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['days'] === null) {
-            $invalidProperties[] = "'days' can't be null";
-        }
-        if ($this->container['hours'] === null) {
-            $invalidProperties[] = "'hours' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class TableCommonMetricsSaleRate implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets days
      *
-     * @return int
+     * @return int|null
      */
     public function getDays()
     {
@@ -317,7 +311,7 @@ class TableCommonMetricsSaleRate implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets days
      *
-     * @param int $days Количество дней
+     * @param int|null $days Количество дней
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class TableCommonMetricsSaleRate implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets hours
      *
-     * @return int
+     * @return int|null
      */
     public function getHours()
     {
@@ -344,7 +338,7 @@ class TableCommonMetricsSaleRate implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets hours
      *
-     * @param int $hours Количество часов
+     * @param int|null $hours Количество часов
      *
      * @return self
      */

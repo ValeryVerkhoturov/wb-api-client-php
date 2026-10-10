@@ -289,15 +289,6 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['add_to_cart_percent'] === null) {
-            $invalidProperties[] = "'add_to_cart_percent' can't be null";
-        }
-        if ($this->container['cart_to_order_percent'] === null) {
-            $invalidProperties[] = "'cart_to_order_percent' can't be null";
-        }
-        if ($this->container['buyout_percent'] === null) {
-            $invalidProperties[] = "'buyout_percent' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets add_to_cart_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getAddToCartPercent()
     {
@@ -326,7 +317,7 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets add_to_cart_percent
      *
-     * @param int $add_to_cart_percent Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %
+     * @param int|null $add_to_cart_percent Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cart_to_order_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getCartToOrderPercent()
     {
@@ -353,7 +344,7 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cart_to_order_percent
      *
-     * @param int $cart_to_order_percent Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ, %
+     * @param int|null $cart_to_order_percent Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ, %
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutPercent()
     {
@@ -380,7 +371,7 @@ class Conversions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_percent
      *
-     * @param int $buyout_percent Процент выкупа. Какой процент посетителей, заказавших товар, его выкупили. Без учёта товаров, которые еще доставляются покупателю, %
+     * @param int|null $buyout_percent Процент выкупа. Какой процент посетителей, заказавших товар, его выкупили. Без учёта товаров, которые еще доставляются покупателю, %
      *
      * @return self
      */

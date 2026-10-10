@@ -275,9 +275,6 @@ class CountriesOKSMList implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['countries'] === null) {
-            $invalidProperties[] = "'countries' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class CountriesOKSMList implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets countries
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMListCountriesInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMListCountriesInner[]|null
      */
     public function getCountries()
     {
@@ -306,7 +303,7 @@ class CountriesOKSMList implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets countries
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMListCountriesInner[] $countries Список стран ОКСМ
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMListCountriesInner[]|null $countries Список стран ОКСМ
      *
      * @return self
      */

@@ -283,12 +283,6 @@ class AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['search'] === null) {
-            $invalidProperties[] = "'search' can't be null";
-        }
-        if ($this->container['recommendations'] === null) {
-            $invalidProperties[] = "'recommendations' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets search
      *
-     * @return int
+     * @return int|null
      */
     public function getSearch()
     {
@@ -317,7 +311,7 @@ class AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets search
      *
-     * @param int $search Ставка в поиске
+     * @param int|null $search Ставка в поиске
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets recommendations
      *
-     * @return int
+     * @return int|null
      */
     public function getRecommendations()
     {
@@ -344,7 +338,7 @@ class AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets recommendations
      *
-     * @param int $recommendations Ставка в рекомендациях
+     * @param int|null $recommendations Ставка в рекомендациях
      *
      * @return self
      */

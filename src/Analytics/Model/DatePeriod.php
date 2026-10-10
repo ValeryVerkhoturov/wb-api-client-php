@@ -282,12 +282,6 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['start'] === null) {
-            $invalidProperties[] = "'start' can't be null";
-        }
-        if ($this->container['end'] === null) {
-            $invalidProperties[] = "'end' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start
      *
-     * @return string
+     * @return string|null
      */
     public function getStart()
     {
@@ -316,7 +310,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start
      *
-     * @param string $start Начало периода
+     * @param string|null $start Начало периода
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end
      *
-     * @return string
+     * @return string|null
      */
     public function getEnd()
     {
@@ -343,7 +337,7 @@ class DatePeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end
      *
-     * @param string $end Конец периода
+     * @param string|null $end Конец периода
      *
      * @return self
      */

@@ -318,27 +318,6 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['avg_position'] === null) {
-            $invalidProperties[] = "'avg_position' can't be null";
-        }
-        if ($this->container['open_card'] === null) {
-            $invalidProperties[] = "'open_card' can't be null";
-        }
-        if ($this->container['add_to_cart'] === null) {
-            $invalidProperties[] = "'add_to_cart' can't be null";
-        }
-        if ($this->container['open_to_cart'] === null) {
-            $invalidProperties[] = "'open_to_cart' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
-        if ($this->container['cart_to_order'] === null) {
-            $invalidProperties[] = "'cart_to_order' can't be null";
-        }
-        if ($this->container['visibility'] === null) {
-            $invalidProperties[] = "'visibility' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -357,7 +336,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets avg_position
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition|null
      */
     public function getAvgPosition()
     {
@@ -367,7 +346,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets avg_position
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition $avg_position avg_position
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition|null $avg_position avg_position
      *
      * @return self
      */
@@ -384,7 +363,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets open_card
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard|null
      */
     public function getOpenCard()
     {
@@ -394,7 +373,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets open_card
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard $open_card open_card
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard|null $open_card open_card
      *
      * @return self
      */
@@ -411,7 +390,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets add_to_cart
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart|null
      */
     public function getAddToCart()
     {
@@ -421,7 +400,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets add_to_cart
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart $add_to_cart add_to_cart
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart|null $add_to_cart add_to_cart
      *
      * @return self
      */
@@ -438,7 +417,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets open_to_cart
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart|null
      */
     public function getOpenToCart()
     {
@@ -448,7 +427,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets open_to_cart
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart $open_to_cart open_to_cart
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart|null $open_to_cart open_to_cart
      *
      * @return self
      */
@@ -465,7 +444,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets orders
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders|null
      */
     public function getOrders()
     {
@@ -475,7 +454,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets orders
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders $orders orders
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders|null $orders orders
      *
      * @return self
      */
@@ -492,7 +471,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets cart_to_order
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder|null
      */
     public function getCartToOrder()
     {
@@ -502,7 +481,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets cart_to_order
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder $cart_to_order cart_to_order
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder|null $cart_to_order cart_to_order
      *
      * @return self
      */
@@ -519,7 +498,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets visibility
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility|null
      */
     public function getVisibility()
     {
@@ -529,7 +508,7 @@ class TableGroupItemMetrics implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets visibility
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility $visibility visibility
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility|null $visibility visibility
      *
      * @return self
      */

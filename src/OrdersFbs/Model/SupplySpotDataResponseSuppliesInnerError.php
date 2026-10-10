@@ -282,12 +282,6 @@ class SupplySpotDataResponseSuppliesInnerError implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class SupplySpotDataResponseSuppliesInnerError implements ModelInterface, ArrayA
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -316,7 +310,7 @@ class SupplySpotDataResponseSuppliesInnerError implements ModelInterface, ArrayA
     /**
      * Sets title
      *
-     * @param string $title Заголовок ошибки
+     * @param string|null $title Заголовок ошибки
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class SupplySpotDataResponseSuppliesInnerError implements ModelInterface, ArrayA
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -343,7 +337,7 @@ class SupplySpotDataResponseSuppliesInnerError implements ModelInterface, ArrayA
     /**
      * Sets detail
      *
-     * @param string $detail Детали ошибки
+     * @param string|null $detail Детали ошибки
      *
      * @return self
      */

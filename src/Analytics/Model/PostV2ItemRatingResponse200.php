@@ -275,9 +275,6 @@ class PostV2ItemRatingResponse200 implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV2ItemRatingResponse200 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemRatingResponse
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemRatingResponse|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV2ItemRatingResponse200 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemRatingResponse $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemRatingResponse|null $data data
      *
      * @return self
      */

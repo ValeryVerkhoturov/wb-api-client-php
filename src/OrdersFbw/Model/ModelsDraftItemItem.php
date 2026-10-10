@@ -338,36 +338,6 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['sku'] === null) {
-            $invalidProperties[] = "'sku' can't be null";
-        }
-        if ($this->container['color'] === null) {
-            $invalidProperties[] = "'color' can't be null";
-        }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['img_src'] === null) {
-            $invalidProperties[] = "'img_src' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['tech_size'] === null) {
-            $invalidProperties[] = "'tech_size' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -386,7 +356,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sku
      *
-     * @return string
+     * @return string|null
      */
     public function getSku()
     {
@@ -396,7 +366,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sku
      *
-     * @param string $sku Баркод
+     * @param string|null $sku Баркод
      *
      * @return self
      */
@@ -413,7 +383,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets color
      *
-     * @return string
+     * @return string|null
      */
     public function getColor()
     {
@@ -423,7 +393,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets color
      *
-     * @param string $color Цвет товара
+     * @param string|null $color Цвет товара
      *
      * @return self
      */
@@ -440,7 +410,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -450,7 +420,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets quantity
      *
-     * @param int $quantity Количество единиц товара
+     * @param int|null $quantity Количество единиц товара
      *
      * @return self
      */
@@ -467,7 +437,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -477,7 +447,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -494,7 +464,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets img_src
      *
-     * @return string
+     * @return string|null
      */
     public function getImgSrc()
     {
@@ -504,7 +474,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets img_src
      *
-     * @param string $img_src Ссылка на изображение товара
+     * @param string|null $img_src Ссылка на изображение товара
      *
      * @return self
      */
@@ -521,7 +491,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -531,7 +501,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -548,7 +518,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -558,7 +528,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Предмет
+     * @param string|null $subject_name Предмет
      *
      * @return self
      */
@@ -575,7 +545,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tech_size
      *
-     * @return string
+     * @return string|null
      */
     public function getTechSize()
     {
@@ -585,7 +555,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tech_size
      *
-     * @param string $tech_size Размер товара
+     * @param string|null $tech_size Размер товара
      *
      * @return self
      */
@@ -602,7 +572,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -612,7 +582,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets title
      *
-     * @param string $title Название товара
+     * @param string|null $title Название товара
      *
      * @return self
      */
@@ -629,7 +599,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -639,7 +609,7 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */

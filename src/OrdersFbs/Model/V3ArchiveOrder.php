@@ -395,60 +395,6 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['cargo_type'] === null) {
-            $invalidProperties[] = "'cargo_type' can't be null";
-        }
-        if ($this->container['color_code'] === null) {
-            $invalidProperties[] = "'color_code' can't be null";
-        }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['cross_border'] === null) {
-            $invalidProperties[] = "'cross_border' can't be null";
-        }
-        if ($this->container['cross_border_type'] === null) {
-            $invalidProperties[] = "'cross_border_type' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['is_zero_order'] === null) {
-            $invalidProperties[] = "'is_zero_order' can't be null";
-        }
-        if ($this->container['meta_details'] === null) {
-            $invalidProperties[] = "'meta_details' can't be null";
-        }
-        if ($this->container['options'] === null) {
-            $invalidProperties[] = "'options' can't be null";
-        }
-        if ($this->container['order_uid'] === null) {
-            $invalidProperties[] = "'order_uid' can't be null";
-        }
-        if ($this->container['price_info'] === null) {
-            $invalidProperties[] = "'price_info' can't be null";
-        }
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
-        }
-        if ($this->container['rid'] === null) {
-            $invalidProperties[] = "'rid' can't be null";
-        }
-        if ($this->container['scan_price'] === null) {
-            $invalidProperties[] = "'scan_price' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['sticker_id'] === null) {
-            $invalidProperties[] = "'sticker_id' can't be null";
-        }
-        if ($this->container['supply_id'] === null) {
-            $invalidProperties[] = "'supply_id' can't be null";
-        }
-        if ($this->container['warehouse_id'] === null) {
-            $invalidProperties[] = "'warehouse_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -467,7 +413,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cargo_type
      *
-     * @return string
+     * @return string|null
      */
     public function getCargoType()
     {
@@ -477,7 +423,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cargo_type
      *
-     * @param string $cargo_type Тип товара:   - `mgt` — малогабаритный товар (МГТ)   - `sgt` — сверхгабаритный товар (СГТ)   - `kgtPlus` — крупногабаритный товар (КГТ+)
+     * @param string|null $cargo_type Тип товара:   - `mgt` — малогабаритный товар (МГТ)   - `sgt` — сверхгабаритный товар (СГТ)   - `kgtPlus` — крупногабаритный товар (КГТ+)
      *
      * @return self
      */
@@ -494,7 +440,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets color_code
      *
-     * @return string
+     * @return string|null
      */
     public function getColorCode()
     {
@@ -504,7 +450,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets color_code
      *
-     * @param string $color_code Код цвета для колеруемых товаров
+     * @param string|null $color_code Код цвета для колеруемых товаров
      *
      * @return self
      */
@@ -528,7 +474,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -538,7 +484,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param string $created_at Дата создания заказа
+     * @param string|null $created_at Дата создания заказа
      *
      * @return self
      */
@@ -555,7 +501,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cross_border
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderCrossBorder
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderCrossBorder|null
      */
     public function getCrossBorder()
     {
@@ -565,7 +511,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cross_border
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderCrossBorder $cross_border cross_border
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderCrossBorder|null $cross_border cross_border
      *
      * @return self
      */
@@ -589,7 +535,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cross_border_type
      *
-     * @return string
+     * @return string|null
      */
     public function getCrossBorderType()
     {
@@ -599,7 +545,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cross_border_type
      *
-     * @param string $cross_border_type Тип сборочного задания:   - `local` — внутренняя поставка   - `crossBorder` — трансграничная поставка
+     * @param string|null $cross_border_type Тип сборочного задания:   - `local` — внутренняя поставка   - `crossBorder` — трансграничная поставка
      *
      * @return self
      */
@@ -616,7 +562,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -626,7 +572,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id ID сборочного задания
+     * @param int|null $id ID сборочного задания
      *
      * @return self
      */
@@ -643,7 +589,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_zero_order
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsZeroOrder()
     {
@@ -653,7 +599,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_zero_order
      *
-     * @param bool $is_zero_order Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком
+     * @param bool|null $is_zero_order Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком
      *
      * @return self
      */
@@ -670,7 +616,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meta_details
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderMetaDetailsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderMetaDetailsInner[]|null
      */
     public function getMetaDetails()
     {
@@ -680,7 +626,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta_details
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderMetaDetailsInner[] $meta_details Детали маркировки
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderMetaDetailsInner[]|null $meta_details Детали маркировки
      *
      * @return self
      */
@@ -697,7 +643,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets options
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderOptions
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderOptions|null
      */
     public function getOptions()
     {
@@ -707,7 +653,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets options
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderOptions $options options
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderOptions|null $options options
      *
      * @return self
      */
@@ -724,7 +670,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_uid
      *
-     * @return string
+     * @return string|null
      */
     public function getOrderUid()
     {
@@ -734,7 +680,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_uid
      *
-     * @param string $order_uid ID транзакции для группировки сборочных заданий. Сборочные задания в одной корзине покупателя будут иметь одинаковый `orderUid`
+     * @param string|null $order_uid ID транзакции для группировки сборочных заданий. Сборочные задания в одной корзине покупателя будут иметь одинаковый `orderUid`
      *
      * @return self
      */
@@ -751,7 +697,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price_info
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderPriceInfo
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderPriceInfo|null
      */
     public function getPriceInfo()
     {
@@ -761,7 +707,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_info
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderPriceInfo $price_info price_info
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderPriceInfo|null $price_info price_info
      *
      * @return self
      */
@@ -778,7 +724,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderProduct
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderProduct|null
      */
     public function getProduct()
     {
@@ -788,7 +734,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderProduct $product product
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderProduct|null $product product
      *
      * @return self
      */
@@ -805,7 +751,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets rid
      *
-     * @return string
+     * @return string|null
      */
     public function getRid()
     {
@@ -815,7 +761,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rid
      *
-     * @param string $rid Уникальный ID заказа. Примечание: `rid` — это `srid` в ответах методов: - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims) - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed) - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders) - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales) - [Отчёт о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport) - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId) - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed) - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId) - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+     * @param string|null $rid Уникальный ID заказа. Примечание: `rid` — это `srid` в ответах методов: - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims) - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed) - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders) - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales) - [Отчёт о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport) - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId) - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed) - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId) - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
      *
      * @return self
      */
@@ -832,7 +778,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scan_price
      *
-     * @return int
+     * @return int|null
      */
     public function getScanPrice()
     {
@@ -842,7 +788,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scan_price
      *
-     * @param int $scan_price Цена приёмки заказа в копейках
+     * @param int|null $scan_price Цена приёмки заказа в копейках
      *
      * @return self
      */
@@ -866,7 +812,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderStatus
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderStatus|null
      */
     public function getStatus()
     {
@@ -876,7 +822,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderStatus $status status
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrderStatus|null $status status
      *
      * @return self
      */
@@ -893,7 +839,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sticker_id
      *
-     * @return int
+     * @return int|null
      */
     public function getStickerId()
     {
@@ -903,7 +849,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sticker_id
      *
-     * @param int $sticker_id ID стикера
+     * @param int|null $sticker_id ID стикера
      *
      * @return self
      */
@@ -920,7 +866,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets supply_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSupplyId()
     {
@@ -930,7 +876,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets supply_id
      *
-     * @param string $supply_id ID поставки
+     * @param string|null $supply_id ID поставки
      *
      * @return self
      */
@@ -954,7 +900,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets warehouse_id
      *
-     * @return int
+     * @return int|null
      */
     public function getWarehouseId()
     {
@@ -964,7 +910,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_id
      *
-     * @param int $warehouse_id ID склада продавца, с которого был отгружен товар
+     * @param int|null $warehouse_id ID склада продавца, с которого был отгружен товар
      *
      * @return self
      */

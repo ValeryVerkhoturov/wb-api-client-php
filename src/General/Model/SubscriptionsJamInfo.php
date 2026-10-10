@@ -351,9 +351,6 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['state'] === null) {
-            $invalidProperties[] = "'state' can't be null";
-        }
         $allowedValues = $this->getStateAllowableValues();
         if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -363,9 +360,6 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
             );
         }
 
-        if ($this->container['activation_source'] === null) {
-            $invalidProperties[] = "'activation_source' can't be null";
-        }
         $allowedValues = $this->getActivationSourceAllowableValues();
         if (!is_null($this->container['activation_source']) && !in_array($this->container['activation_source'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -375,9 +369,6 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
             );
         }
 
-        if ($this->container['level'] === null) {
-            $invalidProperties[] = "'level' can't be null";
-        }
         $allowedValues = $this->getLevelAllowableValues();
         if (!is_null($this->container['level']) && !in_array($this->container['level'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -387,12 +378,6 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
             );
         }
 
-        if ($this->container['since'] === null) {
-            $invalidProperties[] = "'since' can't be null";
-        }
-        if ($this->container['till'] === null) {
-            $invalidProperties[] = "'till' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -411,7 +396,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets state
      *
-     * @return string
+     * @return string|null
      */
     public function getState()
     {
@@ -421,7 +406,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets state
      *
-     * @param string $state Статус подписки:   - `active` — активна   - `inactive` — истекла или отменена
+     * @param string|null $state Статус подписки:   - `active` — активна   - `inactive` — истекла или отменена
      *
      * @return self
      */
@@ -448,7 +433,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets activation_source
      *
-     * @return string
+     * @return string|null
      */
     public function getActivationSource()
     {
@@ -458,7 +443,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets activation_source
      *
-     * @param string $activation_source Источник подключения подписки:   - `constructor` — покупка через раздел **Конструктор тарифов**   - `jam` — покупка через раздел **Подписка «Джем»**
+     * @param string|null $activation_source Источник подключения подписки:   - `constructor` — покупка через раздел **Конструктор тарифов**   - `jam` — покупка через раздел **Подписка «Джем»**
      *
      * @return self
      */
@@ -485,7 +470,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets level
      *
-     * @return string
+     * @return string|null
      */
     public function getLevel()
     {
@@ -495,7 +480,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets level
      *
-     * @param string $level Уровень подписки:   - `standard`   - `advanced`   - `premium`
+     * @param string|null $level Уровень подписки:   - `standard`   - `advanced`   - `premium`
      *
      * @return self
      */
@@ -522,7 +507,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets since
      *
-     * @return string
+     * @return string|null
      */
     public function getSince()
     {
@@ -532,7 +517,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets since
      *
-     * @param string $since Дата и время первой активации подписки. Не меняется при продлении или повторной активации
+     * @param string|null $since Дата и время первой активации подписки. Не меняется при продлении или повторной активации
      *
      * @return self
      */
@@ -549,7 +534,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets till
      *
-     * @return string
+     * @return string|null
      */
     public function getTill()
     {
@@ -559,7 +544,7 @@ class SubscriptionsJamInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets till
      *
-     * @param string $till Дата и время окончания подписки
+     * @param string|null $till Дата и время окончания подписки
      *
      * @return self
      */

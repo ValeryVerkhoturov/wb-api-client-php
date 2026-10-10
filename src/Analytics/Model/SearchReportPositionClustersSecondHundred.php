@@ -283,9 +283,6 @@ class SearchReportPositionClustersSecondHundred implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class SearchReportPositionClustersSecondHundred implements ModelInterface, Array
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class SearchReportPositionClustersSecondHundred implements ModelInterface, Array
     /**
      * Sets current
      *
-     * @param int $current Текущее количество товаров
+     * @param int|null $current Текущее количество товаров
      *
      * @return self
      */

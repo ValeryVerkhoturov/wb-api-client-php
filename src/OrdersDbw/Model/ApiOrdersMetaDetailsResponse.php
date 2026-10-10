@@ -282,9 +282,6 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,7 +300,7 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -313,7 +310,7 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets request_id
      *
-     * @param string $request_id Уникальный ID запроса
+     * @param string|null $request_id Уникальный ID запроса
      *
      * @return self
      */

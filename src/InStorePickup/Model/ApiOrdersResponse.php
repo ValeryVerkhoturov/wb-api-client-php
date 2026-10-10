@@ -289,12 +289,6 @@ class ApiOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
-        if ($this->container['is_error'] === null) {
-            $invalidProperties[] = "'is_error' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -313,7 +307,7 @@ class ApiOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -323,7 +317,7 @@ class ApiOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */
@@ -340,7 +334,7 @@ class ApiOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets is_error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsError()
     {
@@ -350,7 +344,7 @@ class ApiOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets is_error
      *
-     * @param bool $is_error Есть ли ошибки
+     * @param bool|null $is_error Есть ли ошибки
      *
      * @return self
      */

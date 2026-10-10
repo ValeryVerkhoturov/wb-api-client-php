@@ -303,21 +303,6 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['active_option_count'] === null) {
-            $invalidProperties[] = "'active_option_count' can't be null";
-        }
-        if ($this->container['active_package_count'] === null) {
-            $invalidProperties[] = "'active_package_count' can't be null";
-        }
-        if ($this->container['total_commission_rate'] === null) {
-            $invalidProperties[] = "'total_commission_rate' can't be null";
-        }
-        if ($this->container['packages'] === null) {
-            $invalidProperties[] = "'packages' can't be null";
-        }
-        if ($this->container['options'] === null) {
-            $invalidProperties[] = "'options' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +321,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets active_option_count
      *
-     * @return float
+     * @return float|null
      */
     public function getActiveOptionCount()
     {
@@ -346,7 +331,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets active_option_count
      *
-     * @param float $active_option_count Количество активных опций, не включённых в пакеты
+     * @param float|null $active_option_count Количество активных опций, не включённых в пакеты
      *
      * @return self
      */
@@ -363,7 +348,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets active_package_count
      *
-     * @return float
+     * @return float|null
      */
     public function getActivePackageCount()
     {
@@ -373,7 +358,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets active_package_count
      *
-     * @param float $active_package_count Количество активных пакетов опций
+     * @param float|null $active_package_count Количество активных пакетов опций
      *
      * @return self
      */
@@ -390,7 +375,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets total_commission_rate
      *
-     * @return float
+     * @return float|null
      */
     public function getTotalCommissionRate()
     {
@@ -400,7 +385,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets total_commission_rate
      *
-     * @param float $total_commission_rate Итоговая комиссия за подключённые опции и пакеты, % от оборота
+     * @param float|null $total_commission_rate Итоговая комиссия за подключённые опции и пакеты, % от оборота
      *
      * @return self
      */
@@ -417,7 +402,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets packages
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderPackage[]
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderPackage[]|null
      */
     public function getPackages()
     {
@@ -427,7 +412,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets packages
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderPackage[] $packages Подключённые пакеты опций
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderPackage[]|null $packages Подключённые пакеты опций
      *
      * @return self
      */
@@ -444,7 +429,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets options
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderOption[]
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderOption[]|null
      */
     public function getOptions()
     {
@@ -454,7 +439,7 @@ class PlanBuilderOptionsInfo implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets options
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderOption[] $options Подключённые опции
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\PlanBuilderOption[]|null $options Подключённые опции
      *
      * @return self
      */

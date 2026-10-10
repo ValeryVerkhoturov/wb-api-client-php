@@ -296,18 +296,6 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
-        if ($this->container['error'] === null) {
-            $invalidProperties[] = "'error' can't be null";
-        }
-        if ($this->container['error_text'] === null) {
-            $invalidProperties[] = "'error_text' can't be null";
-        }
-        if ($this->container['additional_errors'] === null) {
-            $invalidProperties[] = "'additional_errors' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +314,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2|null
      */
     public function getData()
     {
@@ -336,7 +324,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2 $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2|null $data data
      *
      * @return self
      */
@@ -353,7 +341,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Gets error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getError()
     {
@@ -363,7 +351,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Sets error
      *
-     * @param bool $error Флаг ошибки
+     * @param bool|null $error Флаг ошибки
      *
      * @return self
      */
@@ -380,7 +368,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Gets error_text
      *
-     * @return string
+     * @return string|null
      */
     public function getErrorText()
     {
@@ -390,7 +378,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Sets error_text
      *
-     * @param string $error_text Описание ошибки
+     * @param string|null $error_text Описание ошибки
      *
      * @return self
      */
@@ -407,7 +395,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Gets additional_errors
      *
-     * @return object
+     * @return object|null
      */
     public function getAdditionalErrors()
     {
@@ -417,7 +405,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Sets additional_errors
      *
-     * @param object $additional_errors Дополнительные ошибки
+     * @param object|null $additional_errors Дополнительные ошибки
      *
      * @return self
      */

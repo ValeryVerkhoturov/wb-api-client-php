@@ -401,63 +401,6 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['subject_id'] === null) {
-            $invalidProperties[] = "'subject_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['tag_name'] === null) {
-            $invalidProperties[] = "'tag_name' can't be null";
-        }
-        if ($this->container['tag_id'] === null) {
-            $invalidProperties[] = "'tag_id' can't be null";
-        }
-        if ($this->container['pinned_feedback'] === null) {
-            $invalidProperties[] = "'pinned_feedback' can't be null";
-        }
-        if ($this->container['rating'] === null) {
-            $invalidProperties[] = "'rating' can't be null";
-        }
-        if ($this->container['feedback_rating'] === null) {
-            $invalidProperties[] = "'feedback_rating' can't be null";
-        }
-        if ($this->container['feedback_count'] === null) {
-            $invalidProperties[] = "'feedback_count' can't be null";
-        }
-        if ($this->container['five_star'] === null) {
-            $invalidProperties[] = "'five_star' can't be null";
-        }
-        if ($this->container['four_star'] === null) {
-            $invalidProperties[] = "'four_star' can't be null";
-        }
-        if ($this->container['three_star'] === null) {
-            $invalidProperties[] = "'three_star' can't be null";
-        }
-        if ($this->container['two_star'] === null) {
-            $invalidProperties[] = "'two_star' can't be null";
-        }
-        if ($this->container['one_star'] === null) {
-            $invalidProperties[] = "'one_star' can't be null";
-        }
-        if ($this->container['disqualified'] === null) {
-            $invalidProperties[] = "'disqualified' can't be null";
-        }
-        if ($this->container['is_shadowed'] === null) {
-            $invalidProperties[] = "'is_shadowed' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -476,7 +419,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -486,7 +429,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -503,7 +446,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -513,7 +456,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets title
      *
-     * @param string $title Название товара
+     * @param string|null $title Название товара
      *
      * @return self
      */
@@ -530,7 +473,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -540,7 +483,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -557,7 +500,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets subject_id
      *
-     * @return int
+     * @return int|null
      */
     public function getSubjectId()
     {
@@ -567,7 +510,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets subject_id
      *
-     * @param int $subject_id ID предмета
+     * @param int|null $subject_id ID предмета
      *
      * @return self
      */
@@ -584,7 +527,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -594,7 +537,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Название предмета
+     * @param string|null $subject_name Название предмета
      *
      * @return self
      */
@@ -611,7 +554,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -621,7 +564,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -638,7 +581,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets tag_name
      *
-     * @return string
+     * @return string|null
      */
     public function getTagName()
     {
@@ -648,7 +591,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets tag_name
      *
-     * @param string $tag_name Название ярлыка
+     * @param string|null $tag_name Название ярлыка
      *
      * @return self
      */
@@ -665,7 +608,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets tag_id
      *
-     * @return int
+     * @return int|null
      */
     public function getTagId()
     {
@@ -675,7 +618,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets tag_id
      *
-     * @param int $tag_id ID ярлыка
+     * @param int|null $tag_id ID ярлыка
      *
      * @return self
      */
@@ -692,7 +635,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets pinned_feedback
      *
-     * @return bool
+     * @return bool|null
      */
     public function getPinnedFeedback()
     {
@@ -702,7 +645,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets pinned_feedback
      *
-     * @param bool $pinned_feedback Отзыв закреплён
+     * @param bool|null $pinned_feedback Отзыв закреплён
      *
      * @return self
      */
@@ -719,7 +662,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets rating
      *
-     * @return float
+     * @return float|null
      */
     public function getRating()
     {
@@ -729,7 +672,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets rating
      *
-     * @param float $rating Рейтинг карточки товара
+     * @param float|null $rating Рейтинг карточки товара
      *
      * @return self
      */
@@ -746,7 +689,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets feedback_rating
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackRating
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackRating|null
      */
     public function getFeedbackRating()
     {
@@ -756,7 +699,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets feedback_rating
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackRating $feedback_rating feedback_rating
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackRating|null $feedback_rating feedback_rating
      *
      * @return self
      */
@@ -773,7 +716,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets feedback_count
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackCount
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackCount|null
      */
     public function getFeedbackCount()
     {
@@ -783,7 +726,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets feedback_count
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackCount $feedback_count feedback_count
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFeedbackCount|null $feedback_count feedback_count
      *
      * @return self
      */
@@ -800,7 +743,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets five_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFiveStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFiveStar|null
      */
     public function getFiveStar()
     {
@@ -810,7 +753,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets five_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFiveStar $five_star five_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFiveStar|null $five_star five_star
      *
      * @return self
      */
@@ -827,7 +770,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets four_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFourStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFourStar|null
      */
     public function getFourStar()
     {
@@ -837,7 +780,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets four_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFourStar $four_star four_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemFourStar|null $four_star four_star
      *
      * @return self
      */
@@ -854,7 +797,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets three_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemThreeStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemThreeStar|null
      */
     public function getThreeStar()
     {
@@ -864,7 +807,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets three_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemThreeStar $three_star three_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemThreeStar|null $three_star three_star
      *
      * @return self
      */
@@ -881,7 +824,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets two_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemTwoStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemTwoStar|null
      */
     public function getTwoStar()
     {
@@ -891,7 +834,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets two_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemTwoStar $two_star two_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemTwoStar|null $two_star two_star
      *
      * @return self
      */
@@ -908,7 +851,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets one_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemOneStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemOneStar|null
      */
     public function getOneStar()
     {
@@ -918,7 +861,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets one_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemOneStar $one_star one_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItemOneStar|null $one_star one_star
      *
      * @return self
      */
@@ -935,7 +878,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets disqualified
      *
-     * @return int
+     * @return int|null
      */
     public function getDisqualified()
     {
@@ -945,7 +888,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets disqualified
      *
-     * @param int $disqualified Отзывы, исключённые из рейтинга
+     * @param int|null $disqualified Отзывы, исключённые из рейтинга
      *
      * @return self
      */
@@ -962,7 +905,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets is_shadowed
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsShadowed()
     {
@@ -972,7 +915,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets is_shadowed
      *
-     * @param bool $is_shadowed Является ли товар скрытым из каталога:   - `true` — товар скрыт из каталога   - `false` — товар не скрыт из каталога
+     * @param bool|null $is_shadowed Является ли товар скрытым из каталога:   - `true` — товар скрыт из каталога   - `false` — товар не скрыт из каталога
      *
      * @return self
      */

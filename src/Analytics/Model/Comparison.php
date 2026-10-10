@@ -380,54 +380,6 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['open_count_dynamic'] === null) {
-            $invalidProperties[] = "'open_count_dynamic' can't be null";
-        }
-        if ($this->container['cart_count_dynamic'] === null) {
-            $invalidProperties[] = "'cart_count_dynamic' can't be null";
-        }
-        if ($this->container['order_count_dynamic'] === null) {
-            $invalidProperties[] = "'order_count_dynamic' can't be null";
-        }
-        if ($this->container['order_sum_dynamic'] === null) {
-            $invalidProperties[] = "'order_sum_dynamic' can't be null";
-        }
-        if ($this->container['buyout_count_dynamic'] === null) {
-            $invalidProperties[] = "'buyout_count_dynamic' can't be null";
-        }
-        if ($this->container['buyout_sum_dynamic'] === null) {
-            $invalidProperties[] = "'buyout_sum_dynamic' can't be null";
-        }
-        if ($this->container['cancel_count_dynamic'] === null) {
-            $invalidProperties[] = "'cancel_count_dynamic' can't be null";
-        }
-        if ($this->container['cancel_sum_dynamic'] === null) {
-            $invalidProperties[] = "'cancel_sum_dynamic' can't be null";
-        }
-        if ($this->container['avg_orders_count_per_day_dynamic'] === null) {
-            $invalidProperties[] = "'avg_orders_count_per_day_dynamic' can't be null";
-        }
-        if ($this->container['avg_price_dynamic'] === null) {
-            $invalidProperties[] = "'avg_price_dynamic' can't be null";
-        }
-        if ($this->container['share_order_percent_dynamic'] === null) {
-            $invalidProperties[] = "'share_order_percent_dynamic' can't be null";
-        }
-        if ($this->container['add_to_wishlist_dynamic'] === null) {
-            $invalidProperties[] = "'add_to_wishlist_dynamic' can't be null";
-        }
-        if ($this->container['time_to_ready_dynamic'] === null) {
-            $invalidProperties[] = "'time_to_ready_dynamic' can't be null";
-        }
-        if ($this->container['localization_percent_dynamic'] === null) {
-            $invalidProperties[] = "'localization_percent_dynamic' can't be null";
-        }
-        if ($this->container['wb_club_dynamic'] === null) {
-            $invalidProperties[] = "'wb_club_dynamic' can't be null";
-        }
-        if ($this->container['conversions'] === null) {
-            $invalidProperties[] = "'conversions' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -446,7 +398,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets open_count_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getOpenCountDynamic()
     {
@@ -456,7 +408,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets open_count_dynamic
      *
-     * @param int $open_count_dynamic Динамика переходов в карточку товара
+     * @param int|null $open_count_dynamic Динамика переходов в карточку товара
      *
      * @return self
      */
@@ -473,7 +425,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cart_count_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getCartCountDynamic()
     {
@@ -483,7 +435,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cart_count_dynamic
      *
-     * @param int $cart_count_dynamic Динамика добавлений в корзину
+     * @param int|null $cart_count_dynamic Динамика добавлений в корзину
      *
      * @return self
      */
@@ -500,7 +452,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_count_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderCountDynamic()
     {
@@ -510,7 +462,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_count_dynamic
      *
-     * @param int $order_count_dynamic Динамика количества заказов
+     * @param int|null $order_count_dynamic Динамика количества заказов
      *
      * @return self
      */
@@ -527,7 +479,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_sum_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderSumDynamic()
     {
@@ -537,7 +489,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_sum_dynamic
      *
-     * @param int $order_sum_dynamic Динамика суммы заказов
+     * @param int|null $order_sum_dynamic Динамика суммы заказов
      *
      * @return self
      */
@@ -554,7 +506,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_count_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutCountDynamic()
     {
@@ -564,7 +516,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_count_dynamic
      *
-     * @param int $buyout_count_dynamic Динамика выкупов
+     * @param int|null $buyout_count_dynamic Динамика выкупов
      *
      * @return self
      */
@@ -581,7 +533,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_sum_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutSumDynamic()
     {
@@ -591,7 +543,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_sum_dynamic
      *
-     * @param int $buyout_sum_dynamic Динамика суммы выкупов
+     * @param int|null $buyout_sum_dynamic Динамика суммы выкупов
      *
      * @return self
      */
@@ -608,7 +560,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cancel_count_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelCountDynamic()
     {
@@ -618,7 +570,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cancel_count_dynamic
      *
-     * @param int $cancel_count_dynamic Динамика отмен и возвратов товаров
+     * @param int|null $cancel_count_dynamic Динамика отмен и возвратов товаров
      *
      * @return self
      */
@@ -635,7 +587,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cancel_sum_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelSumDynamic()
     {
@@ -645,7 +597,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cancel_sum_dynamic
      *
-     * @param int $cancel_sum_dynamic Динамика сумм отмен и возвратов товаров
+     * @param int|null $cancel_sum_dynamic Динамика сумм отмен и возвратов товаров
      *
      * @return self
      */
@@ -662,7 +614,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets avg_orders_count_per_day_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgOrdersCountPerDayDynamic()
     {
@@ -672,7 +624,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets avg_orders_count_per_day_dynamic
      *
-     * @param int $avg_orders_count_per_day_dynamic Динамика среднего количества заказов в день
+     * @param int|null $avg_orders_count_per_day_dynamic Динамика среднего количества заказов в день
      *
      * @return self
      */
@@ -689,7 +641,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets avg_price_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgPriceDynamic()
     {
@@ -699,7 +651,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets avg_price_dynamic
      *
-     * @param int $avg_price_dynamic Динамика средней цены на товары. Учитываются скидки для акций
+     * @param int|null $avg_price_dynamic Динамика средней цены на товары. Учитываются скидки для акций
      *
      * @return self
      */
@@ -716,7 +668,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets share_order_percent_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getShareOrderPercentDynamic()
     {
@@ -726,7 +678,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets share_order_percent_dynamic
      *
-     * @param int $share_order_percent_dynamic Динамика доли в выручке
+     * @param int|null $share_order_percent_dynamic Динамика доли в выручке
      *
      * @return self
      */
@@ -743,7 +695,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets add_to_wishlist_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getAddToWishlistDynamic()
     {
@@ -753,7 +705,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets add_to_wishlist_dynamic
      *
-     * @param int $add_to_wishlist_dynamic Динамика добавлений товара в избранное
+     * @param int|null $add_to_wishlist_dynamic Динамика добавлений товара в избранное
      *
      * @return self
      */
@@ -770,7 +722,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets time_to_ready_dynamic
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonTimeToReadyDynamic
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonTimeToReadyDynamic|null
      */
     public function getTimeToReadyDynamic()
     {
@@ -780,7 +732,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_to_ready_dynamic
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonTimeToReadyDynamic $time_to_ready_dynamic time_to_ready_dynamic
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonTimeToReadyDynamic|null $time_to_ready_dynamic time_to_ready_dynamic
      *
      * @return self
      */
@@ -797,7 +749,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets localization_percent_dynamic
      *
-     * @return int
+     * @return int|null
      */
     public function getLocalizationPercentDynamic()
     {
@@ -807,7 +759,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets localization_percent_dynamic
      *
-     * @param int $localization_percent_dynamic Динамика локальных заказов в рамках одного региона. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
+     * @param int|null $localization_percent_dynamic Динамика локальных заказов в рамках одного региона. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
      *
      * @return self
      */
@@ -824,7 +776,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets wb_club_dynamic
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonWbClubDynamic
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonWbClubDynamic|null
      */
     public function getWbClubDynamic()
     {
@@ -834,7 +786,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wb_club_dynamic
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonWbClubDynamic $wb_club_dynamic wb_club_dynamic
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ComparisonWbClubDynamic|null $wb_club_dynamic wb_club_dynamic
      *
      * @return self
      */
@@ -851,7 +803,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets conversions
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions|null
      */
     public function getConversions()
     {
@@ -861,7 +813,7 @@ class Comparison implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets conversions
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions $conversions conversions
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticConversions|null $conversions conversions
      *
      * @return self
      */

@@ -325,30 +325,6 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
-        if ($this->container['dynamics'] === null) {
-            $invalidProperties[] = "'dynamics' can't be null";
-        }
-        if ($this->container['five_star'] === null) {
-            $invalidProperties[] = "'five_star' can't be null";
-        }
-        if ($this->container['four_star'] === null) {
-            $invalidProperties[] = "'four_star' can't be null";
-        }
-        if ($this->container['three_star'] === null) {
-            $invalidProperties[] = "'three_star' can't be null";
-        }
-        if ($this->container['two_star'] === null) {
-            $invalidProperties[] = "'two_star' can't be null";
-        }
-        if ($this->container['one_star'] === null) {
-            $invalidProperties[] = "'one_star' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -367,7 +343,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -377,7 +353,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets current
      *
-     * @param int $current Прирост оценок за период
+     * @param int|null $current Прирост оценок за период
      *
      * @return self
      */
@@ -394,7 +370,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -404,7 +380,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets total
      *
-     * @param int $total Всего оценок
+     * @param int|null $total Всего оценок
      *
      * @return self
      */
@@ -421,7 +397,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets dynamics
      *
-     * @return int
+     * @return int|null
      */
     public function getDynamics()
     {
@@ -431,7 +407,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets dynamics
      *
-     * @param int $dynamics Динамика по сравнению с предыдущим периодом, %
+     * @param int|null $dynamics Динамика по сравнению с предыдущим периодом, %
      *
      * @return self
      */
@@ -448,7 +424,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets five_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFiveStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFiveStar|null
      */
     public function getFiveStar()
     {
@@ -458,7 +434,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets five_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFiveStar $five_star five_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFiveStar|null $five_star five_star
      *
      * @return self
      */
@@ -475,7 +451,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets four_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFourStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFourStar|null
      */
     public function getFourStar()
     {
@@ -485,7 +461,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets four_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFourStar $four_star four_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemFourStar|null $four_star four_star
      *
      * @return self
      */
@@ -502,7 +478,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets three_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemThreeStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemThreeStar|null
      */
     public function getThreeStar()
     {
@@ -512,7 +488,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets three_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemThreeStar $three_star three_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemThreeStar|null $three_star three_star
      *
      * @return self
      */
@@ -529,7 +505,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets two_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemTwoStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemTwoStar|null
      */
     public function getTwoStar()
     {
@@ -539,7 +515,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets two_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemTwoStar $two_star two_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemTwoStar|null $two_star two_star
      *
      * @return self
      */
@@ -556,7 +532,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets one_star
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemOneStar
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemOneStar|null
      */
     public function getOneStar()
     {
@@ -566,7 +542,7 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets one_star
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemOneStar $one_star one_star
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItemOneStar|null $one_star one_star
      *
      * @return self
      */

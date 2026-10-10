@@ -289,15 +289,6 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -326,7 +317,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Sets currency
      *
-     * @param string $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Gets type
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PlacementType
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PlacementType|null
      */
     public function getType()
     {
@@ -353,7 +344,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Sets type
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PlacementType $type type
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PlacementType|null $type type
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Gets value
      *
-     * @return int
+     * @return int|null
      */
     public function getValue()
     {
@@ -380,7 +371,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Sets value
      *
-     * @param int $value Минимальная ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $value Минимальная ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

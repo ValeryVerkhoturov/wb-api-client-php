@@ -332,33 +332,6 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['is_deleted'] === null) {
-            $invalidProperties[] = "'is_deleted' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['main_photo'] === null) {
-            $invalidProperties[] = "'main_photo' can't be null";
-        }
-        if ($this->container['has_sizes'] === null) {
-            $invalidProperties[] = "'has_sizes' can't be null";
-        }
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -377,7 +350,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -387,7 +360,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -404,7 +377,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_deleted
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsDeleted()
     {
@@ -414,7 +387,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_deleted
      *
-     * @param bool $is_deleted Является ли товар удалённым
+     * @param bool|null $is_deleted Является ли товар удалённым
      *
      * @return self
      */
@@ -431,7 +404,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -441,7 +414,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Название предмета
+     * @param string|null $subject_name Название предмета
      *
      * @return self
      */
@@ -458,7 +431,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -468,7 +441,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Название товара
+     * @param string|null $name Название товара
      *
      * @return self
      */
@@ -485,7 +458,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -495,7 +468,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -512,7 +485,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -522,7 +495,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -539,7 +512,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets main_photo
      *
-     * @return string
+     * @return string|null
      */
     public function getMainPhoto()
     {
@@ -549,7 +522,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets main_photo
      *
-     * @param string $main_photo Ссылка на главное фото
+     * @param string|null $main_photo Ссылка на главное фото
      *
      * @return self
      */
@@ -566,7 +539,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets has_sizes
      *
-     * @return bool
+     * @return bool|null
      */
     public function getHasSizes()
     {
@@ -576,7 +549,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets has_sizes
      *
-     * @param bool $has_sizes Является ли товар размерным. Неразмерный товар имеет единственный размер, с `\"techSize\":\"0\"`
+     * @param bool|null $has_sizes Является ли товар размерным. Неразмерный товар имеет единственный размер, с `\"techSize\":\"0\"`
      *
      * @return self
      */
@@ -593,7 +566,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetrics|null
      */
     public function getMetrics()
     {
@@ -603,7 +576,7 @@ class TableItemItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetrics $metrics metrics
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetrics|null $metrics metrics
      *
      * @return self
      */

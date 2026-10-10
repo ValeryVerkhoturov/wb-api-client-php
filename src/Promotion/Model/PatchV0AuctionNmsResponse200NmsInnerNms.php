@@ -283,12 +283,6 @@ class PatchV0AuctionNmsResponse200NmsInnerNms implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['added'] === null) {
-            $invalidProperties[] = "'added' can't be null";
-        }
-        if ($this->container['deleted'] === null) {
-            $invalidProperties[] = "'deleted' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class PatchV0AuctionNmsResponse200NmsInnerNms implements ModelInterface, ArrayAc
     /**
      * Gets added
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getAdded()
     {
@@ -317,7 +311,7 @@ class PatchV0AuctionNmsResponse200NmsInnerNms implements ModelInterface, ArrayAc
     /**
      * Sets added
      *
-     * @param int[] $added Добавленные карточки товаров
+     * @param int[]|null $added Добавленные карточки товаров
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class PatchV0AuctionNmsResponse200NmsInnerNms implements ModelInterface, ArrayAc
     /**
      * Gets deleted
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getDeleted()
     {
@@ -344,7 +338,7 @@ class PatchV0AuctionNmsResponse200NmsInnerNms implements ModelInterface, ArrayAc
     /**
      * Sets deleted
      *
-     * @param int[] $deleted Удалённые карточки товаров
+     * @param int[]|null $deleted Удалённые карточки товаров
      *
      * @return self
      */

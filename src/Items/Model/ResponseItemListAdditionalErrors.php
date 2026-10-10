@@ -283,9 +283,6 @@ class ResponseItemListAdditionalErrors implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['error'] === null) {
-            $invalidProperties[] = "'error' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -338,7 +335,7 @@ class ResponseItemListAdditionalErrors implements ModelInterface, ArrayAccess, \
     /**
      * Gets error
      *
-     * @return string
+     * @return string|null
      */
     public function getError()
     {
@@ -348,7 +345,7 @@ class ResponseItemListAdditionalErrors implements ModelInterface, ArrayAccess, \
     /**
      * Sets error
      *
-     * @param string $error error
+     * @param string|null $error error
      *
      * @return self
      */

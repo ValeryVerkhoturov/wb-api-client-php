@@ -282,9 +282,6 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['dates'] === null) {
-            $invalidProperties[] = "'dates' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,7 +300,7 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dates
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getDates()
     {
@@ -313,7 +310,7 @@ class StatDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dates
      *
-     * @param string[] $dates Даты, за которые нужно получить информацию
+     * @param string[]|null $dates Даты, за которые нужно получить информацию
      *
      * @return self
      */

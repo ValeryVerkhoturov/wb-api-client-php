@@ -283,9 +283,6 @@ class VisibilityInfoVisibility implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class VisibilityInfoVisibility implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class VisibilityInfoVisibility implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets current
      *
-     * @param int $current Видимость в текущий период
+     * @param int|null $current Видимость в текущий период
      *
      * @return self
      */

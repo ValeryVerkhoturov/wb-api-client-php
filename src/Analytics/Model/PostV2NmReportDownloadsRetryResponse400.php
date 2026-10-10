@@ -296,18 +296,6 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +314,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -336,7 +324,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Sets title
      *
-     * @param string $title Заголовок ошибки
+     * @param string|null $title Заголовок ошибки
      *
      * @return self
      */
@@ -353,7 +341,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -363,7 +351,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Sets detail
      *
-     * @param string $detail Детали ошибки
+     * @param string|null $detail Детали ошибки
      *
      * @return self
      */
@@ -380,7 +368,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -390,7 +378,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Sets request_id
      *
-     * @param string $request_id Уникальный ID запроса
+     * @param string|null $request_id Уникальный ID запроса
      *
      * @return self
      */
@@ -407,7 +395,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Gets origin
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -417,7 +405,7 @@ class PostV2NmReportDownloadsRetryResponse400 implements ModelInterface, ArrayAc
     /**
      * Sets origin
      *
-     * @param string $origin ID внутреннего сервиса WB
+     * @param string|null $origin ID внутреннего сервиса WB
      *
      * @return self
      */

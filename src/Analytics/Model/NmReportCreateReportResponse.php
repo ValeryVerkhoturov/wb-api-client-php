@@ -275,9 +275,6 @@ class NmReportCreateReportResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class NmReportCreateReportResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets data
      *
-     * @return string
+     * @return string|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class NmReportCreateReportResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets data
      *
-     * @param string $data Уведомление, что началась генерация отчёта
+     * @param string|null $data Уведомление, что началась генерация отчёта
      *
      * @return self
      */

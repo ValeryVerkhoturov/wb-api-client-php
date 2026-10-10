@@ -289,15 +289,6 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['dt'] === null) {
-            $invalidProperties[] = "'dt' can't be null";
-        }
-        if ($this->container['visibility'] === null) {
-            $invalidProperties[] = "'visibility' can't be null";
-        }
-        if ($this->container['open'] === null) {
-            $invalidProperties[] = "'open' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets dt
      *
-     * @return string
+     * @return string|null
      */
     public function getDt()
     {
@@ -326,7 +317,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets dt
      *
-     * @param string $dt Дата
+     * @param string|null $dt Дата
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets visibility
      *
-     * @return int
+     * @return int|null
      */
     public function getVisibility()
     {
@@ -353,7 +344,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets visibility
      *
-     * @param int $visibility Видимость карточки в результатах поиска, %
+     * @param int|null $visibility Видимость карточки в результатах поиска, %
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets open
      *
-     * @return int
+     * @return int|null
      */
     public function getOpen()
     {
@@ -380,7 +371,7 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets open
      *
-     * @param int $open Количество переходов в карточку
+     * @param int|null $open Количество переходов в карточку
      *
      * @return self
      */

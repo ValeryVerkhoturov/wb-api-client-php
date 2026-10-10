@@ -289,12 +289,6 @@ class ApiBatchErrorResponseMetaDetailsInner implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['key'] === null) {
-            $invalidProperties[] = "'key' can't be null";
-        }
-        if ($this->container['decision'] === null) {
-            $invalidProperties[] = "'decision' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -313,7 +307,7 @@ class ApiBatchErrorResponseMetaDetailsInner implements ModelInterface, ArrayAcce
     /**
      * Gets key
      *
-     * @return string
+     * @return string|null
      */
     public function getKey()
     {
@@ -323,7 +317,7 @@ class ApiBatchErrorResponseMetaDetailsInner implements ModelInterface, ArrayAcce
     /**
      * Sets key
      *
-     * @param string $key Идентификатор маркировки
+     * @param string|null $key Идентификатор маркировки
      *
      * @return self
      */
@@ -374,7 +368,7 @@ class ApiBatchErrorResponseMetaDetailsInner implements ModelInterface, ArrayAcce
     /**
      * Gets decision
      *
-     * @return string
+     * @return string|null
      */
     public function getDecision()
     {
@@ -384,7 +378,7 @@ class ApiBatchErrorResponseMetaDetailsInner implements ModelInterface, ArrayAcce
     /**
      * Sets decision
      *
-     * @param string $decision Статус проверки: - `sgtin`   - `sgtinInvalidFormat` — Неверный формат маркировки   - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)   - `sgtinEmitted` —  Маркировка эмитирована   - `sgtinApplied` — Не пройдена процедура Ввод в оборот   - `sgtinWrittenOff` — Списан   - `sgtinRetired` — Выбыл   - `sgtinWithdrawn` — Выбыл   - `sgtinDisaggregation` — Расформирован   - `sgtinDisaggregated` — Расформирован   - `sgtinAppliedNotPaid` — Не оплачен   - `pending` — Маркировка на проверке
+     * @param string|null $decision Статус проверки: - `sgtin`   - `sgtinInvalidFormat` — Неверный формат маркировки   - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)   - `sgtinEmitted` —  Маркировка эмитирована   - `sgtinApplied` — Не пройдена процедура Ввод в оборот   - `sgtinWrittenOff` — Списан   - `sgtinRetired` — Выбыл   - `sgtinWithdrawn` — Выбыл   - `sgtinDisaggregation` — Расформирован   - `sgtinDisaggregated` — Расформирован   - `sgtinAppliedNotPaid` — Не оплачен   - `pending` — Маркировка на проверке
      *
      * @return self
      */

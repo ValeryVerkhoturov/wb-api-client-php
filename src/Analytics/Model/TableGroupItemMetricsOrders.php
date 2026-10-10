@@ -283,9 +283,6 @@ class TableGroupItemMetricsOrders implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class TableGroupItemMetricsOrders implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class TableGroupItemMetricsOrders implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets current
      *
-     * @param int $current Текущее количество
+     * @param int|null $current Текущее количество
      *
      * @return self
      */

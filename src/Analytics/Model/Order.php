@@ -407,24 +407,6 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
-        }
-        if ($this->container['srid'] === null) {
-            $invalidProperties[] = "'srid' can't be null";
-        }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -443,27 +425,6 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['warehouse_name'] === null) {
-            $invalidProperties[] = "'warehouse_name' can't be null";
-        }
-        if ($this->container['warehouse_region'] === null) {
-            $invalidProperties[] = "'warehouse_region' can't be null";
-        }
-        if ($this->container['is_mp'] === null) {
-            $invalidProperties[] = "'is_mp' can't be null";
-        }
-        if ($this->container['destination_city'] === null) {
-            $invalidProperties[] = "'destination_city' can't be null";
-        }
-        if ($this->container['destination_district'] === null) {
-            $invalidProperties[] = "'destination_district' can't be null";
-        }
-        if ($this->container['seller_price'] === null) {
-            $invalidProperties[] = "'seller_price' can't be null";
-        }
-        if ($this->container['is_b2b'] === null) {
-            $invalidProperties[] = "'is_b2b' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -482,7 +443,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -492,7 +453,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -509,7 +470,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets chrt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getChrtId()
     {
@@ -519,7 +480,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chrt_id
      *
-     * @param int $chrt_id ID размера
+     * @param int|null $chrt_id ID размера
      *
      * @return self
      */
@@ -536,7 +497,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets srid
      *
-     * @return string
+     * @return string|null
      */
     public function getSrid()
     {
@@ -546,7 +507,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets srid
      *
-     * @param string $srid ID заказа
+     * @param string|null $srid ID заказа
      *
      * @return self
      */
@@ -563,7 +524,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -573,7 +534,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param string $created_at Дата и время оформления заказа
+     * @param string|null $created_at Дата и время оформления заказа
      *
      * @return self
      */
@@ -590,7 +551,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated_at
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -600,7 +561,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated_at
      *
-     * @param string $updated_at Дата и время текущего статуса. При `\"status\":\"created\"` возвращается значение поля `createdAt`
+     * @param string|null $updated_at Дата и время текущего статуса. При `\"status\":\"created\"` возвращается значение поля `createdAt`
      *
      * @return self
      */
@@ -617,7 +578,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -627,7 +588,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string $status Статус заказа:   - `created` — оформлен   - `buyout` — продан   - `cancel` — отменён   - `return` — возвращён   - `returnDefective` — возвращён по причине брака
+     * @param string|null $status Статус заказа:   - `created` — оформлен   - `buyout` — продан   - `cancel` — отменён   - `return` — возвращён   - `returnDefective` — возвращён по причине брака
      *
      * @return self
      */
@@ -691,7 +652,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets warehouse_name
      *
-     * @return string
+     * @return string|null
      */
     public function getWarehouseName()
     {
@@ -701,7 +662,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_name
      *
-     * @param string $warehouse_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
+     * @param string|null $warehouse_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
      *
      * @return self
      */
@@ -718,7 +679,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets warehouse_region
      *
-     * @return string
+     * @return string|null
      */
     public function getWarehouseRegion()
     {
@@ -728,7 +689,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_region
      *
-     * @param string $warehouse_region Федеральный округ склада. Если склад не в России, возвращается страна. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
+     * @param string|null $warehouse_region Федеральный округ склада. Если склад не в России, возвращается страна. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
      *
      * @return self
      */
@@ -745,7 +706,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_mp
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsMp()
     {
@@ -755,7 +716,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_mp
      *
-     * @param bool $is_mp Тип склада:   - `true` — склад продавца   - `false` — склад WB
+     * @param bool|null $is_mp Тип склада:   - `true` — склад продавца   - `false` — склад WB
      *
      * @return self
      */
@@ -772,7 +733,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets destination_city
      *
-     * @return string
+     * @return string|null
      */
     public function getDestinationCity()
     {
@@ -782,7 +743,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets destination_city
      *
-     * @param string $destination_city Населённый пункт доставки
+     * @param string|null $destination_city Населённый пункт доставки
      *
      * @return self
      */
@@ -799,7 +760,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets destination_district
      *
-     * @return string
+     * @return string|null
      */
     public function getDestinationDistrict()
     {
@@ -809,7 +770,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets destination_district
      *
-     * @param string $destination_district Федеральный округ доставки. Если доставка не по России, возвращается страна
+     * @param string|null $destination_district Федеральный округ доставки. Если доставка не по России, возвращается страна
      *
      * @return self
      */
@@ -826,7 +787,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets seller_price
      *
-     * @return float
+     * @return float|null
      */
     public function getSellerPrice()
     {
@@ -836,7 +797,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_price
      *
-     * @param float $seller_price Цена продавца со скидкой продавца (без учёта скидки WB Клуба и оптовой скидки для B2B-продаж)
+     * @param float|null $seller_price Цена продавца со скидкой продавца (без учёта скидки WB Клуба и оптовой скидки для B2B-продаж)
      *
      * @return self
      */
@@ -853,7 +814,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_b2b
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsB2b()
     {
@@ -863,7 +824,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_b2b
      *
-     * @param bool $is_b2b Тип продажи:   - `true` — B2B   - `false` — B2C
+     * @param bool|null $is_b2b Тип продажи:   - `true` — B2B   - `false` — B2C
      *
      * @return self
      */

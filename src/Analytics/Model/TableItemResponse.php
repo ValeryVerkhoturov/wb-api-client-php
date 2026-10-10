@@ -282,12 +282,6 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null
      */
     public function getItems()
     {
@@ -316,7 +310,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[] $items Множество данных по товарам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null $items Множество данных по товарам
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -343,7 +337,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

@@ -347,24 +347,6 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['bid_type'] === null) {
-            $invalidProperties[] = "'bid_type' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['nm_settings'] === null) {
-            $invalidProperties[] = "'nm_settings' can't be null";
-        }
-        if ($this->container['settings'] === null) {
-            $invalidProperties[] = "'settings' can't be null";
-        }
-        if ($this->container['restrictions'] === null) {
-            $invalidProperties[] = "'restrictions' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -374,9 +356,6 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
 
-        if ($this->container['timestamps'] === null) {
-            $invalidProperties[] = "'timestamps' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -395,7 +374,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets bid_type
      *
-     * @return string
+     * @return string|null
      */
     public function getBidType()
     {
@@ -405,7 +384,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bid_type
      *
-     * @param string $bid_type Тип ставки:   - `unified` — единая ставка   - `manual` — ручная ставка
+     * @param string|null $bid_type Тип ставки:   - `unified` — единая ставка   - `manual` — ручная ставка
      *
      * @return self
      */
@@ -449,7 +428,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -459,7 +438,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param int $id ID кампании
+     * @param int|null $id ID кампании
      *
      * @return self
      */
@@ -476,7 +455,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets nm_settings
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertNMsSettings[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertNMsSettings[]|null
      */
     public function getNmSettings()
     {
@@ -486,7 +465,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets nm_settings
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertNMsSettings[] $nm_settings Настройки товаров
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertNMsSettings[]|null $nm_settings Настройки товаров
      *
      * @return self
      */
@@ -510,7 +489,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets settings
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettings
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettings|null
      */
     public function getSettings()
     {
@@ -520,7 +499,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets settings
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettings $settings settings
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettings|null $settings settings
      *
      * @return self
      */
@@ -537,7 +516,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets restrictions
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInnerRestrictions
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInnerRestrictions|null
      */
     public function getRestrictions()
     {
@@ -547,7 +526,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets restrictions
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInnerRestrictions $restrictions restrictions
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInnerRestrictions|null $restrictions restrictions
      *
      * @return self
      */
@@ -564,7 +543,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets status
      *
-     * @return int
+     * @return int|null
      */
     public function getStatus()
     {
@@ -574,7 +553,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets status
      *
-     * @param int $status Статус кампании: - `-1` — удалена, процесс удаления будет завершён в течение 10 минут - `4` — готова к запуску - `7` — завершена - `8` — отменена - `9` — активна - `11` — на паузе
+     * @param int|null $status Статус кампании: - `-1` — удалена, процесс удаления будет завершён в течение 10 минут - `4` — готова к запуску - `7` — завершена - `8` — отменена - `9` — активна - `11` — на паузе
      *
      * @return self
      */
@@ -601,7 +580,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets timestamps
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps|null
      */
     public function getTimestamps()
     {
@@ -611,7 +590,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets timestamps
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps $timestamps timestamps
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps|null $timestamps timestamps
      *
      * @return self
      */

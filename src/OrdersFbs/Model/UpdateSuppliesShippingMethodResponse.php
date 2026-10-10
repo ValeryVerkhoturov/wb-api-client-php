@@ -275,9 +275,6 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]|null
      */
     public function getResults()
     {
@@ -306,7 +303,7 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]|null $results results
      *
      * @return self
      */

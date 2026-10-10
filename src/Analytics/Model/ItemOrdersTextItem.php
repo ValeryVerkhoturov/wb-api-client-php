@@ -289,15 +289,6 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
-        }
-        if ($this->container['frequency'] === null) {
-            $invalidProperties[] = "'frequency' can't be null";
-        }
-        if ($this->container['date_items'] === null) {
-            $invalidProperties[] = "'date_items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets text
      *
-     * @return string
+     * @return string|null
      */
     public function getText()
     {
@@ -326,7 +317,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets text
      *
-     * @param string $text Текст поискового запроса
+     * @param string|null $text Текст поискового запроса
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets frequency
      *
-     * @return int
+     * @return int|null
      */
     public function getFrequency()
     {
@@ -353,7 +344,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets frequency
      *
-     * @param int $frequency Количество обращений с поисковым запросом
+     * @param int|null $frequency Количество обращений с поисковым запросом
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets date_items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[]|null
      */
     public function getDateItems()
     {
@@ -380,7 +371,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets date_items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[] $date_items Статистика по датам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemOrdersMetrics[]|null $date_items Статистика по датам
      *
      * @return self
      */

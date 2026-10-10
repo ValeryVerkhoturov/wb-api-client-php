@@ -317,27 +317,6 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['size'] === null) {
-            $invalidProperties[] = "'size' can't be null";
-        }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
-        if ($this->container['end_date'] === null) {
-            $invalidProperties[] = "'end_date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -356,7 +335,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return string
+     * @return string|null
      */
     public function getId()
     {
@@ -366,7 +345,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id ID отчёта
+     * @param string|null $id ID отчёта
      *
      * @return self
      */
@@ -383,7 +362,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets created_at
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -393,7 +372,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets created_at
      *
-     * @param string $created_at Дата и время завершения генерации
+     * @param string|null $created_at Дата и время завершения генерации
      *
      * @return self
      */
@@ -410,7 +389,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -420,7 +399,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status Статус отчёта:  * `WAITING` — в очереди на обработку * `PROCESSING` — генерируется * `SUCCESS —` готов * `RETRY` — ожидает повторной обработки * `FAILED` — не получилось сгенерировать, сгенерируйте повторно
+     * @param string|null $status Статус отчёта:  * `WAITING` — в очереди на обработку * `PROCESSING` — генерируется * `SUCCESS —` готов * `RETRY` — ожидает повторной обработки * `FAILED` — не получилось сгенерировать, сгенерируйте повторно
      *
      * @return self
      */
@@ -437,7 +416,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -447,7 +426,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name Название отчёта
+     * @param string|null $name Название отчёта
      *
      * @return self
      */
@@ -464,7 +443,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets size
      *
-     * @return int
+     * @return int|null
      */
     public function getSize()
     {
@@ -474,7 +453,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets size
      *
-     * @param int $size Размер отчёта, Б
+     * @param int|null $size Размер отчёта, Б
      *
      * @return self
      */
@@ -491,7 +470,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets start_date
      *
-     * @return string
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -501,7 +480,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets start_date
      *
-     * @param string $start_date Начало периода
+     * @param string|null $start_date Начало периода
      *
      * @return self
      */
@@ -518,7 +497,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets end_date
      *
-     * @return string
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -528,7 +507,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets end_date
      *
-     * @param string $end_date Конец периода
+     * @param string|null $end_date Конец периода
      *
      * @return self
      */

@@ -352,39 +352,6 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['imt_id'] === null) {
-            $invalidProperties[] = "'imt_id' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['pics_count'] === null) {
-            $invalidProperties[] = "'pics_count' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['pic'] === null) {
-            $invalidProperties[] = "'pic' can't be null";
-        }
-        if ($this->container['recom_count'] === null) {
-            $invalidProperties[] = "'recom_count' can't be null";
-        }
-        if ($this->container['recom_pics'] === null) {
-            $invalidProperties[] = "'recom_pics' can't be null";
-        }
-        if ($this->container['recom_nms'] === null) {
-            $invalidProperties[] = "'recom_nms' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -403,7 +370,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -413,7 +380,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -430,7 +397,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets imt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getImtId()
     {
@@ -440,7 +407,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets imt_id
      *
-     * @param int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
+     * @param int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -457,7 +424,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -467,7 +434,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -484,7 +451,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -494,7 +461,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -545,7 +512,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets pics_count
      *
-     * @return int
+     * @return int|null
      */
     public function getPicsCount()
     {
@@ -555,7 +522,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets pics_count
      *
-     * @param int $pics_count Количество изображений в карточке товара
+     * @param int|null $pics_count Количество изображений в карточке товара
      *
      * @return self
      */
@@ -572,7 +539,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -582,7 +549,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets title
      *
-     * @param string $title Название товара
+     * @param string|null $title Название товара
      *
      * @return self
      */
@@ -599,7 +566,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -609,7 +576,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Предмет
+     * @param string|null $subject_name Предмет
      *
      * @return self
      */
@@ -626,7 +593,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets pic
      *
-     * @return string
+     * @return string|null
      */
     public function getPic()
     {
@@ -636,7 +603,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets pic
      *
-     * @param string $pic URL основного изображения в карточке товара
+     * @param string|null $pic URL основного изображения в карточке товара
      *
      * @return self
      */
@@ -653,7 +620,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets recom_count
      *
-     * @return int
+     * @return int|null
      */
     public function getRecomCount()
     {
@@ -663,7 +630,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets recom_count
      *
-     * @param int $recom_count Количество рекомендуемых товаров
+     * @param int|null $recom_count Количество рекомендуемых товаров
      *
      * @return self
      */
@@ -680,7 +647,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets recom_pics
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getRecomPics()
     {
@@ -690,7 +657,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets recom_pics
      *
-     * @param string[] $recom_pics Список URL основных изображений рекомендуемых товаров
+     * @param string[]|null $recom_pics Список URL основных изображений рекомендуемых товаров
      *
      * @return self
      */
@@ -707,7 +674,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets recom_nms
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getRecomNms()
     {
@@ -717,7 +684,7 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets recom_nms
      *
-     * @param int[] $recom_nms Список `nmId` рекомендуемых товаров
+     * @param int[]|null $recom_nms Список `nmId` рекомендуемых товаров
      *
      * @return self
      */

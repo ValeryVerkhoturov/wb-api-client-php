@@ -388,57 +388,6 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['rrd_id'] === null) {
-            $invalidProperties[] = "'rrd_id' can't be null";
-        }
-        if ($this->container['report_id'] === null) {
-            $invalidProperties[] = "'report_id' can't be null";
-        }
-        if ($this->container['acq_date'] === null) {
-            $invalidProperties[] = "'acq_date' can't be null";
-        }
-        if ($this->container['acquiring_bank'] === null) {
-            $invalidProperties[] = "'acquiring_bank' can't be null";
-        }
-        if ($this->container['tin'] === null) {
-            $invalidProperties[] = "'tin' can't be null";
-        }
-        if ($this->container['tax_registration_reason_code'] === null) {
-            $invalidProperties[] = "'tax_registration_reason_code' can't be null";
-        }
-        if ($this->container['sale_date'] === null) {
-            $invalidProperties[] = "'sale_date' can't be null";
-        }
-        if ($this->container['srid'] === null) {
-            $invalidProperties[] = "'srid' can't be null";
-        }
-        if ($this->container['document_type'] === null) {
-            $invalidProperties[] = "'document_type' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['retail_amount'] === null) {
-            $invalidProperties[] = "'retail_amount' can't be null";
-        }
-        if ($this->container['acquiring_fee'] === null) {
-            $invalidProperties[] = "'acquiring_fee' can't be null";
-        }
-        if ($this->container['acquiring_fee_vat'] === null) {
-            $invalidProperties[] = "'acquiring_fee_vat' can't be null";
-        }
-        if ($this->container['invoice_number'] === null) {
-            $invalidProperties[] = "'invoice_number' can't be null";
-        }
-        if ($this->container['invoice_date'] === null) {
-            $invalidProperties[] = "'invoice_date' can't be null";
-        }
-        if ($this->container['shk_id'] === null) {
-            $invalidProperties[] = "'shk_id' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -457,7 +406,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets rrd_id
      *
-     * @return int
+     * @return int|null
      */
     public function getRrdId()
     {
@@ -467,7 +416,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets rrd_id
      *
-     * @param int $rrd_id ID строки
+     * @param int|null $rrd_id ID строки
      *
      * @return self
      */
@@ -484,7 +433,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets report_id
      *
-     * @return int
+     * @return int|null
      */
     public function getReportId()
     {
@@ -494,7 +443,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets report_id
      *
-     * @param int $report_id ID отчёта
+     * @param int|null $report_id ID отчёта
      *
      * @return self
      */
@@ -511,7 +460,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets acq_date
      *
-     * @return string
+     * @return string|null
      */
     public function getAcqDate()
     {
@@ -521,7 +470,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets acq_date
      *
-     * @param string $acq_date Дата операции
+     * @param string|null $acq_date Дата операции
      *
      * @return self
      */
@@ -538,7 +487,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets acquiring_bank
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringBank()
     {
@@ -548,7 +497,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets acquiring_bank
      *
-     * @param string $acquiring_bank Наименование банка-эквайера
+     * @param string|null $acquiring_bank Наименование банка-эквайера
      *
      * @return self
      */
@@ -565,7 +514,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets tin
      *
-     * @return string
+     * @return string|null
      */
     public function getTin()
     {
@@ -575,7 +524,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets tin
      *
-     * @param string $tin ИНН
+     * @param string|null $tin ИНН
      *
      * @return self
      */
@@ -592,7 +541,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets tax_registration_reason_code
      *
-     * @return string
+     * @return string|null
      */
     public function getTaxRegistrationReasonCode()
     {
@@ -602,7 +551,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets tax_registration_reason_code
      *
-     * @param string $tax_registration_reason_code КПП
+     * @param string|null $tax_registration_reason_code КПП
      *
      * @return self
      */
@@ -619,7 +568,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets sale_date
      *
-     * @return string
+     * @return string|null
      */
     public function getSaleDate()
     {
@@ -629,7 +578,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets sale_date
      *
-     * @param string $sale_date Дата продажи
+     * @param string|null $sale_date Дата продажи
      *
      * @return self
      */
@@ -646,7 +595,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets srid
      *
-     * @return string
+     * @return string|null
      */
     public function getSrid()
     {
@@ -656,7 +605,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets srid
      *
-     * @param string $srid ID заказа. В ответах методов сборочных заданий [FBS](./orders-fbs#tag/fbsAssemblyOrders), [DBW](./orders-dbw#tag/dbwAssemblyOrders), [DBS](./dbs#tag/dbsAssemblyOrders) и [Самовывоз](./in-store-pickup#tag/inStorePickupAssemblyOrders) `srid` равен `rid`
+     * @param string|null $srid ID заказа. В ответах методов сборочных заданий [FBS](./orders-fbs#tag/fbsAssemblyOrders), [DBW](./orders-dbw#tag/dbwAssemblyOrders), [DBS](./dbs#tag/dbsAssemblyOrders) и [Самовывоз](./in-store-pickup#tag/inStorePickupAssemblyOrders) `srid` равен `rid`
      *
      * @return self
      */
@@ -673,7 +622,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets document_type
      *
-     * @return string
+     * @return string|null
      */
     public function getDocumentType()
     {
@@ -683,7 +632,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets document_type
      *
-     * @param string $document_type Тип документа
+     * @param string|null $document_type Тип документа
      *
      * @return self
      */
@@ -700,7 +649,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -710,7 +659,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -727,7 +676,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets retail_amount
      *
-     * @return string
+     * @return string|null
      */
     public function getRetailAmount()
     {
@@ -737,7 +686,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets retail_amount
      *
-     * @param string $retail_amount Wildberries реализовал Товар (Пр)
+     * @param string|null $retail_amount Wildberries реализовал Товар (Пр)
      *
      * @return self
      */
@@ -754,7 +703,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets acquiring_fee
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringFee()
     {
@@ -764,7 +713,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets acquiring_fee
      *
-     * @param string $acquiring_fee Размер комиссии за эквайринг, в том числе НДС
+     * @param string|null $acquiring_fee Размер комиссии за эквайринг, в том числе НДС
      *
      * @return self
      */
@@ -781,7 +730,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets acquiring_fee_vat
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringFeeVat()
     {
@@ -791,7 +740,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets acquiring_fee_vat
      *
-     * @param string $acquiring_fee_vat Сумма НДС
+     * @param string|null $acquiring_fee_vat Сумма НДС
      *
      * @return self
      */
@@ -808,7 +757,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets invoice_number
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceNumber()
     {
@@ -818,7 +767,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets invoice_number
      *
-     * @param string $invoice_number Номер счёта-фактуры
+     * @param string|null $invoice_number Номер счёта-фактуры
      *
      * @return self
      */
@@ -835,7 +784,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets invoice_date
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceDate()
     {
@@ -845,7 +794,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets invoice_date
      *
-     * @param string $invoice_date Дата счёта-фактуры
+     * @param string|null $invoice_date Дата счёта-фактуры
      *
      * @return self
      */
@@ -862,7 +811,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets shk_id
      *
-     * @return int
+     * @return int|null
      */
     public function getShkId()
     {
@@ -872,7 +821,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets shk_id
      *
-     * @param int $shk_id Штрихкод
+     * @param int|null $shk_id Штрихкод
      *
      * @return self
      */
@@ -889,7 +838,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -899,7 +848,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

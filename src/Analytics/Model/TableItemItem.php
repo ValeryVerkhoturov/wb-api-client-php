@@ -401,48 +401,6 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['is_advertised'] === null) {
-            $invalidProperties[] = "'is_advertised' can't be null";
-        }
-        if ($this->container['is_card_rated'] === null) {
-            $invalidProperties[] = "'is_card_rated' can't be null";
-        }
-        if ($this->container['rating'] === null) {
-            $invalidProperties[] = "'rating' can't be null";
-        }
-        if ($this->container['feedback_rating'] === null) {
-            $invalidProperties[] = "'feedback_rating' can't be null";
-        }
-        if ($this->container['price'] === null) {
-            $invalidProperties[] = "'price' can't be null";
-        }
-        if ($this->container['avg_position'] === null) {
-            $invalidProperties[] = "'avg_position' can't be null";
-        }
-        if ($this->container['open_card'] === null) {
-            $invalidProperties[] = "'open_card' can't be null";
-        }
-        if ($this->container['add_to_cart'] === null) {
-            $invalidProperties[] = "'add_to_cart' can't be null";
-        }
-        if ($this->container['open_to_cart'] === null) {
-            $invalidProperties[] = "'open_to_cart' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
-        if ($this->container['cart_to_order'] === null) {
-            $invalidProperties[] = "'cart_to_order' can't be null";
-        }
-        if ($this->container['visibility'] === null) {
-            $invalidProperties[] = "'visibility' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -461,7 +419,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -471,7 +429,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -515,7 +473,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -525,7 +483,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -623,7 +581,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_advertised
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsAdvertised()
     {
@@ -633,7 +591,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_advertised
      *
-     * @param bool $is_advertised Находится ли товар в продвижении в Поисковой выдаче
+     * @param bool|null $is_advertised Находится ли товар в продвижении в Поисковой выдаче
      *
      * @return self
      */
@@ -677,7 +635,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_card_rated
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsCardRated()
     {
@@ -687,7 +645,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_card_rated
      *
-     * @param bool $is_card_rated Есть ли рейтинг у карточки товара
+     * @param bool|null $is_card_rated Есть ли рейтинг у карточки товара
      *
      * @return self
      */
@@ -704,7 +662,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets rating
      *
-     * @return float
+     * @return float|null
      */
     public function getRating()
     {
@@ -714,7 +672,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rating
      *
-     * @param float $rating Рейтинг карточки товара
+     * @param float|null $rating Рейтинг карточки товара
      *
      * @return self
      */
@@ -731,7 +689,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets feedback_rating
      *
-     * @return float
+     * @return float|null
      */
     public function getFeedbackRating()
     {
@@ -741,7 +699,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets feedback_rating
      *
-     * @param float $feedback_rating Рейтинг по отзывам
+     * @param float|null $feedback_rating Рейтинг по отзывам
      *
      * @return self
      */
@@ -758,7 +716,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null
      */
     public function getPrice()
     {
@@ -768,7 +726,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice $price price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null $price price
      *
      * @return self
      */
@@ -785,7 +743,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets avg_position
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition|null
      */
     public function getAvgPosition()
     {
@@ -795,7 +753,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets avg_position
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition $avg_position avg_position
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition|null $avg_position avg_position
      *
      * @return self
      */
@@ -812,7 +770,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets open_card
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard|null
      */
     public function getOpenCard()
     {
@@ -822,7 +780,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets open_card
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard $open_card open_card
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard|null $open_card open_card
      *
      * @return self
      */
@@ -839,7 +797,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets add_to_cart
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart|null
      */
     public function getAddToCart()
     {
@@ -849,7 +807,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets add_to_cart
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart $add_to_cart add_to_cart
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart|null $add_to_cart add_to_cart
      *
      * @return self
      */
@@ -866,7 +824,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets open_to_cart
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart|null
      */
     public function getOpenToCart()
     {
@@ -876,7 +834,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets open_to_cart
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart $open_to_cart open_to_cart
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOpenToCart|null $open_to_cart open_to_cart
      *
      * @return self
      */
@@ -893,7 +851,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orders
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders|null
      */
     public function getOrders()
     {
@@ -903,7 +861,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orders
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders $orders orders
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsOrders|null $orders orders
      *
      * @return self
      */
@@ -920,7 +878,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cart_to_order
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder|null
      */
     public function getCartToOrder()
     {
@@ -930,7 +888,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cart_to_order
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder $cart_to_order cart_to_order
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsCartToOrder|null $cart_to_order cart_to_order
      *
      * @return self
      */
@@ -947,7 +905,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets visibility
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility|null
      */
     public function getVisibility()
     {
@@ -957,7 +915,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets visibility
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility $visibility visibility
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsVisibility|null $visibility visibility
      *
      * @return self
      */

@@ -289,15 +289,6 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['bids_kopecks'] === null) {
-            $invalidProperties[] = "'bids_kopecks' can't be null";
-        }
-        if ($this->container['subject'] === null) {
-            $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets bids_kopecks
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertBidsKopecks
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertBidsKopecks|null
      */
     public function getBidsKopecks()
     {
@@ -326,7 +317,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets bids_kopecks
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertBidsKopecks $bids_kopecks bids_kopecks
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertBidsKopecks|null $bids_kopecks bids_kopecks
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets subject
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSubcategory
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSubcategory|null
      */
     public function getSubject()
     {
@@ -353,7 +344,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subject
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSubcategory $subject subject
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSubcategory|null $subject subject
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -380,7 +371,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */

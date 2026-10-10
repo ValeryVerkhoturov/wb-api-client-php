@@ -366,21 +366,6 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['office_type'] === null) {
-            $invalidProperties[] = "'office_type' can't be null";
-        }
         $allowedValues = $this->getOfficeTypeAllowableValues();
         if (!is_null($this->container['office_type']) && !in_array($this->container['office_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -390,18 +375,6 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['cargo_types'] === null) {
-            $invalidProperties[] = "'cargo_types' can't be null";
-        }
-        if ($this->container['latitude'] === null) {
-            $invalidProperties[] = "'latitude' can't be null";
-        }
-        if ($this->container['longitude'] === null) {
-            $invalidProperties[] = "'longitude' can't be null";
-        }
-        if ($this->container['fulfillment'] === null) {
-            $invalidProperties[] = "'fulfillment' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -420,7 +393,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -430,7 +403,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id ID пункта отгрузки
+     * @param int|null $id ID пункта отгрузки
      *
      * @return self
      */
@@ -447,7 +420,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -457,7 +430,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Название
+     * @param string|null $name Название
      *
      * @return self
      */
@@ -474,7 +447,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress()
     {
@@ -484,7 +457,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param string $address Адрес
+     * @param string|null $address Адрес
      *
      * @return self
      */
@@ -501,7 +474,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -511,7 +484,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string $city Населённый пункт
+     * @param string|null $city Населённый пункт
      *
      * @return self
      */
@@ -528,7 +501,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets office_type
      *
-     * @return string
+     * @return string|null
      */
     public function getOfficeType()
     {
@@ -538,7 +511,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets office_type
      *
-     * @param string $office_type Тип пункта отгрузки:   - `sc` — сортировочный центр   - `sw` — склад   - `pp` — ПВЗ
+     * @param string|null $office_type Тип пункта отгрузки:   - `sc` — сортировочный центр   - `sw` — склад   - `pp` — ПВЗ
      *
      * @return self
      */
@@ -565,7 +538,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cargo_types
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getCargoTypes()
     {
@@ -575,7 +548,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cargo_types
      *
-     * @param int[] $cargo_types Типы товаров, которые принимает пункт отгрузки:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+)
+     * @param int[]|null $cargo_types Типы товаров, которые принимает пункт отгрузки:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+)
      *
      * @return self
      */
@@ -601,7 +574,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets latitude
      *
-     * @return float
+     * @return float|null
      */
     public function getLatitude()
     {
@@ -611,7 +584,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets latitude
      *
-     * @param float $latitude Широта
+     * @param float|null $latitude Широта
      *
      * @return self
      */
@@ -628,7 +601,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets longitude
      *
-     * @return float
+     * @return float|null
      */
     public function getLongitude()
     {
@@ -638,7 +611,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets longitude
      *
-     * @param float $longitude Долгота
+     * @param float|null $longitude Долгота
      *
      * @return self
      */
@@ -655,7 +628,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fulfillment
      *
-     * @return bool
+     * @return bool|null
      */
     public function getFulfillment()
     {
@@ -665,7 +638,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment
      *
-     * @param bool $fulfillment Услуга **Фулфилмент в СЦ** для поставки по модели FBS:   - `true` — доступна   - `false` — недоступна
+     * @param bool|null $fulfillment Услуга **Фулфилмент в СЦ** для поставки по модели FBS:   - `true` — доступна   - `false` — недоступна
      *
      * @return self
      */

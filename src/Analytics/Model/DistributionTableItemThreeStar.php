@@ -283,9 +283,6 @@ class DistributionTableItemThreeStar implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class DistributionTableItemThreeStar implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class DistributionTableItemThreeStar implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets current
      *
-     * @param int $current Прирост оценок за период
+     * @param int|null $current Прирост оценок за период
      *
      * @return self
      */

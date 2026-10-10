@@ -275,9 +275,6 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200 implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200 implements ModelInterface, Ar
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]|null
      */
     public function getResults()
     {
@@ -306,7 +303,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200 implements ModelInterface, Ar
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner[]|null $results results
      *
      * @return self
      */

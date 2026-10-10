@@ -289,9 +289,6 @@ class Statistics implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['selected'] === null) {
-            $invalidProperties[] = "'selected' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -310,7 +307,7 @@ class Statistics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets selected
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected|null
      */
     public function getSelected()
     {
@@ -320,7 +317,7 @@ class Statistics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets selected
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected $selected selected
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected|null $selected selected
      *
      * @return self
      */

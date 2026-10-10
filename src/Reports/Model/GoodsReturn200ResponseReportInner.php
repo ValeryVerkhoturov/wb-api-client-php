@@ -401,60 +401,6 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     {
         $invalidProperties = [];
 
-        if ($this->container['sku'] === null) {
-            $invalidProperties[] = "'sku' can't be null";
-        }
-        if ($this->container['brand'] === null) {
-            $invalidProperties[] = "'brand' can't be null";
-        }
-        if ($this->container['completed_dt'] === null) {
-            $invalidProperties[] = "'completed_dt' can't be null";
-        }
-        if ($this->container['dst_office_address'] === null) {
-            $invalidProperties[] = "'dst_office_address' can't be null";
-        }
-        if ($this->container['kiz'] === null) {
-            $invalidProperties[] = "'kiz' can't be null";
-        }
-        if ($this->container['dst_office_id'] === null) {
-            $invalidProperties[] = "'dst_office_id' can't be null";
-        }
-        if ($this->container['expired_dt'] === null) {
-            $invalidProperties[] = "'expired_dt' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['order_dt'] === null) {
-            $invalidProperties[] = "'order_dt' can't be null";
-        }
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
-        if ($this->container['ready_to_return_dt'] === null) {
-            $invalidProperties[] = "'ready_to_return_dt' can't be null";
-        }
-        if ($this->container['return_type'] === null) {
-            $invalidProperties[] = "'return_type' can't be null";
-        }
-        if ($this->container['shk_id'] === null) {
-            $invalidProperties[] = "'shk_id' can't be null";
-        }
-        if ($this->container['srid'] === null) {
-            $invalidProperties[] = "'srid' can't be null";
-        }
-        if ($this->container['return_status'] === null) {
-            $invalidProperties[] = "'return_status' can't be null";
-        }
-        if ($this->container['sticker_id'] === null) {
-            $invalidProperties[] = "'sticker_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['tech_size'] === null) {
-            $invalidProperties[] = "'tech_size' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -473,7 +419,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets sku
      *
-     * @return string
+     * @return string|null
      */
     public function getSku()
     {
@@ -483,7 +429,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets sku
      *
-     * @param string $sku Баркод
+     * @param string|null $sku Баркод
      *
      * @return self
      */
@@ -500,7 +446,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets brand
      *
-     * @return string
+     * @return string|null
      */
     public function getBrand()
     {
@@ -510,7 +456,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets brand
      *
-     * @param string $brand Бренд
+     * @param string|null $brand Бренд
      *
      * @return self
      */
@@ -527,7 +473,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets completed_dt
      *
-     * @return string
+     * @return string|null
      */
     public function getCompletedDt()
     {
@@ -537,7 +483,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets completed_dt
      *
-     * @param string $completed_dt Дата и время выдачи возврата продавцу
+     * @param string|null $completed_dt Дата и время выдачи возврата продавцу
      *
      * @return self
      */
@@ -561,7 +507,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets dst_office_address
      *
-     * @return string
+     * @return string|null
      */
     public function getDstOfficeAddress()
     {
@@ -571,7 +517,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets dst_office_address
      *
-     * @param string $dst_office_address Адрес ПВЗ для выдачи возврата продавцу
+     * @param string|null $dst_office_address Адрес ПВЗ для выдачи возврата продавцу
      *
      * @return self
      */
@@ -588,7 +534,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets kiz
      *
-     * @return string
+     * @return string|null
      */
     public function getKiz()
     {
@@ -598,7 +544,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets kiz
      *
-     * @param string $kiz Код маркировки [Честного знака](https://честныйзнак.рф/)
+     * @param string|null $kiz Код маркировки [Честного знака](https://честныйзнак.рф/)
      *
      * @return self
      */
@@ -622,7 +568,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets dst_office_id
      *
-     * @return int
+     * @return int|null
      */
     public function getDstOfficeId()
     {
@@ -632,7 +578,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets dst_office_id
      *
-     * @param int $dst_office_id ID ПВЗ для выдачи возврата продавцу
+     * @param int|null $dst_office_id ID ПВЗ для выдачи возврата продавцу
      *
      * @return self
      */
@@ -649,7 +595,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets expired_dt
      *
-     * @return string
+     * @return string|null
      */
     public function getExpiredDt()
     {
@@ -659,7 +605,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets expired_dt
      *
-     * @param string $expired_dt Дата и время истечения срока хранения возврата
+     * @param string|null $expired_dt Дата и время истечения срока хранения возврата
      *
      * @return self
      */
@@ -683,7 +629,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -693,7 +639,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -710,7 +656,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets order_dt
      *
-     * @return string
+     * @return string|null
      */
     public function getOrderDt()
     {
@@ -720,7 +666,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets order_dt
      *
-     * @param string $order_dt Дата заказа на возврат
+     * @param string|null $order_dt Дата заказа на возврат
      *
      * @return self
      */
@@ -737,7 +683,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -747,7 +693,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */
@@ -764,7 +710,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets ready_to_return_dt
      *
-     * @return string
+     * @return string|null
      */
     public function getReadyToReturnDt()
     {
@@ -774,7 +720,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets ready_to_return_dt
      *
-     * @param string $ready_to_return_dt Дата и время готовности возврата к выдаче
+     * @param string|null $ready_to_return_dt Дата и время готовности возврата к выдаче
      *
      * @return self
      */
@@ -825,7 +771,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets return_type
      *
-     * @return string
+     * @return string|null
      */
     public function getReturnType()
     {
@@ -835,7 +781,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets return_type
      *
-     * @param string $return_type Тип возврата
+     * @param string|null $return_type Тип возврата
      *
      * @return self
      */
@@ -852,7 +798,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets shk_id
      *
-     * @return int
+     * @return int|null
      */
     public function getShkId()
     {
@@ -862,7 +808,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets shk_id
      *
-     * @param int $shk_id Штрихкод
+     * @param int|null $shk_id Штрихкод
      *
      * @return self
      */
@@ -879,7 +825,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets srid
      *
-     * @return string
+     * @return string|null
      */
     public function getSrid()
     {
@@ -889,7 +835,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets srid
      *
-     * @param string $srid ID заказа на возврат
+     * @param string|null $srid ID заказа на возврат
      *
      * @return self
      */
@@ -906,7 +852,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets return_status
      *
-     * @return string
+     * @return string|null
      */
     public function getReturnStatus()
     {
@@ -916,7 +862,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets return_status
      *
-     * @param string $return_status Статус возврата
+     * @param string|null $return_status Статус возврата
      *
      * @return self
      */
@@ -933,7 +879,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets sticker_id
      *
-     * @return string
+     * @return string|null
      */
     public function getStickerId()
     {
@@ -943,7 +889,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets sticker_id
      *
-     * @param string $sticker_id Стикер заказа на возврат
+     * @param string|null $sticker_id Стикер заказа на возврат
      *
      * @return self
      */
@@ -960,7 +906,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -970,7 +916,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Предмет
+     * @param string|null $subject_name Предмет
      *
      * @return self
      */
@@ -987,7 +933,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets tech_size
      *
-     * @return string
+     * @return string|null
      */
     public function getTechSize()
     {
@@ -997,7 +943,7 @@ class GoodsReturn200ResponseReportInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets tech_size
      *
-     * @param string $tech_size Размер
+     * @param string|null $tech_size Размер
      *
      * @return self
      */

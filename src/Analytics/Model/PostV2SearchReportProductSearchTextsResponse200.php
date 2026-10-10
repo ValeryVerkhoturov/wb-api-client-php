@@ -275,9 +275,6 @@ class PostV2SearchReportProductSearchTextsResponse200 implements ModelInterface,
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV2SearchReportProductSearchTextsResponse200 implements ModelInterface,
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemSearchTextsResponse
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemSearchTextsResponse|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV2SearchReportProductSearchTextsResponse200 implements ModelInterface,
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemSearchTextsResponse $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemSearchTextsResponse|null $data data
      *
      * @return self
      */

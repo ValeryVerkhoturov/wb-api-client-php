@@ -289,9 +289,6 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -364,7 +361,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -374,7 +371,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

@@ -282,12 +282,6 @@ class ItemSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ItemSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItem[]|null
      */
     public function getItems()
     {
@@ -316,7 +310,7 @@ class ItemSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItem[] $items Элементы таблицы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItem[]|null $items Элементы таблицы
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ItemSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -343,7 +337,7 @@ class ItemSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

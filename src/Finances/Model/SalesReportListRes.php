@@ -431,27 +431,6 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['report_id'] === null) {
-            $invalidProperties[] = "'report_id' can't be null";
-        }
-        if ($this->container['seller_finance_name'] === null) {
-            $invalidProperties[] = "'seller_finance_name' can't be null";
-        }
-        if ($this->container['date_from'] === null) {
-            $invalidProperties[] = "'date_from' can't be null";
-        }
-        if ($this->container['date_to'] === null) {
-            $invalidProperties[] = "'date_to' can't be null";
-        }
-        if ($this->container['create_date'] === null) {
-            $invalidProperties[] = "'create_date' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['report_type'] === null) {
-            $invalidProperties[] = "'report_type' can't be null";
-        }
         $allowedValues = $this->getReportTypeAllowableValues();
         if (!is_null($this->container['report_type']) && !in_array($this->container['report_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -461,48 +440,6 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
             );
         }
 
-        if ($this->container['retail_amount_sum'] === null) {
-            $invalidProperties[] = "'retail_amount_sum' can't be null";
-        }
-        if ($this->container['for_pay_sum'] === null) {
-            $invalidProperties[] = "'for_pay_sum' can't be null";
-        }
-        if ($this->container['avg_sale_percent'] === null) {
-            $invalidProperties[] = "'avg_sale_percent' can't be null";
-        }
-        if ($this->container['delivery_service_sum'] === null) {
-            $invalidProperties[] = "'delivery_service_sum' can't be null";
-        }
-        if ($this->container['paid_storage_sum'] === null) {
-            $invalidProperties[] = "'paid_storage_sum' can't be null";
-        }
-        if ($this->container['paid_acceptance_sum'] === null) {
-            $invalidProperties[] = "'paid_acceptance_sum' can't be null";
-        }
-        if ($this->container['deduction_sum'] === null) {
-            $invalidProperties[] = "'deduction_sum' can't be null";
-        }
-        if ($this->container['penalty_sum'] === null) {
-            $invalidProperties[] = "'penalty_sum' can't be null";
-        }
-        if ($this->container['additional_payment_sum'] === null) {
-            $invalidProperties[] = "'additional_payment_sum' can't be null";
-        }
-        if ($this->container['cashback_amount_sum'] === null) {
-            $invalidProperties[] = "'cashback_amount_sum' can't be null";
-        }
-        if ($this->container['cashback_discount_sum'] === null) {
-            $invalidProperties[] = "'cashback_discount_sum' can't be null";
-        }
-        if ($this->container['cashback_commission_change_sum'] === null) {
-            $invalidProperties[] = "'cashback_commission_change_sum' can't be null";
-        }
-        if ($this->container['payment_schedule'] === null) {
-            $invalidProperties[] = "'payment_schedule' can't be null";
-        }
-        if ($this->container['bank_payment_sum'] === null) {
-            $invalidProperties[] = "'bank_payment_sum' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -521,7 +458,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets report_id
      *
-     * @return int
+     * @return int|null
      */
     public function getReportId()
     {
@@ -531,7 +468,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets report_id
      *
-     * @param int $report_id ID отчёта
+     * @param int|null $report_id ID отчёта
      *
      * @return self
      */
@@ -548,7 +485,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets seller_finance_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSellerFinanceName()
     {
@@ -558,7 +495,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets seller_finance_name
      *
-     * @param string $seller_finance_name Наименование продавца
+     * @param string|null $seller_finance_name Наименование продавца
      *
      * @return self
      */
@@ -575,7 +512,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets date_from
      *
-     * @return string
+     * @return string|null
      */
     public function getDateFrom()
     {
@@ -585,7 +522,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets date_from
      *
-     * @param string $date_from Дата начала отчётного периода
+     * @param string|null $date_from Дата начала отчётного периода
      *
      * @return self
      */
@@ -602,7 +539,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets date_to
      *
-     * @return string
+     * @return string|null
      */
     public function getDateTo()
     {
@@ -612,7 +549,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets date_to
      *
-     * @param string $date_to Дата конца отчётного периода
+     * @param string|null $date_to Дата конца отчётного периода
      *
      * @return self
      */
@@ -629,7 +566,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets create_date
      *
-     * @return string
+     * @return string|null
      */
     public function getCreateDate()
     {
@@ -639,7 +576,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets create_date
      *
-     * @param string $create_date Дата формирования отчёта
+     * @param string|null $create_date Дата формирования отчёта
      *
      * @return self
      */
@@ -656,7 +593,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -666,7 +603,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */
@@ -683,7 +620,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets report_type
      *
-     * @return int
+     * @return int|null
      */
     public function getReportType()
     {
@@ -693,7 +630,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets report_type
      *
-     * @param int $report_type Тип отчёта:   - `1` — основной   - `2` — по выкупам
+     * @param int|null $report_type Тип отчёта:   - `1` — основной   - `2` — по выкупам
      *
      * @return self
      */
@@ -720,7 +657,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets retail_amount_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getRetailAmountSum()
     {
@@ -730,7 +667,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets retail_amount_sum
      *
-     * @param string $retail_amount_sum Продажа
+     * @param string|null $retail_amount_sum Продажа
      *
      * @return self
      */
@@ -747,7 +684,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets for_pay_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getForPaySum()
     {
@@ -757,7 +694,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets for_pay_sum
      *
-     * @param string $for_pay_sum К перечислению за товар
+     * @param string|null $for_pay_sum К перечислению за товар
      *
      * @return self
      */
@@ -774,7 +711,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets avg_sale_percent
      *
-     * @return float
+     * @return float|null
      */
     public function getAvgSalePercent()
     {
@@ -784,7 +721,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets avg_sale_percent
      *
-     * @param float $avg_sale_percent Согласованная скидка, %
+     * @param float|null $avg_sale_percent Согласованная скидка, %
      *
      * @return self
      */
@@ -801,7 +738,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets delivery_service_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getDeliveryServiceSum()
     {
@@ -811,7 +748,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets delivery_service_sum
      *
-     * @param string $delivery_service_sum Стоимость доставки
+     * @param string|null $delivery_service_sum Стоимость доставки
      *
      * @return self
      */
@@ -828,7 +765,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paid_storage_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getPaidStorageSum()
     {
@@ -838,7 +775,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paid_storage_sum
      *
-     * @param string $paid_storage_sum Стоимость хранения
+     * @param string|null $paid_storage_sum Стоимость хранения
      *
      * @return self
      */
@@ -855,7 +792,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paid_acceptance_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getPaidAcceptanceSum()
     {
@@ -865,7 +802,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paid_acceptance_sum
      *
-     * @param string $paid_acceptance_sum Стоимость операций при приёмке
+     * @param string|null $paid_acceptance_sum Стоимость операций при приёмке
      *
      * @return self
      */
@@ -882,7 +819,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets deduction_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getDeductionSum()
     {
@@ -892,7 +829,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets deduction_sum
      *
-     * @param string $deduction_sum Прочие удержания/выплаты
+     * @param string|null $deduction_sum Прочие удержания/выплаты
      *
      * @return self
      */
@@ -909,7 +846,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets penalty_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getPenaltySum()
     {
@@ -919,7 +856,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets penalty_sum
      *
-     * @param string $penalty_sum Общая сумма штрафов
+     * @param string|null $penalty_sum Общая сумма штрафов
      *
      * @return self
      */
@@ -936,7 +873,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets additional_payment_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getAdditionalPaymentSum()
     {
@@ -946,7 +883,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets additional_payment_sum
      *
-     * @param string $additional_payment_sum Корректировка Вознаграждения Wildberries (ВВ)
+     * @param string|null $additional_payment_sum Корректировка Вознаграждения Wildberries (ВВ)
      *
      * @return self
      */
@@ -963,7 +900,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets cashback_amount_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackAmountSum()
     {
@@ -973,7 +910,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cashback_amount_sum
      *
-     * @param string $cashback_amount_sum Сумма баллов, удержанных по программе лояльности
+     * @param string|null $cashback_amount_sum Сумма баллов, удержанных по программе лояльности
      *
      * @return self
      */
@@ -990,7 +927,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets cashback_discount_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackDiscountSum()
     {
@@ -1000,7 +937,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cashback_discount_sum
      *
-     * @param string $cashback_discount_sum Компенсация скидки по программе лояльности
+     * @param string|null $cashback_discount_sum Компенсация скидки по программе лояльности
      *
      * @return self
      */
@@ -1017,7 +954,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets cashback_commission_change_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackCommissionChangeSum()
     {
@@ -1027,7 +964,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cashback_commission_change_sum
      *
-     * @param string $cashback_commission_change_sum Стоимость участия в программе лояльности
+     * @param string|null $cashback_commission_change_sum Стоимость участия в программе лояльности
      *
      * @return self
      */
@@ -1044,7 +981,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets payment_schedule
      *
-     * @return string
+     * @return string|null
      */
     public function getPaymentSchedule()
     {
@@ -1054,7 +991,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets payment_schedule
      *
-     * @param string $payment_schedule Разовое изменение срока перечисления денежных средств
+     * @param string|null $payment_schedule Разовое изменение срока перечисления денежных средств
      *
      * @return self
      */
@@ -1071,7 +1008,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets bank_payment_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getBankPaymentSum()
     {
@@ -1081,7 +1018,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets bank_payment_sum
      *
-     * @param string $bank_payment_sum Итого к оплате
+     * @param string|null $bank_payment_sum Итого к оплате
      *
      * @return self
      */

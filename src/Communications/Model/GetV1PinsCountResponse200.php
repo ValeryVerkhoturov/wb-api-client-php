@@ -275,9 +275,6 @@ class GetV1PinsCountResponse200 implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class GetV1PinsCountResponse200 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data
      *
-     * @return int
+     * @return int|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class GetV1PinsCountResponse200 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data
      *
-     * @param int $data Количество отзывов
+     * @param int|null $data Количество отзывов
      *
      * @return self
      */

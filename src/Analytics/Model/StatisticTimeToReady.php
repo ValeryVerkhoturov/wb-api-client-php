@@ -289,15 +289,6 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['days'] === null) {
-            $invalidProperties[] = "'days' can't be null";
-        }
-        if ($this->container['hours'] === null) {
-            $invalidProperties[] = "'hours' can't be null";
-        }
-        if ($this->container['mins'] === null) {
-            $invalidProperties[] = "'mins' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets days
      *
-     * @return int
+     * @return int|null
      */
     public function getDays()
     {
@@ -326,7 +317,7 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets days
      *
-     * @param int $days Дни
+     * @param int|null $days Дни
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets hours
      *
-     * @return int
+     * @return int|null
      */
     public function getHours()
     {
@@ -353,7 +344,7 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets hours
      *
-     * @param int $hours Часы
+     * @param int|null $hours Часы
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets mins
      *
-     * @return int
+     * @return int|null
      */
     public function getMins()
     {
@@ -380,7 +371,7 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets mins
      *
-     * @param int $mins Минуты
+     * @param int|null $mins Минуты
      *
      * @return self
      */

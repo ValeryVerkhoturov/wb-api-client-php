@@ -283,9 +283,6 @@ class DistributionTableItemOneStar implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class DistributionTableItemOneStar implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class DistributionTableItemOneStar implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets current
      *
-     * @param int $current Прирост оценок за период
+     * @param int|null $current Прирост оценок за период
      *
      * @return self
      */

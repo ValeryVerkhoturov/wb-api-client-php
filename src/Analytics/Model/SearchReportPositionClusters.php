@@ -290,15 +290,6 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['first_hundred'] === null) {
-            $invalidProperties[] = "'first_hundred' can't be null";
-        }
-        if ($this->container['second_hundred'] === null) {
-            $invalidProperties[] = "'second_hundred' can't be null";
-        }
-        if ($this->container['below'] === null) {
-            $invalidProperties[] = "'below' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets first_hundred
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersFirstHundred
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersFirstHundred|null
      */
     public function getFirstHundred()
     {
@@ -327,7 +318,7 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets first_hundred
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersFirstHundred $first_hundred first_hundred
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersFirstHundred|null $first_hundred first_hundred
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets second_hundred
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersSecondHundred
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersSecondHundred|null
      */
     public function getSecondHundred()
     {
@@ -354,7 +345,7 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets second_hundred
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersSecondHundred $second_hundred second_hundred
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersSecondHundred|null $second_hundred second_hundred
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets below
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersBelow
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersBelow|null
      */
     public function getBelow()
     {
@@ -381,7 +372,7 @@ class SearchReportPositionClusters implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets below
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersBelow $below below
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\SearchReportPositionClustersBelow|null $below below
      *
      * @return self
      */

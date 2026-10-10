@@ -289,12 +289,6 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['brands'] === null) {
-            $invalidProperties[] = "'brands' can't be null";
-        }
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -313,7 +307,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets brands
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\BrandsResponseBrandsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\BrandsResponseBrandsInner[]|null
      */
     public function getBrands()
     {
@@ -323,7 +317,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brands
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\BrandsResponseBrandsInner[] $brands brands
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\BrandsResponseBrandsInner[]|null $brands brands
      *
      * @return self
      */
@@ -367,7 +361,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -377,7 +371,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total
      *
-     * @param int $total Общее количество брендов предмета
+     * @param int|null $total Общее количество брендов предмета
      *
      * @return self
      */

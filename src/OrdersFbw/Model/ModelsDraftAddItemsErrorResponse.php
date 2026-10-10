@@ -275,9 +275,6 @@ class ModelsDraftAddItemsErrorResponse implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class ModelsDraftAddItemsErrorResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultItem[]|null
      */
     public function getResults()
     {
@@ -306,7 +303,7 @@ class ModelsDraftAddItemsErrorResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultItem[] $results Список невалидных баркодов с ошибками
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultItem[]|null $results Список невалидных баркодов с ошибками
      *
      * @return self
      */

@@ -275,9 +275,6 @@ class ShippingPointsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['shipping_points'] === null) {
-            $invalidProperties[] = "'shipping_points' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class ShippingPointsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping_points
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPoint[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPoint[]|null
      */
     public function getShippingPoints()
     {
@@ -306,7 +303,7 @@ class ShippingPointsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping_points
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPoint[] $shipping_points Список пунктов отгрузки
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPoint[]|null $shipping_points Список пунктов отгрузки
      *
      * @return self
      */

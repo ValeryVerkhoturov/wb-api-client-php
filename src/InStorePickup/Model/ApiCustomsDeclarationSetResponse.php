@@ -282,12 +282,6 @@ class ApiCustomsDeclarationSetResponse implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiCustomsDeclarationSetResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets request_id
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function getRequestId()
     {
@@ -316,7 +310,7 @@ class ApiCustomsDeclarationSetResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets request_id
      *
-     * @param mixed $request_id Уникальный ID запроса
+     * @param mixed|null $request_id Уникальный ID запроса
      *
      * @return self
      */
@@ -340,7 +334,7 @@ class ApiCustomsDeclarationSetResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetCustomsDeclarationResponse[]
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetCustomsDeclarationResponse[]|null
      */
     public function getResults()
     {
@@ -350,7 +344,7 @@ class ApiCustomsDeclarationSetResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetCustomsDeclarationResponse[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetCustomsDeclarationResponse[]|null $results results
      *
      * @return self
      */

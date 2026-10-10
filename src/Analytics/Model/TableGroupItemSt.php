@@ -318,27 +318,6 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['subject_id'] === null) {
-            $invalidProperties[] = "'subject_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['tag_id'] === null) {
-            $invalidProperties[] = "'tag_id' can't be null";
-        }
-        if ($this->container['tag_name'] === null) {
-            $invalidProperties[] = "'tag_name' can't be null";
-        }
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -357,7 +336,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets subject_id
      *
-     * @return int
+     * @return int|null
      */
     public function getSubjectId()
     {
@@ -367,7 +346,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subject_id
      *
-     * @param int $subject_id ID предмета
+     * @param int|null $subject_id ID предмета
      *
      * @return self
      */
@@ -384,7 +363,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -394,7 +373,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Название предмета
+     * @param string|null $subject_name Название предмета
      *
      * @return self
      */
@@ -411,7 +390,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -421,7 +400,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -438,7 +417,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tag_id
      *
-     * @return int
+     * @return int|null
      */
     public function getTagId()
     {
@@ -448,7 +427,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tag_id
      *
-     * @param int $tag_id ID ярлыка
+     * @param int|null $tag_id ID ярлыка
      *
      * @return self
      */
@@ -465,7 +444,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tag_name
      *
-     * @return string
+     * @return string|null
      */
     public function getTagName()
     {
@@ -475,7 +454,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tag_name
      *
-     * @param string $tag_name Название ярлыка
+     * @param string|null $tag_name Название ярлыка
      *
      * @return self
      */
@@ -492,7 +471,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics|null
      */
     public function getMetrics()
     {
@@ -502,7 +481,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics $metrics Метрики группы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics|null $metrics Метрики группы
      *
      * @return self
      */
@@ -519,7 +498,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null
      */
     public function getItems()
     {
@@ -529,7 +508,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[] $items Товары группы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null $items Товары группы
      *
      * @return self
      */

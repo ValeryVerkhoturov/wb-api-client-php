@@ -290,15 +290,6 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['supplier_rating'] === null) {
-            $invalidProperties[] = "'supplier_rating' can't be null";
-        }
-        if ($this->container['advertised_products'] === null) {
-            $invalidProperties[] = "'advertised_products' can't be null";
-        }
-        if ($this->container['total_products'] === null) {
-            $invalidProperties[] = "'total_products' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets supplier_rating
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoSupplierRating
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoSupplierRating|null
      */
     public function getSupplierRating()
     {
@@ -327,7 +318,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets supplier_rating
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoSupplierRating $supplier_rating supplier_rating
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoSupplierRating|null $supplier_rating supplier_rating
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets advertised_products
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoAdvertisedProducts
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoAdvertisedProducts|null
      */
     public function getAdvertisedProducts()
     {
@@ -354,7 +345,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets advertised_products
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoAdvertisedProducts $advertised_products advertised_products
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfoAdvertisedProducts|null $advertised_products advertised_products
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_products
      *
-     * @return int
+     * @return int|null
      */
     public function getTotalProducts()
     {
@@ -381,7 +372,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_products
      *
-     * @param int $total_products Общее количество товаров
+     * @param int|null $total_products Общее количество товаров
      *
      * @return self
      */

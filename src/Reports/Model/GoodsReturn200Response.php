@@ -282,12 +282,6 @@ class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['count'] === null) {
-            $invalidProperties[] = "'count' can't be null";
-        }
-        if ($this->container['report'] === null) {
-            $invalidProperties[] = "'report' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets count
      *
-     * @return int
+     * @return int|null
      */
     public function getCount()
     {
@@ -316,7 +310,7 @@ class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets count
      *
-     * @param int $count Общее количество возвратов за запрашиваемый период
+     * @param int|null $count Общее количество возвратов за запрашиваемый период
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets report
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[]|null
      */
     public function getReport()
     {
@@ -343,7 +337,7 @@ class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets report
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[] $report Отчёт
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GoodsReturn200ResponseReportInner[]|null $report Отчёт
      *
      * @return self
      */

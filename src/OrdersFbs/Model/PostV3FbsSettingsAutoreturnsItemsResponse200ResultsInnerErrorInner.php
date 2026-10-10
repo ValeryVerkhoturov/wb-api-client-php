@@ -282,12 +282,6 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner impleme
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner impleme
     /**
      * Gets code
      *
-     * @return int
+     * @return int|null
      */
     public function getCode()
     {
@@ -316,7 +310,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner impleme
     /**
      * Sets code
      *
-     * @param int $code Код ошибки
+     * @param int|null $code Код ошибки
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner impleme
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -343,7 +337,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner impleme
     /**
      * Sets detail
      *
-     * @param string $detail Дополнительная информация об ошибке
+     * @param string|null $detail Дополнительная информация об ошибке
      *
      * @return self
      */

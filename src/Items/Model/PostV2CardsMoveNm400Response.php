@@ -296,9 +296,6 @@ class PostV2CardsMoveNm400Response implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['error'] === null) {
-            $invalidProperties[] = "'error' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -351,7 +348,7 @@ class PostV2CardsMoveNm400Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets error
      *
-     * @return string
+     * @return string|null
      */
     public function getError()
     {
@@ -361,7 +358,7 @@ class PostV2CardsMoveNm400Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets error
      *
-     * @param string $error error
+     * @param string|null $error error
      *
      * @return self
      */

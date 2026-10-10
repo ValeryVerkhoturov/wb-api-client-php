@@ -275,9 +275,6 @@ class V0GetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['bids'] === null) {
-            $invalidProperties[] = "'bids' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class V0GetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets bids
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryBidsItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryBidsItem[]|null
      */
     public function getBids()
     {
@@ -306,7 +303,7 @@ class V0GetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets bids
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryBidsItem[] $bids bids
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryBidsItem[]|null $bids bids
      *
      * @return self
      */

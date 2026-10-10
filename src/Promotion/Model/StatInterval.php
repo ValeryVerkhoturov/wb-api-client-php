@@ -282,9 +282,6 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['interval'] === null) {
-            $invalidProperties[] = "'interval' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,7 +300,7 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets interval
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval|null
      */
     public function getInterval()
     {
@@ -313,7 +310,7 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interval
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval $interval interval
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval|null $interval interval
      *
      * @return self
      */

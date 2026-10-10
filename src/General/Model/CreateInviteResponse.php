@@ -297,18 +297,6 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['invite_id'] === null) {
-            $invalidProperties[] = "'invite_id' can't be null";
-        }
-        if ($this->container['expired_at'] === null) {
-            $invalidProperties[] = "'expired_at' can't be null";
-        }
-        if ($this->container['is_success'] === null) {
-            $invalidProperties[] = "'is_success' can't be null";
-        }
-        if ($this->container['invite_url'] === null) {
-            $invalidProperties[] = "'invite_url' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +315,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets invite_id
      *
-     * @return string
+     * @return string|null
      */
     public function getInviteId()
     {
@@ -337,7 +325,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets invite_id
      *
-     * @param string $invite_id ID приглашения
+     * @param string|null $invite_id ID приглашения
      *
      * @return self
      */
@@ -354,7 +342,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets expired_at
      *
-     * @return string
+     * @return string|null
      */
     public function getExpiredAt()
     {
@@ -364,7 +352,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets expired_at
      *
-     * @param string $expired_at Дата и время окончания срока действия приглашения
+     * @param string|null $expired_at Дата и время окончания срока действия приглашения
      *
      * @return self
      */
@@ -381,7 +369,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets is_success
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsSuccess()
     {
@@ -391,7 +379,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets is_success
      *
-     * @param bool $is_success - `true` — приглашение создано успешно - `false` — повторите запрос
+     * @param bool|null $is_success - `true` — приглашение создано успешно - `false` — повторите запрос
      *
      * @return self
      */
@@ -408,7 +396,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets invite_url
      *
-     * @return string
+     * @return string|null
      */
     public function getInviteUrl()
     {
@@ -418,7 +406,7 @@ class CreateInviteResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets invite_url
      *
-     * @param string $invite_url URL приглашения, по которому должен перейти пользователь
+     * @param string|null $invite_url URL приглашения, по которому должен перейти пользователь
      *
      * @return self
      */

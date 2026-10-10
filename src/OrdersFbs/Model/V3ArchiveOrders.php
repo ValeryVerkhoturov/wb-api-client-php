@@ -283,12 +283,6 @@ class V3ArchiveOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['next'] === null) {
-            $invalidProperties[] = "'next' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class V3ArchiveOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets next
      *
-     * @return int
+     * @return int|null
      */
     public function getNext()
     {
@@ -317,7 +311,7 @@ class V3ArchiveOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets next
      *
-     * @param int $next Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
+     * @param int|null $next Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
      *
      * @return self
      */
@@ -341,7 +335,7 @@ class V3ArchiveOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orders
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrder[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrder[]|null
      */
     public function getOrders()
     {
@@ -351,7 +345,7 @@ class V3ArchiveOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orders
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrder[] $orders Архивные сборочные задания
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3ArchiveOrder[]|null $orders Архивные сборочные задания
      *
      * @return self
      */

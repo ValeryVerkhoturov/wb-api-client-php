@@ -289,15 +289,6 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['office_id'] === null) {
-            $invalidProperties[] = "'office_id' can't be null";
-        }
-        if ($this->container['office_name'] === null) {
-            $invalidProperties[] = "'office_name' can't be null";
-        }
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Gets office_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOfficeId()
     {
@@ -326,7 +317,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Sets office_id
      *
-     * @param int $office_id ID склада
+     * @param int|null $office_id ID склада
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Gets office_name
      *
-     * @return string
+     * @return string|null
      */
     public function getOfficeName()
     {
@@ -353,7 +344,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Sets office_name
      *
-     * @param string $office_name Название склада
+     * @param string|null $office_name Название склада
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics|null
      */
     public function getMetrics()
     {
@@ -380,7 +371,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics $metrics Метрики по складу
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics|null $metrics Метрики по складу
      *
      * @return self
      */

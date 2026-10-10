@@ -282,12 +282,6 @@ class PatchV1BidsResponse200BidsInner implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['nm_bids'] === null) {
-            $invalidProperties[] = "'nm_bids' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class PatchV1BidsResponse200BidsInner implements ModelInterface, ArrayAccess, \J
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -316,7 +310,7 @@ class PatchV1BidsResponse200BidsInner implements ModelInterface, ArrayAccess, \J
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class PatchV1BidsResponse200BidsInner implements ModelInterface, ArrayAccess, \J
     /**
      * Gets nm_bids
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInnerNmBidsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInnerNmBidsInner[]|null
      */
     public function getNmBids()
     {
@@ -343,7 +337,7 @@ class PatchV1BidsResponse200BidsInner implements ModelInterface, ArrayAccess, \J
     /**
      * Sets nm_bids
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInnerNmBidsInner[] $nm_bids Ставки
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV1BidsResponse200BidsInnerNmBidsInner[]|null $nm_bids Ставки
      *
      * @return self
      */

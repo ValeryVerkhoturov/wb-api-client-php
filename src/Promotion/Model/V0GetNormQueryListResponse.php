@@ -275,9 +275,6 @@ class V0GetNormQueryListResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class V0GetNormQueryListResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryListResponseItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryListResponseItem[]|null
      */
     public function getItems()
     {
@@ -306,7 +303,7 @@ class V0GetNormQueryListResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryListResponseItem[] $items items
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0GetNormQueryListResponseItem[]|null $items items
      *
      * @return self
      */

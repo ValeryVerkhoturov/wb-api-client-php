@@ -275,9 +275,6 @@ class V0PutDailyLimitsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['adverts'] === null) {
-            $invalidProperties[] = "'adverts' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class V0PutDailyLimitsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets adverts
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsAdvertResult[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsAdvertResult[]|null
      */
     public function getAdverts()
     {
@@ -306,7 +303,7 @@ class V0PutDailyLimitsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets adverts
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsAdvertResult[] $adverts adverts
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0PutDailyLimitsAdvertResult[]|null $adverts adverts
      *
      * @return self
      */

@@ -303,12 +303,6 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['interval'] === null) {
-            $invalidProperties[] = "'interval' can't be null";
-        }
-        if ($this->container['dates'] === null) {
-            $invalidProperties[] = "'dates' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +321,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets interval
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval|null
      */
     public function getInterval()
     {
@@ -337,7 +331,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets interval
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval $interval interval
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\StatIntervalInterval|null $interval interval
      *
      * @return self
      */
@@ -381,7 +375,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets dates
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getDates()
     {
@@ -391,7 +385,7 @@ class PostV1StatsResponse200Inner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets dates
      *
-     * @param string[] $dates Даты, за которые нужно получить информацию
+     * @param string[]|null $dates Даты, за которые нужно получить информацию
      *
      * @return self
      */

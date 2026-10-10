@@ -275,9 +275,6 @@ class PostV3SalesFunnelGroupedHistoryResponse200 implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV3SalesFunnelGroupedHistoryResponse200 implements ModelInterface, Arra
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200Inner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200Inner[]|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV3SalesFunnelGroupedHistoryResponse200 implements ModelInterface, Arra
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200Inner[] $data Статистика
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200Inner[]|null $data Статистика
      *
      * @return self
      */

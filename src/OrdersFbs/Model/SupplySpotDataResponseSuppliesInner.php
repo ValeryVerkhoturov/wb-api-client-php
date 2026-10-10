@@ -289,9 +289,6 @@ class SupplySpotDataResponseSuppliesInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -310,7 +307,7 @@ class SupplySpotDataResponseSuppliesInner implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return string
+     * @return string|null
      */
     public function getId()
     {
@@ -320,7 +317,7 @@ class SupplySpotDataResponseSuppliesInner implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id ID поставки
+     * @param string|null $id ID поставки
      *
      * @return self
      */

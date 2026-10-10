@@ -275,9 +275,6 @@ class V1GetNormQueryStatsResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class V1GetNormQueryStatsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1GetNormQueryStatsResponseItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1GetNormQueryStatsResponseItem[]|null
      */
     public function getItems()
     {
@@ -306,7 +303,7 @@ class V1GetNormQueryStatsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1GetNormQueryStatsResponseItem[] $items items
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1GetNormQueryStatsResponseItem[]|null $items items
      *
      * @return self
      */

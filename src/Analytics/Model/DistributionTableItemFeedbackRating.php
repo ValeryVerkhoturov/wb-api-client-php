@@ -290,12 +290,6 @@ class DistributionTableItemFeedbackRating implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
-        if ($this->container['percentile'] === null) {
-            $invalidProperties[] = "'percentile' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -314,7 +308,7 @@ class DistributionTableItemFeedbackRating implements ModelInterface, ArrayAccess
     /**
      * Gets current
      *
-     * @return float
+     * @return float|null
      */
     public function getCurrent()
     {
@@ -324,7 +318,7 @@ class DistributionTableItemFeedbackRating implements ModelInterface, ArrayAccess
     /**
      * Sets current
      *
-     * @param float $current Текущий рейтинг
+     * @param float|null $current Текущий рейтинг
      *
      * @return self
      */
@@ -368,7 +362,7 @@ class DistributionTableItemFeedbackRating implements ModelInterface, ArrayAccess
     /**
      * Gets percentile
      *
-     * @return float
+     * @return float|null
      */
     public function getPercentile()
     {
@@ -378,7 +372,7 @@ class DistributionTableItemFeedbackRating implements ModelInterface, ArrayAccess
     /**
      * Sets percentile
      *
-     * @param float $percentile Сколько процентов товаров этого предмета у других продавцов имеют рейтинг ниже, чем у этого товара
+     * @param float|null $percentile Сколько процентов товаров этого предмета у других продавцов имеют рейтинг ниже, чем у этого товара
      *
      * @return self
      */

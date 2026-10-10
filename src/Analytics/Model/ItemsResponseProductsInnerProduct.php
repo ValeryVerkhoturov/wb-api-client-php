@@ -338,36 +338,6 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['subject_id'] === null) {
-            $invalidProperties[] = "'subject_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['tags'] === null) {
-            $invalidProperties[] = "'tags' can't be null";
-        }
-        if ($this->container['product_rating'] === null) {
-            $invalidProperties[] = "'product_rating' can't be null";
-        }
-        if ($this->container['feedback_rating'] === null) {
-            $invalidProperties[] = "'feedback_rating' can't be null";
-        }
-        if ($this->container['stocks'] === null) {
-            $invalidProperties[] = "'stocks' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -386,7 +356,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -396,7 +366,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -413,7 +383,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -423,7 +393,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets title
      *
-     * @param string $title Название карточки товара
+     * @param string|null $title Название карточки товара
      *
      * @return self
      */
@@ -440,7 +410,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -450,7 +420,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -467,7 +437,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -477,7 +447,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -494,7 +464,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets subject_id
      *
-     * @return int
+     * @return int|null
      */
     public function getSubjectId()
     {
@@ -504,7 +474,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets subject_id
      *
-     * @param int $subject_id ID предмета
+     * @param int|null $subject_id ID предмета
      *
      * @return self
      */
@@ -521,7 +491,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -531,7 +501,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Название предмета
+     * @param string|null $subject_name Название предмета
      *
      * @return self
      */
@@ -548,7 +518,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets tags
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\Tag[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\Tag[]|null
      */
     public function getTags()
     {
@@ -558,7 +528,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets tags
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\Tag[] $tags Ярлыки
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\Tag[]|null $tags Ярлыки
      *
      * @return self
      */
@@ -575,7 +545,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets product_rating
      *
-     * @return float
+     * @return float|null
      */
     public function getProductRating()
     {
@@ -585,7 +555,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets product_rating
      *
-     * @param float $product_rating Оценка карточки
+     * @param float|null $product_rating Оценка карточки
      *
      * @return self
      */
@@ -602,7 +572,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets feedback_rating
      *
-     * @return float
+     * @return float|null
      */
     public function getFeedbackRating()
     {
@@ -612,7 +582,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets feedback_rating
      *
-     * @param float $feedback_rating Оценка пользователей
+     * @param float|null $feedback_rating Оценка пользователей
      *
      * @return self
      */
@@ -629,7 +599,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Gets stocks
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemStocks
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemStocks|null
      */
     public function getStocks()
     {
@@ -639,7 +609,7 @@ class ItemsResponseProductsInnerProduct implements ModelInterface, ArrayAccess, 
     /**
      * Sets stocks
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemStocks $stocks stocks
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemStocks|null $stocks stocks
      *
      * @return self
      */

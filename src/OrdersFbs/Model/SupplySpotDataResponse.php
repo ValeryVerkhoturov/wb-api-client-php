@@ -275,9 +275,6 @@ class SupplySpotDataResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['supplies'] === null) {
-            $invalidProperties[] = "'supplies' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class SupplySpotDataResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets supplies
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponseSuppliesInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponseSuppliesInner[]|null
      */
     public function getSupplies()
     {
@@ -306,7 +303,7 @@ class SupplySpotDataResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets supplies
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponseSuppliesInner[] $supplies supplies
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponseSuppliesInner[]|null $supplies supplies
      *
      * @return self
      */

@@ -282,9 +282,6 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -330,7 +327,7 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -340,7 +337,7 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

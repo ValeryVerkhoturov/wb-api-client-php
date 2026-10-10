@@ -345,39 +345,6 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['open_count'] === null) {
-            $invalidProperties[] = "'open_count' can't be null";
-        }
-        if ($this->container['cart_count'] === null) {
-            $invalidProperties[] = "'cart_count' can't be null";
-        }
-        if ($this->container['order_count'] === null) {
-            $invalidProperties[] = "'order_count' can't be null";
-        }
-        if ($this->container['order_sum'] === null) {
-            $invalidProperties[] = "'order_sum' can't be null";
-        }
-        if ($this->container['buyout_count'] === null) {
-            $invalidProperties[] = "'buyout_count' can't be null";
-        }
-        if ($this->container['buyout_sum'] === null) {
-            $invalidProperties[] = "'buyout_sum' can't be null";
-        }
-        if ($this->container['buyout_percent'] === null) {
-            $invalidProperties[] = "'buyout_percent' can't be null";
-        }
-        if ($this->container['add_to_cart_conversion'] === null) {
-            $invalidProperties[] = "'add_to_cart_conversion' can't be null";
-        }
-        if ($this->container['cart_to_order_conversion'] === null) {
-            $invalidProperties[] = "'cart_to_order_conversion' can't be null";
-        }
-        if ($this->container['add_to_wishlist_count'] === null) {
-            $invalidProperties[] = "'add_to_wishlist_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -396,7 +363,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date
      *
-     * @return string
+     * @return string|null
      */
     public function getDate()
     {
@@ -406,7 +373,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param string $date Дата сбора статистики
+     * @param string|null $date Дата сбора статистики
      *
      * @return self
      */
@@ -423,7 +390,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets open_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOpenCount()
     {
@@ -433,7 +400,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets open_count
      *
-     * @param int $open_count Количество переходов в карточку товара
+     * @param int|null $open_count Количество переходов в карточку товара
      *
      * @return self
      */
@@ -450,7 +417,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cart_count
      *
-     * @return int
+     * @return int|null
      */
     public function getCartCount()
     {
@@ -460,7 +427,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cart_count
      *
-     * @param int $cart_count Положили в корзину, шт.
+     * @param int|null $cart_count Положили в корзину, шт.
      *
      * @return self
      */
@@ -477,7 +444,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderCount()
     {
@@ -487,7 +454,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_count
      *
-     * @param int $order_count Заказали товаров, шт.
+     * @param int|null $order_count Заказали товаров, шт.
      *
      * @return self
      */
@@ -504,7 +471,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderSum()
     {
@@ -514,7 +481,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_sum
      *
-     * @param int $order_sum Заказали на сумму
+     * @param int|null $order_sum Заказали на сумму
      *
      * @return self
      */
@@ -531,7 +498,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_count
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutCount()
     {
@@ -541,7 +508,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_count
      *
-     * @param int $buyout_count Выкупили товаров, шт.
+     * @param int|null $buyout_count Выкупили товаров, шт.
      *
      * @return self
      */
@@ -558,7 +525,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutSum()
     {
@@ -568,7 +535,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_sum
      *
-     * @param int $buyout_sum Выкупили на сумму
+     * @param int|null $buyout_sum Выкупили на сумму
      *
      * @return self
      */
@@ -585,7 +552,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutPercent()
     {
@@ -595,7 +562,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_percent
      *
-     * @param int $buyout_percent Процент выкупа
+     * @param int|null $buyout_percent Процент выкупа
      *
      * @return self
      */
@@ -612,7 +579,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets add_to_cart_conversion
      *
-     * @return int
+     * @return int|null
      */
     public function getAddToCartConversion()
     {
@@ -622,7 +589,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets add_to_cart_conversion
      *
-     * @param int $add_to_cart_conversion Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %
+     * @param int|null $add_to_cart_conversion Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %
      *
      * @return self
      */
@@ -639,7 +606,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cart_to_order_conversion
      *
-     * @return int
+     * @return int|null
      */
     public function getCartToOrderConversion()
     {
@@ -649,7 +616,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cart_to_order_conversion
      *
-     * @param int $cart_to_order_conversion Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ
+     * @param int|null $cart_to_order_conversion Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ
      *
      * @return self
      */
@@ -666,7 +633,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets add_to_wishlist_count
      *
-     * @return int
+     * @return int|null
      */
     public function getAddToWishlistCount()
     {
@@ -676,7 +643,7 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets add_to_wishlist_count
      *
-     * @param int $add_to_wishlist_count Количество добавлений товара в **Отложенные**
+     * @param int|null $add_to_wishlist_count Количество добавлений товара в **Отложенные**
      *
      * @return self
      */

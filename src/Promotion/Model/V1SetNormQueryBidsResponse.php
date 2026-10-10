@@ -282,12 +282,6 @@ class V1SetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
-        }
-        if ($this->container['failed'] === null) {
-            $invalidProperties[] = "'failed' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class V1SetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets success
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1SetNormQueryBidsSuccessResponseItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1SetNormQueryBidsSuccessResponseItem[]|null
      */
     public function getSuccess()
     {
@@ -316,7 +310,7 @@ class V1SetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets success
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1SetNormQueryBidsSuccessResponseItem[] $success success
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1SetNormQueryBidsSuccessResponseItem[]|null $success success
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class V1SetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets failed
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\NormQueryBidFailResponseItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\NormQueryBidFailResponseItem[]|null
      */
     public function getFailed()
     {
@@ -343,7 +337,7 @@ class V1SetNormQueryBidsResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets failed
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\NormQueryBidFailResponseItem[] $failed failed
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\NormQueryBidFailResponseItem[]|null $failed failed
      *
      * @return self
      */

@@ -282,12 +282,6 @@ class PatchV0AuctionNmsResponse200NmsInner implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['nms'] === null) {
-            $invalidProperties[] = "'nms' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class PatchV0AuctionNmsResponse200NmsInner implements ModelInterface, ArrayAcces
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -316,7 +310,7 @@ class PatchV0AuctionNmsResponse200NmsInner implements ModelInterface, ArrayAcces
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class PatchV0AuctionNmsResponse200NmsInner implements ModelInterface, ArrayAcces
     /**
      * Gets nms
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInnerNms
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInnerNms|null
      */
     public function getNms()
     {
@@ -343,7 +337,7 @@ class PatchV0AuctionNmsResponse200NmsInner implements ModelInterface, ArrayAcces
     /**
      * Sets nms
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInnerNms $nms nms
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInnerNms|null $nms nms
      *
      * @return self
      */

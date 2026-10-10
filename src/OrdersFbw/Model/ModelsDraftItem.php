@@ -310,24 +310,6 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['draft_id'] === null) {
-            $invalidProperties[] = "'draft_id' can't be null";
-        }
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
-        if ($this->container['sku_quantity'] === null) {
-            $invalidProperties[] = "'sku_quantity' can't be null";
-        }
-        if ($this->container['item_quantity'] === null) {
-            $invalidProperties[] = "'item_quantity' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -346,7 +328,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets draft_id
      *
-     * @return string
+     * @return string|null
      */
     public function getDraftId()
     {
@@ -356,7 +338,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets draft_id
      *
-     * @param string $draft_id ID черновика
+     * @param string|null $draft_id ID черновика
      *
      * @return self
      */
@@ -373,7 +355,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets phone
      *
-     * @return string
+     * @return string|null
      */
     public function getPhone()
     {
@@ -383,7 +365,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets phone
      *
-     * @param string $phone Телефон пользователя, создавшего черновик
+     * @param string|null $phone Телефон пользователя, создавшего черновик
      *
      * @return self
      */
@@ -400,7 +382,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -410,7 +392,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param string $created_at Дата и время создания черновика
+     * @param string|null $created_at Дата и время создания черновика
      *
      * @return self
      */
@@ -427,7 +409,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated_at
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -437,7 +419,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated_at
      *
-     * @param string $updated_at Дата и время последнего обновления черновика
+     * @param string|null $updated_at Дата и время последнего обновления черновика
      *
      * @return self
      */
@@ -454,7 +436,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sku_quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getSkuQuantity()
     {
@@ -464,7 +446,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sku_quantity
      *
-     * @param int $sku_quantity Количество баркодов
+     * @param int|null $sku_quantity Количество баркодов
      *
      * @return self
      */
@@ -481,7 +463,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getItemQuantity()
     {
@@ -491,7 +473,7 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_quantity
      *
-     * @param int $item_quantity Количество единиц товара
+     * @param int|null $item_quantity Количество единиц товара
      *
      * @return self
      */

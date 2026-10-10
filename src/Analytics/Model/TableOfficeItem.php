@@ -297,18 +297,6 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['region_name'] === null) {
-            $invalidProperties[] = "'region_name' can't be null";
-        }
-        if ($this->container['office_id'] === null) {
-            $invalidProperties[] = "'office_id' can't be null";
-        }
-        if ($this->container['office_name'] === null) {
-            $invalidProperties[] = "'office_name' can't be null";
-        }
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +315,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets region_name
      *
-     * @return string
+     * @return string|null
      */
     public function getRegionName()
     {
@@ -337,7 +325,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets region_name
      *
-     * @param string $region_name Регион отгрузки. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
+     * @param string|null $region_name Регион отгрузки. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
      *
      * @return self
      */
@@ -354,7 +342,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets office_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOfficeId()
     {
@@ -364,7 +352,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets office_id
      *
-     * @param int $office_id ID склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `-999999`
+     * @param int|null $office_id ID склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `-999999`
      *
      * @return self
      */
@@ -381,7 +369,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets office_name
      *
-     * @return string
+     * @return string|null
      */
     public function getOfficeName()
     {
@@ -391,7 +379,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets office_name
      *
-     * @param string $office_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
+     * @param string|null $office_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
      *
      * @return self
      */
@@ -408,7 +396,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics|null
      */
     public function getMetrics()
     {
@@ -418,7 +406,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics $metrics Метрики склада
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics|null $metrics Метрики склада
      *
      * @return self
      */

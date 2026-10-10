@@ -283,9 +283,6 @@ class CommonInfoAdvertisedProducts implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class CommonInfoAdvertisedProducts implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class CommonInfoAdvertisedProducts implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets current
      *
-     * @param int $current Текущее количество товаров в рекламе
+     * @param int|null $current Текущее количество товаров в рекламе
      *
      * @return self
      */

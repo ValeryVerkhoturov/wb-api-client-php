@@ -283,9 +283,6 @@ class CommonInfoSupplierRating implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class CommonInfoSupplierRating implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets current
      *
-     * @return float
+     * @return float|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class CommonInfoSupplierRating implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets current
      *
-     * @param float $current Текущий рейтинг продавца
+     * @param float|null $current Текущий рейтинг продавца
      *
      * @return self
      */

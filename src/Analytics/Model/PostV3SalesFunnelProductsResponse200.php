@@ -275,9 +275,6 @@ class PostV3SalesFunnelProductsResponse200 implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV3SalesFunnelProductsResponse200 implements ModelInterface, ArrayAcces
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsResponse200Data
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsResponse200Data|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV3SalesFunnelProductsResponse200 implements ModelInterface, ArrayAcces
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsResponse200Data $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsResponse200Data|null $data data
      *
      * @return self
      */

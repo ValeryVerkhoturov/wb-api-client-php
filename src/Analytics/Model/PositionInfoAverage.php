@@ -283,9 +283,6 @@ class PositionInfoAverage implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class PositionInfoAverage implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class PositionInfoAverage implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets current
      *
-     * @param int $current Текущая средняя позиция товара
+     * @param int|null $current Текущая средняя позиция товара
      *
      * @return self
      */

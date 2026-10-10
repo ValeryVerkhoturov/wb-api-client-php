@@ -290,15 +290,6 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['region_name'] === null) {
-            $invalidProperties[] = "'region_name' can't be null";
-        }
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
-        if ($this->container['offices'] === null) {
-            $invalidProperties[] = "'offices' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets region_name
      *
-     * @return string
+     * @return string|null
      */
     public function getRegionName()
     {
@@ -327,7 +318,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets region_name
      *
-     * @param string $region_name Регион отгрузки. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
+     * @param string|null $region_name Регион отгрузки. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics|null
      */
     public function getMetrics()
     {
@@ -354,7 +345,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics $metrics Метрики по региону
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics|null $metrics Метрики по региону
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets offices
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[]|null
      */
     public function getOffices()
     {
@@ -381,7 +372,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets offices
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[] $offices Данные по складам. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `[]`
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[]|null $offices Данные по складам. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `[]`
      *
      * @return self
      */

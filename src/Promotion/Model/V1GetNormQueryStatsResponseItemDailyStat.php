@@ -282,9 +282,6 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,7 +300,7 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
     /**
      * Gets date
      *
-     * @return string
+     * @return string|null
      */
     public function getDate()
     {
@@ -313,7 +310,7 @@ class V1GetNormQueryStatsResponseItemDailyStat implements ModelInterface, ArrayA
     /**
      * Sets date
      *
-     * @param string $date Дата
+     * @param string|null $date Дата
      *
      * @return self
      */

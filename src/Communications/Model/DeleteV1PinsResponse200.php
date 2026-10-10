@@ -275,9 +275,6 @@ class DeleteV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class DeleteV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets data
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class DeleteV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets data
      *
-     * @param int[] $data Список `pinId` — ID операций закрепления отзывов, которые были успешно откреплены
+     * @param int[]|null $data Список `pinId` — ID операций закрепления отзывов, которые были успешно откреплены
      *
      * @return self
      */

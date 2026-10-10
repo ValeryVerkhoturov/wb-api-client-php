@@ -296,15 +296,6 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
-        if ($this->container['is_error'] === null) {
-            $invalidProperties[] = "'is_error' can't be null";
-        }
-        if ($this->container['meta_details'] === null) {
-            $invalidProperties[] = "'meta_details' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -323,7 +314,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -333,7 +324,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */
@@ -350,7 +341,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Gets is_error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsError()
     {
@@ -360,7 +351,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Sets is_error
      *
-     * @param bool $is_error Есть ли ошибки
+     * @param bool|null $is_error Есть ли ошибки
      *
      * @return self
      */
@@ -404,7 +395,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Gets meta_details
      *
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner[]|null
      */
     public function getMetaDetails()
     {
@@ -414,7 +405,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Sets meta_details
      *
-     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner[] $meta_details Идентификаторы маркировки и статусы их валидации
+     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner[]|null $meta_details Идентификаторы маркировки и статусы их валидации
      *
      * @return self
      */

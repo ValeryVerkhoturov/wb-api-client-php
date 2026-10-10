@@ -283,9 +283,6 @@ class TableGroupItemMetricsOpenToCart implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class TableGroupItemMetricsOpenToCart implements ModelInterface, ArrayAccess, \J
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class TableGroupItemMetricsOpenToCart implements ModelInterface, ArrayAccess, \J
     /**
      * Sets current
      *
-     * @param int $current Текущая конверсия
+     * @param int|null $current Текущая конверсия
      *
      * @return self
      */

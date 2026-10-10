@@ -282,12 +282,6 @@ class CountriesOKSMListCountriesInner implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class CountriesOKSMListCountriesInner implements ModelInterface, ArrayAccess, \J
     /**
      * Gets code
      *
-     * @return string
+     * @return string|null
      */
     public function getCode()
     {
@@ -316,7 +310,7 @@ class CountriesOKSMListCountriesInner implements ModelInterface, ArrayAccess, \J
     /**
      * Sets code
      *
-     * @param string $code Код страны
+     * @param string|null $code Код страны
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class CountriesOKSMListCountriesInner implements ModelInterface, ArrayAccess, \J
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -343,7 +337,7 @@ class CountriesOKSMListCountriesInner implements ModelInterface, ArrayAccess, \J
     /**
      * Sets name
      *
-     * @param string $name Название страны
+     * @param string|null $name Название страны
      *
      * @return self
      */

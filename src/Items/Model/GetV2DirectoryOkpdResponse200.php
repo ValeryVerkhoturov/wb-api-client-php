@@ -296,18 +296,6 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
-        if ($this->container['error'] === null) {
-            $invalidProperties[] = "'error' can't be null";
-        }
-        if ($this->container['error_text'] === null) {
-            $invalidProperties[] = "'error_text' can't be null";
-        }
-        if ($this->container['additional_errors'] === null) {
-            $invalidProperties[] = "'additional_errors' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +314,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[]|null
      */
     public function getData()
     {
@@ -336,7 +324,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[] $data Данные
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2DirectoryOkpdResponse200DataInner[]|null $data Данные
      *
      * @return self
      */
@@ -353,7 +341,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getError()
     {
@@ -363,7 +351,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets error
      *
-     * @param bool $error Флаг наличия ошибки
+     * @param bool|null $error Флаг наличия ошибки
      *
      * @return self
      */
@@ -380,7 +368,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets error_text
      *
-     * @return string
+     * @return string|null
      */
     public function getErrorText()
     {
@@ -390,7 +378,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets error_text
      *
-     * @param string $error_text Текст ошибки
+     * @param string|null $error_text Текст ошибки
      *
      * @return self
      */
@@ -407,7 +395,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets additional_errors
      *
-     * @return string
+     * @return string|null
      */
     public function getAdditionalErrors()
     {
@@ -417,7 +405,7 @@ class GetV2DirectoryOkpdResponse200 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets additional_errors
      *
-     * @param string $additional_errors Дополнительные ошибки
+     * @param string|null $additional_errors Дополнительные ошибки
      *
      * @return self
      */

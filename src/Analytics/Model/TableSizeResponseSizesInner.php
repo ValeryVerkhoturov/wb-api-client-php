@@ -296,15 +296,6 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
-        }
-        if ($this->container['metrics'] === null) {
-            $invalidProperties[] = "'metrics' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -323,7 +314,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -333,7 +324,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets name
      *
-     * @param string $name Название размера
+     * @param string|null $name Название размера
      *
      * @return self
      */
@@ -350,7 +341,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets chrt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getChrtId()
     {
@@ -360,7 +351,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets chrt_id
      *
-     * @param int $chrt_id ID размера
+     * @param int|null $chrt_id ID размера
      *
      * @return self
      */
@@ -404,7 +395,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSizeResponseSizesInnerMetrics
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSizeResponseSizesInnerMetrics|null
      */
     public function getMetrics()
     {
@@ -414,7 +405,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSizeResponseSizesInnerMetrics $metrics metrics
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSizeResponseSizesInnerMetrics|null $metrics metrics
      *
      * @return self
      */

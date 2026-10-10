@@ -283,12 +283,6 @@ class GetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
-        if ($this->container['next'] === null) {
-            $invalidProperties[] = "'next' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class GetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomResDataInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomResDataInner[]|null
      */
     public function getData()
     {
@@ -317,7 +311,7 @@ class GetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomResDataInner[] $data Данные о товарах и их рекомендациях
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomResDataInner[]|null $data Данные о товарах и их рекомендациях
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class GetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets next
      *
-     * @return int
+     * @return int|null
      */
     public function getNext()
     {
@@ -344,7 +338,7 @@ class GetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets next
      *
-     * @param int $next Курсор. Последний `nmId` в ответе
+     * @param int|null $next Курсор. Последний `nmId` в ответе
      *
      * @return self
      */

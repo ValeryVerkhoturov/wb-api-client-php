@@ -289,15 +289,6 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['below_min_limit'] === null) {
-            $invalidProperties[] = "'below_min_limit' can't be null";
-        }
-        if ($this->container['required_limit'] === null) {
-            $invalidProperties[] = "'required_limit' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -326,7 +317,7 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets below_min_limit
      *
-     * @return bool
+     * @return bool|null
      */
     public function getBelowMinLimit()
     {
@@ -353,7 +344,7 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets below_min_limit
      *
-     * @param bool $below_min_limit Установленный размер дневного лимита ниже рекомендуемого минимума относительно текущих ставок `requiredLimit`:   - `true` — да   - `false` — нет
+     * @param bool|null $below_min_limit Установленный размер дневного лимита ниже рекомендуемого минимума относительно текущих ставок `requiredLimit`:   - `true` — да   - `false` — нет
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets required_limit
      *
-     * @return int
+     * @return int|null
      */
     public function getRequiredLimit()
     {
@@ -380,7 +371,7 @@ class V0PutDailyLimitsAdvertResult implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets required_limit
      *
-     * @param int $required_limit Рекомендуемый минимальный размер дневного лимита при текущих ставках кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances). С меньшим лимитом бюджет может расходоваться неравномерно и в кампании возникнут ошибки
+     * @param int|null $required_limit Рекомендуемый минимальный размер дневного лимита при текущих ставках кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances). С меньшим лимитом бюджет может расходоваться неравномерно и в кампании возникнут ошибки
      *
      * @return self
      */

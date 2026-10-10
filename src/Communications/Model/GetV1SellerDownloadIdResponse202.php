@@ -282,12 +282,6 @@ class GetV1SellerDownloadIdResponse202 implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['moderation_state'] === null) {
-            $invalidProperties[] = "'moderation_state' can't be null";
-        }
-        if ($this->container['retry_seconds'] === null) {
-            $invalidProperties[] = "'retry_seconds' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class GetV1SellerDownloadIdResponse202 implements ModelInterface, ArrayAccess, \
     /**
      * Gets moderation_state
      *
-     * @return string
+     * @return string|null
      */
     public function getModerationState()
     {
@@ -316,7 +310,7 @@ class GetV1SellerDownloadIdResponse202 implements ModelInterface, ArrayAccess, \
     /**
      * Sets moderation_state
      *
-     * @param string $moderation_state Статус модерации
+     * @param string|null $moderation_state Статус модерации
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class GetV1SellerDownloadIdResponse202 implements ModelInterface, ArrayAccess, \
     /**
      * Gets retry_seconds
      *
-     * @return int
+     * @return int|null
      */
     public function getRetrySeconds()
     {
@@ -343,7 +337,7 @@ class GetV1SellerDownloadIdResponse202 implements ModelInterface, ArrayAccess, \
     /**
      * Sets retry_seconds
      *
-     * @param int $retry_seconds Секунд до следующей попытки запроса файла
+     * @param int|null $retry_seconds Секунд до следующей попытки запроса файла
      *
      * @return self
      */

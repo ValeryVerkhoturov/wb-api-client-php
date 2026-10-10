@@ -350,30 +350,6 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['change_state_at'] === null) {
-            $invalidProperties[] = "'change_state_at' can't be null";
-        }
-        if ($this->container['imt_id'] === null) {
-            $invalidProperties[] = "'imt_id' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['pin_id'] === null) {
-            $invalidProperties[] = "'pin_id' can't be null";
-        }
-        if ($this->container['pin_method'] === null) {
-            $invalidProperties[] = "'pin_method' can't be null";
-        }
-        if ($this->container['pin_on'] === null) {
-            $invalidProperties[] = "'pin_on' can't be null";
-        }
-        if ($this->container['feedback_id'] === null) {
-            $invalidProperties[] = "'feedback_id' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalidProperties[] = "'state' can't be null";
-        }
         $allowedValues = $this->getUnpinnedCauseAllowableValues();
         if (!is_null($this->container['unpinned_cause']) && !in_array($this->container['unpinned_cause'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -401,7 +377,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets change_state_at
      *
-     * @return string
+     * @return string|null
      */
     public function getChangeStateAt()
     {
@@ -411,7 +387,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets change_state_at
      *
-     * @param string $change_state_at Дата и время закрепления или открепления
+     * @param string|null $change_state_at Дата и время закрепления или открепления
      *
      * @return self
      */
@@ -428,7 +404,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets imt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getImtId()
     {
@@ -438,7 +414,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets imt_id
      *
-     * @param int $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
+     * @param int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -455,7 +431,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -465,7 +441,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -482,7 +458,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pin_id
      *
-     * @return int
+     * @return int|null
      */
     public function getPinId()
     {
@@ -492,7 +468,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pin_id
      *
-     * @param int $pin_id ID операции закрепления отзыва
+     * @param int|null $pin_id ID операции закрепления отзыва
      *
      * @return self
      */
@@ -509,7 +485,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pin_method
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinMethod
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinMethod|null
      */
     public function getPinMethod()
     {
@@ -519,7 +495,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pin_method
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinMethod $pin_method Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinMethod|null $pin_method Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция
      *
      * @return self
      */
@@ -536,7 +512,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pin_on
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinOn
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinOn|null
      */
     public function getPinOn()
     {
@@ -546,7 +522,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pin_on
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinOn $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewPinOn|null $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -563,7 +539,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets feedback_id
      *
-     * @return string
+     * @return string|null
      */
     public function getFeedbackId()
     {
@@ -573,7 +549,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets feedback_id
      *
-     * @param string $feedback_id ID отзыва
+     * @param string|null $feedback_id ID отзыва
      *
      * @return self
      */
@@ -590,7 +566,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets state
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewState
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewState|null
      */
     public function getState()
     {
@@ -600,7 +576,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets state
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewState $state Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\DomainReviewState|null $state Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет
      *
      * @return self
      */

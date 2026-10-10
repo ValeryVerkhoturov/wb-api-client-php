@@ -296,18 +296,6 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +314,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -336,7 +324,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets request_id
      *
-     * @param string $request_id ID запроса
+     * @param string|null $request_id ID запроса
      *
      * @return self
      */
@@ -353,7 +341,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets origin
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -363,7 +351,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets origin
      *
-     * @param string $origin ID внутреннего сервиса WB
+     * @param string|null $origin ID внутреннего сервиса WB
      *
      * @return self
      */
@@ -380,7 +368,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -390,7 +378,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets title
      *
-     * @param string $title Заголовок ответа
+     * @param string|null $title Заголовок ответа
      *
      * @return self
      */
@@ -407,7 +395,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -417,7 +405,7 @@ class Response208SetRecom implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets detail
      *
-     * @param string $detail Детали ответа
+     * @param string|null $detail Детали ответа
      *
      * @return self
      */

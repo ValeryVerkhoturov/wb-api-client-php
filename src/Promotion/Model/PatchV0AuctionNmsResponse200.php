@@ -275,9 +275,6 @@ class PatchV0AuctionNmsResponse200 implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['nms'] === null) {
-            $invalidProperties[] = "'nms' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PatchV0AuctionNmsResponse200 implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets nms
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInner[]|null
      */
     public function getNms()
     {
@@ -306,7 +303,7 @@ class PatchV0AuctionNmsResponse200 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets nms
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInner[] $nms Результат отработки запроса
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PatchV0AuctionNmsResponse200NmsInner[]|null $nms Результат отработки запроса
      *
      * @return self
      */

@@ -289,15 +289,6 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['logo_url'] === null) {
-            $invalidProperties[] = "'logo_url' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -326,7 +317,7 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets id
      *
-     * @param int $id ID бренда
+     * @param int|null $id ID бренда
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets logo_url
      *
-     * @return string
+     * @return string|null
      */
     public function getLogoUrl()
     {
@@ -353,7 +344,7 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets logo_url
      *
-     * @param string $logo_url URL логотипа бренда
+     * @param string|null $logo_url URL логотипа бренда
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -380,7 +371,7 @@ class BrandsResponseBrandsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets name
      *
-     * @param string $name Название бренда
+     * @param string|null $name Название бренда
      *
      * @return self
      */

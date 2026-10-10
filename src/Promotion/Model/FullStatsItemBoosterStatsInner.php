@@ -289,15 +289,6 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['avg_position'] === null) {
-            $invalidProperties[] = "'avg_position' can't be null";
-        }
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['nm'] === null) {
-            $invalidProperties[] = "'nm' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets avg_position
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgPosition()
     {
@@ -326,7 +317,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets avg_position
      *
-     * @param int $avg_position Средняя позиция товара
+     * @param int|null $avg_position Средняя позиция товара
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets date
      *
-     * @return string
+     * @return string|null
      */
     public function getDate()
     {
@@ -353,7 +344,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets date
      *
-     * @param string $date Дата, за которую предоставлены данные
+     * @param string|null $date Дата, за которую предоставлены данные
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets nm
      *
-     * @return int
+     * @return int|null
      */
     public function getNm()
     {
@@ -380,7 +371,7 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets nm
      *
-     * @param int $nm Артикул WB
+     * @param int|null $nm Артикул WB
      *
      * @return self
      */

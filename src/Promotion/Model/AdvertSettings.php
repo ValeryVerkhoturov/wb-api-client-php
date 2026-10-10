@@ -61,7 +61,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'payment_type' => 'string',
         'name' => 'string',
-        'placements' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\PutV0AuctionPlacementsRequestPlacementsInnerPlacements'
+        'placements' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettingsPlacements'
     ];
 
     /**
@@ -290,15 +290,6 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['payment_type'] === null) {
-            $invalidProperties[] = "'payment_type' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['placements'] === null) {
-            $invalidProperties[] = "'placements' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payment_type
      *
-     * @return string
+     * @return string|null
      */
     public function getPaymentType()
     {
@@ -327,7 +318,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payment_type
      *
-     * @param string $payment_type Тип оплаты: - `cpm` — за показы - `cpc` — за клик
+     * @param string|null $payment_type Тип оплаты: - `cpm` — за показы - `cpc` — за клик
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -354,7 +345,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Название кампании
+     * @param string|null $name Название кампании
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets placements
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PutV0AuctionPlacementsRequestPlacementsInnerPlacements
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettingsPlacements|null
      */
     public function getPlacements()
     {
@@ -381,7 +372,7 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets placements
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PutV0AuctionPlacementsRequestPlacementsInnerPlacements $placements placements
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettingsPlacements|null $placements placements
      *
      * @return self
      */

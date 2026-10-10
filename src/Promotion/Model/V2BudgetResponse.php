@@ -275,9 +275,6 @@ class V2BudgetResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['adverts'] === null) {
-            $invalidProperties[] = "'adverts' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class V2BudgetResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adverts
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1BudgetAdvert[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1BudgetAdvert[]|null
      */
     public function getAdverts()
     {
@@ -306,7 +303,7 @@ class V2BudgetResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adverts
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1BudgetAdvert[] $adverts Данные по кампаниям
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V1BudgetAdvert[]|null $adverts Данные по кампаниям
      *
      * @return self
      */

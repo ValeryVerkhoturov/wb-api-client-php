@@ -282,12 +282,6 @@ class ApiOrdersFinalPriceResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiOrdersFinalPriceResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -316,7 +310,7 @@ class ApiOrdersFinalPriceResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets request_id
      *
-     * @param string $request_id Уникальный ID запроса
+     * @param string|null $request_id Уникальный ID запроса
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ApiOrdersFinalPriceResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrderFinalPriceResult[]
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrderFinalPriceResult[]|null
      */
     public function getResults()
     {
@@ -343,7 +337,7 @@ class ApiOrdersFinalPriceResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrderFinalPriceResult[] $results Данные ответа
+     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrderFinalPriceResult[]|null $results Данные ответа
      *
      * @return self
      */

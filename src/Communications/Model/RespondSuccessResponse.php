@@ -275,9 +275,6 @@ class RespondSuccessResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class RespondSuccessResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets data
      *
-     * @return object
+     * @return object|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class RespondSuccessResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets data
      *
-     * @param object $data data
+     * @param object|null $data data
      *
      * @return self
      */

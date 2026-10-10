@@ -282,12 +282,6 @@ class ItemsResponseProductsInner implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
-        }
-        if ($this->container['statistic'] === null) {
-            $invalidProperties[] = "'statistic' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ItemsResponseProductsInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets product
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerProduct
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerProduct|null
      */
     public function getProduct()
     {
@@ -316,7 +310,7 @@ class ItemsResponseProductsInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets product
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerProduct $product product
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerProduct|null $product product
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ItemsResponseProductsInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets statistic
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerStatistic
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerStatistic|null
      */
     public function getStatistic()
     {
@@ -343,7 +337,7 @@ class ItemsResponseProductsInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets statistic
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerStatistic $statistic statistic
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInnerStatistic|null $statistic statistic
      *
      * @return self
      */

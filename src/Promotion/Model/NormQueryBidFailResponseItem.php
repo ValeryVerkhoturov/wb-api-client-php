@@ -296,18 +296,6 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['norm_query'] === null) {
-            $invalidProperties[] = "'norm_query' can't be null";
-        }
-        if ($this->container['reason'] === null) {
-            $invalidProperties[] = "'reason' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +314,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -336,7 +324,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -353,7 +341,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -363,7 +351,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -380,7 +368,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets norm_query
      *
-     * @return string
+     * @return string|null
      */
     public function getNormQuery()
     {
@@ -390,7 +378,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets norm_query
      *
-     * @param string $norm_query Поисковый кластер — это группа похожих поисковых запросов, по которым покупатели находят товары
+     * @param string|null $norm_query Поисковый кластер — это группа похожих поисковых запросов, по которым покупатели находят товары
      *
      * @return self
      */
@@ -407,7 +395,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets reason
      *
-     * @return string
+     * @return string|null
      */
     public function getReason()
     {
@@ -417,7 +405,7 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets reason
      *
-     * @param string $reason Описание причины ошибки
+     * @param string|null $reason Описание причины ошибки
      *
      * @return self
      */

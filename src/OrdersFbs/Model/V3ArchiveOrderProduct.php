@@ -297,18 +297,6 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['article'] === null) {
-            $invalidProperties[] = "'article' can't be null";
-        }
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['skus'] === null) {
-            $invalidProperties[] = "'skus' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +315,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets article
      *
-     * @return string
+     * @return string|null
      */
     public function getArticle()
     {
@@ -337,7 +325,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets article
      *
-     * @param string $article Артикул продавца
+     * @param string|null $article Артикул продавца
      *
      * @return self
      */
@@ -354,7 +342,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets chrt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getChrtId()
     {
@@ -364,7 +352,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets chrt_id
      *
-     * @param int $chrt_id ID размера товара в системе WB
+     * @param int|null $chrt_id ID размера товара в системе WB
      *
      * @return self
      */
@@ -381,7 +369,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -391,7 +379,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -408,7 +396,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets skus
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getSkus()
     {
@@ -418,7 +406,7 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets skus
      *
-     * @param string[] $skus Список баркодов
+     * @param string[]|null $skus Список баркодов
      *
      * @return self
      */

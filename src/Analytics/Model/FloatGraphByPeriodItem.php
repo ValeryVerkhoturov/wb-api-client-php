@@ -290,15 +290,6 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['start'] === null) {
-            $invalidProperties[] = "'start' can't be null";
-        }
-        if ($this->container['end'] === null) {
-            $invalidProperties[] = "'end' can't be null";
-        }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets start
      *
-     * @return string
+     * @return string|null
      */
     public function getStart()
     {
@@ -327,7 +318,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets start
      *
-     * @param string $start Начало месяца
+     * @param string|null $start Начало месяца
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets end
      *
-     * @return string
+     * @return string|null
      */
     public function getEnd()
     {
@@ -354,7 +345,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets end
      *
-     * @param string $end Конец месяца
+     * @param string|null $end Конец месяца
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets value
      *
-     * @return float
+     * @return float|null
      */
     public function getValue()
     {
@@ -381,7 +372,7 @@ class FloatGraphByPeriodItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets value
      *
-     * @param float $value Среднее количество заказов
+     * @param float|null $value Среднее количество заказов
      *
      * @return self
      */

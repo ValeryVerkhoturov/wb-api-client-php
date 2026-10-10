@@ -338,15 +338,6 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -356,9 +347,6 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -377,7 +365,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets origin
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -387,7 +375,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets origin
      *
-     * @param string $origin ID внутреннего сервиса WB
+     * @param string|null $origin ID внутреннего сервиса WB
      *
      * @return self
      */
@@ -431,7 +419,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -441,7 +429,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets request_id
      *
-     * @param string $request_id ID запроса
+     * @param string|null $request_id ID запроса
      *
      * @return self
      */
@@ -458,7 +446,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -468,7 +456,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string $status Статус
+     * @param string|null $status Статус
      *
      * @return self
      */
@@ -495,7 +483,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -505,7 +493,7 @@ class OpenapiResultErr implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets title
      *
-     * @param string $title Заголовок ошибки
+     * @param string|null $title Заголовок ошибки
      *
      * @return self
      */

@@ -290,9 +290,6 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['supply_id'] === null) {
-            $invalidProperties[] = "'supply_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -365,7 +362,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets supply_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSupplyId()
     {
@@ -375,7 +372,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets supply_id
      *
-     * @param string $supply_id ID поставки
+     * @param string|null $supply_id ID поставки
      *
      * @return self
      */

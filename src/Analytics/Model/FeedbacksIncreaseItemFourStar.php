@@ -290,12 +290,6 @@ class FeedbacksIncreaseItemFourStar implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -314,7 +308,7 @@ class FeedbacksIncreaseItemFourStar implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -324,7 +318,7 @@ class FeedbacksIncreaseItemFourStar implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets current
      *
-     * @param int $current Прирост оценок за период
+     * @param int|null $current Прирост оценок за период
      *
      * @return self
      */
@@ -368,7 +362,7 @@ class FeedbacksIncreaseItemFourStar implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -378,7 +372,7 @@ class FeedbacksIncreaseItemFourStar implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets total
      *
-     * @param int $total Всего оценок
+     * @param int|null $total Всего оценок
      *
      * @return self
      */

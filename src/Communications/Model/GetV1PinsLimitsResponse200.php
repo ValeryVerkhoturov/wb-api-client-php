@@ -275,9 +275,6 @@ class GetV1PinsLimitsResponse200 implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class GetV1PinsLimitsResponse200 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class GetV1PinsLimitsResponse200 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiSellerLimitsResponseData|null $data data
      *
      * @return self
      */

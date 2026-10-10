@@ -290,15 +290,6 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['seller_rating'] === null) {
-            $invalidProperties[] = "'seller_rating' can't be null";
-        }
-        if ($this->container['feedback_increase'] === null) {
-            $invalidProperties[] = "'feedback_increase' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets seller_rating
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemFloat
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemFloat|null
      */
     public function getSellerRating()
     {
@@ -327,7 +318,7 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets seller_rating
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemFloat $seller_rating seller_rating
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemFloat|null $seller_rating seller_rating
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets feedback_increase
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItem
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItem|null
      */
     public function getFeedbackIncrease()
     {
@@ -354,7 +345,7 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets feedback_increase
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItem $feedback_increase feedback_increase
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FeedbacksIncreaseItem|null $feedback_increase feedback_increase
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItem[]|null
      */
     public function getItems()
     {
@@ -381,7 +372,7 @@ class ItemRatingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItem[] $items Данные по товарам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\DistributionTableItem[]|null $items Данные по товарам
      *
      * @return self
      */

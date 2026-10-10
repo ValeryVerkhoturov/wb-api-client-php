@@ -331,33 +331,6 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['order_count'] === null) {
-            $invalidProperties[] = "'order_count' can't be null";
-        }
-        if ($this->container['order_sum'] === null) {
-            $invalidProperties[] = "'order_sum' can't be null";
-        }
-        if ($this->container['buyout_sum'] === null) {
-            $invalidProperties[] = "'buyout_sum' can't be null";
-        }
-        if ($this->container['buyout_count'] === null) {
-            $invalidProperties[] = "'buyout_count' can't be null";
-        }
-        if ($this->container['cancel_sum'] === null) {
-            $invalidProperties[] = "'cancel_sum' can't be null";
-        }
-        if ($this->container['cancel_count'] === null) {
-            $invalidProperties[] = "'cancel_count' can't be null";
-        }
-        if ($this->container['avg_price'] === null) {
-            $invalidProperties[] = "'avg_price' can't be null";
-        }
-        if ($this->container['buyout_percent'] === null) {
-            $invalidProperties[] = "'buyout_percent' can't be null";
-        }
-        if ($this->container['avg_order_count_per_day'] === null) {
-            $invalidProperties[] = "'avg_order_count_per_day' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -376,7 +349,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderCount()
     {
@@ -386,7 +359,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_count
      *
-     * @param int $order_count Заказали товаров с WB Клубом, шт.
+     * @param int|null $order_count Заказали товаров с WB Клубом, шт.
      *
      * @return self
      */
@@ -403,7 +376,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderSum()
     {
@@ -413,7 +386,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_sum
      *
-     * @param int $order_sum Заказали с WB Клубом на сумму
+     * @param int|null $order_sum Заказали с WB Клубом на сумму
      *
      * @return self
      */
@@ -430,7 +403,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutSum()
     {
@@ -440,7 +413,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_sum
      *
-     * @param int $buyout_sum Выкупили с WB Клубом на сумму
+     * @param int|null $buyout_sum Выкупили с WB Клубом на сумму
      *
      * @return self
      */
@@ -457,7 +430,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_count
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutCount()
     {
@@ -467,7 +440,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_count
      *
-     * @param int $buyout_count Выкупили товаров с WB Клубом, шт.
+     * @param int|null $buyout_count Выкупили товаров с WB Клубом, шт.
      *
      * @return self
      */
@@ -484,7 +457,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cancel_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelSum()
     {
@@ -494,7 +467,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cancel_sum
      *
-     * @param int $cancel_sum Отменили и вернули с WB Клубом на сумму
+     * @param int|null $cancel_sum Отменили и вернули с WB Клубом на сумму
      *
      * @return self
      */
@@ -511,7 +484,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cancel_count
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelCount()
     {
@@ -521,7 +494,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cancel_count
      *
-     * @param int $cancel_count Отменили и вернули товаров с WB Клубом, шт.
+     * @param int|null $cancel_count Отменили и вернули товаров с WB Клубом, шт.
      *
      * @return self
      */
@@ -538,7 +511,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets avg_price
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgPrice()
     {
@@ -548,7 +521,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets avg_price
      *
-     * @param int $avg_price Средняя цена с WB Клубом
+     * @param int|null $avg_price Средняя цена с WB Клубом
      *
      * @return self
      */
@@ -565,7 +538,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyout_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutPercent()
     {
@@ -575,7 +548,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyout_percent
      *
-     * @param int $buyout_percent Процент выкупа с WB Клубом
+     * @param int|null $buyout_percent Процент выкупа с WB Клубом
      *
      * @return self
      */
@@ -592,7 +565,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets avg_order_count_per_day
      *
-     * @return float
+     * @return float|null
      */
     public function getAvgOrderCountPerDay()
     {
@@ -602,7 +575,7 @@ class WbClubMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets avg_order_count_per_day
      *
-     * @param float $avg_order_count_per_day Среднее количество заказов с WB Клубом в день, шт.
+     * @param float|null $avg_order_count_per_day Среднее количество заказов с WB Клубом в день, шт.
      *
      * @return self
      */

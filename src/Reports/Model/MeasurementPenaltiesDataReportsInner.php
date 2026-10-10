@@ -408,45 +408,6 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['dim_id'] === null) {
-            $invalidProperties[] = "'dim_id' can't be null";
-        }
-        if ($this->container['prc_over'] === null) {
-            $invalidProperties[] = "'prc_over' can't be null";
-        }
-        if ($this->container['volume'] === null) {
-            $invalidProperties[] = "'volume' can't be null";
-        }
-        if ($this->container['width'] === null) {
-            $invalidProperties[] = "'width' can't be null";
-        }
-        if ($this->container['length'] === null) {
-            $invalidProperties[] = "'length' can't be null";
-        }
-        if ($this->container['height'] === null) {
-            $invalidProperties[] = "'height' can't be null";
-        }
-        if ($this->container['volume_sup'] === null) {
-            $invalidProperties[] = "'volume_sup' can't be null";
-        }
-        if ($this->container['width_sup'] === null) {
-            $invalidProperties[] = "'width_sup' can't be null";
-        }
-        if ($this->container['length_sup'] === null) {
-            $invalidProperties[] = "'length_sup' can't be null";
-        }
-        if ($this->container['height_sup'] === null) {
-            $invalidProperties[] = "'height_sup' can't be null";
-        }
-        if ($this->container['photo_urls'] === null) {
-            $invalidProperties[] = "'photo_urls' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -465,7 +426,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -475,7 +436,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -492,7 +453,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -502,7 +463,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Предмет
+     * @param string|null $subject_name Предмет
      *
      * @return self
      */
@@ -519,7 +480,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets dim_id
      *
-     * @return int
+     * @return int|null
      */
     public function getDimId()
     {
@@ -529,7 +490,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets dim_id
      *
-     * @param int $dim_id ID замера
+     * @param int|null $dim_id ID замера
      *
      * @return self
      */
@@ -546,7 +507,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets prc_over
      *
-     * @return float
+     * @return float|null
      */
     public function getPrcOver()
     {
@@ -556,7 +517,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets prc_over
      *
-     * @param float $prc_over Разница в габаритах, %
+     * @param float|null $prc_over Разница в габаритах, %
      *
      * @return self
      */
@@ -573,7 +534,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets volume
      *
-     * @return float
+     * @return float|null
      */
     public function getVolume()
     {
@@ -583,7 +544,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets volume
      *
-     * @param float $volume Объём, л (фактические габариты по замеру на складе)
+     * @param float|null $volume Объём, л (фактические габариты по замеру на складе)
      *
      * @return self
      */
@@ -600,7 +561,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets width
      *
-     * @return int
+     * @return int|null
      */
     public function getWidth()
     {
@@ -610,7 +571,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets width
      *
-     * @param int $width Ширина, см (фактические габариты по замеру на складе)
+     * @param int|null $width Ширина, см (фактические габариты по замеру на складе)
      *
      * @return self
      */
@@ -627,7 +588,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets length
      *
-     * @return int
+     * @return int|null
      */
     public function getLength()
     {
@@ -637,7 +598,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets length
      *
-     * @param int $length Длина, см (фактические габариты по замеру на складе)
+     * @param int|null $length Длина, см (фактические габариты по замеру на складе)
      *
      * @return self
      */
@@ -654,7 +615,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets height
      *
-     * @return int
+     * @return int|null
      */
     public function getHeight()
     {
@@ -664,7 +625,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets height
      *
-     * @param int $height Высота, см (фактические габариты по замеру на складе)
+     * @param int|null $height Высота, см (фактические габариты по замеру на складе)
      *
      * @return self
      */
@@ -681,7 +642,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets volume_sup
      *
-     * @return float
+     * @return float|null
      */
     public function getVolumeSup()
     {
@@ -691,7 +652,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets volume_sup
      *
-     * @param float $volume_sup Объём, л (габариты карточки товара)
+     * @param float|null $volume_sup Объём, л (габариты карточки товара)
      *
      * @return self
      */
@@ -708,7 +669,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets width_sup
      *
-     * @return int
+     * @return int|null
      */
     public function getWidthSup()
     {
@@ -718,7 +679,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets width_sup
      *
-     * @param int $width_sup Ширина, см (габариты карточки товара)
+     * @param int|null $width_sup Ширина, см (габариты карточки товара)
      *
      * @return self
      */
@@ -735,7 +696,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets length_sup
      *
-     * @return int
+     * @return int|null
      */
     public function getLengthSup()
     {
@@ -745,7 +706,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets length_sup
      *
-     * @param int $length_sup Длина, см (габариты карточки товара)
+     * @param int|null $length_sup Длина, см (габариты карточки товара)
      *
      * @return self
      */
@@ -762,7 +723,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets height_sup
      *
-     * @return int
+     * @return int|null
      */
     public function getHeightSup()
     {
@@ -772,7 +733,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets height_sup
      *
-     * @param int $height_sup Высота, см (габариты карточки товара)
+     * @param int|null $height_sup Высота, см (габариты карточки товара)
      *
      * @return self
      */
@@ -789,7 +750,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Gets photo_urls
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getPhotoUrls()
     {
@@ -799,7 +760,7 @@ class MeasurementPenaltiesDataReportsInner implements ModelInterface, ArrayAcces
     /**
      * Sets photo_urls
      *
-     * @param string[] $photo_urls Фото замеров
+     * @param string[]|null $photo_urls Фото замеров
      *
      * @return self
      */

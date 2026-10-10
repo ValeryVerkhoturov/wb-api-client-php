@@ -275,9 +275,6 @@ class NmReportRetryReportResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class NmReportRetryReportResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets data
      *
-     * @return string
+     * @return string|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class NmReportRetryReportResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets data
      *
-     * @param string $data Уведомление, что началась повторная генерация отчёта
+     * @param string|null $data Уведомление, что началась повторная генерация отчёта
      *
      * @return self
      */

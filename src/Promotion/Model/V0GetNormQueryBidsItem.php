@@ -310,24 +310,6 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['norm_query'] === null) {
-            $invalidProperties[] = "'norm_query' can't be null";
-        }
-        if ($this->container['bid'] === null) {
-            $invalidProperties[] = "'bid' can't be null";
-        }
-        if ($this->container['bid_kopecks'] === null) {
-            $invalidProperties[] = "'bid_kopecks' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -346,7 +328,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -356,7 +338,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -373,7 +355,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -383,7 +365,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -400,7 +382,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets norm_query
      *
-     * @return string
+     * @return string|null
      */
     public function getNormQuery()
     {
@@ -410,7 +392,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets norm_query
      *
-     * @param string $norm_query Поисковый кластер
+     * @param string|null $norm_query Поисковый кластер
      *
      * @return self
      */
@@ -427,7 +409,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets bid
      *
-     * @return int
+     * @return int|null
      */
     public function getBid()
     {
@@ -437,7 +419,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bid
      *
-     * @param int $bid Текущая ставка в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
+     * @param int|null $bid Текущая ставка в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
      *
      * @return self
      */
@@ -454,7 +436,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets bid_kopecks
      *
-     * @return int
+     * @return int|null
      */
     public function getBidKopecks()
     {
@@ -464,7 +446,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bid_kopecks
      *
-     * @param int $bid_kopecks Текущая ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
+     * @param int|null $bid_kopecks Текущая ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
      *
      * @return self
      */
@@ -481,7 +463,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -491,7 +473,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets currency
      *
-     * @param string $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

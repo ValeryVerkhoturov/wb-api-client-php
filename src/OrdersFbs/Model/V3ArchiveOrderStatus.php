@@ -283,12 +283,6 @@ class V3ArchiveOrderStatus implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['supplier_status'] === null) {
-            $invalidProperties[] = "'supplier_status' can't be null";
-        }
-        if ($this->container['wb_status'] === null) {
-            $invalidProperties[] = "'wb_status' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class V3ArchiveOrderStatus implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets supplier_status
      *
-     * @return string
+     * @return string|null
      */
     public function getSupplierStatus()
     {
@@ -317,7 +311,7 @@ class V3ArchiveOrderStatus implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets supplier_status
      *
-     * @param string $supplier_status Статус сборочного задания, установленный продавцом
+     * @param string|null $supplier_status Статус сборочного задания, установленный продавцом
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class V3ArchiveOrderStatus implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets wb_status
      *
-     * @return string
+     * @return string|null
      */
     public function getWbStatus()
     {
@@ -344,7 +338,7 @@ class V3ArchiveOrderStatus implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets wb_status
      *
-     * @param string $wb_status Статус сборочного задания в системе Wildberries
+     * @param string|null $wb_status Статус сборочного задания в системе Wildberries
      *
      * @return self
      */

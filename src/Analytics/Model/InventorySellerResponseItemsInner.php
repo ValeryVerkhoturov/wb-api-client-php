@@ -310,24 +310,6 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
-        }
-        if ($this->container['warehouse_id'] === null) {
-            $invalidProperties[] = "'warehouse_id' can't be null";
-        }
-        if ($this->container['warehouse_name'] === null) {
-            $invalidProperties[] = "'warehouse_name' can't be null";
-        }
-        if ($this->container['region_name'] === null) {
-            $invalidProperties[] = "'region_name' can't be null";
-        }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -346,7 +328,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -356,7 +338,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -373,7 +355,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets chrt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getChrtId()
     {
@@ -383,7 +365,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets chrt_id
      *
-     * @param int $chrt_id ID размера
+     * @param int|null $chrt_id ID размера
      *
      * @return self
      */
@@ -400,7 +382,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets warehouse_id
      *
-     * @return int
+     * @return int|null
      */
     public function getWarehouseId()
     {
@@ -410,7 +392,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets warehouse_id
      *
-     * @param int $warehouse_id ID склада
+     * @param int|null $warehouse_id ID склада
      *
      * @return self
      */
@@ -427,7 +409,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets warehouse_name
      *
-     * @return string
+     * @return string|null
      */
     public function getWarehouseName()
     {
@@ -437,7 +419,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets warehouse_name
      *
-     * @param string $warehouse_name Название склада
+     * @param string|null $warehouse_name Название склада
      *
      * @return self
      */
@@ -454,7 +436,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets region_name
      *
-     * @return string
+     * @return string|null
      */
     public function getRegionName()
     {
@@ -464,7 +446,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets region_name
      *
-     * @param string $region_name Регион отгрузки
+     * @param string|null $region_name Регион отгрузки
      *
      * @return self
      */
@@ -481,7 +463,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -491,7 +473,7 @@ class InventorySellerResponseItemsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets quantity
      *
-     * @param int $quantity Количество товара на складе, доступное клиентам для добавления в корзину
+     * @param int|null $quantity Количество товара на складе, доступное клиентам для добавления в корзину
      *
      * @return self
      */

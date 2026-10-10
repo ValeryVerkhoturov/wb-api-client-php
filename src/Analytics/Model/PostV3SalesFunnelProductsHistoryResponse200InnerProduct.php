@@ -310,24 +310,6 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     {
         $invalidProperties = [];
 
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['subject_id'] === null) {
-            $invalidProperties[] = "'subject_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -346,7 +328,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -356,7 +338,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -373,7 +355,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -383,7 +365,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Sets title
      *
-     * @param string $title Название карточки товара
+     * @param string|null $title Название карточки товара
      *
      * @return self
      */
@@ -400,7 +382,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -410,7 +392,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -427,7 +409,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -437,7 +419,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -454,7 +436,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Gets subject_id
      *
-     * @return int
+     * @return int|null
      */
     public function getSubjectId()
     {
@@ -464,7 +446,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Sets subject_id
      *
-     * @param int $subject_id ID предмета
+     * @param int|null $subject_id ID предмета
      *
      * @return self
      */
@@ -481,7 +463,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -491,7 +473,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Название предмета
+     * @param string|null $subject_name Название предмета
      *
      * @return self
      */

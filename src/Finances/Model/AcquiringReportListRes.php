@@ -325,30 +325,6 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['report_id'] === null) {
-            $invalidProperties[] = "'report_id' can't be null";
-        }
-        if ($this->container['seller_finance_name'] === null) {
-            $invalidProperties[] = "'seller_finance_name' can't be null";
-        }
-        if ($this->container['date_from'] === null) {
-            $invalidProperties[] = "'date_from' can't be null";
-        }
-        if ($this->container['date_to'] === null) {
-            $invalidProperties[] = "'date_to' can't be null";
-        }
-        if ($this->container['create_date'] === null) {
-            $invalidProperties[] = "'create_date' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['acquiring_fee_sum'] === null) {
-            $invalidProperties[] = "'acquiring_fee_sum' can't be null";
-        }
-        if ($this->container['acquiring_fee_vat_sum'] === null) {
-            $invalidProperties[] = "'acquiring_fee_vat_sum' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -367,7 +343,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets report_id
      *
-     * @return int
+     * @return int|null
      */
     public function getReportId()
     {
@@ -377,7 +353,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets report_id
      *
-     * @param int $report_id ID отчёта
+     * @param int|null $report_id ID отчёта
      *
      * @return self
      */
@@ -394,7 +370,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets seller_finance_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSellerFinanceName()
     {
@@ -404,7 +380,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets seller_finance_name
      *
-     * @param string $seller_finance_name Наименование продавца
+     * @param string|null $seller_finance_name Наименование продавца
      *
      * @return self
      */
@@ -421,7 +397,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets date_from
      *
-     * @return string
+     * @return string|null
      */
     public function getDateFrom()
     {
@@ -431,7 +407,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets date_from
      *
-     * @param string $date_from Дата начала отчётного периода
+     * @param string|null $date_from Дата начала отчётного периода
      *
      * @return self
      */
@@ -448,7 +424,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets date_to
      *
-     * @return string
+     * @return string|null
      */
     public function getDateTo()
     {
@@ -458,7 +434,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets date_to
      *
-     * @param string $date_to Дата конца отчётного периода
+     * @param string|null $date_to Дата конца отчётного периода
      *
      * @return self
      */
@@ -475,7 +451,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets create_date
      *
-     * @return string
+     * @return string|null
      */
     public function getCreateDate()
     {
@@ -485,7 +461,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets create_date
      *
-     * @param string $create_date Дата формирования отчёта
+     * @param string|null $create_date Дата формирования отчёта
      *
      * @return self
      */
@@ -502,7 +478,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -512,7 +488,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */
@@ -529,7 +505,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets acquiring_fee_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringFeeSum()
     {
@@ -539,7 +515,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets acquiring_fee_sum
      *
-     * @param string $acquiring_fee_sum Сумма издержек по эквайрингу
+     * @param string|null $acquiring_fee_sum Сумма издержек по эквайрингу
      *
      * @return self
      */
@@ -556,7 +532,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets acquiring_fee_vat_sum
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringFeeVatSum()
     {
@@ -566,7 +542,7 @@ class AcquiringReportListRes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets acquiring_fee_vat_sum
      *
-     * @param string $acquiring_fee_vat_sum В том числе НДС
+     * @param string|null $acquiring_fee_vat_sum В том числе НДС
      *
      * @return self
      */

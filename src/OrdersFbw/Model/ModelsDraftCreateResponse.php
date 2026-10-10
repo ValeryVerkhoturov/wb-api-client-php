@@ -275,9 +275,6 @@ class ModelsDraftCreateResponse implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['draft_id'] === null) {
-            $invalidProperties[] = "'draft_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class ModelsDraftCreateResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets draft_id
      *
-     * @return string
+     * @return string|null
      */
     public function getDraftId()
     {
@@ -306,7 +303,7 @@ class ModelsDraftCreateResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets draft_id
      *
-     * @param string $draft_id ID черновика
+     * @param string|null $draft_id ID черновика
      *
      * @return self
      */

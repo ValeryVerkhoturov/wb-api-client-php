@@ -297,18 +297,6 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['converted_currency_code'] === null) {
-            $invalidProperties[] = "'converted_currency_code' can't be null";
-        }
-        if ($this->container['converted_price'] === null) {
-            $invalidProperties[] = "'converted_price' can't be null";
-        }
-        if ($this->container['currency_code'] === null) {
-            $invalidProperties[] = "'currency_code' can't be null";
-        }
-        if ($this->container['price'] === null) {
-            $invalidProperties[] = "'price' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -327,7 +315,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets converted_currency_code
      *
-     * @return int
+     * @return int|null
      */
     public function getConvertedCurrencyCode()
     {
@@ -337,7 +325,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets converted_currency_code
      *
-     * @param int $converted_currency_code Код валюты страны продавца
+     * @param int|null $converted_currency_code Код валюты страны продавца
      *
      * @return self
      */
@@ -354,7 +342,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets converted_price
      *
-     * @return int
+     * @return int|null
      */
     public function getConvertedPrice()
     {
@@ -364,7 +352,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets converted_price
      *
-     * @param int $converted_price Цена в валюте страны продавца с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100
+     * @param int|null $converted_price Цена в валюте страны продавца с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100
      *
      * @return self
      */
@@ -381,7 +369,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets currency_code
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrencyCode()
     {
@@ -391,7 +379,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets currency_code
      *
-     * @param int $currency_code Код валюты продажи
+     * @param int|null $currency_code Код валюты продажи
      *
      * @return self
      */
@@ -408,7 +396,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets price
      *
-     * @return int
+     * @return int|null
      */
     public function getPrice()
     {
@@ -418,7 +406,7 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets price
      *
-     * @param int $price Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100
+     * @param int|null $price Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100
      *
      * @return self
      */

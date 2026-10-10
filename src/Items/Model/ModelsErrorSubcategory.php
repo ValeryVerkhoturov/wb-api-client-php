@@ -282,12 +282,6 @@ class ModelsErrorSubcategory implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ModelsErrorSubcategory implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id
      *
-     * @return float
+     * @return float|null
      */
     public function getId()
     {
@@ -316,7 +310,7 @@ class ModelsErrorSubcategory implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param float $id ID предмета
+     * @param float|null $id ID предмета
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ModelsErrorSubcategory implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -343,7 +337,7 @@ class ModelsErrorSubcategory implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets name
      *
-     * @param string $name Название предмета
+     * @param string|null $name Название предмета
      *
      * @return self
      */

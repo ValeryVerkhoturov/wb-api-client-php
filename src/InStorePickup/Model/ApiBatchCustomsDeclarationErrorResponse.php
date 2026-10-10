@@ -282,12 +282,6 @@ class ApiBatchCustomsDeclarationErrorResponse implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiBatchCustomsDeclarationErrorResponse implements ModelInterface, ArrayAc
     /**
      * Gets code
      *
-     * @return int
+     * @return int|null
      */
     public function getCode()
     {
@@ -316,7 +310,7 @@ class ApiBatchCustomsDeclarationErrorResponse implements ModelInterface, ArrayAc
     /**
      * Sets code
      *
-     * @param int $code Код ошибки:   - `404`   - `409`   - `400`
+     * @param int|null $code Код ошибки:   - `404`   - `409`   - `400`
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ApiBatchCustomsDeclarationErrorResponse implements ModelInterface, ArrayAc
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -343,7 +337,7 @@ class ApiBatchCustomsDeclarationErrorResponse implements ModelInterface, ArrayAc
     /**
      * Sets detail
      *
-     * @param string $detail - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `OrderNotB2B` — операция доступна только для сборочных заданий с признаком B2B-продажи `\"isB2b\":true` - `InvalidOriginCountryCode` — некорректный код страны происхождения товара
+     * @param string|null $detail - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `OrderNotB2B` — операция доступна только для сборочных заданий с признаком B2B-продажи `\"isB2b\":true` - `InvalidOriginCountryCode` — некорректный код страны происхождения товара
      *
      * @return self
      */

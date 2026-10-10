@@ -283,12 +283,6 @@ class WHMData implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['reports'] === null) {
-            $invalidProperties[] = "'reports' can't be null";
-        }
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class WHMData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reports
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMDataReportsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMDataReportsInner[]|null
      */
     public function getReports()
     {
@@ -317,7 +311,7 @@ class WHMData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reports
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMDataReportsInner[] $reports Замеры
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMDataReportsInner[]|null $reports Замеры
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class WHMData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -344,7 +338,7 @@ class WHMData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total
      *
-     * @param int $total Количество замеров в отчёте. Без учёта `limit` и `offset`
+     * @param int|null $total Количество замеров в отчёте. Без учёта `limit` и `offset`
      *
      * @return self
      */

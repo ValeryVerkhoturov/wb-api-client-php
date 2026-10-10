@@ -275,9 +275,6 @@ class SupplySpotQRCode implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['qr_code'] === null) {
-            $invalidProperties[] = "'qr_code' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class SupplySpotQRCode implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets qr_code
      *
-     * @return string
+     * @return string|null
      */
     public function getQrCode()
     {
@@ -306,7 +303,7 @@ class SupplySpotQRCode implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets qr_code
      *
-     * @param string $qr_code QR-код поставки в кодировке base64
+     * @param string|null $qr_code QR-код поставки в кодировке base64
      *
      * @return self
      */

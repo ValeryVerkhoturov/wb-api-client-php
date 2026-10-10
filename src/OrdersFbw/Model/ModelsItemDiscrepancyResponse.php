@@ -303,21 +303,6 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['package_code'] === null) {
-            $invalidProperties[] = "'package_code' can't be null";
-        }
-        if ($this->container['video_url'] === null) {
-            $invalidProperties[] = "'video_url' can't be null";
-        }
-        if ($this->container['video_starts_at'] === null) {
-            $invalidProperties[] = "'video_starts_at' can't be null";
-        }
-        if ($this->container['video_unavailable'] === null) {
-            $invalidProperties[] = "'video_unavailable' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +321,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets package_code
      *
-     * @return string
+     * @return string|null
      */
     public function getPackageCode()
     {
@@ -346,7 +331,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets package_code
      *
-     * @param string $package_code ID упаковки
+     * @param string|null $package_code ID упаковки
      *
      * @return self
      */
@@ -363,7 +348,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets video_url
      *
-     * @return string
+     * @return string|null
      */
     public function getVideoUrl()
     {
@@ -373,7 +358,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets video_url
      *
-     * @param string $video_url Видео фиксации расхождений в процессе приёмки
+     * @param string|null $video_url Видео фиксации расхождений в процессе приёмки
      *
      * @return self
      */
@@ -390,7 +375,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets video_starts_at
      *
-     * @return string
+     * @return string|null
      */
     public function getVideoStartsAt()
     {
@@ -400,7 +385,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets video_starts_at
      *
-     * @param string $video_starts_at Дата и время видеофиксации расхождений в процессе приемки
+     * @param string|null $video_starts_at Дата и время видеофиксации расхождений в процессе приемки
      *
      * @return self
      */
@@ -417,7 +402,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets video_unavailable
      *
-     * @return bool
+     * @return bool|null
      */
     public function getVideoUnavailable()
     {
@@ -427,7 +412,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets video_unavailable
      *
-     * @param bool $video_unavailable Доступность видео:    - `false` — видео доступно    - `true` — видео недоступно
+     * @param bool|null $video_unavailable Доступность видео:    - `false` — видео доступно    - `true` — видео недоступно
      *
      * @return self
      */
@@ -444,7 +429,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDiscrepancyResponseItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDiscrepancyResponseItem[]|null
      */
     public function getItems()
     {
@@ -454,7 +439,7 @@ class ModelsItemDiscrepancyResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDiscrepancyResponseItem[] $items Товары поставки
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDiscrepancyResponseItem[]|null $items Товары поставки
      *
      * @return self
      */

@@ -303,18 +303,6 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -333,7 +321,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -343,7 +331,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets title
      *
-     * @param string $title Заголовок ошибки
+     * @param string|null $title Заголовок ошибки
      *
      * @return self
      */
@@ -360,7 +348,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -370,7 +358,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets detail
      *
-     * @param string $detail Детали ошибки
+     * @param string|null $detail Детали ошибки
      *
      * @return self
      */
@@ -387,7 +375,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets origin
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -397,7 +385,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets origin
      *
-     * @param string $origin ID внутреннего сервиса WB
+     * @param string|null $origin ID внутреннего сервиса WB
      *
      * @return self
      */
@@ -414,7 +402,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -424,7 +412,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets request_id
      *
-     * @param string $request_id Уникальный ID запроса
+     * @param string|null $request_id Уникальный ID запроса
      *
      * @return self
      */

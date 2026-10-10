@@ -289,15 +289,6 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['range1_to2'] === null) {
-            $invalidProperties[] = "'range1_to2' can't be null";
-        }
-        if ($this->container['range3_to10'] === null) {
-            $invalidProperties[] = "'range3_to10' can't be null";
-        }
-        if ($this->container['range11_to34'] === null) {
-            $invalidProperties[] = "'range11_to34' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets range1_to2
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid|null
      */
     public function getRange1To2()
     {
@@ -326,7 +317,7 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets range1_to2
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid $range1_to2 Ставка для попадания в позиции 1-2
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid|null $range1_to2 Ставка для попадания в позиции 1-2
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets range3_to10
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid|null
      */
     public function getRange3To10()
     {
@@ -353,7 +344,7 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets range3_to10
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid $range3_to10 Ставка для попадания в позиции 3-10
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid|null $range3_to10 Ставка для попадания в позиции 3-10
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets range11_to34
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid|null
      */
     public function getRange11To34()
     {
@@ -380,7 +371,7 @@ class V0BidRecommendationCPCLevels implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets range11_to34
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid $range11_to34 Ставка для попадания в позиции 11-34
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V0BidRecommendationBaseBid|null $range11_to34 Ставка для попадания в позиции 11-34
      *
      * @return self
      */

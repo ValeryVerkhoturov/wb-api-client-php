@@ -275,9 +275,6 @@ class PostV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[] $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinReviewItemResultDataInner[]|null $data data
      *
      * @return self
      */

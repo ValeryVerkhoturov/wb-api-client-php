@@ -282,12 +282,6 @@ class PostV1BidsMinResponse200BidsInner implements ModelInterface, ArrayAccess, 
     {
         $invalidProperties = [];
 
-        if ($this->container['bids'] === null) {
-            $invalidProperties[] = "'bids' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class PostV1BidsMinResponse200BidsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets bids
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInnerBidsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInnerBidsInner[]|null
      */
     public function getBids()
     {
@@ -316,7 +310,7 @@ class PostV1BidsMinResponse200BidsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets bids
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInnerBidsInner[] $bids Список ставок по местам размещения
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInnerBidsInner[]|null $bids Список ставок по местам размещения
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class PostV1BidsMinResponse200BidsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -343,7 +337,7 @@ class PostV1BidsMinResponse200BidsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */

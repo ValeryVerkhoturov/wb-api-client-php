@@ -322,9 +322,6 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements ModelI
     {
         $invalidProperties = [];
 
-        if ($this->container['chrt_id'] === null) {
-            $invalidProperties[] = "'chrt_id' can't be null";
-        }
         $allowedValues = $this->getTypeAllowableValues();
         if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -379,7 +376,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements ModelI
     /**
      * Gets chrt_id
      *
-     * @return int
+     * @return int|null
      */
     public function getChrtId()
     {
@@ -389,7 +386,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements ModelI
     /**
      * Sets chrt_id
      *
-     * @param int $chrt_id ID размера товара в системе WB
+     * @param int|null $chrt_id ID размера товара в системе WB
      *
      * @return self
      */

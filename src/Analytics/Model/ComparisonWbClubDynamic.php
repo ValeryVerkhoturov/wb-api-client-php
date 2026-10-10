@@ -331,33 +331,6 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['order_count'] === null) {
-            $invalidProperties[] = "'order_count' can't be null";
-        }
-        if ($this->container['order_sum'] === null) {
-            $invalidProperties[] = "'order_sum' can't be null";
-        }
-        if ($this->container['buyout_sum'] === null) {
-            $invalidProperties[] = "'buyout_sum' can't be null";
-        }
-        if ($this->container['buyout_count'] === null) {
-            $invalidProperties[] = "'buyout_count' can't be null";
-        }
-        if ($this->container['cancel_sum'] === null) {
-            $invalidProperties[] = "'cancel_sum' can't be null";
-        }
-        if ($this->container['cancel_count'] === null) {
-            $invalidProperties[] = "'cancel_count' can't be null";
-        }
-        if ($this->container['avg_price'] === null) {
-            $invalidProperties[] = "'avg_price' can't be null";
-        }
-        if ($this->container['buyout_percent'] === null) {
-            $invalidProperties[] = "'buyout_percent' can't be null";
-        }
-        if ($this->container['avg_order_count_per_day'] === null) {
-            $invalidProperties[] = "'avg_order_count_per_day' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -376,7 +349,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets order_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderCount()
     {
@@ -386,7 +359,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets order_count
      *
-     * @param int $order_count Динамика количества заказов с WB Клубом
+     * @param int|null $order_count Динамика количества заказов с WB Клубом
      *
      * @return self
      */
@@ -403,7 +376,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets order_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderSum()
     {
@@ -413,7 +386,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets order_sum
      *
-     * @param int $order_sum Динамика суммы заказов с WB Клубом
+     * @param int|null $order_sum Динамика суммы заказов с WB Клубом
      *
      * @return self
      */
@@ -430,7 +403,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets buyout_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutSum()
     {
@@ -440,7 +413,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets buyout_sum
      *
-     * @param int $buyout_sum Динамика суммы выкупов с WB Клубом
+     * @param int|null $buyout_sum Динамика суммы выкупов с WB Клубом
      *
      * @return self
      */
@@ -457,7 +430,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets buyout_count
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutCount()
     {
@@ -467,7 +440,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets buyout_count
      *
-     * @param int $buyout_count Динамика выкупов с WB Клубом
+     * @param int|null $buyout_count Динамика выкупов с WB Клубом
      *
      * @return self
      */
@@ -484,7 +457,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cancel_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelSum()
     {
@@ -494,7 +467,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cancel_sum
      *
-     * @param int $cancel_sum Динамика сумм отмен и возвратов товаров с WB Клубом
+     * @param int|null $cancel_sum Динамика сумм отмен и возвратов товаров с WB Клубом
      *
      * @return self
      */
@@ -511,7 +484,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cancel_count
      *
-     * @return int
+     * @return int|null
      */
     public function getCancelCount()
     {
@@ -521,7 +494,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cancel_count
      *
-     * @param int $cancel_count Динамика отмен и возвратов товаров с WB Клубом
+     * @param int|null $cancel_count Динамика отмен и возвратов товаров с WB Клубом
      *
      * @return self
      */
@@ -538,7 +511,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets avg_price
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgPrice()
     {
@@ -548,7 +521,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets avg_price
      *
-     * @param int $avg_price Динамика средней цены на товары с WB Клубом
+     * @param int|null $avg_price Динамика средней цены на товары с WB Клубом
      *
      * @return self
      */
@@ -565,7 +538,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets buyout_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutPercent()
     {
@@ -575,7 +548,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets buyout_percent
      *
-     * @param int $buyout_percent Динамика процента выкупа с WB Клубом
+     * @param int|null $buyout_percent Динамика процента выкупа с WB Клубом
      *
      * @return self
      */
@@ -592,7 +565,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets avg_order_count_per_day
      *
-     * @return float
+     * @return float|null
      */
     public function getAvgOrderCountPerDay()
     {
@@ -602,7 +575,7 @@ class ComparisonWbClubDynamic implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets avg_order_count_per_day
      *
-     * @param float $avg_order_count_per_day Динамика среднего количества заказов с WB Клубом в день
+     * @param float|null $avg_order_count_per_day Динамика среднего количества заказов с WB Клубом в день
      *
      * @return self
      */

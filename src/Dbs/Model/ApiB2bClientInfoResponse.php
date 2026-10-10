@@ -296,12 +296,6 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['is_error'] === null) {
-            $invalidProperties[] = "'is_error' can't be null";
-        }
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -374,7 +368,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets is_error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsError()
     {
@@ -384,7 +378,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets is_error
      *
-     * @param bool $is_error Есть ли ошибки
+     * @param bool|null $is_error Есть ли ошибки
      *
      * @return self
      */
@@ -401,7 +395,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -411,7 +405,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */

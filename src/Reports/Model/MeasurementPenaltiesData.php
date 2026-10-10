@@ -283,12 +283,6 @@ class MeasurementPenaltiesData implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['reports'] === null) {
-            $invalidProperties[] = "'reports' can't be null";
-        }
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class MeasurementPenaltiesData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets reports
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesDataReportsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesDataReportsInner[]|null
      */
     public function getReports()
     {
@@ -317,7 +311,7 @@ class MeasurementPenaltiesData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets reports
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesDataReportsInner[] $reports Удержания
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesDataReportsInner[]|null $reports Удержания
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class MeasurementPenaltiesData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -344,7 +338,7 @@ class MeasurementPenaltiesData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets total
      *
-     * @param int $total Количество удержаний в отчёте. Без учёта `limit` и `offset`
+     * @param int|null $total Количество удержаний в отчёте. Без учёта `limit` и `offset`
      *
      * @return self
      */

@@ -283,9 +283,6 @@ class TableItemFloat implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class TableItemFloat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets current
      *
-     * @return float
+     * @return float|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class TableItemFloat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets current
      *
-     * @param float $current Текущий рейтинг
+     * @param float|null $current Текущий рейтинг
      *
      * @return self
      */

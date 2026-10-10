@@ -324,30 +324,6 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['enabled'] === null) {
-            $invalidProperties[] = "'enabled' can't be null";
-        }
-        if ($this->container['daily_limit'] === null) {
-            $invalidProperties[] = "'daily_limit' can't be null";
-        }
-        if ($this->container['spent_today'] === null) {
-            $invalidProperties[] = "'spent_today' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['carry_over_enabled'] === null) {
-            $invalidProperties[] = "'carry_over_enabled' can't be null";
-        }
-        if ($this->container['valid'] === null) {
-            $invalidProperties[] = "'valid' can't be null";
-        }
-        if ($this->container['required_limit'] === null) {
-            $invalidProperties[] = "'required_limit' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -366,7 +342,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -376,7 +352,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -393,7 +369,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets enabled
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnabled()
     {
@@ -403,7 +379,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets enabled
      *
-     * @param bool $enabled - `true` — дневной лимит включен - `false` — дневной лимит отключен
+     * @param bool|null $enabled - `true` — дневной лимит включен - `false` — дневной лимит отключен
      *
      * @return self
      */
@@ -420,7 +396,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets daily_limit
      *
-     * @return int
+     * @return int|null
      */
     public function getDailyLimit()
     {
@@ -430,7 +406,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets daily_limit
      *
-     * @param int $daily_limit Размер дневного лимита в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $daily_limit Размер дневного лимита в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -447,7 +423,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets spent_today
      *
-     * @return int
+     * @return int|null
      */
     public function getSpentToday()
     {
@@ -457,7 +433,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets spent_today
      *
-     * @param int $spent_today Потрачено сегодня в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $spent_today Потрачено сегодня в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -474,7 +450,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -484,7 +460,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets currency
      *
-     * @param string $currency Код валюты
+     * @param string|null $currency Код валюты
      *
      * @return self
      */
@@ -501,7 +477,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets carry_over_enabled
      *
-     * @return bool
+     * @return bool|null
      */
     public function getCarryOverEnabled()
     {
@@ -511,7 +487,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets carry_over_enabled
      *
-     * @param bool $carry_over_enabled Перенос остатка дневного лимита на следующий день. Если за 24 часа лимит потратится не полностью, добавим остаток суммы к лимиту следующего дня. Расходы на продвижение не увеличатся.   - `true` — перенос остатка включен   - `false` — перенос остатка отключен
+     * @param bool|null $carry_over_enabled Перенос остатка дневного лимита на следующий день. Если за 24 часа лимит потратится не полностью, добавим остаток суммы к лимиту следующего дня. Расходы на продвижение не увеличатся.   - `true` — перенос остатка включен   - `false` — перенос остатка отключен
      *
      * @return self
      */
@@ -528,7 +504,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets valid
      *
-     * @return bool
+     * @return bool|null
      */
     public function getValid()
     {
@@ -538,7 +514,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets valid
      *
-     * @param bool $valid Хватает ли текущего размера лимита на установку ставок кампании:   - `true` — да   - `false` — нет, рекомендуем повысить лимит, иначе бюджет кампании может расходоваться неравномерно
+     * @param bool|null $valid Хватает ли текущего размера лимита на установку ставок кампании:   - `true` — да   - `false` — нет, рекомендуем повысить лимит, иначе бюджет кампании может расходоваться неравномерно
      *
      * @return self
      */
@@ -555,7 +531,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets required_limit
      *
-     * @return int
+     * @return int|null
      */
     public function getRequiredLimit()
     {
@@ -565,7 +541,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets required_limit
      *
-     * @param int $required_limit Рекомендуемый минимальный размер дневного лимита при текущих ставках кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $required_limit Рекомендуемый минимальный размер дневного лимита при текущих ставках кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

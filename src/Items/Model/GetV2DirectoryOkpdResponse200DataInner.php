@@ -282,12 +282,6 @@ class GetV2DirectoryOkpdResponse200DataInner implements ModelInterface, ArrayAcc
     {
         $invalidProperties = [];
 
-        if ($this->container['okpd2'] === null) {
-            $invalidProperties[] = "'okpd2' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class GetV2DirectoryOkpdResponse200DataInner implements ModelInterface, ArrayAcc
     /**
      * Gets okpd2
      *
-     * @return string
+     * @return string|null
      */
     public function getOkpd2()
     {
@@ -316,7 +310,7 @@ class GetV2DirectoryOkpdResponse200DataInner implements ModelInterface, ArrayAcc
     /**
      * Sets okpd2
      *
-     * @param string $okpd2 Код ОКПД2
+     * @param string|null $okpd2 Код ОКПД2
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class GetV2DirectoryOkpdResponse200DataInner implements ModelInterface, ArrayAcc
     /**
      * Gets description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -343,7 +337,7 @@ class GetV2DirectoryOkpdResponse200DataInner implements ModelInterface, ArrayAcc
     /**
      * Sets description
      *
-     * @param string $description Текстовое описание товаров, которые входят в группу
+     * @param string|null $description Текстовое описание товаров, которые входят в группу
      *
      * @return self
      */

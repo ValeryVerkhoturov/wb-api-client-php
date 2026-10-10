@@ -290,12 +290,6 @@ class TableSearchTextItemAllOfOpenToCart implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
-        if ($this->container['percentile'] === null) {
-            $invalidProperties[] = "'percentile' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -314,7 +308,7 @@ class TableSearchTextItemAllOfOpenToCart implements ModelInterface, ArrayAccess,
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -324,7 +318,7 @@ class TableSearchTextItemAllOfOpenToCart implements ModelInterface, ArrayAccess,
     /**
      * Sets current
      *
-     * @param int $current Текущая конверсия
+     * @param int|null $current Текущая конверсия
      *
      * @return self
      */
@@ -368,7 +362,7 @@ class TableSearchTextItemAllOfOpenToCart implements ModelInterface, ArrayAccess,
     /**
      * Gets percentile
      *
-     * @return int
+     * @return int|null
      */
     public function getPercentile()
     {
@@ -378,7 +372,7 @@ class TableSearchTextItemAllOfOpenToCart implements ModelInterface, ArrayAccess,
     /**
      * Sets percentile
      *
-     * @param int $percentile Процент, на который показатель конверсии в корзину выше, чем у карточек других продавцов по поисковому запросу
+     * @param int|null $percentile Процент, на который показатель конверсии в корзину выше, чем у карточек других продавцов по поисковому запросу
      *
      * @return self
      */

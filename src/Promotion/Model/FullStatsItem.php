@@ -374,48 +374,6 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['advert_id'] === null) {
-            $invalidProperties[] = "'advert_id' can't be null";
-        }
-        if ($this->container['atbs'] === null) {
-            $invalidProperties[] = "'atbs' can't be null";
-        }
-        if ($this->container['canceled'] === null) {
-            $invalidProperties[] = "'canceled' can't be null";
-        }
-        if ($this->container['clicks'] === null) {
-            $invalidProperties[] = "'clicks' can't be null";
-        }
-        if ($this->container['cpc'] === null) {
-            $invalidProperties[] = "'cpc' can't be null";
-        }
-        if ($this->container['cr'] === null) {
-            $invalidProperties[] = "'cr' can't be null";
-        }
-        if ($this->container['ctr'] === null) {
-            $invalidProperties[] = "'ctr' can't be null";
-        }
-        if ($this->container['days'] === null) {
-            $invalidProperties[] = "'days' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
-        if ($this->container['shks'] === null) {
-            $invalidProperties[] = "'shks' can't be null";
-        }
-        if ($this->container['sum'] === null) {
-            $invalidProperties[] = "'sum' can't be null";
-        }
-        if ($this->container['sum_price'] === null) {
-            $invalidProperties[] = "'sum_price' can't be null";
-        }
-        if ($this->container['views'] === null) {
-            $invalidProperties[] = "'views' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -434,7 +392,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets advert_id
      *
-     * @return int
+     * @return int|null
      */
     public function getAdvertId()
     {
@@ -444,7 +402,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets advert_id
      *
-     * @param int $advert_id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
@@ -461,7 +419,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets atbs
      *
-     * @return int
+     * @return int|null
      */
     public function getAtbs()
     {
@@ -471,7 +429,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets atbs
      *
-     * @param int $atbs Количество добавлений товаров в корзину
+     * @param int|null $atbs Количество добавлений товаров в корзину
      *
      * @return self
      */
@@ -515,7 +473,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets canceled
      *
-     * @return int
+     * @return int|null
      */
     public function getCanceled()
     {
@@ -525,7 +483,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets canceled
      *
-     * @param int $canceled Отмены, шт.
+     * @param int|null $canceled Отмены, шт.
      *
      * @return self
      */
@@ -542,7 +500,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets clicks
      *
-     * @return int
+     * @return int|null
      */
     public function getClicks()
     {
@@ -552,7 +510,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets clicks
      *
-     * @param int $clicks Количество кликов
+     * @param int|null $clicks Количество кликов
      *
      * @return self
      */
@@ -569,7 +527,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cpc
      *
-     * @return float
+     * @return float|null
      */
     public function getCpc()
     {
@@ -579,7 +537,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cpc
      *
-     * @param float $cpc Средняя стоимость клика в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $cpc Средняя стоимость клика в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -596,7 +554,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cr
      *
-     * @return float
+     * @return float|null
      */
     public function getCr()
     {
@@ -606,7 +564,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cr
      *
-     * @param float $cr CR (conversion rate) — отношение количества заказов к общему количеству кликов
+     * @param float|null $cr CR (conversion rate) — отношение количества заказов к общему количеству кликов
      *
      * @return self
      */
@@ -623,7 +581,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ctr
      *
-     * @return float
+     * @return float|null
      */
     public function getCtr()
     {
@@ -633,7 +591,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ctr
      *
-     * @param float $ctr CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+     * @param float|null $ctr CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
      *
      * @return self
      */
@@ -650,7 +608,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets days
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\FullStatsItemDaysInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\FullStatsItemDaysInner[]|null
      */
     public function getDays()
     {
@@ -660,7 +618,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets days
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\FullStatsItemDaysInner[] $days Статистка по дням
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\FullStatsItemDaysInner[]|null $days Статистка по дням
      *
      * @return self
      */
@@ -677,7 +635,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orders
      *
-     * @return int
+     * @return int|null
      */
     public function getOrders()
     {
@@ -687,7 +645,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orders
      *
-     * @param int $orders Количество заказов
+     * @param int|null $orders Количество заказов
      *
      * @return self
      */
@@ -704,7 +662,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shks
      *
-     * @return int
+     * @return int|null
      */
     public function getShks()
     {
@@ -714,7 +672,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shks
      *
-     * @param int $shks Количество заказанных товаров, шт.
+     * @param int|null $shks Количество заказанных товаров, шт.
      *
      * @return self
      */
@@ -731,7 +689,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sum
      *
-     * @return float
+     * @return float|null
      */
     public function getSum()
     {
@@ -741,7 +699,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sum
      *
-     * @param float $sum Затраты в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $sum Затраты в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -758,7 +716,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sum_price
      *
-     * @return float
+     * @return float|null
      */
     public function getSumPrice()
     {
@@ -768,7 +726,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sum_price
      *
-     * @param float $sum_price Сумма заказов в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $sum_price Сумма заказов в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -785,7 +743,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets views
      *
-     * @return int
+     * @return int|null
      */
     public function getViews()
     {
@@ -795,7 +753,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets views
      *
-     * @param int $views Количество просмотров
+     * @param int|null $views Количество просмотров
      *
      * @return self
      */
@@ -812,7 +770,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -822,7 +780,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

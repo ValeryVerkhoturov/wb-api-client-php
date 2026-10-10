@@ -282,12 +282,6 @@ class GetV2DirectoryTnvedAllResponse200DataInner implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['tnved'] === null) {
-            $invalidProperties[] = "'tnved' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class GetV2DirectoryTnvedAllResponse200DataInner implements ModelInterface, Arra
     /**
      * Gets tnved
      *
-     * @return string
+     * @return string|null
      */
     public function getTnved()
     {
@@ -316,7 +310,7 @@ class GetV2DirectoryTnvedAllResponse200DataInner implements ModelInterface, Arra
     /**
      * Sets tnved
      *
-     * @param string $tnved Код ТН ВЭД
+     * @param string|null $tnved Код ТН ВЭД
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class GetV2DirectoryTnvedAllResponse200DataInner implements ModelInterface, Arra
     /**
      * Gets description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -343,7 +337,7 @@ class GetV2DirectoryTnvedAllResponse200DataInner implements ModelInterface, Arra
     /**
      * Sets description
      *
-     * @param string $description Текстовое описание товаров, которые входят в группу
+     * @param string|null $description Текстовое описание товаров, которые входят в группу
      *
      * @return self
      */

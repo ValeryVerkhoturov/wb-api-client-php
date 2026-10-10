@@ -282,12 +282,6 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -316,7 +310,7 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets request_id
      *
-     * @param string $request_id Уникальный ID запроса
+     * @param string|null $request_id Уникальный ID запроса
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets orders
      *
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInner[]|null
      */
     public function getOrders()
     {
@@ -343,7 +337,7 @@ class ApiOrdersMetaDetailsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets orders
      *
-     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInner[] $orders Идентификаторы маркировки сборочных заданий и статусы их валидации
+     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponseOrdersInner[]|null $orders Идентификаторы маркировки сборочных заданий и статусы их валидации
      *
      * @return self
      */

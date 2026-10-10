@@ -282,9 +282,6 @@ class SetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['is_error'] === null) {
-            $invalidProperties[] = "'is_error' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,7 +300,7 @@ class SetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsError()
     {
@@ -313,7 +310,7 @@ class SetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_error
      *
-     * @param bool $is_error Есть ли ошибки:   - `false` — ошибок нет. Запрос полностью успешен   - `true` — ошибки есть
+     * @param bool|null $is_error Есть ли ошибки:   - `false` — ошибок нет. Запрос полностью успешен   - `true` — ошибки есть
      *
      * @return self
      */

@@ -275,9 +275,6 @@ class GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['adverts'] === null) {
-            $invalidProperties[] = "'adverts' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adverts
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInner[]|null
      */
     public function getAdverts()
     {
@@ -306,7 +303,7 @@ class GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adverts
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInner[] $adverts Кампании
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInner[]|null $adverts Кампании
      *
      * @return self
      */

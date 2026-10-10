@@ -296,9 +296,6 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['is_error'] === null) {
-            $invalidProperties[] = "'is_error' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -344,7 +341,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Gets is_error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsError()
     {
@@ -354,7 +351,7 @@ class ApiOrdersMetaDetailsResponseOrdersInner implements ModelInterface, ArrayAc
     /**
      * Sets is_error
      *
-     * @param bool $is_error Есть ли ошибки
+     * @param bool|null $is_error Есть ли ошибки
      *
      * @return self
      */

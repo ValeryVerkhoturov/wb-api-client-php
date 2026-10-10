@@ -275,9 +275,6 @@ class PostV2SearchReportReportResponse200 implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV2SearchReportReportResponse200 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\MainResponse
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\MainResponse|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV2SearchReportReportResponse200 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\MainResponse $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\MainResponse|null $data data
      *
      * @return self
      */

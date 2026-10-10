@@ -275,9 +275,6 @@ class ModelsDraftDeleteItemsErrorResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class ModelsDraftDeleteItemsErrorResponse implements ModelInterface, ArrayAccess
     /**
      * Gets results
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getResults()
     {
@@ -306,7 +303,7 @@ class ModelsDraftDeleteItemsErrorResponse implements ModelInterface, ArrayAccess
     /**
      * Sets results
      *
-     * @param string[] $results results
+     * @param string[]|null $results results
      *
      * @return self
      */

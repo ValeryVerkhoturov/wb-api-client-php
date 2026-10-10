@@ -283,12 +283,6 @@ class AdvertSubcategory implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class AdvertSubcategory implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -317,7 +311,7 @@ class AdvertSubcategory implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets id
      *
-     * @param int $id ID предмета
+     * @param int|null $id ID предмета
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class AdvertSubcategory implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -344,7 +338,7 @@ class AdvertSubcategory implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets name
      *
-     * @param string $name Название предмета
+     * @param string|null $name Название предмета
      *
      * @return self
      */

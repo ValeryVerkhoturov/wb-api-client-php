@@ -374,12 +374,6 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['role'] === null) {
-            $invalidProperties[] = "'role' can't be null";
-        }
         $allowedValues = $this->getRoleAllowableValues();
         if (!is_null($this->container['role']) && !in_array($this->container['role'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -389,39 +383,6 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
             );
         }
 
-        if ($this->container['position'] === null) {
-            $invalidProperties[] = "'position' can't be null";
-        }
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ($this->container['is_owner'] === null) {
-            $invalidProperties[] = "'is_owner' can't be null";
-        }
-        if ($this->container['first_name'] === null) {
-            $invalidProperties[] = "'first_name' can't be null";
-        }
-        if ($this->container['second_name'] === null) {
-            $invalidProperties[] = "'second_name' can't be null";
-        }
-        if ($this->container['patronymic'] === null) {
-            $invalidProperties[] = "'patronymic' can't be null";
-        }
-        if ($this->container['goods_return'] === null) {
-            $invalidProperties[] = "'goods_return' can't be null";
-        }
-        if ($this->container['is_invitee'] === null) {
-            $invalidProperties[] = "'is_invitee' can't be null";
-        }
-        if ($this->container['invitee_info'] === null) {
-            $invalidProperties[] = "'invitee_info' can't be null";
-        }
-        if ($this->container['access'] === null) {
-            $invalidProperties[] = "'access' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -440,7 +401,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -450,7 +411,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets id
      *
-     * @param int $id ID пользователя
+     * @param int|null $id ID пользователя
      *
      * @return self
      */
@@ -467,7 +428,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets role
      *
-     * @return string
+     * @return string|null
      */
     public function getRole()
     {
@@ -477,7 +438,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets role
      *
-     * @param string $role Роль пользователя:   * `user` — пользователь, который активировал доступ   * ` ` (пустая строка) — пользователь, который не активировал доступ
+     * @param string|null $role Роль пользователя:   * `user` — пользователь, который активировал доступ   * ` ` (пустая строка) — пользователь, который не активировал доступ
      *
      * @return self
      */
@@ -504,7 +465,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets position
      *
-     * @return string
+     * @return string|null
      */
     public function getPosition()
     {
@@ -514,7 +475,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets position
      *
-     * @param string $position Должность пользователя
+     * @param string|null $position Должность пользователя
      *
      * @return self
      */
@@ -531,7 +492,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets phone
      *
-     * @return string
+     * @return string|null
      */
     public function getPhone()
     {
@@ -541,7 +502,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets phone
      *
-     * @param string $phone Номер телефона пользователя
+     * @param string|null $phone Номер телефона пользователя
      *
      * @return self
      */
@@ -558,7 +519,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets email
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail()
     {
@@ -568,7 +529,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets email
      *
-     * @param string $email Email пользователя
+     * @param string|null $email Email пользователя
      *
      * @return self
      */
@@ -585,7 +546,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets is_owner
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsOwner()
     {
@@ -595,7 +556,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets is_owner
      *
-     * @param bool $is_owner Является ли пользователь владельцем профиля продавца
+     * @param bool|null $is_owner Является ли пользователь владельцем профиля продавца
      *
      * @return self
      */
@@ -612,7 +573,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets first_name
      *
-     * @return string
+     * @return string|null
      */
     public function getFirstName()
     {
@@ -622,7 +583,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets first_name
      *
-     * @param string $first_name Имя пользователя
+     * @param string|null $first_name Имя пользователя
      *
      * @return self
      */
@@ -639,7 +600,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets second_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSecondName()
     {
@@ -649,7 +610,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets second_name
      *
-     * @param string $second_name Фамилия пользователя
+     * @param string|null $second_name Фамилия пользователя
      *
      * @return self
      */
@@ -666,7 +627,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets patronymic
      *
-     * @return string
+     * @return string|null
      */
     public function getPatronymic()
     {
@@ -676,7 +637,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets patronymic
      *
-     * @param string $patronymic Отчество пользователя
+     * @param string|null $patronymic Отчество пользователя
      *
      * @return self
      */
@@ -693,7 +654,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets goods_return
      *
-     * @return bool
+     * @return bool|null
      */
     public function getGoodsReturn()
     {
@@ -703,7 +664,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets goods_return
      *
-     * @param bool $goods_return Может ли пользователь одобрять возвраты товаров
+     * @param bool|null $goods_return Может ли пользователь одобрять возвраты товаров
      *
      * @return self
      */
@@ -720,7 +681,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets is_invitee
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsInvitee()
     {
@@ -730,7 +691,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets is_invitee
      *
-     * @param bool $is_invitee Приглашён ли пользователь
+     * @param bool|null $is_invitee Приглашён ли пользователь
      *
      * @return self
      */
@@ -747,7 +708,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets invitee_info
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerInviteeInfo
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerInviteeInfo|null
      */
     public function getInviteeInfo()
     {
@@ -757,7 +718,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets invitee_info
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerInviteeInfo $invitee_info invitee_info
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerInviteeInfo|null $invitee_info invitee_info
      *
      * @return self
      */
@@ -781,7 +742,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets access
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]|null
      */
     public function getAccess()
     {
@@ -791,7 +752,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets access
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[] $access Настройки доступа к разделам профиля продавца
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]|null $access Настройки доступа к разделам профиля продавца
      *
      * @return self
      */

@@ -275,9 +275,6 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner imp
     {
         $invalidProperties = [];
 
-        if ($this->container['subject_id'] === null) {
-            $invalidProperties[] = "'subject_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner imp
     /**
      * Gets subject_id
      *
-     * @return int
+     * @return int|null
      */
     public function getSubjectId()
     {
@@ -306,7 +303,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner imp
     /**
      * Sets subject_id
      *
-     * @param int $subject_id ID предмета
+     * @param int|null $subject_id ID предмета
      *
      * @return self
      */

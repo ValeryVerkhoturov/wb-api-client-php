@@ -334,12 +334,6 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['declared_sku'] === null) {
-            $invalidProperties[] = "'declared_sku' can't be null";
-        }
-        if ($this->container['discrepancy_type'] === null) {
-            $invalidProperties[] = "'discrepancy_type' can't be null";
-        }
         $allowedValues = $this->getDiscrepancyTypeAllowableValues();
         if (!is_null($this->container['discrepancy_type']) && !in_array($this->container['discrepancy_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -349,21 +343,6 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
             );
         }
 
-        if ($this->container['declared_amount'] === null) {
-            $invalidProperties[] = "'declared_amount' can't be null";
-        }
-        if ($this->container['actual_amount'] === null) {
-            $invalidProperties[] = "'actual_amount' can't be null";
-        }
-        if ($this->container['discrepancy_quantity'] === null) {
-            $invalidProperties[] = "'discrepancy_quantity' can't be null";
-        }
-        if ($this->container['actual_sku'] === null) {
-            $invalidProperties[] = "'actual_sku' can't be null";
-        }
-        if ($this->container['sku_scans'] === null) {
-            $invalidProperties[] = "'sku_scans' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -382,7 +361,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets declared_sku
      *
-     * @return string
+     * @return string|null
      */
     public function getDeclaredSku()
     {
@@ -392,7 +371,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets declared_sku
      *
-     * @param string $declared_sku Баркод, заявленный при формировании поставки
+     * @param string|null $declared_sku Баркод, заявленный при формировании поставки
      *
      * @return self
      */
@@ -409,7 +388,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets discrepancy_type
      *
-     * @return string
+     * @return string|null
      */
     public function getDiscrepancyType()
     {
@@ -419,7 +398,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets discrepancy_type
      *
-     * @param string $discrepancy_type Тип расхождения в целом по коробу:  - `surplus` — товара в коробе больше заявленного  - `shortage` — товара в коробе меньше заявленного  - `re-sorting` — баркод принятого товара не соответствует заявленному при формировании поставки
+     * @param string|null $discrepancy_type Тип расхождения в целом по коробу:  - `surplus` — товара в коробе больше заявленного  - `shortage` — товара в коробе меньше заявленного  - `re-sorting` — баркод принятого товара не соответствует заявленному при формировании поставки
      *
      * @return self
      */
@@ -446,7 +425,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets declared_amount
      *
-     * @return int
+     * @return int|null
      */
     public function getDeclaredAmount()
     {
@@ -456,7 +435,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets declared_amount
      *
-     * @param int $declared_amount Количество товара, заявленное при формировании поставки
+     * @param int|null $declared_amount Количество товара, заявленное при формировании поставки
      *
      * @return self
      */
@@ -473,7 +452,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets actual_amount
      *
-     * @return int
+     * @return int|null
      */
     public function getActualAmount()
     {
@@ -483,7 +462,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets actual_amount
      *
-     * @param int $actual_amount Фактическое количество товара
+     * @param int|null $actual_amount Фактическое количество товара
      *
      * @return self
      */
@@ -500,7 +479,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets discrepancy_quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getDiscrepancyQuantity()
     {
@@ -510,7 +489,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets discrepancy_quantity
      *
-     * @param int $discrepancy_quantity Разница между заявленным и фактическим количеством товара
+     * @param int|null $discrepancy_quantity Разница между заявленным и фактическим количеством товара
      *
      * @return self
      */
@@ -527,7 +506,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets actual_sku
      *
-     * @return string
+     * @return string|null
      */
     public function getActualSku()
     {
@@ -537,7 +516,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets actual_sku
      *
-     * @param string $actual_sku Фактический баркод
+     * @param string|null $actual_sku Фактический баркод
      *
      * @return self
      */
@@ -554,7 +533,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets sku_scans
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemScans[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemScans[]|null
      */
     public function getSkuScans()
     {
@@ -564,7 +543,7 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets sku_scans
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemScans[] $sku_scans Результаты сканирования товаров
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemScans[]|null $sku_scans Результаты сканирования товаров
      *
      * @return self
      */

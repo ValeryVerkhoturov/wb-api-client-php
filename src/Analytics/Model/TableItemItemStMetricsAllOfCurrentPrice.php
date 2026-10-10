@@ -283,12 +283,6 @@ class TableItemItemStMetricsAllOfCurrentPrice implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['min_price'] === null) {
-            $invalidProperties[] = "'min_price' can't be null";
-        }
-        if ($this->container['max_price'] === null) {
-            $invalidProperties[] = "'max_price' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class TableItemItemStMetricsAllOfCurrentPrice implements ModelInterface, ArrayAc
     /**
      * Gets min_price
      *
-     * @return int
+     * @return int|null
      */
     public function getMinPrice()
     {
@@ -317,7 +311,7 @@ class TableItemItemStMetricsAllOfCurrentPrice implements ModelInterface, ArrayAc
     /**
      * Sets min_price
      *
-     * @param int $min_price Минимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)
+     * @param int|null $min_price Минимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class TableItemItemStMetricsAllOfCurrentPrice implements ModelInterface, ArrayAc
     /**
      * Gets max_price
      *
-     * @return int
+     * @return int|null
      */
     public function getMaxPrice()
     {
@@ -344,7 +338,7 @@ class TableItemItemStMetricsAllOfCurrentPrice implements ModelInterface, ArrayAc
     /**
      * Sets max_price
      *
-     * @param int $max_price Максимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)
+     * @param int|null $max_price Максимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)
      *
      * @return self
      */

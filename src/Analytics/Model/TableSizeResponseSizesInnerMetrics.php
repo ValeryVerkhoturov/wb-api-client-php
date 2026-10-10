@@ -402,63 +402,6 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
-        if ($this->container['orders_count'] === null) {
-            $invalidProperties[] = "'orders_count' can't be null";
-        }
-        if ($this->container['orders_sum'] === null) {
-            $invalidProperties[] = "'orders_sum' can't be null";
-        }
-        if ($this->container['avg_orders'] === null) {
-            $invalidProperties[] = "'avg_orders' can't be null";
-        }
-        if ($this->container['avg_orders_by_month'] === null) {
-            $invalidProperties[] = "'avg_orders_by_month' can't be null";
-        }
-        if ($this->container['buyout_count'] === null) {
-            $invalidProperties[] = "'buyout_count' can't be null";
-        }
-        if ($this->container['buyout_sum'] === null) {
-            $invalidProperties[] = "'buyout_sum' can't be null";
-        }
-        if ($this->container['buyout_percent'] === null) {
-            $invalidProperties[] = "'buyout_percent' can't be null";
-        }
-        if ($this->container['stock_count'] === null) {
-            $invalidProperties[] = "'stock_count' can't be null";
-        }
-        if ($this->container['stock_sum'] === null) {
-            $invalidProperties[] = "'stock_sum' can't be null";
-        }
-        if ($this->container['sale_rate'] === null) {
-            $invalidProperties[] = "'sale_rate' can't be null";
-        }
-        if ($this->container['avg_stock_turnover'] === null) {
-            $invalidProperties[] = "'avg_stock_turnover' can't be null";
-        }
-        if ($this->container['to_client_count'] === null) {
-            $invalidProperties[] = "'to_client_count' can't be null";
-        }
-        if ($this->container['from_client_count'] === null) {
-            $invalidProperties[] = "'from_client_count' can't be null";
-        }
-        if ($this->container['office_missing_time'] === null) {
-            $invalidProperties[] = "'office_missing_time' can't be null";
-        }
-        if ($this->container['lost_orders_count'] === null) {
-            $invalidProperties[] = "'lost_orders_count' can't be null";
-        }
-        if ($this->container['lost_orders_sum'] === null) {
-            $invalidProperties[] = "'lost_orders_sum' can't be null";
-        }
-        if ($this->container['lost_buyouts_count'] === null) {
-            $invalidProperties[] = "'lost_buyouts_count' can't be null";
-        }
-        if ($this->container['lost_buyouts_sum'] === null) {
-            $invalidProperties[] = "'lost_buyouts_sum' can't be null";
-        }
-        if ($this->container['current_price'] === null) {
-            $invalidProperties[] = "'current_price' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -477,7 +420,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets orders_count
      *
-     * @return int
+     * @return int|null
      */
     public function getOrdersCount()
     {
@@ -487,7 +430,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets orders_count
      *
-     * @param int $orders_count Заказы, шт.
+     * @param int|null $orders_count Заказы, шт.
      *
      * @return self
      */
@@ -504,7 +447,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets orders_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getOrdersSum()
     {
@@ -514,7 +457,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets orders_sum
      *
-     * @param int $orders_sum Заказы, сумма
+     * @param int|null $orders_sum Заказы, сумма
      *
      * @return self
      */
@@ -531,7 +474,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets avg_orders
      *
-     * @return float
+     * @return float|null
      */
     public function getAvgOrders()
     {
@@ -541,7 +484,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets avg_orders
      *
-     * @param float $avg_orders Среднее количество заказов в день
+     * @param float|null $avg_orders Среднее количество заказов в день
      *
      * @return self
      */
@@ -558,7 +501,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets avg_orders_by_month
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FloatGraphByPeriodItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\FloatGraphByPeriodItem[]|null
      */
     public function getAvgOrdersByMonth()
     {
@@ -568,7 +511,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets avg_orders_by_month
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FloatGraphByPeriodItem[] $avg_orders_by_month Среднее количество заказов по месяцам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\FloatGraphByPeriodItem[]|null $avg_orders_by_month Среднее количество заказов по месяцам
      *
      * @return self
      */
@@ -585,7 +528,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets buyout_count
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutCount()
     {
@@ -595,7 +538,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets buyout_count
      *
-     * @param int $buyout_count Выкупы, шт.
+     * @param int|null $buyout_count Выкупы, шт.
      *
      * @return self
      */
@@ -612,7 +555,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets buyout_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutSum()
     {
@@ -622,7 +565,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets buyout_sum
      *
-     * @param int $buyout_sum Выкупы, сумма
+     * @param int|null $buyout_sum Выкупы, сумма
      *
      * @return self
      */
@@ -639,7 +582,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets buyout_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getBuyoutPercent()
     {
@@ -649,7 +592,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets buyout_percent
      *
-     * @param int $buyout_percent Процент выкупа
+     * @param int|null $buyout_percent Процент выкупа
      *
      * @return self
      */
@@ -666,7 +609,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets stock_count
      *
-     * @return int
+     * @return int|null
      */
     public function getStockCount()
     {
@@ -676,7 +619,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets stock_count
      *
-     * @param int $stock_count Остатки на текущий день, шт.
+     * @param int|null $stock_count Остатки на текущий день, шт.
      *
      * @return self
      */
@@ -693,7 +636,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets stock_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getStockSum()
     {
@@ -703,7 +646,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets stock_sum
      *
-     * @param int $stock_sum Стоимость остатков на текущий день
+     * @param int|null $stock_sum Стоимость остатков на текущий день
      *
      * @return self
      */
@@ -720,7 +663,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets sale_rate
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate|null
      */
     public function getSaleRate()
     {
@@ -730,7 +673,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets sale_rate
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate $sale_rate sale_rate
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsSaleRate|null $sale_rate sale_rate
      *
      * @return self
      */
@@ -747,7 +690,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets avg_stock_turnover
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsAvgStockTurnover
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsAvgStockTurnover|null
      */
     public function getAvgStockTurnover()
     {
@@ -757,7 +700,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets avg_stock_turnover
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsAvgStockTurnover $avg_stock_turnover avg_stock_turnover
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsAvgStockTurnover|null $avg_stock_turnover avg_stock_turnover
      *
      * @return self
      */
@@ -774,7 +717,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets to_client_count
      *
-     * @return int
+     * @return int|null
      */
     public function getToClientCount()
     {
@@ -784,7 +727,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets to_client_count
      *
-     * @param int $to_client_count В пути к клиенту, шт.
+     * @param int|null $to_client_count В пути к клиенту, шт.
      *
      * @return self
      */
@@ -801,7 +744,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets from_client_count
      *
-     * @return int
+     * @return int|null
      */
     public function getFromClientCount()
     {
@@ -811,7 +754,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets from_client_count
      *
-     * @param int $from_client_count В пути от клиента, шт.
+     * @param int|null $from_client_count В пути от клиента, шт.
      *
      * @return self
      */
@@ -828,7 +771,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets office_missing_time
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsOfficeMissingTime
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsOfficeMissingTime|null
      */
     public function getOfficeMissingTime()
     {
@@ -838,7 +781,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets office_missing_time
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsOfficeMissingTime $office_missing_time office_missing_time
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetricsOfficeMissingTime|null $office_missing_time office_missing_time
      *
      * @return self
      */
@@ -855,7 +798,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets lost_orders_count
      *
-     * @return float
+     * @return float|null
      */
     public function getLostOrdersCount()
     {
@@ -865,7 +808,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets lost_orders_count
      *
-     * @param float $lost_orders_count Упущенные заказы, шт. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
+     * @param float|null $lost_orders_count Упущенные заказы, шт. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
      *
      * @return self
      */
@@ -882,7 +825,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets lost_orders_sum
      *
-     * @return float
+     * @return float|null
      */
     public function getLostOrdersSum()
     {
@@ -892,7 +835,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets lost_orders_sum
      *
-     * @param float $lost_orders_sum Упущенные заказы, сумма. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
+     * @param float|null $lost_orders_sum Упущенные заказы, сумма. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
      *
      * @return self
      */
@@ -909,7 +852,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets lost_buyouts_count
      *
-     * @return float
+     * @return float|null
      */
     public function getLostBuyoutsCount()
     {
@@ -919,7 +862,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets lost_buyouts_count
      *
-     * @param float $lost_buyouts_count Упущенные выкупы, шт. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
+     * @param float|null $lost_buyouts_count Упущенные выкупы, шт. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
      *
      * @return self
      */
@@ -936,7 +879,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets lost_buyouts_sum
      *
-     * @return float
+     * @return float|null
      */
     public function getLostBuyoutsSum()
     {
@@ -946,7 +889,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets lost_buyouts_sum
      *
-     * @param float $lost_buyouts_sum Упущенные выкупы, сумма. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
+     * @param float|null $lost_buyouts_sum Упущенные выкупы, сумма. Особые случаи:   1. Значение меньше `0` и не равно `-2` — значение не рассчитано   2. Значение `-2` — нулевое значение
      *
      * @return self
      */
@@ -963,7 +906,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets current_price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice|null
      */
     public function getCurrentPrice()
     {
@@ -973,7 +916,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets current_price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice $current_price current_price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice|null $current_price current_price
      *
      * @return self
      */

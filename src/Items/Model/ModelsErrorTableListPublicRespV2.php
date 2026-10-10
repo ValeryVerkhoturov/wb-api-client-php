@@ -283,12 +283,6 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
-        if ($this->container['cursor'] === null) {
-            $invalidProperties[] = "'cursor' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,7 +301,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2Item[]
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2Item[]|null
      */
     public function getItems()
     {
@@ -317,7 +311,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2Item[] $items Пакеты данных
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorTableListPublicRespV2Item[]|null $items Пакеты данных
      *
      * @return self
      */
@@ -334,7 +328,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Gets cursor
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\ViewerContractPublicErrorsCursorOutput
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\ViewerContractPublicErrorsCursorOutput|null
      */
     public function getCursor()
     {
@@ -344,7 +338,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Sets cursor
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\ViewerContractPublicErrorsCursorOutput $cursor cursor
+     * @param \ValeryVerkhoturov\WbApiClient\Items\Model\ViewerContractPublicErrorsCursorOutput|null $cursor cursor
      *
      * @return self
      */

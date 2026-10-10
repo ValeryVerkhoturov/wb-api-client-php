@@ -304,12 +304,6 @@ class VisibilityInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['visibility'] === null) {
-            $invalidProperties[] = "'visibility' can't be null";
-        }
-        if ($this->container['open_card'] === null) {
-            $invalidProperties[] = "'open_card' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -328,7 +322,7 @@ class VisibilityInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets visibility
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoVisibility
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoVisibility|null
      */
     public function getVisibility()
     {
@@ -338,7 +332,7 @@ class VisibilityInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets visibility
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoVisibility $visibility visibility
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoVisibility|null $visibility visibility
      *
      * @return self
      */
@@ -355,7 +349,7 @@ class VisibilityInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets open_card
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard|null
      */
     public function getOpenCard()
     {
@@ -365,7 +359,7 @@ class VisibilityInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets open_card
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard $open_card open_card
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard|null $open_card open_card
      *
      * @return self
      */

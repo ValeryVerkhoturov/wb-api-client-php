@@ -461,9 +461,6 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['spot_available'] === null) {
-            $invalidProperties[] = "'spot_available' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -1007,7 +1004,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets spot_available
      *
-     * @return bool
+     * @return bool|null
      */
     public function getSpotAvailable()
     {
@@ -1017,7 +1014,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets spot_available
      *
-     * @param bool $spot_available Доступен ли СПОТ для этой поставки:   - `true` — да. Используйте метод [получения данных СПОТ](./orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList)   - `false` — нет
+     * @param bool|null $spot_available Доступен ли СПОТ для этой поставки:   - `true` — да. Используйте метод [получения данных СПОТ](./orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList)   - `false` — нет
      *
      * @return self
      */

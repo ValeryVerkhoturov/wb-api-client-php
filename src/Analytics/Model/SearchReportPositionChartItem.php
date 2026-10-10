@@ -289,15 +289,6 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['dt'] === null) {
-            $invalidProperties[] = "'dt' can't be null";
-        }
-        if ($this->container['average'] === null) {
-            $invalidProperties[] = "'average' can't be null";
-        }
-        if ($this->container['median'] === null) {
-            $invalidProperties[] = "'median' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets dt
      *
-     * @return string
+     * @return string|null
      */
     public function getDt()
     {
@@ -326,7 +317,7 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets dt
      *
-     * @param string $dt Дата
+     * @param string|null $dt Дата
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets average
      *
-     * @return int
+     * @return int|null
      */
     public function getAverage()
     {
@@ -353,7 +344,7 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets average
      *
-     * @param int $average Средняя позиция товара в результатах поиска
+     * @param int|null $average Средняя позиция товара в результатах поиска
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets median
      *
-     * @return int
+     * @return int|null
      */
     public function getMedian()
     {
@@ -380,7 +371,7 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets median
      *
-     * @param int $median Медианная позиция товара в результатах поиска
+     * @param int|null $median Медианная позиция товара в результатах поиска
      *
      * @return self
      */

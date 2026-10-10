@@ -282,12 +282,6 @@ class ModelsDraftAddItemsResultItem implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['error'] === null) {
-            $invalidProperties[] = "'error' can't be null";
-        }
-        if ($this->container['sku'] === null) {
-            $invalidProperties[] = "'sku' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ModelsDraftAddItemsResultItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets error
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultError
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultError|null
      */
     public function getError()
     {
@@ -316,7 +310,7 @@ class ModelsDraftAddItemsResultItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets error
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultError $error Детали ошибки
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsResultError|null $error Детали ошибки
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ModelsDraftAddItemsResultItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets sku
      *
-     * @return string
+     * @return string|null
      */
     public function getSku()
     {
@@ -343,7 +337,7 @@ class ModelsDraftAddItemsResultItem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets sku
      *
-     * @param string $sku Баркод
+     * @param string|null $sku Баркод
      *
      * @return self
      */

@@ -282,12 +282,6 @@ class PostV3SalesFunnelProductsResponse200Data implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['products'] === null) {
-            $invalidProperties[] = "'products' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class PostV3SalesFunnelProductsResponse200Data implements ModelInterface, ArrayA
     /**
      * Gets products
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInner[]|null
      */
     public function getProducts()
     {
@@ -316,7 +310,7 @@ class PostV3SalesFunnelProductsResponse200Data implements ModelInterface, ArrayA
     /**
      * Sets products
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInner[] $products Список карточек товаров
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\ItemsResponseProductsInner[]|null $products Список карточек товаров
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class PostV3SalesFunnelProductsResponse200Data implements ModelInterface, ArrayA
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -343,7 +337,7 @@ class PostV3SalesFunnelProductsResponse200Data implements ModelInterface, ArrayA
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

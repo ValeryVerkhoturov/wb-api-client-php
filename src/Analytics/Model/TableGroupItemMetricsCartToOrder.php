@@ -283,9 +283,6 @@ class TableGroupItemMetricsCartToOrder implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class TableGroupItemMetricsCartToOrder implements ModelInterface, ArrayAccess, \
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class TableGroupItemMetricsCartToOrder implements ModelInterface, ArrayAccess, \
     /**
      * Sets current
      *
-     * @param int $current Текущая конверсия
+     * @param int|null $current Текущая конверсия
      *
      * @return self
      */

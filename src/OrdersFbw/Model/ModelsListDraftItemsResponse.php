@@ -289,15 +289,6 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['sku_quantity'] === null) {
-            $invalidProperties[] = "'sku_quantity' can't be null";
-        }
-        if ($this->container['item_quantity'] === null) {
-            $invalidProperties[] = "'item_quantity' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets sku_quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getSkuQuantity()
     {
@@ -326,7 +317,7 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets sku_quantity
      *
-     * @param int $sku_quantity Количество баркодов
+     * @param int|null $sku_quantity Количество баркодов
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets item_quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getItemQuantity()
     {
@@ -353,7 +344,7 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets item_quantity
      *
-     * @param int $item_quantity Количество единиц товара
+     * @param int|null $item_quantity Количество единиц товара
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItemItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItemItem[]|null
      */
     public function getItems()
     {
@@ -380,7 +371,7 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItemItem[] $items Список товаров
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItemItem[]|null $items Список товаров
      *
      * @return self
      */

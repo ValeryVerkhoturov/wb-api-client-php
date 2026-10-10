@@ -282,12 +282,6 @@ class ApiMetaErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiMetaErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets code
      *
-     * @return int
+     * @return int|null
      */
     public function getCode()
     {
@@ -316,7 +310,7 @@ class ApiMetaErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets code
      *
-     * @param int $code Код ошибки
+     * @param int|null $code Код ошибки
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ApiMetaErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -343,7 +337,7 @@ class ApiMetaErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets detail
      *
-     * @param string $detail - `NotFound` — сборочное задание не найдено - `IncorrectRequestBody` — неправильный запрос - `IncorrectRequest` — передан некорректный параметр
+     * @param string|null $detail - `NotFound` — сборочное задание не найдено - `IncorrectRequestBody` — неправильный запрос - `IncorrectRequest` — передан некорректный параметр
      *
      * @return self
      */

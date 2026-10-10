@@ -289,15 +289,6 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['dt'] === null) {
-            $invalidProperties[] = "'dt' can't be null";
-        }
-        if ($this->container['avg_position'] === null) {
-            $invalidProperties[] = "'avg_position' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets dt
      *
-     * @return string
+     * @return string|null
      */
     public function getDt()
     {
@@ -326,7 +317,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets dt
      *
-     * @param string $dt Дата сбора статистики
+     * @param string|null $dt Дата сбора статистики
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets avg_position
      *
-     * @return int
+     * @return int|null
      */
     public function getAvgPosition()
     {
@@ -353,7 +344,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets avg_position
      *
-     * @param int $avg_position Средняя позиция товара в результатах поиска
+     * @param int|null $avg_position Средняя позиция товара в результатах поиска
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets orders
      *
-     * @return int
+     * @return int|null
      */
     public function getOrders()
     {
@@ -380,7 +371,7 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets orders
      *
-     * @param int $orders Сколько раз товары из поиска заказали
+     * @param int|null $orders Сколько раз товары из поиска заказали
      *
      * @return self
      */

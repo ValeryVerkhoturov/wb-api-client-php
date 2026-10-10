@@ -408,66 +408,6 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['is_card_rated'] === null) {
-            $invalidProperties[] = "'is_card_rated' can't be null";
-        }
-        if ($this->container['rating'] === null) {
-            $invalidProperties[] = "'rating' can't be null";
-        }
-        if ($this->container['feedback_rating'] === null) {
-            $invalidProperties[] = "'feedback_rating' can't be null";
-        }
-        if ($this->container['price'] === null) {
-            $invalidProperties[] = "'price' can't be null";
-        }
-        if ($this->container['frequency'] === null) {
-            $invalidProperties[] = "'frequency' can't be null";
-        }
-        if ($this->container['week_frequency'] === null) {
-            $invalidProperties[] = "'week_frequency' can't be null";
-        }
-        if ($this->container['median_position'] === null) {
-            $invalidProperties[] = "'median_position' can't be null";
-        }
-        if ($this->container['avg_position'] === null) {
-            $invalidProperties[] = "'avg_position' can't be null";
-        }
-        if ($this->container['open_card'] === null) {
-            $invalidProperties[] = "'open_card' can't be null";
-        }
-        if ($this->container['add_to_cart'] === null) {
-            $invalidProperties[] = "'add_to_cart' can't be null";
-        }
-        if ($this->container['open_to_cart'] === null) {
-            $invalidProperties[] = "'open_to_cart' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
-        if ($this->container['cart_to_order'] === null) {
-            $invalidProperties[] = "'cart_to_order' can't be null";
-        }
-        if ($this->container['visibility'] === null) {
-            $invalidProperties[] = "'visibility' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -486,7 +426,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets text
      *
-     * @return string
+     * @return string|null
      */
     public function getText()
     {
@@ -496,7 +436,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets text
      *
-     * @param string $text Текст поискового запроса
+     * @param string|null $text Текст поискового запроса
      *
      * @return self
      */
@@ -513,7 +453,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -523,7 +463,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -540,7 +480,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -550,7 +490,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Название предмета
+     * @param string|null $subject_name Название предмета
      *
      * @return self
      */
@@ -567,7 +507,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -577,7 +517,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -594,7 +534,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -604,7 +544,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -621,7 +561,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -631,7 +571,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets name
      *
-     * @param string $name Название товара
+     * @param string|null $name Название товара
      *
      * @return self
      */
@@ -648,7 +588,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets is_card_rated
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsCardRated()
     {
@@ -658,7 +598,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets is_card_rated
      *
-     * @param bool $is_card_rated Есть ли рейтинг у карточки товара
+     * @param bool|null $is_card_rated Есть ли рейтинг у карточки товара
      *
      * @return self
      */
@@ -675,7 +615,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets rating
      *
-     * @return float
+     * @return float|null
      */
     public function getRating()
     {
@@ -685,7 +625,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets rating
      *
-     * @param float $rating Рейтинг карточки товара
+     * @param float|null $rating Рейтинг карточки товара
      *
      * @return self
      */
@@ -702,7 +642,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets feedback_rating
      *
-     * @return float
+     * @return float|null
      */
     public function getFeedbackRating()
     {
@@ -712,7 +652,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets feedback_rating
      *
-     * @param float $feedback_rating Рейтинг по отзывам
+     * @param float|null $feedback_rating Рейтинг по отзывам
      *
      * @return self
      */
@@ -729,7 +669,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null
      */
     public function getPrice()
     {
@@ -739,7 +679,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice $price price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null $price price
      *
      * @return self
      */
@@ -756,7 +696,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets frequency
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfFrequency
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfFrequency|null
      */
     public function getFrequency()
     {
@@ -766,7 +706,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets frequency
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfFrequency $frequency frequency
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfFrequency|null $frequency frequency
      *
      * @return self
      */
@@ -783,7 +723,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets week_frequency
      *
-     * @return int
+     * @return int|null
      */
     public function getWeekFrequency()
     {
@@ -793,7 +733,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets week_frequency
      *
-     * @param int $week_frequency Количество обращений с поисковым запросом за неделю
+     * @param int|null $week_frequency Количество обращений с поисковым запросом за неделю
      *
      * @return self
      */
@@ -810,7 +750,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets median_position
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfMedianPosition
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfMedianPosition|null
      */
     public function getMedianPosition()
     {
@@ -820,7 +760,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets median_position
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfMedianPosition $median_position median_position
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfMedianPosition|null $median_position median_position
      *
      * @return self
      */
@@ -837,7 +777,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets avg_position
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition|null
      */
     public function getAvgPosition()
     {
@@ -847,7 +787,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets avg_position
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition $avg_position avg_position
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition|null $avg_position avg_position
      *
      * @return self
      */
@@ -864,7 +804,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets open_card
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenCard
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenCard|null
      */
     public function getOpenCard()
     {
@@ -874,7 +814,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets open_card
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenCard $open_card open_card
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenCard|null $open_card open_card
      *
      * @return self
      */
@@ -891,7 +831,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets add_to_cart
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfAddToCart
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfAddToCart|null
      */
     public function getAddToCart()
     {
@@ -901,7 +841,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets add_to_cart
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfAddToCart $add_to_cart add_to_cart
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfAddToCart|null $add_to_cart add_to_cart
      *
      * @return self
      */
@@ -918,7 +858,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets open_to_cart
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenToCart
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenToCart|null
      */
     public function getOpenToCart()
     {
@@ -928,7 +868,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets open_to_cart
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenToCart $open_to_cart open_to_cart
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOpenToCart|null $open_to_cart open_to_cart
      *
      * @return self
      */
@@ -945,7 +885,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets orders
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOrders
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOrders|null
      */
     public function getOrders()
     {
@@ -955,7 +895,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets orders
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOrders $orders orders
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfOrders|null $orders orders
      *
      * @return self
      */
@@ -972,7 +912,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets cart_to_order
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfCartToOrder
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfCartToOrder|null
      */
     public function getCartToOrder()
     {
@@ -982,7 +922,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets cart_to_order
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfCartToOrder $cart_to_order cart_to_order
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfCartToOrder|null $cart_to_order cart_to_order
      *
      * @return self
      */
@@ -999,7 +939,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets visibility
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfVisibility
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfVisibility|null
      */
     public function getVisibility()
     {
@@ -1009,7 +949,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets visibility
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfVisibility $visibility visibility
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfVisibility|null $visibility visibility
      *
      * @return self
      */

@@ -310,24 +310,6 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['batch_uuid'] === null) {
-            $invalidProperties[] = "'batch_uuid' can't be null";
-        }
-        if ($this->container['subjects'] === null) {
-            $invalidProperties[] = "'subjects' can't be null";
-        }
-        if ($this->container['brands'] === null) {
-            $invalidProperties[] = "'brands' can't be null";
-        }
-        if ($this->container['vendor_codes'] === null) {
-            $invalidProperties[] = "'vendor_codes' can't be null";
-        }
-        if ($this->container['errors'] === null) {
-            $invalidProperties[] = "'errors' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -346,7 +328,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets batch_uuid
      *
-     * @return string
+     * @return string|null
      */
     public function getBatchUuid()
     {
@@ -356,7 +338,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets batch_uuid
      *
-     * @param string $batch_uuid ID пакета
+     * @param string|null $batch_uuid ID пакета
      *
      * @return self
      */
@@ -373,7 +355,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets subjects
      *
-     * @return array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorSubcategory>
+     * @return array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorSubcategory>|null
      */
     public function getSubjects()
     {
@@ -383,7 +365,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets subjects
      *
-     * @param array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorSubcategory> $subjects Предметы. Разбивка по `vendorCodes`
+     * @param array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorSubcategory>|null $subjects Предметы. Разбивка по `vendorCodes`
      *
      * @return self
      */
@@ -400,7 +382,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets brands
      *
-     * @return array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorBrand>
+     * @return array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorBrand>|null
      */
     public function getBrands()
     {
@@ -410,7 +392,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets brands
      *
-     * @param array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorBrand> $brands Бренды. Разбивка по `vendorCodes`
+     * @param array<string,\ValeryVerkhoturov\WbApiClient\Items\Model\ModelsErrorBrand>|null $brands Бренды. Разбивка по `vendorCodes`
      *
      * @return self
      */
@@ -427,7 +409,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets vendor_codes
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getVendorCodes()
     {
@@ -437,7 +419,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets vendor_codes
      *
-     * @param string[] $vendor_codes Артикулы продавца
+     * @param string[]|null $vendor_codes Артикулы продавца
      *
      * @return self
      */
@@ -454,7 +436,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets errors
      *
-     * @return array<string,string[]>
+     * @return array<string,string[]>|null
      */
     public function getErrors()
     {
@@ -464,7 +446,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets errors
      *
-     * @param array<string,string[]> $errors Ошибки. Разбивка по `vendorCodes`
+     * @param array<string,string[]>|null $errors Ошибки. Разбивка по `vendorCodes`
      *
      * @return self
      */
@@ -481,7 +463,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets updated_at
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -491,7 +473,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets updated_at
      *
-     * @param string $updated_at Дата и время создания или редактирования пакета
+     * @param string|null $updated_at Дата и время создания или редактирования пакета
      *
      * @return self
      */

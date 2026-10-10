@@ -340,12 +340,6 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['feedback_id'] === null) {
-            $invalidProperties[] = "'feedback_id' can't be null";
-        }
-        if ($this->container['pin_method'] === null) {
-            $invalidProperties[] = "'pin_method' can't be null";
-        }
         $allowedValues = $this->getPinMethodAllowableValues();
         if (!is_null($this->container['pin_method']) && !in_array($this->container['pin_method'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -355,9 +349,6 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['pin_on'] === null) {
-            $invalidProperties[] = "'pin_on' can't be null";
-        }
         $allowedValues = $this->getPinOnAllowableValues();
         if (!is_null($this->container['pin_on']) && !in_array($this->container['pin_on'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -367,9 +358,6 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['is_errors'] === null) {
-            $invalidProperties[] = "'is_errors' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -388,7 +376,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets feedback_id
      *
-     * @return string
+     * @return string|null
      */
     public function getFeedbackId()
     {
@@ -398,7 +386,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets feedback_id
      *
-     * @param string $feedback_id ID отзыва
+     * @param string|null $feedback_id ID отзыва
      *
      * @return self
      */
@@ -442,7 +430,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets pin_method
      *
-     * @return string
+     * @return string|null
      */
     public function getPinMethod()
     {
@@ -452,7 +440,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets pin_method
      *
-     * @param string $pin_method Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция
+     * @param string|null $pin_method Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция
      *
      * @return self
      */
@@ -479,7 +467,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets pin_on
      *
-     * @return string
+     * @return string|null
      */
     public function getPinOn()
     {
@@ -489,7 +477,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets pin_on
      *
-     * @param string $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
+     * @param string|null $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -516,7 +504,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets is_errors
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsErrors()
     {
@@ -526,7 +514,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets is_errors
      *
-     * @param bool $is_errors Есть ли ошибки
+     * @param bool|null $is_errors Есть ли ошибки
      *
      * @return self
      */

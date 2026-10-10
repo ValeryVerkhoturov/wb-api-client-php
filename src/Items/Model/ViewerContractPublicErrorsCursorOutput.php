@@ -290,15 +290,6 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     {
         $invalidProperties = [];
 
-        if ($this->container['next'] === null) {
-            $invalidProperties[] = "'next' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
-        if ($this->container['batch_uuid'] === null) {
-            $invalidProperties[] = "'batch_uuid' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Gets next
      *
-     * @return bool
+     * @return bool|null
      */
     public function getNext()
     {
@@ -327,7 +318,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Sets next
      *
-     * @param bool $next Есть ли ещё черновики:   - `false` — нет   - `true` — да
+     * @param bool|null $next Есть ли ещё черновики:   - `false` — нет   - `true` — да
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Gets updated_at
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -354,7 +345,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Sets updated_at
      *
-     * @param string $updated_at Дата и время формирования последнего пакета в ответе
+     * @param string|null $updated_at Дата и время формирования последнего пакета в ответе
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Gets batch_uuid
      *
-     * @return string
+     * @return string|null
      */
     public function getBatchUuid()
     {
@@ -381,7 +372,7 @@ class ViewerContractPublicErrorsCursorOutput implements ModelInterface, ArrayAcc
     /**
      * Sets batch_uuid
      *
-     * @param string $batch_uuid ID последнего пакета в ответе
+     * @param string|null $batch_uuid ID последнего пакета в ответе
      *
      * @return self
      */

@@ -347,9 +347,6 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -359,26 +356,14 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
             );
         }
 
-        if ($this->container['carrier_name'] === null) {
-            $invalidProperties[] = "'carrier_name' can't be null";
-        }
-        if ((mb_strlen($this->container['carrier_name']) > 1000)) {
+        if (!is_null($this->container['carrier_name']) && (mb_strlen($this->container['carrier_name']) > 1000)) {
             $invalidProperties[] = "invalid value for 'carrier_name', the character length must be smaller than or equal to 1000.";
         }
 
-        if ((mb_strlen($this->container['carrier_name']) < 1)) {
+        if (!is_null($this->container['carrier_name']) && (mb_strlen($this->container['carrier_name']) < 1)) {
             $invalidProperties[] = "invalid value for 'carrier_name', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['carrier_tax_number'] === null) {
-            $invalidProperties[] = "'carrier_tax_number' can't be null";
-        }
-        if ($this->container['carrier_country_code'] === null) {
-            $invalidProperties[] = "'carrier_country_code' can't be null";
-        }
-        if ($this->container['vehicle_registration_number'] === null) {
-            $invalidProperties[] = "'vehicle_registration_number' can't be null";
-        }
         $allowedValues = $this->getErrorCodeAllowableValues();
         if (!is_null($this->container['error_code']) && !in_array($this->container['error_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -406,7 +391,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -416,7 +401,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Sets status
      *
-     * @param string $status Статус СПОТ:   - `pending` — ожидается результат формирования ДОПП — документа о предстоящей поставке   - `completed` — ДОПП успешно сформирован. Можно [получить QR-код](./orders-fbs#tag/fbsSupplies/operation/getV3FbsSuppliesSupplyIdStickersSpot)   - `failed` — ошибка формирования ДОПП. Подробнее в поле `errorCode`
+     * @param string|null $status Статус СПОТ:   - `pending` — ожидается результат формирования ДОПП — документа о предстоящей поставке   - `completed` — ДОПП успешно сформирован. Можно [получить QR-код](./orders-fbs#tag/fbsSupplies/operation/getV3FbsSuppliesSupplyIdStickersSpot)   - `failed` — ошибка формирования ДОПП. Подробнее в поле `errorCode`
      *
      * @return self
      */
@@ -443,7 +428,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Gets carrier_name
      *
-     * @return string
+     * @return string|null
      */
     public function getCarrierName()
     {
@@ -453,7 +438,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Sets carrier_name
      *
-     * @param string $carrier_name Наименование перевозчика
+     * @param string|null $carrier_name Наименование перевозчика
      *
      * @return self
      */
@@ -477,7 +462,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Gets carrier_tax_number
      *
-     * @return string
+     * @return string|null
      */
     public function getCarrierTaxNumber()
     {
@@ -487,7 +472,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Sets carrier_tax_number
      *
-     * @param string $carrier_tax_number ИНН перевозчика
+     * @param string|null $carrier_tax_number ИНН перевозчика
      *
      * @return self
      */
@@ -504,7 +489,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Gets carrier_country_code
      *
-     * @return string
+     * @return string|null
      */
     public function getCarrierCountryCode()
     {
@@ -514,7 +499,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Sets carrier_country_code
      *
-     * @param string $carrier_country_code Код страны перевозчика по [ОКСМ](./orders-fbs#tag/fbsSupplies/operation/getV3FbsDictionariesCountriesOksm)
+     * @param string|null $carrier_country_code Код страны перевозчика по [ОКСМ](./orders-fbs#tag/fbsSupplies/operation/getV3FbsDictionariesCountriesOksm)
      *
      * @return self
      */
@@ -531,7 +516,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Gets vehicle_registration_number
      *
-     * @return string
+     * @return string|null
      */
     public function getVehicleRegistrationNumber()
     {
@@ -541,7 +526,7 @@ class SupplySpotDataResponseSuppliesInnerSpot implements ModelInterface, ArrayAc
     /**
      * Sets vehicle_registration_number
      *
-     * @param string $vehicle_registration_number Регистрационный номер транспортного средства
+     * @param string|null $vehicle_registration_number Регистрационный номер транспортного средства
      *
      * @return self
      */

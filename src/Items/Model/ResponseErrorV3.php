@@ -303,21 +303,6 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +321,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return int
+     * @return int|null
      */
     public function getStatus()
     {
@@ -346,7 +331,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param int $status HTTP статус-код
+     * @param int|null $status HTTP статус-код
      *
      * @return self
      */
@@ -363,7 +348,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -373,7 +358,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets title
      *
-     * @param string $title Заголовок ошибки
+     * @param string|null $title Заголовок ошибки
      *
      * @return self
      */
@@ -390,7 +375,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -400,7 +385,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets detail
      *
-     * @param string $detail Детали ошибки
+     * @param string|null $detail Детали ошибки
      *
      * @return self
      */
@@ -417,7 +402,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -427,7 +412,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets request_id
      *
-     * @param string $request_id ID запроса
+     * @param string|null $request_id ID запроса
      *
      * @return self
      */
@@ -444,7 +429,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets origin
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -454,7 +439,7 @@ class ResponseErrorV3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets origin
      *
-     * @param string $origin ID внутреннего сервиса WB
+     * @param string|null $origin ID внутреннего сервиса WB
      *
      * @return self
      */

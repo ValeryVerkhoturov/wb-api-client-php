@@ -275,9 +275,6 @@ class PostV1OrderFeedResponse200 implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV1OrderFeedResponse200 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\OrderFeedResponse
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\OrderFeedResponse|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV1OrderFeedResponse200 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\OrderFeedResponse $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\OrderFeedResponse|null $data data
      *
      * @return self
      */

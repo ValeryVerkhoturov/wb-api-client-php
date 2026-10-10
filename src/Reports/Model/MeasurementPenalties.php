@@ -275,9 +275,6 @@ class MeasurementPenalties implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class MeasurementPenalties implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesData
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesData|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class MeasurementPenalties implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesData $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\MeasurementPenaltiesData|null $data data
      *
      * @return self
      */

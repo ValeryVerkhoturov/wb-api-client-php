@@ -276,9 +276,6 @@ class InventoryWbResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -297,7 +294,7 @@ class InventoryWbResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventoryWbResponseItemsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventoryWbResponseItemsInner[]|null
      */
     public function getItems()
     {
@@ -307,7 +304,7 @@ class InventoryWbResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventoryWbResponseItemsInner[] $items Остатки товаров на складах WB по размерам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventoryWbResponseItemsInner[]|null $items Остатки товаров на складах WB по размерам
      *
      * @return self
      */

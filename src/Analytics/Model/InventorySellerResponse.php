@@ -276,9 +276,6 @@ class InventorySellerResponse implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -297,7 +294,7 @@ class InventorySellerResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventorySellerResponseItemsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventorySellerResponseItemsInner[]|null
      */
     public function getItems()
     {
@@ -307,7 +304,7 @@ class InventorySellerResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventorySellerResponseItemsInner[] $items Остатки товаров на складах продавца по размерам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\InventorySellerResponseItemsInner[]|null $items Остатки товаров на складах продавца по размерам
      *
      * @return self
      */

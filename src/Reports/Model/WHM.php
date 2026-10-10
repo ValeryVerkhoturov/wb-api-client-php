@@ -275,9 +275,6 @@ class WHM implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class WHM implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMData
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMData|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class WHM implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMData $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\WHMData|null $data data
      *
      * @return self
      */

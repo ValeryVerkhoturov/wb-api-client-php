@@ -320,18 +320,6 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['scan_id'] === null) {
-            $invalidProperties[] = "'scan_id' can't be null";
-        }
-        if ($this->container['declared_sku'] === null) {
-            $invalidProperties[] = "'declared_sku' can't be null";
-        }
-        if ($this->container['scan_time'] === null) {
-            $invalidProperties[] = "'scan_time' can't be null";
-        }
-        if ($this->container['discrepancy_label'] === null) {
-            $invalidProperties[] = "'discrepancy_label' can't be null";
-        }
         $allowedValues = $this->getDiscrepancyLabelAllowableValues();
         if (!is_null($this->container['discrepancy_label']) && !in_array($this->container['discrepancy_label'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -341,9 +329,6 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['actual_sku'] === null) {
-            $invalidProperties[] = "'actual_sku' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -362,7 +347,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scan_id
      *
-     * @return int
+     * @return int|null
      */
     public function getScanId()
     {
@@ -372,7 +357,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scan_id
      *
-     * @param int $scan_id ID сканирования
+     * @param int|null $scan_id ID сканирования
      *
      * @return self
      */
@@ -389,7 +374,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets declared_sku
      *
-     * @return string
+     * @return string|null
      */
     public function getDeclaredSku()
     {
@@ -399,7 +384,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets declared_sku
      *
-     * @param string $declared_sku Баркод, заявленный при формировании поставки
+     * @param string|null $declared_sku Баркод, заявленный при формировании поставки
      *
      * @return self
      */
@@ -416,7 +401,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scan_time
      *
-     * @return string
+     * @return string|null
      */
     public function getScanTime()
     {
@@ -426,7 +411,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scan_time
      *
-     * @param string $scan_time Дата и время сканирования
+     * @param string|null $scan_time Дата и время сканирования
      *
      * @return self
      */
@@ -443,7 +428,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets discrepancy_label
      *
-     * @return string
+     * @return string|null
      */
     public function getDiscrepancyLabel()
     {
@@ -453,7 +438,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discrepancy_label
      *
-     * @param string $discrepancy_label Тип расхождения товара:  - `surplus` — товара больше, чем заявлено  - `shortage` — товара меньше, чем заявлено  - `re-sorting` — баркод принятого товара не соответствует заявленному при формировании поставки
+     * @param string|null $discrepancy_label Тип расхождения товара:  - `surplus` — товара больше, чем заявлено  - `shortage` — товара меньше, чем заявлено  - `re-sorting` — баркод принятого товара не соответствует заявленному при формировании поставки
      *
      * @return self
      */
@@ -480,7 +465,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets actual_sku
      *
-     * @return string
+     * @return string|null
      */
     public function getActualSku()
     {
@@ -490,7 +475,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets actual_sku
      *
-     * @param string $actual_sku Фактический баркод
+     * @param string|null $actual_sku Фактический баркод
      *
      * @return self
      */

@@ -289,15 +289,6 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
-        }
-        if ($this->container['history'] === null) {
-            $invalidProperties[] = "'history' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +307,7 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     /**
      * Gets product
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200InnerProduct
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200InnerProduct|null
      */
     public function getProduct()
     {
@@ -326,7 +317,7 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     /**
      * Sets product
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200InnerProduct $product product
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProductsHistoryResponse200InnerProduct|null $product product
      *
      * @return self
      */
@@ -343,7 +334,7 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     /**
      * Gets history
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\History[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\History[]|null
      */
     public function getHistory()
     {
@@ -353,7 +344,7 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     /**
      * Sets history
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\History[] $history Статистика за период
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\History[]|null $history Статистика за период
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -380,7 +371,7 @@ class PostV3SalesFunnelProductsHistoryResponse200Inner implements ModelInterface
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

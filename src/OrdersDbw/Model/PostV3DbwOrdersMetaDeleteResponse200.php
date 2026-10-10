@@ -282,9 +282,6 @@ class PostV3DbwOrdersMetaDeleteResponse200 implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -330,7 +327,7 @@ class PostV3DbwOrdersMetaDeleteResponse200 implements ModelInterface, ArrayAcces
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiMetaDeleteResponsesResultsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiMetaDeleteResponsesResultsInner[]|null
      */
     public function getResults()
     {
@@ -340,7 +337,7 @@ class PostV3DbwOrdersMetaDeleteResponse200 implements ModelInterface, ArrayAcces
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiMetaDeleteResponsesResultsInner[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersDbw\Model\ApiMetaDeleteResponsesResultsInner[]|null $results results
      *
      * @return self
      */

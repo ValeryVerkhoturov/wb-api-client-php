@@ -303,18 +303,6 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['common_info'] === null) {
-            $invalidProperties[] = "'common_info' can't be null";
-        }
-        if ($this->container['position_info'] === null) {
-            $invalidProperties[] = "'position_info' can't be null";
-        }
-        if ($this->container['visibility_info'] === null) {
-            $invalidProperties[] = "'visibility_info' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -333,7 +321,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets common_info
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfo
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfo|null
      */
     public function getCommonInfo()
     {
@@ -343,7 +331,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets common_info
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfo $common_info common_info
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\CommonInfo|null $common_info common_info
      *
      * @return self
      */
@@ -360,7 +348,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets position_info
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfo
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfo|null
      */
     public function getPositionInfo()
     {
@@ -370,7 +358,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets position_info
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfo $position_info position_info
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PositionInfo|null $position_info position_info
      *
      * @return self
      */
@@ -387,7 +375,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets visibility_info
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfo
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfo|null
      */
     public function getVisibilityInfo()
     {
@@ -397,7 +385,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets visibility_info
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfo $visibility_info visibility_info
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfo|null $visibility_info visibility_info
      *
      * @return self
      */
@@ -441,7 +429,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -451,7 +439,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */

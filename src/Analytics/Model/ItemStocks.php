@@ -290,15 +290,6 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['wb'] === null) {
-            $invalidProperties[] = "'wb' can't be null";
-        }
-        if ($this->container['mp'] === null) {
-            $invalidProperties[] = "'mp' can't be null";
-        }
-        if ($this->container['balance_sum'] === null) {
-            $invalidProperties[] = "'balance_sum' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets wb
      *
-     * @return int
+     * @return int|null
      */
     public function getWb()
     {
@@ -327,7 +318,7 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wb
      *
-     * @param int $wb Общее количество остатков на складах WB на текущий день, шт.
+     * @param int|null $wb Общее количество остатков на складах WB на текущий день, шт.
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets mp
      *
-     * @return int
+     * @return int|null
      */
     public function getMp()
     {
@@ -354,7 +345,7 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mp
      *
-     * @param int $mp Общее количество остатков на складах продавца на текущий день, шт.
+     * @param int|null $mp Общее количество остатков на складах продавца на текущий день, шт.
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets balance_sum
      *
-     * @return int
+     * @return int|null
      */
     public function getBalanceSum()
     {
@@ -381,7 +372,7 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets balance_sum
      *
-     * @param int $balance_sum Сумма остатков на складах на текущий день, шт.
+     * @param int|null $balance_sum Сумма остатков на складах на текущий день, шт.
      *
      * @return self
      */

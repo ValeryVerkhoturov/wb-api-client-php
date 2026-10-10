@@ -956,24 +956,6 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['report_id'] === null) {
-            $invalidProperties[] = "'report_id' can't be null";
-        }
-        if ($this->container['date_from'] === null) {
-            $invalidProperties[] = "'date_from' can't be null";
-        }
-        if ($this->container['date_to'] === null) {
-            $invalidProperties[] = "'date_to' can't be null";
-        }
-        if ($this->container['create_date'] === null) {
-            $invalidProperties[] = "'create_date' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['report_type'] === null) {
-            $invalidProperties[] = "'report_type' can't be null";
-        }
         $allowedValues = $this->getReportTypeAllowableValues();
         if (!is_null($this->container['report_type']) && !in_array($this->container['report_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -983,264 +965,6 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
             );
         }
 
-        if ($this->container['rrd_id'] === null) {
-            $invalidProperties[] = "'rrd_id' can't be null";
-        }
-        if ($this->container['gi_id'] === null) {
-            $invalidProperties[] = "'gi_id' can't be null";
-        }
-        if ($this->container['dlv_prc'] === null) {
-            $invalidProperties[] = "'dlv_prc' can't be null";
-        }
-        if ($this->container['fix_tariff_date_from'] === null) {
-            $invalidProperties[] = "'fix_tariff_date_from' can't be null";
-        }
-        if ($this->container['fix_tariff_date_to'] === null) {
-            $invalidProperties[] = "'fix_tariff_date_to' can't be null";
-        }
-        if ($this->container['subject_name'] === null) {
-            $invalidProperties[] = "'subject_name' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['brand_name'] === null) {
-            $invalidProperties[] = "'brand_name' can't be null";
-        }
-        if ($this->container['vendor_code'] === null) {
-            $invalidProperties[] = "'vendor_code' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['tech_size'] === null) {
-            $invalidProperties[] = "'tech_size' can't be null";
-        }
-        if ($this->container['sku'] === null) {
-            $invalidProperties[] = "'sku' can't be null";
-        }
-        if ($this->container['doc_type_name'] === null) {
-            $invalidProperties[] = "'doc_type_name' can't be null";
-        }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
-        }
-        if ($this->container['retail_price'] === null) {
-            $invalidProperties[] = "'retail_price' can't be null";
-        }
-        if ($this->container['retail_amount'] === null) {
-            $invalidProperties[] = "'retail_amount' can't be null";
-        }
-        if ($this->container['sale_percent'] === null) {
-            $invalidProperties[] = "'sale_percent' can't be null";
-        }
-        if ($this->container['commission_percent'] === null) {
-            $invalidProperties[] = "'commission_percent' can't be null";
-        }
-        if ($this->container['office_name'] === null) {
-            $invalidProperties[] = "'office_name' can't be null";
-        }
-        if ($this->container['seller_oper_name'] === null) {
-            $invalidProperties[] = "'seller_oper_name' can't be null";
-        }
-        if ($this->container['order_dt'] === null) {
-            $invalidProperties[] = "'order_dt' can't be null";
-        }
-        if ($this->container['sale_dt'] === null) {
-            $invalidProperties[] = "'sale_dt' can't be null";
-        }
-        if ($this->container['rr_date'] === null) {
-            $invalidProperties[] = "'rr_date' can't be null";
-        }
-        if ($this->container['shk_id'] === null) {
-            $invalidProperties[] = "'shk_id' can't be null";
-        }
-        if ($this->container['retail_price_with_disc'] === null) {
-            $invalidProperties[] = "'retail_price_with_disc' can't be null";
-        }
-        if ($this->container['delivery_amount'] === null) {
-            $invalidProperties[] = "'delivery_amount' can't be null";
-        }
-        if ($this->container['return_amount'] === null) {
-            $invalidProperties[] = "'return_amount' can't be null";
-        }
-        if ($this->container['delivery_service'] === null) {
-            $invalidProperties[] = "'delivery_service' can't be null";
-        }
-        if ($this->container['gi_box_type_name'] === null) {
-            $invalidProperties[] = "'gi_box_type_name' can't be null";
-        }
-        if ($this->container['product_discount_for_report'] === null) {
-            $invalidProperties[] = "'product_discount_for_report' can't be null";
-        }
-        if ($this->container['seller_promo'] === null) {
-            $invalidProperties[] = "'seller_promo' can't be null";
-        }
-        if ($this->container['spp'] === null) {
-            $invalidProperties[] = "'spp' can't be null";
-        }
-        if ($this->container['kvw_base'] === null) {
-            $invalidProperties[] = "'kvw_base' can't be null";
-        }
-        if ($this->container['kvw'] === null) {
-            $invalidProperties[] = "'kvw' can't be null";
-        }
-        if ($this->container['sup_rating_up'] === null) {
-            $invalidProperties[] = "'sup_rating_up' can't be null";
-        }
-        if ($this->container['is_kgvp_v2'] === null) {
-            $invalidProperties[] = "'is_kgvp_v2' can't be null";
-        }
-        if ($this->container['ppvz_sales_commission'] === null) {
-            $invalidProperties[] = "'ppvz_sales_commission' can't be null";
-        }
-        if ($this->container['for_pay'] === null) {
-            $invalidProperties[] = "'for_pay' can't be null";
-        }
-        if ($this->container['ppvz_reward'] === null) {
-            $invalidProperties[] = "'ppvz_reward' can't be null";
-        }
-        if ($this->container['acquiring_fee'] === null) {
-            $invalidProperties[] = "'acquiring_fee' can't be null";
-        }
-        if ($this->container['acquiring_percent'] === null) {
-            $invalidProperties[] = "'acquiring_percent' can't be null";
-        }
-        if ($this->container['payment_processing'] === null) {
-            $invalidProperties[] = "'payment_processing' can't be null";
-        }
-        if ($this->container['acquiring_bank'] === null) {
-            $invalidProperties[] = "'acquiring_bank' can't be null";
-        }
-        if ($this->container['vw'] === null) {
-            $invalidProperties[] = "'vw' can't be null";
-        }
-        if ($this->container['vw_nds'] === null) {
-            $invalidProperties[] = "'vw_nds' can't be null";
-        }
-        if ($this->container['ppvz_office_name'] === null) {
-            $invalidProperties[] = "'ppvz_office_name' can't be null";
-        }
-        if ($this->container['ppvz_office_id'] === null) {
-            $invalidProperties[] = "'ppvz_office_id' can't be null";
-        }
-        if ($this->container['ppvz_supplier_name'] === null) {
-            $invalidProperties[] = "'ppvz_supplier_name' can't be null";
-        }
-        if ($this->container['ppvz_supplier_inn'] === null) {
-            $invalidProperties[] = "'ppvz_supplier_inn' can't be null";
-        }
-        if ($this->container['declaration_number'] === null) {
-            $invalidProperties[] = "'declaration_number' can't be null";
-        }
-        if ($this->container['sticker_id'] === null) {
-            $invalidProperties[] = "'sticker_id' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
-        }
-        if ($this->container['srv_dbs'] === null) {
-            $invalidProperties[] = "'srv_dbs' can't be null";
-        }
-        if ($this->container['penalty'] === null) {
-            $invalidProperties[] = "'penalty' can't be null";
-        }
-        if ($this->container['additional_payment'] === null) {
-            $invalidProperties[] = "'additional_payment' can't be null";
-        }
-        if ($this->container['rebill_logistic_cost'] === null) {
-            $invalidProperties[] = "'rebill_logistic_cost' can't be null";
-        }
-        if ($this->container['paid_storage'] === null) {
-            $invalidProperties[] = "'paid_storage' can't be null";
-        }
-        if ($this->container['deduction'] === null) {
-            $invalidProperties[] = "'deduction' can't be null";
-        }
-        if ($this->container['paid_acceptance'] === null) {
-            $invalidProperties[] = "'paid_acceptance' can't be null";
-        }
-        if ($this->container['order_id'] === null) {
-            $invalidProperties[] = "'order_id' can't be null";
-        }
-        if ($this->container['is_b2b'] === null) {
-            $invalidProperties[] = "'is_b2b' can't be null";
-        }
-        if ($this->container['trbx_id'] === null) {
-            $invalidProperties[] = "'trbx_id' can't be null";
-        }
-        if ($this->container['installment_cofinancing_amount'] === null) {
-            $invalidProperties[] = "'installment_cofinancing_amount' can't be null";
-        }
-        if ($this->container['wibes_discount_percent'] === null) {
-            $invalidProperties[] = "'wibes_discount_percent' can't be null";
-        }
-        if ($this->container['cashback_amount'] === null) {
-            $invalidProperties[] = "'cashback_amount' can't be null";
-        }
-        if ($this->container['cashback_discount'] === null) {
-            $invalidProperties[] = "'cashback_discount' can't be null";
-        }
-        if ($this->container['cashback_commission_change'] === null) {
-            $invalidProperties[] = "'cashback_commission_change' can't be null";
-        }
-        if ($this->container['payment_schedule'] === null) {
-            $invalidProperties[] = "'payment_schedule' can't be null";
-        }
-        if ($this->container['delivery_method'] === null) {
-            $invalidProperties[] = "'delivery_method' can't be null";
-        }
-        if ($this->container['seller_promo_id'] === null) {
-            $invalidProperties[] = "'seller_promo_id' can't be null";
-        }
-        if ($this->container['seller_promo_discount'] === null) {
-            $invalidProperties[] = "'seller_promo_discount' can't be null";
-        }
-        if ($this->container['loyalty_id'] === null) {
-            $invalidProperties[] = "'loyalty_id' can't be null";
-        }
-        if ($this->container['loyalty_discount'] === null) {
-            $invalidProperties[] = "'loyalty_discount' can't be null";
-        }
-        if ($this->container['uuid_promocode'] === null) {
-            $invalidProperties[] = "'uuid_promocode' can't be null";
-        }
-        if ($this->container['sale_price_promocode_discount_prc'] === null) {
-            $invalidProperties[] = "'sale_price_promocode_discount_prc' can't be null";
-        }
-        if ($this->container['article_substitution'] === null) {
-            $invalidProperties[] = "'article_substitution' can't be null";
-        }
-        if ($this->container['sale_price_affiliated_discount_prc'] === null) {
-            $invalidProperties[] = "'sale_price_affiliated_discount_prc' can't be null";
-        }
-        if ($this->container['sale_price_wholesale_discount_prc'] === null) {
-            $invalidProperties[] = "'sale_price_wholesale_discount_prc' can't be null";
-        }
-        if ($this->container['b2b_customer_tin'] === null) {
-            $invalidProperties[] = "'b2b_customer_tin' can't be null";
-        }
-        if ($this->container['paid_with_social_certificate'] === null) {
-            $invalidProperties[] = "'paid_with_social_certificate' can't be null";
-        }
-        if ($this->container['warehouse_logistics_coeff'] === null) {
-            $invalidProperties[] = "'warehouse_logistics_coeff' can't be null";
-        }
-        if ($this->container['buyer_tax_registration_reason_code'] === null) {
-            $invalidProperties[] = "'buyer_tax_registration_reason_code' can't be null";
-        }
-        if ($this->container['utd_ucd_number'] === null) {
-            $invalidProperties[] = "'utd_ucd_number' can't be null";
-        }
-        if ($this->container['utd_ucd_date'] === null) {
-            $invalidProperties[] = "'utd_ucd_date' can't be null";
-        }
-        if ($this->container['order_uid'] === null) {
-            $invalidProperties[] = "'order_uid' can't be null";
-        }
-        if ($this->container['srid'] === null) {
-            $invalidProperties[] = "'srid' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -1259,7 +983,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets report_id
      *
-     * @return int
+     * @return int|null
      */
     public function getReportId()
     {
@@ -1269,7 +993,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets report_id
      *
-     * @param int $report_id ID отчёта
+     * @param int|null $report_id ID отчёта
      *
      * @return self
      */
@@ -1286,7 +1010,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets date_from
      *
-     * @return string
+     * @return string|null
      */
     public function getDateFrom()
     {
@@ -1296,7 +1020,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets date_from
      *
-     * @param string $date_from Дата начала отчётного периода
+     * @param string|null $date_from Дата начала отчётного периода
      *
      * @return self
      */
@@ -1313,7 +1037,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets date_to
      *
-     * @return string
+     * @return string|null
      */
     public function getDateTo()
     {
@@ -1323,7 +1047,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets date_to
      *
-     * @param string $date_to Дата конца отчётного периода
+     * @param string|null $date_to Дата конца отчётного периода
      *
      * @return self
      */
@@ -1340,7 +1064,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets create_date
      *
-     * @return string
+     * @return string|null
      */
     public function getCreateDate()
     {
@@ -1350,7 +1074,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets create_date
      *
-     * @param string $create_date Дата формирования отчёта
+     * @param string|null $create_date Дата формирования отчёта
      *
      * @return self
      */
@@ -1367,7 +1091,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -1377,7 +1101,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */
@@ -1394,7 +1118,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets report_type
      *
-     * @return int
+     * @return int|null
      */
     public function getReportType()
     {
@@ -1404,7 +1128,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets report_type
      *
-     * @param int $report_type Тип отчёта:   - `1` — основной   - `2` — по выкупам
+     * @param int|null $report_type Тип отчёта:   - `1` — основной   - `2` — по выкупам
      *
      * @return self
      */
@@ -1431,7 +1155,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets rrd_id
      *
-     * @return int
+     * @return int|null
      */
     public function getRrdId()
     {
@@ -1441,7 +1165,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets rrd_id
      *
-     * @param int $rrd_id ID строки
+     * @param int|null $rrd_id ID строки
      *
      * @return self
      */
@@ -1458,7 +1182,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets gi_id
      *
-     * @return int
+     * @return int|null
      */
     public function getGiId()
     {
@@ -1468,7 +1192,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets gi_id
      *
-     * @param int $gi_id ID поставки
+     * @param int|null $gi_id ID поставки
      *
      * @return self
      */
@@ -1485,7 +1209,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets dlv_prc
      *
-     * @return float
+     * @return float|null
      */
     public function getDlvPrc()
     {
@@ -1495,7 +1219,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dlv_prc
      *
-     * @param float $dlv_prc Фиксированный коэффициент склада по поставке
+     * @param float|null $dlv_prc Фиксированный коэффициент склада по поставке
      *
      * @return self
      */
@@ -1512,7 +1236,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets fix_tariff_date_from
      *
-     * @return string
+     * @return string|null
      */
     public function getFixTariffDateFrom()
     {
@@ -1522,7 +1246,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fix_tariff_date_from
      *
-     * @param string $fix_tariff_date_from Дата начала действия фиксации
+     * @param string|null $fix_tariff_date_from Дата начала действия фиксации
      *
      * @return self
      */
@@ -1539,7 +1263,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets fix_tariff_date_to
      *
-     * @return string
+     * @return string|null
      */
     public function getFixTariffDateTo()
     {
@@ -1549,7 +1273,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fix_tariff_date_to
      *
-     * @param string $fix_tariff_date_to Дата конца действия фиксации
+     * @param string|null $fix_tariff_date_to Дата конца действия фиксации
      *
      * @return self
      */
@@ -1566,7 +1290,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets subject_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSubjectName()
     {
@@ -1576,7 +1300,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets subject_name
      *
-     * @param string $subject_name Предмет
+     * @param string|null $subject_name Предмет
      *
      * @return self
      */
@@ -1593,7 +1317,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -1603,7 +1327,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -1620,7 +1344,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets brand_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBrandName()
     {
@@ -1630,7 +1354,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets brand_name
      *
-     * @param string $brand_name Бренд
+     * @param string|null $brand_name Бренд
      *
      * @return self
      */
@@ -1647,7 +1371,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets vendor_code
      *
-     * @return string
+     * @return string|null
      */
     public function getVendorCode()
     {
@@ -1657,7 +1381,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets vendor_code
      *
-     * @param string $vendor_code Артикул продавца
+     * @param string|null $vendor_code Артикул продавца
      *
      * @return self
      */
@@ -1674,7 +1398,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -1684,7 +1408,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets title
      *
-     * @param string $title Название товара
+     * @param string|null $title Название товара
      *
      * @return self
      */
@@ -1701,7 +1425,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets tech_size
      *
-     * @return string
+     * @return string|null
      */
     public function getTechSize()
     {
@@ -1711,7 +1435,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets tech_size
      *
-     * @param string $tech_size Размер
+     * @param string|null $tech_size Размер
      *
      * @return self
      */
@@ -1728,7 +1452,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sku
      *
-     * @return string
+     * @return string|null
      */
     public function getSku()
     {
@@ -1738,7 +1462,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sku
      *
-     * @param string $sku Баркод
+     * @param string|null $sku Баркод
      *
      * @return self
      */
@@ -1755,7 +1479,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets doc_type_name
      *
-     * @return string
+     * @return string|null
      */
     public function getDocTypeName()
     {
@@ -1765,7 +1489,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets doc_type_name
      *
-     * @param string $doc_type_name Тип документа
+     * @param string|null $doc_type_name Тип документа
      *
      * @return self
      */
@@ -1782,7 +1506,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -1792,7 +1516,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets quantity
      *
-     * @param int $quantity Количество
+     * @param int|null $quantity Количество
      *
      * @return self
      */
@@ -1809,7 +1533,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets retail_price
      *
-     * @return string
+     * @return string|null
      */
     public function getRetailPrice()
     {
@@ -1819,7 +1543,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets retail_price
      *
-     * @param string $retail_price Цена розничная
+     * @param string|null $retail_price Цена розничная
      *
      * @return self
      */
@@ -1836,7 +1560,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets retail_amount
      *
-     * @return string
+     * @return string|null
      */
     public function getRetailAmount()
     {
@@ -1846,7 +1570,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets retail_amount
      *
-     * @param string $retail_amount Wildberries реализовал Товар (Пр)
+     * @param string|null $retail_amount Wildberries реализовал Товар (Пр)
      *
      * @return self
      */
@@ -1863,7 +1587,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sale_percent
      *
-     * @return int
+     * @return int|null
      */
     public function getSalePercent()
     {
@@ -1873,7 +1597,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sale_percent
      *
-     * @param int $sale_percent Согласованный продуктовый дисконт, %
+     * @param int|null $sale_percent Согласованный продуктовый дисконт, %
      *
      * @return self
      */
@@ -1890,7 +1614,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets commission_percent
      *
-     * @return float
+     * @return float|null
      */
     public function getCommissionPercent()
     {
@@ -1900,7 +1624,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets commission_percent
      *
-     * @param float $commission_percent Размер кВВ, %
+     * @param float|null $commission_percent Размер кВВ, %
      *
      * @return self
      */
@@ -1917,7 +1641,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets office_name
      *
-     * @return string
+     * @return string|null
      */
     public function getOfficeName()
     {
@@ -1927,7 +1651,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets office_name
      *
-     * @param string $office_name Склад
+     * @param string|null $office_name Склад
      *
      * @return self
      */
@@ -1944,7 +1668,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets seller_oper_name
      *
-     * @return string
+     * @return string|null
      */
     public function getSellerOperName()
     {
@@ -1954,7 +1678,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets seller_oper_name
      *
-     * @param string $seller_oper_name Обоснование для оплаты
+     * @param string|null $seller_oper_name Обоснование для оплаты
      *
      * @return self
      */
@@ -1971,7 +1695,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets order_dt
      *
-     * @return string
+     * @return string|null
      */
     public function getOrderDt()
     {
@@ -1981,7 +1705,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets order_dt
      *
-     * @param string $order_dt Дата и время заказа
+     * @param string|null $order_dt Дата и время заказа
      *
      * @return self
      */
@@ -1998,7 +1722,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sale_dt
      *
-     * @return string
+     * @return string|null
      */
     public function getSaleDt()
     {
@@ -2008,7 +1732,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sale_dt
      *
-     * @param string $sale_dt Дата и время продажи
+     * @param string|null $sale_dt Дата и время продажи
      *
      * @return self
      */
@@ -2025,7 +1749,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets rr_date
      *
-     * @return string
+     * @return string|null
      */
     public function getRrDate()
     {
@@ -2035,7 +1759,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets rr_date
      *
-     * @param string $rr_date Дата операции
+     * @param string|null $rr_date Дата операции
      *
      * @return self
      */
@@ -2052,7 +1776,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets shk_id
      *
-     * @return int
+     * @return int|null
      */
     public function getShkId()
     {
@@ -2062,7 +1786,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets shk_id
      *
-     * @param int $shk_id Штрихкод
+     * @param int|null $shk_id Штрихкод
      *
      * @return self
      */
@@ -2079,7 +1803,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets retail_price_with_disc
      *
-     * @return string
+     * @return string|null
      */
     public function getRetailPriceWithDisc()
     {
@@ -2089,7 +1813,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets retail_price_with_disc
      *
-     * @param string $retail_price_with_disc Цена розничная с учётом согласованной скидки
+     * @param string|null $retail_price_with_disc Цена розничная с учётом согласованной скидки
      *
      * @return self
      */
@@ -2106,7 +1830,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets delivery_amount
      *
-     * @return int
+     * @return int|null
      */
     public function getDeliveryAmount()
     {
@@ -2116,7 +1840,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets delivery_amount
      *
-     * @param int $delivery_amount Количество доставок
+     * @param int|null $delivery_amount Количество доставок
      *
      * @return self
      */
@@ -2133,7 +1857,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets return_amount
      *
-     * @return int
+     * @return int|null
      */
     public function getReturnAmount()
     {
@@ -2143,7 +1867,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets return_amount
      *
-     * @param int $return_amount Количество возврата
+     * @param int|null $return_amount Количество возврата
      *
      * @return self
      */
@@ -2160,7 +1884,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets delivery_service
      *
-     * @return string
+     * @return string|null
      */
     public function getDeliveryService()
     {
@@ -2170,7 +1894,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets delivery_service
      *
-     * @param string $delivery_service Услуги по доставке товара покупателю
+     * @param string|null $delivery_service Услуги по доставке товара покупателю
      *
      * @return self
      */
@@ -2187,7 +1911,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets gi_box_type_name
      *
-     * @return string
+     * @return string|null
      */
     public function getGiBoxTypeName()
     {
@@ -2197,7 +1921,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets gi_box_type_name
      *
-     * @param string $gi_box_type_name Тип коробов
+     * @param string|null $gi_box_type_name Тип коробов
      *
      * @return self
      */
@@ -2214,7 +1938,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets product_discount_for_report
      *
-     * @return float
+     * @return float|null
      */
     public function getProductDiscountForReport()
     {
@@ -2224,7 +1948,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets product_discount_for_report
      *
-     * @param float $product_discount_for_report Итоговая согласованная скидка, %
+     * @param float|null $product_discount_for_report Итоговая согласованная скидка, %
      *
      * @return self
      */
@@ -2241,7 +1965,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets seller_promo
      *
-     * @return float
+     * @return float|null
      */
     public function getSellerPromo()
     {
@@ -2251,7 +1975,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets seller_promo
      *
-     * @param float $seller_promo Промокод, %
+     * @param float|null $seller_promo Промокод, %
      *
      * @return self
      */
@@ -2268,7 +1992,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets spp
      *
-     * @return float
+     * @return float|null
      */
     public function getSpp()
     {
@@ -2278,7 +2002,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets spp
      *
-     * @param float $spp Платформенные скидки, %
+     * @param float|null $spp Платформенные скидки, %
      *
      * @return self
      */
@@ -2295,7 +2019,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets kvw_base
      *
-     * @return float
+     * @return float|null
      */
     public function getKvwBase()
     {
@@ -2305,7 +2029,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets kvw_base
      *
-     * @param float $kvw_base Размер кВВ без НДС, % базовый
+     * @param float|null $kvw_base Размер кВВ без НДС, % базовый
      *
      * @return self
      */
@@ -2322,7 +2046,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets kvw
      *
-     * @return float
+     * @return float|null
      */
     public function getKvw()
     {
@@ -2332,7 +2056,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets kvw
      *
-     * @param float $kvw Итоговый кВВ без НДС, %
+     * @param float|null $kvw Итоговый кВВ без НДС, %
      *
      * @return self
      */
@@ -2349,7 +2073,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sup_rating_up
      *
-     * @return float
+     * @return float|null
      */
     public function getSupRatingUp()
     {
@@ -2359,7 +2083,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sup_rating_up
      *
-     * @param float $sup_rating_up Размер снижения кВВ из-за рейтинга, %
+     * @param float|null $sup_rating_up Размер снижения кВВ из-за рейтинга, %
      *
      * @return self
      */
@@ -2376,7 +2100,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets is_kgvp_v2
      *
-     * @return float
+     * @return float|null
      */
     public function getIsKgvpV2()
     {
@@ -2386,7 +2110,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets is_kgvp_v2
      *
-     * @param float $is_kgvp_v2 Размер снижения кВВ из-за акции, %
+     * @param float|null $is_kgvp_v2 Размер снижения кВВ из-за акции, %
      *
      * @return self
      */
@@ -2403,7 +2127,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ppvz_sales_commission
      *
-     * @return string
+     * @return string|null
      */
     public function getPpvzSalesCommission()
     {
@@ -2413,7 +2137,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ppvz_sales_commission
      *
-     * @param string $ppvz_sales_commission Вознаграждение с продаж до вычета услуг поверенного, без НДС
+     * @param string|null $ppvz_sales_commission Вознаграждение с продаж до вычета услуг поверенного, без НДС
      *
      * @return self
      */
@@ -2430,7 +2154,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets for_pay
      *
-     * @return string
+     * @return string|null
      */
     public function getForPay()
     {
@@ -2440,7 +2164,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets for_pay
      *
-     * @param string $for_pay К перечислению продавцу за реализованный товар
+     * @param string|null $for_pay К перечислению продавцу за реализованный товар
      *
      * @return self
      */
@@ -2457,7 +2181,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ppvz_reward
      *
-     * @return string
+     * @return string|null
      */
     public function getPpvzReward()
     {
@@ -2467,7 +2191,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ppvz_reward
      *
-     * @param string $ppvz_reward Возмещение за выдачу и возврат товаров на ПВЗ
+     * @param string|null $ppvz_reward Возмещение за выдачу и возврат товаров на ПВЗ
      *
      * @return self
      */
@@ -2484,7 +2208,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets acquiring_fee
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringFee()
     {
@@ -2494,7 +2218,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets acquiring_fee
      *
-     * @param string $acquiring_fee Компенсация платёжных услуг/комиссия за интеграцию платёжных сервисов
+     * @param string|null $acquiring_fee Компенсация платёжных услуг/комиссия за интеграцию платёжных сервисов
      *
      * @return self
      */
@@ -2511,7 +2235,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets acquiring_percent
      *
-     * @return float
+     * @return float|null
      */
     public function getAcquiringPercent()
     {
@@ -2521,7 +2245,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets acquiring_percent
      *
-     * @param float $acquiring_percent Размер компенсации платёжных услуг/комиссии за интеграцию платёжных сервисов
+     * @param float|null $acquiring_percent Размер компенсации платёжных услуг/комиссии за интеграцию платёжных сервисов
      *
      * @return self
      */
@@ -2538,7 +2262,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets payment_processing
      *
-     * @return string
+     * @return string|null
      */
     public function getPaymentProcessing()
     {
@@ -2548,7 +2272,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets payment_processing
      *
-     * @param string $payment_processing Тип платежа: компенсация платёжных услуг/комиссия за интеграцию платёжных сервисов
+     * @param string|null $payment_processing Тип платежа: компенсация платёжных услуг/комиссия за интеграцию платёжных сервисов
      *
      * @return self
      */
@@ -2565,7 +2289,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets acquiring_bank
      *
-     * @return string
+     * @return string|null
      */
     public function getAcquiringBank()
     {
@@ -2575,7 +2299,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets acquiring_bank
      *
-     * @param string $acquiring_bank Наименование банка-эквайера
+     * @param string|null $acquiring_bank Наименование банка-эквайера
      *
      * @return self
      */
@@ -2592,7 +2316,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets vw
      *
-     * @return string
+     * @return string|null
      */
     public function getVw()
     {
@@ -2602,7 +2326,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets vw
      *
-     * @param string $vw Вознаграждение Wildberries (ВВ), без НДС
+     * @param string|null $vw Вознаграждение Wildberries (ВВ), без НДС
      *
      * @return self
      */
@@ -2619,7 +2343,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets vw_nds
      *
-     * @return string
+     * @return string|null
      */
     public function getVwNds()
     {
@@ -2629,7 +2353,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets vw_nds
      *
-     * @param string $vw_nds НДС с вознаграждения Wildberries
+     * @param string|null $vw_nds НДС с вознаграждения Wildberries
      *
      * @return self
      */
@@ -2646,7 +2370,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ppvz_office_name
      *
-     * @return string
+     * @return string|null
      */
     public function getPpvzOfficeName()
     {
@@ -2656,7 +2380,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ppvz_office_name
      *
-     * @param string $ppvz_office_name Наименование офиса доставки
+     * @param string|null $ppvz_office_name Наименование офиса доставки
      *
      * @return self
      */
@@ -2673,7 +2397,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ppvz_office_id
      *
-     * @return int
+     * @return int|null
      */
     public function getPpvzOfficeId()
     {
@@ -2683,7 +2407,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ppvz_office_id
      *
-     * @param int $ppvz_office_id ID офиса доставки
+     * @param int|null $ppvz_office_id ID офиса доставки
      *
      * @return self
      */
@@ -2700,7 +2424,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ppvz_supplier_name
      *
-     * @return string
+     * @return string|null
      */
     public function getPpvzSupplierName()
     {
@@ -2710,7 +2434,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ppvz_supplier_name
      *
-     * @param string $ppvz_supplier_name Партнёр
+     * @param string|null $ppvz_supplier_name Партнёр
      *
      * @return self
      */
@@ -2727,7 +2451,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ppvz_supplier_inn
      *
-     * @return string
+     * @return string|null
      */
     public function getPpvzSupplierInn()
     {
@@ -2737,7 +2461,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ppvz_supplier_inn
      *
-     * @param string $ppvz_supplier_inn ИНН партнёра
+     * @param string|null $ppvz_supplier_inn ИНН партнёра
      *
      * @return self
      */
@@ -2754,7 +2478,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets declaration_number
      *
-     * @return string
+     * @return string|null
      */
     public function getDeclarationNumber()
     {
@@ -2764,7 +2488,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets declaration_number
      *
-     * @param string $declaration_number Номер таможенной декларации
+     * @param string|null $declaration_number Номер таможенной декларации
      *
      * @return self
      */
@@ -2808,7 +2532,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sticker_id
      *
-     * @return string
+     * @return string|null
      */
     public function getStickerId()
     {
@@ -2818,7 +2542,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sticker_id
      *
-     * @param string $sticker_id Стикер МП
+     * @param string|null $sticker_id Стикер МП
      *
      * @return self
      */
@@ -2835,7 +2559,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets country
      *
-     * @return string
+     * @return string|null
      */
     public function getCountry()
     {
@@ -2845,7 +2569,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets country
      *
-     * @param string $country Страна продажи
+     * @param string|null $country Страна продажи
      *
      * @return self
      */
@@ -2862,7 +2586,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets srv_dbs
      *
-     * @return bool
+     * @return bool|null
      */
     public function getSrvDbs()
     {
@@ -2872,7 +2596,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets srv_dbs
      *
-     * @param bool $srv_dbs Признак услуги платной доставки
+     * @param bool|null $srv_dbs Признак услуги платной доставки
      *
      * @return self
      */
@@ -2889,7 +2613,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets penalty
      *
-     * @return string
+     * @return string|null
      */
     public function getPenalty()
     {
@@ -2899,7 +2623,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets penalty
      *
-     * @param string $penalty Общая сумма штрафов
+     * @param string|null $penalty Общая сумма штрафов
      *
      * @return self
      */
@@ -2916,7 +2640,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets additional_payment
      *
-     * @return string
+     * @return string|null
      */
     public function getAdditionalPayment()
     {
@@ -2926,7 +2650,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets additional_payment
      *
-     * @param string $additional_payment Корректировка Вознаграждения Wildberries (ВВ)
+     * @param string|null $additional_payment Корректировка Вознаграждения Wildberries (ВВ)
      *
      * @return self
      */
@@ -2943,7 +2667,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets rebill_logistic_cost
      *
-     * @return string
+     * @return string|null
      */
     public function getRebillLogisticCost()
     {
@@ -2953,7 +2677,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets rebill_logistic_cost
      *
-     * @param string $rebill_logistic_cost Возмещение издержек по перемещению и операционной обработке товара
+     * @param string|null $rebill_logistic_cost Возмещение издержек по перемещению и операционной обработке товара
      *
      * @return self
      */
@@ -2997,7 +2721,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paid_storage
      *
-     * @return string
+     * @return string|null
      */
     public function getPaidStorage()
     {
@@ -3007,7 +2731,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paid_storage
      *
-     * @param string $paid_storage Хранение
+     * @param string|null $paid_storage Хранение
      *
      * @return self
      */
@@ -3024,7 +2748,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets deduction
      *
-     * @return string
+     * @return string|null
      */
     public function getDeduction()
     {
@@ -3034,7 +2758,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets deduction
      *
-     * @param string $deduction Удержания
+     * @param string|null $deduction Удержания
      *
      * @return self
      */
@@ -3051,7 +2775,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paid_acceptance
      *
-     * @return string
+     * @return string|null
      */
     public function getPaidAcceptance()
     {
@@ -3061,7 +2785,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paid_acceptance
      *
-     * @param string $paid_acceptance Операции на приёмке
+     * @param string|null $paid_acceptance Операции на приёмке
      *
      * @return self
      */
@@ -3078,7 +2802,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets order_id
      *
-     * @return int
+     * @return int|null
      */
     public function getOrderId()
     {
@@ -3088,7 +2812,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets order_id
      *
-     * @param int $order_id ID сборочного задания
+     * @param int|null $order_id ID сборочного задания
      *
      * @return self
      */
@@ -3132,7 +2856,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets is_b2b
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsB2b()
     {
@@ -3142,7 +2866,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets is_b2b
      *
-     * @param bool $is_b2b Признак B2B-продажи
+     * @param bool|null $is_b2b Признак B2B-продажи
      *
      * @return self
      */
@@ -3159,7 +2883,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets trbx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTrbxId()
     {
@@ -3169,7 +2893,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets trbx_id
      *
-     * @param string $trbx_id ID короба для обработки товара
+     * @param string|null $trbx_id ID короба для обработки товара
      *
      * @return self
      */
@@ -3186,7 +2910,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets installment_cofinancing_amount
      *
-     * @return string
+     * @return string|null
      */
     public function getInstallmentCofinancingAmount()
     {
@@ -3196,7 +2920,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets installment_cofinancing_amount
      *
-     * @param string $installment_cofinancing_amount Скидка по программе софинансирования
+     * @param string|null $installment_cofinancing_amount Скидка по программе софинансирования
      *
      * @return self
      */
@@ -3213,7 +2937,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets wibes_discount_percent
      *
-     * @return float
+     * @return float|null
      */
     public function getWibesDiscountPercent()
     {
@@ -3223,7 +2947,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets wibes_discount_percent
      *
-     * @param float $wibes_discount_percent Скидка Wibes, %
+     * @param float|null $wibes_discount_percent Скидка Wibes, %
      *
      * @return self
      */
@@ -3240,7 +2964,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cashback_amount
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackAmount()
     {
@@ -3250,7 +2974,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cashback_amount
      *
-     * @param string $cashback_amount Сумма баллов, удержанных по программе лояльности
+     * @param string|null $cashback_amount Сумма баллов, удержанных по программе лояльности
      *
      * @return self
      */
@@ -3267,7 +2991,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cashback_discount
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackDiscount()
     {
@@ -3277,7 +3001,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cashback_discount
      *
-     * @param string $cashback_discount Компенсация скидки по программе лояльности
+     * @param string|null $cashback_discount Компенсация скидки по программе лояльности
      *
      * @return self
      */
@@ -3294,7 +3018,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cashback_commission_change
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackCommissionChange()
     {
@@ -3304,7 +3028,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cashback_commission_change
      *
-     * @param string $cashback_commission_change Стоимость участия в программе лояльности
+     * @param string|null $cashback_commission_change Стоимость участия в программе лояльности
      *
      * @return self
      */
@@ -3321,7 +3045,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets payment_schedule
      *
-     * @return string
+     * @return string|null
      */
     public function getPaymentSchedule()
     {
@@ -3331,7 +3055,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets payment_schedule
      *
-     * @param string $payment_schedule Разовое изменение срока перечисления денежных средств
+     * @param string|null $payment_schedule Разовое изменение срока перечисления денежных средств
      *
      * @return self
      */
@@ -3348,7 +3072,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets delivery_method
      *
-     * @return string
+     * @return string|null
      */
     public function getDeliveryMethod()
     {
@@ -3358,7 +3082,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets delivery_method
      *
-     * @param string $delivery_method Способ продажи и тип товара
+     * @param string|null $delivery_method Способ продажи и тип товара
      *
      * @return self
      */
@@ -3375,7 +3099,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets seller_promo_id
      *
-     * @return int
+     * @return int|null
      */
     public function getSellerPromoId()
     {
@@ -3385,7 +3109,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets seller_promo_id
      *
-     * @param int $seller_promo_id ID собственной акции продавца с дополнительной скидкой
+     * @param int|null $seller_promo_id ID собственной акции продавца с дополнительной скидкой
      *
      * @return self
      */
@@ -3402,7 +3126,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets seller_promo_discount
      *
-     * @return float
+     * @return float|null
      */
     public function getSellerPromoDiscount()
     {
@@ -3412,7 +3136,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets seller_promo_discount
      *
-     * @param float $seller_promo_discount Размер дополнительной скидки по собственной акции продавца, %
+     * @param float|null $seller_promo_discount Размер дополнительной скидки по собственной акции продавца, %
      *
      * @return self
      */
@@ -3429,7 +3153,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets loyalty_id
      *
-     * @return int
+     * @return int|null
      */
     public function getLoyaltyId()
     {
@@ -3439,7 +3163,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets loyalty_id
      *
-     * @param int $loyalty_id ID скидки лояльности от продавца
+     * @param int|null $loyalty_id ID скидки лояльности от продавца
      *
      * @return self
      */
@@ -3456,7 +3180,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets loyalty_discount
      *
-     * @return float
+     * @return float|null
      */
     public function getLoyaltyDiscount()
     {
@@ -3466,7 +3190,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets loyalty_discount
      *
-     * @param float $loyalty_discount Размер скидки лояльности от продавца, %
+     * @param float|null $loyalty_discount Размер скидки лояльности от продавца, %
      *
      * @return self
      */
@@ -3483,7 +3207,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets uuid_promocode
      *
-     * @return string
+     * @return string|null
      */
     public function getUuidPromocode()
     {
@@ -3493,7 +3217,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets uuid_promocode
      *
-     * @param string $uuid_promocode ID промокода
+     * @param string|null $uuid_promocode ID промокода
      *
      * @return self
      */
@@ -3510,7 +3234,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sale_price_promocode_discount_prc
      *
-     * @return float
+     * @return float|null
      */
     public function getSalePricePromocodeDiscountPrc()
     {
@@ -3520,7 +3244,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sale_price_promocode_discount_prc
      *
-     * @param float $sale_price_promocode_discount_prc Скидка за промокод, %
+     * @param float|null $sale_price_promocode_discount_prc Скидка за промокод, %
      *
      * @return self
      */
@@ -3537,7 +3261,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets article_substitution
      *
-     * @return string
+     * @return string|null
      */
     public function getArticleSubstitution()
     {
@@ -3547,7 +3271,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets article_substitution
      *
-     * @param string $article_substitution ID подменного артикула
+     * @param string|null $article_substitution ID подменного артикула
      *
      * @return self
      */
@@ -3564,7 +3288,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sale_price_affiliated_discount_prc
      *
-     * @return float
+     * @return float|null
      */
     public function getSalePriceAffiliatedDiscountPrc()
     {
@@ -3574,7 +3298,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sale_price_affiliated_discount_prc
      *
-     * @param float $sale_price_affiliated_discount_prc Скидка по подменному артикулу, %
+     * @param float|null $sale_price_affiliated_discount_prc Скидка по подменному артикулу, %
      *
      * @return self
      */
@@ -3618,7 +3342,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sale_price_wholesale_discount_prc
      *
-     * @return float
+     * @return float|null
      */
     public function getSalePriceWholesaleDiscountPrc()
     {
@@ -3628,7 +3352,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sale_price_wholesale_discount_prc
      *
-     * @param float $sale_price_wholesale_discount_prc Оптовая скидка для бизнеса, %
+     * @param float|null $sale_price_wholesale_discount_prc Оптовая скидка для бизнеса, %
      *
      * @return self
      */
@@ -3645,7 +3369,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets b2b_customer_tin
      *
-     * @return string
+     * @return string|null
      */
     public function getB2bCustomerTin()
     {
@@ -3655,7 +3379,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets b2b_customer_tin
      *
-     * @param string $b2b_customer_tin ИНН B2B-покупателя
+     * @param string|null $b2b_customer_tin ИНН B2B-покупателя
      *
      * @return self
      */
@@ -3672,7 +3396,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paid_with_social_certificate
      *
-     * @return bool
+     * @return bool|null
      */
     public function getPaidWithSocialCertificate()
     {
@@ -3682,7 +3406,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paid_with_social_certificate
      *
-     * @param bool $paid_with_social_certificate Оплата социальным сертификатом
+     * @param bool|null $paid_with_social_certificate Оплата социальным сертификатом
      *
      * @return self
      */
@@ -3699,7 +3423,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets warehouse_logistics_coeff
      *
-     * @return float
+     * @return float|null
      */
     public function getWarehouseLogisticsCoeff()
     {
@@ -3709,7 +3433,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets warehouse_logistics_coeff
      *
-     * @param float $warehouse_logistics_coeff Коэффициент доставки
+     * @param float|null $warehouse_logistics_coeff Коэффициент доставки
      *
      * @return self
      */
@@ -3726,7 +3450,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets buyer_tax_registration_reason_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBuyerTaxRegistrationReasonCode()
     {
@@ -3736,7 +3460,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets buyer_tax_registration_reason_code
      *
-     * @param string $buyer_tax_registration_reason_code КПП B2B-покупателя
+     * @param string|null $buyer_tax_registration_reason_code КПП B2B-покупателя
      *
      * @return self
      */
@@ -3753,7 +3477,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets utd_ucd_number
      *
-     * @return string
+     * @return string|null
      */
     public function getUtdUcdNumber()
     {
@@ -3763,7 +3487,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets utd_ucd_number
      *
-     * @param string $utd_ucd_number Номер УПД или УКД
+     * @param string|null $utd_ucd_number Номер УПД или УКД
      *
      * @return self
      */
@@ -3780,7 +3504,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets utd_ucd_date
      *
-     * @return string
+     * @return string|null
      */
     public function getUtdUcdDate()
     {
@@ -3790,7 +3514,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets utd_ucd_date
      *
-     * @param string $utd_ucd_date Дата УПД или УКД
+     * @param string|null $utd_ucd_date Дата УПД или УКД
      *
      * @return self
      */
@@ -3807,7 +3531,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets order_uid
      *
-     * @return string
+     * @return string|null
      */
     public function getOrderUid()
     {
@@ -3817,7 +3541,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets order_uid
      *
-     * @param string $order_uid ID корзины заказа — транзакции. Заказы в одной корзине покупателя будут иметь одинаковый `orderUid`
+     * @param string|null $order_uid ID корзины заказа — транзакции. Заказы в одной корзине покупателя будут иметь одинаковый `orderUid`
      *
      * @return self
      */
@@ -3834,7 +3558,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets srid
      *
-     * @return string
+     * @return string|null
      */
     public function getSrid()
     {
@@ -3844,7 +3568,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets srid
      *
-     * @param string $srid ID заказа. В ответах методов сборочных заданий [FBS](./orders-fbs#tag/fbsAssemblyOrders), [DBW](./orders-dbw#tag/dbwAssemblyOrders), [DBS](./dbs#tag/dbsAssemblyOrders) и [Самовывоз](./in-store-pickup#tag/inStorePickupAssemblyOrders) `srid` равен `rid`
+     * @param string|null $srid ID заказа. В ответах методов сборочных заданий [FBS](./orders-fbs#tag/fbsAssemblyOrders), [DBW](./orders-dbw#tag/dbwAssemblyOrders), [DBS](./dbs#tag/dbsAssemblyOrders) и [Самовывоз](./in-store-pickup#tag/inStorePickupAssemblyOrders) `srid` равен `rid`
      *
      * @return self
      */

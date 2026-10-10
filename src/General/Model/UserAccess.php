@@ -59,7 +59,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'user_id' => 'int',
-        'access' => '\ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]'
+        'access' => '\ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestAccessInner[]'
     ];
 
     /**
@@ -327,7 +327,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets access
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestAccessInner[]|null
      */
     public function getAccess()
     {
@@ -337,7 +337,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets access
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]|null $access Настройки доступа к разделам профиля продавца
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestAccessInner[]|null $access Настройки доступа к разделам профиля продавца
      *
      * @return self
      */

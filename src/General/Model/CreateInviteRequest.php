@@ -58,7 +58,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'access' => '\ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]',
+        'access' => '\ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestAccessInner[]',
         'invite' => '\ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestInvite'
     ];
 
@@ -303,7 +303,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets access
      *
-     * @return \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestAccessInner[]|null
      */
     public function getAccess()
     {
@@ -313,7 +313,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets access
      *
-     * @param \ValeryVerkhoturov\WbApiClient\General\Model\GetUsersResponseUsersInnerAccessInner[]|null $access Настройки доступа к разделам профиля продавца
+     * @param \ValeryVerkhoturov\WbApiClient\General\Model\CreateInviteRequestAccessInner[]|null $access Настройки доступа к разделам профиля продавца
      *
      * @return self
      */

@@ -289,9 +289,6 @@ class ItemsResponseProductsInnerStatistic implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['selected'] === null) {
-            $invalidProperties[] = "'selected' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -310,7 +307,7 @@ class ItemsResponseProductsInnerStatistic implements ModelInterface, ArrayAccess
     /**
      * Gets selected
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected|null
      */
     public function getSelected()
     {
@@ -320,7 +317,7 @@ class ItemsResponseProductsInnerStatistic implements ModelInterface, ArrayAccess
     /**
      * Sets selected
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected $selected selected
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StatisticsSelected|null $selected selected
      *
      * @return self
      */

@@ -275,9 +275,6 @@ class PostV2SearchReportTableGroupsResponse200 implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV2SearchReportTableGroupsResponse200 implements ModelInterface, ArrayA
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupResponse
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupResponse|null
      */
     public function getData()
     {
@@ -306,7 +303,7 @@ class PostV2SearchReportTableGroupsResponse200 implements ModelInterface, ArrayA
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupResponse $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupResponse|null $data data
      *
      * @return self
      */

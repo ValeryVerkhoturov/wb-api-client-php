@@ -282,12 +282,6 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets request_id
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function getRequestId()
     {
@@ -316,7 +310,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets request_id
      *
-     * @param mixed $request_id Уникальный ID запроса
+     * @param mixed|null $request_id Уникальный ID запроса
      *
      * @return self
      */
@@ -340,7 +334,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetResponse[]
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetResponse[]|null
      */
     public function getResults()
     {
@@ -350,7 +344,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetResponse[] $results results
+     * @param \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiStatusSetResponse[]|null $results results
      *
      * @return self
      */

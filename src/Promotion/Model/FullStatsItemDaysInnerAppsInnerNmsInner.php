@@ -359,45 +359,6 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['atbs'] === null) {
-            $invalidProperties[] = "'atbs' can't be null";
-        }
-        if ($this->container['canceled'] === null) {
-            $invalidProperties[] = "'canceled' can't be null";
-        }
-        if ($this->container['clicks'] === null) {
-            $invalidProperties[] = "'clicks' can't be null";
-        }
-        if ($this->container['cpc'] === null) {
-            $invalidProperties[] = "'cpc' can't be null";
-        }
-        if ($this->container['cr'] === null) {
-            $invalidProperties[] = "'cr' can't be null";
-        }
-        if ($this->container['ctr'] === null) {
-            $invalidProperties[] = "'ctr' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['nm_id'] === null) {
-            $invalidProperties[] = "'nm_id' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
-        if ($this->container['shks'] === null) {
-            $invalidProperties[] = "'shks' can't be null";
-        }
-        if ($this->container['sum'] === null) {
-            $invalidProperties[] = "'sum' can't be null";
-        }
-        if ($this->container['sum_price'] === null) {
-            $invalidProperties[] = "'sum_price' can't be null";
-        }
-        if ($this->container['views'] === null) {
-            $invalidProperties[] = "'views' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -416,7 +377,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets atbs
      *
-     * @return int
+     * @return int|null
      */
     public function getAtbs()
     {
@@ -426,7 +387,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets atbs
      *
-     * @param int $atbs Количество добавлений товаров в корзину
+     * @param int|null $atbs Количество добавлений товаров в корзину
      *
      * @return self
      */
@@ -443,7 +404,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets canceled
      *
-     * @return int
+     * @return int|null
      */
     public function getCanceled()
     {
@@ -453,7 +414,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets canceled
      *
-     * @param int $canceled Отмены, шт.
+     * @param int|null $canceled Отмены, шт.
      *
      * @return self
      */
@@ -470,7 +431,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets clicks
      *
-     * @return int
+     * @return int|null
      */
     public function getClicks()
     {
@@ -480,7 +441,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets clicks
      *
-     * @param int $clicks Количество кликов
+     * @param int|null $clicks Количество кликов
      *
      * @return self
      */
@@ -497,7 +458,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets cpc
      *
-     * @return float
+     * @return float|null
      */
     public function getCpc()
     {
@@ -507,7 +468,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets cpc
      *
-     * @param float $cpc Средняя стоимость клика в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $cpc Средняя стоимость клика в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -524,7 +485,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets cr
      *
-     * @return float
+     * @return float|null
      */
     public function getCr()
     {
@@ -534,7 +495,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets cr
      *
-     * @param float $cr CR (conversion rate) — отношение количества заказов к общему количеству кликов
+     * @param float|null $cr CR (conversion rate) — отношение количества заказов к общему количеству кликов
      *
      * @return self
      */
@@ -551,7 +512,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets ctr
      *
-     * @return float
+     * @return float|null
      */
     public function getCtr()
     {
@@ -561,7 +522,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets ctr
      *
-     * @param float $ctr CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+     * @param float|null $ctr CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
      *
      * @return self
      */
@@ -578,7 +539,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -588,7 +549,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets name
      *
-     * @param string $name Название товара
+     * @param string|null $name Название товара
      *
      * @return self
      */
@@ -605,7 +566,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets nm_id
      *
-     * @return int
+     * @return int|null
      */
     public function getNmId()
     {
@@ -615,7 +576,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets nm_id
      *
-     * @param int $nm_id Артикул WB
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
@@ -632,7 +593,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets orders
      *
-     * @return int
+     * @return int|null
      */
     public function getOrders()
     {
@@ -642,7 +603,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets orders
      *
-     * @param int $orders Количество заказов
+     * @param int|null $orders Количество заказов
      *
      * @return self
      */
@@ -659,7 +620,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets shks
      *
-     * @return int
+     * @return int|null
      */
     public function getShks()
     {
@@ -669,7 +630,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets shks
      *
-     * @param int $shks Количество заказанных товаров, шт.
+     * @param int|null $shks Количество заказанных товаров, шт.
      *
      * @return self
      */
@@ -686,7 +647,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets sum
      *
-     * @return float
+     * @return float|null
      */
     public function getSum()
     {
@@ -696,7 +657,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets sum
      *
-     * @param float $sum Затраты в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $sum Затраты в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -713,7 +674,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets sum_price
      *
-     * @return float
+     * @return float|null
      */
     public function getSumPrice()
     {
@@ -723,7 +684,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets sum_price
      *
-     * @param float $sum_price Заказов на сумму в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $sum_price Заказов на сумму в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -740,7 +701,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets views
      *
-     * @return int
+     * @return int|null
      */
     public function getViews()
     {
@@ -750,7 +711,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets views
      *
-     * @param int $views Количество просмотров
+     * @param int|null $views Количество просмотров
      *
      * @return self
      */

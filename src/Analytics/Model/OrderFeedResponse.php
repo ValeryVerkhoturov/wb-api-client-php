@@ -290,15 +290,6 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['snapshot_time'] === null) {
-            $invalidProperties[] = "'snapshot_time' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['orders'] === null) {
-            $invalidProperties[] = "'orders' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -317,7 +308,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets snapshot_time
      *
-     * @return string
+     * @return string|null
      */
     public function getSnapshotTime()
     {
@@ -327,7 +318,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets snapshot_time
      *
-     * @param string $snapshot_time Метка снимка данных, в рамках которого выполняется пагинация
+     * @param string|null $snapshot_time Метка снимка данных, в рамках которого выполняется пагинация
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -354,7 +345,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets currency
      *
-     * @param string $currency Валюта отчёта
+     * @param string|null $currency Валюта отчёта
      *
      * @return self
      */
@@ -371,7 +362,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets orders
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\Order[]
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\Order[]|null
      */
     public function getOrders()
     {
@@ -381,7 +372,7 @@ class OrderFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets orders
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\Order[] $orders Заказы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\Order[]|null $orders Заказы
      *
      * @return self
      */

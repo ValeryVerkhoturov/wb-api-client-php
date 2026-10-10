@@ -275,9 +275,6 @@ class PostV1BidsMinResponse200 implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['bids'] === null) {
-            $invalidProperties[] = "'bids' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -296,7 +293,7 @@ class PostV1BidsMinResponse200 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets bids
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInner[]
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInner[]|null
      */
     public function getBids()
     {
@@ -306,7 +303,7 @@ class PostV1BidsMinResponse200 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets bids
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInner[] $bids Список карточек товаров со ставками
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\PostV1BidsMinResponse200BidsInner[]|null $bids Список карточек товаров со ставками
      *
      * @return self
      */

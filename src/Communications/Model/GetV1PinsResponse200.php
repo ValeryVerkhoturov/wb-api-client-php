@@ -282,9 +282,6 @@ class GetV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,7 +300,7 @@ class GetV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]
+     * @return \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]|null
      */
     public function getData()
     {
@@ -313,7 +310,7 @@ class GetV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[] $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Communications\Model\OpenapiPinnedReviewItemResult[]|null $data data
      *
      * @return self
      */

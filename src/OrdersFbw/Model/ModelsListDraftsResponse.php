@@ -282,12 +282,6 @@ class ModelsListDraftsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
-        if ($this->container['drafts'] === null) {
-            $invalidProperties[] = "'drafts' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class ModelsListDraftsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets total
      *
-     * @return int
+     * @return int|null
      */
     public function getTotal()
     {
@@ -316,7 +310,7 @@ class ModelsListDraftsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets total
      *
-     * @param int $total Общее количество черновиков
+     * @param int|null $total Общее количество черновиков
      *
      * @return self
      */
@@ -333,7 +327,7 @@ class ModelsListDraftsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets drafts
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItem[]
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItem[]|null
      */
     public function getDrafts()
     {
@@ -343,7 +337,7 @@ class ModelsListDraftsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets drafts
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItem[] $drafts Список черновиков
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftItem[]|null $drafts Список черновиков
      *
      * @return self
      */

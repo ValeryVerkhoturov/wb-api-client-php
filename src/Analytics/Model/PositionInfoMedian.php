@@ -283,9 +283,6 @@ class PositionInfoMedian implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['current'] === null) {
-            $invalidProperties[] = "'current' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,7 +301,7 @@ class PositionInfoMedian implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets current
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrent()
     {
@@ -314,7 +311,7 @@ class PositionInfoMedian implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets current
      *
-     * @param int $current Текущая медианная позиция товара
+     * @param int|null $current Текущая медианная позиция товара
      *
      * @return self
      */
