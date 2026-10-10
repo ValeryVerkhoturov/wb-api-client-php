@@ -26,19 +26,19 @@ Each row below is a sub-module you can import independently. Import path is `Val
 
 | Slug | Category | APIs |
 |---|---|---|
-| [`general`](https://dev.wildberries.ru/openapi/api-information) | Общее | `APIApi`, `DefaultApi`, `WBAPIApi` |
-| [`items`](https://dev.wildberries.ru/openapi/item-management) | Работа с товарами | `DefaultApi` |
-| [`orders-fbs`](https://dev.wildberries.ru/openapi/orders-fbs) | Заказы FBS | `DefaultApi`, `FBSApi` |
-| [`orders-dbw`](https://dev.wildberries.ru/openapi/orders-dbw) | Заказы DBW | `DBWApi` |
-| [`dbs`](https://dev.wildberries.ru/openapi/dbs) | DBS | `DBSApi` |
-| [`in-store-pickup`](https://dev.wildberries.ru/openapi/in-store-pickup) | Самовывоз | `DefaultApi` |
-| [`orders-fbw`](https://dev.wildberries.ru/openapi/orders-fbw) | Поставки FBW | `DefaultApi` |
-| [`promotion`](https://dev.wildberries.ru/openapi/promotion) | Маркетинг и продвижение | `DefaultApi` |
-| [`communications`](https://dev.wildberries.ru/openapi/customer-communication) | Общение с покупателями | `DefaultApi` |
-| [`rates`](https://dev.wildberries.ru/openapi/rates) | Тарифы | `DefaultApi` |
-| [`analytics`](https://dev.wildberries.ru/openapi/analytics) | Аналитика и данные | `CSVApi`, `DefaultApi` |
-| [`reports`](https://dev.wildberries.ru/openapi/reports) | Отчёты | `CApi`, `DefaultApi` |
-| [`finances`](https://dev.wildberries.ru/openapi/documents-and-accounting) | Документы и бухгалтерия | `DefaultApi` |
+| [`general`](https://dev.wildberries.ru/openapi/api-information) | Общее | `GeneralApi` |
+| [`items`](https://dev.wildberries.ru/openapi/item-management) | Работа с товарами | `ItemsApi` |
+| [`orders-fbs`](https://dev.wildberries.ru/openapi/orders-fbs) | Заказы FBS | `OrdersFbsApi` |
+| [`orders-dbw`](https://dev.wildberries.ru/openapi/orders-dbw) | Заказы DBW | `OrdersDbwApi` |
+| [`dbs`](https://dev.wildberries.ru/openapi/dbs) | DBS | `DbsApi` |
+| [`in-store-pickup`](https://dev.wildberries.ru/openapi/in-store-pickup) | Самовывоз | `InStorePickupApi` |
+| [`orders-fbw`](https://dev.wildberries.ru/openapi/orders-fbw) | Поставки FBW | `OrdersFbwApi` |
+| [`promotion`](https://dev.wildberries.ru/openapi/promotion) | Маркетинг и продвижение | `PromotionApi` |
+| [`communications`](https://dev.wildberries.ru/openapi/customer-communication) | Общение с покупателями | `CommunicationsApi` |
+| [`rates`](https://dev.wildberries.ru/openapi/rates) | Тарифы | `RatesApi` |
+| [`analytics`](https://dev.wildberries.ru/openapi/analytics) | Аналитика и данные | `AnalyticsApi` |
+| [`reports`](https://dev.wildberries.ru/openapi/reports) | Отчёты | `ReportsApi` |
+| [`finances`](https://dev.wildberries.ru/openapi/documents-and-accounting) | Документы и бухгалтерия | `FinancesApi` |
 
 ## Per-module usage
 
@@ -59,17 +59,17 @@ Each row below is a sub-module you can import independently. Import path is `Val
 
 **Reference:** https://dev.wildberries.ru/openapi/api-information
 
-**APIs:** `APIApi`, `DefaultApi`, `WBAPIApi`
+**APIs:** `GeneralApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\General\Configuration;
 use ValeryVerkhoturov\WbApiClient\General\SecretString;
-use ValeryVerkhoturov\WbApiClient\General\Api\APIApi;
+use ValeryVerkhoturov\WbApiClient\General\Api\GeneralApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new APIApi(new Client(), $config);
+$api = new GeneralApi(new Client(), $config);
 ```
 
 ### items — Работа с товарами
@@ -88,17 +88,17 @@ $api = new APIApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/item-management
 
-**APIs:** `DefaultApi`
+**APIs:** `ItemsApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Items\Configuration;
 use ValeryVerkhoturov\WbApiClient\Items\SecretString;
-use ValeryVerkhoturov\WbApiClient\Items\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\Items\Api\ItemsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new ItemsApi(new Client(), $config);
 ```
 
 ### orders-fbs — Заказы FBS
@@ -116,17 +116,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/orders-fbs
 
-**APIs:** `DefaultApi`, `FBSApi`
+**APIs:** `OrdersFbsApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\Configuration;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\SecretString;
-use ValeryVerkhoturov\WbApiClient\OrdersFbs\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\OrdersFbs\Api\OrdersFbsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new OrdersFbsApi(new Client(), $config);
 ```
 
 ### orders-dbw — Заказы DBW
@@ -139,17 +139,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/orders-dbw
 
-**APIs:** `DBWApi`
+**APIs:** `OrdersDbwApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\OrdersDbw\Configuration;
 use ValeryVerkhoturov\WbApiClient\OrdersDbw\SecretString;
-use ValeryVerkhoturov\WbApiClient\OrdersDbw\Api\DBWApi;
+use ValeryVerkhoturov\WbApiClient\OrdersDbw\Api\OrdersDbwApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DBWApi(new Client(), $config);
+$api = new OrdersDbwApi(new Client(), $config);
 ```
 
 ### dbs — DBS
@@ -162,17 +162,17 @@ $api = new DBWApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/dbs
 
-**APIs:** `DBSApi`
+**APIs:** `DbsApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Dbs\Configuration;
 use ValeryVerkhoturov\WbApiClient\Dbs\SecretString;
-use ValeryVerkhoturov\WbApiClient\Dbs\Api\DBSApi;
+use ValeryVerkhoturov\WbApiClient\Dbs\Api\DbsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DBSApi(new Client(), $config);
+$api = new DbsApi(new Client(), $config);
 ```
 
 ### in-store-pickup — Самовывоз
@@ -183,17 +183,17 @@ $api = new DBSApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/in-store-pickup
 
-**APIs:** `DefaultApi`
+**APIs:** `InStorePickupApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\InStorePickup\Configuration;
 use ValeryVerkhoturov\WbApiClient\InStorePickup\SecretString;
-use ValeryVerkhoturov\WbApiClient\InStorePickup\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\InStorePickup\Api\InStorePickupApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new InStorePickupApi(new Client(), $config);
 ```
 
 ### orders-fbw — Поставки FBW
@@ -207,17 +207,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/orders-fbw
 
-**APIs:** `DefaultApi`
+**APIs:** `OrdersFbwApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\OrdersFbw\Configuration;
 use ValeryVerkhoturov\WbApiClient\OrdersFbw\SecretString;
-use ValeryVerkhoturov\WbApiClient\OrdersFbw\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\OrdersFbw\Api\OrdersFbwApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new OrdersFbwApi(new Client(), $config);
 ```
 
 ### promotion — Маркетинг и продвижение
@@ -236,17 +236,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/promotion
 
-**APIs:** `DefaultApi`
+**APIs:** `PromotionApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Promotion\Configuration;
 use ValeryVerkhoturov\WbApiClient\Promotion\SecretString;
-use ValeryVerkhoturov\WbApiClient\Promotion\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\Promotion\Api\PromotionApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new PromotionApi(new Client(), $config);
 ```
 
 ### communications — Общение с покупателями
@@ -264,17 +264,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/customer-communication
 
-**APIs:** `DefaultApi`
+**APIs:** `CommunicationsApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Communications\Configuration;
 use ValeryVerkhoturov\WbApiClient\Communications\SecretString;
-use ValeryVerkhoturov\WbApiClient\Communications\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\Communications\Api\CommunicationsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new CommunicationsApi(new Client(), $config);
 ```
 
 ### rates — Тарифы
@@ -289,17 +289,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/rates
 
-**APIs:** `DefaultApi`
+**APIs:** `RatesApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Rates\Configuration;
 use ValeryVerkhoturov\WbApiClient\Rates\SecretString;
-use ValeryVerkhoturov\WbApiClient\Rates\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\Rates\Api\RatesApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new RatesApi(new Client(), $config);
 ```
 
 ### analytics — Аналитика и данные
@@ -316,17 +316,17 @@ $api = new DefaultApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/analytics
 
-**APIs:** `CSVApi`, `DefaultApi`
+**APIs:** `AnalyticsApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Analytics\Configuration;
 use ValeryVerkhoturov\WbApiClient\Analytics\SecretString;
-use ValeryVerkhoturov\WbApiClient\Analytics\Api\CSVApi;
+use ValeryVerkhoturov\WbApiClient\Analytics\Api\AnalyticsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new CSVApi(new Client(), $config);
+$api = new AnalyticsApi(new Client(), $config);
 ```
 
 ### reports — Отчёты
@@ -346,17 +346,17 @@ $api = new CSVApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/reports
 
-**APIs:** `CApi`, `DefaultApi`
+**APIs:** `ReportsApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Reports\Configuration;
 use ValeryVerkhoturov\WbApiClient\Reports\SecretString;
-use ValeryVerkhoturov\WbApiClient\Reports\Api\CApi;
+use ValeryVerkhoturov\WbApiClient\Reports\Api\ReportsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new CApi(new Client(), $config);
+$api = new ReportsApi(new Client(), $config);
 ```
 
 ### finances — Документы и бухгалтерия
@@ -367,16 +367,16 @@ $api = new CApi(new Client(), $config);
 
 **Reference:** https://dev.wildberries.ru/openapi/documents-and-accounting
 
-**APIs:** `DefaultApi`
+**APIs:** `FinancesApi`
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Finances\Configuration;
 use ValeryVerkhoturov\WbApiClient\Finances\SecretString;
-use ValeryVerkhoturov\WbApiClient\Finances\Api\DefaultApi;
+use ValeryVerkhoturov\WbApiClient\Finances\Api\FinancesApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
     ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
-$api = new DefaultApi(new Client(), $config);
+$api = new FinancesApi(new Client(), $config);
 ```
 

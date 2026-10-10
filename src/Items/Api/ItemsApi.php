@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DefaultApi
+ * ItemsApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use ValeryVerkhoturov\WbApiClient\Items\HeaderSelector;
 use ValeryVerkhoturov\WbApiClient\Items\ObjectSerializer;
 
 /**
- * DefaultApi Class Doc Comment
+ * ItemsApi Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Items
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApi
+class ItemsApi
 {
     /**
      * @var ClientInterface
@@ -2499,7 +2499,7 @@ class DefaultApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV2BufferGoodsTask, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ItemsApi.getV2BufferGoodsTask, must be smaller than or equal to 1000.');
         }
 
         // verify the required parameter 'upload_id' is set
@@ -2510,7 +2510,7 @@ class DefaultApi
         }
 
         if ($offset !== null && $offset < 0) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.getV2BufferGoodsTask, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling ItemsApi.getV2BufferGoodsTask, must be bigger than or equal to 0.');
         }
 
 
@@ -8710,7 +8710,7 @@ class DefaultApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV2HistoryGoodsTask, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ItemsApi.getV2HistoryGoodsTask, must be smaller than or equal to 1000.');
         }
 
         // verify the required parameter 'upload_id' is set
@@ -8721,7 +8721,7 @@ class DefaultApi
         }
 
         if ($offset !== null && $offset < 0) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.getV2HistoryGoodsTask, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling ItemsApi.getV2HistoryGoodsTask, must be bigger than or equal to 0.');
         }
 
 
@@ -9821,11 +9821,11 @@ class DefaultApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV2ListGoodsFilter, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ItemsApi.getV2ListGoodsFilter, must be smaller than or equal to 1000.');
         }
 
         if ($offset !== null && $offset < 0) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.getV2ListGoodsFilter, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling ItemsApi.getV2ListGoodsFilter, must be bigger than or equal to 0.');
         }
 
 
@@ -10409,7 +10409,7 @@ class DefaultApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV2ListGoodsSizeNm, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ItemsApi.getV2ListGoodsSizeNm, must be smaller than or equal to 1000.');
         }
 
         // verify the required parameter 'nm_id' is set
@@ -10420,7 +10420,7 @@ class DefaultApi
         }
 
         if ($offset !== null && $offset < 0) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.getV2ListGoodsSizeNm, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling ItemsApi.getV2ListGoodsSizeNm, must be bigger than or equal to 0.');
         }
 
 
@@ -12611,11 +12611,11 @@ class DefaultApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV2QuarantineGoods, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling ItemsApi.getV2QuarantineGoods, must be smaller than or equal to 1000.');
         }
 
         if ($offset !== null && $offset < 0) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.getV2QuarantineGoods, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling ItemsApi.getV2QuarantineGoods, must be bigger than or equal to 0.');
         }
 
 

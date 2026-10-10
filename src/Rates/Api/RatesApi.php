@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DefaultApi
+ * RatesApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use ValeryVerkhoturov\WbApiClient\Rates\HeaderSelector;
 use ValeryVerkhoturov\WbApiClient\Rates\ObjectSerializer;
 
 /**
- * DefaultApi Class Doc Comment
+ * RatesApi Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Rates
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApi
+class RatesApi
 {
     /**
      * @var ClientInterface

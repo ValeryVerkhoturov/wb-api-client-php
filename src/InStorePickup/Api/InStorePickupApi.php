@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DefaultApi
+ * InStorePickupApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use ValeryVerkhoturov\WbApiClient\InStorePickup\HeaderSelector;
 use ValeryVerkhoturov\WbApiClient\InStorePickup\ObjectSerializer;
 
 /**
- * DefaultApi Class Doc Comment
+ * InStorePickupApi Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApi
+class InStorePickupApi
 {
     /**
      * @var ClientInterface
@@ -634,10 +634,10 @@ class DefaultApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV3ClickCollectOrders, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling InStorePickupApi.getV3ClickCollectOrders, must be smaller than or equal to 1000.');
         }
         if ($limit < 1) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.getV3ClickCollectOrders, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling InStorePickupApi.getV3ClickCollectOrders, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'next' is set

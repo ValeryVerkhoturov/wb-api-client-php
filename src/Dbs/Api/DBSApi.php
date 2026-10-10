@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DBSApi
+ * DbsApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use ValeryVerkhoturov\WbApiClient\Dbs\HeaderSelector;
 use ValeryVerkhoturov\WbApiClient\Dbs\ObjectSerializer;
 
 /**
- * DBSApi Class Doc Comment
+ * DbsApi Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Dbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DBSApi
+class DbsApi
 {
     /**
      * @var ClientInterface
@@ -643,10 +643,10 @@ class DBSApi
             );
         }
         if ($limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DBSApi.getV3DbsOrders, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling DbsApi.getV3DbsOrders, must be smaller than or equal to 1000.');
         }
         if ($limit < 1) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DBSApi.getV3DbsOrders, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling DbsApi.getV3DbsOrders, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'next' is set

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DefaultApi
+ * AnalyticsApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use ValeryVerkhoturov\WbApiClient\Analytics\HeaderSelector;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * DefaultApi Class Doc Comment
+ * AnalyticsApi Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApi
+class AnalyticsApi
 {
     /**
      * @var ClientInterface
@@ -72,6 +72,12 @@ class DefaultApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'getV2NmReportDownloads' => [
+            'application/json',
+        ],
+        'getV2NmReportDownloadsFileDownloadId' => [
+            'application/json',
+        ],
         'postV1OrderFeed' => [
             'application/json',
         ],
@@ -82,6 +88,12 @@ class DefaultApi
             'application/json',
         ],
         'postV2ItemRating' => [
+            'application/json',
+        ],
+        'postV2NmReportDownloads' => [
+            'application/json',
+        ],
+        'postV2NmReportDownloadsRetry' => [
             'application/json',
         ],
         'postV2SearchReportProductOrders' => [
@@ -166,6 +178,1050 @@ class DefaultApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation getV2NmReportDownloads
+     *
+     * Получить список отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string[] $filter_download_ids ID отчёта (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse|\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
+     */
+    public function getV2NmReportDownloads($filter_download_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloads'][0])
+    {
+        list($response) = $this->getV2NmReportDownloadsWithHttpInfo($filter_download_ids, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsWithHttpInfo
+     *
+     * Получить список отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string[] $filter_download_ids ID отчёта (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse|\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV2NmReportDownloadsWithHttpInfo($filter_download_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloads'][0])
+    {
+        $request = $this->getV2NmReportDownloadsRequest($filter_download_ids, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsResponse400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsResponse400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsAsync
+     *
+     * Получить список отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string[] $filter_download_ids ID отчёта (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2NmReportDownloadsAsync($filter_download_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloads'][0])
+    {
+        return $this->getV2NmReportDownloadsAsyncWithHttpInfo($filter_download_ids, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsAsyncWithHttpInfo
+     *
+     * Получить список отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string[] $filter_download_ids ID отчёта (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2NmReportDownloadsAsyncWithHttpInfo($filter_download_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloads'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportGetReportsResponse';
+        $request = $this->getV2NmReportDownloadsRequest($filter_download_ids, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV2NmReportDownloads'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string[] $filter_download_ids ID отчёта (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV2NmReportDownloadsRequest($filter_download_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloads'][0])
+    {
+
+
+
+        $resourcePath = '/api/v2/nm-report/downloads';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filter_download_ids,
+            'filter[downloadIds]', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV2NmReportDownloads();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV2NmReportDownloads
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV2NmReportDownloads(): array
+    {
+        return [
+            [
+                "url" => "https://seller-analytics-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsFileDownloadId
+     *
+     * Получить отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string $download_id ID отчёта (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloadsFileDownloadId'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsFileDownloadIdResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
+     */
+    public function getV2NmReportDownloadsFileDownloadId($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloadsFileDownloadId'][0])
+    {
+        list($response) = $this->getV2NmReportDownloadsFileDownloadIdWithHttpInfo($download_id, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsFileDownloadIdWithHttpInfo
+     *
+     * Получить отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string $download_id ID отчёта (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloadsFileDownloadId'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsFileDownloadIdResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV2NmReportDownloadsFileDownloadIdWithHttpInfo($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloadsFileDownloadId'][0])
+    {
+        $request = $this->getV2NmReportDownloadsFileDownloadIdRequest($download_id, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\SplFileObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\SplFileObject' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsFileDownloadIdResponse400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsFileDownloadIdResponse400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsFileDownloadIdResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\SplFileObject';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SplFileObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\GetV2NmReportDownloadsFileDownloadIdResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsFileDownloadIdAsync
+     *
+     * Получить отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string $download_id ID отчёта (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloadsFileDownloadId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2NmReportDownloadsFileDownloadIdAsync($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloadsFileDownloadId'][0])
+    {
+        return $this->getV2NmReportDownloadsFileDownloadIdAsyncWithHttpInfo($download_id, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV2NmReportDownloadsFileDownloadIdAsyncWithHttpInfo
+     *
+     * Получить отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string $download_id ID отчёта (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloadsFileDownloadId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV2NmReportDownloadsFileDownloadIdAsyncWithHttpInfo($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloadsFileDownloadId'][0])
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->getV2NmReportDownloadsFileDownloadIdRequest($download_id, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV2NmReportDownloadsFileDownloadId'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  string $download_id ID отчёта (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV2NmReportDownloadsFileDownloadId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV2NmReportDownloadsFileDownloadIdRequest($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2NmReportDownloadsFileDownloadId'][0])
+    {
+
+        // verify the required parameter 'download_id' is set
+        if ($download_id === null || (is_array($download_id) && count($download_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $download_id when calling getV2NmReportDownloadsFileDownloadId'
+            );
+        }
+
+
+        $resourcePath = '/api/v2/nm-report/downloads/file/{downloadId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($download_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'downloadId' . '}',
+                ObjectSerializer::toPathValue($download_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/zip', 'application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV2NmReportDownloadsFileDownloadId();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV2NmReportDownloadsFileDownloadId
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV2NmReportDownloadsFileDownloadId(): array
+    {
+        return [
+            [
+                "url" => "https://seller-analytics-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
     }
 
     /**
@@ -2212,6 +3268,1047 @@ class DefaultApi
      * @return array an array of host settings
      */
     protected function getHostSettingsForpostV2ItemRating(): array
+    {
+        return [
+            [
+                "url" => "https://seller-analytics-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV2NmReportDownloads
+     *
+     * Создать отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRequest $post_v2_nm_report_downloads_request post_v2_nm_report_downloads_request (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloads429Response
+     */
+    public function postV2NmReportDownloads($post_v2_nm_report_downloads_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloads'][0])
+    {
+        list($response) = $this->postV2NmReportDownloadsWithHttpInfo($post_v2_nm_report_downloads_request, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsWithHttpInfo
+     *
+     * Создать отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRequest $post_v2_nm_report_downloads_request (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloads429Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV2NmReportDownloadsWithHttpInfo($post_v2_nm_report_downloads_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloads'][0])
+    {
+        $request = $this->postV2NmReportDownloadsRequest($post_v2_nm_report_downloads_request, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsResponse400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsResponse400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloads429Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloads429Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloads429Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloads429Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsAsync
+     *
+     * Создать отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRequest $post_v2_nm_report_downloads_request (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV2NmReportDownloadsAsync($post_v2_nm_report_downloads_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloads'][0])
+    {
+        return $this->postV2NmReportDownloadsAsyncWithHttpInfo($post_v2_nm_report_downloads_request, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsAsyncWithHttpInfo
+     *
+     * Создать отчёт
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRequest $post_v2_nm_report_downloads_request (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV2NmReportDownloadsAsyncWithHttpInfo($post_v2_nm_report_downloads_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloads'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportCreateReportResponse';
+        $request = $this->postV2NmReportDownloadsRequest($post_v2_nm_report_downloads_request, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV2NmReportDownloads'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRequest $post_v2_nm_report_downloads_request (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV2NmReportDownloadsRequest($post_v2_nm_report_downloads_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloads'][0])
+    {
+
+
+
+        $resourcePath = '/api/v2/nm-report/downloads';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($post_v2_nm_report_downloads_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($post_v2_nm_report_downloads_request));
+            } else {
+                $httpBody = $post_v2_nm_report_downloads_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV2NmReportDownloads();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV2NmReportDownloads
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV2NmReportDownloads(): array
+    {
+        return [
+            [
+                "url" => "https://seller-analytics-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsRetry
+     *
+     * Сгенерировать отчёт повторно
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportRequest $nm_report_retry_report_request nm_report_retry_report_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloadsRetry'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRetryResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
+     */
+    public function postV2NmReportDownloadsRetry($nm_report_retry_report_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloadsRetry'][0])
+    {
+        list($response) = $this->postV2NmReportDownloadsRetryWithHttpInfo($nm_report_retry_report_request, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsRetryWithHttpInfo
+     *
+     * Сгенерировать отчёт повторно
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportRequest $nm_report_retry_report_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloadsRetry'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRetryResponse400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV2NmReportDownloadsRetryWithHttpInfo($nm_report_retry_report_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloadsRetry'][0])
+    {
+        $request = $this->postV2NmReportDownloadsRetryRequest($nm_report_retry_report_request, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRetryResponse400' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRetryResponse400' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRetryResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2NmReportDownloadsRetryResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsRetryAsync
+     *
+     * Сгенерировать отчёт повторно
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportRequest $nm_report_retry_report_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloadsRetry'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV2NmReportDownloadsRetryAsync($nm_report_retry_report_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloadsRetry'][0])
+    {
+        return $this->postV2NmReportDownloadsRetryAsyncWithHttpInfo($nm_report_retry_report_request, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV2NmReportDownloadsRetryAsyncWithHttpInfo
+     *
+     * Сгенерировать отчёт повторно
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportRequest $nm_report_retry_report_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloadsRetry'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV2NmReportDownloadsRetryAsyncWithHttpInfo($nm_report_retry_report_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloadsRetry'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportResponse';
+        $request = $this->postV2NmReportDownloadsRetryRequest($nm_report_retry_report_request, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV2NmReportDownloadsRetry'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://seller-analytics-api.wildberries.ru
+     *
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\NmReportRetryReportRequest $nm_report_retry_report_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2NmReportDownloadsRetry'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV2NmReportDownloadsRetryRequest($nm_report_retry_report_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2NmReportDownloadsRetry'][0])
+    {
+
+        // verify the required parameter 'nm_report_retry_report_request' is set
+        if ($nm_report_retry_report_request === null || (is_array($nm_report_retry_report_request) && count($nm_report_retry_report_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $nm_report_retry_report_request when calling postV2NmReportDownloadsRetry'
+            );
+        }
+
+
+        $resourcePath = '/api/v2/nm-report/downloads/retry';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($nm_report_retry_report_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($nm_report_retry_report_request));
+            } else {
+                $httpBody = $nm_report_retry_report_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV2NmReportDownloadsRetry();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV2NmReportDownloadsRetry
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV2NmReportDownloadsRetry(): array
     {
         return [
             [
