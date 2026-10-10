@@ -155,6 +155,8 @@ class GeneralApi
      *
      * Удалить пользователя
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод удаляет пользователя из [списка сотрудников продавца](https://dev.wildberries.ru/openapi/api-information#tag/sellerUserManagement/operation/getV1Users). Этому пользователю будет закрыт доступ в профиль продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/delete-api-v1-user
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -177,6 +179,8 @@ class GeneralApi
      * Operation deleteV1UserWithHttpInfo
      *
      * Удалить пользователя
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод удаляет пользователя из [списка сотрудников продавца](https://dev.wildberries.ru/openapi/api-information#tag/sellerUserManagement/operation/getV1Users). Этому пользователю будет закрыт доступ в профиль продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/delete-api-v1-user
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -264,6 +268,8 @@ class GeneralApi
      *
      * Удалить пользователя
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод удаляет пользователя из [списка сотрудников продавца](https://dev.wildberries.ru/openapi/api-information#tag/sellerUserManagement/operation/getV1Users). Этому пользователю будет закрыт доступ в профиль продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/delete-api-v1-user
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -290,6 +296,8 @@ class GeneralApi
      * Operation deleteV1UserAsyncWithHttpInfo
      *
      * Удалить пользователя
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод удаляет пользователя из [списка сотрудников продавца](https://dev.wildberries.ru/openapi/api-information#tag/sellerUserManagement/operation/getV1Users). Этому пользователю будет закрыт доступ в профиль продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/delete-api-v1-user
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -464,6 +472,8 @@ class GeneralApi
      *
      * Проверка подключения
      *
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -486,6 +496,8 @@ class GeneralApi
      * Operation getPingWithHttpInfo
      *
      * Проверка подключения
+     *
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -722,6 +734,8 @@ class GeneralApi
      *
      * Проверка подключения
      *
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -747,6 +761,8 @@ class GeneralApi
      * Operation getPingAsyncWithHttpInfo
      *
      * Проверка подключения
+     *
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -916,6 +932,8 @@ class GeneralApi
      *
      * Получить рейтинг продавца
      *
+     * Для доступа к методу используйте [токен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token) для категории **Вопросы и отзывы**  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-rating
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
@@ -938,6 +956,8 @@ class GeneralApi
      * Operation getV1RatingWithHttpInfo
      *
      * Получить рейтинг продавца
+     *
+     * Для доступа к методу используйте [токен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token) для категории **Вопросы и отзывы**  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-rating
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1209,6 +1229,8 @@ class GeneralApi
      *
      * Получить рейтинг продавца
      *
+     * Для доступа к методу используйте [токен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token) для категории **Вопросы и отзывы**  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-rating
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
@@ -1234,6 +1256,8 @@ class GeneralApi
      * Operation getV1RatingAsyncWithHttpInfo
      *
      * Получить рейтинг продавца
+     *
+     * Для доступа к методу используйте [токен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token) для категории **Вопросы и отзывы**  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-rating
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1403,6 +1427,8 @@ class GeneralApi
      *
      * Получить информацию о продавце
      *
+     * Информацию о продавце можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод позволяет получать наименование продавца и ID его профиля.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-seller-info
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -1425,6 +1451,8 @@ class GeneralApi
      * Operation getV1SellerInfoWithHttpInfo
      *
      * Получить информацию о продавце
+     *
+     * Информацию о продавце можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод позволяет получать наименование продавца и ID его профиля.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-seller-info
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1661,6 +1689,8 @@ class GeneralApi
      *
      * Получить информацию о продавце
      *
+     * Информацию о продавце можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод позволяет получать наименование продавца и ID его профиля.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-seller-info
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -1686,6 +1716,8 @@ class GeneralApi
      * Operation getV1SellerInfoAsyncWithHttpInfo
      *
      * Получить информацию о продавце
+     *
+     * Информацию о продавце можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод позволяет получать наименование продавца и ID его профиля.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-seller-info
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1855,6 +1887,8 @@ class GeneralApi
      *
      * Получить информацию о подписке Джем
      *
+     * Информацию о подписке Джем можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam): - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ &#x60;200&#x60;. - Если продавец активировал и никогда не отменял подписку, возвращается: - дата активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка неактивна, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания последнего оплаченного периода &#x60;till&#x60;  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-subscriptions
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -1877,6 +1911,8 @@ class GeneralApi
      * Operation getV1SubscriptionsWithHttpInfo
      *
      * Получить информацию о подписке Джем
+     *
+     * Информацию о подписке Джем можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam): - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ &#x60;200&#x60;. - Если продавец активировал и никогда не отменял подписку, возвращается: - дата активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка неактивна, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания последнего оплаченного периода &#x60;till&#x60;  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-subscriptions
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2148,6 +2184,8 @@ class GeneralApi
      *
      * Получить информацию о подписке Джем
      *
+     * Информацию о подписке Джем можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam): - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ &#x60;200&#x60;. - Если продавец активировал и никогда не отменял подписку, возвращается: - дата активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка неактивна, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания последнего оплаченного периода &#x60;till&#x60;  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-subscriptions
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -2173,6 +2211,8 @@ class GeneralApi
      * Operation getV1SubscriptionsAsyncWithHttpInfo
      *
      * Получить информацию о подписке Джем
+     *
+     * Информацию о подписке Джем можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam): - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ &#x60;200&#x60;. - Если продавец активировал и никогда не отменял подписку, возвращается: - дата активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания текущего оплаченного периода &#x60;till&#x60; - Если подписка неактивна, возвращается: - дата первой активации подписки &#x60;since&#x60; - дата окончания последнего оплаченного периода &#x60;till&#x60;  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-subscriptions
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2342,6 +2382,8 @@ class GeneralApi
      *
      * Получить информацию об опциях Конструктора тарифов
      *
+     * Информацию об опциях Конструктора тарифов можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию обо всех опциях и пакетах опций, которые продавец подключил в [Конструкторе тарифов](https://seller.wildberries.ru/tariff-constructor).  Опции, входящие в подключённые пакеты, возвращаются в массиве &#x60;packages&#x60;. Опции, подключённые вне пакетов, возвращаются в массиве &#x60;options&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-tariff-constructor-options
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -2365,6 +2407,8 @@ class GeneralApi
      * Operation getV1TariffConstructorOptionsWithHttpInfo
      *
      * Получить информацию об опциях Конструктора тарифов
+     *
+     * Информацию об опциях Конструктора тарифов можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию обо всех опциях и пакетах опций, которые продавец подключил в [Конструкторе тарифов](https://seller.wildberries.ru/tariff-constructor).  Опции, входящие в подключённые пакеты, возвращаются в массиве &#x60;packages&#x60;. Опции, подключённые вне пакетов, возвращаются в массиве &#x60;options&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-tariff-constructor-options
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2672,6 +2716,8 @@ class GeneralApi
      *
      * Получить информацию об опциях Конструктора тарифов
      *
+     * Информацию об опциях Конструктора тарифов можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию обо всех опциях и пакетах опций, которые продавец подключил в [Конструкторе тарифов](https://seller.wildberries.ru/tariff-constructor).  Опции, входящие в подключённые пакеты, возвращаются в массиве &#x60;packages&#x60;. Опции, подключённые вне пакетов, возвращаются в массиве &#x60;options&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-tariff-constructor-options
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -2698,6 +2744,8 @@ class GeneralApi
      * Operation getV1TariffConstructorOptionsAsyncWithHttpInfo
      *
      * Получить информацию об опциях Конструктора тарифов
+     *
+     * Информацию об опциях Конструктора тарифов можно получить с токеном любой [категории](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Kategorii-tokenov)  Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Сервисному** токену  Метод возвращает информацию обо всех опциях и пакетах опций, которые продавец подключил в [Конструкторе тарифов](https://seller.wildberries.ru/tariff-constructor).  Опции, входящие в подключённые пакеты, возвращаются в массиве &#x60;packages&#x60;. Опции, подключённые вне пакетов, возвращаются в массиве &#x60;options&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-common-v1-tariff-constructor-options
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2879,6 +2927,8 @@ class GeneralApi
      *
      * Получить список активных или приглашённых пользователей продавца
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод возвращает список активных или приглашённых пользователей профиля продавца.  Чтобы выбрать список, укажите значение параметра &#x60;isInviteOnly&#x60;: - &#x60;isInviteOnly&#x3D;true&#x60; — список приглашённых пользователей, которые ещё не активировали доступ - &#x60;isInviteOnly&#x3D;false&#x60; или не указан — список активных пользователей По каждому пользователю можно получить: - роль пользователя - разделы, к которым есть доступы - статус приглашения Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-users
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -2904,6 +2954,8 @@ class GeneralApi
      * Operation getV1UsersWithHttpInfo
      *
      * Получить список активных или приглашённых пользователей продавца
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод возвращает список активных или приглашённых пользователей профиля продавца.  Чтобы выбрать список, укажите значение параметра &#x60;isInviteOnly&#x60;: - &#x60;isInviteOnly&#x3D;true&#x60; — список приглашённых пользователей, которые ещё не активировали доступ - &#x60;isInviteOnly&#x3D;false&#x60; или не указан — список активных пользователей По каждому пользователю можно получить: - роль пользователя - разделы, к которым есть доступы - статус приглашения Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-users
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3178,6 +3230,8 @@ class GeneralApi
      *
      * Получить список активных или приглашённых пользователей продавца
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод возвращает список активных или приглашённых пользователей профиля продавца.  Чтобы выбрать список, укажите значение параметра &#x60;isInviteOnly&#x60;: - &#x60;isInviteOnly&#x3D;true&#x60; — список приглашённых пользователей, которые ещё не активировали доступ - &#x60;isInviteOnly&#x3D;false&#x60; или не указан — список активных пользователей По каждому пользователю можно получить: - роль пользователя - разделы, к которым есть доступы - статус приглашения Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-users
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -3206,6 +3260,8 @@ class GeneralApi
      * Operation getV1UsersAsyncWithHttpInfo
      *
      * Получить список активных или приглашённых пользователей продавца
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод возвращает список активных или приглашённых пользователей профиля продавца.  Чтобы выбрать список, укажите значение параметра &#x60;isInviteOnly&#x60;: - &#x60;isInviteOnly&#x3D;true&#x60; — список приглашённых пользователей, которые ещё не активировали доступ - &#x60;isInviteOnly&#x3D;false&#x60; или не указан — список активных пользователей По каждому пользователю можно получить: - роль пользователя - разделы, к которым есть доступы - статус приглашения Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-v1-users
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3414,6 +3470,8 @@ class GeneralApi
      *
      * Получение новостей портала продавцов
      *
+     * Метод позволяет получать новости портала продавцов.  Для получения успешного ответа необходимо указать один из параметров &#x60;from&#x60; или &#x60;fromID&#x60;.  За один запрос можно получить не более 100 новостей.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-communications-v2-news
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -3438,6 +3496,8 @@ class GeneralApi
      * Operation getV2NewsWithHttpInfo
      *
      * Получение новостей портала продавцов
+     *
+     * Метод позволяет получать новости портала продавцов.  Для получения успешного ответа необходимо указать один из параметров &#x60;from&#x60; или &#x60;fromID&#x60;.  За один запрос можно получить не более 100 новостей.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-communications-v2-news
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3641,6 +3701,8 @@ class GeneralApi
      *
      * Получение новостей портала продавцов
      *
+     * Метод позволяет получать новости портала продавцов.  Для получения успешного ответа необходимо указать один из параметров &#x60;from&#x60; или &#x60;fromID&#x60;.  За один запрос можно получить не более 100 новостей.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-communications-v2-news
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
@@ -3668,6 +3730,8 @@ class GeneralApi
      * Operation getV2NewsAsyncWithHttpInfo
      *
      * Получение новостей портала продавцов
+     *
+     * Метод позволяет получать новости портала продавцов.  Для получения успешного ответа необходимо указать один из параметров &#x60;from&#x60; или &#x60;fromID&#x60;.  За один запрос можно получить не более 100 новостей.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-api-communications-v2-news
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3861,6 +3925,8 @@ class GeneralApi
      *
      * Создать приглашение для нового пользователя
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца. Как выдаются права доступа: - Если &#x60;access&#x60; пустой (&#x60;[]&#x60;) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (&#x60;showcase&#x60;) и \\*\\*Джем\\*\\* (&#x60;changeJam&#x60;) - Если в &#x60;access&#x60; указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в &#x60;access&#x60; перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в &#x60;access&#x60; дважды указан один и тот же раздел (&#x60;code&#x60;): - при разных значениях &#x60;disabled&#x60; (&#x60;true&#x60; и &#x60;false&#x60;) доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: true&#x60; доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: false&#x60; доступ будет выдан  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/post-api-v1-invite
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -3884,6 +3950,8 @@ class GeneralApi
      * Operation postV1InviteWithHttpInfo
      *
      * Создать приглашение для нового пользователя
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца. Как выдаются права доступа: - Если &#x60;access&#x60; пустой (&#x60;[]&#x60;) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (&#x60;showcase&#x60;) и \\*\\*Джем\\*\\* (&#x60;changeJam&#x60;) - Если в &#x60;access&#x60; указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в &#x60;access&#x60; перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в &#x60;access&#x60; дважды указан один и тот же раздел (&#x60;code&#x60;): - при разных значениях &#x60;disabled&#x60; (&#x60;true&#x60; и &#x60;false&#x60;) доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: true&#x60; доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: false&#x60; доступ будет выдан  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/post-api-v1-invite
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4156,6 +4224,8 @@ class GeneralApi
      *
      * Создать приглашение для нового пользователя
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца. Как выдаются права доступа: - Если &#x60;access&#x60; пустой (&#x60;[]&#x60;) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (&#x60;showcase&#x60;) и \\*\\*Джем\\*\\* (&#x60;changeJam&#x60;) - Если в &#x60;access&#x60; указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в &#x60;access&#x60; перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в &#x60;access&#x60; дважды указан один и тот же раздел (&#x60;code&#x60;): - при разных значениях &#x60;disabled&#x60; (&#x60;true&#x60; и &#x60;false&#x60;) доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: true&#x60; доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: false&#x60; доступ будет выдан  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/post-api-v1-invite
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -4182,6 +4252,8 @@ class GeneralApi
      * Operation postV1InviteAsyncWithHttpInfo
      *
      * Создать приглашение для нового пользователя
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца. Как выдаются права доступа: - Если &#x60;access&#x60; пустой (&#x60;[]&#x60;) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (&#x60;showcase&#x60;) и \\*\\*Джем\\*\\* (&#x60;changeJam&#x60;) - Если в &#x60;access&#x60; указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в &#x60;access&#x60; перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в &#x60;access&#x60; дважды указан один и тот же раздел (&#x60;code&#x60;): - при разных значениях &#x60;disabled&#x60; (&#x60;true&#x60; и &#x60;false&#x60;) доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: true&#x60; доступ не будет выдан - при одинаковых значениях &#x60;\&quot;disabled\&quot;: false&#x60; доступ будет выдан  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/post-api-v1-invite
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4367,6 +4439,8 @@ class GeneralApi
      *
      * Изменить права доступа пользователей
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод меняет права доступа одному или нескольким пользователям.  Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/put-api-v1-users-access
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -4389,6 +4463,8 @@ class GeneralApi
      * Operation putV1UsersAccessWithHttpInfo
      *
      * Изменить права доступа пользователей
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод меняет права доступа одному или нескольким пользователям.  Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/put-api-v1-users-access
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4476,6 +4552,8 @@ class GeneralApi
      *
      * Изменить права доступа пользователей
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод меняет права доступа одному или нескольким пользователям.  Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/put-api-v1-users-access
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
@@ -4502,6 +4580,8 @@ class GeneralApi
      * Operation putV1UsersAccessAsyncWithHttpInfo
      *
      * Изменить права доступа пользователей
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену  Метод меняет права доступа одному или нескольким пользователям.  Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/put-api-v1-users-access
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

@@ -185,6 +185,8 @@ class AnalyticsApi
      *
      * Получить список отчётов
      *
+     * Метод возвращает список отчётов с расширенной аналитикой продавца. Ответ содержит ID [созданных отчётов](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) и статусы генерации.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -208,6 +210,8 @@ class AnalyticsApi
      * Operation getV2NmReportDownloadsWithHttpInfo
      *
      * Получить список отчётов
+     *
+     * Метод возвращает список отчётов с расширенной аналитикой продавца. Ответ содержит ID [созданных отчётов](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) и статусы генерации.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -480,6 +484,8 @@ class AnalyticsApi
      *
      * Получить список отчётов
      *
+     * Метод возвращает список отчётов с расширенной аналитикой продавца. Ответ содержит ID [созданных отчётов](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) и статусы генерации.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -506,6 +512,8 @@ class AnalyticsApi
      * Operation getV2NmReportDownloadsAsyncWithHttpInfo
      *
      * Получить список отчётов
+     *
+     * Метод возвращает список отчётов с расширенной аналитикой продавца. Ответ содержит ID [созданных отчётов](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) и статусы генерации.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -687,6 +695,8 @@ class AnalyticsApi
      *
      * Получить отчёт
      *
+     * Метод возвращает отчёт с расширенной аналитикой продавца по ID [задания на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads).  Можно получить отчёт, который сгенерирован за последние 48 часов. Отчёт будет загружен внутри архива ZIP в формате CSV.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads-file-downloadid
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -710,6 +720,8 @@ class AnalyticsApi
      * Operation getV2NmReportDownloadsFileDownloadIdWithHttpInfo
      *
      * Получить отчёт
+     *
+     * Метод возвращает отчёт с расширенной аналитикой продавца по ID [задания на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads).  Можно получить отчёт, который сгенерирован за последние 48 часов. Отчёт будет загружен внутри архива ZIP в формате CSV.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads-file-downloadid
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1017,6 +1029,8 @@ class AnalyticsApi
      *
      * Получить отчёт
      *
+     * Метод возвращает отчёт с расширенной аналитикой продавца по ID [задания на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads).  Можно получить отчёт, который сгенерирован за последние 48 часов. Отчёт будет загружен внутри архива ZIP в формате CSV.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads-file-downloadid
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -1043,6 +1057,8 @@ class AnalyticsApi
      * Operation getV2NmReportDownloadsFileDownloadIdAsyncWithHttpInfo
      *
      * Получить отчёт
+     *
+     * Метод возвращает отчёт с расширенной аналитикой продавца по ID [задания на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads).  Можно получить отчёт, который сгенерирован за последние 48 часов. Отчёт будет загружен внутри архива ZIP в формате CSV.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/get-api-v2-nm-report-downloads-file-downloadid
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1229,6 +1245,8 @@ class AnalyticsApi
      *
      * Получить отчёт
      *
+     * Метод формирует набор данных о заказах и продажах.  Данные отчёта обновляются в режиме реального времени.  &gt; 1 заказ &#x3D; 1 сборочное задание &#x3D; 1 единица товара Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все заказы продавца. Если вы указали несколько параметров, в ответе будут заказы, в которых есть одновременно все эти параметры. Если заказы не подходят по параметрам запроса, вернётся пустой массив &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 31 день.  Заказы отдаются по времени текущего статуса, от самого нового к самому раннему.  Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 3 ч | 1 запрос | 3 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-order-feed
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -1252,6 +1270,8 @@ class AnalyticsApi
      * Operation postV1OrderFeedWithHttpInfo
      *
      * Получить отчёт
+     *
+     * Метод формирует набор данных о заказах и продажах.  Данные отчёта обновляются в режиме реального времени.  &gt; 1 заказ &#x3D; 1 сборочное задание &#x3D; 1 единица товара Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все заказы продавца. Если вы указали несколько параметров, в ответе будут заказы, в которых есть одновременно все эти параметры. Если заказы не подходят по параметрам запроса, вернётся пустой массив &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 31 день.  Заказы отдаются по времени текущего статуса, от самого нового к самому раннему.  Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 3 ч | 1 запрос | 3 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-order-feed
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1524,6 +1544,8 @@ class AnalyticsApi
      *
      * Получить отчёт
      *
+     * Метод формирует набор данных о заказах и продажах.  Данные отчёта обновляются в режиме реального времени.  &gt; 1 заказ &#x3D; 1 сборочное задание &#x3D; 1 единица товара Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все заказы продавца. Если вы указали несколько параметров, в ответе будут заказы, в которых есть одновременно все эти параметры. Если заказы не подходят по параметрам запроса, вернётся пустой массив &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 31 день.  Заказы отдаются по времени текущего статуса, от самого нового к самому раннему.  Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 3 ч | 1 запрос | 3 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-order-feed
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -1550,6 +1572,8 @@ class AnalyticsApi
      * Operation postV1OrderFeedAsyncWithHttpInfo
      *
      * Получить отчёт
+     *
+     * Метод формирует набор данных о заказах и продажах.  Данные отчёта обновляются в режиме реального времени.  &gt; 1 заказ &#x3D; 1 сборочное задание &#x3D; 1 единица товара Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все заказы продавца. Если вы указали несколько параметров, в ответе будут заказы, в которых есть одновременно все эти параметры. Если заказы не подходят по параметрам запроса, вернётся пустой массив &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 31 день.  Заказы отдаются по времени текущего статуса, от самого нового к самому раннему.  Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 3 ч | 1 запрос | 3 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-order-feed
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -1729,6 +1753,8 @@ class AnalyticsApi
      *
      * Остатки на складах продавца
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод возвращает текущие остатки товаров на складах продавца.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-seller-warehouses
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -1752,6 +1778,8 @@ class AnalyticsApi
      * Operation postV1StocksReportSellerWarehousesWithHttpInfo
      *
      * Остатки на складах продавца
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод возвращает текущие остатки товаров на складах продавца.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-seller-warehouses
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2024,6 +2052,8 @@ class AnalyticsApi
      *
      * Остатки на складах продавца
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод возвращает текущие остатки товаров на складах продавца.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-seller-warehouses
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -2050,6 +2080,8 @@ class AnalyticsApi
      * Operation postV1StocksReportSellerWarehousesAsyncWithHttpInfo
      *
      * Остатки на складах продавца
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод возвращает текущие остатки товаров на складах продавца.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе продавца.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-seller-warehouses
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2235,6 +2267,8 @@ class AnalyticsApi
      *
      * Остатки на складах WB
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену, **Базовому** токену **с секретом**  Метод возвращает текущие остатки товаров на складах WB.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе WB.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-wb-warehouses
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -2258,6 +2292,8 @@ class AnalyticsApi
      * Operation postV1StocksReportWbWarehousesWithHttpInfo
      *
      * Остатки на складах WB
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену, **Базовому** токену **с секретом**  Метод возвращает текущие остатки товаров на складах WB.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе WB.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-wb-warehouses
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2565,6 +2601,8 @@ class AnalyticsApi
      *
      * Остатки на складах WB
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену, **Базовому** токену **с секретом**  Метод возвращает текущие остатки товаров на складах WB.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе WB.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-wb-warehouses
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -2591,6 +2629,8 @@ class AnalyticsApi
      * Operation postV1StocksReportWbWarehousesAsyncWithHttpInfo
      *
      * Остатки на складах WB
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену, **Базовому** токену **с секретом**  Метод возвращает текущие остатки товаров на складах WB.  Данные обновляются 1 раз в 30 минут.  1 строка ответа — данные об 1 размере товара на 1 складе WB.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v1-stocks-report-wb-warehouses
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2776,6 +2816,8 @@ class AnalyticsApi
      *
      * Получить отчёт
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод формирует набор данных об оценках товаров.  Данные отчёта обновляются 1 раз в час.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v2-item-rating
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -2799,6 +2841,8 @@ class AnalyticsApi
      * Operation postV2ItemRatingWithHttpInfo
      *
      * Получить отчёт
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод формирует набор данных об оценках товаров.  Данные отчёта обновляются 1 раз в час.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v2-item-rating
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3071,6 +3115,8 @@ class AnalyticsApi
      *
      * Получить отчёт
      *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод формирует набор данных об оценках товаров.  Данные отчёта обновляются 1 раз в час.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v2-item-rating
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -3097,6 +3143,8 @@ class AnalyticsApi
      * Operation postV2ItemRatingAsyncWithHttpInfo
      *
      * Получить отчёт
+     *
+     * Метод [доступен](https://dev.wildberries.ru/openapi/api-information#tag/authorization/Pravila-ispolzovaniya-tokenov-dostupa-k-API) по **Персональному** токену, **Сервисному** токену  Метод формирует набор данных об оценках товаров.  Данные отчёта обновляются 1 раз в час.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v2-item-rating
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3282,6 +3330,8 @@ class AnalyticsApi
      *
      * Создать отчёт
      *
+     * Метод создаёт задание на генерацию отчёта с расширенной аналитикой продавца.  Вы можете создать CSV-версии отчётов по [воронке продаж](https://dev.wildberries.ru/openapi/analytics#tag/salesFunnel) или [параметрам поиска](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems) с группировкой по: \\* артикулам WB \\* предметам, брендам и ярлыкам В отчётах по воронке продаж можно группировать данные по дням, неделям или месяцам.  Также можете создать CSV-версии отчётов по [текстам поисковых запросов](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и [остаткам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport).  Каждый новый отчёт должен иметь уникальный ID.  Не используйте одинаковые ID для разных отчётов — это может привести к ошибкам при генерации  Набор параметров запроса в объекте &#x60;params&#x60; зависит от типа отчёта. Чтобы получить описание параметров, выберите тип отчёта в раскрывающемся списке в описании параметра &#x60;reportType&#x60;.  Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Если не удалось [получить отчёт](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloadsFileDownloadId), можно создать [повторное задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloadsRetry). Также можно [получить список и проверить статусы](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) отчётов.  Данные отчётов обновляются 1 раз в 2 часа.  Отчёты по [остаткам](https://seller.wildberries.ru/content-analytics/history-remains) — типы &#x60;STOCK_HISTORY_REPORT_CSV&#x60; и &#x60;STOCK_HISTORY_DAILY_CSV&#x60; — можно создать без подписки [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -3305,6 +3355,8 @@ class AnalyticsApi
      * Operation postV2NmReportDownloadsWithHttpInfo
      *
      * Создать отчёт
+     *
+     * Метод создаёт задание на генерацию отчёта с расширенной аналитикой продавца.  Вы можете создать CSV-версии отчётов по [воронке продаж](https://dev.wildberries.ru/openapi/analytics#tag/salesFunnel) или [параметрам поиска](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems) с группировкой по: \\* артикулам WB \\* предметам, брендам и ярлыкам В отчётах по воронке продаж можно группировать данные по дням, неделям или месяцам.  Также можете создать CSV-версии отчётов по [текстам поисковых запросов](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и [остаткам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport).  Каждый новый отчёт должен иметь уникальный ID.  Не используйте одинаковые ID для разных отчётов — это может привести к ошибкам при генерации  Набор параметров запроса в объекте &#x60;params&#x60; зависит от типа отчёта. Чтобы получить описание параметров, выберите тип отчёта в раскрывающемся списке в описании параметра &#x60;reportType&#x60;.  Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Если не удалось [получить отчёт](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloadsFileDownloadId), можно создать [повторное задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloadsRetry). Также можно [получить список и проверить статусы](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) отчётов.  Данные отчётов обновляются 1 раз в 2 часа.  Отчёты по [остаткам](https://seller.wildberries.ru/content-analytics/history-remains) — типы &#x60;STOCK_HISTORY_REPORT_CSV&#x60; и &#x60;STOCK_HISTORY_DAILY_CSV&#x60; — можно создать без подписки [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3612,6 +3664,8 @@ class AnalyticsApi
      *
      * Создать отчёт
      *
+     * Метод создаёт задание на генерацию отчёта с расширенной аналитикой продавца.  Вы можете создать CSV-версии отчётов по [воронке продаж](https://dev.wildberries.ru/openapi/analytics#tag/salesFunnel) или [параметрам поиска](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems) с группировкой по: \\* артикулам WB \\* предметам, брендам и ярлыкам В отчётах по воронке продаж можно группировать данные по дням, неделям или месяцам.  Также можете создать CSV-версии отчётов по [текстам поисковых запросов](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и [остаткам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport).  Каждый новый отчёт должен иметь уникальный ID.  Не используйте одинаковые ID для разных отчётов — это может привести к ошибкам при генерации  Набор параметров запроса в объекте &#x60;params&#x60; зависит от типа отчёта. Чтобы получить описание параметров, выберите тип отчёта в раскрывающемся списке в описании параметра &#x60;reportType&#x60;.  Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Если не удалось [получить отчёт](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloadsFileDownloadId), можно создать [повторное задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloadsRetry). Также можно [получить список и проверить статусы](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) отчётов.  Данные отчётов обновляются 1 раз в 2 часа.  Отчёты по [остаткам](https://seller.wildberries.ru/content-analytics/history-remains) — типы &#x60;STOCK_HISTORY_REPORT_CSV&#x60; и &#x60;STOCK_HISTORY_DAILY_CSV&#x60; — можно создать без подписки [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -3638,6 +3692,8 @@ class AnalyticsApi
      * Operation postV2NmReportDownloadsAsyncWithHttpInfo
      *
      * Создать отчёт
+     *
+     * Метод создаёт задание на генерацию отчёта с расширенной аналитикой продавца.  Вы можете создать CSV-версии отчётов по [воронке продаж](https://dev.wildberries.ru/openapi/analytics#tag/salesFunnel) или [параметрам поиска](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems) с группировкой по: \\* артикулам WB \\* предметам, брендам и ярлыкам В отчётах по воронке продаж можно группировать данные по дням, неделям или месяцам.  Также можете создать CSV-версии отчётов по [текстам поисковых запросов](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и [остаткам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport).  Каждый новый отчёт должен иметь уникальный ID.  Не используйте одинаковые ID для разных отчётов — это может привести к ошибкам при генерации  Набор параметров запроса в объекте &#x60;params&#x60; зависит от типа отчёта. Чтобы получить описание параметров, выберите тип отчёта в раскрывающемся списке в описании параметра &#x60;reportType&#x60;.  Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Если не удалось [получить отчёт](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloadsFileDownloadId), можно создать [повторное задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloadsRetry). Также можно [получить список и проверить статусы](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) отчётов.  Данные отчётов обновляются 1 раз в 2 часа.  Отчёты по [остаткам](https://seller.wildberries.ru/content-analytics/history-remains) — типы &#x60;STOCK_HISTORY_REPORT_CSV&#x60; и &#x60;STOCK_HISTORY_DAILY_CSV&#x60; — можно создать без подписки [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3817,6 +3873,8 @@ class AnalyticsApi
      *
      * Сгенерировать отчёт повторно
      *
+     * Метод создает повторное [задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) отчёта с расширенной аналитикой продавца. Необходимо, если при генерации отчёта вы [получили статус](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) &#x60;FAILED&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads-retry
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -3840,6 +3898,8 @@ class AnalyticsApi
      * Operation postV2NmReportDownloadsRetryWithHttpInfo
      *
      * Сгенерировать отчёт повторно
+     *
+     * Метод создает повторное [задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) отчёта с расширенной аналитикой продавца. Необходимо, если при генерации отчёта вы [получили статус](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) &#x60;FAILED&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads-retry
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4112,6 +4172,8 @@ class AnalyticsApi
      *
      * Сгенерировать отчёт повторно
      *
+     * Метод создает повторное [задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) отчёта с расширенной аналитикой продавца. Необходимо, если при генерации отчёта вы [получили статус](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) &#x60;FAILED&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads-retry
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -4138,6 +4200,8 @@ class AnalyticsApi
      * Operation postV2NmReportDownloadsRetryAsyncWithHttpInfo
      *
      * Сгенерировать отчёт повторно
+     *
+     * Метод создает повторное [задание на генерацию](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/postV2NmReportDownloads) отчёта с расширенной аналитикой продавца. Необходимо, если при генерации отчёта вы [получили статус](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv/operation/getV2NmReportDownloads) &#x60;FAILED&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-nm-report-downloads-retry
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4323,6 +4387,8 @@ class AnalyticsApi
      *
      * Заказы и позиции по поисковым запросам товара
      *
+     * Метод формирует данные для таблицы: - о заказах по каждому поисковому запросу для конкретного товара - о позициях товара в результатах поиска по каждому запросу Данные указаны в рамках периода для [запрошенного товара](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и сгруппированы по дням. Максимальный период — 7 дней.  Данные отчёта обновляются 1 раз в 2 часа.  Можно получить отчёт максимум за последние 365 дней с момента выполнения запроса  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-orders
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -4346,6 +4412,8 @@ class AnalyticsApi
      * Operation postV2SearchReportProductOrdersWithHttpInfo
      *
      * Заказы и позиции по поисковым запросам товара
+     *
+     * Метод формирует данные для таблицы: - о заказах по каждому поисковому запросу для конкретного товара - о позициях товара в результатах поиска по каждому запросу Данные указаны в рамках периода для [запрошенного товара](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и сгруппированы по дням. Максимальный период — 7 дней.  Данные отчёта обновляются 1 раз в 2 часа.  Можно получить отчёт максимум за последние 365 дней с момента выполнения запроса  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-orders
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4653,6 +4721,8 @@ class AnalyticsApi
      *
      * Заказы и позиции по поисковым запросам товара
      *
+     * Метод формирует данные для таблицы: - о заказах по каждому поисковому запросу для конкретного товара - о позициях товара в результатах поиска по каждому запросу Данные указаны в рамках периода для [запрошенного товара](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и сгруппированы по дням. Максимальный период — 7 дней.  Данные отчёта обновляются 1 раз в 2 часа.  Можно получить отчёт максимум за последние 365 дней с момента выполнения запроса  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-orders
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -4679,6 +4749,8 @@ class AnalyticsApi
      * Operation postV2SearchReportProductOrdersAsyncWithHttpInfo
      *
      * Заказы и позиции по поисковым запросам товара
+     *
+     * Метод формирует данные для таблицы: - о заказах по каждому поисковому запросу для конкретного товара - о позициях товара в результатах поиска по каждому запросу Данные указаны в рамках периода для [запрошенного товара](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportProductSearchTexts) и сгруппированы по дням. Максимальный период — 7 дней.  Данные отчёта обновляются 1 раз в 2 часа.  Можно получить отчёт максимум за последние 365 дней с момента выполнения запроса  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-orders
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4864,6 +4936,8 @@ class AnalyticsApi
      *
      * Поисковые запросы по товару
      *
+     * Метод формирует топ поисковых запросов по товару. Параметры выбора поисковых запросов: - &#x60;limit&#x60; — количество запросов, максимум 30. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) \\*\\*Продвинутый\\*\\* и \\*\\*Премиальный\\*\\* максимум — 100. - &#x60;topOrderBy&#x60; — способ выбора топа запросов Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-search-texts
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -4887,6 +4961,8 @@ class AnalyticsApi
      * Operation postV2SearchReportProductSearchTextsWithHttpInfo
      *
      * Поисковые запросы по товару
+     *
+     * Метод формирует топ поисковых запросов по товару. Параметры выбора поисковых запросов: - &#x60;limit&#x60; — количество запросов, максимум 30. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) \\*\\*Продвинутый\\*\\* и \\*\\*Премиальный\\*\\* максимум — 100. - &#x60;topOrderBy&#x60; — способ выбора топа запросов Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-search-texts
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5194,6 +5270,8 @@ class AnalyticsApi
      *
      * Поисковые запросы по товару
      *
+     * Метод формирует топ поисковых запросов по товару. Параметры выбора поисковых запросов: - &#x60;limit&#x60; — количество запросов, максимум 30. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) \\*\\*Продвинутый\\*\\* и \\*\\*Премиальный\\*\\* максимум — 100. - &#x60;topOrderBy&#x60; — способ выбора топа запросов Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-search-texts
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -5220,6 +5298,8 @@ class AnalyticsApi
      * Operation postV2SearchReportProductSearchTextsAsyncWithHttpInfo
      *
      * Поисковые запросы по товару
+     *
+     * Метод формирует топ поисковых запросов по товару. Параметры выбора поисковых запросов: - &#x60;limit&#x60; — количество запросов, максимум 30. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) \\*\\*Продвинутый\\*\\* и \\*\\*Премиальный\\*\\* максимум — 100. - &#x60;topOrderBy&#x60; — способ выбора топа запросов Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-product-search-texts
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5405,6 +5485,8 @@ class AnalyticsApi
      *
      * Основная страница
      *
+     * Метод формирует набор данных для основной страницы отчёта по поисковым запросам с: - общей информацией - позициями товаров - данными по видимости и переходам в карточку - данными для таблицы по группам Для получения дополнительных данных в таблице используйте отдельный запрос для: - [пагинации по группам](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableGroups) - [получения по товарам в группе](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableDetails) Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-report
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -5428,6 +5510,8 @@ class AnalyticsApi
      * Operation postV2SearchReportReportWithHttpInfo
      *
      * Основная страница
+     *
+     * Метод формирует набор данных для основной страницы отчёта по поисковым запросам с: - общей информацией - позициями товаров - данными по видимости и переходам в карточку - данными для таблицы по группам Для получения дополнительных данных в таблице используйте отдельный запрос для: - [пагинации по группам](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableGroups) - [получения по товарам в группе](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableDetails) Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-report
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5735,6 +5819,8 @@ class AnalyticsApi
      *
      * Основная страница
      *
+     * Метод формирует набор данных для основной страницы отчёта по поисковым запросам с: - общей информацией - позициями товаров - данными по видимости и переходам в карточку - данными для таблицы по группам Для получения дополнительных данных в таблице используйте отдельный запрос для: - [пагинации по группам](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableGroups) - [получения по товарам в группе](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableDetails) Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-report
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -5761,6 +5847,8 @@ class AnalyticsApi
      * Operation postV2SearchReportReportAsyncWithHttpInfo
      *
      * Основная страница
+     *
+     * Метод формирует набор данных для основной страницы отчёта по поисковым запросам с: - общей информацией - позициями товаров - данными по видимости и переходам в карточку - данными для таблицы по группам Для получения дополнительных данных в таблице используйте отдельный запрос для: - [пагинации по группам](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableGroups) - [получения по товарам в группе](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportTableDetails) Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-report
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5946,6 +6034,8 @@ class AnalyticsApi
      *
      * Пагинация по товарам в группе
      *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по товарам в группе. Пагинация возможна вне зависимости от наличия фильтров.  Фильтры для пагинации по товарам в группе или без фильтров: - кортеж &#x60;subjectId&#x60;,&#x60;brandName&#x60;,&#x60;tagId&#x60; — фильтр для группы - &#x60;nmIds&#x60; — фильтр по карточке товара Дополнительный параметр выбора списка товаров: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-details
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -5969,6 +6059,8 @@ class AnalyticsApi
      * Operation postV2SearchReportTableDetailsWithHttpInfo
      *
      * Пагинация по товарам в группе
+     *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по товарам в группе. Пагинация возможна вне зависимости от наличия фильтров.  Фильтры для пагинации по товарам в группе или без фильтров: - кортеж &#x60;subjectId&#x60;,&#x60;brandName&#x60;,&#x60;tagId&#x60; — фильтр для группы - &#x60;nmIds&#x60; — фильтр по карточке товара Дополнительный параметр выбора списка товаров: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-details
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6276,6 +6368,8 @@ class AnalyticsApi
      *
      * Пагинация по товарам в группе
      *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по товарам в группе. Пагинация возможна вне зависимости от наличия фильтров.  Фильтры для пагинации по товарам в группе или без фильтров: - кортеж &#x60;subjectId&#x60;,&#x60;brandName&#x60;,&#x60;tagId&#x60; — фильтр для группы - &#x60;nmIds&#x60; — фильтр по карточке товара Дополнительный параметр выбора списка товаров: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-details
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -6302,6 +6396,8 @@ class AnalyticsApi
      * Operation postV2SearchReportTableDetailsAsyncWithHttpInfo
      *
      * Пагинация по товарам в группе
+     *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по товарам в группе. Пагинация возможна вне зависимости от наличия фильтров.  Фильтры для пагинации по товарам в группе или без фильтров: - кортеж &#x60;subjectId&#x60;,&#x60;brandName&#x60;,&#x60;tagId&#x60; — фильтр для группы - &#x60;nmIds&#x60; — фильтр по карточке товара Дополнительный параметр выбора списка товаров: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-details
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6487,6 +6583,8 @@ class AnalyticsApi
      *
      * Пагинация по группам
      *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по группам. Пагинация возможна только при наличии фильтра по бренду, предмету или ярлыку.  Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-groups
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -6510,6 +6608,8 @@ class AnalyticsApi
      * Operation postV2SearchReportTableGroupsWithHttpInfo
      *
      * Пагинация по группам
+     *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по группам. Пагинация возможна только при наличии фильтра по бренду, предмету или ярлыку.  Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-groups
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6817,6 +6917,8 @@ class AnalyticsApi
      *
      * Пагинация по группам
      *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по группам. Пагинация возможна только при наличии фильтра по бренду, предмету или ярлыку.  Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-groups
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -6843,6 +6945,8 @@ class AnalyticsApi
      * Operation postV2SearchReportTableGroupsAsyncWithHttpInfo
      *
      * Пагинация по группам
+     *
+     * Метод формирует дополнительные данные к [основному отчёту](https://dev.wildberries.ru/openapi/analytics#tag/searchQueriesForYourItems/operation/postV2SearchReportReport) с пагинацией по группам. Пагинация возможна только при наличии фильтра по бренду, предмету или ярлыку.  Дополнительный параметр выбора списка товаров в таблице: - &#x60;positionCluster&#x60; — средняя позиция в поиске Параметры &#x60;includeSubstitutedSKUs&#x60; и &#x60;includeSearchTexts&#x60; не могут одновременно иметь значение &#x60;false&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-search-report-table-groups
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7028,6 +7132,8 @@ class AnalyticsApi
      *
      * Данные по складам
      *
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -7051,6 +7157,8 @@ class AnalyticsApi
      * Operation postV2StocksReportOfficesWithHttpInfo
      *
      * Данные по складам
+     *
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7358,6 +7466,8 @@ class AnalyticsApi
      *
      * Данные по складам
      *
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -7384,6 +7494,8 @@ class AnalyticsApi
      * Operation postV2StocksReportOfficesAsyncWithHttpInfo
      *
      * Данные по складам
+     *
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7569,6 +7681,8 @@ class AnalyticsApi
      *
      * Данные по группам
      *
+     * Метод формирует набор данных об остатках по группам товаров.  Группа товаров описывается кортежем &#x60;subjectID, brandName, tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-groups
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -7592,6 +7706,8 @@ class AnalyticsApi
      * Operation postV2StocksReportProductsGroupsWithHttpInfo
      *
      * Данные по группам
+     *
+     * Метод формирует набор данных об остатках по группам товаров.  Группа товаров описывается кортежем &#x60;subjectID, brandName, tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-groups
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7899,6 +8015,8 @@ class AnalyticsApi
      *
      * Данные по группам
      *
+     * Метод формирует набор данных об остатках по группам товаров.  Группа товаров описывается кортежем &#x60;subjectID, brandName, tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-groups
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -7925,6 +8043,8 @@ class AnalyticsApi
      * Operation postV2StocksReportProductsGroupsAsyncWithHttpInfo
      *
      * Данные по группам
+     *
+     * Метод формирует набор данных об остатках по группам товаров.  Группа товаров описывается кортежем &#x60;subjectID, brandName, tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-groups
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -8110,6 +8230,8 @@ class AnalyticsApi
      *
      * Данные по товарам
      *
+     * Метод формирует набор данных об остатках по товарам.  Можно получить данные как по отдельным товарам, так и в рамках всего отчёта — если в запросе отсутствуют фильтры: &#x60;nmIDs&#x60;, &#x60;subjectID&#x60;, &#x60;brandName&#x60;, &#x60;tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-products
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -8133,6 +8255,8 @@ class AnalyticsApi
      * Operation postV2StocksReportProductsProductsWithHttpInfo
      *
      * Данные по товарам
+     *
+     * Метод формирует набор данных об остатках по товарам.  Можно получить данные как по отдельным товарам, так и в рамках всего отчёта — если в запросе отсутствуют фильтры: &#x60;nmIDs&#x60;, &#x60;subjectID&#x60;, &#x60;brandName&#x60;, &#x60;tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-products
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -8440,6 +8564,8 @@ class AnalyticsApi
      *
      * Данные по товарам
      *
+     * Метод формирует набор данных об остатках по товарам.  Можно получить данные как по отдельным товарам, так и в рамках всего отчёта — если в запросе отсутствуют фильтры: &#x60;nmIDs&#x60;, &#x60;subjectID&#x60;, &#x60;brandName&#x60;, &#x60;tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-products
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -8466,6 +8592,8 @@ class AnalyticsApi
      * Operation postV2StocksReportProductsProductsAsyncWithHttpInfo
      *
      * Данные по товарам
+     *
+     * Метод формирует набор данных об остатках по товарам.  Можно получить данные как по отдельным товарам, так и в рамках всего отчёта — если в запросе отсутствуют фильтры: &#x60;nmIDs&#x60;, &#x60;subjectID&#x60;, &#x60;brandName&#x60;, &#x60;tagID&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-products
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -8651,6 +8779,8 @@ class AnalyticsApi
      *
      * Данные по размерам
      *
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -8674,6 +8804,8 @@ class AnalyticsApi
      * Operation postV2StocksReportProductsSizesWithHttpInfo
      *
      * Данные по размерам
+     *
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -8981,6 +9113,8 @@ class AnalyticsApi
      *
      * Данные по размерам
      *
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -9007,6 +9141,8 @@ class AnalyticsApi
      * Operation postV2StocksReportProductsSizesAsyncWithHttpInfo
      *
      * Данные по размерам
+     *
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -9192,6 +9328,8 @@ class AnalyticsApi
      *
      * Статистика групп карточек товаров по дням
      *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Карточки товаров сгруппированы по предметам, брендам и ярлыкам. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;, &#x60;subjectIds&#x60;, &#x60;tagIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда группировка происходит по всем карточкам продавца.  Произведение количества предметов, брендов, ярлыков в запросе может быть не больше 16. Например, 4 бренда и 4 предмета или 2 предмета, 2 ярлыка и 4 бренда.  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;GROUPED_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-grouped-history
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -9215,6 +9353,8 @@ class AnalyticsApi
      * Operation postV3SalesFunnelGroupedHistoryWithHttpInfo
      *
      * Статистика групп карточек товаров по дням
+     *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Карточки товаров сгруппированы по предметам, брендам и ярлыкам. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;, &#x60;subjectIds&#x60;, &#x60;tagIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда группировка происходит по всем карточкам продавца.  Произведение количества предметов, брендов, ярлыков в запросе может быть не больше 16. Например, 4 бренда и 4 предмета или 2 предмета, 2 ярлыка и 4 бренда.  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;GROUPED_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-grouped-history
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -9522,6 +9662,8 @@ class AnalyticsApi
      *
      * Статистика групп карточек товаров по дням
      *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Карточки товаров сгруппированы по предметам, брендам и ярлыкам. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;, &#x60;subjectIds&#x60;, &#x60;tagIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда группировка происходит по всем карточкам продавца.  Произведение количества предметов, брендов, ярлыков в запросе может быть не больше 16. Например, 4 бренда и 4 предмета или 2 предмета, 2 ярлыка и 4 бренда.  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;GROUPED_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-grouped-history
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -9548,6 +9690,8 @@ class AnalyticsApi
      * Operation postV3SalesFunnelGroupedHistoryAsyncWithHttpInfo
      *
      * Статистика групп карточек товаров по дням
+     *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Карточки товаров сгруппированы по предметам, брендам и ярлыкам. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;, &#x60;subjectIds&#x60;, &#x60;tagIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда группировка происходит по всем карточкам продавца.  Произведение количества предметов, брендов, ярлыков в запросе может быть не больше 16. Например, 4 бренда и 4 предмета или 2 предмета, 2 ярлыка и 4 бренда.  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;GROUPED_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-grouped-history
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -9733,6 +9877,8 @@ class AnalyticsApi
      *
      * Статистика карточек товаров за период
      *
+     * Метод формирует отчёт о товарах, сравнивая ключевые показатели за текущий период с аналогичным прошлым.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все карточки продавца.  Если вы указали несколько параметров, в ответе будут карточки, в которых есть одновременно все эти параметры. Если карточки не подходят по параметрам запроса, вернётся пустой ответ &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 365 дней.  В данных предыдущего периода: \\* Данные в &#x60;pastPeriod&#x60; указаны за такой же период, что и в &#x60;selectedPeriod&#x60; \\* Если дата начала &#x60;pastPeriod&#x60; раньше, чем год назад от текущей даты, она будет приведена к виду: &#x60;pastPeriod.start &#x3D; текущая дата — 365 дней&#x60; Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -9756,6 +9902,8 @@ class AnalyticsApi
      * Operation postV3SalesFunnelProductsWithHttpInfo
      *
      * Статистика карточек товаров за период
+     *
+     * Метод формирует отчёт о товарах, сравнивая ключевые показатели за текущий период с аналогичным прошлым.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все карточки продавца.  Если вы указали несколько параметров, в ответе будут карточки, в которых есть одновременно все эти параметры. Если карточки не подходят по параметрам запроса, вернётся пустой ответ &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 365 дней.  В данных предыдущего периода: \\* Данные в &#x60;pastPeriod&#x60; указаны за такой же период, что и в &#x60;selectedPeriod&#x60; \\* Если дата начала &#x60;pastPeriod&#x60; раньше, чем год назад от текущей даты, она будет приведена к виду: &#x60;pastPeriod.start &#x3D; текущая дата — 365 дней&#x60; Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -10063,6 +10211,8 @@ class AnalyticsApi
      *
      * Статистика карточек товаров за период
      *
+     * Метод формирует отчёт о товарах, сравнивая ключевые показатели за текущий период с аналогичным прошлым.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все карточки продавца.  Если вы указали несколько параметров, в ответе будут карточки, в которых есть одновременно все эти параметры. Если карточки не подходят по параметрам запроса, вернётся пустой ответ &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 365 дней.  В данных предыдущего периода: \\* Данные в &#x60;pastPeriod&#x60; указаны за такой же период, что и в &#x60;selectedPeriod&#x60; \\* Если дата начала &#x60;pastPeriod&#x60; раньше, чем год назад от текущей даты, она будет приведена к виду: &#x60;pastPeriod.start &#x3D; текущая дата — 365 дней&#x60; Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -10089,6 +10239,8 @@ class AnalyticsApi
      * Operation postV3SalesFunnelProductsAsyncWithHttpInfo
      *
      * Статистика карточек товаров за период
+     *
+     * Метод формирует отчёт о товарах, сравнивая ключевые показатели за текущий период с аналогичным прошлым.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Параметры &#x60;brandNames&#x60;,&#x60;subjectIds&#x60;, &#x60;tagIds&#x60;, &#x60;nmIds&#x60; могут быть пустыми &#x60;[]&#x60;, тогда в ответе возвращаются все карточки продавца.  Если вы указали несколько параметров, в ответе будут карточки, в которых есть одновременно все эти параметры. Если карточки не подходят по параметрам запроса, вернётся пустой ответ &#x60;[]&#x60;.  Можно получить отчёт максимум за последние 365 дней.  В данных предыдущего периода: \\* Данные в &#x60;pastPeriod&#x60; указаны за такой же период, что и в &#x60;selectedPeriod&#x60; \\* Если дата начала &#x60;pastPeriod&#x60; раньше, чем год назад от текущей даты, она будет приведена к виду: &#x60;pastPeriod.start &#x3D; текущая дата — 365 дней&#x60; Можно использовать пагинацию.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -10274,6 +10426,8 @@ class AnalyticsApi
      *
      * Статистика карточек товаров по дням
      *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;DETAIL_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products-history
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -10297,6 +10451,8 @@ class AnalyticsApi
      * Operation postV3SalesFunnelProductsHistoryWithHttpInfo
      *
      * Статистика карточек товаров по дням
+     *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;DETAIL_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products-history
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -10604,6 +10760,8 @@ class AnalyticsApi
      *
      * Статистика карточек товаров по дням
      *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;DETAIL_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products-history
+     *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
@@ -10630,6 +10788,8 @@ class AnalyticsApi
      * Operation postV3SalesFunnelProductsHistoryAsyncWithHttpInfo
      *
      * Статистика карточек товаров по дням
+     *
+     * Метод возвращает статистику карточек товаров по дням или неделям. Можно получить данные максимум за последнюю неделю.  Данные отчёта обновляются 1 раз в 2 часа.  В течение часа после события появляется большая часть данных: - о заказах - о переходах в карточку товара - о добавлениях товаров в корзину Малая часть этих данных может появляться в течение нескольких дней.  Выкупы, отмены и возвраты отображаются в отчёте за тот день, когда товар был заказан. Например, если заказ был сделан 1 января, а покупатель вернул товар 10 января, данные об этом возврате появятся в отчёте за 1 января. Окончательные итоги продаж вы можете отслеживать с помощью [детализаций к отчётам реализации](https://dev.wildberries.ru/openapi/documents-and-accounting#tag/financialReports).  Чтобы получать отчёты за период до года, используйте методы [Аналитика продавца CSV](https://dev.wildberries.ru/openapi/analytics#tag/sellerAnalyticsCsv) — тип &#x60;DETAIL_HISTORY_REPORT&#x60;. Отчёты этого типа доступны только с подпиской [Джем](https://seller.wildberries.ru/monetization/jam)  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-analytics-v3-sales-funnel-products-history
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
