@@ -472,11 +472,30 @@ class GeneralApi
      *
      * Проверка подключения
      *
-     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
+     * URL: https://content-api.wildberries.ru
+     * URL: https://content-api-sandbox.wildberries.ru
+     * URL: https://seller-analytics-api.wildberries.ru
+     * URL: https://discounts-prices-api.wildberries.ru
+     * URL: https://discounts-prices-api-sandbox.wildberries.ru
+     * URL: https://marketplace-api.wildberries.ru
+     * URL: https://marketplace-api-sandbox.wildberries.ru
+     * URL: https://statistics-api.wildberries.ru
+     * URL: https://statistics-api-sandbox.wildberries.ru
+     * URL: https://advert-api.wildberries.ru
+     * URL: https://advert-api-sandbox.wildberries.ru
+     * URL: https://feedbacks-api.wildberries.ru
+     * URL: https://feedbacks-api-sandbox.wildberries.ru
+     * URL: https://buyer-chat-api.wildberries.ru
+     * URL: https://supplies-api.wildberries.ru
+     * URL: https://returns-api.wildberries.ru
+     * URL: https://documents-api.wildberries.ru
+     * URL: https://finance-api.wildberries.ru
+     * URL: https://user-management-api.wildberries.ru
      *
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -497,11 +516,30 @@ class GeneralApi
      *
      * Проверка подключения
      *
-     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
+     * URL: https://content-api.wildberries.ru
+     * URL: https://content-api-sandbox.wildberries.ru
+     * URL: https://seller-analytics-api.wildberries.ru
+     * URL: https://discounts-prices-api.wildberries.ru
+     * URL: https://discounts-prices-api-sandbox.wildberries.ru
+     * URL: https://marketplace-api.wildberries.ru
+     * URL: https://marketplace-api-sandbox.wildberries.ru
+     * URL: https://statistics-api.wildberries.ru
+     * URL: https://statistics-api-sandbox.wildberries.ru
+     * URL: https://advert-api.wildberries.ru
+     * URL: https://advert-api-sandbox.wildberries.ru
+     * URL: https://feedbacks-api.wildberries.ru
+     * URL: https://feedbacks-api-sandbox.wildberries.ru
+     * URL: https://buyer-chat-api.wildberries.ru
+     * URL: https://supplies-api.wildberries.ru
+     * URL: https://returns-api.wildberries.ru
+     * URL: https://documents-api.wildberries.ru
+     * URL: https://finance-api.wildberries.ru
+     * URL: https://user-management-api.wildberries.ru
      *
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -734,11 +772,30 @@ class GeneralApi
      *
      * Проверка подключения
      *
-     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
+     * URL: https://content-api.wildberries.ru
+     * URL: https://content-api-sandbox.wildberries.ru
+     * URL: https://seller-analytics-api.wildberries.ru
+     * URL: https://discounts-prices-api.wildberries.ru
+     * URL: https://discounts-prices-api-sandbox.wildberries.ru
+     * URL: https://marketplace-api.wildberries.ru
+     * URL: https://marketplace-api-sandbox.wildberries.ru
+     * URL: https://statistics-api.wildberries.ru
+     * URL: https://statistics-api-sandbox.wildberries.ru
+     * URL: https://advert-api.wildberries.ru
+     * URL: https://advert-api-sandbox.wildberries.ru
+     * URL: https://feedbacks-api.wildberries.ru
+     * URL: https://feedbacks-api-sandbox.wildberries.ru
+     * URL: https://buyer-chat-api.wildberries.ru
+     * URL: https://supplies-api.wildberries.ru
+     * URL: https://returns-api.wildberries.ru
+     * URL: https://documents-api.wildberries.ru
+     * URL: https://finance-api.wildberries.ru
+     * URL: https://user-management-api.wildberries.ru
      *
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -762,11 +819,30 @@ class GeneralApi
      *
      * Проверка подключения
      *
-     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена: | Категория | URL запроса | |---------------|-----------------------| | Контент | &#x60;https://content-api.wildberries.ru/ping&#x60; &#x60;https://content-api-sandbox.wildberries.ru/ping&#x60; | | Аналитика | &#x60;https://seller-analytics-api.wildberries.ru/ping&#x60; | | Цены и скидки | &#x60;https://discounts-prices-api.wildberries.ru/ping&#x60; &#x60;https://discounts-prices-api-sandbox.wildberries.ru/ping&#x60; | | Маркетплейс | &#x60;https://marketplace-api.wildberries.ru/ping&#x60; | | Статистика | &#x60;https://statistics-api.wildberries.ru/ping&#x60; &#x60;https://statistics-api-sandbox.wildberries.ru/ping&#x60; | | Продвижение | &#x60;https://advert-api.wildberries.ru/ping&#x60; &#x60;https://advert-api-sandbox.wildberries.ru/ping&#x60; | | Вопросы и отзывы | &#x60;https://feedbacks-api.wildberries.ru/ping&#x60; &#x60;https://feedbacks-api-sandbox.wildberries.ru/ping&#x60; | | Чат с покупателями | &#x60;https://buyer-chat-api.wildberries.ru/ping&#x60; | | Поставки | &#x60;https://supplies-api.wildberries.ru/ping&#x60; | | Возвраты покупателями | &#x60;https://returns-api.wildberries.ru/ping&#x60; | | Документы | &#x60;https://documents-api.wildberries.ru/ping&#x60; | | Финансы | &#x60;https://finance-api.wildberries.ru/ping&#x60; | | Тарифы, Новости, Получить информацию о продавце | &#x60;https://common-api.wildberries.ru/ping&#x60; | | Управление пользователями продавца | &#x60;https://user-management-api.wildberries.ru/ping&#x60; |  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
+     * Метод проверяет: 1. Успешно ли запрос доходит до WB API 2. Валидность токена авторизации и URL запроса 3. Совпадают ли категория токена и сервис  Метод не предназначен для проверки доступности сервисов WB  У каждого сервиса есть свой вариант метода в зависимости от домена.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 30 сек | 3 запроса | 10 сек | 99 запросов |  Лимит действует отдельно для каждого варианта метода в зависимости от домена  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/general/get-ping
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
+     * URL: https://content-api.wildberries.ru
+     * URL: https://content-api-sandbox.wildberries.ru
+     * URL: https://seller-analytics-api.wildberries.ru
+     * URL: https://discounts-prices-api.wildberries.ru
+     * URL: https://discounts-prices-api-sandbox.wildberries.ru
+     * URL: https://marketplace-api.wildberries.ru
+     * URL: https://marketplace-api-sandbox.wildberries.ru
+     * URL: https://statistics-api.wildberries.ru
+     * URL: https://statistics-api-sandbox.wildberries.ru
+     * URL: https://advert-api.wildberries.ru
+     * URL: https://advert-api-sandbox.wildberries.ru
+     * URL: https://feedbacks-api.wildberries.ru
+     * URL: https://feedbacks-api-sandbox.wildberries.ru
+     * URL: https://buyer-chat-api.wildberries.ru
+     * URL: https://supplies-api.wildberries.ru
+     * URL: https://returns-api.wildberries.ru
+     * URL: https://documents-api.wildberries.ru
+     * URL: https://finance-api.wildberries.ru
+     * URL: https://user-management-api.wildberries.ru
      *
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -822,6 +898,25 @@ class GeneralApi
     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://common-api.wildberries.ru
+     * URL: https://content-api.wildberries.ru
+     * URL: https://content-api-sandbox.wildberries.ru
+     * URL: https://seller-analytics-api.wildberries.ru
+     * URL: https://discounts-prices-api.wildberries.ru
+     * URL: https://discounts-prices-api-sandbox.wildberries.ru
+     * URL: https://marketplace-api.wildberries.ru
+     * URL: https://marketplace-api-sandbox.wildberries.ru
+     * URL: https://statistics-api.wildberries.ru
+     * URL: https://statistics-api-sandbox.wildberries.ru
+     * URL: https://advert-api.wildberries.ru
+     * URL: https://advert-api-sandbox.wildberries.ru
+     * URL: https://feedbacks-api.wildberries.ru
+     * URL: https://feedbacks-api-sandbox.wildberries.ru
+     * URL: https://buyer-chat-api.wildberries.ru
+     * URL: https://supplies-api.wildberries.ru
+     * URL: https://returns-api.wildberries.ru
+     * URL: https://documents-api.wildberries.ru
+     * URL: https://finance-api.wildberries.ru
+     * URL: https://user-management-api.wildberries.ru
      *
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -922,7 +1017,83 @@ class GeneralApi
         return [
             [
                 "url" => "https://common-api.wildberries.ru",
-                "description" => "No description provided",
+                "description" => "**Тарифы, Новости, Информация о продавце**",
+            ],
+            [
+                "url" => "https://content-api.wildberries.ru",
+                "description" => "**Контент**",
+            ],
+            [
+                "url" => "https://content-api-sandbox.wildberries.ru",
+                "description" => "**Песочница Контент**",
+            ],
+            [
+                "url" => "https://seller-analytics-api.wildberries.ru",
+                "description" => "**Аналитика**",
+            ],
+            [
+                "url" => "https://discounts-prices-api.wildberries.ru",
+                "description" => "**Цены и скидки**",
+            ],
+            [
+                "url" => "https://discounts-prices-api-sandbox.wildberries.ru",
+                "description" => "**Песочница Цены и скидки**",
+            ],
+            [
+                "url" => "https://marketplace-api.wildberries.ru",
+                "description" => "**Маркетплейс**",
+            ],
+            [
+                "url" => "https://marketplace-api-sandbox.wildberries.ru",
+                "description" => "**Песочница Маркетплейс**",
+            ],
+            [
+                "url" => "https://statistics-api.wildberries.ru",
+                "description" => "**Статистика**",
+            ],
+            [
+                "url" => "https://statistics-api-sandbox.wildberries.ru",
+                "description" => "**Песочница Статистика**",
+            ],
+            [
+                "url" => "https://advert-api.wildberries.ru",
+                "description" => "**Продвижение**",
+            ],
+            [
+                "url" => "https://advert-api-sandbox.wildberries.ru",
+                "description" => "**Песочница Продвижение**",
+            ],
+            [
+                "url" => "https://feedbacks-api.wildberries.ru",
+                "description" => "**Вопросы и отзывы**",
+            ],
+            [
+                "url" => "https://feedbacks-api-sandbox.wildberries.ru",
+                "description" => "**Песочница Вопросы и отзывы**",
+            ],
+            [
+                "url" => "https://buyer-chat-api.wildberries.ru",
+                "description" => "**Чат с покупателями**",
+            ],
+            [
+                "url" => "https://supplies-api.wildberries.ru",
+                "description" => "**Поставки**",
+            ],
+            [
+                "url" => "https://returns-api.wildberries.ru",
+                "description" => "**Возвраты покупателями**",
+            ],
+            [
+                "url" => "https://documents-api.wildberries.ru",
+                "description" => "**Документы**",
+            ],
+            [
+                "url" => "https://finance-api.wildberries.ru",
+                "description" => "**Финансы**",
+            ],
+            [
+                "url" => "https://user-management-api.wildberries.ru",
+                "description" => "**Управление пользователями продавца**",
             ]
         ];
     }
