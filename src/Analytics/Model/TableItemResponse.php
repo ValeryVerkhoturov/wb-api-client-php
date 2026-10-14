@@ -58,7 +58,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]',
+        'items' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemSt[]',
         'currency' => 'string'
     ];
 
@@ -300,7 +300,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemSt[]|null
      */
     public function getItems()
     {
@@ -310,7 +310,7 @@ class TableItemResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null $items Множество данных по товарам
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemSt[]|null $items Множество данных по товарам
      *
      * @return self
      */

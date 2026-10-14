@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TableItemItemStMetrics
+ * TableItemStMetrics
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * TableItemItemStMetrics Class Doc Comment
+ * TableItemStMetrics Class Doc Comment
  *
  * @category Class
  * @description Метрики товара
@@ -42,7 +42,7 @@ use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TableItemItemStMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableItemStMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class TableItemItemStMetrics implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TableItemItemSt_metrics';
+    protected static $openAPIModelName = 'TableItemSt_metrics';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -77,7 +77,7 @@ class TableItemItemStMetrics implements ModelInterface, ArrayAccess, \JsonSerial
         'lost_orders_sum' => 'float',
         'lost_buyouts_count' => 'float',
         'lost_buyouts_sum' => 'float',
-        'current_price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice',
+        'current_price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetricsAllOfCurrentPrice',
         'availability' => 'string'
     ];
 
@@ -945,7 +945,7 @@ class TableItemItemStMetrics implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets current_price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetricsAllOfCurrentPrice|null
      */
     public function getCurrentPrice()
     {
@@ -955,7 +955,7 @@ class TableItemItemStMetrics implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets current_price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice|null $current_price current_price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetricsAllOfCurrentPrice|null $current_price current_price
      *
      * @return self
      */

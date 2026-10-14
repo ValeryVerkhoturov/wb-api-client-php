@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TableItemItemAllOfPrice
+ * TableItemSt
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * TableItemItemAllOfPrice Class Doc Comment
+ * TableItemSt Class Doc Comment
  *
  * @category Class
- * @description Цена
+ * @description Данные по товару
  * @package  ValeryVerkhoturov\WbApiClient\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TableItemItem_allOf_price';
+    protected static $openAPIModelName = 'TableItemSt';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'min_price' => 'int',
-        'max_price' => 'int'
+        'nm_id' => 'int',
+        'is_deleted' => 'bool',
+        'subject_name' => 'string',
+        'name' => 'string',
+        'vendor_code' => 'string',
+        'brand_name' => 'string',
+        'main_photo' => 'string',
+        'has_sizes' => 'bool',
+        'metrics' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetrics'
     ];
 
     /**
@@ -71,8 +78,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'min_price' => 'uint64',
-        'max_price' => 'uint64'
+        'nm_id' => 'int64',
+        'is_deleted' => null,
+        'subject_name' => null,
+        'name' => null,
+        'vendor_code' => null,
+        'brand_name' => null,
+        'main_photo' => null,
+        'has_sizes' => null,
+        'metrics' => null
     ];
 
     /**
@@ -81,8 +95,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'min_price' => false,
-        'max_price' => false
+        'nm_id' => false,
+        'is_deleted' => false,
+        'subject_name' => false,
+        'name' => false,
+        'vendor_code' => false,
+        'brand_name' => false,
+        'main_photo' => false,
+        'has_sizes' => false,
+        'metrics' => false
     ];
 
     /**
@@ -171,8 +192,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'min_price' => 'minPrice',
-        'max_price' => 'maxPrice'
+        'nm_id' => 'nmID',
+        'is_deleted' => 'isDeleted',
+        'subject_name' => 'subjectName',
+        'name' => 'name',
+        'vendor_code' => 'vendorCode',
+        'brand_name' => 'brandName',
+        'main_photo' => 'mainPhoto',
+        'has_sizes' => 'hasSizes',
+        'metrics' => 'metrics'
     ];
 
     /**
@@ -181,8 +209,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'min_price' => 'setMinPrice',
-        'max_price' => 'setMaxPrice'
+        'nm_id' => 'setNmId',
+        'is_deleted' => 'setIsDeleted',
+        'subject_name' => 'setSubjectName',
+        'name' => 'setName',
+        'vendor_code' => 'setVendorCode',
+        'brand_name' => 'setBrandName',
+        'main_photo' => 'setMainPhoto',
+        'has_sizes' => 'setHasSizes',
+        'metrics' => 'setMetrics'
     ];
 
     /**
@@ -191,8 +226,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'min_price' => 'getMinPrice',
-        'max_price' => 'getMaxPrice'
+        'nm_id' => 'getNmId',
+        'is_deleted' => 'getIsDeleted',
+        'subject_name' => 'getSubjectName',
+        'name' => 'getName',
+        'vendor_code' => 'getVendorCode',
+        'brand_name' => 'getBrandName',
+        'main_photo' => 'getMainPhoto',
+        'has_sizes' => 'getHasSizes',
+        'metrics' => 'getMetrics'
     ];
 
     /**
@@ -252,8 +294,15 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('min_price', $data ?? [], null);
-        $this->setIfExists('max_price', $data ?? [], null);
+        $this->setIfExists('nm_id', $data ?? [], null);
+        $this->setIfExists('is_deleted', $data ?? [], null);
+        $this->setIfExists('subject_name', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('vendor_code', $data ?? [], null);
+        $this->setIfExists('brand_name', $data ?? [], null);
+        $this->setIfExists('main_photo', $data ?? [], null);
+        $this->setIfExists('has_sizes', $data ?? [], null);
+        $this->setIfExists('metrics', $data ?? [], null);
     }
 
     /**
@@ -299,55 +348,244 @@ class TableItemItemAllOfPrice implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets min_price
+     * Gets nm_id
      *
      * @return int|null
      */
-    public function getMinPrice()
+    public function getNmId()
     {
-        return $this->container['min_price'];
+        return $this->container['nm_id'];
     }
 
     /**
-     * Sets min_price
+     * Sets nm_id
      *
-     * @param int|null $min_price Минимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)
+     * @param int|null $nm_id Артикул WB
      *
      * @return self
      */
-    public function setMinPrice($min_price)
+    public function setNmId($nm_id)
     {
-        if (is_null($min_price)) {
-            throw new \InvalidArgumentException('non-nullable min_price cannot be null');
+        if (is_null($nm_id)) {
+            throw new \InvalidArgumentException('non-nullable nm_id cannot be null');
         }
-        $this->container['min_price'] = $min_price;
+        $this->container['nm_id'] = $nm_id;
 
         return $this;
     }
 
     /**
-     * Gets max_price
+     * Gets is_deleted
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getMaxPrice()
+    public function getIsDeleted()
     {
-        return $this->container['max_price'];
+        return $this->container['is_deleted'];
     }
 
     /**
-     * Sets max_price
+     * Sets is_deleted
      *
-     * @param int|null $max_price Максимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)
+     * @param bool|null $is_deleted Является ли товар удалённым
      *
      * @return self
      */
-    public function setMaxPrice($max_price)
+    public function setIsDeleted($is_deleted)
     {
-        if (is_null($max_price)) {
-            throw new \InvalidArgumentException('non-nullable max_price cannot be null');
+        if (is_null($is_deleted)) {
+            throw new \InvalidArgumentException('non-nullable is_deleted cannot be null');
         }
-        $this->container['max_price'] = $max_price;
+        $this->container['is_deleted'] = $is_deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets subject_name
+     *
+     * @return string|null
+     */
+    public function getSubjectName()
+    {
+        return $this->container['subject_name'];
+    }
+
+    /**
+     * Sets subject_name
+     *
+     * @param string|null $subject_name Название предмета
+     *
+     * @return self
+     */
+    public function setSubjectName($subject_name)
+    {
+        if (is_null($subject_name)) {
+            throw new \InvalidArgumentException('non-nullable subject_name cannot be null');
+        }
+        $this->container['subject_name'] = $subject_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Название товара
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        }
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor_code
+     *
+     * @return string|null
+     */
+    public function getVendorCode()
+    {
+        return $this->container['vendor_code'];
+    }
+
+    /**
+     * Sets vendor_code
+     *
+     * @param string|null $vendor_code Артикул продавца
+     *
+     * @return self
+     */
+    public function setVendorCode($vendor_code)
+    {
+        if (is_null($vendor_code)) {
+            throw new \InvalidArgumentException('non-nullable vendor_code cannot be null');
+        }
+        $this->container['vendor_code'] = $vendor_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_name
+     *
+     * @return string|null
+     */
+    public function getBrandName()
+    {
+        return $this->container['brand_name'];
+    }
+
+    /**
+     * Sets brand_name
+     *
+     * @param string|null $brand_name Бренд
+     *
+     * @return self
+     */
+    public function setBrandName($brand_name)
+    {
+        if (is_null($brand_name)) {
+            throw new \InvalidArgumentException('non-nullable brand_name cannot be null');
+        }
+        $this->container['brand_name'] = $brand_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets main_photo
+     *
+     * @return string|null
+     */
+    public function getMainPhoto()
+    {
+        return $this->container['main_photo'];
+    }
+
+    /**
+     * Sets main_photo
+     *
+     * @param string|null $main_photo Ссылка на главное фото
+     *
+     * @return self
+     */
+    public function setMainPhoto($main_photo)
+    {
+        if (is_null($main_photo)) {
+            throw new \InvalidArgumentException('non-nullable main_photo cannot be null');
+        }
+        $this->container['main_photo'] = $main_photo;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_sizes
+     *
+     * @return bool|null
+     */
+    public function getHasSizes()
+    {
+        return $this->container['has_sizes'];
+    }
+
+    /**
+     * Sets has_sizes
+     *
+     * @param bool|null $has_sizes Является ли товар размерным. Неразмерный товар имеет единственный размер, с `\"techSize\":\"0\"`
+     *
+     * @return self
+     */
+    public function setHasSizes($has_sizes)
+    {
+        if (is_null($has_sizes)) {
+            throw new \InvalidArgumentException('non-nullable has_sizes cannot be null');
+        }
+        $this->container['has_sizes'] = $has_sizes;
+
+        return $this;
+    }
+
+    /**
+     * Gets metrics
+     *
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetrics|null
+     */
+    public function getMetrics()
+    {
+        return $this->container['metrics'];
+    }
+
+    /**
+     * Sets metrics
+     *
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetrics|null $metrics metrics
+     *
+     * @return self
+     */
+    public function setMetrics($metrics)
+    {
+        if (is_null($metrics)) {
+            throw new \InvalidArgumentException('non-nullable metrics cannot be null');
+        }
+        $this->container['metrics'] = $metrics;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TableItemItem
+ * TableItem
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * TableItemItem Class Doc Comment
+ * TableItem Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Analytics
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TableItemItem';
+    protected static $openAPIModelName = 'TableItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -69,7 +69,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_card_rated' => 'bool',
         'rating' => 'float',
         'feedback_rating' => 'float',
-        'price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice',
+        'price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemAllOfPrice',
         'avg_position' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAvgPosition',
         'open_card' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\VisibilityInfoOpenCard',
         'add_to_cart' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableGroupItemMetricsAddToCart',
@@ -716,7 +716,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemAllOfPrice|null
      */
     public function getPrice()
     {
@@ -726,7 +726,7 @@ class TableItemItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null $price price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemAllOfPrice|null $price price
      *
      * @return self
      */

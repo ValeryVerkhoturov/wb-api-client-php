@@ -77,7 +77,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
         'lost_orders_sum' => 'float',
         'lost_buyouts_count' => 'float',
         'lost_buyouts_sum' => 'float',
-        'current_price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice'
+        'current_price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetricsAllOfCurrentPrice'
     ];
 
     /**
@@ -906,7 +906,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Gets current_price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetricsAllOfCurrentPrice|null
      */
     public function getCurrentPrice()
     {
@@ -916,7 +916,7 @@ class TableSizeResponseSizesInnerMetrics implements ModelInterface, ArrayAccess,
     /**
      * Sets current_price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemStMetricsAllOfCurrentPrice|null $current_price current_price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemStMetricsAllOfCurrentPrice|null $current_price current_price
      *
      * @return self
      */

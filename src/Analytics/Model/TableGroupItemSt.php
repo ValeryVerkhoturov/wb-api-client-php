@@ -65,7 +65,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
         'tag_id' => 'int',
         'tag_name' => 'string',
         'metrics' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableCommonMetrics',
-        'items' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]'
+        'items' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemSt[]'
     ];
 
     /**
@@ -498,7 +498,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemSt[]|null
      */
     public function getItems()
     {
@@ -508,7 +508,7 @@ class TableGroupItemSt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemSt[]|null $items Товары группы
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemSt[]|null $items Товары группы
      *
      * @return self
      */

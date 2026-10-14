@@ -141,6 +141,9 @@ class OrdersFbsApi
         'patchV3FbsSuppliesShippingMethod' => [
             'application/json',
         ],
+        'patchV3FbsSuppliesSupplyIdOrdersTransfer' => [
+            'application/json',
+        ],
         'patchV3OrdersOrderIdCancel' => [
             'application/json',
         ],
@@ -11921,6 +11924,505 @@ class OrdersFbsApi
     }
 
     /**
+     * Operation patchV3FbsSuppliesSupplyIdOrdersTransfer
+     *
+     * Перевести сборочные задания из доставки на сборку
+     *
+     * Метод переводит сборочные задания из статуса &#x60;complete&#x60; — в доставке в статус &#x60;confirm&#x60; — на сборке.  Используйте метод, чтобы переместить сборочное задание из закрытой поставки в открытую.  Сборочное задание можно перевести из доставки на сборку, если выполнены все условия: - сборочное задание находится в статусе &#x60;complete&#x60; — в доставке - поставка, в которую нужно перенести сборочное задание, [не передана в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) - сборочное задание ранее не переносили из доставки на сборку Чтобы проверить, можно ли перевести сборочное задание из доставки на сборку, используйте [статусы сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/postV3OrdersStatus), поле &#x60;isTransferable&#x60;.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/patch-api-marketplace-v3-fbs-supplies-supplyid-orders-transfer
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки, из которой будут перемещены заказы (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSuppliesSupplyIdOrdersTransferRequest $patch_v3_fbs_supplies_supply_id_orders_transfer_request patch_v3_fbs_supplies_supply_id_orders_transfer_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error
+     */
+    public function patchV3FbsSuppliesSupplyIdOrdersTransfer($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'][0])
+    {
+        list($response) = $this->patchV3FbsSuppliesSupplyIdOrdersTransferWithHttpInfo($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation patchV3FbsSuppliesSupplyIdOrdersTransferWithHttpInfo
+     *
+     * Перевести сборочные задания из доставки на сборку
+     *
+     * Метод переводит сборочные задания из статуса &#x60;complete&#x60; — в доставке в статус &#x60;confirm&#x60; — на сборке.  Используйте метод, чтобы переместить сборочное задание из закрытой поставки в открытую.  Сборочное задание можно перевести из доставки на сборку, если выполнены все условия: - сборочное задание находится в статусе &#x60;complete&#x60; — в доставке - поставка, в которую нужно перенести сборочное задание, [не передана в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) - сборочное задание ранее не переносили из доставки на сборку Чтобы проверить, можно ли перевести сборочное задание из доставки на сборку, используйте [статусы сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/postV3OrdersStatus), поле &#x60;isTransferable&#x60;.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/patch-api-marketplace-v3-fbs-supplies-supplyid-orders-transfer
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки, из которой будут перемещены заказы (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSuppliesSupplyIdOrdersTransferRequest $patch_v3_fbs_supplies_supply_id_orders_transfer_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function patchV3FbsSuppliesSupplyIdOrdersTransferWithHttpInfo($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'][0])
+    {
+        $request = $this->patchV3FbsSuppliesSupplyIdOrdersTransferRequest($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation patchV3FbsSuppliesSupplyIdOrdersTransferAsync
+     *
+     * Перевести сборочные задания из доставки на сборку
+     *
+     * Метод переводит сборочные задания из статуса &#x60;complete&#x60; — в доставке в статус &#x60;confirm&#x60; — на сборке.  Используйте метод, чтобы переместить сборочное задание из закрытой поставки в открытую.  Сборочное задание можно перевести из доставки на сборку, если выполнены все условия: - сборочное задание находится в статусе &#x60;complete&#x60; — в доставке - поставка, в которую нужно перенести сборочное задание, [не передана в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) - сборочное задание ранее не переносили из доставки на сборку Чтобы проверить, можно ли перевести сборочное задание из доставки на сборку, используйте [статусы сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/postV3OrdersStatus), поле &#x60;isTransferable&#x60;.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/patch-api-marketplace-v3-fbs-supplies-supplyid-orders-transfer
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки, из которой будут перемещены заказы (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSuppliesSupplyIdOrdersTransferRequest $patch_v3_fbs_supplies_supply_id_orders_transfer_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchV3FbsSuppliesSupplyIdOrdersTransferAsync($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'][0])
+    {
+        return $this->patchV3FbsSuppliesSupplyIdOrdersTransferAsyncWithHttpInfo($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation patchV3FbsSuppliesSupplyIdOrdersTransferAsyncWithHttpInfo
+     *
+     * Перевести сборочные задания из доставки на сборку
+     *
+     * Метод переводит сборочные задания из статуса &#x60;complete&#x60; — в доставке в статус &#x60;confirm&#x60; — на сборке.  Используйте метод, чтобы переместить сборочное задание из закрытой поставки в открытую.  Сборочное задание можно перевести из доставки на сборку, если выполнены все условия: - сборочное задание находится в статусе &#x60;complete&#x60; — в доставке - поставка, в которую нужно перенести сборочное задание, [не передана в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) - сборочное задание ранее не переносили из доставки на сборку Чтобы проверить, можно ли перевести сборочное задание из доставки на сборку, используйте [статусы сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/postV3OrdersStatus), поле &#x60;isTransferable&#x60;.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/patch-api-marketplace-v3-fbs-supplies-supplyid-orders-transfer
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки, из которой будут перемещены заказы (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSuppliesSupplyIdOrdersTransferRequest $patch_v3_fbs_supplies_supply_id_orders_transfer_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchV3FbsSuppliesSupplyIdOrdersTransferAsyncWithHttpInfo($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3TransferOrdersToAssemblyResponse';
+        $request = $this->patchV3FbsSuppliesSupplyIdOrdersTransferRequest($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'patchV3FbsSuppliesSupplyIdOrdersTransfer'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки, из которой будут перемещены заказы (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSuppliesSupplyIdOrdersTransferRequest $patch_v3_fbs_supplies_supply_id_orders_transfer_request (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function patchV3FbsSuppliesSupplyIdOrdersTransferRequest($supply_id, $patch_v3_fbs_supplies_supply_id_orders_transfer_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesSupplyIdOrdersTransfer'][0])
+    {
+
+        // verify the required parameter 'supply_id' is set
+        if ($supply_id === null || (is_array($supply_id) && count($supply_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $supply_id when calling patchV3FbsSuppliesSupplyIdOrdersTransfer'
+            );
+        }
+
+        // verify the required parameter 'patch_v3_fbs_supplies_supply_id_orders_transfer_request' is set
+        if ($patch_v3_fbs_supplies_supply_id_orders_transfer_request === null || (is_array($patch_v3_fbs_supplies_supply_id_orders_transfer_request) && count($patch_v3_fbs_supplies_supply_id_orders_transfer_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $patch_v3_fbs_supplies_supply_id_orders_transfer_request when calling patchV3FbsSuppliesSupplyIdOrdersTransfer'
+            );
+        }
+
+
+        $resourcePath = '/api/marketplace/v3/fbs/supplies/{supplyId}/orders/transfer';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($supply_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'supplyId' . '}',
+                ObjectSerializer::toPathValue($supply_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($patch_v3_fbs_supplies_supply_id_orders_transfer_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($patch_v3_fbs_supplies_supply_id_orders_transfer_request));
+            } else {
+                $httpBody = $patch_v3_fbs_supplies_supply_id_orders_transfer_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpatchV3FbsSuppliesSupplyIdOrdersTransfer();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PATCH',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation patchV3FbsSuppliesSupplyIdOrdersTransfer
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpatchV3FbsSuppliesSupplyIdOrdersTransfer(): array
+    {
+        return [
+            [
+                "url" => "https://marketplace-api.wildberries.ru",
+                "description" => "**Prod**",
+            ]
+        ];
+    }
+
+    /**
      * Operation patchV3OrdersOrderIdCancel
      *
      * Отменить сборочное задание
@@ -15199,7 +15701,7 @@ class OrdersFbsApi
      *
      * Получить статусы сборочных заданий
      *
-     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders) | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
+     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders)  [Перевести сборочные задания из доставки на сборку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesSupplyIdOrdersTransfer)| | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -15226,7 +15728,7 @@ class OrdersFbsApi
      *
      * Получить статусы сборочных заданий
      *
-     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders) | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
+     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders)  [Перевести сборочные задания из доставки на сборку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesSupplyIdOrdersTransfer)| | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -15535,7 +16037,7 @@ class OrdersFbsApi
      *
      * Получить статусы сборочных заданий
      *
-     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders) | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
+     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders)  [Перевести сборочные задания из доставки на сборку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesSupplyIdOrdersTransfer)| | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -15565,7 +16067,7 @@ class OrdersFbsApi
      *
      * Получить статусы сборочных заданий
      *
-     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders) | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
+     * Метод возвращает статусы [сборочных заданий](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по их ID.  &#x60;supplierStatus&#x60; — статус сборочного задания. Триггер его изменения — действие самого продавца. Возможные значения &#x60;supplierStatus&#x60;: | Статус | Описание | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | &#x60;new&#x60; | \\*\\*Новое сборочное задание\\*\\* | | | &#x60;confirm&#x60; | \\*\\*На сборке\\*\\* |[Добавить сборочное задание к поставке](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdOrders)  [Перевести сборочные задания из доставки на сборку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesSupplyIdOrdersTransfer)| | &#x60;complete&#x60; | \\*\\*В доставке\\*\\* | [Передать поставку в доставку](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3SuppliesSupplyIdDeliver) | | &#x60;cancel&#x60; | \\*\\*Отменено продавцом\\*\\* | [Отменить сборочное задание](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/patchV3OrdersOrderIdCancel)| | &#x60;cancel\\_carrier&#x60; | \\*\\*Отменено перевозчиком\\*\\* Только для трансграничных поставок | Переводится перевозчиком |  &#x60;wbStatus&#x60; — статус системы Wildberries. Возможные значения &#x60;wbStatus&#x60;: - &#x60;waiting&#x60; — сборочное задание в работе - &#x60;sorted&#x60; — сборочное задание отсортировано - &#x60;sold&#x60; — заказ получен покупателем - &#x60;canceled&#x60; — отмена сборочного задания - &#x60;canceled\\_by\\_client&#x60; — покупатель отменил заказ при получении - &#x60;declined\\_by\\_client&#x60; — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - &#x60;defect&#x60; — отмена заказа по причине брака - &#x60;ready\\_for\\_pickup&#x60; — заказ прибыл на пункт выдачи заказов (ПВЗ) - &#x60;accepted\\_by\\_carrier&#x60; — продавец передал заказ в службу доставки в своей стране - &#x60;sent\\_to\\_carrier&#x60; — заказ отправлен на склад службы доставки в стране продавца - &#x60;canceled\\_by\\_carrier&#x60; — заказ отменён перевозчиком. Только для трансграничных поставок  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один аккаунт продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов.  ---  В [песочнице](https://dev.wildberries.ru/sandbox) — максимум 1 запрос в секунду суммарно для всех методов **Маркетплейса**.  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/post-api-v3-orders-status
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

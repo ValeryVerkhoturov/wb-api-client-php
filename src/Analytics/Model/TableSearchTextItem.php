@@ -67,7 +67,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_card_rated' => 'bool',
         'rating' => 'float',
         'feedback_rating' => 'float',
-        'price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice',
+        'price' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemAllOfPrice',
         'frequency' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfFrequency',
         'week_frequency' => 'int',
         'median_position' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableSearchTextItemAllOfMedianPosition',
@@ -669,7 +669,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets price
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemAllOfPrice|null
      */
     public function getPrice()
     {
@@ -679,7 +679,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets price
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemItemAllOfPrice|null $price price
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableItemAllOfPrice|null $price price
      *
      * @return self
      */
