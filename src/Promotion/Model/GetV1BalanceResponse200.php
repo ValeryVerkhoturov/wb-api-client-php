@@ -331,7 +331,7 @@ class GetV1BalanceResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets balance
      *
-     * @param int|null $balance Счёт в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $balance Счёт в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class GetV1BalanceResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets net
      *
-     * @param int|null $net Баланс в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $net Баланс в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class GetV1BalanceResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class GetV1BalanceResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets bonus
      *
-     * @param int|null $bonus Бонусы в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $bonus Бонусы в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

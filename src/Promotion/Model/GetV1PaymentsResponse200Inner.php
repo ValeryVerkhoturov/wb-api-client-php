@@ -507,7 +507,7 @@ class GetV1PaymentsResponse200Inner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

@@ -378,7 +378,7 @@ class GetV1BudgetResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets total
      *
-     * @param int|null $total Бюджет кампании в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $total Бюджет кампании в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class GetV1BudgetResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

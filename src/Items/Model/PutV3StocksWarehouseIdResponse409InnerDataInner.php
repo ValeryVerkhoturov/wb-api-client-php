@@ -317,7 +317,7 @@ class PutV3StocksWarehouseIdResponse409InnerDataInner implements ModelInterface,
     /**
      * Sets sku
      *
-     * @param string|null $sku Баркод
+     * @param string|null $sku Не используется
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class PutV3StocksWarehouseIdResponse409InnerDataInner implements ModelInterface,
     /**
      * Sets chrt_id
      *
-     * @param int|null $chrt_id ID размера товара
+     * @param int|null $chrt_id ID размера
      *
      * @return self
      */

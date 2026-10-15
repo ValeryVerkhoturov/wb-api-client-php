@@ -338,7 +338,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets currency_code
      *
-     * @param int|null $currency_code Код валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $currency_code Код валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets cpm_step
      *
-     * @param int|null $cpm_step Шаг ставки в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) для CPM-кампаний
+     * @param int|null $cpm_step Шаг ставки в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances) для CPM-кампаний
      *
      * @return self
      */
@@ -419,7 +419,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets cpc_step
      *
-     * @param int|null $cpc_step Шаг ставки в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) для кампаний CPC
+     * @param int|null $cpc_step Шаг ставки в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances) для кампаний CPC
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets min_top_up
      *
-     * @param int|null $min_top_up Минимальная сумма пополнения бюджета кампании в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances).  Например, минимальная сумма пополнения бюджета при `\"minTopUp\": 10000` и `\"currency\": \"UZS\"` — 100 узбекских сум
+     * @param int|null $min_top_up Минимальная сумма пополнения бюджета кампании в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances).  Например, минимальная сумма пополнения бюджета при `\"minTopUp\": 10000` и `\"currency\": \"UZS\"` — 100 узбекских сум
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets min_daily_limit
      *
-     * @param int|null $min_daily_limit Минимально допустимый размер дневного лимита, вне зависимости от ставок кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $min_daily_limit Минимально допустимый размер дневного лимита, вне зависимости от ставок кампании. Указывается в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

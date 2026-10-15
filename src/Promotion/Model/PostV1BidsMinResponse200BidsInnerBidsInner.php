@@ -317,7 +317,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     /**
      * Sets value
      *
-     * @param int|null $value Минимальная ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $value Минимальная ставка в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

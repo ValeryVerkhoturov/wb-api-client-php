@@ -36,7 +36,7 @@ use ValeryVerkhoturov\WbApiClient\Promotion\ObjectSerializer;
  * AdvertBidsKopecks Class Doc Comment
  *
  * @category Class
- * @description Ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+ * @description Ставка в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
  * @package  ValeryVerkhoturov\WbApiClient\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

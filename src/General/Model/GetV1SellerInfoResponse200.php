@@ -61,7 +61,8 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'string',
         'sid' => 'string',
         'tin' => 'string',
-        'trade_mark' => 'string'
+        'trade_mark' => 'string',
+        'country' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         'name' => null,
         'sid' => 'UUID',
         'tin' => null,
-        'trade_mark' => null
+        'trade_mark' => null,
+        'country' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         'name' => false,
         'sid' => false,
         'tin' => false,
-        'trade_mark' => false
+        'trade_mark' => false,
+        'country' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'name',
         'sid' => 'sid',
         'tin' => 'tin',
-        'trade_mark' => 'tradeMark'
+        'trade_mark' => 'tradeMark',
+        'country' => 'country'
     ];
 
     /**
@@ -191,7 +195,8 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'setName',
         'sid' => 'setSid',
         'tin' => 'setTin',
-        'trade_mark' => 'setTradeMark'
+        'trade_mark' => 'setTradeMark',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -203,7 +208,8 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         'name' => 'getName',
         'sid' => 'getSid',
         'tin' => 'getTin',
-        'trade_mark' => 'getTradeMark'
+        'trade_mark' => 'getTradeMark',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -267,6 +273,7 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('sid', $data ?? [], null);
         $this->setIfExists('tin', $data ?? [], null);
         $this->setIfExists('trade_mark', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
     }
 
     /**
@@ -415,6 +422,33 @@ class GetV1SellerInfoResponse200 implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable trade_mark cannot be null');
         }
         $this->container['trade_mark'] = $trade_mark;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country Страна регистрации профиля продавца
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        if (is_null($country)) {
+            throw new \InvalidArgumentException('non-nullable country cannot be null');
+        }
+        $this->container['country'] = $country;
 
         return $this;
     }

@@ -59,8 +59,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'code' => 'string',
-        'message' => 'string',
-        'data' => 'object'
+        'message' => 'string'
     ];
 
     /**
@@ -72,8 +71,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'code' => null,
-        'message' => null,
-        'data' => null
+        'message' => null
     ];
 
     /**
@@ -83,8 +81,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'code' => false,
-        'message' => false,
-        'data' => true
+        'message' => false
     ];
 
     /**
@@ -174,8 +171,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'message' => 'message',
-        'data' => 'data'
+        'message' => 'message'
     ];
 
     /**
@@ -185,8 +181,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'code' => 'setCode',
-        'message' => 'setMessage',
-        'data' => 'setData'
+        'message' => 'setMessage'
     ];
 
     /**
@@ -196,8 +191,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'code' => 'getCode',
-        'message' => 'getMessage',
-        'data' => 'getData'
+        'message' => 'getMessage'
     ];
 
     /**
@@ -259,7 +253,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -344,7 +337,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string|null $message Описание ошибки
+     * @param string|null $message Детали ошибки
      *
      * @return self
      */
@@ -354,40 +347,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
         $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return object|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param object|null $data Дополнительные данные ошибки
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        if (is_null($data)) {
-            array_push($this->openAPINullablesSetToNull, 'data');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['data'] = $data;
 
         return $this;
     }

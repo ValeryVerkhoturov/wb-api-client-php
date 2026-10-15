@@ -549,7 +549,7 @@ class V1GetNormQueryStatsResponseItemStat implements ModelInterface, ArrayAccess
     /**
      * Sets cpc
      *
-     * @param float|null $cpc Средняя стоимость клика в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $cpc Средняя стоимость клика в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -576,7 +576,7 @@ class V1GetNormQueryStatsResponseItemStat implements ModelInterface, ArrayAccess
     /**
      * Sets cpm
      *
-     * @param float|null $cpm Средняя стоимость за тысячу показов в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances).  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
+     * @param float|null $cpm Средняя стоимость за тысячу показов в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances).  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
      *
      * @return self
      */

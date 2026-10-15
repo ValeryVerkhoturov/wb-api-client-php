@@ -413,7 +413,7 @@ class GetV1UpdResponse200Inner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets upd_sum
      *
-     * @param int|null $upd_sum Выставленная сумма в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $upd_sum Выставленная сумма в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

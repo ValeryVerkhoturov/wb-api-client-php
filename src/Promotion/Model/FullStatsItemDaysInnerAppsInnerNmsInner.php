@@ -468,7 +468,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets cpc
      *
-     * @param float|null $cpc Средняя стоимость клика в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $cpc Средняя стоимость клика в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -657,7 +657,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets sum
      *
-     * @param float|null $sum Затраты в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $sum Затраты в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -684,7 +684,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets sum_price
      *
-     * @param float|null $sum_price Заказов на сумму в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param float|null $sum_price Заказов на сумму в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

@@ -406,7 +406,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets daily_limit
      *
-     * @param int|null $daily_limit Размер дневного лимита в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $daily_limit Размер дневного лимита в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets spent_today
      *
-     * @param int|null $spent_today Потрачено сегодня в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $spent_today Потрачено сегодня в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class V0DailyLimitAdvert implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets required_limit
      *
-     * @param int|null $required_limit Рекомендуемый минимальный размер дневного лимита при текущих ставках кампании. Указывается в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param int|null $required_limit Рекомендуемый минимальный размер дневного лимита при текущих ставках кампании. Указывается в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */

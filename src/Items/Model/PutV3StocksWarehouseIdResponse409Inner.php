@@ -82,7 +82,7 @@ class PutV3StocksWarehouseIdResponse409Inner implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'data' => true,
+        'data' => false,
         'code' => false,
         'message' => false
     ];
@@ -324,14 +324,7 @@ class PutV3StocksWarehouseIdResponse409Inner implements ModelInterface, ArrayAcc
     public function setData($data)
     {
         if (is_null($data)) {
-            array_push($this->openAPINullablesSetToNull, 'data');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
         $this->container['data'] = $data;
 
@@ -378,7 +371,7 @@ class PutV3StocksWarehouseIdResponse409Inner implements ModelInterface, ArrayAcc
     /**
      * Sets message
      *
-     * @param string|null $message Описание ошибки
+     * @param string|null $message Детали ошибки
      *
      * @return self
      */

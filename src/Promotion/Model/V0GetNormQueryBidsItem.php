@@ -419,7 +419,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bid
      *
-     * @param int|null $bid Текущая ставка в базовых единицах валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
+     * @param int|null $bid Текущая ставка в базовых единицах валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bid_kopecks
      *
-     * @param int|null $bid_kopecks Текущая ставка в разменных единицах — 0,01 от базовой валюты [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
+     * @param int|null $bid_kopecks Текущая ставка в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances) за тысячу показов
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class V0GetNormQueryBidsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта [аккаунта продавца](https://cmp.wildberries.ru/campaigns/finances)
+     * @param string|null $currency Валюта [профиля продавца](https://cmp.wildberries.ru/campaigns/finances)
      *
      * @return self
      */
