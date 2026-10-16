@@ -73,7 +73,7 @@ class PostV3OrdersStatusHistoryResponse200OrdersInner implements ModelInterface,
     protected static $openAPIFormats = [
         'delivery_date' => null,
         'statuses' => null,
-        'order_id' => null
+        'order_id' => 'int64'
     ];
 
     /**

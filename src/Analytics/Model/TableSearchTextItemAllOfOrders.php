@@ -72,9 +72,9 @@ class TableSearchTextItemAllOfOrders implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current' => null,
-        'dynamics' => null,
-        'percentile' => 'uint64'
+        'current' => 'int64',
+        'dynamics' => 'int64',
+        'percentile' => 'int64'
     ];
 
     /**

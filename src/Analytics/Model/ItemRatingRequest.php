@@ -89,8 +89,8 @@ class ItemRatingRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_not_include_nms_without_sales' => null,
         'only_shadowed_nms' => null,
         'order_by' => null,
-        'limit' => 'uint32',
-        'offset' => 'uint32'
+        'limit' => 'int64',
+        'offset' => 'int64'
     ];
 
     /**

@@ -71,7 +71,7 @@ class GetV2BufferGoodsTask200ResponseData implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upload_id' => null,
+        'upload_id' => 'int64',
         'buffer_goods' => null
     ];
 

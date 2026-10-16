@@ -80,16 +80,16 @@ class History implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'date' => null,
-        'open_count' => 'uint32',
-        'cart_count' => 'uint32',
-        'order_count' => 'uint32',
-        'order_sum' => 'uint32',
-        'buyout_count' => 'uint32',
-        'buyout_sum' => 'uint32',
-        'buyout_percent' => 'uint32',
-        'add_to_cart_conversion' => 'uint32',
-        'cart_to_order_conversion' => 'uint32',
-        'add_to_wishlist_count' => 'uint32'
+        'open_count' => 'int64',
+        'cart_count' => 'int64',
+        'order_count' => 'int64',
+        'order_sum' => 'int64',
+        'buyout_count' => 'int64',
+        'buyout_sum' => 'int64',
+        'buyout_percent' => 'int64',
+        'add_to_cart_conversion' => 'int64',
+        'cart_to_order_conversion' => 'int64',
+        'add_to_wishlist_count' => 'int64'
     ];
 
     /**

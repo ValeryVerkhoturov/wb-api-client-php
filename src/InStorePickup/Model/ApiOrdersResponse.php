@@ -71,7 +71,7 @@ class ApiOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_id' => null,
+        'order_id' => 'int64',
         'is_error' => null,
         'errors' => null
     ];

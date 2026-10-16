@@ -71,7 +71,7 @@ class PostV2GetCardsListResponse200CardsInnerTagsInner implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'color' => null
     ];

@@ -84,13 +84,13 @@ class GetV1Deductions200ResponseDataReportsInner implements ModelInterface, Arra
       */
     protected static $openAPIFormats = [
         'dt_bonus' => null,
-        'nm_id' => null,
-        'old_shk_id' => null,
+        'nm_id' => 'int64',
+        'old_shk_id' => 'int64',
         'old_color' => null,
         'old_size' => null,
         'old_sku' => null,
         'old_vendor_code' => null,
-        'new_shk_id' => null,
+        'new_shk_id' => 'int64',
         'new_color' => null,
         'new_size' => null,
         'new_sku' => null,

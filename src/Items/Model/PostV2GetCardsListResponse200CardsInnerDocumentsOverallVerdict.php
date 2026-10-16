@@ -74,7 +74,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsOverallVerdict implements 
       */
     protected static $openAPIFormats = [
         'is_fully_checked' => null,
-        'status' => null,
+        'status' => 'int64',
         'reason' => null,
         'created_at' => null
     ];

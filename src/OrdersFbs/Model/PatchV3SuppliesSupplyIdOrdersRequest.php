@@ -69,7 +69,7 @@ class PatchV3SuppliesSupplyIdOrdersRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'orders' => null
+        'orders' => 'int64'
     ];
 
     /**

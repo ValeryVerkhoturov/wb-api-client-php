@@ -79,8 +79,8 @@ class Warehouse implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'office_id' => 'int64',
         'id' => 'int64',
-        'cargo_type' => null,
-        'delivery_type' => null,
+        'cargo_type' => 'int64',
+        'delivery_type' => 'int64',
         'is_deleting' => null,
         'is_processing' => null
     ];

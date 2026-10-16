@@ -80,7 +80,7 @@ class FullStatsError implements ModelInterface, ArrayAccess, \JsonSerializable
         'detail' => null,
         'origin' => null,
         'request_id' => null,
-        'status' => null,
+        'status' => 'int64',
         'title' => null,
         'type' => null
     ];

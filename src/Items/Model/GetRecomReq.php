@@ -75,10 +75,10 @@ class GetRecomReq implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'brand_names' => null,
-        'limit' => null,
-        'next' => null,
+        'limit' => 'int64',
+        'next' => 'int64',
         'search' => null,
-        'subject_ids' => null
+        'subject_ids' => 'int64'
     ];
 
     /**

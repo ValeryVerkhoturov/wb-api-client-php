@@ -75,9 +75,9 @@ class V3TransferOrderToAssembly implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPIFormats = [
         'error' => null,
         'success' => null,
-        'new_sticker_id' => null,
-        'old_sticker_id' => null,
-        'order_id' => null
+        'new_sticker_id' => 'int64',
+        'old_sticker_id' => 'int64',
+        'order_id' => 'int64'
     ];
 
     /**

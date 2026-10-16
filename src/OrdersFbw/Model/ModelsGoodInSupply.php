@@ -82,16 +82,16 @@ class ModelsGoodInSupply implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'barcode' => null,
         'vendor_code' => null,
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'need_kiz' => null,
         'tnved' => null,
         'tech_size' => null,
         'color' => null,
-        'supplier_box_amount' => null,
-        'quantity' => null,
-        'ready_for_sale_quantity' => null,
-        'accepted_quantity' => null,
-        'unloading_quantity' => null
+        'supplier_box_amount' => 'int64',
+        'quantity' => 'int64',
+        'ready_for_sale_quantity' => 'int64',
+        'accepted_quantity' => 'int64',
+        'unloading_quantity' => 'int64'
     ];
 
     /**

@@ -70,7 +70,7 @@ class PostV1UploadTaskB2bWholesaleRequestDataInner implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'wholesale_discount_threshold' => null
     ];
 

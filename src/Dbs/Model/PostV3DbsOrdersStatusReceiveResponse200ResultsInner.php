@@ -73,7 +73,7 @@ class PostV3DbsOrdersStatusReceiveResponse200ResultsInner implements ModelInterf
     protected static $openAPIFormats = [
         'errors' => null,
         'is_error' => null,
-        'order_id' => null
+        'order_id' => 'int64'
     ];
 
     /**

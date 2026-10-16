@@ -70,8 +70,8 @@ class ClubDiscReq implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'club_discount' => null
+        'nm_id' => 'int64',
+        'club_discount' => 'int64'
     ];
 
     /**

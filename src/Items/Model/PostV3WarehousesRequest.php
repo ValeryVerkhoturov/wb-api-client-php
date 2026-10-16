@@ -71,7 +71,7 @@ class PostV3WarehousesRequest implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'office_id' => null
+        'office_id' => 'int64'
     ];
 
     /**

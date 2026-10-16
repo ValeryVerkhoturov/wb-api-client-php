@@ -70,7 +70,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'user_id' => null,
+        'user_id' => 'int64',
         'access' => null
     ];
 

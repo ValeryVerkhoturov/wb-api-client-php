@@ -70,7 +70,7 @@ class ApiBatchErrorFinalPriceResponse implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
+        'code' => 'int64',
         'detail' => null
     ];
 

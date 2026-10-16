@@ -70,7 +70,7 @@ class V0BidRecommendationBaseBidTop2 implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bid_kopecks' => null
+        'bid_kopecks' => 'int64'
     ];
 
     /**

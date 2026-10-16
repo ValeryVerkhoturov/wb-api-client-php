@@ -71,7 +71,7 @@ class PostV1UploadTaskB2bWholesale200ResponseResultsInner implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'success' => null,
         'error' => null
     ];

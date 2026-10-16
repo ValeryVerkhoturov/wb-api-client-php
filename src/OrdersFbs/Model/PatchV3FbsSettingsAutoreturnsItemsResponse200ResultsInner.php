@@ -71,7 +71,7 @@ class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements Model
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_id' => 'uint64',
+        'chrt_id' => 'int64',
         'error' => null,
         'success' => null
     ];

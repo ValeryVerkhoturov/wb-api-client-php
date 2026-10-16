@@ -79,7 +79,7 @@ class PostV2CardsUpdateRequestInner implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'vendor_code' => null,
         'kiz_marked' => null,
         'brand' => null,

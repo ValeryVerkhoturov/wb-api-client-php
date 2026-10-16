@@ -83,7 +83,7 @@ class ShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
         'address' => null,
         'city' => null,
         'office_type' => null,
-        'cargo_types' => null,
+        'cargo_types' => 'int64',
         'latitude' => null,
         'longitude' => null,
         'fulfillment' => null

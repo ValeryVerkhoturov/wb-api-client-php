@@ -72,8 +72,8 @@ class SearchReportPositionChartItem implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'dt' => null,
-        'average' => 'uint64',
-        'median' => 'uint64'
+        'average' => 'int64',
+        'median' => 'int64'
     ];
 
     /**

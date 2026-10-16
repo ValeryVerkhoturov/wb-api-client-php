@@ -72,7 +72,7 @@ class MeasurementPenaltiesData implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'reports' => null,
-        'total' => null
+        'total' => 'int64'
     ];
 
     /**

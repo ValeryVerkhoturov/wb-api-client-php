@@ -70,7 +70,7 @@ class ResponseWithReturn implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => null,
+        'total' => 'int64',
         'currency' => 'ISO 4217'
     ];
 

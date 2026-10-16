@@ -70,7 +70,7 @@ class Http409SupplyDeliverErrorDataOrdersInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'meta_details' => null
     ];
 

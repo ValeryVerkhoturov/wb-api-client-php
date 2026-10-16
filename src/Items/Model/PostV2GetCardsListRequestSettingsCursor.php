@@ -72,9 +72,9 @@ class PostV2GetCardsListRequestSettingsCursor implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
+        'limit' => 'int64',
         'updated_at' => null,
-        'nm_id' => null
+        'nm_id' => 'int64'
     ];
 
     /**

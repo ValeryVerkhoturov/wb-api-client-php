@@ -79,7 +79,7 @@ class NmReportGetReportsResponseDataInner implements ModelInterface, ArrayAccess
         'created_at' => null,
         'status' => null,
         'name' => null,
-        'size' => null,
+        'size' => 'int64',
         'start_date' => null,
         'end_date' => null
     ];

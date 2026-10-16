@@ -70,8 +70,8 @@ class GetV2CardsLimitsResponse200Data implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'free_limits' => null,
-        'paid_limits' => null
+        'free_limits' => 'int64',
+        'paid_limits' => 'int64'
     ];
 
     /**

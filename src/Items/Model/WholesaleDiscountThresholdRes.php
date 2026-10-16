@@ -71,9 +71,9 @@ class WholesaleDiscountThresholdRes implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'min_quantity' => null,
-        'wholesale_discount' => null,
-        'level' => null
+        'min_quantity' => 'int64',
+        'wholesale_discount' => 'int64',
+        'level' => 'int64'
     ];
 
     /**

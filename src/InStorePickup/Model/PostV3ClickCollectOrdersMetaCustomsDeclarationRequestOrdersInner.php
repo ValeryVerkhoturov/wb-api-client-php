@@ -72,7 +72,7 @@ class PostV3ClickCollectOrdersMetaCustomsDeclarationRequestOrdersInner implement
       */
     protected static $openAPIFormats = [
         'customs_declaration' => null,
-        'order_id' => null,
+        'order_id' => 'int64',
         'origin_country_code' => null
     ];
 

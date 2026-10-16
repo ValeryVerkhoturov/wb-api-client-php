@@ -90,10 +90,10 @@ class PostV2GetCardsListResponse200CardsInner implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'imt_id' => 'int64',
         'nm_uuid' => 'UUID',
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'subject_name' => null,
         'vendor_code' => null,
         'brand' => null,

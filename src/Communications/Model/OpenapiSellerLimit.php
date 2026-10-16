@@ -73,11 +73,11 @@ class OpenapiSellerLimit implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'per_unit_limit' => null,
-        'remaining' => null,
-        'total_limit' => null,
+        'per_unit_limit' => 'int64',
+        'remaining' => 'int64',
+        'total_limit' => 'int64',
         'unlimited' => null,
-        'used' => null
+        'used' => 'int64'
     ];
 
     /**

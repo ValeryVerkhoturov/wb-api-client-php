@@ -74,7 +74,7 @@ class PostV2SeacatSaveAdRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'nms' => null,
+        'nms' => 'int64',
         'bid_type' => null,
         'payment_type' => null,
         'placement_types' => null

@@ -76,7 +76,7 @@ class GetV2NewsResponse200DataInner implements ModelInterface, ArrayAccess, \Jso
         'content' => 'plaintext',
         'date' => null,
         'header' => null,
-        'id' => null,
+        'id' => 'int64',
         'types' => null
     ];
 

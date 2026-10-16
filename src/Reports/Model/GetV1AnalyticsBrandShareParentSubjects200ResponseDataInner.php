@@ -70,7 +70,7 @@ class GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'parent_id' => null,
+        'parent_id' => 'int64',
         'parent_name' => null
     ];
 

@@ -82,17 +82,17 @@ class GetV1CalendarPromotionsDetails200ResponseDataPromotionsInner implements Mo
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'description' => null,
         'advantages' => null,
         'start_date_time' => null,
         'end_date_time' => null,
-        'in_promo_action_leftovers' => null,
-        'in_promo_action_total' => null,
-        'not_in_promo_action_leftovers' => null,
-        'not_in_promo_action_total' => null,
-        'participation_percentage' => null,
+        'in_promo_action_leftovers' => 'int64',
+        'in_promo_action_total' => 'int64',
+        'not_in_promo_action_leftovers' => 'int64',
+        'not_in_promo_action_total' => 'int64',
+        'participation_percentage' => 'int64',
         'type' => null,
         'exception_products_count' => 'uint',
         'ranging' => null

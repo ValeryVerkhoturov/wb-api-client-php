@@ -77,14 +77,14 @@ class StatisticWbClub implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_count' => 'uint32',
-        'order_sum' => 'uint32',
-        'buyout_sum' => 'uint32',
-        'buyout_count' => 'uint32',
-        'cancel_sum' => 'uint32',
-        'cancel_count' => 'uint32',
-        'avg_price' => 'uint32',
-        'buyout_percent' => 'uint32',
+        'order_count' => 'int64',
+        'order_sum' => 'int64',
+        'buyout_sum' => 'int64',
+        'buyout_count' => 'int64',
+        'cancel_sum' => 'int64',
+        'cancel_count' => 'int64',
+        'avg_price' => 'int64',
+        'buyout_percent' => 'int64',
         'avg_order_count_per_day' => 'float64'
     ];
 

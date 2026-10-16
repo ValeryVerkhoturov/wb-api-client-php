@@ -80,14 +80,14 @@ class ItemsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'selected_period' => null,
         'past_period' => null,
-        'nm_ids' => 'uint64',
+        'nm_ids' => 'int64',
         'brand_names' => null,
-        'subject_ids' => 'uint64',
-        'tag_ids' => 'uint64',
+        'subject_ids' => 'int64',
+        'tag_ids' => 'int64',
         'skip_deleted_nm' => null,
         'order_by' => null,
-        'limit' => 'uint32',
-        'offset' => 'uint32'
+        'limit' => 'int64',
+        'offset' => 'int64'
     ];
 
     /**

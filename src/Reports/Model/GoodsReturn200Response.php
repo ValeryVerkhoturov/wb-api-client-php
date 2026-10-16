@@ -70,7 +70,7 @@ class GoodsReturn200Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count' => null,
+        'count' => 'int64',
         'report' => null
     ];
 

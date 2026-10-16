@@ -71,9 +71,9 @@ class SizeGoodReq implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'size_id' => null,
-        'price' => null
+        'nm_id' => 'int64',
+        'size_id' => 'int64',
+        'price' => 'int64'
     ];
 
     /**

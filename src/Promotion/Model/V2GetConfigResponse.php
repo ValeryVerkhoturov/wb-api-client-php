@@ -75,7 +75,7 @@ class V2GetConfigResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'currency' => 'ISO 4217',
-        'currency_code' => null,
+        'currency_code' => 'int64',
         'cpm_step' => 'int64',
         'cpc_step' => 'int64',
         'min_top_up' => 'int64',

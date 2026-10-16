@@ -74,7 +74,7 @@ class ModelsWarehousesResultItems implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'address' => null,
         'work_time' => null,

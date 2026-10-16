@@ -72,9 +72,9 @@ class ItemStocks implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'wb' => 'uint32',
-        'mp' => 'uint32',
-        'balance_sum' => 'uint32'
+        'wb' => 'int64',
+        'mp' => 'int64',
+        'balance_sum' => 'int64'
     ];
 
     /**

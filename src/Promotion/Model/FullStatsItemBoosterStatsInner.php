@@ -71,9 +71,9 @@ class FullStatsItemBoosterStatsInner implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'avg_position' => null,
+        'avg_position' => 'int64',
         'date' => null,
-        'nm' => null
+        'nm' => 'int64'
     ];
 
     /**

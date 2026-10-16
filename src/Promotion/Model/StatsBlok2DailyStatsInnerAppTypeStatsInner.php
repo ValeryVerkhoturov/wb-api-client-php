@@ -70,7 +70,7 @@ class StatsBlok2DailyStatsInnerAppTypeStatsInner implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'app_type' => null,
+        'app_type' => 'int64',
         'stats' => null
     ];
 

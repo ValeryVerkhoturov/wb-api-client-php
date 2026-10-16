@@ -75,10 +75,10 @@ class ApiOrderFinalPriceResultData implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'original_price' => null,
-        'converted_original_price' => null,
-        'original_final_price' => null,
-        'converted_original_final_price' => null,
+        'original_price' => 'int64',
+        'converted_original_price' => 'int64',
+        'original_final_price' => 'int64',
+        'converted_original_final_price' => 'int64',
         'currency_code' => 'ISO 4217',
         'converted_currency_code' => 'ISO 4217'
     ];

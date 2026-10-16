@@ -80,10 +80,10 @@ class ModelsDraftItemItem implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'sku' => null,
         'color' => null,
-        'quantity' => null,
+        'quantity' => 'int64',
         'brand_name' => null,
         'img_src' => null,
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'subject_name' => null,
         'tech_size' => null,
         'title' => null,

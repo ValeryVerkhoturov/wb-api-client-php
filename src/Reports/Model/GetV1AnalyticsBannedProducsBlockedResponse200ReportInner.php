@@ -74,7 +74,7 @@ class GetV1AnalyticsBannedProducsBlockedResponse200ReportInner implements ModelI
       */
     protected static $openAPIFormats = [
         'brand' => null,
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'title' => null,
         'vendor_code' => null,
         'reason' => null

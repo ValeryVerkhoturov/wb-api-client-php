@@ -79,13 +79,13 @@ class ModelsSupply implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'phone' => null,
-        'supply_id' => null,
-        'preorder_id' => null,
+        'supply_id' => 'int64',
+        'preorder_id' => 'int64',
         'create_date' => null,
         'supply_date' => null,
         'fact_date' => null,
         'updated_date' => null,
-        'status_id' => null,
+        'status_id' => 'int64',
         'box_type_id' => null,
         'is_box_on_pallet' => null
     ];

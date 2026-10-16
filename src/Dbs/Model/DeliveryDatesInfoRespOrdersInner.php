@@ -85,7 +85,7 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_date' => null,
         'd_date_from' => null,
         'd_date_to' => null,
-        'id' => null
+        'id' => 'int64'
     ];
 
     /**

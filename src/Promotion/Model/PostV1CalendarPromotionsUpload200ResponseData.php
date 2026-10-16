@@ -72,7 +72,7 @@ class PostV1CalendarPromotionsUpload200ResponseData implements ModelInterface, A
       */
     protected static $openAPIFormats = [
         'already_exists' => null,
-        'upload_id' => null
+        'upload_id' => 'int64'
     ];
 
     /**

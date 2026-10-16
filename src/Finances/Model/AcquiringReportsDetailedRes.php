@@ -86,7 +86,7 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'rrd_id' => null,
+        'rrd_id' => 'int64',
         'report_id' => 'int64',
         'acq_date' => null,
         'acquiring_bank' => null,
@@ -95,13 +95,13 @@ class AcquiringReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonS
         'sale_date' => null,
         'srid' => null,
         'document_type' => null,
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'retail_amount' => null,
         'acquiring_fee' => null,
         'acquiring_fee_vat' => null,
         'invoice_number' => null,
         'invoice_date' => null,
-        'shk_id' => null,
+        'shk_id' => 'int64',
         'currency' => null
     ];
 

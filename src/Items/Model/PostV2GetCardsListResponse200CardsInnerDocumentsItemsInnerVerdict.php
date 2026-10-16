@@ -75,7 +75,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInnerVerdict implemen
       */
     protected static $openAPIFormats = [
         'verified' => null,
-        'status' => null,
+        'status' => 'int64',
         'reason' => null,
         'additional_data' => null,
         'created_at' => null

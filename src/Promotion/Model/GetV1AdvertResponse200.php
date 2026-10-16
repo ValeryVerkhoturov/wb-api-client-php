@@ -76,11 +76,11 @@ class GetV1AdvertResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advert_id' => null,
+        'advert_id' => 'int64',
         'name' => null,
         'brand' => null,
-        'type' => null,
-        'status' => null,
+        'type' => 'int64',
+        'status' => 'int64',
         'create_time' => null,
         'extended' => null,
         'items' => null

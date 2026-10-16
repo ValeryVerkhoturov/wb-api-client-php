@@ -79,7 +79,7 @@ class CrossborderTurkeyClientInfo implements ModelInterface, ArrayAccess, \JsonS
         'full_name' => null,
         'last_name' => null,
         'middle_name' => null,
-        'order_id' => null,
+        'order_id' => 'int64',
         'phone' => null,
         'phone_code' => null
     ];

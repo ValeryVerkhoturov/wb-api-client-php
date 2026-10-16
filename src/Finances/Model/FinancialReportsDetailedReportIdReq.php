@@ -72,8 +72,8 @@ class FinancialReportsDetailedReportIdReq implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
-        'rrd_id' => null,
+        'limit' => 'int64',
+        'rrd_id' => 'int64',
         'fields' => null
     ];
 

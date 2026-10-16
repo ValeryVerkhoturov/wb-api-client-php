@@ -71,8 +71,8 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => null,
-        'count_in_response' => null,
+        'total' => 'int64',
+        'count_in_response' => 'int64',
         'users' => null
     ];
 

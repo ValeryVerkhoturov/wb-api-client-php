@@ -70,7 +70,7 @@ class ModelsListDraftsResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => null,
+        'total' => 'int64',
         'drafts' => null
     ];
 

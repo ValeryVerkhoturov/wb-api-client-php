@@ -71,7 +71,7 @@ class GetV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'data' => null,
-        'next' => null
+        'next' => 'int64'
     ];
 
     /**

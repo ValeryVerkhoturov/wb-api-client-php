@@ -72,7 +72,7 @@ class ItemOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'text' => null,
-        'frequency' => 'uint64',
+        'frequency' => 'int64',
         'date_items' => null
     ];
 

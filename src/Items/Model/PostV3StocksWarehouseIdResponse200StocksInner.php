@@ -70,8 +70,8 @@ class PostV3StocksWarehouseIdResponse200StocksInner implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_id' => 'uint64',
-        'amount' => null
+        'chrt_id' => 'int64',
+        'amount' => 'int64'
     ];
 
     /**

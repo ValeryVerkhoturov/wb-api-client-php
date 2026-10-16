@@ -70,7 +70,7 @@ class GetV1CountResponse200 implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'all' => null,
+        'all' => 'int64',
         'adverts' => null
     ];
 

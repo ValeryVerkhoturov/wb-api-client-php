@@ -71,7 +71,7 @@ class GetV1Claims200Response implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'claims' => null,
-        'total' => null
+        'total' => 'int64'
     ];
 
     /**

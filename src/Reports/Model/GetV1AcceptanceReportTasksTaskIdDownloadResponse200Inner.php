@@ -75,10 +75,10 @@ class GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count' => null,
+        'count' => 'int64',
         'gi_create_date' => null,
-        'income_id' => null,
-        'nm_id' => null,
+        'income_id' => 'int64',
+        'nm_id' => 'int64',
         'shk_create_date' => null,
         'subject_name' => null,
         'total' => null

@@ -70,7 +70,7 @@ class GetV2NewsResponse200DataInnerTypesInner implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null
     ];
 

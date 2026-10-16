@@ -69,7 +69,7 @@ class RequestWithCampaignID implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null
+        'id' => 'int64'
     ];
 
     /**

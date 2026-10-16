@@ -78,15 +78,15 @@ class GoodBufferHistory implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'vendor_code' => null,
-        'size_id' => null,
+        'size_id' => 'int64',
         'tech_size_name' => null,
-        'price' => null,
+        'price' => 'int64',
         'currency_iso_code4217' => null,
-        'discount' => null,
-        'club_discount' => null,
-        'status' => null,
+        'discount' => 'int64',
+        'club_discount' => 'int64',
+        'status' => 'int64',
         'error_text' => null
     ];
 

@@ -74,7 +74,7 @@ class PostV3FbsSettingsAutoreturnsItemsResponse200ResultsInner implements ModelI
       */
     protected static $openAPIFormats = [
         'success' => null,
-        'chrt_id' => 'uint64',
+        'chrt_id' => 'int64',
         'type' => null,
         'changeable' => null,
         'error' => null

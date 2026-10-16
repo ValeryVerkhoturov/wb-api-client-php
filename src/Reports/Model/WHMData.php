@@ -72,7 +72,7 @@ class WHMData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'reports' => null,
-        'total' => null
+        'total' => 'int64'
     ];
 
     /**

@@ -81,10 +81,10 @@ class PostV2GetCardsTrashResponse200CardsInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'vendor_code' => null,
         'kiz_marked' => null,
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'subject_name' => null,
         'photos' => null,
         'video' => null,

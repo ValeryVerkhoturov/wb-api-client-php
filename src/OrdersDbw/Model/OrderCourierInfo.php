@@ -71,7 +71,7 @@ class OrderCourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'courier_info' => null,
-        'order_id' => null
+        'order_id' => 'int64'
     ];
 
     /**

@@ -76,8 +76,8 @@ class GetV1FeedbackResponse200DataProductDetails implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'imt_id' => null,
+        'nm_id' => 'int64',
+        'imt_id' => 'int64',
         'product_name' => null,
         'supplier_article' => null,
         'supplier_name' => null,

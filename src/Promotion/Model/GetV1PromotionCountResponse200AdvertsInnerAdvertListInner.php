@@ -70,7 +70,7 @@ class GetV1PromotionCountResponse200AdvertsInnerAdvertListInner implements Model
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advert_id' => null,
+        'advert_id' => 'int64',
         'change_time' => null
     ];
 

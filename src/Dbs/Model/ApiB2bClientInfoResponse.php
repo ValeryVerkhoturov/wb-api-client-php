@@ -75,7 +75,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => null,
         'errors' => null,
         'is_error' => null,
-        'order_id' => null
+        'order_id' => 'int64'
     ];
 
     /**

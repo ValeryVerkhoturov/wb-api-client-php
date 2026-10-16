@@ -70,7 +70,7 @@ class ModelsItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'quantity' => null,
+        'quantity' => 'int64',
         'sku' => null
     ];
 

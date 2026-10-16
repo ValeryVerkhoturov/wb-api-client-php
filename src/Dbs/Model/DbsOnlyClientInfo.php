@@ -83,8 +83,8 @@ class DbsOnlyClientInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'full_name' => null,
         'additional_phones' => null,
         'replacement_additional_phones' => null,
-        'order_id' => null,
-        'phone_code' => null,
+        'order_id' => 'int64',
+        'phone_code' => 'int64',
         'additional_phone_codes' => null
     ];
 

@@ -83,10 +83,10 @@ class ModelsAcceptanceCoefficient implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'date' => null,
         'coefficient' => null,
-        'warehouse_id' => null,
+        'warehouse_id' => 'int64',
         'warehouse_name' => null,
         'allow_unload' => null,
-        'box_type_id' => null,
+        'box_type_id' => 'int64',
         'storage_coef' => null,
         'delivery_coef' => null,
         'delivery_base_liter' => null,

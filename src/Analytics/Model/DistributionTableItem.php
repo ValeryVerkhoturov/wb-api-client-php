@@ -90,7 +90,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
         'nm_id' => 'int64',
         'title' => null,
         'vendor_code' => null,
-        'subject_id' => 'uint64',
+        'subject_id' => 'int64',
         'subject_name' => null,
         'brand_name' => null,
         'tag_name' => null,
@@ -104,7 +104,7 @@ class DistributionTableItem implements ModelInterface, ArrayAccess, \JsonSeriali
         'three_star' => null,
         'two_star' => null,
         'one_star' => null,
-        'disqualified' => null,
+        'disqualified' => 'int64',
         'is_shadowed' => null
     ];
 

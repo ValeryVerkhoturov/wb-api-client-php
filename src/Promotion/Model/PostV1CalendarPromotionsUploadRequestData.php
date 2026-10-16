@@ -72,9 +72,9 @@ class PostV1CalendarPromotionsUploadRequestData implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'promotion_id' => null,
+        'promotion_id' => 'int64',
         'upload_now' => null,
-        'nomenclatures' => null
+        'nomenclatures' => 'int64'
     ];
 
     /**

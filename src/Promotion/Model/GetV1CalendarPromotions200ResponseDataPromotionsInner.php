@@ -73,7 +73,7 @@ class GetV1CalendarPromotions200ResponseDataPromotionsInner implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'start_date_time' => null,
         'end_date_time' => null,

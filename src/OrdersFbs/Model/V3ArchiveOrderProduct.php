@@ -74,8 +74,8 @@ class V3ArchiveOrderProduct implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'article' => null,
-        'chrt_id' => 'uint64',
-        'nm_id' => null,
+        'chrt_id' => 'int64',
+        'nm_id' => 'int64',
         'skus' => null
     ];
 

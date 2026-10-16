@@ -73,7 +73,7 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'errors' => null,
-        'order_id' => null,
+        'order_id' => 'int64',
         'supplier_status' => null,
         'wb_status' => null
     ];

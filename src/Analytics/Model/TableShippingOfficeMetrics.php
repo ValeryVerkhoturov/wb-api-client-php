@@ -74,11 +74,11 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'stock_count' => 'uint64',
-        'stock_sum' => 'uint64',
+        'stock_count' => 'int64',
+        'stock_sum' => 'int64',
         'sale_rate' => null,
-        'to_client_count' => 'uint64',
-        'from_client_count' => 'uint64'
+        'to_client_count' => 'int64',
+        'from_client_count' => 'int64'
     ];
 
     /**

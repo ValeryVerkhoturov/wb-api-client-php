@@ -71,8 +71,8 @@ class ModelsListDraftItemsResponse implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sku_quantity' => null,
-        'item_quantity' => null,
+        'sku_quantity' => 'int64',
+        'item_quantity' => 'int64',
         'items' => null
     ];
 

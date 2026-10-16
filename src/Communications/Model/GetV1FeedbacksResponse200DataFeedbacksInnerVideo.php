@@ -74,7 +74,7 @@ class GetV1FeedbacksResponse200DataFeedbacksInnerVideo implements ModelInterface
     protected static $openAPIFormats = [
         'preview_image' => null,
         'link' => null,
-        'duration_sec' => null
+        'duration_sec' => 'int64'
     ];
 
     /**

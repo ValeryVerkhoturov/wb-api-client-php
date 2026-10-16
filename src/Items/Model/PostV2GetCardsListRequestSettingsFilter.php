@@ -76,11 +76,11 @@ class PostV2GetCardsListRequestSettingsFilter implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'with_photo' => null,
+        'with_photo' => 'int64',
         'text_search' => null,
-        'tag_ids' => null,
+        'tag_ids' => 'int64',
         'allowed_categories_only' => null,
-        'object_ids' => null,
+        'object_ids' => 'int64',
         'brands' => null,
         'imt_id' => 'int64'
     ];

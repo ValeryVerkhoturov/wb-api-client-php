@@ -80,7 +80,7 @@ class PostV2GetCardsListResponse200CardsInnerDocumentsItemsInner implements Mode
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'type' => null,
+        'type' => 'int64',
         'number' => null,
         'product_number' => null,
         'trade_name' => null,

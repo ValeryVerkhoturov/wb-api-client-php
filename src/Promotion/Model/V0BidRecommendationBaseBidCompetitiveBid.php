@@ -70,7 +70,7 @@ class V0BidRecommendationBaseBidCompetitiveBid implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bid_kopecks' => null
+        'bid_kopecks' => 'int64'
     ];
 
     /**

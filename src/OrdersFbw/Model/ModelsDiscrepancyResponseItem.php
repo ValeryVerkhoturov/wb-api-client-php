@@ -77,9 +77,9 @@ class ModelsDiscrepancyResponseItem implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'declared_sku' => null,
         'discrepancy_type' => null,
-        'declared_amount' => null,
-        'actual_amount' => null,
-        'discrepancy_quantity' => null,
+        'declared_amount' => 'int64',
+        'actual_amount' => 'int64',
+        'discrepancy_quantity' => 'int64',
         'actual_sku' => null,
         'sku_scans' => null
     ];

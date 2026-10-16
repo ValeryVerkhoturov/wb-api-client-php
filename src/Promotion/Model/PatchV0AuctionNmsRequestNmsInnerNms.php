@@ -71,8 +71,8 @@ class PatchV0AuctionNmsRequestNmsInnerNms implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'add' => null,
-        'delete' => null
+        'add' => 'int64',
+        'delete' => 'int64'
     ];
 
     /**

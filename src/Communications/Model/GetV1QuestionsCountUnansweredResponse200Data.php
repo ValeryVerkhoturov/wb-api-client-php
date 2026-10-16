@@ -70,8 +70,8 @@ class GetV1QuestionsCountUnansweredResponse200Data implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count_unanswered' => null,
-        'count_unanswered_today' => null
+        'count_unanswered' => 'int64',
+        'count_unanswered_today' => 'int64'
     ];
 
     /**

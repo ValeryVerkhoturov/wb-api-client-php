@@ -77,13 +77,13 @@ class WHMDataReportsInner implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'subject_name' => null,
-        'dim_id' => null,
+        'dim_id' => 'int64',
         'volume' => null,
-        'width' => null,
-        'length' => null,
-        'height' => null,
+        'width' => 'int64',
+        'length' => 'int64',
+        'height' => 'int64',
         'photo_urls' => null,
         'dt' => null
     ];

@@ -80,7 +80,7 @@ class ArhiveOrderError400 implements ModelInterface, ArrayAccess, \JsonSerializa
         'errors' => null,
         'origin' => null,
         'request_id' => null,
-        'status' => null,
+        'status' => 'int64',
         'title' => null
     ];
 

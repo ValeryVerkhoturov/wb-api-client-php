@@ -72,8 +72,8 @@ class ItemOrdersMetrics implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'dt' => null,
-        'avg_position' => 'uint64',
-        'orders' => 'uint64'
+        'avg_position' => 'int64',
+        'orders' => 'int64'
     ];
 
     /**

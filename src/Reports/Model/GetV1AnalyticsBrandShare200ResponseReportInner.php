@@ -73,7 +73,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
       */
     protected static $openAPIFormats = [
         'apply_date' => 'ГГГГ-ММ-ДД',
-        'brand_rating' => null,
+        'brand_rating' => 'int64',
         'price_percent' => 'float',
         'qty_percent' => 'float'
     ];

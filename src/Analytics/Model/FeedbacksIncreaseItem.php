@@ -77,9 +77,9 @@ class FeedbacksIncreaseItem implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current' => null,
-        'total' => null,
-        'dynamics' => null,
+        'current' => 'int64',
+        'total' => 'int64',
+        'dynamics' => 'int64',
         'five_star' => null,
         'four_star' => null,
         'three_star' => null,

@@ -75,11 +75,11 @@ class GetV1PaymentsResponse200Inner implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'date' => 'time-date',
-        'sum' => null,
-        'type' => null,
-        'status_id' => null,
+        'sum' => 'int64',
+        'type' => 'int64',
+        'status_id' => 'int64',
         'card_status' => null,
         'currency' => 'ISO 4217'
     ];

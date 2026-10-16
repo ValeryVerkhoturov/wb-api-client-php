@@ -70,8 +70,8 @@ class GetV1AdvertResponse200ItemsInnerShowHoursInner implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'from' => null,
-        'to' => null
+        'from' => 'int64',
+        'to' => 'int64'
     ];
 
     /**

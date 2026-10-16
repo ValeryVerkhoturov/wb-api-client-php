@@ -71,9 +71,9 @@ class StatisticTimeToReady implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'days' => null,
-        'hours' => null,
-        'mins' => null
+        'days' => 'int64',
+        'hours' => 'int64',
+        'mins' => 'int64'
     ];
 
     /**

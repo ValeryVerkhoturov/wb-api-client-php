@@ -85,7 +85,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_new_chat' => null,
         'message' => null,
         'source' => null,
-        'add_timestamp' => null,
+        'add_timestamp' => 'int64',
         'add_time' => null,
         'reply_sign' => null,
         'sender' => null,

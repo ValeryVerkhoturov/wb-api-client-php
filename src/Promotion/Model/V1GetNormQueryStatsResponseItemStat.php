@@ -80,15 +80,15 @@ class V1GetNormQueryStatsResponseItemStat implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'norm_query' => null,
-        'views' => null,
-        'clicks' => null,
-        'atbs' => null,
-        'orders' => null,
+        'views' => 'int64',
+        'clicks' => 'int64',
+        'atbs' => 'int64',
+        'orders' => 'int64',
         'ctr' => 'float',
         'cpc' => 'float',
         'cpm' => 'float',
         'avg_pos' => 'float',
-        'shks' => null,
+        'shks' => 'int64',
         'spend' => 'double'
     ];
 

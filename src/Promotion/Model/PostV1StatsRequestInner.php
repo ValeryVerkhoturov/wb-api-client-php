@@ -71,7 +71,7 @@ class PostV1StatsRequestInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'dates' => null,
         'interval' => null
     ];

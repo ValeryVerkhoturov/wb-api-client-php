@@ -69,7 +69,7 @@ class PostV2ListGoodsFilterRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_list' => null
+        'nm_list' => 'int64'
     ];
 
     /**

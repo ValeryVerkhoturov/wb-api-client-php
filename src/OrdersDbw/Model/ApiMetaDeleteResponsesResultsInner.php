@@ -73,7 +73,7 @@ class ApiMetaDeleteResponsesResultsInner implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'errors' => null,
         'is_error' => null,
-        'order_id' => null
+        'order_id' => 'int64'
     ];
 
     /**

@@ -79,7 +79,7 @@ class ItemSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'current_period' => null,
         'past_period' => null,
-        'nm_ids' => 'uint64',
+        'nm_ids' => 'int64',
         'top_order_by' => null,
         'include_substituted_skus' => null,
         'include_search_texts' => null,

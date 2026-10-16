@@ -77,10 +77,10 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     protected static $openAPIFormats = [
         'amount' => null,
         'date' => null,
-        'income_id' => null,
-        'nm_id' => null,
+        'income_id' => 'int64',
+        'nm_id' => 'int64',
         'photo_urls' => null,
-        'shk_id' => null,
+        'shk_id' => 'int64',
         'sku' => null
     ];
 

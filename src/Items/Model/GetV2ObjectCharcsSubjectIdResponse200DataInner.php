@@ -80,15 +80,15 @@ class GetV2ObjectCharcsSubjectIdResponse200DataInner implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'charc_id' => null,
+        'charc_id' => 'int64',
         'subject_name' => null,
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'name' => null,
         'required' => null,
         'unit_name' => null,
-        'max_count' => null,
+        'max_count' => 'int64',
         'popular' => null,
-        'charc_type' => null,
+        'charc_type' => 'int64',
         'has_filter' => null,
         'is_variable' => null,
         'exist_named_field' => null

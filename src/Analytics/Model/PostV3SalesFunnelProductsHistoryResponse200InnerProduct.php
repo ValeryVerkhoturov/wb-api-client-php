@@ -78,7 +78,7 @@ class PostV3SalesFunnelProductsHistoryResponse200InnerProduct implements ModelIn
         'title' => 'int64',
         'vendor_code' => null,
         'brand_name' => null,
-        'subject_id' => 'uint64',
+        'subject_id' => 'int64',
         'subject_name' => null
     ];
 

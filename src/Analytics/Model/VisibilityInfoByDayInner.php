@@ -72,8 +72,8 @@ class VisibilityInfoByDayInner implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'dt' => null,
-        'visibility' => 'uint64',
-        'open' => 'uint64'
+        'visibility' => 'int64',
+        'open' => 'int64'
     ];
 
     /**

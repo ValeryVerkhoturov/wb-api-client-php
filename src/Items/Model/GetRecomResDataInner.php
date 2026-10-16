@@ -80,18 +80,18 @@ class GetRecomResDataInner implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'imt_id' => 'int64',
         'vendor_code' => null,
         'brand_name' => null,
         'updated_at' => null,
-        'pics_count' => null,
+        'pics_count' => 'int64',
         'title' => null,
         'subject_name' => null,
         'pic' => null,
-        'recom_count' => null,
+        'recom_count' => 'int64',
         'recom_pics' => null,
-        'recom_nms' => null
+        'recom_nms' => 'int64'
     ];
 
     /**

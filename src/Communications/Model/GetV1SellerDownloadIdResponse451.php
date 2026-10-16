@@ -73,7 +73,7 @@ class GetV1SellerDownloadIdResponse451 implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
+        'status' => 'int64',
         'title' => null,
         'origin' => null,
         'detail' => null,

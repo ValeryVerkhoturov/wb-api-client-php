@@ -71,9 +71,9 @@ class V1BudgetAdvert implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advert_id' => null,
+        'advert_id' => 'int64',
         'currency' => 'ISO 4217',
-        'total' => null
+        'total' => 'int64'
     ];
 
     /**

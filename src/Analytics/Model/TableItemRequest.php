@@ -89,8 +89,8 @@ class TableItemRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'skip_deleted_nm' => null,
         'order_by' => null,
         'availability_filters' => null,
-        'limit' => 'uint32',
-        'offset' => 'uint32'
+        'limit' => 'int64',
+        'offset' => 'int64'
     ];
 
     /**

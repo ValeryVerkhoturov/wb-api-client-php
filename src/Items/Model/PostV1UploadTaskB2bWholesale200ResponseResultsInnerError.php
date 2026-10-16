@@ -72,7 +72,7 @@ class PostV1UploadTaskB2bWholesale200ResponseResultsInnerError implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
+        'status' => 'int64',
         'title' => null,
         'detail' => null
     ];

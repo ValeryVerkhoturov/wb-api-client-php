@@ -78,8 +78,8 @@ class ModelsDraftItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => null,
         'created_at' => 'ISO 8601',
         'updated_at' => 'ISO 8601',
-        'sku_quantity' => null,
-        'item_quantity' => null
+        'sku_quantity' => 'int64',
+        'item_quantity' => 'int64'
     ];
 
     /**

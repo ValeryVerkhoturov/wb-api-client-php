@@ -71,8 +71,8 @@ class TableGroupItemMetricsOrders implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current' => null,
-        'dynamics' => null
+        'current' => 'int64',
+        'dynamics' => 'int64'
     ];
 
     /**

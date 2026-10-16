@@ -73,8 +73,8 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'sum' => null,
+        'nm_id' => 'int64',
+        'sum' => 'int64',
         'currency' => null,
         'date_from' => null,
         'date_to' => null

@@ -78,9 +78,9 @@ class FeeUzbekistanReportInner implements ModelInterface, ArrayAccess, \JsonSeri
         'kgvp_marketplace_uz' => null,
         'kgvp_paid_storage_uz' => null,
         'kgvp_supplier_uz' => null,
-        'parent_id' => null,
+        'parent_id' => 'int64',
         'parent_name' => null,
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'subject_name' => null
     ];
 

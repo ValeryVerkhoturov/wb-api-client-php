@@ -96,7 +96,7 @@ class SalesReportListRes implements ModelInterface, ArrayAccess, \JsonSerializab
         'date_to' => null,
         'create_date' => null,
         'currency' => null,
-        'report_type' => null,
+        'report_type' => 'int64',
         'retail_amount_sum' => null,
         'for_pay_sum' => null,
         'avg_sale_percent' => null,

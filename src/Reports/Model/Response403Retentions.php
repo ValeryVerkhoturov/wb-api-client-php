@@ -74,7 +74,7 @@ class Response403Retentions implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'title' => null,
-        'status' => null,
+        'status' => 'int64',
         'detail' => null,
         'request_id' => null,
         'origin' => null

@@ -71,8 +71,8 @@ class TableItemStMetricsAllOfCurrentPrice implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'min_price' => 'uint64',
-        'max_price' => 'uint64'
+        'min_price' => 'int64',
+        'max_price' => 'int64'
     ];
 
     /**

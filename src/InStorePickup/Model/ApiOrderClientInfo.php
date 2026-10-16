@@ -74,8 +74,8 @@ class ApiOrderClientInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'phone' => null,
         'first_name' => null,
-        'order_id' => null,
-        'phone_code' => null
+        'order_id' => 'int64',
+        'phone_code' => 'int64'
     ];
 
     /**

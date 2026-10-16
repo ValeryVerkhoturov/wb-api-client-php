@@ -73,7 +73,7 @@ class PostV1SalesReportsList400Response implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
+        'status' => 'int64',
         'title' => null,
         'detail' => null,
         'request_id' => null,

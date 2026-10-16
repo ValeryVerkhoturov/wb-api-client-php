@@ -75,12 +75,12 @@ class SellerTaskMetadataBuffer implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upload_id' => null,
-        'status' => null,
+        'upload_id' => 'int64',
+        'status' => 'int64',
         'upload_date' => null,
         'activation_date' => null,
-        'over_all_goods_number' => null,
-        'success_goods_number' => null
+        'over_all_goods_number' => 'int64',
+        'success_goods_number' => 'int64'
     ];
 
     /**

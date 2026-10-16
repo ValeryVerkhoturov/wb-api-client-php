@@ -76,7 +76,7 @@ class DocumentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
+        'type' => 'int64',
         'number' => null,
         'product_number' => null,
         'trade_name' => null,

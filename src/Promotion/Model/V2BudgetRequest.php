@@ -69,7 +69,7 @@ class V2BudgetRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advert_ids' => null
+        'advert_ids' => 'int64'
     ];
 
     /**

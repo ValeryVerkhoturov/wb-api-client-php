@@ -72,8 +72,8 @@ class PutV3StocksWarehouseIdResponse409InnerDataInner implements ModelInterface,
       */
     protected static $openAPIFormats = [
         'sku' => null,
-        'chrt_id' => 'uint64',
-        'amount' => null
+        'chrt_id' => 'int64',
+        'amount' => 'int64'
     ];
 
     /**

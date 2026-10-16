@@ -74,10 +74,10 @@ class StatsBlok2DailyStatsInnerAppTypeStatsInnerStatsInner implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'views' => null,
-        'clicks' => null,
-        'atbs' => null,
-        'orders' => null,
+        'views' => 'int64',
+        'clicks' => 'int64',
+        'atbs' => 'int64',
+        'orders' => 'int64',
         'cr' => null,
         'ctr' => null
     ];

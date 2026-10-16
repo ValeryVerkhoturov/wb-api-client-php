@@ -71,8 +71,8 @@ class GetV1BalanceResponse200CashbacksInner implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sum' => null,
-        'percent' => null,
+        'sum' => 'int64',
+        'percent' => 'int64',
         'expiration_date' => 'ISO 8601'
     ];
 

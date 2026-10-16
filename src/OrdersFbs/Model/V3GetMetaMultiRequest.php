@@ -70,7 +70,7 @@ class V3GetMetaMultiRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'orders' => null
+        'orders' => 'int64'
     ];
 
     /**

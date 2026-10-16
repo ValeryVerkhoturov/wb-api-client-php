@@ -92,7 +92,7 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => null,
         'cross_border' => null,
         'cross_border_type' => null,
-        'id' => null,
+        'id' => 'int64',
         'is_zero_order' => null,
         'meta_details' => null,
         'options' => null,
@@ -100,11 +100,11 @@ class V3ArchiveOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'price_info' => null,
         'product' => null,
         'rid' => null,
-        'scan_price' => null,
+        'scan_price' => 'int64',
         'status' => null,
-        'sticker_id' => null,
+        'sticker_id' => 'int64',
         'supply_id' => null,
-        'warehouse_id' => null
+        'warehouse_id' => 'int64'
     ];
 
     /**

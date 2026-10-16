@@ -70,7 +70,7 @@ class RequestWithInterval implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'interval' => null
     ];
 

@@ -80,12 +80,12 @@ class GetV1AnalyticsRegionSale200ResponseReportInner implements ModelInterface, 
         'city_name' => null,
         'country_name' => null,
         'fo_name' => null,
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'region_name' => null,
         'sa' => null,
         'sale_invoice_cost_price' => 'float',
         'sale_invoice_cost_price_perc' => 'float',
-        'sale_item_invoice_qty' => null
+        'sale_item_invoice_qty' => 'int64'
     ];
 
     /**

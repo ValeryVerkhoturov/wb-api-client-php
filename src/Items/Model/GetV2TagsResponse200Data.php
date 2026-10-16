@@ -71,7 +71,7 @@ class GetV2TagsResponse200Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'color' => null,
         'name' => null
     ];

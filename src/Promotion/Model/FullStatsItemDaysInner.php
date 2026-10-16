@@ -82,18 +82,18 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'apps' => null,
-        'atbs' => null,
-        'canceled' => null,
+        'atbs' => 'int64',
+        'canceled' => 'int64',
         'date' => null,
-        'clicks' => null,
+        'clicks' => 'int64',
         'cpc' => null,
         'cr' => null,
         'ctr' => null,
-        'orders' => null,
-        'shks' => null,
+        'orders' => 'int64',
+        'shks' => 'int64',
         'sum' => null,
         'sum_price' => null,
-        'views' => null
+        'views' => 'int64'
     ];
 
     /**

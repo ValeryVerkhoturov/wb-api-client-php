@@ -73,10 +73,10 @@ class V3ArchiveOrderPriceInfo implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'converted_currency_code' => null,
-        'converted_price' => null,
-        'currency_code' => null,
-        'price' => null
+        'converted_currency_code' => 'int64',
+        'converted_price' => 'int64',
+        'currency_code' => 'int64',
+        'price' => 'int64'
     ];
 
     /**

@@ -69,7 +69,7 @@ class PostV3WarehousesResponse201 implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null
+        'id' => 'int64'
     ];
 
     /**

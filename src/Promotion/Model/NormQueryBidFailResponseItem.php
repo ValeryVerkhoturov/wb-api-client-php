@@ -72,8 +72,8 @@ class NormQueryBidFailResponseItem implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advert_id' => null,
-        'nm_id' => null,
+        'advert_id' => 'int64',
+        'nm_id' => 'int64',
         'norm_query' => null,
         'reason' => null
     ];

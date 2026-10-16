@@ -72,7 +72,7 @@ class GetV2ObjectParentAllResponse200DataInner implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'id' => null,
+        'id' => 'int64',
         'is_visible' => null
     ];
 

@@ -71,7 +71,7 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => 'uint64',
+        'id' => 'int64',
         'name' => null
     ];
 

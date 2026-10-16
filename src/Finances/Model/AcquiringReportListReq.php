@@ -75,8 +75,8 @@ class AcquiringReportListReq implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'date_from' => null,
         'date_to' => null,
-        'limit' => null,
-        'offset' => null
+        'limit' => 'int64',
+        'offset' => 'int64'
     ];
 
     /**

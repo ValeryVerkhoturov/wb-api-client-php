@@ -70,8 +70,8 @@ class PutV3StocksWarehouseIdRequestStocksInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_id' => 'uint64',
-        'amount' => null
+        'chrt_id' => 'int64',
+        'amount' => 'int64'
     ];
 
     /**

@@ -72,7 +72,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'package_code' => null,
-        'quantity' => null,
+        'quantity' => 'int64',
         'barcodes' => null
     ];
 

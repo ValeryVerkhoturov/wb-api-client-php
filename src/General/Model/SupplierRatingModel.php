@@ -70,7 +70,7 @@ class SupplierRatingModel implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'feedback_count' => null,
+        'feedback_count' => 'int64',
         'valuation' => 'float'
     ];
 

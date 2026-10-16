@@ -74,7 +74,7 @@ class GetV1FeedbackResponse200DataVideo implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'preview_image' => null,
         'link' => null,
-        'duration_sec' => null
+        'duration_sec' => 'int64'
     ];
 
     /**

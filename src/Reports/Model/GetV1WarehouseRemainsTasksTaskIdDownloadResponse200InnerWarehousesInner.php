@@ -71,7 +71,7 @@ class GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner im
       */
     protected static $openAPIFormats = [
         'warehouse_name' => null,
-        'quantity' => null
+        'quantity' => 'int64'
     ];
 
     /**

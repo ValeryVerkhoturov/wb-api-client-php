@@ -70,7 +70,7 @@ class PostV2CardsUploadRequestInner implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'variants' => null
     ];
 

@@ -89,7 +89,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'text' => null,
-        'nm_id' => 'uint64',
+        'nm_id' => 'int64',
         'subject_name' => null,
         'brand_name' => null,
         'vendor_code' => null,
@@ -99,7 +99,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'feedback_rating' => 'float64',
         'price' => null,
         'frequency' => null,
-        'week_frequency' => 'uint64',
+        'week_frequency' => 'int64',
         'median_position' => null,
         'avg_position' => null,
         'open_card' => null,

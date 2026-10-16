@@ -75,13 +75,13 @@ class PromoItemsList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'in_action' => null,
         'price' => 'float',
         'currency_code' => null,
         'plan_price' => 'float',
-        'discount' => null,
-        'plan_discount' => null
+        'discount' => 'int64',
+        'plan_discount' => 'int64'
     ];
 
     /**

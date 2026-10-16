@@ -86,13 +86,13 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'subject_id' => 'int32',
         'brand_name' => null,
         'tag_id' => 'int64',
-        'nm_ids' => 'uint64',
+        'nm_ids' => 'int64',
         'order_by' => null,
         'position_cluster' => null,
         'include_substituted_skus' => null,
         'include_search_texts' => null,
-        'limit' => 'uint32',
-        'offset' => 'uint32'
+        'limit' => 'int64',
+        'offset' => 'int64'
     ];
 
     /**

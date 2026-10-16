@@ -73,7 +73,7 @@ class ModelsItemScans implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'scan_id' => null,
+        'scan_id' => 'int64',
         'declared_sku' => null,
         'scan_time' => null,
         'discrepancy_label' => null,

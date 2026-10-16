@@ -72,7 +72,7 @@ class GetRecomRes implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'data' => null,
-        'next' => null
+        'next' => 'int64'
     ];
 
     /**

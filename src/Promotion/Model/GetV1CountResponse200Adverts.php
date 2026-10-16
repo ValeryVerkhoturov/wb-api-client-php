@@ -71,9 +71,9 @@ class GetV1CountResponse200Adverts implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'status' => null,
-        'count' => null
+        'type' => 'int64',
+        'status' => 'int64',
+        'count' => 'int64'
     ];
 
     /**

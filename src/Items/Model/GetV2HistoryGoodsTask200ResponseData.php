@@ -71,7 +71,7 @@ class GetV2HistoryGoodsTask200ResponseData implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upload_id' => null,
+        'upload_id' => 'int64',
         'history_goods' => null
     ];
 

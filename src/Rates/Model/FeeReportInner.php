@@ -84,9 +84,9 @@ class FeeReportInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'kgvp_supplier' => null,
         'kgvp_supplier_express' => null,
         'paid_storage_kgvp' => null,
-        'parent_id' => null,
+        'parent_id' => 'int64',
         'parent_name' => null,
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'subject_name' => null
     ];
 

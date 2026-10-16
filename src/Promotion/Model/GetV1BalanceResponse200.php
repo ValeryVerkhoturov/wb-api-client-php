@@ -73,10 +73,10 @@ class GetV1BalanceResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'balance' => null,
-        'net' => null,
+        'balance' => 'int64',
+        'net' => 'int64',
         'currency' => 'ISO 4217',
-        'bonus' => null,
+        'bonus' => 'int64',
         'cashbacks' => null
     ];
 

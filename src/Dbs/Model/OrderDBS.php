@@ -104,20 +104,20 @@ class OrderDBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => null,
         'skus' => null,
         'id' => 'int64',
-        'warehouse_id' => null,
-        'nm_id' => null,
-        'chrt_id' => 'uint64',
-        'scan_price' => null,
-        'price' => null,
-        'converted_price' => null,
+        'warehouse_id' => 'int64',
+        'nm_id' => 'int64',
+        'chrt_id' => 'int64',
+        'scan_price' => 'int64',
+        'price' => 'int64',
+        'converted_price' => 'int64',
         'currency_code' => 'ISO 4217',
         'converted_currency_code' => 'ISO 4217',
-        'converted_final_price' => null,
-        'final_price' => null,
-        'cargo_type' => null,
+        'converted_final_price' => 'int64',
+        'final_price' => 'int64',
+        'cargo_type' => 'int64',
         'comment' => null,
         'is_zero_order' => null,
-        'wb_sticker_id' => null
+        'wb_sticker_id' => 'int64'
     ];
 
     /**

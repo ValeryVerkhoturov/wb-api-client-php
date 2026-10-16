@@ -69,7 +69,7 @@ class DeliveryDatesRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'orders' => null
+        'orders' => 'int64'
     ];
 
     /**

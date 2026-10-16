@@ -69,7 +69,7 @@ class GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200DataInner imp
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subject_id' => null
+        'subject_id' => 'int64'
     ];
 
     /**

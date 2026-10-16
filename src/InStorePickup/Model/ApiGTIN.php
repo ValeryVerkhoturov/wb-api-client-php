@@ -71,7 +71,7 @@ class ApiGTIN implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'gtin' => null,
-        'order_id' => null
+        'order_id' => 'int64'
     ];
 
     /**

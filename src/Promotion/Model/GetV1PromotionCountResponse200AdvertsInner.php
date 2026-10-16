@@ -72,9 +72,9 @@ class GetV1PromotionCountResponse200AdvertsInner implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'status' => null,
-        'count' => null,
+        'type' => 'int64',
+        'status' => 'int64',
+        'count' => 'int64',
         'advert_list' => null
     ];
 

@@ -72,9 +72,9 @@ class FeedbacksIncreaseItemFiveStar implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current' => null,
-        'dynamics' => null,
-        'total' => null
+        'current' => 'int64',
+        'dynamics' => 'int64',
+        'total' => 'int64'
     ];
 
     /**

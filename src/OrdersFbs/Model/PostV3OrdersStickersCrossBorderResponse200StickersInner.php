@@ -75,7 +75,7 @@ class PostV3OrdersStickersCrossBorderResponse200StickersInner implements ModelIn
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_id' => null,
+        'order_id' => 'int64',
         'status' => null,
         'parcel_id' => null,
         'file' => 'byte',

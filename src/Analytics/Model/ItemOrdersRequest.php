@@ -72,7 +72,7 @@ class ItemOrdersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'period' => null,
-        'nm_id' => 'uint64',
+        'nm_id' => 'int64',
         'search_texts' => null
     ];
 

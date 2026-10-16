@@ -81,9 +81,9 @@ class ClientInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'first_name' => null,
         'full_name' => null,
         'additional_phones' => null,
-        'additional_phone_codes' => null,
-        'order_id' => null,
-        'phone_code' => null
+        'additional_phone_codes' => 'int64',
+        'order_id' => 'int64',
+        'phone_code' => 'int64'
     ];
 
     /**

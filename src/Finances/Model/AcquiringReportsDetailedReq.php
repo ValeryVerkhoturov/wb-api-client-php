@@ -76,8 +76,8 @@ class AcquiringReportsDetailedReq implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'date_from' => null,
         'date_to' => null,
-        'limit' => null,
-        'rrd_id' => null,
+        'limit' => 'int64',
+        'rrd_id' => 'int64',
         'fields' => null
     ];
 

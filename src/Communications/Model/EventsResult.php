@@ -73,10 +73,10 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'next' => 'Unix timestamp',
+        'next' => 'int64',
         'newest_event_time' => null,
         'oldest_event_time' => null,
-        'total_events' => null,
+        'total_events' => 'int64',
         'events' => null
     ];
 

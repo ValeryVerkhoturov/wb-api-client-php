@@ -80,15 +80,15 @@ class SizeGood implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'size_id' => null,
+        'nm_id' => 'int64',
+        'size_id' => 'int64',
         'vendor_code' => null,
-        'price' => null,
+        'price' => 'int64',
         'currency_iso_code4217' => null,
         'discounted_price' => null,
         'club_discounted_price' => null,
-        'discount' => null,
-        'club_discount' => null,
+        'discount' => 'int64',
+        'club_discount' => 'int64',
         'tech_size_name' => null,
         'editable_size_price' => null
     ];

@@ -76,14 +76,14 @@ class GetV1UpdResponse200Inner implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upd_num' => null,
+        'upd_num' => 'int64',
         'upd_time' => 'time-date',
-        'upd_sum' => null,
-        'advert_id' => null,
+        'upd_sum' => 'int64',
+        'advert_id' => 'int64',
         'camp_name' => null,
-        'advert_type' => null,
+        'advert_type' => 'int64',
         'payment_type' => null,
-        'advert_status' => null
+        'advert_status' => 'int64'
     ];
 
     /**

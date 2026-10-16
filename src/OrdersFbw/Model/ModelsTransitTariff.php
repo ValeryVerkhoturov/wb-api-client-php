@@ -77,7 +77,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
         'destination_warehouse_name' => null,
         'active_from' => null,
         'box_tariff' => null,
-        'pallet_tariff' => null
+        'pallet_tariff' => 'int64'
     ];
 
     /**

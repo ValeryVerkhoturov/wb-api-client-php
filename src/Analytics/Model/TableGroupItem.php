@@ -77,7 +77,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'subject_name' => null,
-        'subject_id' => 'uint64',
+        'subject_id' => 'int64',
         'brand_name' => null,
         'tag_name' => null,
         'tag_id' => 'int64',

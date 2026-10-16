@@ -69,7 +69,7 @@ class GetV1PinsCountResponse200 implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'data' => 'int64'
     ];
 
     /**

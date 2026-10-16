@@ -85,12 +85,12 @@ class ModelsExciseReportResponseDataInner implements ModelInterface, ArrayAccess
         'currency_name_short' => null,
         'excise_short' => null,
         'barcode' => null,
-        'nm_id' => null,
-        'operation_type_id' => null,
-        'fiscal_doc_number' => null,
+        'nm_id' => 'int64',
+        'operation_type_id' => 'int64',
+        'fiscal_doc_number' => 'int64',
         'fiscal_dt' => null,
         'fiscal_drive_number' => null,
-        'rid' => null,
+        'rid' => 'int64',
         'srid' => null
     ];
 

@@ -73,7 +73,7 @@ class UpdateSupplyShippingMethod implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'shipping_dt' => null,
-        'shipping_point_id' => null,
+        'shipping_point_id' => 'int64',
         'shipping_type' => null,
         'supply_id' => null
     ];

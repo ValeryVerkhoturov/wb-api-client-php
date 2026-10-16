@@ -71,7 +71,7 @@ class RequestAlreadyExistsErrorData implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'already_exists' => null
     ];
 

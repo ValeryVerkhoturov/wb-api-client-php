@@ -72,9 +72,9 @@ class GetV1BudgetResponse200 implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cash' => null,
-        'netting' => null,
-        'total' => null,
+        'cash' => 'int64',
+        'netting' => 'int64',
+        'total' => 'int64',
         'currency' => 'ISO 4217'
     ];
 

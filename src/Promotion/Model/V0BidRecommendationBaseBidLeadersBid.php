@@ -70,7 +70,7 @@ class V0BidRecommendationBaseBidLeadersBid implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bid_kopecks' => null
+        'bid_kopecks' => 'int64'
     ];
 
     /**

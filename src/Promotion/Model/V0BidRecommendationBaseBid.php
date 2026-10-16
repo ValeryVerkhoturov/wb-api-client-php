@@ -69,7 +69,7 @@ class V0BidRecommendationBaseBid implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bid_kopecks' => null
+        'bid_kopecks' => 'int64'
     ];
 
     /**

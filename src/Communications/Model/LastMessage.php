@@ -71,7 +71,7 @@ class LastMessage implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'text' => null,
-        'add_timestamp' => null
+        'add_timestamp' => 'int64'
     ];
 
     /**

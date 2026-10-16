@@ -73,8 +73,8 @@ class PostV2GetCardsTrashResponse200Cursor implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'trashed_at' => null,
-        'nm_id' => null,
-        'total' => null
+        'nm_id' => 'int64',
+        'total' => 'int64'
     ];
 
     /**

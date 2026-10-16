@@ -89,27 +89,27 @@ class StatsBlok2 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'item_id' => null,
+        'item_id' => 'int64',
         'item_name' => null,
         'category_name' => null,
-        'advert_type' => null,
-        'place' => null,
-        'views' => null,
-        'clicks' => null,
+        'advert_type' => 'int64',
+        'place' => 'int64',
+        'views' => 'int64',
+        'clicks' => 'int64',
         'cr' => null,
         'ctr' => null,
         'date_from' => null,
         'date_to' => null,
         'subject_name' => null,
-        'atbs' => null,
-        'orders' => null,
+        'atbs' => 'int64',
+        'orders' => 'int64',
         'price' => null,
         'cpc' => null,
-        'status' => null,
+        'status' => 'int64',
         'daily_stats' => null,
         'expenses' => null,
         'cr1' => null,
-        'cr2' => null
+        'cr2' => 'int64'
     ];
 
     /**

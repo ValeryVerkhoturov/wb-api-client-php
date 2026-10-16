@@ -70,7 +70,7 @@ class ApiMetaErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
+        'code' => 'int64',
         'detail' => null
     ];
 

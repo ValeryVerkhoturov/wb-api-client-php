@@ -76,7 +76,7 @@ class StandardizedBatchError implements ModelInterface, ArrayAccess, \JsonSerial
         'detail' => null,
         'origin' => null,
         'request_id' => null,
-        'status' => null,
+        'status' => 'int64',
         'title' => null
     ];
 

@@ -71,7 +71,7 @@ class GetV2DirectoryCountriesResponse200DataInner implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'full_name' => null
     ];

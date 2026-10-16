@@ -82,7 +82,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => 'int64',
         'vendor_code' => null,
         'brand_name' => null,
-        'subject_id' => 'uint64',
+        'subject_id' => 'int64',
         'subject_name' => null,
         'tags' => null,
         'product_rating' => 'float32',

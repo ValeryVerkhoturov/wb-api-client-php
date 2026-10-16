@@ -73,10 +73,10 @@ class PostV1BudgetDepositRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sum' => null,
-        'cashback_sum' => null,
-        'cashback_percent' => null,
-        'type' => null,
+        'sum' => 'int64',
+        'cashback_sum' => 'int64',
+        'cashback_percent' => 'int64',
+        'type' => 'int64',
         'return' => null
     ];
 

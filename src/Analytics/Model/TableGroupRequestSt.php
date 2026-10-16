@@ -88,8 +88,8 @@ class TableGroupRequestSt implements ModelInterface, ArrayAccess, \JsonSerializa
         'skip_deleted_nm' => null,
         'availability_filters' => null,
         'order_by' => null,
-        'limit' => 'uint32',
-        'offset' => 'uint32'
+        'limit' => 'int64',
+        'offset' => 'int64'
     ];
 
     /**

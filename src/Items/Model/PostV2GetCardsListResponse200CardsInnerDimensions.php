@@ -74,9 +74,9 @@ class PostV2GetCardsListResponse200CardsInnerDimensions implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'length' => null,
-        'width' => null,
-        'height' => null,
+        'length' => 'int64',
+        'width' => 'int64',
+        'height' => 'int64',
         'weight_brutto' => null,
         'is_valid' => null
     ];

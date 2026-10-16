@@ -81,7 +81,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'role' => null,
         'position' => null,
         'phone' => null,

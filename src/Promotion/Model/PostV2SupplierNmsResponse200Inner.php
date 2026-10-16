@@ -72,8 +72,8 @@ class PostV2SupplierNmsResponse200Inner implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'title' => null,
-        'nm' => null,
-        'subject_id' => null
+        'nm' => 'int64',
+        'subject_id' => 'int64'
     ];
 
     /**

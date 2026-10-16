@@ -78,14 +78,14 @@ class GetV1AdvertResponse200Extended implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'reason' => null,
-        'expenses' => null,
+        'expenses' => 'int64',
         'from' => null,
         'to' => null,
         'updated_at' => null,
-        'price' => null,
-        'budget' => null,
-        'operation' => null,
-        'contract_id' => null
+        'price' => 'int64',
+        'budget' => 'int64',
+        'operation' => 'int64',
+        'contract_id' => 'int64'
     ];
 
     /**

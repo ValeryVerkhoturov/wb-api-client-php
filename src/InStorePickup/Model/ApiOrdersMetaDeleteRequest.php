@@ -71,7 +71,7 @@ class ApiOrdersMetaDeleteRequest implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'key' => null,
-        'orders_ids' => null
+        'orders_ids' => 'int64'
     ];
 
     /**

@@ -74,9 +74,9 @@ class FeeChinaReportInner implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'kgvp_china' => null,
-        'parent_id' => null,
+        'parent_id' => 'int64',
         'parent_name' => null,
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'subject_name' => null
     ];
 

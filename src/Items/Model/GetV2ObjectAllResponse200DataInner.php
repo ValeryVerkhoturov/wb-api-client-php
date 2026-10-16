@@ -72,8 +72,8 @@ class GetV2ObjectAllResponse200DataInner implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subject_id' => null,
-        'parent_id' => null,
+        'subject_id' => 'int64',
+        'parent_id' => 'int64',
         'subject_name' => null,
         'parent_name' => null
     ];

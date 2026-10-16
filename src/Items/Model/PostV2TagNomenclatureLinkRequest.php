@@ -70,8 +70,8 @@ class PostV2TagNomenclatureLinkRequest implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'tags_ids' => null
+        'nm_id' => 'int64',
+        'tags_ids' => 'int64'
     ];
 
     /**

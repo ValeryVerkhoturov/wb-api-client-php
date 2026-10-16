@@ -74,9 +74,9 @@ class FeeTurkeyReportInner implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'kgvp_turkey' => null,
-        'parent_id' => null,
+        'parent_id' => 'int64',
         'parent_name' => null,
-        'subject_id' => null,
+        'subject_id' => 'int64',
         'subject_name' => null
     ];
 

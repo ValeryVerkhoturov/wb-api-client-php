@@ -75,10 +75,10 @@ class OrderFeedRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'selected_period' => null,
-        'nm_ids' => 'uint64',
-        'subject_ids' => 'uint64',
+        'nm_ids' => 'int64',
+        'subject_ids' => 'int64',
         'brand_names' => null,
-        'tag_ids' => 'uint64',
+        'tag_ids' => 'int64',
         'pagination' => null
     ];
 

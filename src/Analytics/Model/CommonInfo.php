@@ -74,7 +74,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'supplier_rating' => null,
         'advertised_products' => null,
-        'total_products' => 'uint64'
+        'total_products' => 'int64'
     ];
 
     /**

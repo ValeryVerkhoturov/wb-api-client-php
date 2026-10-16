@@ -69,7 +69,7 @@ class PostV2CardsDeleteTrashRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_ids' => null
+        'nm_ids' => 'int64'
     ];
 
     /**

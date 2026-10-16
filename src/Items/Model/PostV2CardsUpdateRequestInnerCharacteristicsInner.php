@@ -70,7 +70,7 @@ class PostV2CardsUpdateRequestInnerCharacteristicsInner implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'value' => null
     ];
 

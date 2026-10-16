@@ -77,14 +77,14 @@ class QuarantineItems implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'size_id' => null,
+        'nm_id' => 'int64',
+        'size_id' => 'int64',
         'tech_size_name' => null,
         'currency_iso_code4217' => null,
         'new_price' => 'float',
         'old_price' => 'float',
-        'new_discount' => null,
-        'old_discount' => null,
+        'new_discount' => 'int64',
+        'old_discount' => 'int64',
         'price_diff' => 'float'
     ];
 

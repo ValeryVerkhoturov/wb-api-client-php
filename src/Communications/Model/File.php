@@ -79,7 +79,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
         'download_id' => null,
         'name' => null,
         'url' => null,
-        'size' => null
+        'size' => 'int64'
     ];
 
     /**

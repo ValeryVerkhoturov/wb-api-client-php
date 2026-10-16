@@ -71,7 +71,7 @@ class GetV1PromotionCountResponse200 implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'adverts' => null,
-        'all' => null
+        'all' => 'int64'
     ];
 
     /**

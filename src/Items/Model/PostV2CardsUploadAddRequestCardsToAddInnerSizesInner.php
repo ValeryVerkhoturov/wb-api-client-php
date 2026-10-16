@@ -74,7 +74,7 @@ class PostV2CardsUploadAddRequestCardsToAddInnerSizesInner implements ModelInter
     protected static $openAPIFormats = [
         'tech_size' => null,
         'wb_size' => null,
-        'price' => null,
+        'price' => 'int64',
         'skus' => null
     ];
 

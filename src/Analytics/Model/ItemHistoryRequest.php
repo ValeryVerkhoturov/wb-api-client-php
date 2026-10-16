@@ -73,7 +73,7 @@ class ItemHistoryRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'selected_period' => null,
-        'nm_ids' => 'uint64',
+        'nm_ids' => 'int64',
         'skip_deleted_nm' => null,
         'aggregation_level' => null
     ];

@@ -69,7 +69,7 @@ class DeleteV1PinsResponse200 implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'data' => 'int64'
     ];
 
     /**

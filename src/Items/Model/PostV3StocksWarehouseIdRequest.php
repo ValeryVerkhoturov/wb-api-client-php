@@ -69,7 +69,7 @@ class PostV3StocksWarehouseIdRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_ids' => 'uint64'
+        'chrt_ids' => 'int64'
     ];
 
     /**

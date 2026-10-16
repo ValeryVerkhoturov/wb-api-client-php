@@ -70,8 +70,8 @@ class SetRecomReqRecListInnerRecommendationsInner implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recom_nm' => null,
-        'sort' => null
+        'recom_nm' => 'int64',
+        'sort' => 'int64'
     ];
 
     /**

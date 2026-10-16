@@ -72,7 +72,7 @@ class GetV1Deductions200ResponseData implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'reports' => null,
-        'total' => null
+        'total' => 'int64'
     ];
 
     /**

@@ -73,7 +73,7 @@ class PostV1BidsMinResponse200BidsInnerBidsInner implements ModelInterface, Arra
     protected static $openAPIFormats = [
         'currency' => 'ISO 4217',
         'type' => null,
-        'value' => null
+        'value' => 'int64'
     ];
 
     /**

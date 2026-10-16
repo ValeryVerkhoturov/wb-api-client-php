@@ -71,7 +71,7 @@ class PutV3WarehousesWarehouseIdRequest implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'office_id' => null
+        'office_id' => 'int64'
     ];
 
     /**

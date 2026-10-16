@@ -71,8 +71,8 @@ class V0BidRecommendationReachMin implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bid_kopecks' => null,
-        'bid_kopecks_min' => null
+        'bid_kopecks' => 'int64',
+        'bid_kopecks_min' => 'int64'
     ];
 
     /**

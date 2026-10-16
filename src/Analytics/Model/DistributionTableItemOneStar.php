@@ -71,8 +71,8 @@ class DistributionTableItemOneStar implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current' => null,
-        'dynamics' => null
+        'current' => 'int64',
+        'dynamics' => 'int64'
     ];
 
     /**

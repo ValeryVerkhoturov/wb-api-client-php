@@ -77,13 +77,13 @@ class InventoryWbResponseItemsInner implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'nm_id' => 'int64',
-        'chrt_id' => 'uint64',
+        'chrt_id' => 'int64',
         'warehouse_id' => 'int64',
         'warehouse_name' => null,
         'region_name' => null,
-        'quantity' => 'uint64',
-        'in_way_to_client' => 'uint64',
-        'in_way_from_client' => 'uint64'
+        'quantity' => 'int64',
+        'in_way_to_client' => 'int64',
+        'in_way_from_client' => 'int64'
     ];
 
     /**

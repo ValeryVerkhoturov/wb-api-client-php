@@ -78,9 +78,9 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'change_state_at' => null,
-        'imt_id' => null,
-        'nm_id' => null,
-        'pin_id' => null,
+        'imt_id' => 'int64',
+        'nm_id' => 'int64',
+        'pin_id' => 'int64',
         'pin_method' => null,
         'pin_on' => null,
         'feedback_id' => null,

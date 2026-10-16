@@ -73,7 +73,7 @@ class TableSizeResponseSizesInner implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'chrt_id' => 'uint64',
+        'chrt_id' => 'int64',
         'offices' => null,
         'metrics' => null
     ];

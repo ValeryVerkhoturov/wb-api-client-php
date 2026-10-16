@@ -72,7 +72,7 @@ class GetV1QuestionsCountResponse200 implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
+        'data' => 'int64',
         'error' => null,
         'error_text' => null,
         'additional_errors' => null

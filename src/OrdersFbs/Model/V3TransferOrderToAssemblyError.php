@@ -72,7 +72,7 @@ class V3TransferOrderToAssemblyError implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'detail' => null,
-        'code' => null
+        'code' => 'int64'
     ];
 
     /**

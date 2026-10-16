@@ -71,7 +71,7 @@ class ModelsGoodInBox implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'barcode' => null,
-        'quantity' => null
+        'quantity' => 'int64'
     ];
 
     /**

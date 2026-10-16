@@ -72,9 +72,9 @@ class PostV2GetCardsTrashRequestSettingsCursor implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
+        'limit' => 'int64',
         'trashed_at' => null,
-        'nm_id' => null
+        'nm_id' => 'int64'
     ];
 
     /**

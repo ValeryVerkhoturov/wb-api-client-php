@@ -70,7 +70,7 @@ class PatchV3FbsSettingsAutoreturnsItemsRequest implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_ids' => 'uint64',
+        'chrt_ids' => 'int64',
         'type' => null
     ];
 

@@ -70,7 +70,7 @@ class PatchV3FbsSuppliesSupplyIdOrdersTransferRequest implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_ids' => null,
+        'order_ids' => 'int64',
         'new_supply_id' => null
     ];
 

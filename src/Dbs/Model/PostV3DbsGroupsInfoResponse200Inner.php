@@ -74,10 +74,10 @@ class PostV3DbsGroupsInfoResponse200Inner implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'group_id' => 'UUID',
-        'delivery_cost' => null,
-        'converted_delivery_cost' => null,
+        'delivery_cost' => 'int64',
+        'converted_delivery_cost' => 'int64',
         'currency_code' => 'ISO 4217',
-        'converted_currency_code' => null
+        'converted_currency_code' => 'int64'
     ];
 
     /**

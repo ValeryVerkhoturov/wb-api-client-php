@@ -71,7 +71,7 @@ class GetV1SellerDownloadIdResponse202 implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'moderation_state' => null,
-        'retry_seconds' => null
+        'retry_seconds' => 'int64'
     ];
 
     /**

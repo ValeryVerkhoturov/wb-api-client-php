@@ -71,9 +71,9 @@ class GetV1SupplierSubjectsResponse200Inner implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
-        'count' => null
+        'count' => 'int64'
     ];
 
     /**

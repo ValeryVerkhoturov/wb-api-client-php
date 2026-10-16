@@ -82,7 +82,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
         'nm_settings' => null,
         'settings' => null,
         'restrictions' => null,
-        'status' => null,
+        'status' => 'int64',
         'timestamps' => null
     ];
 

@@ -70,8 +70,8 @@ class RequestMoveNmsImtConn implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'target_imt' => null,
-        'nm_ids' => null
+        'target_imt' => 'int64',
+        'nm_ids' => 'int64'
     ];
 
     /**

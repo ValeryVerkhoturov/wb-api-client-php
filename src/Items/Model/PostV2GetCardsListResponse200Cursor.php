@@ -73,8 +73,8 @@ class PostV2GetCardsListResponse200Cursor implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'updated_at' => null,
-        'nm_id' => null,
-        'total' => null
+        'nm_id' => 'int64',
+        'total' => 'int64'
     ];
 
     /**

@@ -69,7 +69,7 @@ class DeleteV3StocksWarehouseIdRequest implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_ids' => 'uint64'
+        'chrt_ids' => 'int64'
     ];
 
     /**

@@ -85,8 +85,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int64',
         'longitude' => 'float64',
         'latitude' => 'float64',
-        'cargo_type' => null,
-        'delivery_type' => null,
+        'cargo_type' => 'int64',
+        'delivery_type' => 'int64',
         'federal_district' => null,
         'selected' => null
     ];

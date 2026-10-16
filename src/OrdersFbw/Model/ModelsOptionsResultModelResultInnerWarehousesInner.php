@@ -73,7 +73,7 @@ class ModelsOptionsResultModelResultInnerWarehousesInner implements ModelInterfa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'warehouse_id' => null,
+        'warehouse_id' => 'int64',
         'can_box' => null,
         'can_monopallet' => null,
         'can_supersafe' => null,

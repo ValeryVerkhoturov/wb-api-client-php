@@ -81,19 +81,19 @@ class FullStatsItemDaysInnerAppsInner implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'app_type' => null,
-        'atbs' => null,
-        'canceled' => null,
-        'clicks' => null,
+        'app_type' => 'int64',
+        'atbs' => 'int64',
+        'canceled' => 'int64',
+        'clicks' => 'int64',
         'cpc' => null,
         'cr' => null,
         'ctr' => null,
         'nms' => null,
-        'orders' => null,
-        'shks' => null,
+        'orders' => 'int64',
+        'shks' => 'int64',
         'sum' => null,
         'sum_price' => null,
-        'views' => null
+        'views' => 'int64'
     ];
 
     /**

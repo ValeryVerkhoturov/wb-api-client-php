@@ -71,7 +71,7 @@ class PostV1UploadTaskB2bWholesale200Response implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'already_exists' => null,
         'results' => null
     ];

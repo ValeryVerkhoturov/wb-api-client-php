@@ -76,8 +76,8 @@ class SalesReportListReq implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'date_from' => null,
         'date_to' => null,
-        'limit' => null,
-        'offset' => null,
+        'limit' => 'int64',
+        'offset' => 'int64',
         'period' => null
     ];
 

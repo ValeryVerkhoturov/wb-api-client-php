@@ -70,8 +70,8 @@ class PostV2CardsMoveNmRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'target_imt' => null,
-        'nm_ids' => null
+        'target_imt' => 'int64',
+        'nm_ids' => 'int64'
     ];
 
     /**

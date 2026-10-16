@@ -69,7 +69,7 @@ class PostV3OrdersStatusHistoryRequest implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'orders' => null
+        'orders' => 'int64'
     ];
 
     /**

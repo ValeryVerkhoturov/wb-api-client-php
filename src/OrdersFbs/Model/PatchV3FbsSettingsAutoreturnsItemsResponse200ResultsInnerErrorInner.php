@@ -70,7 +70,7 @@ class PatchV3FbsSettingsAutoreturnsItemsResponse200ResultsInnerErrorInner implem
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
+        'code' => 'int64',
         'detail' => null
     ];
 

@@ -79,7 +79,7 @@ class GetV1WarehouseRemainsTasksTaskIdDownloadResponse200Inner implements ModelI
         'brand' => null,
         'subject_name' => null,
         'vendor_code' => null,
-        'nm_id' => null,
+        'nm_id' => 'int64',
         'barcode' => null,
         'tech_size' => null,
         'volume' => null,

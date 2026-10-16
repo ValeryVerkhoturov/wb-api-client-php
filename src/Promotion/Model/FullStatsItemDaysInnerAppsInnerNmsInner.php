@@ -81,19 +81,19 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'atbs' => null,
-        'canceled' => null,
-        'clicks' => null,
+        'atbs' => 'int64',
+        'canceled' => 'int64',
+        'clicks' => 'int64',
         'cpc' => null,
         'cr' => null,
         'ctr' => null,
         'name' => null,
-        'nm_id' => null,
-        'orders' => null,
-        'shks' => null,
+        'nm_id' => 'int64',
+        'orders' => 'int64',
+        'shks' => 'int64',
         'sum' => null,
         'sum_price' => null,
-        'views' => null
+        'views' => 'int64'
     ];
 
     /**

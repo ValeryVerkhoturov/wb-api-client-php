@@ -69,7 +69,7 @@ class PostV2BarcodesRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count' => null
+        'count' => 'int64'
     ];
 
     /**

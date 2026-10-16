@@ -71,8 +71,8 @@ class GetV1FeedbacksResponse200Data implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count_unanswered' => null,
-        'count_archive' => null,
+        'count_unanswered' => 'int64',
+        'count_archive' => 'int64',
         'feedbacks' => null
     ];
 

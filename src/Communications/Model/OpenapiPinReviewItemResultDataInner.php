@@ -75,7 +75,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'feedback_id' => null,
-        'pin_id' => null,
+        'pin_id' => 'int64',
         'pin_method' => null,
         'pin_on' => null,
         'is_errors' => null,

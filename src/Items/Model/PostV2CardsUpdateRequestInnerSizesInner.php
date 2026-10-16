@@ -73,10 +73,10 @@ class PostV2CardsUpdateRequestInnerSizesInner implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_id' => 'uint64',
+        'chrt_id' => 'int64',
         'tech_size' => null,
         'wb_size' => null,
-        'price' => null,
+        'price' => 'int64',
         'skus' => null
     ];
 

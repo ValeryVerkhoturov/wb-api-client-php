@@ -74,7 +74,7 @@ class ItemsListSizesInner implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'size_id' => 'int64',
-        'price' => null,
+        'price' => 'int64',
         'discounted_price' => null,
         'club_discounted_price' => null,
         'tech_size_name' => null

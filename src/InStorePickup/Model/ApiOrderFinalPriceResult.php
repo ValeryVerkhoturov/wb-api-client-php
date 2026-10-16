@@ -72,7 +72,7 @@ class ApiOrderFinalPriceResult implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_id' => null,
+        'order_id' => 'int64',
         'data' => null,
         'errors' => null,
         'is_error' => null

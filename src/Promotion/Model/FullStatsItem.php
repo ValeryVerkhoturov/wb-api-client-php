@@ -84,20 +84,20 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advert_id' => null,
-        'atbs' => null,
+        'advert_id' => 'int64',
+        'atbs' => 'int64',
         'booster_stats' => null,
-        'canceled' => null,
-        'clicks' => null,
+        'canceled' => 'int64',
+        'clicks' => 'int64',
         'cpc' => 'double',
         'cr' => 'double',
         'ctr' => 'double',
         'days' => null,
-        'orders' => null,
-        'shks' => null,
+        'orders' => 'int64',
+        'shks' => 'int64',
         'sum' => 'double',
         'sum_price' => 'double',
-        'views' => null,
+        'views' => 'int64',
         'currency' => 'ISO 4217'
     ];
 

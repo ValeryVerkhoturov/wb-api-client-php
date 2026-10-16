@@ -71,7 +71,7 @@ class MessageResponseResult implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'add_time' => 'Unix Timestamp в миллисекундах',
+        'add_time' => 'int64',
         'chat_id' => null,
         'sign' => null
     ];

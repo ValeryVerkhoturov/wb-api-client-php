@@ -69,7 +69,7 @@ class PostV3SuppliesSupplyIdTrbxRequest implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => null
+        'amount' => 'int64'
     ];
 
     /**

@@ -74,8 +74,8 @@ class Listing implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => null,
-        'price' => null,
+        'nm_id' => 'int64',
+        'price' => 'int64',
         'price_currency' => null,
         'rid' => null,
         'size' => null

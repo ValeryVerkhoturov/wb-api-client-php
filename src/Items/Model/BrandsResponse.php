@@ -72,8 +72,8 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'brands' => null,
-        'next' => null,
-        'total' => null
+        'next' => 'int64',
+        'total' => 'int64'
     ];
 
     /**
