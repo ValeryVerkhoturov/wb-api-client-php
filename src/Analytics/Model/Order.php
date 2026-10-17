@@ -662,7 +662,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_name
      *
-     * @param string|null $warehouse_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
+     * @param string|null $warehouse_name Название склада. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
      *
      * @return self
      */
@@ -689,7 +689,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_region
      *
-     * @param string|null $warehouse_region Федеральный округ склада. Если склад не в России, возвращается страна. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
+     * @param string|null $warehouse_region Федеральный округ склада. Если склад не в России, возвращается страна. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
      *
      * @return self
      */

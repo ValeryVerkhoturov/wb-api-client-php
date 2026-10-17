@@ -1035,7 +1035,7 @@ class OrderDBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets converted_final_price
      *
-     * @param int|null $converted_final_price Сумма к оплате покупателем в валюте страны продавца с учетом всех скидок, умноженная на 100.  Предоставляется в информационных целях.  Используйте значение поля `convertedFinalPrice`, только если в ответе метода [POST /api/marketplace/v3/dbs/orders/final-price](./docs/openapi/dbs#tag/dbsAssemblyOrders/operation/postV3DbsOrdersFinalPrice) вернулось `\"data\": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
+     * @param int|null $converted_final_price Сумма к оплате покупателем в валюте страны продавца с учетом всех скидок, умноженная на 100.  Предоставляется в информационных целях.  Используйте значение поля `convertedFinalPrice`, только если в ответе метода получения [цен продавца и сумм к оплате](./dbs#tag/dbsAssemblyOrders/operation/postV3DbsOrdersFinalPrice) вернулось `\"data\": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
      *
      * @return self
      */
@@ -1062,7 +1062,7 @@ class OrderDBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets final_price
      *
-     * @param int|null $final_price Сумма к оплате покупателем в валюте продажи с учётом всех скидок, умноженная на 100.  Код валюты продажи указан в поле `currencyCode`.  Предоставляется в информационных целях.  Используйте значение поля `finalPrice`, только если в ответе метода [POST /api/marketplace/v3/dbs/orders/final-price](./docs/openapi/dbs#tag/dbsAssemblyOrders/operation/postV3DbsOrdersFinalPrice) вернулось `\"data\": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа того же метода
+     * @param int|null $final_price Сумма к оплате покупателем в валюте продажи с учётом всех скидок, умноженная на 100.  Код валюты продажи указан в поле `currencyCode`.  Предоставляется в информационных целях.  Используйте значение поля `finalPrice`, только если в ответе метода получения [цен продавца и сумм к оплате](./dbs#tag/dbsAssemblyOrders/operation/postV3DbsOrdersFinalPrice) вернулось `\"data\": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа того же метода
      *
      * @return self
      */

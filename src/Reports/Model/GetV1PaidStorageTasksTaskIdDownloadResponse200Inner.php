@@ -484,7 +484,7 @@ class GetV1PaidStorageTasksTaskIdDownloadResponse200Inner implements ModelInterf
     /**
      * Sets log_warehouse_coef
      *
-     * @param float|null $log_warehouse_coef Коэффициент логистики и хранения. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
+     * @param float|null $log_warehouse_coef Коэффициент логистики и хранения. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
      *
      * @return self
      */
@@ -511,7 +511,7 @@ class GetV1PaidStorageTasksTaskIdDownloadResponse200Inner implements ModelInterf
     /**
      * Sets office_id
      *
-     * @param int|null $office_id ID склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
+     * @param int|null $office_id ID склада. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
      *
      * @return self
      */
@@ -538,7 +538,7 @@ class GetV1PaidStorageTasksTaskIdDownloadResponse200Inner implements ModelInterf
     /**
      * Sets warehouse
      *
-     * @param string|null $warehouse Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `Склад WB РФ`
+     * @param string|null $warehouse Название склада. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `Склад WB РФ`
      *
      * @return self
      */
@@ -916,7 +916,7 @@ class GetV1PaidStorageTasksTaskIdDownloadResponse200Inner implements ModelInterf
     /**
      * Sets pallet_place_code
      *
-     * @param int|null $pallet_place_code Код паллетоместа. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
+     * @param int|null $pallet_place_code Код паллетоместа. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
      *
      * @return self
      */

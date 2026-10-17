@@ -759,7 +759,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets localization_percent_dynamic
      *
-     * @param int|null $localization_percent_dynamic Динамика локальных заказов в рамках одного региона. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
+     * @param int|null $localization_percent_dynamic Динамика локальных заказов в рамках одного региона. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `0`
      *
      * @return self
      */
