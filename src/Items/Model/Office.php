@@ -59,6 +59,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'federal_district' => 'string',
         'address' => 'string',
         'name' => 'string',
         'city' => 'string',
@@ -67,7 +68,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'float',
         'cargo_type' => 'int',
         'delivery_type' => 'int',
-        'federal_district' => 'string',
         'selected' => 'bool'
     ];
 
@@ -79,6 +79,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'federal_district' => null,
         'address' => null,
         'name' => null,
         'city' => null,
@@ -87,7 +88,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'float64',
         'cargo_type' => 'int64',
         'delivery_type' => 'int64',
-        'federal_district' => null,
         'selected' => null
     ];
 
@@ -97,6 +97,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'federal_district' => true,
         'address' => false,
         'name' => false,
         'city' => false,
@@ -105,7 +106,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => false,
         'cargo_type' => false,
         'delivery_type' => false,
-        'federal_district' => true,
         'selected' => false
     ];
 
@@ -195,6 +195,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'federal_district' => 'federalDistrict',
         'address' => 'address',
         'name' => 'name',
         'city' => 'city',
@@ -203,7 +204,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'latitude',
         'cargo_type' => 'cargoType',
         'delivery_type' => 'deliveryType',
-        'federal_district' => 'federalDistrict',
         'selected' => 'selected'
     ];
 
@@ -213,6 +213,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'federal_district' => 'setFederalDistrict',
         'address' => 'setAddress',
         'name' => 'setName',
         'city' => 'setCity',
@@ -221,7 +222,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'setLatitude',
         'cargo_type' => 'setCargoType',
         'delivery_type' => 'setDeliveryType',
-        'federal_district' => 'setFederalDistrict',
         'selected' => 'setSelected'
     ];
 
@@ -231,6 +231,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'federal_district' => 'getFederalDistrict',
         'address' => 'getAddress',
         'name' => 'getName',
         'city' => 'getCity',
@@ -239,7 +240,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'getLatitude',
         'cargo_type' => 'getCargoType',
         'delivery_type' => 'getDeliveryType',
-        'federal_district' => 'getFederalDistrict',
         'selected' => 'getSelected'
     ];
 
@@ -336,6 +336,7 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('federal_district', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
@@ -344,7 +345,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('latitude', $data ?? [], null);
         $this->setIfExists('cargo_type', $data ?? [], null);
         $this->setIfExists('delivery_type', $data ?? [], null);
-        $this->setIfExists('federal_district', $data ?? [], null);
         $this->setIfExists('selected', $data ?? [], null);
     }
 
@@ -407,6 +407,40 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets federal_district
+     *
+     * @return string|null
+     */
+    public function getFederalDistrict()
+    {
+        return $this->container['federal_district'];
+    }
+
+    /**
+     * Sets federal_district
+     *
+     * @param string|null $federal_district Федеральный округ склада WB. Если `null`, склад находится за пределами РФ или федеральный округ не указан
+     *
+     * @return self
+     */
+    public function setFederalDistrict($federal_district)
+    {
+        if (is_null($federal_district)) {
+            array_push($this->openAPINullablesSetToNull, 'federal_district');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('federal_district', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['federal_district'] = $federal_district;
+
+        return $this;
+    }
 
     /**
      * Gets address
@@ -640,40 +674,6 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['delivery_type'] = $delivery_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets federal_district
-     *
-     * @return string|null
-     */
-    public function getFederalDistrict()
-    {
-        return $this->container['federal_district'];
-    }
-
-    /**
-     * Sets federal_district
-     *
-     * @param string|null $federal_district Федеральный округ склада WB. Если `null`, склад находится за пределами РФ или федеральный округ не указан
-     *
-     * @return self
-     */
-    public function setFederalDistrict($federal_district)
-    {
-        if (is_null($federal_district)) {
-            array_push($this->openAPINullablesSetToNull, 'federal_district');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('federal_district', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['federal_district'] = $federal_district;
 
         return $this;
     }

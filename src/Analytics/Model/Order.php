@@ -588,7 +588,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status Статус заказа:   - `created` — оформлен   - `buyout` — продан   - `cancel` — отменён   - `return` — возвращён   - `returnDefective` — возвращён по причине брака
+     * @param string|null $status [Статус заказа](https://seller.wildberries.ru/instructions/ru/ru/material/order-feed-report#a92fa9b0-86ab-4990-b905-33f6c38b385c):   - `created` — оформлен   - `buyout` — продан   - `cancel` — отменён   - `return` — возвращён   - `returnDefective` — возвращён по причине брака
      *
      * @return self
      */
@@ -625,7 +625,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cancel_type
      *
-     * @param string|null $cancel_type Тип отмены (при `\"status\":\"cancel\"`):   - `app` — отказ до получения   - `receipt` — отказ при получении   - `expire` — истёк срок получения   - `other` — техническая отмена
+     * @param string|null $cancel_type [Тип отмены](https://seller.wildberries.ru/instructions/ru/ru/material/order-feed-report#a92fa9b0-86ab-4990-b905-33f6c38b385c) (при `\"status\":\"cancel\"`):   - `app` — отказ до получения   - `receipt` — отказ при получении   - `expire` — истёк срок получения   - `other` — иное
      *
      * @return self
      */
@@ -662,7 +662,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_name
      *
-     * @param string|null $warehouse_name Название склада. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
+     * @param string|null $warehouse_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `Склад WB`
      *
      * @return self
      */
@@ -689,7 +689,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets warehouse_region
      *
-     * @param string|null $warehouse_region Федеральный округ склада. Если склад не в России, возвращается страна. ]На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
+     * @param string|null $warehouse_region Федеральный округ склада. Если склад не в России, возвращается страна. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) для складов WB может быть только `\"\"`
      *
      * @return self
      */

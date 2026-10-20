@@ -11272,7 +11272,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectIdResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectIdResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectId400Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
      */
     public function getV2ObjectCharcsSubjectId($subject_id, $locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2ObjectCharcsSubjectId'][0])
     {
@@ -11300,7 +11300,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectIdResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectIdResponse200|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectId400Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError403|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV2ObjectCharcsSubjectIdWithHttpInfo($subject_id, $locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV2ObjectCharcsSubjectId'][0])
     {
@@ -11358,11 +11358,11 @@ class ItemsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectId400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectId400Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -11380,7 +11380,7 @@ class ItemsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectId400Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11521,7 +11521,7 @@ class ItemsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseBodyContentError400',
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectCharcsSubjectId400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -28899,7 +28899,7 @@ class ItemsApi
      *
      * Обновить список контактов
      *
-     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять.  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB (DBW).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
+     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB ([DBW](https://dev.wildberries.ru/openapi/orders-dbw)).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -28925,7 +28925,7 @@ class ItemsApi
      *
      * Обновить список контактов
      *
-     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять.  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB (DBW).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
+     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB ([DBW](https://dev.wildberries.ru/openapi/orders-dbw)).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -29022,7 +29022,7 @@ class ItemsApi
      *
      * Обновить список контактов
      *
-     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять.  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB (DBW).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
+     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB ([DBW](https://dev.wildberries.ru/openapi/orders-dbw)).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -29052,7 +29052,7 @@ class ItemsApi
      *
      * Обновить список контактов
      *
-     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять.  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB (DBW).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
+     * Метод обновляет список контактов [склада продавца](https://dev.wildberries.ru/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать **все** параметры списка контактов, в том числе те, которые вы не собираетесь обновлять  Только для складов с типом доставки &#x60;3&#x60; — Деливери WB ([DBW](https://dev.wildberries.ru/openapi/orders-dbw)).  К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив &#x60;contacts&#x60;.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для следующих методов DBW:  * получение и обновление списка контактов * получение и удаление идентификаторов маркировки * методы сборочных заданий  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/items/put-api-v3-dbw-warehouses-warehouseid-contacts
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

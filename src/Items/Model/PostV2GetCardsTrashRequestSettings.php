@@ -83,9 +83,9 @@ class PostV2GetCardsTrashRequestSettings implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sort' => false,
+        'sort' => true,
         'cursor' => false,
-        'filter' => false
+        'filter' => true
     ];
 
     /**
@@ -325,7 +325,14 @@ class PostV2GetCardsTrashRequestSettings implements ModelInterface, ArrayAccess,
     public function setSort($sort)
     {
         if (is_null($sort)) {
-            throw new \InvalidArgumentException('non-nullable sort cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sort');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sort', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sort'] = $sort;
 
@@ -379,7 +386,14 @@ class PostV2GetCardsTrashRequestSettings implements ModelInterface, ArrayAccess,
     public function setFilter($filter)
     {
         if (is_null($filter)) {
-            throw new \InvalidArgumentException('non-nullable filter cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'filter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('filter', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['filter'] = $filter;
 

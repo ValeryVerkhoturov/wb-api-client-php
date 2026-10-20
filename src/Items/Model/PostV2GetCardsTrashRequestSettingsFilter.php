@@ -79,7 +79,7 @@ class PostV2GetCardsTrashRequestSettingsFilter implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'text_search' => false
+        'text_search' => true
     ];
 
     /**
@@ -311,7 +311,14 @@ class PostV2GetCardsTrashRequestSettingsFilter implements ModelInterface, ArrayA
     public function setTextSearch($text_search)
     {
         if (is_null($text_search)) {
-            throw new \InvalidArgumentException('non-nullable text_search cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'text_search');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('text_search', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['text_search'] = $text_search;
 
