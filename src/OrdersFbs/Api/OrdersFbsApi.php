@@ -99,6 +99,9 @@ class OrdersFbsApi
         'getV3FbsShippingPoints' => [
             'application/json',
         ],
+        'getV3FbsSuppliesSupplyIdShippingPoints' => [
+            'application/json',
+        ],
         'getV3FbsSuppliesSupplyIdStickersSpot' => [
             'application/json',
         ],
@@ -1676,7 +1679,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsDictionariesCountriesOksm(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsDictionariesCountriesOksm'][0])
     {
@@ -1701,7 +1704,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsDictionariesCountriesOksmWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsDictionariesCountriesOksm'][0])
     {
@@ -1786,11 +1789,11 @@ class OrdersFbsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1808,7 +1811,7 @@ class OrdersFbsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1903,7 +1906,7 @@ class OrdersFbsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3788,7 +3791,7 @@ class OrdersFbsApi
      *
      * Получить список пунктов отгрузки поставок
      *
-     * Метод возвращает доступные пункты отгрузки поставок с фильтрами: - по населённым пунктам России - по типам товаров, которые принимает пункт отгрузки Используйте данные из этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  Доступно только для продавцов из РФ.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
+     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id&#x3D;585).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3802,7 +3805,8 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @deprecated
      */
     public function getV3FbsShippingPoints($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
     {
@@ -3815,7 +3819,7 @@ class OrdersFbsApi
      *
      * Получить список пунктов отгрузки поставок
      *
-     * Метод возвращает доступные пункты отгрузки поставок с фильтрами: - по населённым пунктам России - по типам товаров, которые принимает пункт отгрузки Используйте данные из этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  Доступно только для продавцов из РФ.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
+     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id&#x3D;585).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3829,7 +3833,8 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getV3FbsShippingPointsWithHttpInfo($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
     {
@@ -3941,11 +3946,11 @@ class OrdersFbsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3963,7 +3968,7 @@ class OrdersFbsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4066,7 +4071,7 @@ class OrdersFbsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4089,7 +4094,7 @@ class OrdersFbsApi
      *
      * Получить список пунктов отгрузки поставок
      *
-     * Метод возвращает доступные пункты отгрузки поставок с фильтрами: - по населённым пунктам России - по типам товаров, которые принимает пункт отгрузки Используйте данные из этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  Доступно только для продавцов из РФ.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
+     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id&#x3D;585).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4103,6 +4108,7 @@ class OrdersFbsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getV3FbsShippingPointsAsync($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
     {
@@ -4119,7 +4125,7 @@ class OrdersFbsApi
      *
      * Получить список пунктов отгрузки поставок
      *
-     * Метод возвращает доступные пункты отгрузки поставок с фильтрами: - по населённым пунктам России - по типам товаров, которые принимает пункт отгрузки Используйте данные из этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  Доступно только для продавцов из РФ.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
+     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id&#x3D;585).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-shipping-points
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -4133,6 +4139,7 @@ class OrdersFbsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getV3FbsShippingPointsAsyncWithHttpInfo($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
     {
@@ -4190,6 +4197,7 @@ class OrdersFbsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getV3FbsShippingPointsRequest($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
     {
@@ -4321,6 +4329,648 @@ class OrdersFbsApi
     }
 
     /**
+     * Operation getV3FbsSuppliesSupplyIdShippingPoints
+     *
+     * Получить список пунктов отгрузки поставки
+     *
+     * Метод возвращает доступные пункты отгрузки для указанной поставки. Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-supplies-supplyid-shipping-points
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки (required)
+     * @param  string $city Населённый пункт отгрузки поставки, кириллица (required)
+     * @param  string $office_type Тип пункта отгрузки. Укажите значения через запятую:   - &#x60;sc&#x60; — сортировочный центр   - &#x60;sw&#x60; — склад   - &#x60;pp&#x60; — пункт выдачи заказов (ПВЗ)   - &#x60;pfc&#x60; — партнёрский фулфилмент-центр (ПФЦ)   - &#x60;gpp&#x60; — пункт приёма товаров (ППТ) (required)
+     * @param  string $shipping_dt Планируемая дата отгрузки поставки в формате &#x60;YYYY-MM-DD&#x60;. Обязательно для заказов МГТ (&#x60;\&quot;cargoType\&quot;:1&#x60;) и КГТ+ (&#x60;\&quot;cargoType\&quot;:3&#x60;). Если значение передано, в ответе возвращаются только пункты отгрузки, в которые можно отгрузить поставку в указанную дату (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     */
+    public function getV3FbsSuppliesSupplyIdShippingPoints($supply_id, $city, $office_type, $shipping_dt = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'][0])
+    {
+        list($response) = $this->getV3FbsSuppliesSupplyIdShippingPointsWithHttpInfo($supply_id, $city, $office_type, $shipping_dt, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getV3FbsSuppliesSupplyIdShippingPointsWithHttpInfo
+     *
+     * Получить список пунктов отгрузки поставки
+     *
+     * Метод возвращает доступные пункты отгрузки для указанной поставки. Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-supplies-supplyid-shipping-points
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки (required)
+     * @param  string $city Населённый пункт отгрузки поставки, кириллица (required)
+     * @param  string $office_type Тип пункта отгрузки. Укажите значения через запятую:   - &#x60;sc&#x60; — сортировочный центр   - &#x60;sw&#x60; — склад   - &#x60;pp&#x60; — пункт выдачи заказов (ПВЗ)   - &#x60;pfc&#x60; — партнёрский фулфилмент-центр (ПФЦ)   - &#x60;gpp&#x60; — пункт приёма товаров (ППТ) (required)
+     * @param  string $shipping_dt Планируемая дата отгрузки поставки в формате &#x60;YYYY-MM-DD&#x60;. Обязательно для заказов МГТ (&#x60;\&quot;cargoType\&quot;:1&#x60;) и КГТ+ (&#x60;\&quot;cargoType\&quot;:3&#x60;). Если значение передано, в ответе возвращаются только пункты отгрузки, в которые можно отгрузить поставку в указанную дату (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'] to see the possible values for this operation
+     *
+     * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getV3FbsSuppliesSupplyIdShippingPointsWithHttpInfo($supply_id, $city, $office_type, $shipping_dt = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'][0])
+    {
+        $request = $this->getV3FbsSuppliesSupplyIdShippingPointsRequest($supply_id, $city, $office_type, $shipping_dt, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getV3FbsSuppliesSupplyIdShippingPointsAsync
+     *
+     * Получить список пунктов отгрузки поставки
+     *
+     * Метод возвращает доступные пункты отгрузки для указанной поставки. Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-supplies-supplyid-shipping-points
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки (required)
+     * @param  string $city Населённый пункт отгрузки поставки, кириллица (required)
+     * @param  string $office_type Тип пункта отгрузки. Укажите значения через запятую:   - &#x60;sc&#x60; — сортировочный центр   - &#x60;sw&#x60; — склад   - &#x60;pp&#x60; — пункт выдачи заказов (ПВЗ)   - &#x60;pfc&#x60; — партнёрский фулфилмент-центр (ПФЦ)   - &#x60;gpp&#x60; — пункт приёма товаров (ППТ) (required)
+     * @param  string $shipping_dt Планируемая дата отгрузки поставки в формате &#x60;YYYY-MM-DD&#x60;. Обязательно для заказов МГТ (&#x60;\&quot;cargoType\&quot;:1&#x60;) и КГТ+ (&#x60;\&quot;cargoType\&quot;:3&#x60;). Если значение передано, в ответе возвращаются только пункты отгрузки, в которые можно отгрузить поставку в указанную дату (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV3FbsSuppliesSupplyIdShippingPointsAsync($supply_id, $city, $office_type, $shipping_dt = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'][0])
+    {
+        return $this->getV3FbsSuppliesSupplyIdShippingPointsAsyncWithHttpInfo($supply_id, $city, $office_type, $shipping_dt, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getV3FbsSuppliesSupplyIdShippingPointsAsyncWithHttpInfo
+     *
+     * Получить список пунктов отгрузки поставки
+     *
+     * Метод возвращает доступные пункты отгрузки для указанной поставки. Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](https://dev.wildberries.ru/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца для методов **сборочных заданий, поставок, пропусков и настроек автовозврата FBS**: | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов | Один запрос с кодами ответов &#x60;4XX&#x60; учитывается как 10 запросов  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/orders-fbs/get-api-marketplace-v3-fbs-supplies-supplyid-shipping-points
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки (required)
+     * @param  string $city Населённый пункт отгрузки поставки, кириллица (required)
+     * @param  string $office_type Тип пункта отгрузки. Укажите значения через запятую:   - &#x60;sc&#x60; — сортировочный центр   - &#x60;sw&#x60; — склад   - &#x60;pp&#x60; — пункт выдачи заказов (ПВЗ)   - &#x60;pfc&#x60; — партнёрский фулфилмент-центр (ПФЦ)   - &#x60;gpp&#x60; — пункт приёма товаров (ППТ) (required)
+     * @param  string $shipping_dt Планируемая дата отгрузки поставки в формате &#x60;YYYY-MM-DD&#x60;. Обязательно для заказов МГТ (&#x60;\&quot;cargoType\&quot;:1&#x60;) и КГТ+ (&#x60;\&quot;cargoType\&quot;:3&#x60;). Если значение передано, в ответе возвращаются только пункты отгрузки, в которые можно отгрузить поставку в указанную дату (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getV3FbsSuppliesSupplyIdShippingPointsAsyncWithHttpInfo($supply_id, $city, $office_type, $shipping_dt = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'][0])
+    {
+        $returnType = '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPointsResponse';
+        $request = $this->getV3FbsSuppliesSupplyIdShippingPointsRequest($supply_id, $city, $office_type, $shipping_dt, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getV3FbsSuppliesSupplyIdShippingPoints'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://marketplace-api.wildberries.ru
+     *
+     * @param  string $supply_id ID поставки (required)
+     * @param  string $city Населённый пункт отгрузки поставки, кириллица (required)
+     * @param  string $office_type Тип пункта отгрузки. Укажите значения через запятую:   - &#x60;sc&#x60; — сортировочный центр   - &#x60;sw&#x60; — склад   - &#x60;pp&#x60; — пункт выдачи заказов (ПВЗ)   - &#x60;pfc&#x60; — партнёрский фулфилмент-центр (ПФЦ)   - &#x60;gpp&#x60; — пункт приёма товаров (ППТ) (required)
+     * @param  string $shipping_dt Планируемая дата отгрузки поставки в формате &#x60;YYYY-MM-DD&#x60;. Обязательно для заказов МГТ (&#x60;\&quot;cargoType\&quot;:1&#x60;) и КГТ+ (&#x60;\&quot;cargoType\&quot;:3&#x60;). Если значение передано, в ответе возвращаются только пункты отгрузки, в которые можно отгрузить поставку в указанную дату (optional)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getV3FbsSuppliesSupplyIdShippingPointsRequest($supply_id, $city, $office_type, $shipping_dt = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdShippingPoints'][0])
+    {
+
+        // verify the required parameter 'supply_id' is set
+        if ($supply_id === null || (is_array($supply_id) && count($supply_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $supply_id when calling getV3FbsSuppliesSupplyIdShippingPoints'
+            );
+        }
+
+        // verify the required parameter 'city' is set
+        if ($city === null || (is_array($city) && count($city) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $city when calling getV3FbsSuppliesSupplyIdShippingPoints'
+            );
+        }
+
+        // verify the required parameter 'office_type' is set
+        if ($office_type === null || (is_array($office_type) && count($office_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $office_type when calling getV3FbsSuppliesSupplyIdShippingPoints'
+            );
+        }
+
+
+
+        $resourcePath = '/api/marketplace/v3/fbs/supplies/{supplyId}/shipping-points';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $city,
+            'city', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $office_type,
+            'officeType', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $shipping_dt,
+            'shippingDt', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($supply_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'supplyId' . '}',
+                ObjectSerializer::toPathValue($supply_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForgetV3FbsSuppliesSupplyIdShippingPoints();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation getV3FbsSuppliesSupplyIdShippingPoints
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForgetV3FbsSuppliesSupplyIdShippingPoints(): array
+    {
+        return [
+            [
+                "url" => "https://marketplace-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
      * Operation getV3FbsSuppliesSupplyIdStickersSpot
      *
      * Получить QR-код СПОТ
@@ -4338,7 +4988,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsSuppliesSupplyIdStickersSpot($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdStickersSpot'][0])
     {
@@ -4364,7 +5014,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsSuppliesSupplyIdStickersSpotWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdStickersSpot'][0])
     {
@@ -4476,11 +5126,11 @@ class OrdersFbsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4498,7 +5148,7 @@ class OrdersFbsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4628,7 +5278,7 @@ class OrdersFbsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14014,7 +14664,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function postV3FbsSuppliesSpotList($post_v3_fbs_supplies_spot_list_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3FbsSuppliesSpotList'][0])
     {
@@ -14040,7 +14690,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3FbsSuppliesSpotListWithHttpInfo($post_v3_fbs_supplies_spot_list_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3FbsSuppliesSpotList'][0])
     {
@@ -14152,11 +14802,11 @@ class OrdersFbsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -14174,7 +14824,7 @@ class OrdersFbsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14277,7 +14927,7 @@ class OrdersFbsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -20476,7 +21126,7 @@ class OrdersFbsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsShippingPoints403Response',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

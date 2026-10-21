@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GetV3FbsShippingPoints403Response
+ * GetV3FbsSuppliesSupplyIdShippingPoints403Response
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * GetV3FbsShippingPoints403Response Class Doc Comment
+ * GetV3FbsSuppliesSupplyIdShippingPoints403Response Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetV3FbsShippingPoints403Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetV3FbsSuppliesSupplyIdShippingPoints403Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GetV3FbsShippingPoints403Response implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getV3FbsShippingPoints_403_response';
+    protected static $openAPIModelName = 'getV3FbsSuppliesSupplyIdShippingPoints_403_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
