@@ -64,9 +64,9 @@ class Configuration
     /**
      * Access token for OAuth/Bearer authentication
      *
-     * @var string
+     * @var SecretString|null
      */
-    protected $accessToken = '';
+    protected $accessToken;
 
     /**
      * Boolean format for query string
@@ -193,18 +193,18 @@ class Configuration
      */
     public function setAccessToken($accessToken)
     {
-        $this->accessToken = $accessToken;
+        $this->accessToken = new SecretString($accessToken);
         return $this;
     }
 
     /**
      * Gets the access token for OAuth
      *
-     * @return string Access token for OAuth
+     * @return string|null Access token for OAuth
      */
     public function getAccessToken()
     {
-        return $this->accessToken;
+        return $this->accessToken?->exposeSecret();
     }
 
     /**
@@ -530,15 +530,4 @@ class Configuration
     {
         return self::getHostString($this->getHostSettings(), $index, $variables);
     }
-    /**
-     * Store the WB bearer JWT wrapped in a {@link SecretString} so it
-     * redacts under __toString/var_dump. Internally forwards to
-     * setAccessToken() with the exposed value.
-     */
-    public function setAccessTokenSecret(SecretString $secret): self
-    {
-        $this->setAccessToken($secret->exposeSecret());
-        return $this;
-    }
-
 }

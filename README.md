@@ -14,10 +14,9 @@ Every module accepts the same WB bearer JWT. The token is stored in a redacting 
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Items\Configuration;
-use ValeryVerkhoturov\WbApiClient\Items\SecretString;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 ```
 
 ## Modules
@@ -63,12 +62,11 @@ Each row below is a sub-module you can import independently. Import path is `Val
 
 ```php
 use ValeryVerkhoturov\WbApiClient\General\Configuration;
-use ValeryVerkhoturov\WbApiClient\General\SecretString;
 use ValeryVerkhoturov\WbApiClient\General\Api\GeneralApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new GeneralApi(new Client(), $config);
 ```
 
@@ -92,12 +90,11 @@ $api = new GeneralApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Items\Configuration;
-use ValeryVerkhoturov\WbApiClient\Items\SecretString;
 use ValeryVerkhoturov\WbApiClient\Items\Api\ItemsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new ItemsApi(new Client(), $config);
 ```
 
@@ -120,12 +117,11 @@ $api = new ItemsApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\Configuration;
-use ValeryVerkhoturov\WbApiClient\OrdersFbs\SecretString;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\Api\OrdersFbsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new OrdersFbsApi(new Client(), $config);
 ```
 
@@ -143,12 +139,11 @@ $api = new OrdersFbsApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\OrdersDbw\Configuration;
-use ValeryVerkhoturov\WbApiClient\OrdersDbw\SecretString;
 use ValeryVerkhoturov\WbApiClient\OrdersDbw\Api\OrdersDbwApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new OrdersDbwApi(new Client(), $config);
 ```
 
@@ -166,12 +161,11 @@ $api = new OrdersDbwApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Dbs\Configuration;
-use ValeryVerkhoturov\WbApiClient\Dbs\SecretString;
 use ValeryVerkhoturov\WbApiClient\Dbs\Api\DbsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new DbsApi(new Client(), $config);
 ```
 
@@ -187,12 +181,11 @@ $api = new DbsApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\InStorePickup\Configuration;
-use ValeryVerkhoturov\WbApiClient\InStorePickup\SecretString;
 use ValeryVerkhoturov\WbApiClient\InStorePickup\Api\InStorePickupApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new InStorePickupApi(new Client(), $config);
 ```
 
@@ -210,12 +203,11 @@ $api = new InStorePickupApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\OrdersFbw\Configuration;
-use ValeryVerkhoturov\WbApiClient\OrdersFbw\SecretString;
 use ValeryVerkhoturov\WbApiClient\OrdersFbw\Api\OrdersFbwApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new OrdersFbwApi(new Client(), $config);
 ```
 
@@ -237,12 +229,11 @@ $api = new OrdersFbwApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Promotion\Configuration;
-use ValeryVerkhoturov\WbApiClient\Promotion\SecretString;
 use ValeryVerkhoturov\WbApiClient\Promotion\Api\PromotionApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new PromotionApi(new Client(), $config);
 ```
 
@@ -265,12 +256,11 @@ $api = new PromotionApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Communications\Configuration;
-use ValeryVerkhoturov\WbApiClient\Communications\SecretString;
 use ValeryVerkhoturov\WbApiClient\Communications\Api\CommunicationsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new CommunicationsApi(new Client(), $config);
 ```
 
@@ -290,12 +280,11 @@ $api = new CommunicationsApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Rates\Configuration;
-use ValeryVerkhoturov\WbApiClient\Rates\SecretString;
 use ValeryVerkhoturov\WbApiClient\Rates\Api\RatesApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new RatesApi(new Client(), $config);
 ```
 
@@ -317,12 +306,11 @@ $api = new RatesApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Analytics\Configuration;
-use ValeryVerkhoturov\WbApiClient\Analytics\SecretString;
 use ValeryVerkhoturov\WbApiClient\Analytics\Api\AnalyticsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new AnalyticsApi(new Client(), $config);
 ```
 
@@ -347,12 +335,11 @@ $api = new AnalyticsApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Reports\Configuration;
-use ValeryVerkhoturov\WbApiClient\Reports\SecretString;
 use ValeryVerkhoturov\WbApiClient\Reports\Api\ReportsApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new ReportsApi(new Client(), $config);
 ```
 
@@ -368,12 +355,11 @@ $api = new ReportsApi(new Client(), $config);
 
 ```php
 use ValeryVerkhoturov\WbApiClient\Finances\Configuration;
-use ValeryVerkhoturov\WbApiClient\Finances\SecretString;
 use ValeryVerkhoturov\WbApiClient\Finances\Api\FinancesApi;
 use GuzzleHttp\Client;
 
 $config = (new Configuration())
-    ->setAccessTokenSecret(new SecretString('<your WB JWT>'));
+    ->setAccessToken('<your WB JWT>');
 $api = new FinancesApi(new Client(), $config);
 ```
 
