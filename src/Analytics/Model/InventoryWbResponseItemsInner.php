@@ -406,7 +406,7 @@ class InventoryWbResponseItemsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets warehouse_id
      *
-     * @param int|null $warehouse_id ID склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `-999999`
+     * @param int|null $warehouse_id [ID склада](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class InventoryWbResponseItemsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets warehouse_name
      *
-     * @param string|null $warehouse_name Название склада. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `Склад WB`
+     * @param string|null $warehouse_name [Название склада](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class InventoryWbResponseItemsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets region_name
      *
-     * @param string|null $region_name Регион отгрузки. [На данный момент](https://dev.wildberries.ru/release-notes?id=570) может быть только `Склад WB`
+     * @param string|null $region_name [Страна отгрузки](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */

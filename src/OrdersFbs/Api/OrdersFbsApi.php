@@ -1679,7 +1679,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsDictionariesCountriesOksm(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsDictionariesCountriesOksm'][0])
     {
@@ -1704,7 +1704,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\CountriesOKSMList|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsDictionariesCountriesOksmWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsDictionariesCountriesOksm'][0])
     {
@@ -1785,6 +1785,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1899,6 +1926,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2765,7 +2800,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsSettingsAutoreturns(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSettingsAutoreturns'][0])
     {
@@ -2790,7 +2825,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsSettingsAutoreturnsWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSettingsAutoreturns'][0])
     {
@@ -2871,6 +2906,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3012,6 +3074,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3262,7 +3332,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsSettingsAutoreturnsSubcategoriesRestricted($next, $limit, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSettingsAutoreturnsSubcategoriesRestricted'][0])
     {
@@ -3289,7 +3359,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSettingsAutoreturnsSubcategoriesRestrictedResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsSettingsAutoreturnsSubcategoriesRestrictedWithHttpInfo($next, $limit, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSettingsAutoreturnsSubcategoriesRestricted'][0])
     {
@@ -3397,6 +3467,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3519,6 +3616,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3805,7 +3910,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      * @deprecated
      */
     public function getV3FbsShippingPoints($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
@@ -3833,7 +3938,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ShippingPointsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function getV3FbsShippingPointsWithHttpInfo($city, $cargo_type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsShippingPoints'][0])
@@ -3942,6 +4047,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4064,6 +4196,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4988,7 +5128,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function getV3FbsSuppliesSupplyIdStickersSpot($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdStickersSpot'][0])
     {
@@ -5014,7 +5154,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotQRCode|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3FbsSuppliesSupplyIdStickersSpotWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3FbsSuppliesSupplyIdStickersSpot'][0])
     {
@@ -5122,6 +5262,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5271,6 +5438,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11299,6 +11474,14 @@ class OrdersFbsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -11534,7 +11717,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function patchV3FbsSettingsAutoreturnsItems($patch_v3_fbs_settings_autoreturns_items_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSettingsAutoreturnsItems'][0])
     {
@@ -11560,7 +11743,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PatchV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchV3FbsSettingsAutoreturnsItemsWithHttpInfo($patch_v3_fbs_settings_autoreturns_items_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSettingsAutoreturnsItems'][0])
     {
@@ -11668,6 +11851,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11790,6 +12000,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12042,7 +12260,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function patchV3FbsSuppliesShippingMethod($patch_v3_fbs_supplies_shipping_method_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesShippingMethod'][0])
     {
@@ -12068,7 +12286,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSuppliesShippingMethodResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Error|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\V3APIError|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchV3FbsSuppliesShippingMethodWithHttpInfo($patch_v3_fbs_supplies_shipping_method_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['patchV3FbsSuppliesShippingMethod'][0])
     {
@@ -12176,6 +12394,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12325,6 +12570,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14156,7 +14409,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function postV3FbsSettingsAutoreturnsItems($post_v3_fbs_settings_autoreturns_items_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3FbsSettingsAutoreturnsItems'][0])
     {
@@ -14182,7 +14435,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\PostV3FbsSettingsAutoreturnsItemsResponse200|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3FbsSettingsAutoreturnsItemsWithHttpInfo($post_v3_fbs_settings_autoreturns_items_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3FbsSettingsAutoreturnsItems'][0])
     {
@@ -14290,6 +14543,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14412,6 +14692,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14664,7 +14952,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response
      */
     public function postV3FbsSuppliesSpotList($post_v3_fbs_supplies_spot_list_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3FbsSuppliesSpotList'][0])
     {
@@ -14690,7 +14978,7 @@ class OrdersFbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplySpotDataResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\ApiErrorV3|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3FbsSuppliesSupplyIdShippingPoints403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3FbsSuppliesSpotListWithHttpInfo($post_v3_fbs_supplies_spot_list_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3FbsSuppliesSpotList'][0])
     {
@@ -14798,6 +15086,33 @@ class OrdersFbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14920,6 +15235,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -21119,6 +21442,14 @@ class OrdersFbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\GetV3PassesOffices402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

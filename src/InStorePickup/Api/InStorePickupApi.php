@@ -2511,7 +2511,7 @@ class InStorePickupApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response
      */
     public function postV3ClickCollectOrdersFinalPrice($api_orders_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3ClickCollectOrdersFinalPrice'][0])
     {
@@ -2537,7 +2537,7 @@ class InStorePickupApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3ClickCollectOrdersFinalPriceWithHttpInfo($api_orders_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3ClickCollectOrdersFinalPrice'][0])
     {
@@ -2645,6 +2645,33 @@ class InStorePickupApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2767,6 +2794,14 @@ class InStorePickupApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3019,7 +3054,7 @@ class InStorePickupApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiCustomsDeclarationSetResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\Error|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiCustomsDeclarationSetResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\Error|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response
      */
     public function postV3ClickCollectOrdersMetaCustomsDeclaration($post_v3_click_collect_orders_meta_customs_declaration_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3ClickCollectOrdersMetaCustomsDeclaration'][0])
     {
@@ -3045,7 +3080,7 @@ class InStorePickupApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiCustomsDeclarationSetResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\Error|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiCustomsDeclarationSetResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\Error|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3ClickCollectOrdersMetaCustomsDeclarationWithHttpInfo($post_v3_click_collect_orders_meta_customs_declaration_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3ClickCollectOrdersMetaCustomsDeclaration'][0])
     {
@@ -3153,6 +3188,33 @@ class InStorePickupApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3275,6 +3337,14 @@ class InStorePickupApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4085,7 +4155,7 @@ class InStorePickupApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response
+     * @return \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response
      */
     public function postV3ClickCollectOrdersMetaDetails($api_orders_request_v2, string $contentType = self::contentTypes['postV3ClickCollectOrdersMetaDetails'][0])
     {
@@ -4105,7 +4175,7 @@ class InStorePickupApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiOrdersMetaDetailsResponse|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3ClickCollectOrdersMetaDetailsWithHttpInfo($api_orders_request_v2, string $contentType = self::contentTypes['postV3ClickCollectOrdersMetaDetails'][0])
     {
@@ -4213,6 +4283,33 @@ class InStorePickupApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4335,6 +4432,14 @@ class InStorePickupApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\InStorePickup\Model\GetV3ClickCollectOrdersNew402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

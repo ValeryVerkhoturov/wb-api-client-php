@@ -317,7 +317,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Sets office_id
      *
-     * @param int|null $office_id ID склада
+     * @param int|null $office_id [ID склада](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Sets office_name
      *
-     * @param string|null $office_name Название склада
+     * @param string|null $office_name [Название склада](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */

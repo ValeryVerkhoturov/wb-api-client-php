@@ -254,6 +254,14 @@ class OrdersFbwApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -505,7 +513,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftDeleteItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftDeleteItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function deleteV1DraftsDraftIdItems($draft_id, $models_draft_deleteitems_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1DraftsDraftIdItems'][0])
     {
@@ -532,7 +540,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftDeleteItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftDeleteItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteV1DraftsDraftIdItemsWithHttpInfo($draft_id, $models_draft_deleteitems_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['deleteV1DraftsDraftIdItems'][0])
     {
@@ -640,6 +648,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -789,6 +824,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1076,7 +1119,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function getV1Drafts($limit = 1000, $offset = 0, $sort = 'createDt', $order = 'desc', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Drafts'][0])
     {
@@ -1105,7 +1148,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV1DraftsWithHttpInfo($limit = 1000, $offset = 0, $sort = 'createDt', $order = 'desc', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Drafts'][0])
     {
@@ -1213,6 +1256,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1335,6 +1405,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1637,7 +1715,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftItemsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftItemsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function getV1DraftsDraftIdItems($draft_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1DraftsDraftIdItems'][0])
     {
@@ -1663,7 +1741,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftItemsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsListDraftItemsResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV1DraftsDraftIdItemsWithHttpInfo($draft_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1DraftsDraftIdItems'][0])
     {
@@ -1771,6 +1849,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1920,6 +2025,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4487,7 +4600,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsTransitTariff[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsTransitTariff[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function getV1TransitTariffs(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1TransitTariffs'][0])
     {
@@ -4512,7 +4625,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsTransitTariff[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsTransitTariff[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV1TransitTariffsWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1TransitTariffs'][0])
     {
@@ -4593,6 +4706,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4707,6 +4847,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4947,7 +5095,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsWarehousesResultItems[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsWarehousesResultItems[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function getV1Warehouses(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Warehouses'][0])
     {
@@ -4972,7 +5120,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsWarehousesResultItems[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsWarehousesResultItems[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV1WarehousesWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1Warehouses'][0])
     {
@@ -5053,6 +5201,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5167,6 +5342,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5974,7 +6157,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftCreateResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftCreateResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function postV1Drafts(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Drafts'][0])
     {
@@ -5999,7 +6182,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftCreateResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftCreateResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1DraftsWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1Drafts'][0])
     {
@@ -6080,6 +6263,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6194,6 +6404,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6436,7 +6654,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function postV1DraftsDraftIdItems($draft_id, $models_draft_additems_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1DraftsDraftIdItems'][0])
     {
@@ -6463,7 +6681,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsDraftAddItemsErrorResponse|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ErrorsDraftError|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1DraftsDraftIdItemsWithHttpInfo($draft_id, $models_draft_additems_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1DraftsDraftIdItems'][0])
     {
@@ -6571,6 +6789,33 @@ class OrdersFbwApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6720,6 +6965,14 @@ class OrdersFbwApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

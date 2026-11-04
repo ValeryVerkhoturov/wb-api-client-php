@@ -1258,7 +1258,7 @@ class AnalyticsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1OrderFeedResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1OrderFeedResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
      */
     public function postV1OrderFeed($order_feed_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1OrderFeed'][0])
     {
@@ -1284,7 +1284,7 @@ class AnalyticsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1OrderFeedResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1OrderFeedResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1OrderFeedWithHttpInfo($order_feed_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1OrderFeed'][0])
     {
@@ -1392,6 +1392,33 @@ class AnalyticsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1514,6 +1541,14 @@ class AnalyticsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1766,7 +1801,7 @@ class AnalyticsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1StocksReportSellerWarehousesResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1StocksReportSellerWarehousesResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
      */
     public function postV1StocksReportSellerWarehouses($inventory_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1StocksReportSellerWarehouses'][0])
     {
@@ -1792,7 +1827,7 @@ class AnalyticsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1StocksReportSellerWarehousesResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV1StocksReportSellerWarehousesResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1StocksReportSellerWarehousesWithHttpInfo($inventory_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1StocksReportSellerWarehouses'][0])
     {
@@ -1900,6 +1935,33 @@ class AnalyticsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2022,6 +2084,14 @@ class AnalyticsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2829,7 +2899,7 @@ class AnalyticsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2ItemRatingResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2ItemRatingResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
      */
     public function postV2ItemRating($item_rating_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2ItemRating'][0])
     {
@@ -2855,7 +2925,7 @@ class AnalyticsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2ItemRatingResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2ItemRatingResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV2ItemRatingWithHttpInfo($item_rating_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2ItemRating'][0])
     {
@@ -2963,6 +3033,33 @@ class AnalyticsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3085,6 +3182,14 @@ class AnalyticsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7132,7 +7237,7 @@ class AnalyticsApi
      *
      * Данные по складам
      *
-     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7158,7 +7263,7 @@ class AnalyticsApi
      *
      * Данные по складам
      *
-     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7466,7 +7571,7 @@ class AnalyticsApi
      *
      * Данные по складам
      *
-     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7495,7 +7600,7 @@ class AnalyticsApi
      *
      * Данные по складам
      *
-     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
+     * Метод формирует набор данных об остатках по складам.  Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;offices\&quot;:[]&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-offices
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -8779,7 +8884,7 @@ class AnalyticsApi
      *
      * Данные по размерам
      *
-     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -8805,7 +8910,7 @@ class AnalyticsApi
      *
      * Данные по размерам
      *
-     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -9113,7 +9218,7 @@ class AnalyticsApi
      *
      * Данные по размерам
      *
-     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -9142,7 +9247,7 @@ class AnalyticsApi
      *
      * Данные по размерам
      *
-     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — по всем сразу, без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
+     * Метод формирует набор данных об остатках по размерам товара.  Возможны случаи: 1. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будут данные об остатках по каждому из размеров с вложенной детализацией по складам. 2. Товар имеет размеры и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда в ответе будут данные об остатках по каждому из размеров без вложенной детализации по складам. 3. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:true&#x60;, тогда в ответе будет детализация по складам. Без данных об остатках по каждому из размеров. 4. Товар не имеет размера и &#x60;\&quot;includeOffice\&quot;:false&#x60;, тогда тело ответа будет пустым. Товар не имеет размера, если у него единственный размер с &#x60;\&quot;techSize\&quot;:\&quot;0\&quot;&#x60;. В ответах метода получения данных по [товарам](https://dev.wildberries.ru/openapi/analytics#tag/stocksReport/operation/postV2StocksReportProductsProducts) у таких товаров &#x60;\&quot;hasSizes\&quot;:false&#x60;. Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с &#x60;\&quot;regionName\&quot;:\&quot;Свой склад\&quot;&#x60; или &#x60;\&quot;regionName\&quot;:\&quot;Свой склад СГТ\&quot;&#x60; и &#x60;\&quot;officeName\&quot;:\&quot;\&quot;&#x60;.  Данные отчёта обновляются 1 раз в 2 часа.  [Лимит запросов](https://dev.wildberries.ru/openapi/api-information#tag/introduction/Limity-zaprosov) на один профиль продавца: | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |  Library doc: https://valeryverkhoturov.github.io/wb-api-client-docs/reference/api/analytics/post-api-v2-stocks-report-products-sizes
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

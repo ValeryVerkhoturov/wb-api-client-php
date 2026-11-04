@@ -5321,7 +5321,7 @@ class ReportsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsRegionSale200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsRegionSale200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
      * @deprecated
      */
     public function getV1AnalyticsRegionSale($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
@@ -5349,7 +5349,7 @@ class ReportsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsRegionSale200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsRegionSale200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders403Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function getV1AnalyticsRegionSaleWithHttpInfo($date_from, $date_to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1AnalyticsRegionSale'][0])
@@ -5458,33 +5458,6 @@ class ReportsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 402:
-                    if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5607,14 +5580,6 @@ class ReportsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 402:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6536,7 +6501,7 @@ class ReportsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\ItemReturns200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\ItemReturns200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response
      */
     public function getV1ItemReturns($date_from, $date_to, $status = null, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1ItemReturns'][0])
     {
@@ -6566,7 +6531,7 @@ class ReportsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\ItemReturns200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Reports\Model\ItemReturns200Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\Http4XXResponse|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response|\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV1ItemReturnsWithHttpInfo($date_from, $date_to, $status = null, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1ItemReturns'][0])
     {
@@ -6677,6 +6642,33 @@ class ReportsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 429:
                     if ('\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -6769,6 +6761,14 @@ class ReportsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1SupplierOrders402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

@@ -3592,7 +3592,7 @@ class DbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Dbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response
      */
     public function postV3DbsOrdersFinalPrice($orders_request_api = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3DbsOrdersFinalPrice'][0])
     {
@@ -3618,7 +3618,7 @@ class DbsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Dbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiOrdersFinalPriceResponse|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew402Response|\ValeryVerkhoturov\WbApiClient\Dbs\Model\ApiBatchError|\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV3DbsOrdersFinalPriceWithHttpInfo($orders_request_api = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV3DbsOrdersFinalPrice'][0])
     {
@@ -3726,6 +3726,33 @@ class DbsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3848,6 +3875,14 @@ class DbsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Dbs\Model\GetV3DbsOrdersNew402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

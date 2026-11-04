@@ -13998,7 +13998,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\Office[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\Office[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
      */
     public function getV3Offices(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3Offices'][0])
     {
@@ -14024,7 +14024,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\Office[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\Office[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3OfficesWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3Offices'][0])
     {
@@ -14105,6 +14105,33 @@ class ItemsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14219,6 +14246,14 @@ class ItemsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14467,7 +14502,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\Warehouse[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\Warehouse[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
      */
     public function getV3Warehouses(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3Warehouses'][0])
     {
@@ -14493,7 +14528,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\Warehouse[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\Warehouse[]|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Error|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV3WarehousesWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV3Warehouses'][0])
     {
@@ -14574,6 +14609,33 @@ class ItemsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14688,6 +14750,14 @@ class ItemsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15514,7 +15584,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400GetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400GetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
      */
     public function postV1RecommendationsList($get_recom_req = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1RecommendationsList'][0])
     {
@@ -15540,7 +15610,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400GetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\GetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400GetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1RecommendationsListWithHttpInfo($get_recom_req = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1RecommendationsList'][0])
     {
@@ -15648,6 +15718,33 @@ class ItemsApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15770,6 +15867,14 @@ class ItemsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16022,7 +16127,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\SetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response208SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\SetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response208SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
      */
     public function postV1RecommendationsSet($set_recom_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1RecommendationsSet'][0])
     {
@@ -16048,7 +16153,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\SetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response208SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\SetRecomRes|\ValeryVerkhoturov\WbApiClient\Items\Model\Response208SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\Response400SetRecom|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1RecommendationsSetWithHttpInfo($set_recom_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1RecommendationsSet'][0])
     {
@@ -16186,6 +16291,33 @@ class ItemsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 403:
                     if ('\ValeryVerkhoturov\WbApiClient\Items\Model\Response4XX' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -16313,6 +16445,14 @@ class ItemsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16571,7 +16711,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale200Response|\ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale208Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
+     * @return \ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale200Response|\ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale208Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response
      */
     public function postV1UploadTaskB2bWholesale($post_v1_upload_task_b2b_wholesale_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1UploadTaskB2bWholesale'][0])
     {
@@ -16597,7 +16737,7 @@ class ItemsApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\Items\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale200Response|\ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale208Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale200Response|\ValeryVerkhoturov\WbApiClient\Items\Model\PostV1UploadTaskB2bWholesale208Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response|\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3|\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1UploadTaskB2bWholesaleWithHttpInfo($post_v1_upload_task_b2b_wholesale_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1UploadTaskB2bWholesale'][0])
     {
@@ -16735,6 +16875,33 @@ class ItemsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 402:
+                    if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 403:
                     if ('\ValeryVerkhoturov\WbApiClient\Items\Model\ResponseErrorV3' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -16862,6 +17029,14 @@ class ItemsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2ObjectParentAll401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ValeryVerkhoturov\WbApiClient\Items\Model\GetV2Tags402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
