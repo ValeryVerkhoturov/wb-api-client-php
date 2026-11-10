@@ -4051,7 +4051,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemDiscrepancyResponse[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemDiscrepancyResponse[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\GetV1SuppliesSupplyIdDiscrepanciesQuantity403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response
      */
     public function getV1SuppliesSupplyIdDiscrepanciesQuantity($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1SuppliesSupplyIdDiscrepanciesQuantity'][0])
     {
@@ -4077,7 +4077,7 @@ class OrdersFbwApi
      *
      * @throws \ValeryVerkhoturov\WbApiClient\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemDiscrepancyResponse[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\Response4XX|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsItemDiscrepancyResponse[]|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\GetV1SuppliesSupplyIdDiscrepanciesQuantity403Response|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsErrorModel|\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\PostV1AcceptanceOptions401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getV1SuppliesSupplyIdDiscrepanciesQuantityWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getV1SuppliesSupplyIdDiscrepanciesQuantity'][0])
     {
@@ -4189,11 +4189,11 @@ class OrdersFbwApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\Response4XX' === '\SplFileObject') {
+                    if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\GetV1SuppliesSupplyIdDiscrepanciesQuantity403Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\Response4XX' !== 'string') {
+                        if ('\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\GetV1SuppliesSupplyIdDiscrepanciesQuantity403Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4211,7 +4211,7 @@ class OrdersFbwApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\Response4XX', []),
+                        ObjectSerializer::deserialize($content, '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\GetV1SuppliesSupplyIdDiscrepanciesQuantity403Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4341,7 +4341,7 @@ class OrdersFbwApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\Response4XX',
+                        '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\GetV1SuppliesSupplyIdDiscrepanciesQuantity403Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

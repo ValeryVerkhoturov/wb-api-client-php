@@ -303,21 +303,6 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
-        }
-        if ($this->container['request_id'] === null) {
-            $invalidProperties[] = "'request_id' can't be null";
-        }
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +321,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return int
+     * @return int|null
      */
     public function getStatus()
     {
@@ -346,7 +331,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param int $status HTTP-статус код
+     * @param int|null $status HTTP-статус код
      *
      * @return self
      */
@@ -363,7 +348,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -373,7 +358,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Sets title
      *
-     * @param string $title Краткое описание ошибки
+     * @param string|null $title Краткое описание ошибки
      *
      * @return self
      */
@@ -390,7 +375,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Gets detail
      *
-     * @return string
+     * @return string|null
      */
     public function getDetail()
     {
@@ -400,7 +385,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Sets detail
      *
-     * @param string $detail Подробное описание ошибки
+     * @param string|null $detail Подробное описание ошибки
      *
      * @return self
      */
@@ -417,7 +402,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Gets request_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestId()
     {
@@ -427,7 +412,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Sets request_id
      *
-     * @param string $request_id ID запроса
+     * @param string|null $request_id ID запроса
      *
      * @return self
      */
@@ -444,7 +429,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -454,7 +439,7 @@ class ModelsSupplyAcceptedMoreThanYearAgo implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param string $origin Сервис, в котором произошла ошибка
+     * @param string|null $origin Сервис, в котором произошла ошибка
      *
      * @return self
      */

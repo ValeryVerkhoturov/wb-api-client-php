@@ -65,7 +65,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
         'settings' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\AdvertSettings',
         'restrictions' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\GetAdvertsAdvertsInnerRestrictions',
         'status' => 'int',
-        'timestamps' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps'
+        'timestamps' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\TimestampsV2'
     ];
 
     /**
@@ -580,7 +580,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets timestamps
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps|null
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\TimestampsV2|null
      */
     public function getTimestamps()
     {
@@ -590,7 +590,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets timestamps
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps|null $timestamps timestamps
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\TimestampsV2|null $timestamps timestamps
      *
      * @return self
      */

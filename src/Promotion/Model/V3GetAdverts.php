@@ -58,7 +58,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'advert_id' => 'int',
         'status' => 'int',
         'timestamps' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\Timestamps',
         'settings' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertSettings',
@@ -75,7 +75,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => 'int64',
+        'advert_id' => 'int64',
         'status' => 'int64',
         'timestamps' => null,
         'settings' => null,
@@ -90,7 +90,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'advert_id' => false,
         'status' => false,
         'timestamps' => false,
         'settings' => false,
@@ -185,7 +185,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'advert_id' => 'advertId',
         'status' => 'status',
         'timestamps' => 'timestamps',
         'settings' => 'settings',
@@ -200,7 +200,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'advert_id' => 'setAdvertId',
         'status' => 'setStatus',
         'timestamps' => 'setTimestamps',
         'settings' => 'setSettings',
@@ -215,7 +215,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'advert_id' => 'getAdvertId',
         'status' => 'getStatus',
         'timestamps' => 'getTimestamps',
         'settings' => 'getSettings',
@@ -300,7 +300,7 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('advert_id', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('timestamps', $data ?? [], null);
         $this->setIfExists('settings', $data ?? [], null);
@@ -361,28 +361,28 @@ class V3GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets advert_id
      *
      * @return int|null
      */
-    public function getId()
+    public function getAdvertId()
     {
-        return $this->container['id'];
+        return $this->container['advert_id'];
     }
 
     /**
-     * Sets id
+     * Sets advert_id
      *
-     * @param int|null $id ID кампании
+     * @param int|null $advert_id ID кампании
      *
      * @return self
      */
-    public function setId($id)
+    public function setAdvertId($advert_id)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($advert_id)) {
+            throw new \InvalidArgumentException('non-nullable advert_id cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['advert_id'] = $advert_id;
 
         return $this;
     }

@@ -61,7 +61,7 @@ class V3AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'payment_type' => 'string',
         'name' => 'string',
-        'placements' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements'
+        'placements' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements[]'
     ];
 
     /**
@@ -362,7 +362,7 @@ class V3AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets placements
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements|null
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements[]|null
      */
     public function getPlacements()
     {
@@ -372,7 +372,7 @@ class V3AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets placements
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements|null $placements placements
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements[]|null $placements placements
      *
      * @return self
      */

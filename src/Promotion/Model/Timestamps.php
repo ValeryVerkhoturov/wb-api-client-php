@@ -61,7 +61,8 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'created' => 'string',
         'updated' => 'string',
-        'started' => 'string'
+        'started' => 'string',
+        'ended' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'created' => null,
         'updated' => null,
-        'started' => null
+        'started' => null,
+        'ended' => null
     ];
 
     /**
@@ -85,7 +87,8 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'created' => false,
         'updated' => false,
-        'started' => true
+        'started' => true,
+        'ended' => true
     ];
 
     /**
@@ -176,7 +179,8 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'started' => 'started'
+        'started' => 'started',
+        'ended' => 'ended'
     ];
 
     /**
@@ -187,7 +191,8 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'started' => 'setStarted'
+        'started' => 'setStarted',
+        'ended' => 'setEnded'
     ];
 
     /**
@@ -198,7 +203,8 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'started' => 'getStarted'
+        'started' => 'getStarted',
+        'ended' => 'getEnded'
     ];
 
     /**
@@ -261,6 +267,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('created', $data ?? [], null);
         $this->setIfExists('updated', $data ?? [], null);
         $this->setIfExists('started', $data ?? [], null);
+        $this->setIfExists('ended', $data ?? [], null);
     }
 
     /**
@@ -389,6 +396,40 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['started'] = $started;
+
+        return $this;
+    }
+
+    /**
+     * Gets ended
+     *
+     * @return string|null
+     */
+    public function getEnded()
+    {
+        return $this->container['ended'];
+    }
+
+    /**
+     * Sets ended
+     *
+     * @param string|null $ended Время завершения кампании
+     *
+     * @return self
+     */
+    public function setEnded($ended)
+    {
+        if (is_null($ended)) {
+            array_push($this->openAPINullablesSetToNull, 'ended');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ended', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ended'] = $ended;
 
         return $this;
     }

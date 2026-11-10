@@ -60,7 +60,7 @@ class V3AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'nm_id' => 'int',
         'subject' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertSubject',
-        'bids' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertBidsKopecks'
+        'bids' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertBidsKopecks[]'
     ];
 
     /**
@@ -361,7 +361,7 @@ class V3AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets bids
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertBidsKopecks|null
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertBidsKopecks[]|null
      */
     public function getBids()
     {
@@ -371,7 +371,7 @@ class V3AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets bids
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertBidsKopecks|null $bids bids
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3AdvertBidsKopecks[]|null $bids Ставки
      *
      * @return self
      */

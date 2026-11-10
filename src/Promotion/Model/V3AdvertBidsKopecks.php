@@ -58,8 +58,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'search' => 'int',
-        'recommendations' => 'int'
+        'type' => '\ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements',
+        'value' => 'int'
     ];
 
     /**
@@ -70,8 +70,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'search' => 'int64',
-        'recommendations' => 'int64'
+        'type' => null,
+        'value' => 'int64'
     ];
 
     /**
@@ -80,8 +80,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'search' => false,
-        'recommendations' => false
+        'type' => false,
+        'value' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'search' => 'search',
-        'recommendations' => 'recommendations'
+        'type' => 'type',
+        'value' => 'value'
     ];
 
     /**
@@ -180,8 +180,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'search' => 'setSearch',
-        'recommendations' => 'setRecommendations'
+        'type' => 'setType',
+        'value' => 'setValue'
     ];
 
     /**
@@ -190,8 +190,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'search' => 'getSearch',
-        'recommendations' => 'getRecommendations'
+        'type' => 'getType',
+        'value' => 'getValue'
     ];
 
     /**
@@ -251,8 +251,8 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('search', $data ?? [], null);
-        $this->setIfExists('recommendations', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
     }
 
     /**
@@ -298,55 +298,55 @@ class V3AdvertBidsKopecks implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets search
+     * Gets type
      *
-     * @return int|null
+     * @return \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements|null
      */
-    public function getSearch()
+    public function getType()
     {
-        return $this->container['search'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets search
+     * Sets type
      *
-     * @param int|null $search Ставка в поиске
+     * @param \ValeryVerkhoturov\WbApiClient\Promotion\Model\V3Placements|null $type type
      *
      * @return self
      */
-    public function setSearch($search)
+    public function setType($type)
     {
-        if (is_null($search)) {
-            throw new \InvalidArgumentException('non-nullable search cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['search'] = $search;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets recommendations
+     * Gets value
      *
      * @return int|null
      */
-    public function getRecommendations()
+    public function getValue()
     {
-        return $this->container['recommendations'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets recommendations
+     * Sets value
      *
-     * @param int|null $recommendations Ставка в рекомендациях
+     * @param int|null $value Ставка
      *
      * @return self
      */
-    public function setRecommendations($recommendations)
+    public function setValue($value)
     {
-        if (is_null($recommendations)) {
-            throw new \InvalidArgumentException('non-nullable recommendations cannot be null');
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
-        $this->container['recommendations'] = $recommendations;
+        $this->container['value'] = $value;
 
         return $this;
     }
