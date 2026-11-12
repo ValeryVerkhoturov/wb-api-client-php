@@ -59,6 +59,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'package_code' => 'string',
+        'package_id' => 'string',
         'quantity' => 'int',
         'barcodes' => '\ValeryVerkhoturov\WbApiClient\OrdersFbw\Model\ModelsGoodInBox[]'
     ];
@@ -72,6 +73,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'package_code' => null,
+        'package_id' => null,
         'quantity' => 'int64',
         'barcodes' => null
     ];
@@ -83,6 +85,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'package_code' => false,
+        'package_id' => false,
         'quantity' => false,
         'barcodes' => false
     ];
@@ -174,6 +177,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'package_code' => 'packageCode',
+        'package_id' => 'packageId',
         'quantity' => 'quantity',
         'barcodes' => 'barcodes'
     ];
@@ -185,6 +189,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'package_code' => 'setPackageCode',
+        'package_id' => 'setPackageId',
         'quantity' => 'setQuantity',
         'barcodes' => 'setBarcodes'
     ];
@@ -196,6 +201,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'package_code' => 'getPackageCode',
+        'package_id' => 'getPackageId',
         'quantity' => 'getQuantity',
         'barcodes' => 'getBarcodes'
     ];
@@ -258,6 +264,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('package_code', $data ?? [], null);
+        $this->setIfExists('package_id', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('barcodes', $data ?? [], null);
     }
@@ -317,7 +324,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets package_code
      *
-     * @param string|null $package_code Штрих-код упаковки
+     * @param string|null $package_code Закодированное значение стикера упаковки
      *
      * @return self
      */
@@ -327,6 +334,33 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable package_code cannot be null');
         }
         $this->container['package_code'] = $package_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets package_id
+     *
+     * @return string|null
+     */
+    public function getPackageId()
+    {
+        return $this->container['package_id'];
+    }
+
+    /**
+     * Sets package_id
+     *
+     * @param string|null $package_id ID стикера упаковки
+     *
+     * @return self
+     */
+    public function setPackageId($package_id)
+    {
+        if (is_null($package_id)) {
+            throw new \InvalidArgumentException('non-nullable package_id cannot be null');
+        }
+        $this->container['package_id'] = $package_id;
 
         return $this;
     }
