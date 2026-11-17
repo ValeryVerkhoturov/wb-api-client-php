@@ -35,7 +35,7 @@ use ValeryVerkhoturov\WbApiClient\Promotion\ObjectSerializer;
  * V3Placements Class Doc Comment
  *
  * @category Class
- * @description Место размещения кампании: - &#x60;search&#x60; - поиск - &#x60;recommendations&#x60; - рекомендации - &#x60;combined&#x60; - поиск и рекомендации с единой ставкой
+ * @description Место размещения кампании: - &#x60;search&#x60; — поиск - &#x60;recommendations&#x60; — рекомендации - &#x60;combined&#x60; — поиск и рекомендации с единой ставкой
  * @package  ValeryVerkhoturov\WbApiClient\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -387,7 +387,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets atbs
      *
-     * @param int|null $atbs Количество добавлений товаров в корзину
+     * @param int|null $atbs Сколько раз товар добавили в корзину
      *
      * @return self
      */
@@ -414,7 +414,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets canceled
      *
-     * @param int|null $canceled Отмены, шт.
+     * @param int|null $canceled Количество отмен
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets cr
      *
-     * @param float|null $cr CR (conversion rate) — отношение количества заказов к общему количеству кликов
+     * @param float|null $cr Отношение количества заказов к общему количеству кликов
      *
      * @return self
      */
@@ -522,7 +522,7 @@ class FullStatsItemDaysInnerAppsInnerNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets ctr
      *
-     * @param float|null $ctr CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+     * @param float|null $ctr Кликабельность — отношение числа кликов к количеству показов, %
      *
      * @return self
      */

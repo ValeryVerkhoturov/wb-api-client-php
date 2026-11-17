@@ -414,7 +414,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets atbs
      *
-     * @param int|null $atbs Количество добавлений товаров в корзину
+     * @param int|null $atbs Сколько раз товар добавили в корзину
      *
      * @return self
      */
@@ -441,7 +441,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets canceled
      *
-     * @param int|null $canceled Отмены, шт.
+     * @param int|null $canceled Количество отмен
      *
      * @return self
      */
@@ -576,7 +576,7 @@ class FullStatsItemDaysInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets ctr
      *
-     * @param float|null $ctr CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+     * @param float|null $ctr Кликабельность — отношение числа кликов к количеству показов, %
      *
      * @return self
      */
