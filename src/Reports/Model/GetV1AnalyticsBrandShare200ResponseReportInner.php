@@ -296,6 +296,18 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     {
         $invalidProperties = [];
 
+        if ($this->container['apply_date'] === null) {
+            $invalidProperties[] = "'apply_date' can't be null";
+        }
+        if ($this->container['brand_rating'] === null) {
+            $invalidProperties[] = "'brand_rating' can't be null";
+        }
+        if ($this->container['price_percent'] === null) {
+            $invalidProperties[] = "'price_percent' can't be null";
+        }
+        if ($this->container['qty_percent'] === null) {
+            $invalidProperties[] = "'qty_percent' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -314,7 +326,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Gets apply_date
      *
-     * @return string|null
+     * @return string
      */
     public function getApplyDate()
     {
@@ -324,7 +336,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Sets apply_date
      *
-     * @param string|null $apply_date Дата
+     * @param string $apply_date Дата
      *
      * @return self
      */
@@ -341,7 +353,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Gets brand_rating
      *
-     * @return int|null
+     * @return int
      */
     public function getBrandRating()
     {
@@ -351,7 +363,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Sets brand_rating
      *
-     * @param int|null $brand_rating Рейтинг бренда в родительской категории
+     * @param int $brand_rating Рейтинг бренда в родительской категории
      *
      * @return self
      */
@@ -368,7 +380,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Gets price_percent
      *
-     * @return float|null
+     * @return float
      */
     public function getPricePercent()
     {
@@ -378,7 +390,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Sets price_percent
      *
-     * @param float|null $price_percent Доля от продаж в родительской категории — цена, %
+     * @param float $price_percent Доля от продаж в родительской категории — цена, %
      *
      * @return self
      */
@@ -395,7 +407,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Gets qty_percent
      *
-     * @return float|null
+     * @return float
      */
     public function getQtyPercent()
     {
@@ -405,7 +417,7 @@ class GetV1AnalyticsBrandShare200ResponseReportInner implements ModelInterface, 
     /**
      * Sets qty_percent
      *
-     * @param float|null $qty_percent Доля от продаж в родительской категории — количество, %
+     * @param float $qty_percent Доля от продаж в родительской категории — количество, %
      *
      * @return self
      */

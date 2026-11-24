@@ -58,11 +58,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'nm_id' => 'int',
-        'sum' => 'int',
         'currency' => 'string',
         'date_from' => 'string',
-        'date_to' => 'string'
+        'date_to' => 'string',
+        'nm_id' => 'int',
+        'sum' => 'int'
     ];
 
     /**
@@ -73,11 +73,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_id' => 'int64',
-        'sum' => 'int64',
         'currency' => null,
         'date_from' => null,
-        'date_to' => null
+        'date_to' => null,
+        'nm_id' => 'int64',
+        'sum' => 'int64'
     ];
 
     /**
@@ -86,11 +86,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'nm_id' => false,
-        'sum' => false,
         'currency' => false,
         'date_from' => false,
-        'date_to' => false
+        'date_to' => false,
+        'nm_id' => false,
+        'sum' => false
     ];
 
     /**
@@ -179,11 +179,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'nm_id' => 'nmID',
-        'sum' => 'sum',
         'currency' => 'currency',
         'date_from' => 'dateFrom',
-        'date_to' => 'dateTo'
+        'date_to' => 'dateTo',
+        'nm_id' => 'nmID',
+        'sum' => 'sum'
     ];
 
     /**
@@ -192,11 +192,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'nm_id' => 'setNmId',
-        'sum' => 'setSum',
         'currency' => 'setCurrency',
         'date_from' => 'setDateFrom',
-        'date_to' => 'setDateTo'
+        'date_to' => 'setDateTo',
+        'nm_id' => 'setNmId',
+        'sum' => 'setSum'
     ];
 
     /**
@@ -205,11 +205,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'nm_id' => 'getNmId',
-        'sum' => 'getSum',
         'currency' => 'getCurrency',
         'date_from' => 'getDateFrom',
-        'date_to' => 'getDateTo'
+        'date_to' => 'getDateTo',
+        'nm_id' => 'getNmId',
+        'sum' => 'getSum'
     ];
 
     /**
@@ -269,11 +269,11 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('nm_id', $data ?? [], null);
-        $this->setIfExists('sum', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('date_from', $data ?? [], null);
         $this->setIfExists('date_to', $data ?? [], null);
+        $this->setIfExists('nm_id', $data ?? [], null);
+        $this->setIfExists('sum', $data ?? [], null);
     }
 
     /**
@@ -303,6 +303,21 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
     {
         $invalidProperties = [];
 
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
+        if ($this->container['date_from'] === null) {
+            $invalidProperties[] = "'date_from' can't be null";
+        }
+        if ($this->container['date_to'] === null) {
+            $invalidProperties[] = "'date_to' can't be null";
+        }
+        if ($this->container['nm_id'] === null) {
+            $invalidProperties[] = "'nm_id' can't be null";
+        }
+        if ($this->container['sum'] === null) {
+            $invalidProperties[] = "'sum' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -319,63 +334,9 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
 
 
     /**
-     * Gets nm_id
-     *
-     * @return int|null
-     */
-    public function getNmId()
-    {
-        return $this->container['nm_id'];
-    }
-
-    /**
-     * Sets nm_id
-     *
-     * @param int|null $nm_id Артикул WB
-     *
-     * @return self
-     */
-    public function setNmId($nm_id)
-    {
-        if (is_null($nm_id)) {
-            throw new \InvalidArgumentException('non-nullable nm_id cannot be null');
-        }
-        $this->container['nm_id'] = $nm_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets sum
-     *
-     * @return int|null
-     */
-    public function getSum()
-    {
-        return $this->container['sum'];
-    }
-
-    /**
-     * Sets sum
-     *
-     * @param int|null $sum Сумма заказа
-     *
-     * @return self
-     */
-    public function setSum($sum)
-    {
-        if (is_null($sum)) {
-            throw new \InvalidArgumentException('non-nullable sum cannot be null');
-        }
-        $this->container['sum'] = $sum;
-
-        return $this;
-    }
-
-    /**
      * Gets currency
      *
-     * @return string|null
+     * @return string
      */
     public function getCurrency()
     {
@@ -385,7 +346,7 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
     /**
      * Sets currency
      *
-     * @param string|null $currency Валюта заказа
+     * @param string $currency Валюта заказа
      *
      * @return self
      */
@@ -402,7 +363,7 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
     /**
      * Gets date_from
      *
-     * @return string|null
+     * @return string
      */
     public function getDateFrom()
     {
@@ -412,7 +373,7 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
     /**
      * Sets date_from
      *
-     * @param string|null $date_from Начало отчётного периода
+     * @param string $date_from Начало отчётного периода
      *
      * @return self
      */
@@ -429,7 +390,7 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
     /**
      * Gets date_to
      *
-     * @return string|null
+     * @return string
      */
     public function getDateTo()
     {
@@ -439,7 +400,7 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
     /**
      * Sets date_to
      *
-     * @param string|null $date_to Конец отчётного периода
+     * @param string $date_to Конец отчётного периода
      *
      * @return self
      */
@@ -449,6 +410,60 @@ class GetV1AnalyticsAntifraudDetails200ResponseDetailsInner implements ModelInte
             throw new \InvalidArgumentException('non-nullable date_to cannot be null');
         }
         $this->container['date_to'] = $date_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets nm_id
+     *
+     * @return int
+     */
+    public function getNmId()
+    {
+        return $this->container['nm_id'];
+    }
+
+    /**
+     * Sets nm_id
+     *
+     * @param int $nm_id Артикул WB
+     *
+     * @return self
+     */
+    public function setNmId($nm_id)
+    {
+        if (is_null($nm_id)) {
+            throw new \InvalidArgumentException('non-nullable nm_id cannot be null');
+        }
+        $this->container['nm_id'] = $nm_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets sum
+     *
+     * @return int
+     */
+    public function getSum()
+    {
+        return $this->container['sum'];
+    }
+
+    /**
+     * Sets sum
+     *
+     * @param int $sum Сумма заказа
+     *
+     * @return self
+     */
+    public function setSum($sum)
+    {
+        if (is_null($sum)) {
+            throw new \InvalidArgumentException('non-nullable sum cannot be null');
+        }
+        $this->container['sum'] = $sum;
 
         return $this;
     }

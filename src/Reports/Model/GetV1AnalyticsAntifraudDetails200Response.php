@@ -275,6 +275,9 @@ class GetV1AnalyticsAntifraudDetails200Response implements ModelInterface, Array
     {
         $invalidProperties = [];
 
+        if ($this->container['details'] === null) {
+            $invalidProperties[] = "'details' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -293,7 +296,7 @@ class GetV1AnalyticsAntifraudDetails200Response implements ModelInterface, Array
     /**
      * Gets details
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsAntifraudDetails200ResponseDetailsInner[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsAntifraudDetails200ResponseDetailsInner[]
      */
     public function getDetails()
     {
@@ -303,7 +306,7 @@ class GetV1AnalyticsAntifraudDetails200Response implements ModelInterface, Array
     /**
      * Sets details
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsAntifraudDetails200ResponseDetailsInner[]|null $details details
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsAntifraudDetails200ResponseDetailsInner[] $details details
      *
      * @return self
      */

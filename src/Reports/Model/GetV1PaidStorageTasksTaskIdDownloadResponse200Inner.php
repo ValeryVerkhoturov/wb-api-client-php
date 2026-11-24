@@ -457,7 +457,7 @@ class GetV1PaidStorageTasksTaskIdDownloadResponse200Inner implements ModelInterf
     /**
      * Sets date
      *
-     * @param string|null $date Дата, за которую был расчёт или перерасчёт
+     * @param string|null $date Дата расчёта или перерасчёта
      *
      * @return self
      */

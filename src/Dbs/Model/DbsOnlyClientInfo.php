@@ -548,7 +548,7 @@ class DbsOnlyClientInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets phone_code
      *
-     * @param int|null $phone_code Добавочный код. Пустое значение `\"\"` указывает, что код ещё не назначен
+     * @param int|null $phone_code Добавочный код. Значение `0` указывает, что код ещё не назначен
      *
      * @return self
      */

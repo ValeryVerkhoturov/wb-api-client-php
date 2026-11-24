@@ -317,6 +317,27 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     {
         $invalidProperties = [];
 
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
+        if ($this->container['income_id'] === null) {
+            $invalidProperties[] = "'income_id' can't be null";
+        }
+        if ($this->container['nm_id'] === null) {
+            $invalidProperties[] = "'nm_id' can't be null";
+        }
+        if ($this->container['photo_urls'] === null) {
+            $invalidProperties[] = "'photo_urls' can't be null";
+        }
+        if ($this->container['shk_id'] === null) {
+            $invalidProperties[] = "'shk_id' can't be null";
+        }
+        if ($this->container['sku'] === null) {
+            $invalidProperties[] = "'sku' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -335,7 +356,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets amount
      *
-     * @return float|null
+     * @return float
      */
     public function getAmount()
     {
@@ -345,7 +366,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets amount
      *
-     * @param float|null $amount Сумма штрафа, руб
+     * @param float $amount Сумма штрафа, руб
      *
      * @return self
      */
@@ -362,7 +383,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets date
      *
-     * @return string|null
+     * @return string
      */
     public function getDate()
     {
@@ -372,7 +393,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets date
      *
-     * @param string|null $date Дата
+     * @param string $date Дата
      *
      * @return self
      */
@@ -389,7 +410,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets income_id
      *
-     * @return int|null
+     * @return int
      */
     public function getIncomeId()
     {
@@ -399,7 +420,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets income_id
      *
-     * @param int|null $income_id Номер поставки
+     * @param int $income_id Номер поставки
      *
      * @return self
      */
@@ -416,7 +437,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets nm_id
      *
-     * @return int|null
+     * @return int
      */
     public function getNmId()
     {
@@ -426,7 +447,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets nm_id
      *
-     * @param int|null $nm_id Артикул WB
+     * @param int $nm_id Артикул WB
      *
      * @return self
      */
@@ -443,7 +464,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets photo_urls
      *
-     * @return string[]|null
+     * @return string[]
      */
     public function getPhotoUrls()
     {
@@ -453,7 +474,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets photo_urls
      *
-     * @param string[]|null $photo_urls URL фото товара
+     * @param string[] $photo_urls URL фото товара
      *
      * @return self
      */
@@ -470,7 +491,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets shk_id
      *
-     * @return int|null
+     * @return int
      */
     public function getShkId()
     {
@@ -480,7 +501,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets shk_id
      *
-     * @param int|null $shk_id Штрихкод
+     * @param int $shk_id Штрихкод
      *
      * @return self
      */
@@ -497,7 +518,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Gets sku
      *
-     * @return string|null
+     * @return string
      */
     public function getSku()
     {
@@ -507,7 +528,7 @@ class GetV1AnalyticsGoodsLabeling200ResponseReportInner implements ModelInterfac
     /**
      * Sets sku
      *
-     * @param string|null $sku Баркод из карточки товара
+     * @param string $sku Баркод из карточки товара
      *
      * @return self
      */

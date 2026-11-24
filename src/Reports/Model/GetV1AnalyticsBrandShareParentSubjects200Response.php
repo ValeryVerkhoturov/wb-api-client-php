@@ -275,6 +275,9 @@ class GetV1AnalyticsBrandShareParentSubjects200Response implements ModelInterfac
     {
         $invalidProperties = [];
 
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -293,7 +296,7 @@ class GetV1AnalyticsBrandShareParentSubjects200Response implements ModelInterfac
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner[]
      */
     public function getData()
     {
@@ -303,7 +306,7 @@ class GetV1AnalyticsBrandShareParentSubjects200Response implements ModelInterfac
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner[]|null $data Категории бренда
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner[] $data Категории бренда
      *
      * @return self
      */

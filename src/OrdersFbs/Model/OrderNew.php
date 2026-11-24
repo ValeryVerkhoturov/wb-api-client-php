@@ -58,7 +58,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\OrderAddress',
+        'address' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\OrderNewAddress',
         'ddate' => 'string',
         'seller_date' => 'string',
         'sale_price' => 'int',
@@ -586,7 +586,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\OrderAddress|null
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\OrderNewAddress|null
      */
     public function getAddress()
     {
@@ -596,7 +596,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\OrderAddress|null $address address
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\OrderNewAddress|null $address address
      *
      * @return self
      */

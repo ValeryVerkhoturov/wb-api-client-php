@@ -275,6 +275,9 @@ class GetV1AnalyticsBrandShare200Response implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['report'] === null) {
+            $invalidProperties[] = "'report' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -293,7 +296,7 @@ class GetV1AnalyticsBrandShare200Response implements ModelInterface, ArrayAccess
     /**
      * Gets report
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShare200ResponseReportInner[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShare200ResponseReportInner[]
      */
     public function getReport()
     {
@@ -303,7 +306,7 @@ class GetV1AnalyticsBrandShare200Response implements ModelInterface, ArrayAccess
     /**
      * Sets report
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShare200ResponseReportInner[]|null $report Отчёт
+     * @param \ValeryVerkhoturov\WbApiClient\Reports\Model\GetV1AnalyticsBrandShare200ResponseReportInner[] $report Отчёт
      *
      * @return self
      */

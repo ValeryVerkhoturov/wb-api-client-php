@@ -282,6 +282,12 @@ class GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner implements Mode
     {
         $invalidProperties = [];
 
+        if ($this->container['parent_id'] === null) {
+            $invalidProperties[] = "'parent_id' can't be null";
+        }
+        if ($this->container['parent_name'] === null) {
+            $invalidProperties[] = "'parent_name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -300,7 +306,7 @@ class GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner implements Mode
     /**
      * Gets parent_id
      *
-     * @return int|null
+     * @return int
      */
     public function getParentId()
     {
@@ -310,7 +316,7 @@ class GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner implements Mode
     /**
      * Sets parent_id
      *
-     * @param int|null $parent_id ID родительской категории
+     * @param int $parent_id ID родительской категории
      *
      * @return self
      */
@@ -327,7 +333,7 @@ class GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner implements Mode
     /**
      * Gets parent_name
      *
-     * @return string|null
+     * @return string
      */
     public function getParentName()
     {
@@ -337,7 +343,7 @@ class GetV1AnalyticsBrandShareParentSubjects200ResponseDataInner implements Mode
     /**
      * Sets parent_name
      *
-     * @param string|null $parent_name Название родительской категории
+     * @param string $parent_name Название родительской категории
      *
      * @return self
      */

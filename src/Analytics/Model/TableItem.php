@@ -618,7 +618,7 @@ class TableItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_substituted_sku
      *
-     * @param bool|null $is_substituted_sku Искали ли товар по подменному артикулу. Поле будет в ответе при наличии в запросе `includeSubstitutedSKUs` и/или `includeSearchTexts`
+     * @param bool|null $is_substituted_sku Искали ли товар по подменному артикулу
      *
      * @return self
      */
