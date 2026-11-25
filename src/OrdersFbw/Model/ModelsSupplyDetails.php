@@ -84,7 +84,8 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'unloading_quantity' => 'int',
         'depersonalized_quantity' => 'int',
         'discrepancies' => 'int',
-        'is_box_on_pallet' => 'bool'
+        'is_box_on_pallet' => 'bool',
+        'corrected_quantity' => 'int'
     ];
 
     /**
@@ -121,7 +122,8 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'unloading_quantity' => 'int64',
         'depersonalized_quantity' => 'int64',
         'discrepancies' => 'int64',
-        'is_box_on_pallet' => null
+        'is_box_on_pallet' => null,
+        'corrected_quantity' => 'int64'
     ];
 
     /**
@@ -156,7 +158,8 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'unloading_quantity' => false,
         'depersonalized_quantity' => true,
         'discrepancies' => false,
-        'is_box_on_pallet' => false
+        'is_box_on_pallet' => false,
+        'corrected_quantity' => false
     ];
 
     /**
@@ -271,7 +274,8 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'unloading_quantity' => 'unloadingQuantity',
         'depersonalized_quantity' => 'depersonalizedQuantity',
         'discrepancies' => 'discrepancies',
-        'is_box_on_pallet' => 'isBoxOnPallet'
+        'is_box_on_pallet' => 'isBoxOnPallet',
+        'corrected_quantity' => 'correctedQuantity'
     ];
 
     /**
@@ -306,7 +310,8 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'unloading_quantity' => 'setUnloadingQuantity',
         'depersonalized_quantity' => 'setDepersonalizedQuantity',
         'discrepancies' => 'setDiscrepancies',
-        'is_box_on_pallet' => 'setIsBoxOnPallet'
+        'is_box_on_pallet' => 'setIsBoxOnPallet',
+        'corrected_quantity' => 'setCorrectedQuantity'
     ];
 
     /**
@@ -341,7 +346,8 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'unloading_quantity' => 'getUnloadingQuantity',
         'depersonalized_quantity' => 'getDepersonalizedQuantity',
         'discrepancies' => 'getDiscrepancies',
-        'is_box_on_pallet' => 'getIsBoxOnPallet'
+        'is_box_on_pallet' => 'getIsBoxOnPallet',
+        'corrected_quantity' => 'getCorrectedQuantity'
     ];
 
     /**
@@ -451,6 +457,7 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('depersonalized_quantity', $data ?? [], null);
         $this->setIfExists('discrepancies', $data ?? [], null);
         $this->setIfExists('is_box_on_pallet', $data ?? [], null);
+        $this->setIfExists('corrected_quantity', $data ?? [], null);
     }
 
     /**
@@ -1323,6 +1330,33 @@ class ModelsSupplyDetails implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable is_box_on_pallet cannot be null');
         }
         $this->container['is_box_on_pallet'] = $is_box_on_pallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets corrected_quantity
+     *
+     * @return int|null
+     */
+    public function getCorrectedQuantity()
+    {
+        return $this->container['corrected_quantity'];
+    }
+
+    /**
+     * Sets corrected_quantity
+     *
+     * @param int|null $corrected_quantity Количество товаров по Акту корректировки, которое не входит в `acceptedQuantity`. Возвращается, если есть расхождения, зафиксированные при приёмке поставки
+     *
+     * @return self
+     */
+    public function setCorrectedQuantity($corrected_quantity)
+    {
+        if (is_null($corrected_quantity)) {
+            throw new \InvalidArgumentException('non-nullable corrected_quantity cannot be null');
+        }
+        $this->container['corrected_quantity'] = $corrected_quantity;
 
         return $this;
     }
