@@ -1,7 +1,7 @@
 <?php
 
 /**
- * UpdatedSuppliesShippingMethod
+ * UpdateSuppliesDispatchMethodRequest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,15 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * UpdatedSuppliesShippingMethod Class Doc Comment
+ * UpdateSuppliesDispatchMethodRequest Class Doc Comment
  *
  * @category Class
- * @description Результат обработки запроса для одной поставки
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateSuppliesDispatchMethodRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UpdatedSuppliesShippingMethod';
+    protected static $openAPIModelName = 'UpdateSuppliesDispatchMethodRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +58,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'error' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethodError',
-        'success' => 'bool',
-        'supply_id' => 'string'
+        'data' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSupplyShippingMethod[]'
     ];
 
     /**
@@ -72,9 +69,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'error' => null,
-        'success' => null,
-        'supply_id' => null
+        'data' => null
     ];
 
     /**
@@ -83,9 +78,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'error' => false,
-        'success' => false,
-        'supply_id' => false
+        'data' => false
     ];
 
     /**
@@ -174,9 +167,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'error' => 'error',
-        'success' => 'success',
-        'supply_id' => 'supplyId'
+        'data' => 'data'
     ];
 
     /**
@@ -185,9 +176,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'error' => 'setError',
-        'success' => 'setSuccess',
-        'supply_id' => 'setSupplyId'
+        'data' => 'setData'
     ];
 
     /**
@@ -196,9 +185,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'error' => 'getError',
-        'success' => 'getSuccess',
-        'supply_id' => 'getSupplyId'
+        'data' => 'getData'
     ];
 
     /**
@@ -258,9 +245,7 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('error', $data ?? [], null);
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('supply_id', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -290,6 +275,17 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
+        if ((count($this->container['data']) > 100)) {
+            $invalidProperties[] = "invalid value for 'data', number of items must be less than or equal to 100.";
+        }
+
+        if ((count($this->container['data']) < 1)) {
+            $invalidProperties[] = "invalid value for 'data', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -306,82 +302,35 @@ class UpdatedSuppliesShippingMethod implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets error
+     * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethodError|null
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSupplyShippingMethod[]
      */
-    public function getError()
+    public function getData()
     {
-        return $this->container['error'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets error
+     * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethodError|null $error error
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdateSupplyShippingMethod[] $data data
      *
      * @return self
      */
-    public function setError($error)
+    public function setData($data)
     {
-        if (is_null($error)) {
-            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-        $this->container['error'] = $error;
 
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success Успешна ли обработка запроса для данной поставки. Может быть только `true`
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
+        if ((count($data) > 100)) {
+            throw new \InvalidArgumentException('invalid value for $data when calling UpdateSuppliesDispatchMethodRequest., number of items must be less than or equal to 100.');
         }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets supply_id
-     *
-     * @return string|null
-     */
-    public function getSupplyId()
-    {
-        return $this->container['supply_id'];
-    }
-
-    /**
-     * Sets supply_id
-     *
-     * @param string|null $supply_id ID поставки
-     *
-     * @return self
-     */
-    public function setSupplyId($supply_id)
-    {
-        if (is_null($supply_id)) {
-            throw new \InvalidArgumentException('non-nullable supply_id cannot be null');
+        if ((count($data) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $data when calling UpdateSuppliesDispatchMethodRequest., number of items must be greater than or equal to 1.');
         }
-        $this->container['supply_id'] = $supply_id;
+        $this->container['data'] = $data;
 
         return $this;
     }

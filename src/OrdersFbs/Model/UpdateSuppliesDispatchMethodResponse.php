@@ -1,7 +1,7 @@
 <?php
 
 /**
- * UpdateSuppliesShippingMethodResponse
+ * UpdateSuppliesDispatchMethodResponse
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * UpdateSuppliesShippingMethodResponse Class Doc Comment
+ * UpdateSuppliesDispatchMethodResponse Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateSuppliesDispatchMethodResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UpdateSuppliesShippingMethodResponse';
+    protected static $openAPIModelName = 'UpdateSuppliesDispatchMethodResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'results' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]'
+        'results' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesDispatchMethod[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
     /**
      * Gets results
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesDispatchMethod[]|null
      */
     public function getResults()
     {
@@ -303,7 +303,7 @@ class UpdateSuppliesShippingMethodResponse implements ModelInterface, ArrayAcces
     /**
      * Sets results
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesShippingMethod[]|null $results results
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\UpdatedSuppliesDispatchMethod[]|null $results results
      *
      * @return self
      */

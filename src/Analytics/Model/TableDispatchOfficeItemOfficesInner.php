@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TableShippingOfficeItem
+ * TableDispatchOfficeItemOfficesInner
  *
  * PHP version 7.4
  *
@@ -33,16 +33,15 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * TableShippingOfficeItem Class Doc Comment
+ * TableDispatchOfficeItemOfficesInner Class Doc Comment
  *
  * @category Class
- * @description Данные по региону отгрузки
  * @package  ValeryVerkhoturov\WbApiClient\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableDispatchOfficeItemOfficesInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TableShippingOfficeItem';
+    protected static $openAPIModelName = 'TableDispatchOfficeItem_offices_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +58,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'region_name' => 'string',
-        'metrics' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics',
-        'offices' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[]'
+        'office_id' => 'int',
+        'office_name' => 'string',
+        'metrics' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeMetrics'
     ];
 
     /**
@@ -72,9 +71,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'region_name' => null,
-        'metrics' => null,
-        'offices' => null
+        'office_id' => 'int64',
+        'office_name' => null,
+        'metrics' => null
     ];
 
     /**
@@ -83,9 +82,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'region_name' => false,
-        'metrics' => false,
-        'offices' => false
+        'office_id' => false,
+        'office_name' => false,
+        'metrics' => false
     ];
 
     /**
@@ -174,9 +173,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'region_name' => 'regionName',
-        'metrics' => 'metrics',
-        'offices' => 'offices'
+        'office_id' => 'officeID',
+        'office_name' => 'officeName',
+        'metrics' => 'metrics'
     ];
 
     /**
@@ -185,9 +184,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'region_name' => 'setRegionName',
-        'metrics' => 'setMetrics',
-        'offices' => 'setOffices'
+        'office_id' => 'setOfficeId',
+        'office_name' => 'setOfficeName',
+        'metrics' => 'setMetrics'
     ];
 
     /**
@@ -196,9 +195,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'region_name' => 'getRegionName',
-        'metrics' => 'getMetrics',
-        'offices' => 'getOffices'
+        'office_id' => 'getOfficeId',
+        'office_name' => 'getOfficeName',
+        'metrics' => 'getMetrics'
     ];
 
     /**
@@ -258,9 +257,9 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('region_name', $data ?? [], null);
+        $this->setIfExists('office_id', $data ?? [], null);
+        $this->setIfExists('office_name', $data ?? [], null);
         $this->setIfExists('metrics', $data ?? [], null);
-        $this->setIfExists('offices', $data ?? [], null);
     }
 
     /**
@@ -306,28 +305,55 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets region_name
+     * Gets office_id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getRegionName()
+    public function getOfficeId()
     {
-        return $this->container['region_name'];
+        return $this->container['office_id'];
     }
 
     /**
-     * Sets region_name
+     * Sets office_id
      *
-     * @param string|null $region_name [Страна отгрузки](https://dev.wildberries.ru/release-notes?id=605)
+     * @param int|null $office_id [ID склада](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */
-    public function setRegionName($region_name)
+    public function setOfficeId($office_id)
     {
-        if (is_null($region_name)) {
-            throw new \InvalidArgumentException('non-nullable region_name cannot be null');
+        if (is_null($office_id)) {
+            throw new \InvalidArgumentException('non-nullable office_id cannot be null');
         }
-        $this->container['region_name'] = $region_name;
+        $this->container['office_id'] = $office_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets office_name
+     *
+     * @return string|null
+     */
+    public function getOfficeName()
+    {
+        return $this->container['office_name'];
+    }
+
+    /**
+     * Sets office_name
+     *
+     * @param string|null $office_name [Название склада](https://dev.wildberries.ru/release-notes?id=605)
+     *
+     * @return self
+     */
+    public function setOfficeName($office_name)
+    {
+        if (is_null($office_name)) {
+            throw new \InvalidArgumentException('non-nullable office_name cannot be null');
+        }
+        $this->container['office_name'] = $office_name;
 
         return $this;
     }
@@ -335,7 +361,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets metrics
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeMetrics|null
      */
     public function getMetrics()
     {
@@ -345,7 +371,7 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets metrics
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeMetrics|null $metrics Метрики по региону
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeMetrics|null $metrics Метрики по складу
      *
      * @return self
      */
@@ -355,33 +381,6 @@ class TableShippingOfficeItem implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable metrics cannot be null');
         }
         $this->container['metrics'] = $metrics;
-
-        return $this;
-    }
-
-    /**
-     * Gets offices
-     *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[]|null
-     */
-    public function getOffices()
-    {
-        return $this->container['offices'];
-    }
-
-    /**
-     * Sets offices
-     *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeItemOfficesInner[]|null $offices [Данные по складам](https://dev.wildberries.ru/release-notes?id=605)
-     *
-     * @return self
-     */
-    public function setOffices($offices)
-    {
-        if (is_null($offices)) {
-            throw new \InvalidArgumentException('non-nullable offices cannot be null');
-        }
-        $this->container['offices'] = $offices;
 
         return $this;
     }

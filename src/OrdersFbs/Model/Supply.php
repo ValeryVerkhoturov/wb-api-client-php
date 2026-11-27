@@ -60,7 +60,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'is_b2b' => 'bool',
-        'is_pickup_point_shipment_allowed' => 'bool',
+        'is_pickup_point_dispatch_allowed' => 'bool',
         'done' => 'bool',
         'created_at' => 'string',
         'closed_at' => 'string',
@@ -87,7 +87,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'is_b2b' => null,
-        'is_pickup_point_shipment_allowed' => null,
+        'is_pickup_point_dispatch_allowed' => null,
         'done' => null,
         'created_at' => null,
         'closed_at' => null,
@@ -112,7 +112,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'is_b2b' => true,
-        'is_pickup_point_shipment_allowed' => false,
+        'is_pickup_point_dispatch_allowed' => false,
         'done' => false,
         'created_at' => false,
         'closed_at' => true,
@@ -217,7 +217,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'is_b2b' => 'isB2b',
-        'is_pickup_point_shipment_allowed' => 'isPickupPointShipmentAllowed',
+        'is_pickup_point_dispatch_allowed' => 'isPickupPointDispatchAllowed',
         'done' => 'done',
         'created_at' => 'createdAt',
         'closed_at' => 'closedAt',
@@ -242,7 +242,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'is_b2b' => 'setIsB2b',
-        'is_pickup_point_shipment_allowed' => 'setIsPickupPointShipmentAllowed',
+        'is_pickup_point_dispatch_allowed' => 'setIsPickupPointDispatchAllowed',
         'done' => 'setDone',
         'created_at' => 'setCreatedAt',
         'closed_at' => 'setClosedAt',
@@ -267,7 +267,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'is_b2b' => 'getIsB2b',
-        'is_pickup_point_shipment_allowed' => 'getIsPickupPointShipmentAllowed',
+        'is_pickup_point_dispatch_allowed' => 'getIsPickupPointDispatchAllowed',
         'done' => 'getDone',
         'created_at' => 'getCreatedAt',
         'closed_at' => 'getClosedAt',
@@ -390,7 +390,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('is_b2b', $data ?? [], null);
-        $this->setIfExists('is_pickup_point_shipment_allowed', $data ?? [], null);
+        $this->setIfExists('is_pickup_point_dispatch_allowed', $data ?? [], null);
         $this->setIfExists('done', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('closed_at', $data ?? [], null);
@@ -538,28 +538,28 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_pickup_point_shipment_allowed
+     * Gets is_pickup_point_dispatch_allowed
      *
      * @return bool|null
      */
-    public function getIsPickupPointShipmentAllowed()
+    public function getIsPickupPointDispatchAllowed()
     {
-        return $this->container['is_pickup_point_shipment_allowed'];
+        return $this->container['is_pickup_point_dispatch_allowed'];
     }
 
     /**
-     * Sets is_pickup_point_shipment_allowed
+     * Sets is_pickup_point_dispatch_allowed
      *
-     * @param bool|null $is_pickup_point_shipment_allowed Можно ли отгрузить заказ на ПВЗ:   - `false` — нет   - `true` — да
+     * @param bool|null $is_pickup_point_dispatch_allowed Можно ли отгрузить заказ на ПВЗ:   - `false` — нет   - `true` — да
      *
      * @return self
      */
-    public function setIsPickupPointShipmentAllowed($is_pickup_point_shipment_allowed)
+    public function setIsPickupPointDispatchAllowed($is_pickup_point_dispatch_allowed)
     {
-        if (is_null($is_pickup_point_shipment_allowed)) {
-            throw new \InvalidArgumentException('non-nullable is_pickup_point_shipment_allowed cannot be null');
+        if (is_null($is_pickup_point_dispatch_allowed)) {
+            throw new \InvalidArgumentException('non-nullable is_pickup_point_dispatch_allowed cannot be null');
         }
-        $this->container['is_pickup_point_shipment_allowed'] = $is_pickup_point_shipment_allowed;
+        $this->container['is_pickup_point_dispatch_allowed'] = $is_pickup_point_dispatch_allowed;
 
         return $this;
     }

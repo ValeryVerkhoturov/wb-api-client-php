@@ -7243,7 +7243,7 @@ class AnalyticsApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeRequest $table_shipping_office_request table_shipping_office_request (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeRequest $table_dispatch_office_request table_dispatch_office_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2StocksReportOffices'] to see the possible values for this operation
@@ -7252,9 +7252,9 @@ class AnalyticsApi
      * @throws \InvalidArgumentException
      * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2StocksReportOfficesResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response
      */
-    public function postV2StocksReportOffices($table_shipping_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
+    public function postV2StocksReportOffices($table_dispatch_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
     {
-        list($response) = $this->postV2StocksReportOfficesWithHttpInfo($table_shipping_office_request, $hostIndex, $variables, $contentType);
+        list($response) = $this->postV2StocksReportOfficesWithHttpInfo($table_dispatch_office_request, $hostIndex, $variables, $contentType);
         return $response;
     }
 
@@ -7269,7 +7269,7 @@ class AnalyticsApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeRequest $table_shipping_office_request (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeRequest $table_dispatch_office_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2StocksReportOffices'] to see the possible values for this operation
@@ -7278,9 +7278,9 @@ class AnalyticsApi
      * @throws \InvalidArgumentException
      * @return array of \ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2StocksReportOfficesResponse200|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject400|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts402Response|\ValeryVerkhoturov\WbApiClient\Analytics\Model\ErrorObject403|\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV3SalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postV2StocksReportOfficesWithHttpInfo($table_shipping_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
+    public function postV2StocksReportOfficesWithHttpInfo($table_dispatch_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
     {
-        $request = $this->postV2StocksReportOfficesRequest($table_shipping_office_request, $hostIndex, $variables, $contentType);
+        $request = $this->postV2StocksReportOfficesRequest($table_dispatch_office_request, $hostIndex, $variables, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7577,7 +7577,7 @@ class AnalyticsApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeRequest $table_shipping_office_request (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeRequest $table_dispatch_office_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2StocksReportOffices'] to see the possible values for this operation
@@ -7585,9 +7585,9 @@ class AnalyticsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postV2StocksReportOfficesAsync($table_shipping_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
+    public function postV2StocksReportOfficesAsync($table_dispatch_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
     {
-        return $this->postV2StocksReportOfficesAsyncWithHttpInfo($table_shipping_office_request, $hostIndex, $variables, $contentType)
+        return $this->postV2StocksReportOfficesAsyncWithHttpInfo($table_dispatch_office_request, $hostIndex, $variables, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7606,7 +7606,7 @@ class AnalyticsApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeRequest $table_shipping_office_request (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeRequest $table_dispatch_office_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2StocksReportOffices'] to see the possible values for this operation
@@ -7614,10 +7614,10 @@ class AnalyticsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postV2StocksReportOfficesAsyncWithHttpInfo($table_shipping_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
+    public function postV2StocksReportOfficesAsyncWithHttpInfo($table_dispatch_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
     {
         $returnType = '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PostV2StocksReportOfficesResponse200';
-        $request = $this->postV2StocksReportOfficesRequest($table_shipping_office_request, $hostIndex, $variables, $contentType);
+        $request = $this->postV2StocksReportOfficesRequest($table_dispatch_office_request, $hostIndex, $variables, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7662,7 +7662,7 @@ class AnalyticsApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeRequest $table_shipping_office_request (required)
+     * @param  \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeRequest $table_dispatch_office_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV2StocksReportOffices'] to see the possible values for this operation
@@ -7670,13 +7670,13 @@ class AnalyticsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postV2StocksReportOfficesRequest($table_shipping_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
+    public function postV2StocksReportOfficesRequest($table_dispatch_office_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV2StocksReportOffices'][0])
     {
 
-        // verify the required parameter 'table_shipping_office_request' is set
-        if ($table_shipping_office_request === null || (is_array($table_shipping_office_request) && count($table_shipping_office_request) === 0)) {
+        // verify the required parameter 'table_dispatch_office_request' is set
+        if ($table_dispatch_office_request === null || (is_array($table_dispatch_office_request) && count($table_dispatch_office_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $table_shipping_office_request when calling postV2StocksReportOffices'
+                'Missing the required parameter $table_dispatch_office_request when calling postV2StocksReportOffices'
             );
         }
 
@@ -7699,12 +7699,12 @@ class AnalyticsApi
         );
 
         // for model (json/xml)
-        if (isset($table_shipping_office_request)) {
+        if (isset($table_dispatch_office_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($table_shipping_office_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($table_dispatch_office_request));
             } else {
-                $httpBody = $table_shipping_office_request;
+                $httpBody = $table_dispatch_office_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

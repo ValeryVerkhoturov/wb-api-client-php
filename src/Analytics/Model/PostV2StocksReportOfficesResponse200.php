@@ -58,7 +58,7 @@ class PostV2StocksReportOfficesResponse200 implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeResponse'
+        'data' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeResponse'
     ];
 
     /**
@@ -293,7 +293,7 @@ class PostV2StocksReportOfficesResponse200 implements ModelInterface, ArrayAcces
     /**
      * Gets data
      *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeResponse|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeResponse|null
      */
     public function getData()
     {
@@ -303,7 +303,7 @@ class PostV2StocksReportOfficesResponse200 implements ModelInterface, ArrayAcces
     /**
      * Sets data
      *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableShippingOfficeResponse|null $data data
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeResponse|null $data data
      *
      * @return self
      */

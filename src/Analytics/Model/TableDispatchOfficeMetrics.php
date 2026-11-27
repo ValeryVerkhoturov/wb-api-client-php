@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TableShippingOfficeMetrics
+ * TableDispatchOfficeMetrics
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * TableShippingOfficeMetrics Class Doc Comment
+ * TableDispatchOfficeMetrics Class Doc Comment
  *
  * @category Class
  * @description Общие метрики по регионам/складам отгрузки
@@ -42,7 +42,7 @@ use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableDispatchOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TableShippingOfficeMetrics';
+    protected static $openAPIModelName = 'TableDispatchOfficeMetrics';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

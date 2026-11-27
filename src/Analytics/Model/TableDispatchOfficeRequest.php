@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TableShippingOfficeRequest
+ * TableDispatchOfficeRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * TableShippingOfficeRequest Class Doc Comment
+ * TableDispatchOfficeRequest Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\Analytics
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TableShippingOfficeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableDispatchOfficeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TableShippingOfficeRequest implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TableShippingOfficeRequest';
+    protected static $openAPIModelName = 'TableDispatchOfficeRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SupplyShippingPoint
+ * SupplyDispatchPoint
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * SupplyShippingPoint Class Doc Comment
+ * SupplyDispatchPoint Class Doc Comment
  *
  * @category Class
  * @description Данные пункта отгрузки
@@ -42,7 +42,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SupplyShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializable
+class SupplyDispatchPoint implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SupplyShippingPoint implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SupplyShippingPoint';
+    protected static $openAPIModelName = 'SupplyDispatchPoint';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

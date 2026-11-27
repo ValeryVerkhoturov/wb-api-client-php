@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SupplyShippingPointsResponse
+ * SupplyDispatchPointsResponse
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
 
 /**
- * SupplyShippingPointsResponse Class Doc Comment
+ * SupplyDispatchPointsResponse Class Doc Comment
  *
  * @category Class
  * @package  ValeryVerkhoturov\WbApiClient\OrdersFbs
@@ -41,7 +41,7 @@ use ValeryVerkhoturov\WbApiClient\OrdersFbs\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SupplyShippingPointsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class SupplyDispatchPointsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class SupplyShippingPointsResponse implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SupplyShippingPointsResponse';
+    protected static $openAPIModelName = 'SupplyDispatchPointsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class SupplyShippingPointsResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipping_points' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPoint[]'
+        'shipping_points' => '\ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyDispatchPoint[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class SupplyShippingPointsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets shipping_points
      *
-     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPoint[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyDispatchPoint[]|null
      */
     public function getShippingPoints()
     {
@@ -303,7 +303,7 @@ class SupplyShippingPointsResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets shipping_points
      *
-     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyShippingPoint[]|null $shipping_points Список пунктов отгрузки для указанной поставки
+     * @param \ValeryVerkhoturov\WbApiClient\OrdersFbs\Model\SupplyDispatchPoint[]|null $shipping_points Список пунктов отгрузки для указанной поставки
      *
      * @return self
      */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CommonShippingOfficeFilters
+ * TableDispatchOfficeItem
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use ArrayAccess;
 use ValeryVerkhoturov\WbApiClient\Analytics\ObjectSerializer;
 
 /**
- * CommonShippingOfficeFilters Class Doc Comment
+ * TableDispatchOfficeItem Class Doc Comment
  *
  * @category Class
- * @description Общие фильтры по регионам отгрузки
+ * @description Данные по региону отгрузки
  * @package  ValeryVerkhoturov\WbApiClient\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonSerializable
+class TableDispatchOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommonShippingOfficeFilters';
+    protected static $openAPIModelName = 'TableDispatchOfficeItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'nm_ids' => 'int[]',
-        'subject_ids' => 'int[]',
-        'brand_names' => 'string[]',
-        'tag_ids' => 'int[]',
-        'current_period' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\PeriodInv',
-        'stock_type' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\StockType',
-        'skip_deleted_nm' => 'bool'
+        'region_name' => 'string',
+        'metrics' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeMetrics',
+        'offices' => '\ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeItemOfficesInner[]'
     ];
 
     /**
@@ -76,13 +72,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'nm_ids' => 'int64',
-        'subject_ids' => 'int32',
-        'brand_names' => null,
-        'tag_ids' => 'int64',
-        'current_period' => null,
-        'stock_type' => null,
-        'skip_deleted_nm' => null
+        'region_name' => null,
+        'metrics' => null,
+        'offices' => null
     ];
 
     /**
@@ -91,13 +83,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'nm_ids' => false,
-        'subject_ids' => false,
-        'brand_names' => false,
-        'tag_ids' => false,
-        'current_period' => false,
-        'stock_type' => false,
-        'skip_deleted_nm' => false
+        'region_name' => false,
+        'metrics' => false,
+        'offices' => false
     ];
 
     /**
@@ -186,13 +174,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'nm_ids' => 'nmIDs',
-        'subject_ids' => 'subjectIDs',
-        'brand_names' => 'brandNames',
-        'tag_ids' => 'tagIDs',
-        'current_period' => 'currentPeriod',
-        'stock_type' => 'stockType',
-        'skip_deleted_nm' => 'skipDeletedNm'
+        'region_name' => 'regionName',
+        'metrics' => 'metrics',
+        'offices' => 'offices'
     ];
 
     /**
@@ -201,13 +185,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'nm_ids' => 'setNmIds',
-        'subject_ids' => 'setSubjectIds',
-        'brand_names' => 'setBrandNames',
-        'tag_ids' => 'setTagIds',
-        'current_period' => 'setCurrentPeriod',
-        'stock_type' => 'setStockType',
-        'skip_deleted_nm' => 'setSkipDeletedNm'
+        'region_name' => 'setRegionName',
+        'metrics' => 'setMetrics',
+        'offices' => 'setOffices'
     ];
 
     /**
@@ -216,13 +196,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'nm_ids' => 'getNmIds',
-        'subject_ids' => 'getSubjectIds',
-        'brand_names' => 'getBrandNames',
-        'tag_ids' => 'getTagIds',
-        'current_period' => 'getCurrentPeriod',
-        'stock_type' => 'getStockType',
-        'skip_deleted_nm' => 'getSkipDeletedNm'
+        'region_name' => 'getRegionName',
+        'metrics' => 'getMetrics',
+        'offices' => 'getOffices'
     ];
 
     /**
@@ -282,13 +258,9 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('nm_ids', $data ?? [], null);
-        $this->setIfExists('subject_ids', $data ?? [], null);
-        $this->setIfExists('brand_names', $data ?? [], null);
-        $this->setIfExists('tag_ids', $data ?? [], null);
-        $this->setIfExists('current_period', $data ?? [], null);
-        $this->setIfExists('stock_type', $data ?? [], null);
-        $this->setIfExists('skip_deleted_nm', $data ?? [], null);
+        $this->setIfExists('region_name', $data ?? [], null);
+        $this->setIfExists('metrics', $data ?? [], null);
+        $this->setIfExists('offices', $data ?? [], null);
     }
 
     /**
@@ -318,15 +290,6 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['current_period'] === null) {
-            $invalidProperties[] = "'current_period' can't be null";
-        }
-        if ($this->container['stock_type'] === null) {
-            $invalidProperties[] = "'stock_type' can't be null";
-        }
-        if ($this->container['skip_deleted_nm'] === null) {
-            $invalidProperties[] = "'skip_deleted_nm' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -343,190 +306,82 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets nm_ids
+     * Gets region_name
      *
-     * @return int[]|null
+     * @return string|null
      */
-    public function getNmIds()
+    public function getRegionName()
     {
-        return $this->container['nm_ids'];
+        return $this->container['region_name'];
     }
 
     /**
-     * Sets nm_ids
+     * Sets region_name
      *
-     * @param int[]|null $nm_ids Список артикулов WB для фильтрации
+     * @param string|null $region_name [Страна отгрузки](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */
-    public function setNmIds($nm_ids)
+    public function setRegionName($region_name)
     {
-        if (is_null($nm_ids)) {
-            throw new \InvalidArgumentException('non-nullable nm_ids cannot be null');
+        if (is_null($region_name)) {
+            throw new \InvalidArgumentException('non-nullable region_name cannot be null');
         }
-        $this->container['nm_ids'] = $nm_ids;
+        $this->container['region_name'] = $region_name;
 
         return $this;
     }
 
     /**
-     * Gets subject_ids
+     * Gets metrics
      *
-     * @return int[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeMetrics|null
      */
-    public function getSubjectIds()
+    public function getMetrics()
     {
-        return $this->container['subject_ids'];
+        return $this->container['metrics'];
     }
 
     /**
-     * Sets subject_ids
+     * Sets metrics
      *
-     * @param int[]|null $subject_ids Список ID предметов для фильтрации
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeMetrics|null $metrics Метрики по региону
      *
      * @return self
      */
-    public function setSubjectIds($subject_ids)
+    public function setMetrics($metrics)
     {
-        if (is_null($subject_ids)) {
-            throw new \InvalidArgumentException('non-nullable subject_ids cannot be null');
+        if (is_null($metrics)) {
+            throw new \InvalidArgumentException('non-nullable metrics cannot be null');
         }
-        $this->container['subject_ids'] = $subject_ids;
+        $this->container['metrics'] = $metrics;
 
         return $this;
     }
 
     /**
-     * Gets brand_names
+     * Gets offices
      *
-     * @return string[]|null
+     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeItemOfficesInner[]|null
      */
-    public function getBrandNames()
+    public function getOffices()
     {
-        return $this->container['brand_names'];
+        return $this->container['offices'];
     }
 
     /**
-     * Sets brand_names
+     * Sets offices
      *
-     * @param string[]|null $brand_names Список брендов для фильтрации
+     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\TableDispatchOfficeItemOfficesInner[]|null $offices [Данные по складам](https://dev.wildberries.ru/release-notes?id=605)
      *
      * @return self
      */
-    public function setBrandNames($brand_names)
+    public function setOffices($offices)
     {
-        if (is_null($brand_names)) {
-            throw new \InvalidArgumentException('non-nullable brand_names cannot be null');
+        if (is_null($offices)) {
+            throw new \InvalidArgumentException('non-nullable offices cannot be null');
         }
-        $this->container['brand_names'] = $brand_names;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_ids
-     *
-     * @return int[]|null
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[]|null $tag_ids Список ID ярлыков для фильтрации
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        if (is_null($tag_ids)) {
-            throw new \InvalidArgumentException('non-nullable tag_ids cannot be null');
-        }
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets current_period
-     *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\PeriodInv
-     */
-    public function getCurrentPeriod()
-    {
-        return $this->container['current_period'];
-    }
-
-    /**
-     * Sets current_period
-     *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\PeriodInv $current_period current_period
-     *
-     * @return self
-     */
-    public function setCurrentPeriod($current_period)
-    {
-        if (is_null($current_period)) {
-            throw new \InvalidArgumentException('non-nullable current_period cannot be null');
-        }
-        $this->container['current_period'] = $current_period;
-
-        return $this;
-    }
-
-    /**
-     * Gets stock_type
-     *
-     * @return \ValeryVerkhoturov\WbApiClient\Analytics\Model\StockType
-     */
-    public function getStockType()
-    {
-        return $this->container['stock_type'];
-    }
-
-    /**
-     * Sets stock_type
-     *
-     * @param \ValeryVerkhoturov\WbApiClient\Analytics\Model\StockType $stock_type stock_type
-     *
-     * @return self
-     */
-    public function setStockType($stock_type)
-    {
-        if (is_null($stock_type)) {
-            throw new \InvalidArgumentException('non-nullable stock_type cannot be null');
-        }
-        $this->container['stock_type'] = $stock_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets skip_deleted_nm
-     *
-     * @return bool
-     */
-    public function getSkipDeletedNm()
-    {
-        return $this->container['skip_deleted_nm'];
-    }
-
-    /**
-     * Sets skip_deleted_nm
-     *
-     * @param bool $skip_deleted_nm Скрыть удалённые товары
-     *
-     * @return self
-     */
-    public function setSkipDeletedNm($skip_deleted_nm)
-    {
-        if (is_null($skip_deleted_nm)) {
-            throw new \InvalidArgumentException('non-nullable skip_deleted_nm cannot be null');
-        }
-        $this->container['skip_deleted_nm'] = $skip_deleted_nm;
+        $this->container['offices'] = $offices;
 
         return $this;
     }
